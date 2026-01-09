@@ -547,12 +547,12 @@ document.addEventListener('DOMContentLoaded', () => {
             ]
         },
         15: {
-            name: 'Maik Riess',
+            name: 'Maik Rieß',
             role: 'Trainer & Coach',
             photo: 'assets/team/Team-Maik-Riess-500x500-1.jpg',
             tags: ['Training', 'Coaching', 'Teamentwicklung'],
             bio: [
-                'Maik Riess ist Trainer und Coach bei WTM Management Consulting.',
+                'Maik Rieß ist Trainer und Coach bei WTM Management Consulting.',
                 'Er begleitet Teams und Einzelpersonen in ihrer Entwicklung.'
             ],
             qualifications: [
@@ -664,6 +664,21 @@ document.addEventListener('DOMContentLoaded', () => {
                 'Trainerin',
                 'Coach',
                 'Persönlichkeitsentwicklerin'
+            ]
+        },
+        23: {
+            name: 'Frank Titzer',
+            role: 'Coach & Supervisor',
+            photo: '', // Placeholder will be used
+            tags: ['Klärungshilfe', 'Coaching', 'Supervision'],
+            bio: [
+                'Frank Titzer ist Coach, Supervisor und Experte für Klärungshilfe bei WTM Management Consulting.',
+                'Er unterstützt Menschen und Organisationen in den Bereichen Kommunikation und Führung.'
+            ],
+            qualifications: [
+                'Klärungshelfer',
+                'Coach',
+                'Supervisor'
             ]
         }
     };
