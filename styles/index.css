@@ -1743,15 +1743,16 @@ footer {
 }
 
 .modal-photo {
-    /* Removed gradient background */
-    background: transparent;
+    background-color: var(--color-cream);
+    /* Sidebar background */
+    border-right: 1px solid var(--color-border);
+    /* Separator */
     display: flex;
     flex-direction: column;
     /* Stack image at top */
     align-items: center;
     justify-content: flex-start;
     /* Align to top */
-    /* Remove min-height/aspect-ratio/align-self to fill column */
     overflow: hidden;
 }
 
@@ -1761,6 +1762,8 @@ footer {
     /* Natural aspect ratio, fills width */
     object-fit: cover;
     object-position: center top;
+    border-bottom: 1px solid var(--color-border);
+    /* Separator below image */
 }
 
 .modal-details {
