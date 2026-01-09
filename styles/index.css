@@ -1743,7 +1743,8 @@ footer {
 }
 
 .modal-photo {
-    background: linear-gradient(135deg, var(--color-primary-light) 0%, var(--color-primary) 100%);
+    /* Removed gradient background */
+    background: transparent;
     display: flex;
     flex-direction: column;
     /* Stack image at top */
