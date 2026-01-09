@@ -1747,7 +1747,10 @@ footer {
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 400px;
+    /* Removed fixed min-height to allow aspect-ratio to control height */
+    aspect-ratio: 1 / 1;
+    align-self: start;
+    /* Prevents stretching to match text height */
     overflow: hidden;
 }
 
