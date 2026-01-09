@@ -88,7 +88,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // ANIMATED COUNTERS
     // =========================================
     const counters = document.querySelectorAll('.counter');
-    const teamSection = document.querySelector('#team');
+    const teamStats = document.querySelector('.team-stats');
     let countersAnimated = false;
 
     const animateCounters = () => {
@@ -97,18 +97,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
         counters.forEach(counter => {
             const target = +counter.getAttribute('data-target');
-            const duration = 2000;
+            const duration = 2500; // Slightly slower for more impact
             const startTime = performance.now();
 
-            // Smooth easing function
-            const easeOutQuart = (t) => 1 - Math.pow(1 - t, 4);
+            // Smooth cubic easing
+            const easeOutCubic = (t) => 1 - Math.pow(1 - t, 3);
 
             const updateCounter = (currentTime) => {
                 const elapsed = currentTime - startTime;
                 const progress = Math.min(elapsed / duration, 1);
-                const easedProgress = easeOutQuart(progress);
+                const easedProgress = easeOutCubic(progress);
 
-                counter.innerText = Math.floor(target * easedProgress);
+                // Ensure we start at 0 if progress is small, avoiding jumps
+                const currentValue = Math.floor(target * easedProgress);
+                counter.innerText = currentValue;
 
                 if (progress < 1) {
                     requestAnimationFrame(updateCounter);
@@ -123,14 +125,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const counterObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
-            if (entry.isIntersecting) {
+            if (entry.isIntersecting && entry.intersectionRatio > 0.1) {
                 animateCounters();
+                counterObserver.unobserve(entry.target);
             }
         });
-    }, { threshold: 0.3 });
+    }, {
+        threshold: 0.2, // Trigger when 20% visible
+        rootMargin: "0px 0px -50px 0px"
+    });
 
-    if (teamSection) {
-        counterObserver.observe(teamSection);
+    if (teamStats) {
+        counterObserver.observe(teamStats);
+    } else if (document.querySelector('#team')) {
+        // Fallback to team section if stats container not found
+        counterObserver.observe(document.querySelector('#team'));
     }
 
     // =========================================
