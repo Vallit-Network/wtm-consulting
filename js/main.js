@@ -167,22 +167,76 @@ document.addEventListener('DOMContentLoaded', () => {
     // =========================================
     // TRAINING CATEGORY TABS
     // =========================================
+    // =========================================
+    // DYNAMIC SEMINAR RENDERING
+    // =========================================
+    const seminarGrid = document.getElementById('seminar-grid');
     const trainingTabs = document.querySelectorAll('.training-tab');
-    const trainingCategories = document.querySelectorAll('.training-category');
 
+    // Function to create seminar card HTML
+    function createSeminarCard(seminar) {
+        // Generate list items for details
+        const detailsHtml = seminar.details.map(detail => `<li>${detail}</li>`).join('');
+
+        return `
+            <article class="training-card reveal" style="cursor: pointer;" onclick="window.location.href='seminar.html?id=${seminar.id}'">
+                <span class="training-badge">${seminar.badge}</span>
+                <h3>${seminar.title}</h3>
+                <p>${seminar.shortDescription}</p>
+                <ul class="training-details">
+                    ${detailsHtml}
+                </ul>
+            </article>
+        `;
+    }
+
+    // Function to render seminars by category
+    function renderSeminars(category) {
+        if (!seminarGrid || typeof window.seminarsData === 'undefined') return;
+
+        // Clear current content
+        seminarGrid.innerHTML = '';
+
+        // Filter data
+        const filteredSeminars = Object.values(window.seminarsData).filter(s => s.category === category);
+
+        // Generate HTML
+        if (filteredSeminars.length > 0) {
+            filteredSeminars.forEach(seminar => {
+                seminarGrid.innerHTML += createSeminarCard(seminar);
+            });
+        } else {
+            seminarGrid.innerHTML = '<p class="no-results">Für diese Kategorie sind aktuell keine Seminare gelistet.</p>';
+        }
+
+        // Re-observe new elements for animation
+        const newCards = seminarGrid.querySelectorAll('.reveal');
+        if (typeof revealObserver !== 'undefined') {
+            newCards.forEach(el => revealObserver.observe(el));
+            // Trigger animation slightly delayed to ensure DOM is ready
+            setTimeout(() => {
+                newCards.forEach(el => el.classList.add('visible'));
+            }, 100);
+        }
+    }
+
+    // Initial Render (Default to leadership)
+    if (seminarGrid) {
+        renderSeminars('leadership');
+    }
+
+    // Tab Event Listeners
     trainingTabs.forEach(tab => {
         tab.addEventListener('click', () => {
             // Remove active from all
             trainingTabs.forEach(t => t.classList.remove('active'));
-            trainingCategories.forEach(c => c.classList.remove('active'));
 
             // Add active to clicked
             tab.classList.add('active');
-            const categoryId = tab.getAttribute('data-category');
-            const targetCategory = document.getElementById(categoryId);
-            if (targetCategory) {
-                targetCategory.classList.add('active');
-            }
+
+            // Render selected category
+            const category = tab.getAttribute('data-category');
+            renderSeminars(category);
         });
     });
 

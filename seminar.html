@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seminar Details – WTM Management Consulting</title>
+    <meta name="description" content="Seminar Details WTM Management Consulting">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Sans+Pro:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles/index.css">
+</head>
+
+<body>
+
+    <!-- Header (Same as index) -->
+    <header id="header">
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo">
+                    <img src="assets/logo.png" alt="WTM Management Consulting">
+                </a>
+                <div class="menu-toggle" id="mobile-menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html#haltung" class="nav-link">Haltung</a></li>
+                    <li><a href="index.html#angebote" class="nav-link">Angebote</a></li>
+                    <li><a href="index.html#trainings" class="nav-link">Trainings</a></li>
+                    <li><a href="index.html#team" class="nav-link">Team</a></li>
+                    <li><a href="index.html#kontakt" class="nav-link">Kontakt</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Content will be injected here -->
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col" style="flex: 2;">
+                    <img src="assets/logo-white.png" alt="WTM Logo" class="footer-logo"
+                        style="height: 40px; margin-bottom: 1.5rem; filter: brightness(0) invert(1);">
+                    <p style="color: rgba(255,255,255,0.7); line-height: 1.6;">
+                        Wir begleiten Menschen und Organisationen in Entwicklungsprozessen.
+                        Fundiert, praxisnah und mit Haltung.
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h4>Kontakt</h4>
+                    <p>Neuer Graben 61<br>44139 Dortmund</p>
+                    <p><a href="mailto:info@wtm-consulting.de">info@wtm-consulting.de</a></p>
+                    <p><a href="tel:+4923112345678">+49 231 12345678</a></p>
+                </div>
+                <div class="footer-col">
+                    <h4>Rechtliches</h4>
+                    <ul class="footer-links">
+                        <li><a href="impressum.html">Impressum</a></li>
+                        <li><a href="datenschutz.html">Datenschutz</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 WTM Management Consulting. Alle Rechte vorbehalten.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/seminar-data.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const params = new URLSearchParams(window.location.search);
+            const seminarId = params.get('id');
+            const mainContent = document.getElementById('main-content');
+
+            if (!seminarId || !window.seminarsData[seminarId]) {
+                mainContent.innerHTML = `
+                    <div class="container not-found-message">
+                        <h2>Seminar nicht gefunden</h2>
+                        <p>Das gesuchte Seminar konnte nicht gefunden werden.</p>
+                        <a href="index.html#trainings" class="btn btn-primary" style="margin-top: 2rem;">Zur Übersicht</a>
+                    </div>
+                `;
+                return;
+            }
+
+            const seminar = window.seminarsData[seminarId];
+
+            // Update Page Title
+            document.title = `${seminar.title} – WTM Management Consulting`;
+
+            // Render Content
+            mainContent.innerHTML = `
+                <section class="seminar-hero">
+                    <div class="container">
+                        <div class="breadcrumb">
+                            <a href="index.html">Start</a> &gt; <a href="index.html#trainings">Trainings</a> &gt; <span>${seminar.title}</span>
+                        </div>
+                        <h1 class="reveal">${seminar.title}</h1>
+                        <p class="reveal stagger-1" style="font-size: 1.2rem; max-width: 800px; margin: 1rem auto;">${seminar.shortDescription}</p>
+                    </div>
+                </section>
+
+                <section class="section bg-white">
+                    <div class="container">
+                        <div class="seminar-layout">
+                            <div class="seminar-content">
+                                <h2 class="reveal">Überblick</h2>
+                                <p class="reveal stagger-1">${seminar.content.intro}</p>
+
+                                <h2 class="reveal">Ziele</h2>
+                                <p>Nach dem Seminar können Sie:</p>
+                                <ul class="check-list reveal stagger-1">
+                                    ${seminar.content.ziele.map(ziel => `<li>${ziel}</li>`).join('')}
+                                </ul>
+
+                                <h2 class="reveal">Inhalte</h2>
+                                <div class="reveal stagger-1">
+                                    <p>${seminar.content.inhalte}</p>
+                                </div>
+
+                                <h2 class="reveal">Nutzen</h2>
+                                <p class="reveal stagger-1">${seminar.content.nutzen}</p>
+
+                                <h2 class="reveal">Zielgruppe</h2>
+                                <p class="reveal stagger-1">${seminar.content.zielgruppe}</p>
+                            </div>
+
+                            <aside class="seminar-sidebar reveal reveal-right">
+                                <div class="sidebar-block">
+                                    <h3 class="sidebar-title">Fakten</h3>
+                                    <ul class="fact-list">
+                                        ${seminar.details.map(detail => `<li><span class="fact-icon">ℹ</span> ${detail}</li>`).join('')}
+                                    </ul>
+                                </div>
+
+                                <div class="sidebar-block">
+                                    <h3 class="sidebar-title">Kontakt</h3>
+                                    <p>Haben Sie Fragen oder möchten Sie dieses Seminar anfragen?</p>
+                                    <a href="index.html#kontakt" class="btn btn-primary" style="width: 100%; text-align: center; margin-top: 1rem;">Jetzt anfragen</a>
+                                </div>
+                            </aside>
+                        </div>
+                    </div>
+                </section>
+            `;
+        });
+    </script>
+</body>
+
+</html>
