@@ -1208,7 +1208,7 @@ footer {
     padding-top: 2rem;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     font-size: 0.875rem;
-    color: rgba(255, 255, 255, 0.5);
+    color: var(--color-primary);
 }
 
 /* ============================================
