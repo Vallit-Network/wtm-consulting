@@ -435,11 +435,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Category configuration - Colors match mindmap section
     const categoryConfig = {
-        leadership: { label: 'Führung', icon: '🎯', color: '#3D7A77' },      // Türkis (hub-circle/primary)
-        change: { label: 'Change', icon: '🔄', color: '#C08585' },           // Rot (item-red)
-        health: { label: 'Gesundheit', icon: '❤️', color: '#2D5F5C' },       // Grün (primary-dark)
-        communication: { label: 'Kommunikation', icon: '💬', color: '#Cabba0' }, // Gelb (item-yellow)
-        management: { label: 'Management', icon: '📊', color: '#5D8AA8' }    // Blau (item-blue)
+        leadership: { label: 'Führung', color: '#8B7B8B' },         // Warm Purple/Plum (distinct)
+        change: { label: 'Change', color: '#C08585' },              // Rot (item-red)
+        health: { label: 'Gesundheit', color: '#2D5F5C' },          // Grün (primary-dark)
+        communication: { label: 'Kommunikation', color: '#CABBA0' }, // Gelb (item-yellow)
+        management: { label: 'Management', color: '#5D8AA8' }       // Blau (item-blue)
     };
 
     // Team Member Data - Enhanced with Categories & Quick Info
@@ -1007,7 +1007,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (!config) return '';
                 return `
                     <span class="category-badge" style="--category-color: ${config.color}">
-                        <span class="category-icon">${config.icon}</span>
                         ${config.label}
                     </span>
                 `;
