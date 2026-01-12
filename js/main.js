@@ -976,10 +976,15 @@ document.addEventListener('DOMContentLoaded', () => {
         if (modalName) modalName.textContent = member.name;
         if (modalRole) modalRole.textContent = member.role;
 
-        // Update photo
+        // Update photo and avatar
+        const modalAvatar = document.getElementById('modal-avatar');
         if (modalPhotoContainer) {
             if (member.photo) {
                 modalPhotoContainer.innerHTML = `<img src="${member.photo}" alt="${member.name}" loading="lazy">`;
+                // Also populate the mini avatar for expanded state
+                if (modalAvatar) {
+                    modalAvatar.innerHTML = `<img src="${member.photo}" alt="${member.name}" loading="lazy">`;
+                }
             } else {
                 modalPhotoContainer.innerHTML = `
                     <div class="photo-placeholder large">
@@ -989,6 +994,9 @@ document.addEventListener('DOMContentLoaded', () => {
                         </svg>
                     </div>
                 `;
+                if (modalAvatar) {
+                    modalAvatar.innerHTML = '';
+                }
             }
         }
 
@@ -1033,12 +1041,63 @@ document.addEventListener('DOMContentLoaded', () => {
         // Show modal with animation
         teamModal.classList.add('active');
         document.body.style.overflow = 'hidden';
+
+        // Reset expandable detail box state and photo
+        const modalContent = teamModal.querySelector('.modal-content');
+        const detailContainer = document.querySelector('.detail-expand-container');
+        if (detailContainer) {
+            detailContainer.classList.remove('expanded');
+            const toggleText = detailContainer.querySelector('.toggle-text');
+            if (toggleText) toggleText.textContent = 'Mehr Details anzeigen';
+        }
+        if (modalContent) {
+            modalContent.classList.remove('photo-minimized');
+        }
     }
 
     function closeTeamModal() {
         if (!teamModal) return;
         teamModal.classList.remove('active');
         document.body.style.overflow = '';
+
+        // Reset expandable detail box and photo state
+        const modalContent = teamModal.querySelector('.modal-content');
+        const detailContainer = document.querySelector('.detail-expand-container');
+        if (detailContainer) {
+            detailContainer.classList.remove('expanded');
+            const toggleText = detailContainer.querySelector('.toggle-text');
+            if (toggleText) toggleText.textContent = 'Mehr Details anzeigen';
+        }
+        if (modalContent) {
+            modalContent.classList.remove('photo-minimized');
+        }
+    }
+
+    // =========================================
+    // EXPANDABLE DETAIL BOX TOGGLE
+    // =========================================
+    const detailExpandToggle = document.getElementById('detail-expand-toggle');
+    if (detailExpandToggle) {
+        detailExpandToggle.addEventListener('click', (e) => {
+            e.stopPropagation(); // Prevent modal interactions
+            const container = detailExpandToggle.closest('.detail-expand-container');
+            const toggleText = detailExpandToggle.querySelector('.toggle-text');
+            const modalContent = document.querySelector('.modal-content');
+
+            if (container) {
+                container.classList.toggle('expanded');
+
+                if (container.classList.contains('expanded')) {
+                    toggleText.textContent = 'Details ausblenden';
+                    // Morph photo to avatar
+                    if (modalContent) modalContent.classList.add('photo-minimized');
+                } else {
+                    toggleText.textContent = 'Mehr Details anzeigen';
+                    // Restore photo
+                    if (modalContent) modalContent.classList.remove('photo-minimized');
+                }
+            }
+        });
     }
 
     // Event listeners for team cards

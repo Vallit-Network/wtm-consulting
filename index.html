@@ -832,9 +832,17 @@
                     </div>
                 </div>
                 <div class="modal-details">
-                    <span class="modal-label">Coach-Profil</span>
-                    <h2 class="modal-name">Name</h2>
-                    <p class="modal-role">Rolle</p>
+                    <!-- Header with inline avatar for expanded state -->
+                    <div class="modal-header-row">
+                        <div class="modal-avatar" id="modal-avatar">
+                            <!-- Small avatar photo for expanded state -->
+                        </div>
+                        <div class="modal-header-text">
+                            <span class="modal-label">Coach-Profil</span>
+                            <h2 class="modal-name">Name</h2>
+                            <p class="modal-role">Rolle</p>
+                        </div>
+                    </div>
 
                     <!-- Category Badges -->
                     <div class="modal-categories" id="modal-categories">
@@ -849,25 +857,35 @@
                         </ul>
                     </div>
 
-                    <!-- Full Bio Section (scrollable) -->
-                    <div class="modal-bio-section">
-                        <h4>Über mich</h4>
-                        <div class="modal-bio" id="modal-bio">
-                            <!-- Bio will be dynamically inserted -->
+                    <!-- Expandable Detail Box -->
+                    <div class="detail-expand-container">
+                        <button class="detail-expand-toggle" id="detail-expand-toggle" type="button">
+                            <span class="toggle-text">Mehr Details anzeigen</span>
+                            <svg class="toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </button>
+
+                        <div class="detail-expand-content" id="detail-expand-content">
+                            <div class="detail-expand-scroll">
+                                <!-- Bio Section -->
+                                <div class="modal-bio-section">
+                                    <h4>Über mich</h4>
+                                    <div class="modal-bio" id="modal-bio">
+                                        <!-- Bio will be dynamically inserted -->
+                                    </div>
+                                </div>
+
+                                <!-- Qualifications -->
+                                <div class="modal-qualifications">
+                                    <h4>Qualifikationen</h4>
+                                    <ul id="modal-qualifications">
+                                        <!-- Qualifications will be dynamically inserted -->
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-
-                    <!-- Category-based Details -->
-                    <div class="modal-category-details" id="modal-category-details">
-                        <!-- Category-specific details will be dynamically inserted -->
-                    </div>
-
-                    <!-- Qualifications -->
-                    <div class="modal-qualifications">
-                        <h4>Qualifikationen</h4>
-                        <ul id="modal-qualifications">
-                            <!-- Qualifications will be dynamically inserted -->
-                        </ul>
                     </div>
 
                     <a href="#kontakt" class="btn btn-primary modal-cta">Kontakt aufnehmen</a>
@@ -1539,7 +1557,7 @@
 
             <div class="copyright">
                 <p>&copy; 2026 WTM Management Consulting GmbH. Alle Rechte vorbehalten.</p>
-                <p>Version 0.1.0</p>
+                <p>Version 0.2.4</p>
             </div>
         </div>
     </footer>

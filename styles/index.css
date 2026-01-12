@@ -1891,6 +1891,159 @@ footer {
     margin: 0;
 }
 
+/* ============================================
+   EXPANDABLE DETAIL BOX
+   ============================================ */
+.detail-expand-container {
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    background: var(--color-white);
+    overflow: hidden;
+}
+
+.detail-expand-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 1rem 1.25rem;
+    border: none;
+    background: linear-gradient(135deg, var(--color-cream) 0%, rgba(255, 255, 255, 0.8) 100%);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--color-accent);
+    text-align: left;
+}
+
+.detail-expand-toggle:hover {
+    background: linear-gradient(135deg, rgba(61, 122, 119, 0.1) 0%, var(--color-cream) 100%);
+}
+
+.detail-expand-toggle .toggle-text {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.detail-expand-toggle .toggle-icon {
+    width: 20px;
+    height: 20px;
+    stroke: var(--color-primary-dark);
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.detail-expand-container.expanded .detail-expand-toggle .toggle-icon {
+    transform: rotate(180deg);
+}
+
+.detail-expand-container.expanded .detail-expand-toggle .toggle-text::after {
+    content: '';
+}
+
+.detail-expand-container.expanded .toggle-text {
+    color: var(--color-primary-dark);
+}
+
+/* Expandable content */
+.detail-expand-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.detail-expand-container.expanded .detail-expand-content {
+    max-height: 400px;
+}
+
+/* Scrollable inner container */
+.detail-expand-scroll {
+    max-height: 380px;
+    overflow-y: auto;
+    padding: 1.25rem;
+    border-top: 1px solid var(--color-border);
+
+    /* Custom scrollbar */
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-primary) var(--color-cream);
+}
+
+.detail-expand-scroll::-webkit-scrollbar {
+    width: 6px;
+}
+
+.detail-expand-scroll::-webkit-scrollbar-track {
+    background: var(--color-cream);
+    border-radius: 3px;
+}
+
+.detail-expand-scroll::-webkit-scrollbar-thumb {
+    background: var(--color-primary);
+    border-radius: 3px;
+}
+
+.detail-expand-scroll::-webkit-scrollbar-thumb:hover {
+    background: var(--color-primary-dark);
+}
+
+/* Content styling inside expandable box */
+.detail-expand-scroll .modal-bio-section {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.detail-expand-scroll .modal-bio-section h4,
+.detail-expand-scroll .modal-qualifications h4 {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-primary-dark);
+    margin-bottom: 0.75rem;
+}
+
+.detail-expand-scroll .modal-bio p {
+    font-size: 0.9rem;
+    line-height: 1.7;
+    color: var(--color-text);
+    margin-bottom: 0.75rem;
+}
+
+.detail-expand-scroll .modal-bio p:last-child {
+    margin-bottom: 0;
+}
+
+.detail-expand-scroll .modal-qualifications ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.detail-expand-scroll .modal-qualifications li {
+    position: relative;
+    padding-left: 1.25rem;
+    font-size: 0.9rem;
+    color: var(--color-text);
+    line-height: 1.5;
+}
+
+.detail-expand-scroll .modal-qualifications li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.5rem;
+    width: 6px;
+    height: 6px;
+    background: var(--color-primary);
+    border-radius: 50%;
+}
+
 /* Team Stats Bar */
 .team-stats {
     display: grid;
@@ -2169,17 +2322,29 @@ footer {
 .modal-grid {
     display: grid;
     grid-template-columns: 1fr 1.5fr;
-    /* Removed fixed height/overflow to allow natural growth */
+    transition: grid-template-columns 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Expanded state - photo column shrinks */
+.modal-content.photo-minimized .modal-grid {
+    grid-template-columns: 0fr 1fr;
 }
 
 .modal-photo {
-    /* Full height cover */
     background: linear-gradient(135deg, var(--color-primary-light) 0%, var(--color-primary) 100%);
     display: flex;
     align-items: center;
     justify-content: center;
     height: 100%;
     overflow: hidden;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    min-width: 0;
+}
+
+/* Photo hides when minimized */
+.modal-content.photo-minimized .modal-photo {
+    opacity: 0;
+    pointer-events: none;
 }
 
 .modal-photo img {
@@ -2187,11 +2352,89 @@ footer {
     height: 100%;
     object-fit: cover;
     object-position: center top;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ============================================
+   MODAL HEADER ROW WITH AVATAR
+   ============================================ */
+.modal-header-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-avatar {
+    width: 0;
+    height: 0;
+    min-width: 0;
+    border-radius: 50%;
+    overflow: hidden;
+    opacity: 0;
+    transform: scale(0.5);
+    transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+    flex-shrink: 0;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    border: 3px solid var(--color-white);
+}
+
+.modal-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+}
+
+/* Avatar appears when photo is minimized */
+.modal-content.photo-minimized .modal-avatar {
+    width: 80px;
+    height: 80px;
+    min-width: 80px;
+    opacity: 1;
+    transform: scale(1);
+}
+
+.modal-header-text {
+    flex: 1;
+    min-width: 0;
+}
+
+.modal-header-text .modal-label {
+    display: inline-block;
+    color: var(--color-accent);
+    font-weight: 600;
+    font-size: 0.8rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+}
+
+.modal-header-text .modal-name {
+    font-size: 1.75rem;
+    color: var(--color-deep-blue);
+    margin-bottom: 0.25rem;
+    transition: font-size 0.3s ease;
+}
+
+.modal-content.photo-minimized .modal-header-text .modal-name {
+    font-size: 1.5rem;
+}
+
+.modal-header-text .modal-role {
+    color: var(--color-text-light);
+    font-size: 1rem;
+    margin-bottom: 0;
 }
 
 .modal-details {
     padding: 2.5rem;
-    /* Removed internal scrolling */
+    transition: padding 0.4s ease;
+}
+
+.modal-content.photo-minimized .modal-details {
+    padding: 2rem 2.5rem;
 }
 
 .modal-label {
