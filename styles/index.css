@@ -4358,3 +4358,79 @@ letter-spacing: 0.1em;
         grid-template-columns: 1fr;
     }
 }
+
+/* ============================================
+   CLIENT LOGO GRID (Success Stories)
+   ============================================ */
+.client-logo-section {
+    margin-top: 4rem;
+    text-align: center;
+    padding-top: 2rem;
+    border-top: 1px solid var(--color-border);
+}
+
+.client-logo-headline {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-text-light);
+    margin-bottom: 2rem;
+    font-weight: 600;
+}
+
+.client-logo-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    align-items: center;
+}
+
+.client-logo-item {
+    width: 160px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--color-white);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: 1rem;
+    transition: all var(--transition-normal);
+    opacity: 0.7;
+    filter: grayscale(100%);
+    cursor: pointer;
+}
+
+.client-logo-item:hover {
+    opacity: 1;
+    filter: grayscale(0%);
+    border-color: var(--color-primary);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-sm);
+}
+
+.client-logo-item img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.logo-placeholder {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+@media (max-width: 768px) {
+    .client-logo-grid {
+        gap: 1rem;
+    }
+
+    .client-logo-item {
+        width: 130px;
+        height: 80px;
+    }
+}
