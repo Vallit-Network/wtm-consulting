@@ -424,20 +424,37 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // =========================================
-    // TEAM MODAL FUNCTIONALITY
+    // TEAM MODAL FUNCTIONALITY - Enhanced with Categories & Quick Info
     // =========================================
     const teamModal = document.getElementById('team-modal');
     const teamMemberCards = document.querySelectorAll('.team-member-card');
+    const teamMembersGrid = document.getElementById('team-members-grid');
+    const categoryFilterBtns = document.querySelectorAll('.category-filter-btn');
     const modalClose = document.querySelector('.modal-close');
     const modalBackdrop = document.querySelector('.modal-backdrop');
 
-    // Team Member Data - Complete WTM Team (from original website)
+    // Category configuration
+    const categoryConfig = {
+        leadership: { label: 'Führung', icon: '🎯', color: '#3D7A77' },
+        change: { label: 'Change', icon: '🔄', color: '#5A9BD4' },
+        health: { label: 'Gesundheit', icon: '❤️', color: '#E57373' },
+        communication: { label: 'Kommunikation', icon: '💬', color: '#FFB74D' },
+        management: { label: 'Management', icon: '📊', color: '#9575CD' }
+    };
+
+    // Team Member Data - Enhanced with Categories & Quick Info
+    // Note: Content is placeholder and can be filled in later
     const teamMembersData = {
         1: {
             name: 'Dr. Till Reichert',
             role: 'Geschäftsführer',
             photo: 'assets/team/till-reichert.jpg',
-            tags: ['Führungskräfteentwicklung', 'Coaching', 'Projektmanagement'],
+            categories: ['leadership', 'communication', 'management'],
+            quickInfo: [
+                'Führungskräfteentwicklung',
+                'Business Coaching',
+                'Projektmanagement'
+            ],
             bio: [
                 'Als Business Trainer und Coach sowie als Lehr-Coach und Hochschuldozent hat Till Reichert mehrere Tausend Menschen u.a. zu den Themen Führung und Kommunikation unterstützt.',
                 'Als Geschäftsführer und Mitgesellschafter von WTM Management Consulting entwirft er mit Kunden maßgeschneiderte Lösungen im Bereich der Personal- und Organisationsentwicklung.'
@@ -452,7 +469,12 @@ document.addEventListener('DOMContentLoaded', () => {
             name: 'Malte Werner',
             role: 'Geschäftsführer',
             photo: 'assets/team/malte-werner.jpg',
-            tags: ['Führungskräfteentwicklung', 'Teamentwicklung', 'Digitale Transformation'],
+            categories: ['leadership', 'change', 'management'],
+            quickInfo: [
+                'Führungskräfteentwicklung',
+                'Teamentwicklung',
+                'Digitale Transformation'
+            ],
             bio: [
                 'Malte Werner hat Philosophie, Politik und Ökonomik sowie Ethik & Organisation an der Universität Witten/Herdecke studiert. Er ist Mitgesellschafter und Teil der Geschäftsleitung von WTM Management Consulting.',
                 'Durch eine Balance zwischen humorvollem Elan und der nötigen Seriosität gestaltet er Coachings und Trainings ausgewogen. Eine hohe Beobachtungsgabe für Details ermöglicht ihm, die kleinen Stellschrauben zu identifizieren.'
@@ -466,13 +488,13 @@ document.addEventListener('DOMContentLoaded', () => {
         3: {
             name: 'Dr. Olaf Werner',
             role: 'Trainer & Coach',
-            // photo: PLACEHOLDER reused from old ID 4 code block logic if needed, but array has photo property.
-            // In the HTML it uses a placeholder. We keep photo property null or empty string to trigger placeholder logic in openTeamModal if desired, 
-            // OR we point to a placeholder image if one existed. 
-            // The logic says: if (member.photo) { ... } else { ...placeholder... }
-            // HTML for ID 3 uses a placeholder. So we can leave photo undefined or null.
             photo: '',
-            tags: ['Rhetorik', 'Selbstmanagement', 'Systemische Beratung'],
+            categories: ['communication', 'management'],
+            quickInfo: [
+                'Rhetorik',
+                'Selbstmanagement',
+                'Systemische Beratung'
+            ],
             bio: [
                 'Dr. Olaf Werner ist Trainer bei WTM Management Consulting mit Expertise in Selbstmanagement, KVP (Kontinuierlicher Verbesserungsprozess) und Rhetorik.',
                 'Sein Ansatz verbindet systemische Beratung mit praktischen Werkzeugen für den beruflichen Alltag.'
@@ -487,7 +509,12 @@ document.addEventListener('DOMContentLoaded', () => {
             name: 'Carmen Werner',
             role: 'Trainerin & Coach',
             photo: 'assets/team/Carmen-Werner-Team_500x500.jpg',
-            tags: ['Training', 'Coaching', 'Kommunikation'],
+            categories: ['communication', 'health'],
+            quickInfo: [
+                'Kommunikationstraining',
+                'Coaching',
+                'Persönlichkeitsentwicklung'
+            ],
             bio: [
                 'Carmen Werner ist Trainerin und Coach bei WTM Management Consulting.',
                 'Sie unterstützt Menschen in ihrer Kommunikation und Entwicklung.'
@@ -502,7 +529,12 @@ document.addEventListener('DOMContentLoaded', () => {
             name: 'Philipp Besch',
             role: 'Trainer & Coach',
             photo: 'assets/team/Team-Phillip_Besch-500x500-1.jpg',
-            tags: ['Training', 'Coaching', 'Entwicklung'],
+            categories: ['leadership', 'change'],
+            quickInfo: [
+                'Training',
+                'Coaching',
+                'Entwicklung'
+            ],
             bio: [
                 'Philipp Besch ist Trainer und Coach bei WTM Management Consulting.',
                 'Er begleitet Menschen in ihrer beruflichen Entwicklung.'
@@ -517,7 +549,12 @@ document.addEventListener('DOMContentLoaded', () => {
             name: 'Dr. Bettina Brendel',
             role: 'Trainerin & Coach',
             photo: 'assets/team/Team-Dr.-Bettina-Brendel-500x500-1.jpg',
-            tags: ['Kommunikation', 'Führung', 'Persönlichkeit'],
+            categories: ['communication', 'leadership'],
+            quickInfo: [
+                'Kommunikation',
+                'Führung',
+                'Persönlichkeit'
+            ],
             bio: [
                 'Dr. Bettina Brendel ist Trainerin und Coach bei WTM Management Consulting.',
                 'Sie unterstützt Führungskräfte und Teams in ihrer Entwicklung.'
@@ -532,7 +569,12 @@ document.addEventListener('DOMContentLoaded', () => {
             name: 'Andreas Cludius',
             role: 'Trainer & Berater',
             photo: 'assets/team/Cludius-Andreas-Team-500x500-1.jpg',
-            tags: ['Vertrauen', 'Führung', 'Teamdynamik'],
+            categories: ['leadership', 'change'],
+            quickInfo: [
+                'Vertrauen in Führung',
+                'Teamdynamik',
+                'Organisationsentwicklung'
+            ],
             bio: [
                 'Andreas Cludius ist Trainer und Berater bei WTM Management Consulting.',
                 'Er beschäftigt sich intensiv mit den Themen Vertrauen in der Führung und organisationale Freundschaft.'
@@ -547,7 +589,12 @@ document.addEventListener('DOMContentLoaded', () => {
             name: 'Dr. Bettina Hailer',
             role: 'Trainerin & Coach',
             photo: 'assets/team/Team-Dr.-Bettina-Hailer-500x500-1.jpg',
-            tags: ['Führung', 'Kommunikation', 'Coaching'],
+            categories: ['leadership', 'communication'],
+            quickInfo: [
+                'Führungsentwicklung',
+                'Kommunikation',
+                'Coaching'
+            ],
             bio: [
                 'Dr. Bettina Hailer ist Trainerin und Coach bei WTM Management Consulting.',
                 'Sie unterstützt Führungskräfte bei ihrer Entwicklung.'
@@ -562,7 +609,12 @@ document.addEventListener('DOMContentLoaded', () => {
             name: 'Wolfgang Hoffmann',
             role: 'Trainer & Coach',
             photo: 'assets/team/Team-Foto-Wolfgang-Hoffmann.jpg',
-            tags: ['Training', 'Coaching', 'Führung'],
+            categories: ['leadership', 'management'],
+            quickInfo: [
+                'Training',
+                'Coaching',
+                'Führung'
+            ],
             bio: [
                 'Wolfgang Hoffmann ist Trainer und Coach bei WTM Management Consulting.',
                 'Er unterstützt Führungskräfte und Teams.'
@@ -577,7 +629,12 @@ document.addEventListener('DOMContentLoaded', () => {
             name: 'Melanie Kubala',
             role: 'Trainerin & Coach',
             photo: 'assets/team/Team-Melanie-Kubala-500x500-1.jpg',
-            tags: ['Training', 'Entwicklung', 'Coaching'],
+            categories: ['change', 'health'],
+            quickInfo: [
+                'Veränderungsbegleitung',
+                'Entwicklung',
+                'Coaching'
+            ],
             bio: [
                 'Melanie Kubala ist Trainerin und Coach bei WTM Management Consulting.',
                 'Sie begleitet Menschen und Organisationen in Veränderungsprozessen mit einem Fokus auf nachhaltige Entwicklung.'
@@ -592,7 +649,12 @@ document.addEventListener('DOMContentLoaded', () => {
             name: 'Hermann Josef Leiders',
             role: 'Trainer & Coach',
             photo: 'assets/team/Harry_Leiders_team_500x500.jpg',
-            tags: ['Training', 'Coaching', 'Führung'],
+            categories: ['leadership', 'communication'],
+            quickInfo: [
+                'Training',
+                'Coaching',
+                'Führung'
+            ],
             bio: [
                 'Hermann Josef Leiders ist Trainer und Coach bei WTM Management Consulting.',
                 'Er unterstützt Führungskräfte bei ihrer Entwicklung.'
@@ -607,7 +669,12 @@ document.addEventListener('DOMContentLoaded', () => {
             name: 'Heike Neidhart',
             role: 'Trainerin & Coach',
             photo: 'assets/team/Profilbild_Heike_Neidhart_Team_500x500.jpg',
-            tags: ['Training', 'Coaching', 'Persönlichkeit'],
+            categories: ['health', 'communication'],
+            quickInfo: [
+                'Persönlichkeitsentwicklung',
+                'Training',
+                'Coaching'
+            ],
             bio: [
                 'Heike Neidhart ist Trainerin und Coach bei WTM Management Consulting.',
                 'Sie begleitet Menschen bei ihrer persönlichen Entwicklung.'
@@ -622,7 +689,12 @@ document.addEventListener('DOMContentLoaded', () => {
             name: 'Gerold Pohl',
             role: 'Trainer & Coach',
             photo: 'assets/team/Gerold-Pohl-Team-500-x-500.jpg',
-            tags: ['Training', 'Coaching', 'Entwicklung'],
+            categories: ['change', 'management'],
+            quickInfo: [
+                'Training',
+                'Coaching',
+                'Entwicklung'
+            ],
             bio: [
                 'Gerold Pohl ist Trainer und Coach bei WTM Management Consulting.',
                 'Er unterstützt Menschen und Teams bei ihrer Entwicklung.'
@@ -637,7 +709,12 @@ document.addEventListener('DOMContentLoaded', () => {
             name: 'Jürgen Reus',
             role: 'Trainer & Coach',
             photo: 'assets/team/Reus-Juergen-Team-Portrait-500x500-1.jpg',
-            tags: ['Training', 'Expertise', 'Coaching'],
+            categories: ['communication', 'management'],
+            quickInfo: [
+                'Training',
+                'Expertise',
+                'Coaching'
+            ],
             bio: [
                 'Jürgen Reus ist Trainer und Coach bei WTM Management Consulting.',
                 'Er bringt langjährige Expertise in Training und Coaching ein, um Potenziale zu entfalten.'
@@ -652,7 +729,12 @@ document.addEventListener('DOMContentLoaded', () => {
             name: 'Maik Rieß',
             role: 'Trainer & Coach',
             photo: 'assets/team/Team-Maik-Riess-500x500-1.jpg',
-            tags: ['Training', 'Coaching', 'Teamentwicklung'],
+            categories: ['leadership', 'change'],
+            quickInfo: [
+                'Training',
+                'Coaching',
+                'Teamentwicklung'
+            ],
             bio: [
                 'Maik Rieß ist Trainer und Coach bei WTM Management Consulting.',
                 'Er begleitet Teams und Einzelpersonen in ihrer Entwicklung.'
@@ -667,7 +749,12 @@ document.addEventListener('DOMContentLoaded', () => {
             name: 'Dr. Sarolf Sauer',
             role: 'Trainer & Coach',
             photo: 'assets/team/Sarolf_Sauer_Team_500x500.jpg',
-            tags: ['Führung', 'Kommunikation', 'Persönlichkeit'],
+            categories: ['leadership', 'health'],
+            quickInfo: [
+                'Führung',
+                'Kommunikation',
+                'Persönlichkeit'
+            ],
             bio: [
                 'Dr. Sarolf Sauer ist Trainer und Coach bei WTM Management Consulting.',
                 'Er unterstützt Führungskräfte bei ihrer persönlichen Entwicklung.'
@@ -682,7 +769,12 @@ document.addEventListener('DOMContentLoaded', () => {
             name: 'Marcus Schmidt',
             role: 'Trainer & Berater',
             photo: 'assets/team/Team-Marcus-Schmidt-6-23.jpg',
-            tags: ['Führung', 'Haltung', 'Organisation'],
+            categories: ['leadership', 'change'],
+            quickInfo: [
+                'Führung',
+                'Haltung',
+                'Organisation'
+            ],
             bio: [
                 'Marcus Schmidt ist Trainer und Berater bei WTM Management Consulting.',
                 'Er beschäftigt sich intensiv mit dem Thema Haltung und Führung in turbulenten Zeiten.'
@@ -697,7 +789,12 @@ document.addEventListener('DOMContentLoaded', () => {
             name: 'Kirsten Schmiegelt',
             role: 'Trainerin & Coach',
             photo: 'assets/team/Kirsten_Schmiegelt_3-1.jpg',
-            tags: ['Training', 'Coaching', 'Kommunikation'],
+            categories: ['communication', 'health'],
+            quickInfo: [
+                'Training',
+                'Coaching',
+                'Kommunikation'
+            ],
             bio: [
                 'Kirsten Schmiegelt ist Trainerin und Coach bei WTM Management Consulting.',
                 'Sie unterstützt Menschen in ihrer Kommunikation und Entwicklung.'
@@ -712,7 +809,12 @@ document.addEventListener('DOMContentLoaded', () => {
             name: 'Markus Schramm',
             role: 'Trainer & Coach',
             photo: 'assets/team/Markus-Schramm-Portrait-Team-500-x-500.jpg',
-            tags: ['Training', 'Coaching', 'Teamentwicklung'],
+            categories: ['leadership', 'change'],
+            quickInfo: [
+                'Training',
+                'Coaching',
+                'Teamentwicklung'
+            ],
             bio: [
                 'Markus Schramm ist Trainer und Coach bei WTM Management Consulting.',
                 'Er begleitet Teams und Führungskräfte bei ihrer Entwicklung.'
@@ -727,7 +829,12 @@ document.addEventListener('DOMContentLoaded', () => {
             name: 'Heike Stalling',
             role: 'Trainerin & Coach',
             photo: 'assets/team/Stalling-Heike-Team-Portrait-500x500-6-23.jpg',
-            tags: ['Training', 'Coaching', 'Kommunikation'],
+            categories: ['communication', 'management'],
+            quickInfo: [
+                'Training',
+                'Coaching',
+                'Kommunikation'
+            ],
             bio: [
                 'Heike Stalling ist Trainerin und Coach bei WTM Management Consulting.',
                 'Sie begleitet Menschen in ihrer beruflichen Entwicklung.'
@@ -742,7 +849,12 @@ document.addEventListener('DOMContentLoaded', () => {
             name: 'Dr. Tamara Thomsen',
             role: 'Trainerin & Coach',
             photo: 'assets/team/Tamara-Thomsen-Team_500x500.jpg',
-            tags: ['Training', 'Coaching', 'Entwicklung'],
+            categories: ['leadership', 'health'],
+            quickInfo: [
+                'Training',
+                'Coaching',
+                'Entwicklung'
+            ],
             bio: [
                 'Dr. Tamara Thomsen ist Trainerin und Coach bei WTM Management Consulting.',
                 'Sie begleitet Menschen in ihrer beruflichen und persönlichen Entwicklung.'
@@ -757,7 +869,12 @@ document.addEventListener('DOMContentLoaded', () => {
             name: 'Uta-Barbara Vogel',
             role: 'Trainerin & Coach',
             photo: 'assets/team/Team-Vogel-Barbara-500x500-1.jpg',
-            tags: ['Training', 'Coaching', 'Persönlichkeit'],
+            categories: ['health', 'communication'],
+            quickInfo: [
+                'Training',
+                'Coaching',
+                'Persönlichkeit'
+            ],
             bio: [
                 'Uta-Barbara Vogel ist Trainerin und Coach bei WTM Management Consulting.',
                 'Sie begleitet Menschen bei ihrer persönlichen Entwicklung.'
@@ -771,8 +888,13 @@ document.addEventListener('DOMContentLoaded', () => {
         23: {
             name: 'Frank Titzer',
             role: 'Coach & Supervisor',
-            photo: '', // Placeholder will be used
-            tags: ['Klärungshilfe', 'Coaching', 'Supervision'],
+            photo: '',
+            categories: ['communication', 'health'],
+            quickInfo: [
+                'Klärungshilfe',
+                'Coaching',
+                'Supervision'
+            ],
             bio: [
                 'Frank Titzer ist Coach, Supervisor und Experte für Klärungshilfe bei WTM Management Consulting.',
                 'Er unterstützt Menschen und Organisationen in den Bereichen Kommunikation und Führung.'
@@ -785,18 +907,72 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
+    // =========================================
+    // CATEGORY FILTER FUNCTIONALITY
+    // =========================================
+    let currentCategoryFilter = 'all';
+
+    function filterTeamByCategory(category) {
+        currentCategoryFilter = category;
+
+        // Update active button state
+        categoryFilterBtns.forEach(btn => {
+            btn.classList.toggle('active', btn.getAttribute('data-category') === category);
+        });
+
+        // Filter cards with animation
+        teamMemberCards.forEach(card => {
+            const memberId = card.getAttribute('data-member');
+            const member = teamMembersData[memberId];
+
+            if (!member) return;
+
+            const matchesFilter = category === 'all' ||
+                (member.categories && member.categories.includes(category));
+
+            if (matchesFilter) {
+                card.style.display = '';
+                card.classList.remove('filtered-out');
+                setTimeout(() => {
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0) scale(1)';
+                }, 50);
+            } else {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(10px) scale(0.95)';
+                card.classList.add('filtered-out');
+                setTimeout(() => {
+                    card.style.display = 'none';
+                }, 300);
+            }
+        });
+    }
+
+    // Category filter event listeners
+    categoryFilterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const category = btn.getAttribute('data-category');
+            filterTeamByCategory(category);
+        });
+    });
+
+    // =========================================
+    // ENHANCED MODAL FUNCTIONALITY
+    // =========================================
     function openTeamModal(memberId) {
         const member = teamMembersData[memberId];
         if (!member || !teamModal) return;
 
-        // Populate modal with member data
+        // Get modal elements
         const modalName = teamModal.querySelector('.modal-name');
         const modalRole = teamModal.querySelector('.modal-role');
-        const modalTags = teamModal.querySelector('.modal-tags');
-        const modalBio = teamModal.querySelector('.modal-bio');
-        const modalQualifications = teamModal.querySelector('.modal-qualifications ul');
+        const modalCategories = document.getElementById('modal-categories');
+        const modalQuickInfo = document.getElementById('modal-quick-info');
+        const modalBio = document.getElementById('modal-bio');
+        const modalQualifications = document.getElementById('modal-qualifications');
         const modalPhotoContainer = document.getElementById('modal-photo-container');
 
+        // Populate name and role
         if (modalName) modalName.textContent = member.name;
         if (modalRole) modalRole.textContent = member.role;
 
@@ -816,26 +992,45 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
 
-        // Update tags
-        if (modalTags) {
-            modalTags.innerHTML = member.tags.map(tag =>
-                `<span class="member-tag">${tag}</span>`
-            ).join('');
+        // Update category badges
+        if (modalCategories && member.categories) {
+            modalCategories.innerHTML = member.categories.map(cat => {
+                const config = categoryConfig[cat];
+                if (!config) return '';
+                return `
+                    <span class="category-badge" style="--category-color: ${config.color}">
+                        <span class="category-icon">${config.icon}</span>
+                        ${config.label}
+                    </span>
+                `;
+            }).join('');
+        }
+
+        // Update quick info
+        if (modalQuickInfo && member.quickInfo) {
+            modalQuickInfo.innerHTML = member.quickInfo.map(info => `
+                <li>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                    ${info}
+                </li>
+            `).join('');
         }
 
         // Update bio
-        if (modalBio) {
+        if (modalBio && member.bio) {
             modalBio.innerHTML = member.bio.map(p => `<p>${p}</p>`).join('');
         }
 
         // Update qualifications
-        if (modalQualifications) {
+        if (modalQualifications && member.qualifications) {
             modalQualifications.innerHTML = member.qualifications.map(q =>
                 `<li>${q}</li>`
             ).join('');
         }
 
-        // Show modal
+        // Show modal with animation
         teamModal.classList.add('active');
         document.body.style.overflow = 'hidden';
     }
