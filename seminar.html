@@ -20,8 +20,11 @@
 
 <body>
 
-    <!-- Header (Same as index) -->
-    <header id="header">
+    <!-- Scroll Progress Indicator -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <!-- Header -->
+    <header id="header" class="header-dark">
         <div class="container">
             <nav>
                 <a href="index.html" class="logo">
@@ -43,10 +46,34 @@
         </div>
     </header>
 
-    <!-- Main Content -->
+    <!-- Main Content - will be injected dynamically -->
     <main id="main-content">
-        <!-- Content will be injected here -->
+        <!-- Loading state -->
+        <div class="seminar-loading">
+            <div class="loading-spinner"></div>
+        </div>
     </main>
+
+    <!-- Chatbot Helper Panel -->
+    <div class="chatbot-helper" id="chatbotHelper">
+        <div class="chatbot-helper-inner">
+            <div class="chatbot-helper-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                </svg>
+                <span class="chatbot-pulse"></span>
+            </div>
+            <div class="chatbot-helper-content">
+                <p class="chatbot-helper-title">Fragen zum Training?</p>
+                <p class="chatbot-helper-text">Ich fasse gerne zusammen!</p>
+            </div>
+            <button class="chatbot-helper-btn" id="openChatbot">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+            </button>
+        </div>
+    </div>
 
     <!-- Footer -->
     <footer class="footer">
@@ -88,79 +115,270 @@
             const params = new URLSearchParams(window.location.search);
             const seminarId = params.get('id');
             const mainContent = document.getElementById('main-content');
+            const chatbotHelper = document.getElementById('chatbotHelper');
 
             if (!seminarId || !window.seminarsData[seminarId]) {
                 mainContent.innerHTML = `
-                    <div class="container not-found-message">
-                        <h2>Seminar nicht gefunden</h2>
-                        <p>Das gesuchte Seminar konnte nicht gefunden werden.</p>
-                        <a href="index.html#trainings" class="btn btn-primary" style="margin-top: 2rem;">Zur Übersicht</a>
-                    </div>
+                    <section class="seminar-not-found">
+                        <div class="container">
+                            <div class="not-found-card">
+                                <div class="not-found-icon">🔍</div>
+                                <h2>Seminar nicht gefunden</h2>
+                                <p>Das gesuchte Seminar konnte nicht gefunden werden.</p>
+                                <a href="index.html#trainings" class="btn btn-primary">Zur Übersicht</a>
+                            </div>
+                        </div>
+                    </section>
                 `;
+                chatbotHelper.style.display = 'none';
                 return;
             }
 
             const seminar = window.seminarsData[seminarId];
+            const categoryColors = {
+                'leadership': 'var(--color-cat-leadership)',
+                'change': 'var(--color-cat-change)',
+                'health': 'var(--color-cat-health)',
+                'communication': 'var(--color-cat-communication)',
+                'management': 'var(--color-cat-management)'
+            };
+            const categoryLabels = {
+                'leadership': 'Führung',
+                'change': 'Change',
+                'health': 'Gesundheit',
+                'communication': 'Kommunikation',
+                'management': 'Management'
+            };
+            const categoryColor = categoryColors[seminar.category] || 'var(--color-accent)';
+            const categoryLabel = categoryLabels[seminar.category] || 'Seminar';
 
             // Update Page Title
             document.title = `${seminar.title} – WTM Management Consulting`;
 
+            // Set category color as CSS variable
+            document.documentElement.style.setProperty('--current-category-color', categoryColor);
+
+            // Generate goal cards HTML
+            const goalCardsHTML = seminar.content.ziele.map((ziel, index) => `
+                <div class="goal-card reveal stagger-${index + 1}">
+                    <span class="goal-number">${String(index + 1).padStart(2, '0')}</span>
+                    <p class="goal-text">${ziel}</p>
+                </div>
+            `).join('');
+
+            // Generate timeline items for content
+            const contentItems = seminar.content.inhalte.split('. ').filter(item => item.trim());
+            const timelineHTML = contentItems.map((item, index) => `
+                <div class="timeline-item reveal stagger-${(index % 4) + 1}" style="--item-index: ${index}">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <p>${item.trim().replace(/\.$/, '')}</p>
+                    </div>
+                </div>
+            `).join('');
+
             // Render Content
             mainContent.innerHTML = `
-                <section class="seminar-hero">
+                <!-- Hero Section -->
+                <section class="seminar-hero" data-category="${seminar.category}">
+                    <div class="seminar-hero-bg">
+                        <div class="hero-shape hero-shape-1"></div>
+                        <div class="hero-shape hero-shape-2"></div>
+                        <div class="hero-shape hero-shape-3"></div>
+                    </div>
                     <div class="container">
-                        <div class="breadcrumb">
-                            <a href="index.html">Start</a> &gt; <a href="index.html#trainings">Trainings</a> &gt; <span>${seminar.title}</span>
+                        <div class="seminar-hero-content">
+                            <div class="breadcrumb reveal">
+                                <a href="index.html">Start</a>
+                                <span class="breadcrumb-sep">›</span>
+                                <a href="index.html#trainings">Trainings</a>
+                                <span class="breadcrumb-sep">›</span>
+                                <span class="breadcrumb-current">${seminar.title}</span>
+                            </div>
+                            
+                            <span class="seminar-category-badge reveal stagger-1" style="--cat-color: ${categoryColor}">
+                                ${categoryLabel}
+                            </span>
+                            
+                            <h1 class="seminar-title reveal stagger-2">${seminar.title}</h1>
+                            
+                            <p class="seminar-subtitle reveal stagger-3">${seminar.shortDescription}</p>
+                            
+                            <div class="seminar-meta reveal stagger-4">
+                                ${seminar.details.map(detail => `
+                                    <span class="meta-badge">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16">
+                                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                                            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                                        </svg>
+                                        ${detail}
+                                    </span>
+                                `).join('')}
+                            </div>
                         </div>
-                        <h1 class="reveal">${seminar.title}</h1>
-                        <p class="reveal stagger-1" style="font-size: 1.2rem; max-width: 800px; margin: 1rem auto;">${seminar.shortDescription}</p>
                     </div>
                 </section>
 
-                <section class="section bg-white">
+                <!-- Philosophy Section -->
+                <section class="seminar-philosophy">
                     <div class="container">
-                        <div class="seminar-layout">
-                            <div class="seminar-content">
-                                <h2 class="reveal">Überblick</h2>
-                                <p class="reveal stagger-1">${seminar.content.intro}</p>
+                        <div class="philosophy-quote reveal">
+                            <blockquote>
+                                ${seminar.content.intro}
+                            </blockquote>
+                            <div class="quote-decoration" style="--cat-color: ${categoryColor}"></div>
+                        </div>
+                    </div>
+                </section>
 
-                                <h2 class="reveal">Ziele</h2>
-                                <p>Nach dem Seminar können Sie:</p>
-                                <ul class="check-list reveal stagger-1">
-                                    ${seminar.content.ziele.map(ziel => `<li>${ziel}</li>`).join('')}
-                                </ul>
+                <!-- Goals Section -->
+                <section class="seminar-goals">
+                    <div class="container">
+                        <div class="section-header">
+                            <span class="section-label reveal">Lernziele</span>
+                            <h2 class="reveal stagger-1">Was Sie mitnehmen</h2>
+                            <div class="accent-line reveal stagger-2" style="background: ${categoryColor}"></div>
+                        </div>
+                        <div class="goals-grid">
+                            ${goalCardsHTML}
+                        </div>
+                    </div>
+                </section>
 
-                                <h2 class="reveal">Inhalte</h2>
-                                <div class="reveal stagger-1">
-                                    <p>${seminar.content.inhalte}</p>
+                <!-- Content Timeline Section -->
+                <section class="seminar-content-section bg-cream">
+                    <div class="container">
+                        <div class="section-header">
+                            <span class="section-label reveal">Seminarinhalte</span>
+                            <h2 class="reveal stagger-1">Ihre Lernreise</h2>
+                            <div class="accent-line reveal stagger-2" style="background: ${categoryColor}"></div>
+                        </div>
+                        <div class="timeline-container">
+                            <div class="timeline-line" style="--cat-color: ${categoryColor}"></div>
+                            ${timelineHTML}
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Benefits Section -->
+                <section class="seminar-benefits">
+                    <div class="container">
+                        <div class="benefits-grid">
+                            <div class="benefits-content reveal">
+                                <span class="section-label">Ihr Nutzen</span>
+                                <h2>Was Sie davon haben</h2>
+                                <div class="accent-line left" style="background: ${categoryColor}"></div>
+                                <div class="benefit-highlight" style="--cat-color: ${categoryColor}">
+                                    <p>${seminar.content.nutzen}</p>
                                 </div>
-
-                                <h2 class="reveal">Nutzen</h2>
-                                <p class="reveal stagger-1">${seminar.content.nutzen}</p>
-
-                                <h2 class="reveal">Zielgruppe</h2>
-                                <p class="reveal stagger-1">${seminar.content.zielgruppe}</p>
                             </div>
-
-                            <aside class="seminar-sidebar reveal reveal-right">
-                                <div class="sidebar-block">
-                                    <h3 class="sidebar-title">Fakten</h3>
-                                    <ul class="fact-list">
-                                        ${seminar.details.map(detail => `<li><span class="fact-icon">ℹ</span> ${detail}</li>`).join('')}
-                                    </ul>
+                            <div class="benefits-visual reveal reveal-right">
+                                <div class="benefit-icon-box" style="--cat-color: ${categoryColor}">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                        <path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+                                    </svg>
                                 </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
 
-                                <div class="sidebar-block">
-                                    <h3 class="sidebar-title">Kontakt</h3>
-                                    <p>Haben Sie Fragen oder möchten Sie dieses Seminar anfragen?</p>
-                                    <a href="index.html#kontakt" class="btn btn-primary" style="width: 100%; text-align: center; margin-top: 1rem;">Jetzt anfragen</a>
+                <!-- Target Group & CTA Section -->
+                <section class="seminar-cta-section bg-dark">
+                    <div class="container">
+                        <div class="cta-grid">
+                            <div class="target-group reveal">
+                                <div class="target-group-card">
+                                    <span class="section-label light">Zielgruppe</span>
+                                    <h3>Für wen ist dieses Seminar?</h3>
+                                    <p>${seminar.content.zielgruppe}</p>
                                 </div>
-                            </aside>
+                            </div>
+                            <div class="cta-content reveal reveal-right">
+                                <h2>Jetzt anfragen</h2>
+                                <p>Interessiert? Wir beraten Sie gerne zu diesem Seminar und passen die Inhalte an Ihre Bedürfnisse an.</p>
+                                <a href="index.html#kontakt" class="btn btn-white btn-lg">
+                                    Kontakt aufnehmen
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20">
+                                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                                        <polyline points="12 5 19 12 12 19"></polyline>
+                                    </svg>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </section>
             `;
+
+            // Setup scroll progress
+            setupScrollProgress();
+
+            // Setup chatbot helper visibility
+            setupChatbotHelper();
+
+            // Initialize reveal animations
+            initRevealAnimations();
         });
+
+        // Scroll Progress Indicator
+        function setupScrollProgress() {
+            const scrollProgress = document.getElementById('scrollProgress');
+            window.addEventListener('scroll', () => {
+                const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+                const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                const scrolled = (winScroll / height) * 100;
+                scrollProgress.style.width = scrolled + '%';
+            });
+        }
+
+        // Chatbot Helper Panel
+        function setupChatbotHelper() {
+            const chatbotHelper = document.getElementById('chatbotHelper');
+            const heroSection = document.querySelector('.seminar-hero');
+
+            if (!heroSection) return;
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (!entry.isIntersecting) {
+                        chatbotHelper.classList.add('visible');
+                    } else {
+                        chatbotHelper.classList.remove('visible');
+                    }
+                });
+            }, { threshold: 0.3 });
+
+            observer.observe(heroSection);
+
+            // Click handler for chatbot button
+            document.getElementById('openChatbot').addEventListener('click', () => {
+                // Try to open the WTM chatbot widget if available
+                if (window.openChatWidget) {
+                    window.openChatWidget();
+                } else {
+                    // Fallback: scroll to contact
+                    window.location.href = 'index.html#kontakt';
+                }
+            });
+        }
+
+        // Initialize reveal animations  
+        function initRevealAnimations() {
+            const reveals = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            });
+
+            reveals.forEach(el => observer.observe(el));
+        }
     </script>
 </body>
 
