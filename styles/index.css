@@ -4434,3 +4434,55 @@ letter-spacing: 0.1em;
         height: 80px;
     }
 }
+
+/* ============================================
+   CASE STUDY REFINEMENTS (Logo & Spacing)
+   ============================================ */
+
+/* Case Study Header Adjustments */
+.case-study-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.client-badge {
+    display: flex;
+    flex-direction: column;
+}
+
+.client-logo-badge {
+    margin-left: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 48px;
+    /* Slightly larger to accommodate logo well */
+}
+
+.client-logo-badge img {
+    height: 100%;
+    width: auto;
+    object-fit: contain;
+    max-width: 140px;
+}
+
+/* Quote Spacing Adjustments */
+.case-study-quote {
+    padding: 2rem 2.5rem !important;
+    /* Force override if needed, or just cleaner specificity */
+}
+
+.case-study-quote p {
+    margin-bottom: 1rem !important;
+}
+
+.case-study-quote footer {
+    margin-top: 0.5rem !important;
+    padding-top: 1rem !important;
+}
+
+.quote-icon {
+    top: 1.5rem !important;
+    left: 1.5rem !important;
+}
