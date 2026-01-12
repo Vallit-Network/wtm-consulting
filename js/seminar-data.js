@@ -728,86 +728,86 @@ const seminarsData = {
     },
     "hybridesarbeiten": {
         id: "hybridesarbeiten",
-        title: "Hybridesarbeiten",
+        title: "Hybrides Arbeiten",
         category: "leadership",
         badge: "Seminar",
-        shortDescription: "Hybridesarbeiten - praxisnah und fundiert vermittelt.",
-        details: ["Präsenz / Online", "Zertifikat", "Verpflegung"],
+        shortDescription: "Teams hybrid führen – zwischen Büro und Remote zusammenarbeiten und verbunden bleiben.",
+        details: ["1-2 Tage", "Tools", "Praxis"],
         heroImage: "assets/hero-meeting.jpg",
         content: {
-            intro: "In diesem Seminar zum Thema 'Hybridesarbeiten' erlernen Sie fundierte Strategien und Techniken für die Praxis.",
+            intro: "Hybrides Arbeiten ist die neue Normalität. Wie führen Sie Teams, die teils vor Ort, teils remote arbeiten? Wie bleiben alle verbunden?",
             ziele: [
-                "Kernkompetenzen im Bereich Hybridesarbeiten aufbauen",
-                "Praktische Methoden und Werkzeuge kennenlernen",
-                "Eigene Verhaltensweisen reflektieren",
-                "Transfer in den beruflichen Alltag sicherstellen"
+                "Hybride Zusammenarbeit gestalten",
+                "Kommunikation zwischen vor Ort und remote sicherstellen",
+                "Teamzusammenhalt erhalten",
+                "Tools und Prozesse optimieren"
             ],
-            inhalte: "Theoretische Grundlagen, Praxisübungen, Fallbeispiele und Transferaufgaben. Der Fokus liegt auf direkter Anwendbarkeit.",
-            nutzen: "Sie erweitern Ihre Handlungskompetenz und können Herausforderungen im Bereich Hybridesarbeiten souverän meistern.",
-            zielgruppe: "Fach- und Führungskräfte sowie alle, die sich in diesem Thema weiterentwickeln möchten."
+            inhalte: "Hybride Arbeitsmodelle. Kommunikationstechnik. Meetings gestalten. Teambuilding auf Distanz. Fairness zwischen Präsenz und Remote.",
+            nutzen: "Sie führen hybride Teams effektiv und erhalten den Teamzusammenhalt.",
+            zielgruppe: "Führungskräfte und Teamleiter mit hybriden Teams."
         }
     },
     "intuition-ist-doch-logisch": {
         id: "intuition-ist-doch-logisch",
-        title: "Intuition Ist Doch Logisch",
+        title: "Intuition ist doch logisch",
         category: "health",
         badge: "Seminar",
-        shortDescription: "Intuition Ist Doch Logisch - praxisnah und fundiert vermittelt.",
-        details: ["Präsenz / Online", "Zertifikat", "Verpflegung"],
+        shortDescription: "Bauchgefühl verstehen und nutzen – intuitive Entscheidungen als ergänzende Kompetenz entwickeln.",
+        details: ["1-2 Tage", "Reflexion", "Praxisübungen"],
         heroImage: "assets/hero-meeting.jpg",
         content: {
-            intro: "In diesem Seminar zum Thema 'Intuition Ist Doch Logisch' erlernen Sie fundierte Strategien und Techniken für die Praxis.",
+            intro: "Intuition ist keine Magie, sondern verdichtete Erfahrung. Wie nutzen Sie Ihr Bauchgefühl gezielt für bessere Entscheidungen?",
             ziele: [
-                "Kernkompetenzen im Bereich Intuition Ist Doch Logisch aufbauen",
-                "Praktische Methoden und Werkzeuge kennenlernen",
-                "Eigene Verhaltensweisen reflektieren",
-                "Transfer in den beruflichen Alltag sicherstellen"
+                "Intuition als Kompetenz verstehen",
+                "Bauchgefühl bewusst wahrnehmen",
+                "Intuition und Ratio kombinieren",
+                "Bessere Entscheidungen treffen"
             ],
-            inhalte: "Theoretische Grundlagen, Praxisübungen, Fallbeispiele und Transferaufgaben. Der Fokus liegt auf direkter Anwendbarkeit.",
-            nutzen: "Sie erweitern Ihre Handlungskompetenz und können Herausforderungen im Bereich Intuition Ist Doch Logisch souverän meistern.",
-            zielgruppe: "Fach- und Führungskräfte sowie alle, die sich in diesem Thema weiterentwickeln möchten."
+            inhalte: "Was ist Intuition? Intuition vs. Ratio. Conditions für gute Intuition. Intuition trainieren. Umgang mit Unsicherheit.",
+            nutzen: "Sie nutzen Ihre Intuition gezielt als Entscheidungshilfe.",
+            zielgruppe: "Alle, die ihre Entscheidungskompetenz erweitern möchten."
         }
     },
     "kommunikation-im-zielgruppenspezifischen-design": {
         id: "kommunikation-im-zielgruppenspezifischen-design",
-        title: "Kommunikation Im Zielgruppenspezifischen Design",
+        title: "Zielgruppenspezifische Kommunikation",
         category: "communication",
         badge: "Seminar",
-        shortDescription: "Kommunikation Im Zielgruppenspezifischen Design - praxisnah und fundiert vermittelt.",
-        details: ["Präsenz / Online", "Zertifikat", "Verpflegung"],
+        shortDescription: "Botschaften passgenau gestalten – unterschiedliche Zielgruppen überzeugend ansprechen.",
+        details: ["1-2 Tage", "Praxis", "Fallarbeit"],
         heroImage: "assets/hero-meeting.jpg",
         content: {
-            intro: "In diesem Seminar zum Thema 'Kommunikation Im Zielgruppenspezifischen Design' erlernen Sie fundierte Strategien und Techniken für die Praxis.",
+            intro: "Nicht jede Botschaft passt für jeden. Wie passen Sie Ihre Kommunikation an unterschiedliche Zielgruppen an?",
             ziele: [
-                "Kernkompetenzen im Bereich Kommunikation Im Zielgruppenspezifischen Design aufbauen",
-                "Praktische Methoden und Werkzeuge kennenlernen",
-                "Eigene Verhaltensweisen reflektieren",
-                "Transfer in den beruflichen Alltag sicherstellen"
+                "Zielgruppen analysieren und verstehen",
+                "Botschaften passgenau formulieren",
+                "Kanäle zielgruppengerecht wählen",
+                "Wirkung messen und optimieren"
             ],
-            inhalte: "Theoretische Grundlagen, Praxisübungen, Fallbeispiele und Transferaufgaben. Der Fokus liegt auf direkter Anwendbarkeit.",
-            nutzen: "Sie erweitern Ihre Handlungskompetenz und können Herausforderungen im Bereich Kommunikation Im Zielgruppenspezifischen Design souverän meistern.",
-            zielgruppe: "Fach- und Führungskräfte sowie alle, die sich in diesem Thema weiterentwickeln möchten."
+            inhalte: "Zielgruppenanalyse. Personas entwickeln. Sprache und Tonality. Kanalauswahl. Erfolgsmessung.",
+            nutzen: "Ihre Kommunikation wird passgenauer und erreicht Ihre Zielgruppen überzeugender.",
+            zielgruppe: "Marketing, Kommunikation und alle, die unterschiedliche Zielgruppen ansprechen."
         }
     },
     "komplexitaet-meistern-entscheiden-in-dynamischen-situationen": {
         id: "komplexitaet-meistern-entscheiden-in-dynamischen-situationen",
-        title: "Komplexitaet Meistern Entscheiden In Dynamischen Situationen",
+        title: "Komplexität meistern",
         category: "management",
         badge: "Seminar",
-        shortDescription: "Komplexitaet Meistern Entscheiden In Dynamischen Situationen - praxisnah und fundiert vermittelt.",
-        details: ["Präsenz / Online", "Zertifikat", "Verpflegung"],
+        shortDescription: "Souverän entscheiden in dynamischen Situationen – Komplexität reduzieren und handlungsfähig bleiben.",
+        details: ["1-2 Tage", "Methoden", "Fallarbeit"],
         heroImage: "assets/hero-meeting.jpg",
         content: {
-            intro: "In diesem Seminar zum Thema 'Komplexitaet Meistern Entscheiden In Dynamischen Situationen' erlernen Sie fundierte Strategien und Techniken für die Praxis.",
+            intro: "Die Welt wird komplexer. Wie treffen Sie gute Entscheidungen, wenn alles mit allem zusammenhängt und sich ständig verändert?",
             ziele: [
-                "Kernkompetenzen im Bereich Komplexitaet Meistern Entscheiden In Dynamischen Situationen aufbauen",
-                "Praktische Methoden und Werkzeuge kennenlernen",
-                "Eigene Verhaltensweisen reflektieren",
-                "Transfer in den beruflichen Alltag sicherstellen"
+                "Komplexität von Kompliziertheit unterscheiden",
+                "Methoden zur Komplexitätsreduktion kennen",
+                "Entscheidungen unter Unsicherheit treffen",
+                "Handlungsfähig bleiben bei hoher Dynamik"
             ],
-            inhalte: "Theoretische Grundlagen, Praxisübungen, Fallbeispiele und Transferaufgaben. Der Fokus liegt auf direkter Anwendbarkeit.",
-            nutzen: "Sie erweitern Ihre Handlungskompetenz und können Herausforderungen im Bereich Komplexitaet Meistern Entscheiden In Dynamischen Situationen souverän meistern.",
-            zielgruppe: "Fach- und Führungskräfte sowie alle, die sich in diesem Thema weiterentwickeln möchten."
+            inhalte: "Komplexitätstheorie. Cynefin-Framework. Szenarioplanung. Agile Entscheidungen. Umgang mit Unsicherheit.",
+            nutzen: "Sie entscheiden souveräner in komplexen Situationen.",
+            zielgruppe: "Führungskräfte und Manager in dynamischen Umfeldern."
         }
     },
     "konflikterkennung-behandlung-praevention": {
@@ -834,44 +834,44 @@ const seminarsData = {
     },
     "kreativitaetstechniken": {
         id: "kreativitaetstechniken",
-        title: "Kreativitaetstechniken",
+        title: "Kreativitätstechniken",
         category: "leadership",
-        badge: "Seminar",
-        shortDescription: "Kreativitaetstechniken - praxisnah und fundiert vermittelt.",
-        details: ["Präsenz / Online", "Zertifikat", "Verpflegung"],
+        badge: "Workshop",
+        shortDescription: "Systematisch kreativ sein – mit bewährten Techniken neue Ideen entwickeln und Innovationen ermöglichen.",
+        details: ["1-2 Tage", "Praxis", "Übungen"],
         heroImage: "assets/hero-meeting.jpg",
         content: {
-            intro: "In diesem Seminar zum Thema 'Kreativitaetstechniken' erlernen Sie fundierte Strategien und Techniken für die Praxis.",
+            intro: "Kreativität ist trainierbar. Lernen Sie bewährte Techniken, um systematisch neue Ideen zu entwickeln und Innovationen zu ermöglichen.",
             ziele: [
-                "Kernkompetenzen im Bereich Kreativitaetstechniken aufbauen",
-                "Praktische Methoden und Werkzeuge kennenlernen",
-                "Eigene Verhaltensweisen reflektieren",
-                "Transfer in den beruflichen Alltag sicherstellen"
+                "Kreativitätstechniken kennenlernen",
+                "Die passende Methode wählen",
+                "Kreativprozesse moderieren",
+                "Ideen bewerten und auswählen"
             ],
-            inhalte: "Theoretische Grundlagen, Praxisübungen, Fallbeispiele und Transferaufgaben. Der Fokus liegt auf direkter Anwendbarkeit.",
-            nutzen: "Sie erweitern Ihre Handlungskompetenz und können Herausforderungen im Bereich Kreativitaetstechniken souverän meistern.",
-            zielgruppe: "Fach- und Führungskräfte sowie alle, die sich in diesem Thema weiterentwickeln möchten."
+            inhalte: "Brainstorming-Varianten. 6 Denk-Hüte. Morphologischer Kasten. SCAMPER. Analogien. Design Thinking Elemente.",
+            nutzen: "Sie haben ein Repertoire an Kreativtechniken für verschiedene Anlässe.",
+            zielgruppe: "Alle, die systematisch kreativ arbeiten möchten."
         }
     },
     "koerperliche-und-geistige-leistungsfaehigkeit-steigern": {
         id: "koerperliche-und-geistige-leistungsfaehigkeit-steigern",
-        title: "Koerperliche Und Geistige Leistungsfaehigkeit Steigern",
+        title: "Leistungsfähigkeit steigern",
         category: "health",
         badge: "Seminar",
-        shortDescription: "Koerperliche Und Geistige Leistungsfaehigkeit Steigern - praxisnah und fundiert vermittelt.",
-        details: ["Präsenz / Online", "Zertifikat", "Verpflegung"],
+        shortDescription: "Körper und Geist stärken – ganzheitliche Strategien für mehr Energie und bessere Performance.",
+        details: ["1-2 Tage", "Praxis", "Übungen"],
         heroImage: "assets/hero-meeting.jpg",
         content: {
-            intro: "In diesem Seminar zum Thema 'Koerperliche Und Geistige Leistungsfaehigkeit Steigern' erlernen Sie fundierte Strategien und Techniken für die Praxis.",
+            intro: "Ihre Leistungsfähigkeit hängt von körperlichen und geistigen Faktoren ab. Wie steigern Sie beide für mehr Energie im Alltag?",
             ziele: [
-                "Kernkompetenzen im Bereich Koerperliche Und Geistige Leistungsfaehigkeit Steigern aufbauen",
-                "Praktische Methoden und Werkzeuge kennenlernen",
-                "Eigene Verhaltensweisen reflektieren",
-                "Transfer in den beruflichen Alltag sicherstellen"
+                "Leistungsfaktoren verstehen",
+                "Körperliche Fitness verbessern",
+                "Mentale Stärke aufbauen",
+                "Persönlichen Aktionsplan entwickeln"
             ],
-            inhalte: "Theoretische Grundlagen, Praxisübungen, Fallbeispiele und Transferaufgaben. Der Fokus liegt auf direkter Anwendbarkeit.",
-            nutzen: "Sie erweitern Ihre Handlungskompetenz und können Herausforderungen im Bereich Koerperliche Und Geistige Leistungsfaehigkeit Steigern souverän meistern.",
-            zielgruppe: "Fach- und Führungskräfte sowie alle, die sich in diesem Thema weiterentwickeln möchten."
+            inhalte: "Ernährung und Bewegung. Schlaf und Regeneration. Mentale Techniken. Energiemanagement. Gewohnheiten verändern.",
+            nutzen: "Sie steigern Ihre Leistungsfähigkeit nachhaltig und ganzheitlich.",
+            zielgruppe: "Alle, die ihre Leistungsfähigkeit steigern möchten."
         }
     },
     "krisenkommunikation": {
@@ -879,41 +879,41 @@ const seminarsData = {
         title: "Krisenkommunikation",
         category: "change",
         badge: "Seminar",
-        shortDescription: "Krisenkommunikation - praxisnah und fundiert vermittelt.",
-        details: ["Präsenz / Online", "Zertifikat", "Verpflegung"],
+        shortDescription: "In Krisen richtig kommunizieren – transparent informieren und Vertrauen erhalten.",
+        details: ["1-2 Tage", "Fallstudien", "Simulation"],
         heroImage: "assets/hero-meeting.jpg",
         content: {
-            intro: "In diesem Seminar zum Thema 'Krisenkommunikation' erlernen Sie fundierte Strategien und Techniken für die Praxis.",
+            intro: "In Krisen ist Kommunikation entscheidend. Wie informieren Sie transparent? Wie vermeiden Sie Gerüchte und Panik?",
             ziele: [
-                "Kernkompetenzen im Bereich Krisenkommunikation aufbauen",
-                "Praktische Methoden und Werkzeuge kennenlernen",
-                "Eigene Verhaltensweisen reflektieren",
-                "Transfer in den beruflichen Alltag sicherstellen"
+                "Krisenarten unterscheiden",
+                "Kommunikationspläne entwickeln",
+                "Transparent und zeitnah informieren",
+                "Vertrauen in Krisen erhalten"
             ],
-            inhalte: "Theoretische Grundlagen, Praxisübungen, Fallbeispiele und Transferaufgaben. Der Fokus liegt auf direkter Anwendbarkeit.",
-            nutzen: "Sie erweitern Ihre Handlungskompetenz und können Herausforderungen im Bereich Krisenkommunikation souverän meistern.",
-            zielgruppe: "Fach- und Führungskräfte sowie alle, die sich in diesem Thema weiterentwickeln möchten."
+            inhalte: "Krisentypen und -phasen. Stakeholder-Management. Sprachregelungen. Umgang mit Medien. Interne Kommunikation.",
+            nutzen: "Sie kommunizieren souverän in Krisen und erhalten Vertrauen.",
+            zielgruppe: "Führungskräfte, Kommunikationsverantwortliche und Krisenstabsmitglieder."
         }
     },
     "krisenmanagement-fuer-projektmanager": {
         id: "krisenmanagement-fuer-projektmanager",
-        title: "Krisenmanagement Fuer Projektmanager",
+        title: "Krisenmanagement für Projektmanager",
         category: "change",
         badge: "Seminar",
-        shortDescription: "Krisenmanagement Fuer Projektmanager - praxisnah und fundiert vermittelt.",
-        details: ["Präsenz / Online", "Zertifikat", "Verpflegung"],
+        shortDescription: "Projekte in Schwierigkeiten retten – Krisen erkennen, bewältigen und daraus lernen.",
+        details: ["1-2 Tage", "Fallstudien", "Praxisübungen"],
         heroImage: "assets/hero-meeting.jpg",
         content: {
-            intro: "In diesem Seminar zum Thema 'Krisenmanagement Fuer Projektmanager' erlernen Sie fundierte Strategien und Techniken für die Praxis.",
+            intro: "Auch die besten Projekte können in Krisen geraten. Wie erkennen Sie Krisen frühzeitig? Wie steuern Sie dagegen?",
             ziele: [
-                "Kernkompetenzen im Bereich Krisenmanagement Fuer Projektmanager aufbauen",
-                "Praktische Methoden und Werkzeuge kennenlernen",
-                "Eigene Verhaltensweisen reflektieren",
-                "Transfer in den beruflichen Alltag sicherstellen"
+                "Krisenursachen erkennen",
+                "Frühwarnsysteme etablieren",
+                "Krisenbewältigung strukturieren",
+                "Aus Krisen lernen"
             ],
-            inhalte: "Theoretische Grundlagen, Praxisübungen, Fallbeispiele und Transferaufgaben. Der Fokus liegt auf direkter Anwendbarkeit.",
-            nutzen: "Sie erweitern Ihre Handlungskompetenz und können Herausforderungen im Bereich Krisenmanagement Fuer Projektmanager souverän meistern.",
-            zielgruppe: "Fach- und Führungskräfte sowie alle, die sich in diesem Thema weiterentwickeln möchten."
+            inhalte: "Krisenarten in Projekten. Frühindikatoren. Eskalationsmechanismen. Krisenkommunikation. Lessons Learned.",
+            nutzen: "Sie erkennen Projektkrisen früher und meistern sie souveräner.",
+            zielgruppe: "Projektleiter und Projektmitarbeiter."
         }
     },
     "laterales-fuehren": {
@@ -962,86 +962,86 @@ const seminarsData = {
     },
     "medientraining-und-professionelles-auftreten-vor-der-kamera": {
         id: "medientraining-und-professionelles-auftreten-vor-der-kamera",
-        title: "Medientraining Und Professionelles Auftreten Vor Der Kamera",
+        title: "Medientraining & Kameraauftritt",
         category: "leadership",
-        badge: "Seminar",
-        shortDescription: "Medientraining Und Professionelles Auftreten Vor Der Kamera - praxisnah und fundiert vermittelt.",
-        details: ["Präsenz / Online", "Zertifikat", "Verpflegung"],
+        badge: "Workshop",
+        shortDescription: "Überzeugend vor der Kamera – Interviews und Videoaufnahmen professionell meistern.",
+        details: ["1 Tag", "Praxis", "Videofeedback"],
         heroImage: "assets/hero-meeting.jpg",
         content: {
-            intro: "In diesem Seminar zum Thema 'Medientraining Und Professionelles Auftreten Vor Der Kamera' erlernen Sie fundierte Strategien und Techniken für die Praxis.",
+            intro: "Ob Interview, Webinar oder Video-Statement – der Auftritt vor der Kamera erfordert besondere Fähigkeiten.",
             ziele: [
-                "Kernkompetenzen im Bereich Medientraining Und Professionelles Auftreten Vor Der Kamera aufbauen",
-                "Praktische Methoden und Werkzeuge kennenlernen",
-                "Eigene Verhaltensweisen reflektieren",
-                "Transfer in den beruflichen Alltag sicherstellen"
+                "Vor der Kamera sicher auftreten",
+                "Kernbotschaften prägnant formulieren",
+                "Körpersprache bewusst einsetzen",
+                "Schwierige Fragen souverän beantworten"
             ],
-            inhalte: "Theoretische Grundlagen, Praxisübungen, Fallbeispiele und Transferaufgaben. Der Fokus liegt auf direkter Anwendbarkeit.",
-            nutzen: "Sie erweitern Ihre Handlungskompetenz und können Herausforderungen im Bereich Medientraining Und Professionelles Auftreten Vor Der Kamera souverän meistern.",
-            zielgruppe: "Fach- und Führungskräfte sowie alle, die sich in diesem Thema weiterentwickeln möchten."
+            inhalte: "Kameratechnik. Körpersprache und Stimme. Botschaftsentwicklung. Interviewtechniken. Live-Übungen mit Videoanalyse.",
+            nutzen: "Sie treten souverän vor der Kamera auf und vermitteln Ihre Botschaften überzeugend.",
+            zielgruppe: "Führungskräfte und alle, die vor der Kamera präsentieren."
         }
     },
     "mind-mapping-visualisierungstechniken": {
         id: "mind-mapping-visualisierungstechniken",
-        title: "Mind Mapping Visualisierungstechniken",
+        title: "Mind Mapping & Visualisierung",
         category: "leadership",
-        badge: "Seminar",
-        shortDescription: "Mind Mapping Visualisierungstechniken - praxisnah und fundiert vermittelt.",
-        details: ["Präsenz / Online", "Zertifikat", "Verpflegung"],
+        badge: "Workshop",
+        shortDescription: "Ideen strukturieren und darstellen – mit Mind Maps Gedanken ordnen und Zusammenhänge sichtbar machen.",
+        details: ["1 Tag", "Praxis", "Tools"],
         heroImage: "assets/hero-meeting.jpg",
         content: {
-            intro: "In diesem Seminar zum Thema 'Mind Mapping Visualisierungstechniken' erlernen Sie fundierte Strategien und Techniken für die Praxis.",
+            intro: "Mind Mapping ist eine geniale Methode, um Gedanken zu ordnen, Zusammenhänge zu erkennen und Ideen zu entwickeln.",
             ziele: [
-                "Kernkompetenzen im Bereich Mind Mapping Visualisierungstechniken aufbauen",
-                "Praktische Methoden und Werkzeuge kennenlernen",
-                "Eigene Verhaltensweisen reflektieren",
-                "Transfer in den beruflichen Alltag sicherstellen"
+                "Mind Mapping Grundlagen beherrschen",
+                "Analog und digital arbeiten",
+                "Mind Maps für verschiedene Anwendungen nutzen",
+                "Kreativität fördern"
             ],
-            inhalte: "Theoretische Grundlagen, Praxisübungen, Fallbeispiele und Transferaufgaben. Der Fokus liegt auf direkter Anwendbarkeit.",
-            nutzen: "Sie erweitern Ihre Handlungskompetenz und können Herausforderungen im Bereich Mind Mapping Visualisierungstechniken souverän meistern.",
-            zielgruppe: "Fach- und Führungskräfte sowie alle, die sich in diesem Thema weiterentwickeln möchten."
+            inhalte: "Regeln des Mind Mappings. Analoge und digitale Tools. Anwendungen: Planung, Notizen, Präsentation. Kreativtechniken.",
+            nutzen: "Sie strukturieren Ihre Gedanken effektiver und arbeiten kreativer.",
+            zielgruppe: "Alle, die ihre Denkarbeit optimieren möchten."
         }
     },
     "mit-den-fragen-beginnt-das-verstehen": {
         id: "mit-den-fragen-beginnt-das-verstehen",
-        title: "Mit Den Fragen Beginnt Das Verstehen",
+        title: "Die Kunst des Fragens",
         category: "communication",
         badge: "Seminar",
-        shortDescription: "Mit Den Fragen Beginnt Das Verstehen - praxisnah und fundiert vermittelt.",
-        details: ["Präsenz / Online", "Zertifikat", "Verpflegung"],
+        shortDescription: "Mit den richtigen Fragen beginnt das Verstehen – durch geschickte Fragetechnik Gespräche vertiefen.",
+        details: ["1 Tag", "Praxisübungen", "Reflexion"],
         heroImage: "assets/hero-meeting.jpg",
         content: {
-            intro: "In diesem Seminar zum Thema 'Mit Den Fragen Beginnt Das Verstehen' erlernen Sie fundierte Strategien und Techniken für die Praxis.",
+            intro: "Wer fragt, führt. Die richtigen Fragen öffnen Türen, fördern Verständnis und stärken Beziehungen.",
             ziele: [
-                "Kernkompetenzen im Bereich Mit Den Fragen Beginnt Das Verstehen aufbauen",
-                "Praktische Methoden und Werkzeuge kennenlernen",
-                "Eigene Verhaltensweisen reflektieren",
-                "Transfer in den beruflichen Alltag sicherstellen"
+                "Verschiedene Fragetechniken kennenlernen",
+                "Durch Fragen Führung übernehmen",
+                "Tieferes Verständnis entwickeln",
+                "Gespräche produktiver gestalten"
             ],
-            inhalte: "Theoretische Grundlagen, Praxisübungen, Fallbeispiele und Transferaufgaben. Der Fokus liegt auf direkter Anwendbarkeit.",
-            nutzen: "Sie erweitern Ihre Handlungskompetenz und können Herausforderungen im Bereich Mit Den Fragen Beginnt Das Verstehen souverän meistern.",
-            zielgruppe: "Fach- und Führungskräfte sowie alle, die sich in diesem Thema weiterentwickeln möchten."
+            inhalte: "Fragearten. Offene und geschlossene Fragen. Sokratische Fragetechnik. Fragen in Coaching und Führung. Übungen.",
+            nutzen: "Sie führen bessere Gespräche und verstehen Ihr Gegenüber besser.",
+            zielgruppe: "Führungskräfte, Coaches und alle, die ihre Kommunikation verbessern möchten."
         }
     },
     "multiple-leadership-mehrdimensionale-fuehrung": {
         id: "multiple-leadership-mehrdimensionale-fuehrung",
-        title: "Multiple Leadership Mehrdimensionale Fuehrung",
+        title: "Multiple Leadership",
         category: "leadership",
         badge: "Seminar",
-        shortDescription: "Multiple Leadership Mehrdimensionale Fuehrung - praxisnah und fundiert vermittelt.",
-        details: ["Präsenz / Online", "Zertifikat", "Verpflegung"],
+        shortDescription: "Mehrdimensional führen – unterschiedliche Führungsrollen und -ebenen souverän bedienen.",
+        details: ["2 Tage", "Reflexion", "Fallarbeit"],
         heroImage: "assets/hero-meeting.jpg",
         content: {
-            intro: "In diesem Seminar zum Thema 'Multiple Leadership Mehrdimensionale Fuehrung' erlernen Sie fundierte Strategien und Techniken für die Praxis.",
+            intro: "Moderne Führungskräfte führen oft in mehreren Dimensionen gleichzeitig: hierarchisch, lateral, verschiedene Teams, Projekte.",
             ziele: [
-                "Kernkompetenzen im Bereich Multiple Leadership Mehrdimensionale Fuehrung aufbauen",
-                "Praktische Methoden und Werkzeuge kennenlernen",
-                "Eigene Verhaltensweisen reflektieren",
-                "Transfer in den beruflichen Alltag sicherstellen"
+                "Verschiedene Führungsrollen unterscheiden",
+                "Rollenwechsel souverän gestalten",
+                "Konflikte zwischen Rollen lösen",
+                "Die eigene Führungsidentität stärken"
             ],
-            inhalte: "Theoretische Grundlagen, Praxisübungen, Fallbeispiele und Transferaufgaben. Der Fokus liegt auf direkter Anwendbarkeit.",
-            nutzen: "Sie erweitern Ihre Handlungskompetenz und können Herausforderungen im Bereich Multiple Leadership Mehrdimensionale Fuehrung souverän meistern.",
-            zielgruppe: "Fach- und Führungskräfte sowie alle, die sich in diesem Thema weiterentwickeln möchten."
+            inhalte: "Führungsrollen und -dimensionen. Rollenkonflikte. Rollenwechsel. Authentizität in verschiedenen Rollen. Praxisfälle.",
+            nutzen: "Sie führen souveräner in komplexen Führungssituationen mit mehreren Rollen.",
+            zielgruppe: "Führungskräfte mit mehreren Führungsrollen oder -ebenen."
         }
     },
     "moderation": {
@@ -1068,23 +1068,23 @@ const seminarsData = {
     },
     "praesentieren-verstaendlich-erklaeren": {
         id: "praesentieren-verstaendlich-erklaeren",
-        title: "Praesentieren Verstaendlich Erklaeren",
+        title: "Präsentieren & verständlich erklären",
         category: "leadership",
         badge: "Seminar",
-        shortDescription: "Praesentieren Verstaendlich Erklaeren - praxisnah und fundiert vermittelt.",
-        details: ["Präsenz / Online", "Zertifikat", "Verpflegung"],
+        shortDescription: "Überzeugend präsentieren – komplexe Inhalte einfach und verständlich vermitteln.",
+        details: ["1-2 Tage", "Praxisübungen", "Feedback"],
         heroImage: "assets/hero-meeting.jpg",
         content: {
-            intro: "In diesem Seminar zum Thema 'Praesentieren Verstaendlich Erklaeren' erlernen Sie fundierte Strategien und Techniken für die Praxis.",
+            intro: "Gute Präsentationen überzeugen und erklären verständlich. Wie gelingt Ihnen beides?",
             ziele: [
-                "Kernkompetenzen im Bereich Praesentieren Verstaendlich Erklaeren aufbauen",
-                "Praktische Methoden und Werkzeuge kennenlernen",
-                "Eigene Verhaltensweisen reflektieren",
-                "Transfer in den beruflichen Alltag sicherstellen"
+                "Präsentationen überzeugend aufbauen",
+                "Komplexes einfach erklären",
+                "Visualisierungen gekonnt einsetzen",
+                "Sicher und überzeugend auftreten"
             ],
-            inhalte: "Theoretische Grundlagen, Praxisübungen, Fallbeispiele und Transferaufgaben. Der Fokus liegt auf direkter Anwendbarkeit.",
-            nutzen: "Sie erweitern Ihre Handlungskompetenz und können Herausforderungen im Bereich Praesentieren Verstaendlich Erklaeren souverän meistern.",
-            zielgruppe: "Fach- und Führungskräfte sowie alle, die sich in diesem Thema weiterentwickeln möchten."
+            inhalte: "Dramaturgie einer Präsentation. Storytelling. Visualisierung. Körpersprache und Stimme. Übungen mit Videofeedback.",
+            nutzen: "Sie präsentieren überzeugender und werden besser verstanden.",
+            zielgruppe: "Alle, die regelmäßig präsentieren."
         }
     },
     "projektmanagement-basistraining": {
@@ -1111,23 +1111,23 @@ const seminarsData = {
     },
     "remote-work-arbeiten-im-home-office-und-unterwegs": {
         id: "remote-work-arbeiten-im-home-office-und-unterwegs",
-        title: "Remote Work Arbeiten Im Home Office Und Unterwegs",
+        title: "Remote Work & Homeoffice",
         category: "leadership",
         badge: "Seminar",
-        shortDescription: "Remote Work Arbeiten Im Home Office Und Unterwegs - praxisnah und fundiert vermittelt.",
-        details: ["Präsenz / Online", "Zertifikat", "Verpflegung"],
+        shortDescription: "Produktiv von überall arbeiten – Remote Work, Homeoffice und mobiles Arbeiten effektiv gestalten.",
+        details: ["1 Tag", "Tools", "Best Practices"],
         heroImage: "assets/hero-meeting.jpg",
         content: {
-            intro: "In diesem Seminar zum Thema 'Remote Work Arbeiten Im Home Office Und Unterwegs' erlernen Sie fundierte Strategien und Techniken für die Praxis.",
+            intro: "Remote Work ist mehr als Homeoffice. Wie arbeiten Sie produktiv von überall? Wie bleiben Sie verbunden?",
             ziele: [
-                "Kernkompetenzen im Bereich Remote Work Arbeiten Im Home Office Und Unterwegs aufbauen",
-                "Praktische Methoden und Werkzeuge kennenlernen",
-                "Eigene Verhaltensweisen reflektieren",
-                "Transfer in den beruflichen Alltag sicherstellen"
+                "Produktivität im Homeoffice sichern",
+                "Remote-Kommunikation optimieren",
+                "Work-Life-Balance wahren",
+                "Selbstdisziplin stärken"
             ],
-            inhalte: "Theoretische Grundlagen, Praxisübungen, Fallbeispiele und Transferaufgaben. Der Fokus liegt auf direkter Anwendbarkeit.",
-            nutzen: "Sie erweitern Ihre Handlungskompetenz und können Herausforderungen im Bereich Remote Work Arbeiten Im Home Office Und Unterwegs souverän meistern.",
-            zielgruppe: "Fach- und Führungskräfte sowie alle, die sich in diesem Thema weiterentwickeln möchten."
+            inhalte: "Arbeitsplatzgestaltung. Zeitmanagement. Tools und Technik. Virtuelle Meetings. Grenzen setzen.",
+            nutzen: "Sie arbeiten produktiver und zufriedener im Remote-Modus.",
+            zielgruppe: "Alle, die remote oder hybrid arbeiten."
         }
     },
     "rhetorik": {
@@ -1153,65 +1153,65 @@ const seminarsData = {
     },
     "scheitern-als-kunst-wendepunkte-gestalten": {
         id: "scheitern-als-kunst-wendepunkte-gestalten",
-        title: "Scheitern Als Kunst Wendepunkte Gestalten",
+        title: "Scheitern als Kunst",
         category: "change",
-        badge: "Seminar",
-        shortDescription: "Scheitern Als Kunst Wendepunkte Gestalten - praxisnah und fundiert vermittelt.",
-        details: ["Präsenz / Online", "Zertifikat", "Verpflegung"],
+        badge: "Workshop",
+        shortDescription: "Wendepunkte als Chance – aus Rückschlägen lernen und gestärkt daraus hervorgehen.",
+        details: ["1-2 Tage", "Reflexion", "Neuausrichtung"],
         heroImage: "assets/hero-meeting.jpg",
         content: {
-            intro: "In diesem Seminar zum Thema 'Scheitern Als Kunst Wendepunkte Gestalten' erlernen Sie fundierte Strategien und Techniken für die Praxis.",
+            intro: "Scheitern gehört zum Leben. Wie gehen Sie damit um? Wie machen Sie aus Rückschlägen Lernchancen?",
             ziele: [
-                "Kernkompetenzen im Bereich Scheitern Als Kunst Wendepunkte Gestalten aufbauen",
-                "Praktische Methoden und Werkzeuge kennenlernen",
-                "Eigene Verhaltensweisen reflektieren",
-                "Transfer in den beruflichen Alltag sicherstellen"
+                "Umgang mit Scheitern reflektieren",
+                "Lernchancen erkennen",
+                "Resilienz stärken",
+                "Wendepunkte aktiv gestalten"
             ],
-            inhalte: "Theoretische Grundlagen, Praxisübungen, Fallbeispiele und Transferaufgaben. Der Fokus liegt auf direkter Anwendbarkeit.",
-            nutzen: "Sie erweitern Ihre Handlungskompetenz und können Herausforderungen im Bereich Scheitern Als Kunst Wendepunkte Gestalten souverän meistern.",
-            zielgruppe: "Fach- und Führungskräfte sowie alle, die sich in diesem Thema weiterentwickeln möchten."
+            inhalte: "Fehlerkultur. Emotionen bei Rückschlägen. Lernschleifen. Neustart. Resilienzfaktoren.",
+            nutzen: "Sie gehen konstruktiver mit Rückschlägen um und wachsen daran.",
+            zielgruppe: "Alle, die Wendepunkte besser bewältigen möchten."
         }
     },
     "schriftliche-kommunikation-der-moderne-stil": {
         id: "schriftliche-kommunikation-der-moderne-stil",
-        title: "Schriftliche Kommunikation Der Moderne Stil",
+        title: "Schriftliche Kommunikation",
         category: "communication",
         badge: "Seminar",
-        shortDescription: "Schriftliche Kommunikation Der Moderne Stil - praxisnah und fundiert vermittelt.",
-        details: ["Präsenz / Online", "Zertifikat", "Verpflegung"],
+        shortDescription: "Modern und klar schreiben – E-Mails, Berichte und Texte professionell formulieren.",
+        details: ["1 Tag", "Praxisübungen", "Feedback"],
         heroImage: "assets/hero-meeting.jpg",
         content: {
-            intro: "In diesem Seminar zum Thema 'Schriftliche Kommunikation Der Moderne Stil' erlernen Sie fundierte Strategien und Techniken für die Praxis.",
+            intro: "Schriftliche Kommunikation prägt Ihr Image. Wie schreiben Sie klar, modern und wirkungsvoll?",
             ziele: [
-                "Kernkompetenzen im Bereich Schriftliche Kommunikation Der Moderne Stil aufbauen",
-                "Praktische Methoden und Werkzeuge kennenlernen",
-                "Eigene Verhaltensweisen reflektieren",
-                "Transfer in den beruflichen Alltag sicherstellen"
+                "Klar und prägnant schreiben",
+                "Leserorientiert formulieren",
+                "Moderne Stilmittel nutzen",
+                "Typische Fehler vermeiden"
             ],
-            inhalte: "Theoretische Grundlagen, Praxisübungen, Fallbeispiele und Transferaufgaben. Der Fokus liegt auf direkter Anwendbarkeit.",
-            nutzen: "Sie erweitern Ihre Handlungskompetenz und können Herausforderungen im Bereich Schriftliche Kommunikation Der Moderne Stil souverän meistern.",
-            zielgruppe: "Fach- und Führungskräfte sowie alle, die sich in diesem Thema weiterentwickeln möchten."
+            inhalte: "Moderne Geschäftssprache. E-Mail-Etikette. Textstruktur. Verständlichkeit. Prägnanz.",
+            nutzen: "Ihre Texte werden klarer, moderner und wirkungsvoller.",
+            zielgruppe: "Alle, die beruflich schreiben."
         }
     },
     "selbsterkenntnis-und-selbstfuehrung": {
         id: "selbsterkenntnis-und-selbstfuehrung",
-        title: "Selbsterkenntnis Und Selbstfuehrung",
+        title: "Selbsterkenntnis & Selbstführung",
         category: "leadership",
         badge: "Seminar",
-        shortDescription: "Selbsterkenntnis Und Selbstfuehrung - praxisnah und fundiert vermittelt.",
-        details: ["Präsenz / Online", "Zertifikat", "Verpflegung"],
+        shortDescription: "Sich selbst verstehen und führen – die Basis für wirksame Führung anderer.",
+        details: ["2 Tage", "Reflexion", "Coaching"],
         heroImage: "assets/hero-meeting.jpg",
         content: {
-            intro: "In diesem Seminar zum Thema 'Selbsterkenntnis Und Selbstfuehrung' erlernen Sie fundierte Strategien und Techniken für die Praxis.",
+            intro: "Wer andere führen will, muss sich selbst kennen. Welche Muster prägen Sie? Was treibt Sie an?",
             ziele: [
-                "Kernkompetenzen im Bereich Selbsterkenntnis Und Selbstfuehrung aufbauen",
-                "Praktische Methoden und Werkzeuge kennenlernen",
-                "Eigene Verhaltensweisen reflektieren",
-                "Transfer in den beruflichen Alltag sicherstellen"
+                "Persönlichkeitsmuster erkennen",
+                "Selbstführungskompetenzen entwickeln",
+                "Blinde Flecken aufdecken",
+                "Persönliche Entwicklungsziele formulieren"
             ],
-            inhalte: "Theoretische Grundlagen, Praxisübungen, Fallbeispiele und Transferaufgaben. Der Fokus liegt auf direkter Anwendbarkeit.",
-            nutzen: "Sie erweitern Ihre Handlungskompetenz und können Herausforderungen im Bereich Selbsterkenntnis Und Selbstfuehrung souverän meistern.",
-            zielgruppe: "Fach- und Führungskräfte sowie alle, die sich in diesem Thema weiterentwickeln möchten."
+            inhalte: "Persönlichkeitsmodelle. Innere Antreiber. Werte und Glaubenssätze. Selbstreflexion. Entwicklungsplanung.",
+            nutzen: "Sie führen sich selbst bewusster und wirksamer.",
+            zielgruppe: "Führungskräfte und alle, die ihre Selbstführung stärken möchten."
         }
     },
     "selbstmanagement": {
@@ -1219,83 +1219,83 @@ const seminarsData = {
         title: "Selbstmanagement",
         category: "health",
         badge: "Seminar",
-        shortDescription: "Selbstmanagement - praxisnah und fundiert vermittelt.",
-        details: ["Präsenz / Online", "Zertifikat", "Verpflegung"],
+        shortDescription: "Sich selbst organisieren und steuern – Zeit, Energie und Prioritäten bewusst managen.",
+        details: ["1-2 Tage", "Methoden", "Übungen"],
         heroImage: "assets/hero-meeting.jpg",
         content: {
-            intro: "In diesem Seminar zum Thema 'Selbstmanagement' erlernen Sie fundierte Strategien und Techniken für die Praxis.",
+            intro: "Gutes Selbstmanagement ist die Basis für Erfolg und Zufriedenheit. Wie organisieren Sie sich optimal?",
             ziele: [
-                "Kernkompetenzen im Bereich Selbstmanagement aufbauen",
-                "Praktische Methoden und Werkzeuge kennenlernen",
-                "Eigene Verhaltensweisen reflektieren",
-                "Transfer in den beruflichen Alltag sicherstellen"
+                "Zeit effektiver nutzen",
+                "Prioritäten setzen",
+                "Energie managen",
+                "Persönliches System entwickeln"
             ],
-            inhalte: "Theoretische Grundlagen, Praxisübungen, Fallbeispiele und Transferaufgaben. Der Fokus liegt auf direkter Anwendbarkeit.",
-            nutzen: "Sie erweitern Ihre Handlungskompetenz und können Herausforderungen im Bereich Selbstmanagement souverän meistern.",
-            zielgruppe: "Fach- und Führungskräfte sowie alle, die sich in diesem Thema weiterentwickeln möchten."
+            inhalte: "Zeitmanagement-Methoden. Prioritätensetzung. Energiemanagement. Gewohnheiten. Planung und Struktur.",
+            nutzen: "Sie managen sich selbst effektiver und erreichen Ihre Ziele.",
+            zielgruppe: "Alle, die ihre Selbstorganisation verbessern möchten."
         }
     },
     "selbstmitgefuehl": {
         id: "selbstmitgefuehl",
-        title: "Selbstmitgefuehl",
+        title: "Selbstmitgefühl",
         category: "health",
         badge: "Seminar",
-        shortDescription: "Selbstmitgefuehl - praxisnah und fundiert vermittelt.",
-        details: ["Präsenz / Online", "Zertifikat", "Verpflegung"],
+        shortDescription: "Freundlich zu sich selbst sein – Selbstmitgefühl als Ressource für Leistungsfähigkeit und Wohlbefinden.",
+        details: ["1-2 Tage", "Reflexion", "Übungen"],
         heroImage: "assets/hero-meeting.jpg",
         content: {
-            intro: "In diesem Seminar zum Thema 'Selbstmitgefuehl' erlernen Sie fundierte Strategien und Techniken für die Praxis.",
+            intro: "Selbstmitgefühl ist kein weicher Trend, sondern eine evidenzbasierte Kompetenz für Resilienz und Leistung.",
             ziele: [
-                "Kernkompetenzen im Bereich Selbstmitgefuehl aufbauen",
-                "Praktische Methoden und Werkzeuge kennenlernen",
-                "Eigene Verhaltensweisen reflektieren",
-                "Transfer in den beruflichen Alltag sicherstellen"
+                "Selbstmitgefühl verstehen und entwickeln",
+                "Inneren Kritiker zähmen",
+                "Selbstfürsorge praktizieren",
+                "Resilienz stärken"
             ],
-            inhalte: "Theoretische Grundlagen, Praxisübungen, Fallbeispiele und Transferaufgaben. Der Fokus liegt auf direkter Anwendbarkeit.",
-            nutzen: "Sie erweitern Ihre Handlungskompetenz und können Herausforderungen im Bereich Selbstmitgefuehl souverän meistern.",
-            zielgruppe: "Fach- und Führungskräfte sowie alle, die sich in diesem Thema weiterentwickeln möchten."
+            inhalte: "Was ist Selbstmitgefühl? Drei Komponenten. Praktische Übungen. Umgang mit dem inneren Kritiker. Abgrenzung zu Selbstmitleid.",
+            nutzen: "Sie sind resilenter und begegnen sich selbst mit mehr Wohlwollen.",
+            zielgruppe: "Alle, die ihre Selbstfürsorge stärken möchten."
         }
     },
     "soft-skills-fuer-controller-und-zahlenprofis": {
         id: "soft-skills-fuer-controller-und-zahlenprofis",
-        title: "Soft Skills Fuer Controller Und Zahlenprofis",
+        title: "Soft Skills für Zahlenprofis",
         category: "leadership",
         badge: "Seminar",
-        shortDescription: "Soft Skills Fuer Controller Und Zahlenprofis - praxisnah und fundiert vermittelt.",
-        details: ["Präsenz / Online", "Zertifikat", "Verpflegung"],
+        shortDescription: "Zahlen vermitteln – als Controller oder Finanzexperte überzeugend kommunizieren und verhandeln.",
+        details: ["1-2 Tage", "Praxisübungen", "Fallarbeit"],
         heroImage: "assets/hero-meeting.jpg",
         content: {
-            intro: "In diesem Seminar zum Thema 'Soft Skills Fuer Controller Und Zahlenprofis' erlernen Sie fundierte Strategien und Techniken für die Praxis.",
+            intro: "Controller und Finanzexperten brauchen mehr als Zahlen. Wie kommunizieren und verhandeln Sie mit Fachfremden?",
             ziele: [
-                "Kernkompetenzen im Bereich Soft Skills Fuer Controller Und Zahlenprofis aufbauen",
-                "Praktische Methoden und Werkzeuge kennenlernen",
-                "Eigene Verhaltensweisen reflektieren",
-                "Transfer in den beruflichen Alltag sicherstellen"
+                "Zahlen verständlich kommunizieren",
+                "Überzeugend argumentieren",
+                "Erfolgreiche Verhandlungen führen",
+                "Beziehungen zu Fachbereichen stärken"
             ],
-            inhalte: "Theoretische Grundlagen, Praxisübungen, Fallbeispiele und Transferaufgaben. Der Fokus liegt auf direkter Anwendbarkeit.",
-            nutzen: "Sie erweitern Ihre Handlungskompetenz und können Herausforderungen im Bereich Soft Skills Fuer Controller Und Zahlenprofis souverän meistern.",
-            zielgruppe: "Fach- und Führungskräfte sowie alle, die sich in diesem Thema weiterentwickeln möchten."
+            inhalte: "Kommunikation für Zahlenexperten. Storytelling mit Zahlen. Präsentationstechnik. Verhandlungsführung. Konfliktlösung.",
+            nutzen: "Sie vermitteln Ihre Botschaften überzeugender und werden besser gehört.",
+            zielgruppe: "Controller, Finanzexperten und alle Zahlenprofis."
         }
     },
     "stimme-und-koerpersprache": {
         id: "stimme-und-koerpersprache",
-        title: "Stimme Und Koerpersprache",
+        title: "Stimme & Körpersprache",
         category: "health",
-        badge: "Seminar",
-        shortDescription: "Stimme Und Koerpersprache - praxisnah und fundiert vermittelt.",
-        details: ["Präsenz / Online", "Zertifikat", "Verpflegung"],
+        badge: "Workshop",
+        shortDescription: "Präsenz durch Stimme und Körper – sich wirkungsvoll durch nonverbale Kommunikation positionieren.",
+        details: ["1 Tag", "Praxis", "Videofeedback"],
         heroImage: "assets/hero-meeting.jpg",
         content: {
-            intro: "In diesem Seminar zum Thema 'Stimme Und Koerpersprache' erlernen Sie fundierte Strategien und Techniken für die Praxis.",
+            intro: "Stimme und Körpersprache machen den Großteil unserer Wirkung aus. Wie nutzen Sie sie bewusst?",
             ziele: [
-                "Kernkompetenzen im Bereich Stimme Und Koerpersprache aufbauen",
-                "Praktische Methoden und Werkzeuge kennenlernen",
-                "Eigene Verhaltensweisen reflektieren",
-                "Transfer in den beruflichen Alltag sicherstellen"
+                "Stimmwirkung optimieren",
+                "Körpersprache bewusst einsetzen",
+                "Präsenz steigern",
+                "Authentisch wirken"
             ],
-            inhalte: "Theoretische Grundlagen, Praxisübungen, Fallbeispiele und Transferaufgaben. Der Fokus liegt auf direkter Anwendbarkeit.",
-            nutzen: "Sie erweitern Ihre Handlungskompetenz und können Herausforderungen im Bereich Stimme Und Koerpersprache souverän meistern.",
-            zielgruppe: "Fach- und Führungskräfte sowie alle, die sich in diesem Thema weiterentwickeln möchten."
+            inhalte: "Stimmtraining. Körperhaltung. Gestik und Mimik. Raumpräsenz. Übungen mit Videofeedback.",
+            nutzen: "Sie wirken überzeugender und präsenter.",
+            zielgruppe: "Alle, die ihre Wirkung verbessern möchten."
         }
     },
     "trainerausbildung": {
@@ -1324,20 +1324,20 @@ const seminarsData = {
         title: "Verkaufen Reloaded",
         category: "management",
         badge: "Seminar",
-        shortDescription: "Verkaufen Reloaded - praxisnah und fundiert vermittelt.",
-        details: ["Präsenz / Online", "Zertifikat", "Verpflegung"],
+        shortDescription: "Modern verkaufen – Verkaufstechniken für die digitale Welt und anspruchsvolle Kunden.",
+        details: ["1-2 Tage", "Praxis", "Rollenspiele"],
         heroImage: "assets/hero-meeting.jpg",
         content: {
-            intro: "In diesem Seminar zum Thema 'Verkaufen Reloaded' erlernen Sie fundierte Strategien und Techniken für die Praxis.",
+            intro: "Der Verkauf hat sich gewandelt. Kunden sind informierter, Kanäle sind vielfältiger. Wie verkaufen Sie erfolgreich in dieser neuen Welt?",
             ziele: [
-                "Kernkompetenzen im Bereich Verkaufen Reloaded aufbauen",
-                "Praktische Methoden und Werkzeuge kennenlernen",
-                "Eigene Verhaltensweisen reflektieren",
-                "Transfer in den beruflichen Alltag sicherstellen"
+                "Moderne Verkaufstechniken beherrschen",
+                "Kundenzentriert beraten",
+                "Digital und analog verkaufen",
+                "Abschlussstärke entwickeln"
             ],
-            inhalte: "Theoretische Grundlagen, Praxisübungen, Fallbeispiele und Transferaufgaben. Der Fokus liegt auf direkter Anwendbarkeit.",
-            nutzen: "Sie erweitern Ihre Handlungskompetenz und können Herausforderungen im Bereich Verkaufen Reloaded souverän meistern.",
-            zielgruppe: "Fach- und Führungskräfte sowie alle, die sich in diesem Thema weiterentwickeln möchten."
+            inhalte: "Bedarfsanalyse. Nutzenargumentation. Einwandbehandlung. Abschlusstechniken. Social Selling. Remote-Verkauf.",
+            nutzen: "Sie verkaufen erfolgreicher und kundenorientierter.",
+            zielgruppe: "Verkaufsmitarbeiter und alle mit Kundenkontakt."
         }
     },
     "vom-mitarbeiter-zur-fuehrungskraft": {
@@ -1408,23 +1408,23 @@ const seminarsData = {
     },
     "zusammenarbeit-von-generationen": {
         id: "zusammenarbeit-von-generationen",
-        title: "Zusammenarbeit Von Generationen",
+        title: "Zusammenarbeit der Generationen",
         category: "leadership",
         badge: "Seminar",
-        shortDescription: "Zusammenarbeit Von Generationen - praxisnah und fundiert vermittelt.",
-        details: ["Präsenz / Online", "Zertifikat", "Verpflegung"],
+        shortDescription: "Generationen verbinden – als Führungskraft das Beste aus verschiedenen Altersgruppen herausholen.",
+        details: ["1-2 Tage", "Reflexion", "Praxisübungen"],
         heroImage: "assets/hero-meeting.jpg",
         content: {
-            intro: "In diesem Seminar zum Thema 'Zusammenarbeit Von Generationen' erlernen Sie fundierte Strategien und Techniken für die Praxis.",
+            intro: "Baby Boomer, Gen X, Millennials und Gen Z arbeiten zusammen. Wie nutzen Sie die Stärken jeder Generation?",
             ziele: [
-                "Kernkompetenzen im Bereich Zusammenarbeit Von Generationen aufbauen",
-                "Praktische Methoden und Werkzeuge kennenlernen",
-                "Eigene Verhaltensweisen reflektieren",
-                "Transfer in den beruflichen Alltag sicherstellen"
+                "Generationenunterschiede verstehen",
+                "Vorurteile abbauen",
+                "Zusammenarbeit fördern",
+                "Generationenübergreifend führen"
             ],
-            inhalte: "Theoretische Grundlagen, Praxisübungen, Fallbeispiele und Transferaufgaben. Der Fokus liegt auf direkter Anwendbarkeit.",
-            nutzen: "Sie erweitern Ihre Handlungskompetenz und können Herausforderungen im Bereich Zusammenarbeit Von Generationen souverän meistern.",
-            zielgruppe: "Fach- und Führungskräfte sowie alle, die sich in diesem Thema weiterentwickeln möchten."
+            inhalte: "Generationenmodelle. Werte und Erwartungen. Kommunikation zwischen Generationen. Wissenstransfer. Best Practices.",
+            nutzen: "Sie führen generationenübergreifende Teams erfolgreicher.",
+            zielgruppe: "Führungskräfte und Teams mit Generationenvielfalt."
         }
     },
 };
