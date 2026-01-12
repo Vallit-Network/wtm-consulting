@@ -1211,6 +1211,11 @@ footer {
     color: var(--color-primary);
 }
 
+.copyright p {
+    color: inherit;
+    margin: 0;
+}
+
 /* ============================================
    HERO TAGLINE
    ============================================ */
