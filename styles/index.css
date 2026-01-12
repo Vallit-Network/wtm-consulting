@@ -45,6 +45,18 @@
     --color-slate: #4A5568;
     /* Alternative text */
 
+    /* Category Colors - Training Topics */
+    --color-cat-leadership: #3D7A77;
+    /* Führung - Türkis */
+    --color-cat-change: #C08585;
+    /* Change - Rot */
+    --color-cat-health: #2D5F5C;
+    /* Gesundheit - Grün */
+    --color-cat-communication: #CABBA0;
+    /* Kommunikation - Gelb */
+    --color-cat-management: #5D8AA8;
+    /* Management - Blau */
+
     /* Typography */
     --font-heading: 'Libre Baskerville', 'Georgia', serif;
     --font-body: 'Source Sans Pro', 'Helvetica Neue', sans-serif;
@@ -1329,15 +1341,15 @@ footer {
 }
 
 /* ============================================
-   TRAINING TABS (Categories)
+   TRAINING TABS (Categories) - Enhanced with Category Colors
    ============================================ */
 .training-tabs {
     display: flex;
     justify-content: center;
-    gap: 0.25rem;
+    gap: 0.5rem;
     margin-bottom: 2.5rem;
     background: var(--color-cream);
-    padding: 0.35rem;
+    padding: 0.5rem;
     border-radius: 50px;
     width: fit-content;
     margin-left: auto;
@@ -1354,17 +1366,64 @@ footer {
     font-family: var(--font-body);
     color: var(--color-text-light);
     cursor: pointer;
-    transition: all var(--transition-fast);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Subtle underline indicator */
+.training-tab::after {
+    content: '';
+    position: absolute;
+    bottom: 6px;
+    left: 50%;
+    transform: translateX(-50%) scaleX(0);
+    width: 60%;
+    height: 3px;
+    border-radius: 2px;
+    background: var(--tab-color, var(--color-accent));
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .training-tab:hover {
-    color: var(--color-accent);
+    color: var(--color-text);
+}
+
+.training-tab:hover::after {
+    transform: translateX(-50%) scaleX(0.5);
+    opacity: 0.5;
 }
 
 .training-tab.active {
     background: var(--color-white);
-    color: var(--color-accent);
-    box-shadow: var(--shadow-sm);
+    color: var(--tab-color, var(--color-accent));
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+}
+
+.training-tab.active::after {
+    transform: translateX(-50%) scaleX(1);
+    opacity: 1;
+}
+
+/* Category-specific colors for tabs */
+.training-tab[data-category="leadership"] {
+    --tab-color: var(--color-cat-leadership);
+}
+
+.training-tab[data-category="change"] {
+    --tab-color: var(--color-cat-change);
+}
+
+.training-tab[data-category="health"] {
+    --tab-color: var(--color-cat-health);
+}
+
+.training-tab[data-category="communication"] {
+    --tab-color: var(--color-cat-communication);
+}
+
+.training-tab[data-category="management"] {
+    --tab-color: var(--color-cat-management);
 }
 
 .training-category {
@@ -1409,6 +1468,7 @@ footer {
     max-width: 340px;
     background: var(--color-white);
     padding: 2.5rem;
+    padding-left: 2.75rem;
     border-radius: var(--radius-md);
     box-shadow: var(--shadow-sm);
     transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
@@ -1419,7 +1479,41 @@ footer {
     cursor: pointer;
     scroll-snap-align: start;
     flex-shrink: 0;
-    /* Prevent shrinking */
+    overflow: hidden;
+}
+
+/* Category Color Accent Bar */
+.training-card::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: var(--card-category-color, var(--color-primary));
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    opacity: 0.7;
+}
+
+/* Category-specific colors for cards */
+.training-card[data-category="leadership"] {
+    --card-category-color: var(--color-cat-leadership);
+}
+
+.training-card[data-category="change"] {
+    --card-category-color: var(--color-cat-change);
+}
+
+.training-card[data-category="health"] {
+    --card-category-color: var(--color-cat-health);
+}
+
+.training-card[data-category="communication"] {
+    --card-category-color: var(--color-cat-communication);
+}
+
+.training-card[data-category="management"] {
+    --card-category-color: var(--color-cat-management);
 }
 
 @media (max-width: 500px) {
@@ -1429,16 +1523,26 @@ footer {
         max-width: 85vw;
         /* Full width on mobile */
         padding: 1.5rem;
+        padding-left: 1.75rem;
     }
 }
 
 /* Hover Effects */
 .training-card:hover {
     transform: translateY(-8px) scale(1.01);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-    border-color: var(--color-primary);
+    box-shadow:
+        0 20px 40px rgba(0, 0, 0, 0.08),
+        -4px 0 20px color-mix(in srgb, var(--card-category-color, var(--color-primary)) 15%, transparent);
+    border-color: color-mix(in srgb, var(--card-category-color, var(--color-primary)) 40%, var(--color-border));
     z-index: 2;
 }
+
+.training-card:hover::before {
+    width: 5px;
+    opacity: 1;
+    box-shadow: 0 0 12px color-mix(in srgb, var(--card-category-color, var(--color-primary)) 40%, transparent);
+}
+
 
 /* Navigation Buttons */
 .carousel-btn {
@@ -1493,11 +1597,6 @@ footer {
     }
 }
 
-.training-card:hover {
-    background: var(--color-white);
-    border-color: var(--color-primary);
-    box-shadow: var(--shadow-md);
-}
 
 /* Card Header */
 .training-card .card-header {
@@ -1522,28 +1621,30 @@ footer {
 .training-card .card-icon {
     width: 40px;
     height: 40px;
-    background: var(--color-cream);
+    background: color-mix(in srgb, var(--card-category-color, var(--color-primary)) 12%, var(--color-cream));
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: all var(--transition-normal);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .training-card .card-icon svg {
     width: 20px;
     height: 20px;
-    color: var(--color-accent);
+    color: var(--card-category-color, var(--color-accent));
+    transition: all 0.3s ease;
 }
 
 .training-card:hover .card-icon {
-    background: var(--color-primary);
+    background: var(--card-category-color, var(--color-primary));
     transform: scale(1.1);
 }
 
 .training-card:hover .card-icon svg {
-    color: var(--color-deep-blue);
+    color: var(--color-white);
 }
+
 
 /* Card Content */
 .training-card .card-content {
@@ -1560,7 +1661,7 @@ footer {
 }
 
 .training-card:hover h3 {
-    color: var(--color-accent);
+    color: var(--card-category-color, var(--color-accent));
 }
 
 .training-card .card-description {

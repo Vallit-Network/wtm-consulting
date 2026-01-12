@@ -197,7 +197,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const categoryIcon = categoryIcons[seminar.category] || categoryIcons.leadership;
 
         return `
-            <article class="training-card reveal" onclick="window.location.href='seminar.html?id=${seminar.id}'">
+            <article class="training-card reveal" data-category="${seminar.category}" onclick="window.location.href='seminar.html?id=${seminar.id}'">
                 <div class="card-header">
                     <span class="training-badge">${seminar.badge}</span>
                     <div class="card-icon">${categoryIcon}</div>
