@@ -433,13 +433,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const modalClose = document.querySelector('.modal-close');
     const modalBackdrop = document.querySelector('.modal-backdrop');
 
-    // Category configuration
+    // Category configuration - Colors match mindmap section
     const categoryConfig = {
-        leadership: { label: 'Führung', icon: '🎯', color: '#3D7A77' },
-        change: { label: 'Change', icon: '🔄', color: '#5A9BD4' },
-        health: { label: 'Gesundheit', icon: '❤️', color: '#E57373' },
-        communication: { label: 'Kommunikation', icon: '💬', color: '#FFB74D' },
-        management: { label: 'Management', icon: '📊', color: '#9575CD' }
+        leadership: { label: 'Führung', icon: '🎯', color: '#3D7A77' },      // Türkis (hub-circle/primary)
+        change: { label: 'Change', icon: '🔄', color: '#C08585' },           // Rot (item-red)
+        health: { label: 'Gesundheit', icon: '❤️', color: '#2D5F5C' },       // Grün (primary-dark)
+        communication: { label: 'Kommunikation', icon: '💬', color: '#Cabba0' }, // Gelb (item-yellow)
+        management: { label: 'Management', icon: '📊', color: '#5D8AA8' }    // Blau (item-blue)
     };
 
     // Team Member Data - Enhanced with Categories & Quick Info
