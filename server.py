@@ -2,6 +2,7 @@ from flask import Flask, request, jsonify, send_from_directory
 from flask_mail import Mail, Message
 from dotenv import load_dotenv
 import os
+import { Analytics } from "@vercel/analytics/next"
 
 # Load environment variables
 load_dotenv()
