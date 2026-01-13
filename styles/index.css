@@ -2451,11 +2451,11 @@ footer::before {
 }
 
 /* ============================================
-   HERO SLIDER
+   HERO MORPHING GALLERY (PREMIUM PARALLAX)
    ============================================ */
-.hero-slider-container {
-    /* Inherits size and style from hero-image-container */
-    /* Ensure overflow is hidden for the slider */
+.hero-morph-container {
+    position: relative;
+    overflow: hidden;
     height: 100%;
     width: 100%;
 }
@@ -2468,34 +2468,44 @@ footer::before {
     height: 100%;
     object-fit: cover;
     opacity: 0;
-    transition: transform 2.5s ease-out, opacity 2.5s ease-out;
-    transform: scale(1);
+
+    /* 
+       Base state: slightly larger to allow for movement without edges showing immediately,
+       and smooth luxurious transition.
+    */
+    transform: scale(1.1);
+    transition: transform 2.8s cubic-bezier(0.65, 0, 0.35, 1), opacity 2.8s cubic-bezier(0.65, 0, 0.35, 1);
     z-index: 1;
 }
 
+/* Active Image: Fully visible, standard scale */
 .morph-image.active {
     opacity: 1;
     z-index: 2;
-    transform: scale(1) translateX(0) rotate(0);
+    transform: scale(1.1) translateX(0) rotate(0);
 }
 
+/* Next Image Preparation: Sits underneath, slightly smaller, ready to scale up */
+.morph-image.next {
+    opacity: 1;
+    z-index: 1;
+    transform: scale(1.05);
+    /* Starts slightly smaller than active */
+}
+
+/* Exit Animations - "Fly Away" */
 .morph-image.swipe-out-left {
     opacity: 0;
-    transform: translateX(-100%) scale(0.9) rotate(-3deg);
+    /* Move far left, rotate, and scale up slightly to simulate getting closer/flying off */
+    transform: translateX(-120%) rotate(-5deg) scale(1.2);
     z-index: 2;
 }
 
 .morph-image.swipe-out-right {
     opacity: 0;
-    transform: translateX(100%) scale(0.9) rotate(3deg);
+    /* Move far right, rotate, and scale up slightly */
+    transform: translateX(120%) rotate(5deg) scale(1.2);
     z-index: 2;
-}
-
-.morph-image.next {
-    opacity: 1;
-    z-index: 1;
-    /* Show underneath */
-    transform: scale(1);
 }
 
 /* Ensure container fits well on mobile */
