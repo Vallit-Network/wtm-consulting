@@ -441,10 +441,15 @@ document.addEventListener('DOMContentLoaded', () => {
         if (morphImages.length === 0) return;
 
         let currentIndex = 0;
-        let direction = 0; // 0 for left, 1 for right
+        const intervalTime = 7000; // Slow, cinematic pace
 
-        // Slightly longer interval for a more relaxed pace
-        const intervalTime = 6000;
+        // Initialize: Set all non-active images to 'focus-in' state (waiting in background)
+        morphImages.forEach((img, index) => {
+            if (index !== 0) {
+                img.classList.add('focus-in');
+                img.classList.remove('active');
+            }
+        });
 
         setInterval(() => {
             const nextIndex = (currentIndex + 1) % morphImages.length;
@@ -452,48 +457,29 @@ document.addEventListener('DOMContentLoaded', () => {
             const currentImg = morphImages[currentIndex];
             const nextImg = morphImages[nextIndex];
 
-            // 1. Prepare Next Image: 
-            // It puts itself behind standard active image, slightly smaller (handled by CSS .next)
-            nextImg.classList.add('next');
-
-            // Force reflow to ensure the 'next' state is registered before we transition it to 'active' later?
-            // Actually, we want 'next' to ALREADY be there.
-            // But here we want the 'next' image to transition TO active state smoothly.
-            // So 'next' class gives it the starting state (scale 1.05).
-            // We want it to go to scale 1.1 (active).
-
-            // 2. Trigger Exit on Current
-            const swipeClass = direction === 0 ? 'swipe-out-left' : 'swipe-out-right';
-            currentImg.classList.add(swipeClass);
+            // 1. Trigger Exit: Fly camera THROUGH current image
+            currentImg.classList.add('focus-out');
             currentImg.classList.remove('active');
 
-            // 3. Trigger Entry on Next (Scale Up)
-            // We do this immediately so it feels like the top card sliding off *reveals* the growing card below
-            // However, we need a slight delay or just let CSS handle it. 
-            // If we add 'active' now, it might jump overlapping the swipe.
-            // Actually, since 'swipe-out' has z-index 2 and 'active' has z-index 2, they might fight.
-            // But swipe-out is moving away. 
-
-            // Let's delay the 'active' class on next just a tiny bit or let it happen.
-            // Better: 'next' has z-index 1. 'active' has z-index 2.
-            // If we make next 'active' immediately, it pops to z-index 2 underneath the moving one?
-            // Yes.
-
+            // 2. Trigger Entry: Resolve next image from blur
+            // We use a slight delay to ensure the exit starts first, creating depth overlap
             requestAnimationFrame(() => {
-                nextImg.classList.add('active'); // It will transition from 1.05 -> 1.1
-                nextImg.classList.remove('next');
+                nextImg.classList.remove('focus-in');
+                nextImg.classList.add('active');
             });
 
-            // Wait for transition to finish to cleanup
+            // 3. Cleanup after transition
             setTimeout(() => {
-                // Reset classes on the one that just left
-                currentImg.classList.remove('swipe-out-left', 'swipe-out-right');
-                // It is already not active.
+                // Reset the one that just finished exiting
+                currentImg.classList.remove('focus-out');
 
-                // Update index and toggle direction
+                // Put it in the "waiting" line (focus-in) instantly (no transition)
+                // The CSS for .focus-in has transition: none, so it snaps back invisibly
+                currentImg.classList.add('focus-in');
+
+                // Update index
                 currentIndex = nextIndex;
-                direction = (direction + 1) % 2;
-            }, 2800); // Matches CSS transition duration
+            }, 2000); // Wait for CSS transition (1.8s) to complete
 
         }, intervalTime);
     }

@@ -2454,15 +2454,15 @@ footer::before {
    HERO MORPHING GALLERY (PREMIUM PARALLAX)
    ============================================ */
 /* ============================================
-   HERO MORPHING GALLERY (CINEMATIC FOCUS PULL)
+   HERO MORPHING GALLERY (STRUCTURAL MASK REVEAL)
    ============================================ */
 .hero-morph-container {
     position: relative;
     overflow: hidden;
     height: 100%;
     width: 100%;
-    background: #1a2a3a;
-    /* Dark background to blend blur */
+    background: #000;
+    /* Clean backing */
 }
 
 .morph-image {
@@ -2473,80 +2473,64 @@ footer::before {
     height: 100%;
     object-fit: cover;
     opacity: 0;
+    /* Default hidden */
     transform-origin: center center;
-    will-change: transform, opacity, filter;
+    will-change: clip-path, transform, opacity;
     z-index: 1;
 }
 
 /* 
-   State: Idle Active 
-   The image is fully visible and slowly panning to feel alive.
+   State: Active (Fully Visible)
+   The image is fully revealed. 
+   We keep a very subtle scale animation to keep it alive.
 */
 .morph-image.active {
     opacity: 1;
     z-index: 2;
+    clip-path: inset(0 0 0 0);
+    /* Full reveal */
     transform: scale(1);
-    filter: blur(0);
-    animation: slow-pan 20s linear infinite alternate;
+    animation: subtle-pulse 10s ease-in-out infinite alternate;
 }
 
 /* 
-   State: Exiting (Flying PAST the camera)
-   The image moves towards the viewer (scale up) and blurs out.
+   State: Mask Out (Wiping Away)
+   The image wipes to the right (inset from LEFT moves to 100%).
+   At the same time, it scales UP slightly to create depth.
+   This reveals the image BEHIND it.
 */
-.morph-image.focus-out {
-    opacity: 0;
-    transform: scale(1.5);
-    filter: blur(12px);
+.morph-image.mask-out {
+    opacity: 1;
+    /* Stay visible while masking */
     z-index: 2;
-    /* Stay on top while fading */
-    transition: transform 1.8s cubic-bezier(0.7, 0, 0.3, 1),
-        opacity 1.8s cubic-bezier(0.7, 0, 0.3, 1),
-        filter 1.8s cubic-bezier(0.7, 0, 0.3, 1);
+    clip-path: inset(0 0 0 100%);
+    /* Wipe from left to right */
+    transform: scale(1.1);
+    /* Pulls toward viewer as it wipes */
+    transition: clip-path 1.6s cubic-bezier(0.77, 0, 0.175, 1),
+        transform 1.6s cubic-bezier(0.77, 0, 0.175, 1);
 }
 
 /* 
-   State: Waiting (In the distance)
-   The image is in the background, scaled down and blurred.
+   State: Next Setup (Waiting Behind)
+   This image sits behind the active one.
+   It starts slightly zoomed in (1.1) so that when it is revealed, 
+   we can animate it back to scale(1) for a "settling" effect.
 */
-.morph-image.focus-in {
-    opacity: 0;
-    transform: scale(0.9);
-    filter: blur(10px);
+.morph-image.next-setup {
+    opacity: 1;
     z-index: 1;
-    transition: none;
-    /* Instant reset when moving to this state silently */
+    clip-path: inset(0 0 0 0);
+    transform: scale(1.1);
 }
 
-/* 
-   State: Entering (Resolving focus)
-   We need a specific class to trigger the transition FROM focus-in TO active properties,
-   but actually, simply removing focus-in and adding active handles the transition 
-   IF we define the transition on the .active state or base state?
-   
-   Better approach: The transition to "active" needs to be defined.
-   We add a transition property to .morph-image.active so it resolves smoothly.
-*/
-.morph-image.active {
-    /* Overriding previous rule to add transition for the entry */
-    transition: transform 2s ease-out, opacity 2s ease-out, filter 2s ease-out;
-}
-
-@keyframes slow-pan {
+@keyframes subtle-pulse {
     0% {
-        transform: scale(1) translate(0, 0);
+        transform: scale(1);
     }
 
     100% {
-        transform: scale(1.1) translate(-2%, -1%);
-    }
-}
-
-/* Ensure container fits well on mobile */
-@media (max-width: 900px) {
-    .morph-image.focus-out {
-        transform: scale(1.2);
-        /* Less aggressive on mobile */
+        transform: scale(1.05);
     }
 }
 
