@@ -441,6 +441,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (morphImages.length === 0) return;
 
         let currentIndex = 0;
+        let direction = 0; // 0 for left, 1 for right
         const intervalTime = 5000; // Time between transitions
 
         setInterval(() => {
@@ -452,21 +453,25 @@ document.addEventListener('DOMContentLoaded', () => {
             // Setup next image underneath
             nextImg.classList.add('next');
 
-            // Trigger morph out on current
-            currentImg.classList.add('morph-out');
+            // Determine direction class
+            const swipeClass = direction === 0 ? 'swipe-out-left' : 'swipe-out-right';
+
+            // Trigger swipe out on current
+            currentImg.classList.add(swipeClass);
             currentImg.classList.remove('active');
 
             // Wait for transition to finish
             setTimeout(() => {
                 // Reset classes
-                currentImg.classList.remove('morph-out');
+                currentImg.classList.remove('swipe-out-left', 'swipe-out-right');
 
                 // Promote next to active
                 nextImg.classList.remove('next');
                 nextImg.classList.add('active');
 
-                // Update index
+                // Update index and toggle direction
                 currentIndex = nextIndex;
+                direction = (direction + 1) % 2;
             }, 2500); // Matches CSS transition duration
 
         }, intervalTime);
