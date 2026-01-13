@@ -442,7 +442,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
         let currentIndex = 0;
         let direction = 0; // 0 for left, 1 for right
-        const intervalTime = 5000; // Time between transitions
+
+        // Slightly longer interval for a more relaxed pace
+        const intervalTime = 6000;
 
         setInterval(() => {
             const nextIndex = (currentIndex + 1) % morphImages.length;
@@ -450,29 +452,48 @@ document.addEventListener('DOMContentLoaded', () => {
             const currentImg = morphImages[currentIndex];
             const nextImg = morphImages[nextIndex];
 
-            // Setup next image underneath
+            // 1. Prepare Next Image: 
+            // It puts itself behind standard active image, slightly smaller (handled by CSS .next)
             nextImg.classList.add('next');
 
-            // Determine direction class
-            const swipeClass = direction === 0 ? 'swipe-out-left' : 'swipe-out-right';
+            // Force reflow to ensure the 'next' state is registered before we transition it to 'active' later?
+            // Actually, we want 'next' to ALREADY be there.
+            // But here we want the 'next' image to transition TO active state smoothly.
+            // So 'next' class gives it the starting state (scale 1.05).
+            // We want it to go to scale 1.1 (active).
 
-            // Trigger swipe out on current
+            // 2. Trigger Exit on Current
+            const swipeClass = direction === 0 ? 'swipe-out-left' : 'swipe-out-right';
             currentImg.classList.add(swipeClass);
             currentImg.classList.remove('active');
 
-            // Wait for transition to finish
-            setTimeout(() => {
-                // Reset classes
-                currentImg.classList.remove('swipe-out-left', 'swipe-out-right');
+            // 3. Trigger Entry on Next (Scale Up)
+            // We do this immediately so it feels like the top card sliding off *reveals* the growing card below
+            // However, we need a slight delay or just let CSS handle it. 
+            // If we add 'active' now, it might jump overlapping the swipe.
+            // Actually, since 'swipe-out' has z-index 2 and 'active' has z-index 2, they might fight.
+            // But swipe-out is moving away. 
 
-                // Promote next to active
+            // Let's delay the 'active' class on next just a tiny bit or let it happen.
+            // Better: 'next' has z-index 1. 'active' has z-index 2.
+            // If we make next 'active' immediately, it pops to z-index 2 underneath the moving one?
+            // Yes.
+
+            requestAnimationFrame(() => {
+                nextImg.classList.add('active'); // It will transition from 1.05 -> 1.1
                 nextImg.classList.remove('next');
-                nextImg.classList.add('active');
+            });
+
+            // Wait for transition to finish to cleanup
+            setTimeout(() => {
+                // Reset classes on the one that just left
+                currentImg.classList.remove('swipe-out-left', 'swipe-out-right');
+                // It is already not active.
 
                 // Update index and toggle direction
                 currentIndex = nextIndex;
                 direction = (direction + 1) % 2;
-            }, 2500); // Matches CSS transition duration
+            }, 2800); // Matches CSS transition duration
 
         }, intervalTime);
     }
