@@ -434,27 +434,45 @@ document.addEventListener('DOMContentLoaded', () => {
     const modalBackdrop = document.querySelector('.modal-backdrop');
 
     // =========================================
-    // HERO SLIDER DUPLICATION
+    // HERO MORPHING GALLERY
     // =========================================
-    const slideTrack = document.getElementById('hero-slide-track');
-    if (slideTrack) {
-        // Clone all slides to create the infinite loop effect
-        const slides = Array.from(slideTrack.children);
+    function initMorphingGallery() {
+        const morphImages = document.querySelectorAll('.morph-image');
+        if (morphImages.length === 0) return;
 
-        // Clone enough times to fill width/ensure loop
-        slides.forEach(slide => {
-            const clone = slide.cloneNode(true);
-            clone.setAttribute('aria-hidden', 'true');
-            slideTrack.appendChild(clone);
-        });
+        let currentIndex = 0;
+        const intervalTime = 5000; // Time between transitions
 
-        // Double duplication for safety on large screens if needed
-        slides.forEach(slide => {
-            const clone = slide.cloneNode(true);
-            clone.setAttribute('aria-hidden', 'true');
-            slideTrack.appendChild(clone);
-        });
+        setInterval(() => {
+            const nextIndex = (currentIndex + 1) % morphImages.length;
+
+            const currentImg = morphImages[currentIndex];
+            const nextImg = morphImages[nextIndex];
+
+            // Setup next image underneath
+            nextImg.classList.add('next');
+
+            // Trigger morph out on current
+            currentImg.classList.add('morph-out');
+            currentImg.classList.remove('active');
+
+            // Wait for transition to finish
+            setTimeout(() => {
+                // Reset classes
+                currentImg.classList.remove('morph-out');
+
+                // Promote next to active
+                nextImg.classList.remove('next');
+                nextImg.classList.add('active');
+
+                // Update index
+                currentIndex = nextIndex;
+            }, 2500); // Matches CSS transition duration
+
+        }, intervalTime);
     }
+
+    initMorphingGallery();
 
     // Category configuration - Colors match mindmap section
     const categoryConfig = {

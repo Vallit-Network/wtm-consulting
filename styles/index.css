@@ -2456,72 +2456,47 @@ footer::before {
 .hero-slider-container {
     /* Inherits size and style from hero-image-container */
     /* Ensure overflow is hidden for the slider */
-    overflow: hidden !important;
-    padding: 0 !important;
-    /* Remove padding from container to let images fill */
-    display: flex !important;
-    align-items: stretch !important;
-    justify-content: flex-start !important;
-    position: relative;
+    height: 100%;
+    width: 100%;
 }
 
-/* Optional overlay to blend edges if needed, but hero container has borders */
-.hero-slider-container::after {
-    content: '';
+.morph-image {
     position: absolute;
-    inset: 0;
-    pointer-events: none;
-    box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.1);
-    z-index: 2;
-}
-
-.hero-slider-track {
-    display: flex;
-    height: 100%;
-    /* Width will be dynamic based on children */
-    animation: scrollHero 30s linear infinite;
-}
-
-.hero-slide {
-    height: 100%;
-    aspect-ratio: 4/3;
-    /* Maintain the aspect ratio */
-    flex-shrink: 0;
-    position: relative;
-}
-
-.hero-slide img {
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
-    display: block;
+    opacity: 0;
+    transition: transform 2.5s ease-out, opacity 2.5s ease-out;
+    transform: scale(1);
+    z-index: 1;
 }
 
-/* Pause on hover */
-.hero-slider-container:hover .hero-slider-track {
-    animation-play-state: paused;
+.morph-image.active {
+    opacity: 1;
+    z-index: 2;
+    transform: scale(1);
 }
 
-@keyframes scrollHero {
-    0% {
-        transform: translateX(0);
-    }
-
-    100% {
-        /* Move by 4 slides (100% * 4 if they were percentage based, but here they are aspect ratio based) 
-           We'll rely on JS cloning enough. 
-           Let's approximate: 4 slides width. 
-           Since aspect ratio is 4/3 and height is 100% of container...
-        */
-        transform: translateX(-33.33%);
-    }
+.morph-image.morph-out {
+    opacity: 0;
+    transform: scale(1.15);
+    /* Morph out (scale up) */
+    z-index: 2;
 }
 
-/* Mobile adjustments */
-@media (max-width: 768px) {
-    .hero-slider-container {
-        max-width: 100%;
-        /* Ensure it takes full width on mobile if needed */
+.morph-image.next {
+    opacity: 1;
+    z-index: 1;
+    /* Show underneath */
+    transform: scale(1);
+}
+
+/* Ensure container fits well on mobile */
+@media (max-width: 900px) {
+    .hero-morph-container {
+        border-radius: var(--radius-md);
     }
 }
 
