@@ -2451,18 +2451,13 @@ footer::before {
 }
 
 /* ============================================
-   HERO MORPHING GALLERY (PREMIUM PARALLAX)
-   ============================================ */
-/* ============================================
-   HERO MORPHING GALLERY (STRUCTURAL MASK REVEAL)
+   HERO GALLERY - KEN BURNS CROSSFADE
    ============================================ */
 .hero-morph-container {
     position: relative;
     overflow: hidden;
     height: 100%;
     width: 100%;
-    background: #000;
-    /* Clean backing */
 }
 
 .morph-image {
@@ -2473,60 +2468,73 @@ footer::before {
     height: 100%;
     object-fit: cover;
     opacity: 0;
-    /* Default hidden */
     transform-origin: center center;
-    will-change: clip-path, transform, opacity;
+    will-change: transform, opacity;
     z-index: 1;
+    /* Smooth crossfade */
+    transition: opacity 2s ease-in-out;
 }
 
-/* 
-   State: Active (Fully Visible)
-   The image is fully revealed. 
-   We keep a very subtle scale animation to keep it alive.
-*/
 .morph-image.active {
     opacity: 1;
     z-index: 2;
-    clip-path: inset(0 0 0 0);
-    /* Full reveal */
-    transform: scale(1);
-    animation: subtle-pulse 10s ease-in-out infinite alternate;
 }
 
-/* 
-   State: Mask Out (Wiping Away)
-   The image wipes to the right (inset from LEFT moves to 100%).
-   At the same time, it scales UP slightly to create depth.
-   This reveals the image BEHIND it.
-*/
-.morph-image.mask-out {
-    opacity: 1;
-    /* Stay visible while masking */
-    z-index: 2;
-    clip-path: inset(0 0 0 100%);
-    /* Wipe from left to right */
-    transform: scale(1.1);
-    /* Pulls toward viewer as it wipes */
-    transition: clip-path 1.6s cubic-bezier(0.77, 0, 0.175, 1),
-        transform 1.6s cubic-bezier(0.77, 0, 0.175, 1);
+/* Ken Burns Animations - Each image gets a unique motion */
+.morph-image:nth-child(1).active {
+    animation: kb-zoom-left 12s ease-in-out forwards;
 }
 
-/* 
-   State: Next Setup (Waiting Behind)
-   This image sits behind the active one.
-   It starts slightly zoomed in (1.1) so that when it is revealed, 
-   we can animate it back to scale(1) for a "settling" effect.
-*/
-.morph-image.next-setup {
-    opacity: 1;
-    z-index: 1;
-    clip-path: inset(0 0 0 0);
-    transform: scale(1.1);
+.morph-image:nth-child(2).active {
+    animation: kb-zoom-right 12s ease-in-out forwards;
 }
 
-@keyframes subtle-pulse {
+.morph-image:nth-child(3).active {
+    animation: kb-zoom-up 12s ease-in-out forwards;
+}
+
+.morph-image:nth-child(4).active {
+    animation: kb-zoom-down 12s ease-in-out forwards;
+}
+
+/* Keyframes: Slow, subtle pan/zoom */
+@keyframes kb-zoom-left {
     0% {
-        transform: scale(1);
+        transform: scale(1) translate(0, 0);
+    }
+
+    100% {
+        transform: scale(1.08) translate(-2%, 0);
+    }
+}
+
+@keyframes kb-zoom-right {
+    0% {
+        transform: scale(1.08) translate(0, 0);
+    }
+
+    100% {
+        transform: scale(1) translate(2%, 0);
+    }
+}
+
+@keyframes kb-zoom-up {
+    0% {
+        transform: scale(1) translate(0, 0);
+    }
+
+    100% {
+        transform: scale(1.08) translate(0, -1.5%);
+    }
+}
+
+@keyframes kb-zoom-down {
+    0% {
+        transform: scale(1.08) translate(0, 0);
+    }
+
+    100% {
+        transform: scale(1) translate(0, 1.5%);
     }
 
     100% {

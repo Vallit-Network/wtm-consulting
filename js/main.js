@@ -441,14 +441,13 @@ document.addEventListener('DOMContentLoaded', () => {
         if (morphImages.length === 0) return;
 
         let currentIndex = 0;
-        const intervalTime = 7000; // Slow, cinematic pace
+        const displayTime = 8000; // Time each image is displayed
+        const fadeTime = 2000;    // Crossfade duration (matches CSS)
 
-        // Initialize: Set all non-active images to 'focus-in' state (waiting in background)
-        morphImages.forEach((img, index) => {
-            if (index !== 0) {
-                img.classList.add('focus-in');
-                img.classList.remove('active');
-            }
+        // Initial setup: first image is active
+        morphImages.forEach((img, idx) => {
+            img.className = 'morph-image';
+            if (idx === 0) img.classList.add('active');
         });
 
         setInterval(() => {
@@ -457,31 +456,16 @@ document.addEventListener('DOMContentLoaded', () => {
             const currentImg = morphImages[currentIndex];
             const nextImg = morphImages[nextIndex];
 
-            // 1. Trigger Exit: Fly camera THROUGH current image
-            currentImg.classList.add('focus-out');
-            currentImg.classList.remove('active');
+            // Start crossfade: Add active to next (triggers fade in + Ken Burns)
+            nextImg.classList.add('active');
 
-            // 2. Trigger Entry: Resolve next image from blur
-            // We use a slight delay to ensure the exit starts first, creating depth overlap
-            requestAnimationFrame(() => {
-                nextImg.classList.remove('focus-in');
-                nextImg.classList.add('active');
-            });
-
-            // 3. Cleanup after transition
+            // After fade completes, remove active from current
             setTimeout(() => {
-                // Reset the one that just finished exiting
-                currentImg.classList.remove('focus-out');
-
-                // Put it in the "waiting" line (focus-in) instantly (no transition)
-                // The CSS for .focus-in has transition: none, so it snaps back invisibly
-                currentImg.classList.add('focus-in');
-
-                // Update index
+                currentImg.classList.remove('active');
                 currentIndex = nextIndex;
-            }, 2000); // Wait for CSS transition (1.8s) to complete
+            }, fadeTime);
 
-        }, intervalTime);
+        }, displayTime);
     }
 
     initMorphingGallery();
