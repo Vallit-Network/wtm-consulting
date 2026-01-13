@@ -63,8 +63,23 @@
                     </div>
                 </div>
                 <div class="hero-image reveal reveal-right stagger-2">
-                    <div class="hero-image-container">
-                        <span class="hero-image-placeholder">Teambild</span>
+                    <div class="hero-image-container hero-slider-container">
+                        <div class="hero-slider-track" id="hero-slide-track">
+                            <!-- Original Slides -->
+                            <div class="hero-slide">
+                                <img src="assets/team-gallery/team-collab-1.png" alt="WTM Team Zusammenarbeit">
+                            </div>
+                            <div class="hero-slide">
+                                <img src="assets/team-gallery/team-collab-2.png" alt="WTM Team Meeting">
+                            </div>
+                            <div class="hero-slide">
+                                <img src="assets/team-gallery/team-collab-3.png" alt="WTM Team Workshop">
+                            </div>
+                            <div class="hero-slide">
+                                <img src="assets/team-gallery/team-collab-4.png" alt="WTM Team Event">
+                            </div>
+                            <!-- JS will duplicate these -->
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1489,11 +1504,13 @@
     <footer>
         <div class="container">
             <div class="footer-grid">
+                <!-- Brand Column -->
                 <div class="footer-brand reveal stagger-1">
                     <a href="#" class="logo">
                         <img src="assets/logo.png" alt="WTM Management Consulting">
                     </a>
-                    <p>Training · Coaching · Beratung<br>Seit über 25 Jahren.</p>
+                    <p>Ihr Partner für wirksame Führung, lebendige Teams und gesunde Organisationen. Seit über 25 Jahren
+                        begleiten wir Menschen und Unternehmen in Veränderungsprozessen.</p>
                     <div class="footer-social">
                         <a href="https://www.facebook.com/wtm.mc" target="_blank" rel="noopener" aria-label="Facebook">
                             <svg viewBox="0 0 24 24" fill="currentColor">
@@ -1525,6 +1542,7 @@
                     </div>
                 </div>
 
+                <!-- Offerings Column -->
                 <div class="footer-col reveal stagger-2">
                     <h4>Angebote</h4>
                     <ul class="footer-links">
@@ -1535,16 +1553,26 @@
                     </ul>
                 </div>
 
+                <!-- Contact Column -->
                 <div class="footer-col reveal stagger-3">
                     <h4>Kontakt</h4>
                     <ul class="footer-links footer-contact">
                         <li>Neuer Graben 61</li>
                         <li>44139 Dortmund</li>
-                        <li><a href="tel:+4923113722666">0231 137 22 666</a></li>
-                        <li><a href="mailto:info@wtm-consulting.de">info@wtm-consulting.de</a></li>
+                        <li>
+                            <a href="tel:+4923113722666">
+                                <span class="contact-mode">Tel:</span> 0231 / 137 22 666
+                            </a>
+                        </li>
+                        <li>
+                            <a href="mailto:info@wtm-consulting.de">
+                                <span class="contact-mode">Mail:</span> info@wtm-consulting.de
+                            </a>
+                        </li>
                     </ul>
                 </div>
 
+                <!-- Legal Column (Restored) -->
                 <div class="footer-col reveal stagger-4">
                     <h4>Rechtliches</h4>
                     <ul class="footer-links">
@@ -1555,9 +1583,11 @@
                 </div>
             </div>
 
-            <div class="copyright">
-                <p>&copy; 2026 WTM Management Consulting GmbH. Alle Rechte vorbehalten.</p>
-                <p>Version 0.2.52</p>
+            <!-- Bottom Bar: Copyright Only -->
+            <div class="footer-bottom reveal stagger-4">
+                <div class="copyright">
+                    <p>&copy; 2026 WTM Management Consulting GmbH. Alle Rechte vorbehalten.</p>
+                </div>
             </div>
         </div>
     </footer>

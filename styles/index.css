@@ -519,6 +519,9 @@ header.scrolled .bar {
     background: linear-gradient(135deg, rgba(157, 212, 208, 0.2), rgba(157, 212, 208, 0.05));
     border-radius: var(--radius-lg);
     border: 1px solid rgba(157, 212, 208, 0.3);
+    /* display: flex;  <-- Removed or overridden by inline important in slider CSS, but cleaner to remove if we can.
+       The modifier class .hero-slider-container handles the display now. 
+       We'll leave the base styles as they provide the frame. */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1167,65 +1170,162 @@ textarea.form-input {
 /* ============================================
    FOOTER
    ============================================ */
+/* ============================================
+   FOOTER
+   ============================================ */
 footer {
     background-color: var(--color-deep-blue);
     color: var(--color-white);
-    padding: var(--spacing-xl) 0 var(--spacing-md);
+    padding: var(--spacing-xxl) 0 4rem;
+    /* Increased top padding */
+    position: relative;
+    overflow: hidden;
+}
+
+/* Optional: Add a subtle overlay pattern or gradient if desired */
+footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 10% 10%, rgba(255, 255, 255, 0.03) 0%, transparent 40%);
+    pointer-events: none;
 }
 
 .footer-grid {
     display: grid;
-    grid-template-columns: 2fr 1fr 1fr 1fr;
-    gap: var(--spacing-lg);
-    margin-bottom: var(--spacing-lg);
+    grid-template-columns: 2fr 1fr 1fr;
+    /* 3 Columns: Wide Brand + 2 Links */
+    gap: 4rem;
+    /* Increased gap */
+    margin-bottom: 4rem;
 }
 
 .footer-brand .logo img {
-    height: 45px;
-    margin-bottom: 1rem;
+    height: 52px;
+    /* Slightly larger */
+    margin-bottom: 1.25rem;
 }
 
 .footer-brand p {
-    color: rgba(255, 255, 255, 0.6);
-    line-height: 1.7;
-    max-width: 280px;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.8;
+    max-width: 380px;
+    margin-bottom: 2rem;
+    font-size: 1rem;
 }
 
 .footer-col h4 {
     color: var(--color-white);
-    margin-bottom: 1.25rem;
-    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+    /* More spacing */
+    font-size: 0.95rem;
     font-family: var(--font-body);
     font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 0.05em;
+    letter-spacing: 0.1em;
+    position: relative;
+    display: inline-block;
+}
+
+/* Subtle underline for headers */
+.footer-col h4::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 30px;
+    height: 2px;
+    background: var(--color-primary);
 }
 
 .footer-links li {
-    margin-bottom: 0.6rem;
+    margin-bottom: 0.8rem;
 }
 
 .footer-links a {
-    color: rgba(255, 255, 255, 0.6);
-    font-size: 0.95rem;
-    transition: all var(--transition-fast);
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    display: inline-block;
+    /* for transform */
+    text-decoration: none;
 }
 
 .footer-links a:hover {
     color: var(--color-primary);
+    transform: translateX(5px);
+    /* Subtle nudge */
+    text-decoration: none;
 }
 
-.copyright {
-    text-align: center;
+.contact-mode {
+    color: var(--color-primary);
+    font-weight: 600;
+    margin-right: 0.25rem;
+    font-size: 0.9rem;
+}
+
+/* Footer Bottom Bar */
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     padding-top: 2rem;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
-    font-size: 0.875rem;
-    color: var(--color-primary);
+    font-size: 0.9rem;
 }
 
 .copyright p {
-    color: inherit;
+    color: rgba(255, 255, 255, 0.5);
     margin: 0;
+}
+
+.footer-bottom-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.footer-bottom-links li {
+    margin: 0;
+}
+
+.footer-bottom-links a {
+    color: rgba(255, 255, 255, 0.5);
+    transition: color var(--transition-fast);
+    text-decoration: none;
+}
+
+.footer-bottom-links a:hover {
+    color: var(--color-white);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 900px) {
+    .footer-grid {
+        grid-template-columns: 1fr;
+        /* Stack on mobile/tablet */
+        gap: 2.5rem;
+    }
+
+    .footer-brand p {
+        max-width: 100%;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        gap: 1.5rem;
+        text-align: center;
+    }
+
+    .footer-bottom-links {
+        justify-content: center;
+    }
 }
 
 /* ============================================
@@ -2344,6 +2444,85 @@ footer {
 .team-member-card:hover .member-tag {
     background: var(--color-primary-light);
     color: var(--color-deep-blue);
+}
+
+.team-member-card:hover .member-info .member-name {
+    color: var(--color-primary);
+}
+
+/* ============================================
+   HERO SLIDER
+   ============================================ */
+.hero-slider-container {
+    /* Inherits size and style from hero-image-container */
+    /* Ensure overflow is hidden for the slider */
+    overflow: hidden !important;
+    padding: 0 !important;
+    /* Remove padding from container to let images fill */
+    display: flex !important;
+    align-items: stretch !important;
+    justify-content: flex-start !important;
+    position: relative;
+}
+
+/* Optional overlay to blend edges if needed, but hero container has borders */
+.hero-slider-container::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.1);
+    z-index: 2;
+}
+
+.hero-slider-track {
+    display: flex;
+    height: 100%;
+    /* Width will be dynamic based on children */
+    animation: scrollHero 30s linear infinite;
+}
+
+.hero-slide {
+    height: 100%;
+    aspect-ratio: 4/3;
+    /* Maintain the aspect ratio */
+    flex-shrink: 0;
+    position: relative;
+}
+
+.hero-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Pause on hover */
+.hero-slider-container:hover .hero-slider-track {
+    animation-play-state: paused;
+}
+
+@keyframes scrollHero {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        /* Move by 4 slides (100% * 4 if they were percentage based, but here they are aspect ratio based) 
+           We'll rely on JS cloning enough. 
+           Let's approximate: 4 slides width. 
+           Since aspect ratio is 4/3 and height is 100% of container...
+        */
+        transform: translateX(-33.33%);
+    }
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+    .hero-slider-container {
+        max-width: 100%;
+        /* Ensure it takes full width on mobile if needed */
+    }
 }
 
 /* ============================================

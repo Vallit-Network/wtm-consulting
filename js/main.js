@@ -433,6 +433,29 @@ document.addEventListener('DOMContentLoaded', () => {
     const modalClose = document.querySelector('.modal-close');
     const modalBackdrop = document.querySelector('.modal-backdrop');
 
+    // =========================================
+    // HERO SLIDER DUPLICATION
+    // =========================================
+    const slideTrack = document.getElementById('hero-slide-track');
+    if (slideTrack) {
+        // Clone all slides to create the infinite loop effect
+        const slides = Array.from(slideTrack.children);
+
+        // Clone enough times to fill width/ensure loop
+        slides.forEach(slide => {
+            const clone = slide.cloneNode(true);
+            clone.setAttribute('aria-hidden', 'true');
+            slideTrack.appendChild(clone);
+        });
+
+        // Double duplication for safety on large screens if needed
+        slides.forEach(slide => {
+            const clone = slide.cloneNode(true);
+            clone.setAttribute('aria-hidden', 'true');
+            slideTrack.appendChild(clone);
+        });
+    }
+
     // Category configuration - Colors match mindmap section
     const categoryConfig = {
         leadership: { label: 'Führung', color: '#8B7B8B' },         // Warm Purple/Plum (distinct)
