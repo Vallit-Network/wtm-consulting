@@ -1237,5 +1237,72 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    // =========================================
+    // CHATBOT HELPER BUTTON
+    // =========================================
+    const chatbotHelper = document.getElementById('chatbotHelper');
+    const openChatbotBtn = document.getElementById('openChatbot');
+
+    if (chatbotHelper) {
+        // Show chatbot helper after scrolling past 300px
+        const showChatbotAfterScroll = () => {
+            if (window.scrollY > 300) {
+                chatbotHelper.classList.add('visible');
+            } else {
+                chatbotHelper.classList.remove('visible');
+            }
+        };
+
+        window.addEventListener('scroll', showChatbotAfterScroll);
+        showChatbotAfterScroll(); // Initial check
+
+        // Handle chatbot button click
+        if (openChatbotBtn) {
+            openChatbotBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                openVallitChat();
+            });
+        }
+    }
+
+    // Function to open Vallit chat widget
+    function openVallitChat() {
+        const findToggle = () =>
+            document.querySelector('.syntra-toggle-btn') ||
+            document.querySelector('[data-vallit-toggle]') ||
+            document.querySelector('.vallit-widget-toggle');
+
+        const toggleBtn = findToggle();
+
+        if (toggleBtn) {
+            toggleBtn.click();
+            const helper = document.getElementById('chatbotHelper');
+            if (helper) helper.classList.add('opened');
+        } else {
+            // Widget might be loading, try polling
+            let attempts = 0;
+            const maxAttempts = 20;
+
+            const pollInterval = setInterval(() => {
+                attempts++;
+                const btn = findToggle();
+
+                if (btn) {
+                    clearInterval(pollInterval);
+                    btn.click();
+                    const helper = document.getElementById('chatbotHelper');
+                    if (helper) helper.classList.add('opened');
+                } else if (attempts >= maxAttempts) {
+                    clearInterval(pollInterval);
+                    // Redirect to contact section if widget not found
+                    const contactSection = document.getElementById('kontakt');
+                    if (contactSection) {
+                        contactSection.scrollIntoView({ behavior: 'smooth' });
+                    }
+                }
+            }, 250);
+        }
+    }
+
     console.log('WTM Corporate Website Loaded');
 });
