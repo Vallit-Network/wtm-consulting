@@ -431,14 +431,25 @@
 
         // Open Vallit Chat Widget with smooth animation
         function openVallitChat() {
+            console.log('Attempting to open Vallit Chat...');
             // Helper to find the toggle button
             const findToggle = () =>
                 document.querySelector('.syntra-toggle-btn') ||
                 document.querySelector('[data-vallit-toggle]') ||
-                document.querySelector('.vallit-widget-toggle');
+                document.querySelector('.vallit-widget-toggle') ||
+                document.querySelector('#vallit-launcher');
 
             const openChat = (btn) => {
+                console.log('Found toggle button, clicking:', btn);
                 btn.click();
+                // Dispatch explicit click just in case
+                const clickEvent = new MouseEvent('click', {
+                    view: window,
+                    bubbles: true,
+                    cancelable: true
+                });
+                btn.dispatchEvent(clickEvent);
+
                 document.getElementById('chatbotHelper').classList.add('opened');
                 watchForChatClose();
             };
@@ -448,6 +459,7 @@
             if (toggleBtn) {
                 openChat(toggleBtn);
             } else {
+                console.log('Toggle button not found immediately, polling...');
                 // Widget might be loading, try polling for a few seconds
                 let attempts = 0;
                 const maxAttempts = 20; // 5 seconds total (250ms interval)
@@ -461,7 +473,7 @@
                         openChat(btn);
                     } else if (attempts >= maxAttempts) {
                         clearInterval(pollInterval);
-                        console.log('Chat widget not found after timeout, redirecting to contact');
+                        console.error('Chat widget not found after timeout, redirecting to contact');
                         // Fallback to contact section
                         window.location.href = 'index.html#kontakt';
                     }
