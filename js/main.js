@@ -1244,6 +1244,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const openChatbotBtn = document.getElementById('openChatbot');
 
     if (chatbotHelper) {
+        // If we are on a seminar page (has .seminar-hero), let the page-specific script handle it
+        if (document.querySelector('.seminar-hero')) {
+            console.log('Chatbot handled by seminar page script');
+            return;
+        }
+
         // Show chatbot helper after scrolling past 300px
         const showChatbotAfterScroll = () => {
             if (window.scrollY > 300) {
