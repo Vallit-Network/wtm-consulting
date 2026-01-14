@@ -48,18 +48,19 @@
     /* Category Colors - Training Topics */
     --color-cat-leadership: #4A4A4E;
     /* Führung - Anthracite (sophisticated dark gray) */
-    --color-cat-change: #C08585;
-    /* Change - Rot */
-    --color-cat-health: #2D5F5C;
-    /* Gesundheit - Grün */
-    --color-cat-communication: #CABBA0;
-    /* Kommunikation - Gelb */
+    --color-cat-change: #c24c4c;
+    /* Change - Rot (Matches screenshot) */
+    --color-cat-health: #719896;
+    /* Gesundheit - Muted Teal (Matches screenshot) */
+    --color-cat-communication: #d6ac58;
+    /* Kommunikation - Gold (Matches screenshot) */
     --color-cat-management: #5D8AA8;
     /* Management - Blau */
 
     /* Typography */
     --font-heading: 'Libre Baskerville', 'Georgia', serif;
     --font-body: 'Source Sans Pro', 'Helvetica Neue', sans-serif;
+    --font-primary: 'Montserrat', sans-serif;
 
     /* Spacing */
     --spacing-xs: 0.5rem;
@@ -1619,7 +1620,6 @@ footer::before {
     width: 4px;
     background: var(--card-category-color, var(--color-primary));
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    opacity: 0.7;
 }
 
 /* Category-specific colors for cards */
@@ -1735,8 +1735,8 @@ footer::before {
 
 .training-badge {
     display: inline-block;
-    background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
-    color: var(--color-deep-blue);
+    background: var(--card-category-color, var(--color-primary));
+    color: var(--color-white);
     font-size: 0.7rem;
     font-weight: 700;
     padding: 0.35rem 0.75rem;
@@ -4638,41 +4638,41 @@ header.header-scrolled .logo img {
 /* Item Colors - Harmonized with Corporate Palette */
 /* Blue -> Professional/Structure -> Deep Blue/Slate tones */
 .item-blue {
-    border-left: 4px solid #5D8AA8;
+    border-left: 4px solid var(--color-cat-management);
     /* Air Force Blue - professional */
 }
 
 .mindmap-lines .line-blue {
-    stroke: #5D8AA8;
+    stroke: var(--color-cat-management);
 }
 
 /* Green -> Health/Self -> Primary Teal tones */
 .item-green {
-    border-left: 4px solid var(--color-primary-dark);
+    border-left: 4px solid var(--color-cat-health);
 }
 
 .mindmap-lines .line-green {
-    stroke: var(--color-primary-dark);
+    stroke: var(--color-cat-health);
 }
 
 /* Red -> Conflict/Change -> Muted Brick/Warm tone */
 .item-red {
-    border-left: 4px solid #C08585;
+    border-left: 4px solid var(--color-cat-change);
     /* Muted red */
 }
 
 .mindmap-lines .line-red {
-    stroke: #C08585;
+    stroke: var(--color-cat-change);
 }
 
 /* Yellow -> Relationship/Communication -> Warm Gold/Beige */
 .item-yellow {
-    border-left: 4px solid #Cabba0;
+    border-left: 4px solid var(--color-cat-communication);
     /* Warm beige-gold */
 }
 
 .mindmap-lines .line-yellow {
-    stroke: #Cabba0;
+    stroke: var(--color-cat-communication);
 }
 
 

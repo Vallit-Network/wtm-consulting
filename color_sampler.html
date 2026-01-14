@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <img id="img0"
+        src="/Users/theoreichert/.gemini/antigravity/brain/9f875c03-908e-4653-b8ab-aeaac7335ab8/uploaded_image_0_1768386395990.png"
+        crossorigin="anonymous">
+    <canvas id="canvas0"></canvas>
+    <div id="output"></div>
+
+    <script>
+        const img = document.getElementById('img0');
+        const canvas = document.getElementById('canvas0');
+        const ctx = canvas.getContext('2d');
+        const output = document.getElementById('output');
+
+        img.onload = () => {
+            canvas.width = img.width;
+            canvas.height = img.height;
+            ctx.drawImage(img, 0, 0);
+
+            // We need to find the colors. Let's look for pixels that match the description.
+            // Red-ish, Yellow-ish, Green-ish.
+
+            // Function to rgb to hex
+            function componentToHex(c) {
+                var hex = c.toString(16);
+                return hex.length == 1 ? "0" + hex : hex;
+            }
+            function rgbToHex(r, g, b) {
+                return "#" + componentToHex(r) + componentToHex(g) + componentToHex(b);
+            }
+
+            // Sample center of blobs - assuming vertical layout based on mindmap structure
+            // We'll sample a few points down the middle of the image
+            let colors = {};
+            const x = Math.floor(img.width / 2);
+
+            for (let y = 0; y < img.height; y += 10) {
+                const p = ctx.getImageData(x, y, 1, 1).data;
+                const hex = rgbToHex(p[0], p[1], p[2]);
+
+                // Simple color classification to find our candidates
+                if (p[0] > 150 && p[1] < 100 && p[2] < 100) colors['red'] = hex; // Red candidate
+                if (p[0] > 180 && p[1] > 160 && p[2] < 150) colors['yellow'] = hex; // Yellow candidate
+                if (p[0] < 100 && p[1] > 100 && p[2] > 100) colors['green'] = hex; // Green/Teal candidate
+                // Additional check for the specific teal
+                if (p[1] > 150 && p[2] > 150 && p[0] < p[1]) colors['teal'] = hex;
+            }
+
+            output.innerHTML = JSON.stringify(colors, null, 2);
+        };
+    </script>
+</body>
+
+</html>

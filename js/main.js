@@ -1274,10 +1274,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const toggleBtn = findToggle();
 
-        if (toggleBtn) {
-            toggleBtn.click();
+        const openChat = (btn) => {
+            btn.click();
             const helper = document.getElementById('chatbotHelper');
             if (helper) helper.classList.add('opened');
+
+            // Watch for chat widget closing to restore helper visibility
+            watchForChatClose();
+        };
+
+        if (toggleBtn) {
+            openChat(toggleBtn);
         } else {
             // Widget might be loading, try polling
             let attempts = 0;
@@ -1289,9 +1296,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 if (btn) {
                     clearInterval(pollInterval);
-                    btn.click();
-                    const helper = document.getElementById('chatbotHelper');
-                    if (helper) helper.classList.add('opened');
+                    openChat(btn);
                 } else if (attempts >= maxAttempts) {
                     clearInterval(pollInterval);
                     // Redirect to contact section if widget not found
@@ -1302,6 +1307,115 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             }, 250);
         }
+    }
+
+    // Watch for Vallit chat widget closing to restore helper button
+    function watchForChatClose() {
+        const helper = document.getElementById('chatbotHelper');
+        if (!helper) return;
+
+        // Try to find the chat container/widget
+        const findChatContainer = () =>
+            document.querySelector('.syntra-chat-container') ||
+            document.querySelector('.vallit-widget-container') ||
+            document.querySelector('[data-vallit-container]') ||
+            document.querySelector('.syntra-widget');
+
+        let chatContainer = findChatContainer();
+
+        // If container not immediately available, wait for it
+        if (!chatContainer) {
+            const containerObserver = new MutationObserver((mutations, obs) => {
+                chatContainer = findChatContainer();
+                if (chatContainer) {
+                    obs.disconnect();
+                    setupCloseWatcher(chatContainer, helper);
+                }
+            });
+            containerObserver.observe(document.body, { childList: true, subtree: true });
+
+            // Timeout fallback - restore visibility after 30 seconds if nothing happens
+            setTimeout(() => {
+                containerObserver.disconnect();
+                if (helper.classList.contains('opened')) {
+                    helper.classList.remove('opened');
+                }
+            }, 30000);
+        } else {
+            setupCloseWatcher(chatContainer, helper);
+        }
+    }
+
+    function setupCloseWatcher(container, helper) {
+        // Use multiple detection strategies
+
+        // 1. Watch for container being removed or hidden
+        const observer = new MutationObserver((mutations) => {
+            for (const mutation of mutations) {
+                // Check if container was removed
+                if (mutation.removedNodes.length > 0) {
+                    for (const node of mutation.removedNodes) {
+                        if (node === container || node.contains(container)) {
+                            helper.classList.remove('opened');
+                            observer.disconnect();
+                            return;
+                        }
+                    }
+                }
+
+                // Check for class changes indicating closed state
+                if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
+                    const target = mutation.target;
+                    if (target.classList.contains('closed') ||
+                        target.classList.contains('hidden') ||
+                        target.classList.contains('syntra-hidden') ||
+                        !target.classList.contains('syntra-open') && !target.classList.contains('open')) {
+                        // Check if it was previously open
+                        if (helper.classList.contains('opened')) {
+                            helper.classList.remove('opened');
+                            observer.disconnect();
+                            return;
+                        }
+                    }
+                }
+            }
+        });
+
+        observer.observe(container.parentElement || document.body, {
+            childList: true,
+            subtree: true,
+            attributes: true,
+            attributeFilter: ['class', 'style']
+        });
+
+        // 2. Also watch for clicks on close buttons
+        const closeBtn = container.querySelector('.syntra-close-btn, .close-btn, [data-close], .vallit-close');
+        if (closeBtn) {
+            closeBtn.addEventListener('click', () => {
+                setTimeout(() => {
+                    helper.classList.remove('opened');
+                    observer.disconnect();
+                }, 300);
+            }, { once: true });
+        }
+
+        // 3. Poll for visibility changes as fallback
+        const visibilityPoll = setInterval(() => {
+            if (!document.contains(container) ||
+                container.style.display === 'none' ||
+                container.style.visibility === 'hidden' ||
+                container.offsetParent === null) {
+                helper.classList.remove('opened');
+                observer.disconnect();
+                clearInterval(visibilityPoll);
+            }
+        }, 500);
+
+        // Clean up after 2 minutes max
+        setTimeout(() => {
+            observer.disconnect();
+            clearInterval(visibilityPoll);
+        }, 120000);
     }
 
     console.log('WTM Corporate Website Loaded');

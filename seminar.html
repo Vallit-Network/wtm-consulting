@@ -437,11 +437,16 @@
                 document.querySelector('[data-vallit-toggle]') ||
                 document.querySelector('.vallit-widget-toggle');
 
+            const openChat = (btn) => {
+                btn.click();
+                document.getElementById('chatbotHelper').classList.add('opened');
+                watchForChatClose();
+            };
+
             const toggleBtn = findToggle();
 
             if (toggleBtn) {
-                toggleBtn.click();
-                document.getElementById('chatbotHelper').classList.add('opened');
+                openChat(toggleBtn);
             } else {
                 // Widget might be loading, try polling for a few seconds
                 let attempts = 0;
@@ -453,8 +458,7 @@
 
                     if (btn) {
                         clearInterval(pollInterval);
-                        btn.click();
-                        document.getElementById('chatbotHelper').classList.add('opened');
+                        openChat(btn);
                     } else if (attempts >= maxAttempts) {
                         clearInterval(pollInterval);
                         console.log('Chat widget not found after timeout, redirecting to contact');
@@ -463,6 +467,103 @@
                     }
                 }, 250);
             }
+        }
+
+        // Watch for Vallit chat widget closing to restore helper button
+        function watchForChatClose() {
+            const helper = document.getElementById('chatbotHelper');
+            if (!helper) return;
+
+            const findChatContainer = () =>
+                document.querySelector('.syntra-chat-container') ||
+                document.querySelector('.vallit-widget-container') ||
+                document.querySelector('[data-vallit-container]') ||
+                document.querySelector('.syntra-widget');
+
+            let chatContainer = findChatContainer();
+
+            if (!chatContainer) {
+                const containerObserver = new MutationObserver((mutations, obs) => {
+                    chatContainer = findChatContainer();
+                    if (chatContainer) {
+                        obs.disconnect();
+                        setupCloseWatcher(chatContainer, helper);
+                    }
+                });
+                containerObserver.observe(document.body, { childList: true, subtree: true });
+
+                setTimeout(() => {
+                    containerObserver.disconnect();
+                    if (helper.classList.contains('opened')) {
+                        helper.classList.remove('opened');
+                    }
+                }, 30000);
+            } else {
+                setupCloseWatcher(chatContainer, helper);
+            }
+        }
+
+        function setupCloseWatcher(container, helper) {
+            const observer = new MutationObserver((mutations) => {
+                for (const mutation of mutations) {
+                    if (mutation.removedNodes.length > 0) {
+                        for (const node of mutation.removedNodes) {
+                            if (node === container || node.contains(container)) {
+                                helper.classList.remove('opened');
+                                observer.disconnect();
+                                return;
+                            }
+                        }
+                    }
+
+                    if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
+                        const target = mutation.target;
+                        if (target.classList.contains('closed') ||
+                            target.classList.contains('hidden') ||
+                            target.classList.contains('syntra-hidden') ||
+                            !target.classList.contains('syntra-open') && !target.classList.contains('open')) {
+                            if (helper.classList.contains('opened')) {
+                                helper.classList.remove('opened');
+                                observer.disconnect();
+                                return;
+                            }
+                        }
+                    }
+                }
+            });
+
+            observer.observe(container.parentElement || document.body, {
+                childList: true,
+                subtree: true,
+                attributes: true,
+                attributeFilter: ['class', 'style']
+            });
+
+            const closeBtn = container.querySelector('.syntra-close-btn, .close-btn, [data-close], .vallit-close');
+            if (closeBtn) {
+                closeBtn.addEventListener('click', () => {
+                    setTimeout(() => {
+                        helper.classList.remove('opened');
+                        observer.disconnect();
+                    }, 300);
+                }, { once: true });
+            }
+
+            const visibilityPoll = setInterval(() => {
+                if (!document.contains(container) ||
+                    container.style.display === 'none' ||
+                    container.style.visibility === 'hidden' ||
+                    container.offsetParent === null) {
+                    helper.classList.remove('opened');
+                    observer.disconnect();
+                    clearInterval(visibilityPoll);
+                }
+            }, 500);
+
+            setTimeout(() => {
+                observer.disconnect();
+                clearInterval(visibilityPoll);
+            }, 120000);
         }
 
         // =============================================
