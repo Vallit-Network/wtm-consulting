@@ -8,6 +8,7 @@ const seminarsData = {
     "lebensphasen-berufliche-orientierung": {
         id: "lebensphasen-berufliche-orientierung",
         title: "Lebensphasen & Berufliche Orientierung",
+        url: "seminare/lebensphasen.html",
         category: "leadership",
         badge: "Seminar",
         shortDescription: "Karriereplanung im Wandel der Lebensphasen – Orientierung finden und bewusste Entscheidungen treffen.",
@@ -96,6 +97,7 @@ const seminarsData = {
     "gesundheit": {
         id: "gesundheit",
         title: "Gesundheit am Arbeitsplatz",
+        url: "seminare/gesundheit.html",
         category: "health",
         badge: "Seminar",
         shortDescription: "Gesund arbeiten und führen – Strategien für mehr Wohlbefinden und nachhaltige Leistungsfähigkeit im Beruf.",
@@ -117,6 +119,7 @@ const seminarsData = {
     "selbstverantwortung-und-kritikkompetenz": {
         id: "selbstverantwortung-und-kritikkompetenz",
         title: "Selbstverantwortung & Kritikkompetenz",
+        url: "seminare/selbstverantwortung-und-kritikkompetenz.html",
         category: "leadership",
         badge: "Seminar",
         shortDescription: "Verantwortung übernehmen und konstruktiv mit Kritik umgehen – für mehr Wirksamkeit im Führungsalltag.",
@@ -138,6 +141,7 @@ const seminarsData = {
     "fragen-sie-doch-einfach-ihre-mitarbeiter-interaktive-mitarbeiterbefragung-und-fuehrungskraeftefeedback": {
         id: "fragen-sie-doch-einfach-ihre-mitarbeiter-interaktive-mitarbeiterbefragung-und-fuehrungskraeftefeedback",
         title: "Mitarbeiterbefragung & Führungsfeedback",
+        url: "seminare/mitarbeiterbefragung.html",
         category: "leadership",
         badge: "Workshop",
         shortDescription: "Interaktive Befragungen nutzen – wertvolle Impulse von Mitarbeitern gewinnen und Führungsqualität messbar machen.",
@@ -159,6 +163,7 @@ const seminarsData = {
     "beraterausbildung": {
         id: "beraterausbildung",
         title: "Beraterausbildung",
+        url: "seminare/beraterausbildung.html",
         category: "management",
         badge: "Zertifizierung",
         shortDescription: "Werden Sie zertifizierter Berater/Coach – Menschen professionell begleiten und Orientierung geben.",
@@ -245,6 +250,7 @@ const seminarsData = {
     "besprechungsmanagement": {
         id: "besprechungsmanagement",
         title: "Besprechungsmanagement",
+        url: "seminare/besprechungsmanagement.html",
         category: "management",
         badge: "Seminar",
         shortDescription: "Meetings effizient gestalten – Zeit sparen durch strukturierte Vorbereitung, Durchführung und Nachbereitung.",
@@ -288,6 +294,7 @@ const seminarsData = {
     "betriebsorganisation": {
         id: "betriebsorganisation",
         title: "Betriebsorganisation",
+        url: "seminare/betriebsorganisation.html",
         category: "management",
         badge: "Seminar",
         shortDescription: "Strukturen und Prozesse optimieren – Abläufe effizienter gestalten und Schnittstellen verbessern.",
@@ -309,6 +316,7 @@ const seminarsData = {
     "bewerbertraining": {
         id: "bewerbertraining",
         title: "Bewerbertraining",
+        url: "seminare/bewerbertraining.html",
         category: "management",
         badge: "Seminar",
         shortDescription: "Überzeugend bewerben – Unterlagen, Gespräche und Selbstpräsentation professionell meistern.",
@@ -330,6 +338,7 @@ const seminarsData = {
     "bwl-fuer-nicht-bwler": {
         id: "bwl-fuer-nicht-bwler",
         title: "BWL für Nicht-BWLer",
+        url: "seminare/bwl-fuer-nicht-bwler.html",
         category: "management",
         badge: "Seminar",
         shortDescription: "Betriebswirtschaftliche Zusammenhänge verstehen und sicher mitreden.",
@@ -352,6 +361,7 @@ const seminarsData = {
     "change": {
         id: "change",
         title: "Change Management",
+        url: "seminare/change.html",
         category: "change",
         badge: "Seminar",
         shortDescription: "Veränderungsprozesse aktiv gestalten und begleiten. Psychologie der Veränderung verstehen und Widerstände nutzen.",
@@ -374,6 +384,7 @@ const seminarsData = {
     "change-kommunikation-professionelle-kommunikation-im-veraenderungsprozess": {
         id: "change-kommunikation-professionelle-kommunikation-im-veraenderungsprozess",
         title: "Change-Kommunikation",
+        url: "seminare/change-kommunikation.html",
         category: "change",
         badge: "Seminar",
         shortDescription: "Professionell kommunizieren im Veränderungsprozess – Botschaften klar formulieren und Mitarbeiter mitnehmen.",
@@ -395,6 +406,7 @@ const seminarsData = {
     "chefperspektive-wie-denkt-mein-chef-meine-chefin": {
         id: "chefperspektive-wie-denkt-mein-chef-meine-chefin",
         title: "Chefperspektive verstehen",
+        url: "seminare/chefperspektive.html",
         category: "leadership",
         badge: "Seminar",
         shortDescription: "Die Denkweise von Führungskräften verstehen – effektiver nach oben kommunizieren und zusammenarbeiten.",
@@ -416,6 +428,7 @@ const seminarsData = {
     "coachingausbildung": {
         id: "coachingausbildung",
         title: "Coachingausbildung",
+        url: "seminare/coachingausbildung.html",
         category: "management",
         badge: "Zertifizierung",
         shortDescription: "Werden Sie zertifizierter Coach – Menschen professionell in ihrer Entwicklung begleiten und stärken.",
@@ -438,6 +451,7 @@ const seminarsData = {
     "coaching-basics-fuer-agile-scrum-master": {
         id: "coaching-basics-fuer-agile-scrum-master",
         title: "Coaching Basics für Scrum Master",
+        url: "seminare/coaching-basics-agile.html",
         category: "leadership",
         badge: "Grundlagen",
         shortDescription: "Coaching-Kompetenzen für agile Rollen – Teams als Scrum Master effektiv unterstützen und entwickeln.",
@@ -459,6 +473,7 @@ const seminarsData = {
     "delegation-das-handwerk-der-fuehrung": {
         id: "delegation-das-handwerk-der-fuehrung",
         title: "Delegation: Das Handwerk der Führung",
+        url: "seminare/delegation-das-handwerk-der-fuehrung.html",
         category: "leadership",
         badge: "Seminar",
         shortDescription: "Richtig delegieren – Aufgaben übertragen, Mitarbeiter fördern und Zeit gewinnen für Wesentliches.",
@@ -480,6 +495,7 @@ const seminarsData = {
     "erfolgsfaktor-vertrauen": {
         id: "erfolgsfaktor-vertrauen",
         title: "Erfolgsfaktor Vertrauen",
+        url: "seminare/erfolgsfaktor-vertrauen.html",
         category: "leadership",
         badge: "Seminar",
         shortDescription: "Vertrauen als Führungsinstrument – tragfähige Beziehungen aufbauen und Teamperformance steigern.",
@@ -501,6 +517,7 @@ const seminarsData = {
     "fuehren-in-beziehung": {
         id: "fuehren-in-beziehung",
         title: "Führen in Beziehung",
+        url: "seminare/fuehren-in-beziehung.html",
         category: "leadership",
         badge: "Seminar",
         shortDescription: "Vertrauen als Basis von Führung. Beziehungsgestaltung als Schlüsselkompetenz.",
@@ -524,6 +541,7 @@ const seminarsData = {
     "fuehren-durch-persoenlichkeit": {
         id: "fuehren-durch-persoenlichkeit",
         title: "Führen durch Persönlichkeit",
+        url: "seminare/fuehren-durch-persoenlichkeit.html",
         category: "leadership",
         badge: "Seminar",
         shortDescription: "Authentisch führen in unsicheren Zeiten – die eigene Führungspersönlichkeit entwickeln und wirksam einsetzen.",
@@ -546,6 +564,7 @@ const seminarsData = {
     "8d-problemloesung": {
         id: "8d-problemloesung",
         title: "8D-Problemlösung",
+        url: "seminare/8d-problemloesung.html",
         category: "management",
         badge: "Seminar",
         shortDescription: "Strukturierte Problemlösung mit der 8D-Methode – Ursachen finden und nachhaltige Lösungen entwickeln.",
@@ -567,6 +586,7 @@ const seminarsData = {
     "fuehren-zwischen-agieren-und-reagieren": {
         id: "fuehren-zwischen-agieren-und-reagieren",
         title: "Führen zwischen Agieren und Reagieren",
+        url: "seminare/fuehren-zwischen-agieren-und-reagieren.html",
         category: "leadership",
         badge: "Seminar",
         shortDescription: "Die Balance finden – proaktiv gestalten und flexibel auf Veränderungen reagieren.",
@@ -588,6 +608,7 @@ const seminarsData = {
     "fuehrungskommunikation-und-arbeitsrechtliche-grundlagen": {
         id: "fuehrungskommunikation-und-arbeitsrechtliche-grundlagen",
         title: "Führungskommunikation & Arbeitsrecht",
+        url: "seminare/fuehrungskommunikation-und-arbeitsrechtliche-grundlagen.html",
         category: "leadership",
         badge: "Grundlagen",
         shortDescription: "Rechtssicher kommunizieren – arbeitsrechtliche Grundlagen für die tägliche Führungspraxis.",
@@ -609,6 +630,7 @@ const seminarsData = {
     "fuehrungssimulation-krankenhaus-am-offenen-herzen": {
         id: "fuehrungssimulation-krankenhaus-am-offenen-herzen",
         title: "Führungssimulation: Krankenhaus",
+        url: "seminare/fuehrungssimulation-krankenhaus-am-offenen-herzen.html",
         category: "leadership",
         badge: "Simulation",
         shortDescription: "Führungskompetenzen unter Druck erproben – komplexe Entscheidungen in der Simulation erleben und reflektieren.",
@@ -630,6 +652,7 @@ const seminarsData = {
     "gekonnt-visualisieren-an-flipchart-und-pinnwand": {
         id: "gekonnt-visualisieren-an-flipchart-und-pinnwand",
         title: "Visualisieren an Flipchart & Pinnwand",
+        url: "seminare/gekonnt-visualisieren.html",
         category: "communication",
         badge: "Workshop",
         shortDescription: "Ideen sichtbar machen – mit einfachen Mitteln professionell visualisieren und Inhalte einprägsam präsentieren.",
@@ -651,6 +674,7 @@ const seminarsData = {
     "genius": {
         id: "genius",
         title: "Genius – Kreatives Potenzial",
+        url: "seminare/genius.html",
         category: "leadership",
         badge: "Workshop",
         shortDescription: "Das kreative Genie in sich entdecken – innovative Lösungen finden durch neue Denkansätze.",
@@ -672,6 +696,7 @@ const seminarsData = {
     "gesunde-selbstfuehrung": {
         id: "gesunde-selbstfuehrung",
         title: "Gesunde Selbstführung",
+        url: "seminare/gesunde-selbstfuehrung.html",
         category: "health",
         badge: "Seminar",
         shortDescription: "Das innere Gleichgewicht bewahren – auch in stürmischen Zeiten. Resilienz und Stressmanagement für Führungskräfte.",
@@ -694,6 +719,7 @@ const seminarsData = {
     "gesundheitsorientiertes-fuehren": {
         id: "gesundheitsorientiertes-fuehren",
         title: "Gesundheitsorientiertes Führen",
+        url: "seminare/gesundheitsorientiertes-fuehren.html",
         category: "health",
         badge: "Seminar",
         shortDescription: "Teams gesund führen – als Führungskraft Belastungen erkennen und Ressourcen fördern.",
@@ -715,6 +741,7 @@ const seminarsData = {
     "gruppendynamik-in-teams": {
         id: "gruppendynamik-in-teams",
         title: "Gruppendynamik in Teams",
+        url: "seminare/gruppendynamik-in-teams.html",
         category: "leadership",
         badge: "Seminar",
         shortDescription: "Teamdynamiken verstehen und nutzen – Rollen, Phasen und Prozesse in der Teamarbeit steuern.",
@@ -736,6 +763,7 @@ const seminarsData = {
     "hybridesarbeiten": {
         id: "hybridesarbeiten",
         title: "Hybrides Arbeiten",
+        url: "seminare/hybridesarbeiten.html",
         category: "leadership",
         badge: "Seminar",
         shortDescription: "Teams hybrid führen – zwischen Büro und Remote zusammenarbeiten und verbunden bleiben.",
@@ -757,6 +785,7 @@ const seminarsData = {
     "intuition-ist-doch-logisch": {
         id: "intuition-ist-doch-logisch",
         title: "Intuition ist doch logisch",
+        url: "seminare/intuition.html",
         category: "health",
         badge: "Seminar",
         shortDescription: "Bauchgefühl verstehen und nutzen – intuitive Entscheidungen als ergänzende Kompetenz entwickeln.",
@@ -778,6 +807,7 @@ const seminarsData = {
     "kommunikation-im-zielgruppenspezifischen-design": {
         id: "kommunikation-im-zielgruppenspezifischen-design",
         title: "Zielgruppenspezifische Kommunikation",
+        url: "seminare/kommunikation-im-zielgruppenspezifischen-design.html",
         category: "communication",
         badge: "Seminar",
         shortDescription: "Botschaften passgenau gestalten – unterschiedliche Zielgruppen überzeugend ansprechen.",
@@ -799,6 +829,7 @@ const seminarsData = {
     "komplexitaet-meistern-entscheiden-in-dynamischen-situationen": {
         id: "komplexitaet-meistern-entscheiden-in-dynamischen-situationen",
         title: "Komplexität meistern",
+        url: "seminare/komplexitaet-meistern.html",
         category: "management",
         badge: "Seminar",
         shortDescription: "Souverän entscheiden in dynamischen Situationen – Komplexität reduzieren und handlungsfähig bleiben.",
@@ -820,6 +851,7 @@ const seminarsData = {
     "konflikterkennung-behandlung-praevention": {
         id: "konflikterkennung-behandlung-praevention",
         title: "Konflikterkennung & Prävention",
+        url: "seminare/konflikterkennung-behandlung-praevention.html",
         category: "communication",
         badge: "Seminar",
         shortDescription: "Konflikte frühzeitig erkennen, professionell behandeln und nachhaltig vorbeugen. Für eine produktive Zusammenarbeit.",
@@ -842,6 +874,7 @@ const seminarsData = {
     "kreativitaetstechniken": {
         id: "kreativitaetstechniken",
         title: "Kreativitätstechniken",
+        url: "seminare/kreativitaetstechniken.html",
         category: "leadership",
         badge: "Workshop",
         shortDescription: "Systematisch kreativ sein – mit bewährten Techniken neue Ideen entwickeln und Innovationen ermöglichen.",
@@ -863,6 +896,7 @@ const seminarsData = {
     "koerperliche-und-geistige-leistungsfaehigkeit-steigern": {
         id: "koerperliche-und-geistige-leistungsfaehigkeit-steigern",
         title: "Leistungsfähigkeit steigern",
+        url: "seminare/koerperliche-und-geistige-leistungsfaehigkeit-steigern.html",
         category: "health",
         badge: "Seminar",
         shortDescription: "Körper und Geist stärken – ganzheitliche Strategien für mehr Energie und bessere Performance.",
@@ -884,6 +918,7 @@ const seminarsData = {
     "krisenkommunikation": {
         id: "krisenkommunikation",
         title: "Krisenkommunikation",
+        url: "seminare/krisenkommunikation.html",
         category: "change",
         badge: "Seminar",
         shortDescription: "In Krisen richtig kommunizieren – transparent informieren und Vertrauen erhalten.",
@@ -905,6 +940,7 @@ const seminarsData = {
     "krisenmanagement-fuer-projektmanager": {
         id: "krisenmanagement-fuer-projektmanager",
         title: "Krisenmanagement für Projektmanager",
+        url: "seminare/krisenmanagement-fuer-projektmanager.html",
         category: "change",
         badge: "Seminar",
         shortDescription: "Projekte in Schwierigkeiten retten – Krisen erkennen, bewältigen und daraus lernen.",
@@ -926,6 +962,7 @@ const seminarsData = {
     "laterales-fuehren": {
         id: "laterales-fuehren",
         title: "Laterales Führen",
+        url: "seminare/laterales-fuehren.html",
         category: "leadership",
         badge: "Seminar",
         shortDescription: "Führen ohne Weisungsbefugnis – überzeugen, motivieren und Einfluss nehmen in Matrixorganisationen und Projekten.",
@@ -948,6 +985,7 @@ const seminarsData = {
     "leadership-basics": {
         id: "leadership-basics",
         title: "Leadership Basics",
+        url: "seminare/leadership-basics.html",
         category: "leadership",
         badge: "Grundlagen",
         shortDescription: "Die Grundlagen wirksamer Führung: Führungsverständnis, Selbstmanagement, Kommunikation, Delegation und konstruktiver Umgang mit Konflikten.",
@@ -970,6 +1008,7 @@ const seminarsData = {
     "medientraining-und-professionelles-auftreten-vor-der-kamera": {
         id: "medientraining-und-professionelles-auftreten-vor-der-kamera",
         title: "Medientraining & Kameraauftritt",
+        url: "seminare/medientraining.html",
         category: "leadership",
         badge: "Workshop",
         shortDescription: "Überzeugend vor der Kamera – Interviews und Videoaufnahmen professionell meistern.",
@@ -991,6 +1030,7 @@ const seminarsData = {
     "mind-mapping-visualisierungstechniken": {
         id: "mind-mapping-visualisierungstechniken",
         title: "Mind Mapping & Visualisierung",
+        url: "seminare/mind-mapping.html",
         category: "leadership",
         badge: "Workshop",
         shortDescription: "Ideen strukturieren und darstellen – mit Mind Maps Gedanken ordnen und Zusammenhänge sichtbar machen.",
@@ -1012,6 +1052,7 @@ const seminarsData = {
     "mit-den-fragen-beginnt-das-verstehen": {
         id: "mit-den-fragen-beginnt-das-verstehen",
         title: "Die Kunst des Fragens",
+        url: "seminare/mit-den-fragen.html",
         category: "communication",
         badge: "Seminar",
         shortDescription: "Mit den richtigen Fragen beginnt das Verstehen – durch geschickte Fragetechnik Gespräche vertiefen.",
@@ -1033,6 +1074,7 @@ const seminarsData = {
     "multiple-leadership-mehrdimensionale-fuehrung": {
         id: "multiple-leadership-mehrdimensionale-fuehrung",
         title: "Multiple Leadership",
+        url: "seminare/multiple-leadership-mehrdimensionale-fuehrung.html",
         category: "leadership",
         badge: "Seminar",
         shortDescription: "Mehrdimensional führen – unterschiedliche Führungsrollen und -ebenen souverän bedienen.",
@@ -1054,6 +1096,7 @@ const seminarsData = {
     "moderation": {
         id: "moderation",
         title: "Moderation",
+        url: "seminare/moderation.html",
         category: "communication",
         badge: "Seminar",
         shortDescription: "Gruppenprozesse effektiv steuern und Ergebnisse sichern.",
@@ -1076,6 +1119,7 @@ const seminarsData = {
     "praesentieren-verstaendlich-erklaeren": {
         id: "praesentieren-verstaendlich-erklaeren",
         title: "Präsentieren & verständlich erklären",
+        url: "seminare/praesentieren-verstaendlich-erklaeren.html",
         category: "leadership",
         badge: "Seminar",
         shortDescription: "Überzeugend präsentieren – komplexe Inhalte einfach und verständlich vermitteln.",
@@ -1097,6 +1141,7 @@ const seminarsData = {
     "projektmanagement-basistraining": {
         id: "projektmanagement-basistraining",
         title: "Projektmanagement - Basistraining",
+        url: "seminare/projektmanagement-basistraining.html",
         category: "management",
         badge: "Seminar",
         shortDescription: "Grundlagen für professionelles Projektmanagement. Methoden, Phasen und Tools.",
@@ -1119,6 +1164,7 @@ const seminarsData = {
     "remote-work-arbeiten-im-home-office-und-unterwegs": {
         id: "remote-work-arbeiten-im-home-office-und-unterwegs",
         title: "Remote Work & Homeoffice",
+        url: "seminare/remote-work.html",
         category: "leadership",
         badge: "Seminar",
         shortDescription: "Produktiv von überall arbeiten – Remote Work, Homeoffice und mobiles Arbeiten effektiv gestalten.",
@@ -1140,6 +1186,7 @@ const seminarsData = {
     "rhetorik": {
         id: "rhetorik",
         title: "Rhetorik",
+        url: "seminare/rhetorik.html",
         category: "communication",
         badge: "Seminar",
         shortDescription: "Seriös und verständlich informieren und dabei eine lebendige Wirkung erzielen. Zuhörer gewinnen und überzeugen.",
@@ -1161,6 +1208,7 @@ const seminarsData = {
     "scheitern-als-kunst-wendepunkte-gestalten": {
         id: "scheitern-als-kunst-wendepunkte-gestalten",
         title: "Scheitern als Kunst",
+        url: "seminare/scheitern-als-kunst.html",
         category: "change",
         badge: "Workshop",
         shortDescription: "Wendepunkte als Chance – aus Rückschlägen lernen und gestärkt daraus hervorgehen.",
@@ -1182,6 +1230,7 @@ const seminarsData = {
     "schriftliche-kommunikation-der-moderne-stil": {
         id: "schriftliche-kommunikation-der-moderne-stil",
         title: "Schriftliche Kommunikation",
+        url: "seminare/schriftliche-kommunikation.html",
         category: "communication",
         badge: "Seminar",
         shortDescription: "Modern und klar schreiben – E-Mails, Berichte und Texte professionell formulieren.",
@@ -1203,6 +1252,7 @@ const seminarsData = {
     "selbsterkenntnis-und-selbstfuehrung": {
         id: "selbsterkenntnis-und-selbstfuehrung",
         title: "Selbsterkenntnis & Selbstführung",
+        url: "seminare/selbsterkenntnis-und-selbstfuehrung.html",
         category: "leadership",
         badge: "Seminar",
         shortDescription: "Sich selbst verstehen und führen – die Basis für wirksame Führung anderer.",
@@ -1224,6 +1274,7 @@ const seminarsData = {
     "selbstmanagement": {
         id: "selbstmanagement",
         title: "Selbstmanagement",
+        url: "seminare/selbstmanagement.html",
         category: "health",
         badge: "Seminar",
         shortDescription: "Sich selbst organisieren und steuern – Zeit, Energie und Prioritäten bewusst managen.",
@@ -1245,6 +1296,7 @@ const seminarsData = {
     "selbstmitgefuehl": {
         id: "selbstmitgefuehl",
         title: "Selbstmitgefühl",
+        url: "seminare/selbstmitgefuehl.html",
         category: "health",
         badge: "Seminar",
         shortDescription: "Freundlich zu sich selbst sein – Selbstmitgefühl als Ressource für Leistungsfähigkeit und Wohlbefinden.",
@@ -1266,6 +1318,7 @@ const seminarsData = {
     "soft-skills-fuer-controller-und-zahlenprofis": {
         id: "soft-skills-fuer-controller-und-zahlenprofis",
         title: "Soft Skills für Zahlenprofis",
+        url: "seminare/soft-skills-fuer-controller.html",
         category: "leadership",
         badge: "Seminar",
         shortDescription: "Zahlen vermitteln – als Controller oder Finanzexperte überzeugend kommunizieren und verhandeln.",
@@ -1287,6 +1340,7 @@ const seminarsData = {
     "stimme-und-koerpersprache": {
         id: "stimme-und-koerpersprache",
         title: "Stimme & Körpersprache",
+        url: "seminare/stimme-und-koerpersprache.html",
         category: "health",
         badge: "Workshop",
         shortDescription: "Präsenz durch Stimme und Körper – sich wirkungsvoll durch nonverbale Kommunikation positionieren.",
@@ -1308,6 +1362,7 @@ const seminarsData = {
     "trainerausbildung": {
         id: "trainerausbildung",
         title: "Trainerausbildung",
+        url: "seminare/trainerausbildung.html",
         category: "management",
         badge: "Zertifizierung",
         shortDescription: "Werden Sie zertifizierter Trainer – mit einzigartiger Methodenvielfalt und fundierter Didaktik.",
@@ -1329,6 +1384,7 @@ const seminarsData = {
     "verkaufen-reloaded": {
         id: "verkaufen-reloaded",
         title: "Verkaufen Reloaded",
+        url: "seminare/verkaufen-reloaded.html",
         category: "management",
         badge: "Seminar",
         shortDescription: "Modern verkaufen – Verkaufstechniken für die digitale Welt und anspruchsvolle Kunden.",
@@ -1350,6 +1406,7 @@ const seminarsData = {
     "vom-mitarbeiter-zur-fuehrungskraft": {
         id: "vom-mitarbeiter-zur-fuehrungskraft",
         title: "Vom Mitarbeiter zur Führungskraft",
+        url: "seminare/vom-mitarbeiter-zur-fuehrungskraft.html",
         category: "leadership",
         badge: "Seminar",
         shortDescription: "Der erfolgreiche Rollenwechsel – von der Fachkraft zur Führungspersönlichkeit. Den Einstieg in die Führung souverän meistern.",
@@ -1372,6 +1429,7 @@ const seminarsData = {
     "widerstandsfaehigkeit-staerken": {
         id: "widerstandsfaehigkeit-staerken",
         title: "Widerstandsfähigkeit stärken",
+        url: "seminare/widerstandsfaehigkeit-staerken.html",
         category: "health",
         badge: "Seminar",
         shortDescription: "Resilienztraining für den Umgang mit Stress und Herausforderungen.",
@@ -1394,6 +1452,7 @@ const seminarsData = {
     "zeitmanagement": {
         id: "zeitmanagement",
         title: "Zeitmanagement",
+        url: "seminare/zeitmanagement.html",
         category: "management",
         badge: "Seminar",
         shortDescription: "Prioritäten setzen, Zeitfresser eliminieren und die Informationsflut beherrschen. Für mehr Effizienz im Alltag.",
@@ -1416,6 +1475,7 @@ const seminarsData = {
     "zusammenarbeit-von-generationen": {
         id: "zusammenarbeit-von-generationen",
         title: "Zusammenarbeit der Generationen",
+        url: "seminare/zusammenarbeit-von-generationen.html",
         category: "leadership",
         badge: "Seminar",
         shortDescription: "Generationen verbinden – als Führungskraft das Beste aus verschiedenen Altersgruppen herausholen.",
