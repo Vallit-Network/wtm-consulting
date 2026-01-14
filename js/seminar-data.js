@@ -50,6 +50,7 @@ const seminarsData = {
     "selbstsicherheit-und-durchsetzungsvermoegen": {
         id: "selbstsicherheit-und-durchsetzungsvermoegen",
         title: "Selbstsicherheit & Durchsetzungsvermögen",
+        url: "seminare/selbstsicherheit-und-durchsetzungsvermoegen.html",
         category: "health",
         badge: "Seminar",
         shortDescription: "Souverän auftreten und die eigene Position vertreten – ohne andere zu überfahren oder sich selbst zu verlieren.",
