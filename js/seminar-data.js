@@ -29,6 +29,7 @@ const seminarsData = {
     "remote-selling": {
         id: "remote-selling",
         title: "Remote Selling",
+        url: "seminare/remote-selling.html",
         category: "management",
         badge: "Seminar",
         shortDescription: "Erfolgreich verkaufen auf Distanz – digitale Vertriebsgespräche professionell führen und Kunden überzeugen.",
@@ -72,6 +73,7 @@ const seminarsData = {
     "selbstvertrauen-das-fundament-fuer-leistungsfaehigkeit": {
         id: "selbstvertrauen-das-fundament-fuer-leistungsfaehigkeit",
         title: "Selbstvertrauen: Fundament für Leistung",
+        url: "seminare/selbstvertrauen-das-fundament-fuer-leistungsfaehigkeit.html",
         category: "health",
         badge: "Seminar",
         shortDescription: "Angemessenes Selbstvertrauen entwickeln – die Basis für volle Leistungsfähigkeit ohne Über- oder Untertreibung.",
@@ -177,6 +179,7 @@ const seminarsData = {
     "berufliche-entwicklung-in-der-lebensphase-30-plus": {
         id: "berufliche-entwicklung-in-der-lebensphase-30-plus",
         title: "Karriere 30+",
+        url: "seminare/berufliche-entwicklung-in-der-lebensphase-30-plus.html",
         category: "leadership",
         badge: "Seminar",
         shortDescription: "Die Weichen stellen – berufliche Perspektiven in der Lebensphase 30+ entwickeln und umsetzen.",
@@ -198,6 +201,7 @@ const seminarsData = {
     "berufliche-entwicklung-in-der-lebensphase-40-plus": {
         id: "berufliche-entwicklung-in-der-lebensphase-40-plus",
         title: "Karriere 40+",
+        url: "seminare/berufliche-entwicklung-in-der-lebensphase-40-plus.html",
         category: "leadership",
         badge: "Seminar",
         shortDescription: "Die Mitte nutzen – Erfahrung einbringen und neue Perspektiven entwickeln in der Lebensphase 40+.",
@@ -219,6 +223,7 @@ const seminarsData = {
     "berufliche-entwicklung-in-der-lebensphase-50-plus": {
         id: "berufliche-entwicklung-in-der-lebensphase-50-plus",
         title: "Karriere 50+",
+        url: "seminare/berufliche-entwicklung-in-der-lebensphase-50-plus.html",
         category: "leadership",
         badge: "Seminar",
         shortDescription: "Erfahrung nutzen & weitergeben – die letzten Berufsjahre aktiv gestalten und Wissen transferieren.",
@@ -261,6 +266,7 @@ const seminarsData = {
     "berufliche-entwicklung-in-der-lebensphase-60-plus": {
         id: "berufliche-entwicklung-in-der-lebensphase-60-plus",
         title: "Karriere 60+",
+        url: "seminare/berufliche-entwicklung-in-der-lebensphase-60-plus.html",
         category: "leadership",
         badge: "Seminar",
         shortDescription: "Den Abschluss gestalten – Wissen weitergeben und den Übergang in den Ruhestand aktiv vorbereiten.",

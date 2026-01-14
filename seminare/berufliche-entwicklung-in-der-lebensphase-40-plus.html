@@ -1,0 +1,1106 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="../assets/favicon.png">
+    <title>Berufliche Entwicklung 40+ – WTM Management Consulting</title>
+    <meta name="description"
+        content="Die Mitte nutzen – Erfahrung einbringen und neue Perspektiven in der Lebensphase 40+ entwickeln.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Sans+Pro:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Base Styles -->
+    <link rel="stylesheet" href="../styles/index.css">
+
+    <style>
+        :root {
+            --seminar-accent: #f59e0b;
+            --seminar-accent-light: rgba(245, 158, 11, 0.1);
+            --seminar-accent-glow: rgba(245, 158, 11, 0.3);
+        }
+
+        .scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--seminar-accent), #a78bfa);
+            z-index: 9999;
+            width: 0%;
+            transition: width 0.1s ease-out;
+        }
+
+        .seminar-hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(165deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
+            position: relative;
+            overflow: hidden;
+            padding: 120px 0 80px;
+        }
+
+        .hero-particles {
+            position: absolute;
+            inset: 0;
+            overflow: hidden;
+            pointer-events: none;
+        }
+
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: var(--seminar-accent);
+            border-radius: 50%;
+            opacity: 0.3;
+            animation: float-particle 15s infinite ease-in-out;
+        }
+
+        @keyframes float-particle {
+
+            0%,
+            100% {
+                transform: translateY(0) translateX(0);
+                opacity: 0.2;
+            }
+
+            25% {
+                transform: translateY(-100px) translateX(50px);
+                opacity: 0.5;
+            }
+
+            50% {
+                transform: translateY(-50px) translateX(-30px);
+                opacity: 0.3;
+            }
+
+            75% {
+                transform: translateY(-150px) translateX(20px);
+                opacity: 0.4;
+            }
+        }
+
+        .hero-gradient-orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.4;
+            animation: pulse-orb 8s infinite ease-in-out;
+        }
+
+        .orb-1 {
+            width: 400px;
+            height: 400px;
+            background: var(--seminar-accent);
+            top: -100px;
+            right: -100px;
+        }
+
+        .orb-2 {
+            width: 300px;
+            height: 300px;
+            background: #a78bfa;
+            bottom: -50px;
+            left: -50px;
+            animation-delay: 4s;
+        }
+
+        @keyframes pulse-orb {
+
+            0%,
+            100% {
+                transform: scale(1);
+                opacity: 0.3;
+            }
+
+            50% {
+                transform: scale(1.2);
+                opacity: 0.5;
+            }
+        }
+
+        .hero-content-wrapper {
+            position: relative;
+            z-index: 2;
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .hero-text {
+            color: #fff;
+        }
+
+        .breadcrumb {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+            opacity: 0;
+            animation: fadeSlideUp 0.6s ease forwards;
+        }
+
+        .breadcrumb a {
+            color: rgba(255, 255, 255, 0.6);
+            transition: color 0.3s;
+        }
+
+        .breadcrumb a:hover {
+            color: var(--seminar-accent);
+        }
+
+        .breadcrumb-sep {
+            color: rgba(255, 255, 255, 0.3);
+        }
+
+        .breadcrumb-current {
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .category-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            background: var(--seminar-accent-light);
+            border: 1px solid var(--seminar-accent);
+            border-radius: 50px;
+            color: var(--seminar-accent);
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            opacity: 0;
+            animation: fadeSlideUp 0.6s ease 0.1s forwards;
+        }
+
+        .category-badge::before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            background: var(--seminar-accent);
+            border-radius: 50%;
+            animation: pulse-dot 2s infinite;
+        }
+
+        @keyframes pulse-dot {
+
+            0%,
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+
+            50% {
+                opacity: 0.5;
+                transform: scale(1.3);
+            }
+        }
+
+        .hero-title {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            color: #fff;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            opacity: 0;
+            animation: fadeSlideUp 0.8s ease 0.2s forwards;
+        }
+
+        .hero-title span {
+            background: linear-gradient(135deg, var(--seminar-accent), #a78bfa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: clamp(1.75rem, 8vw, 2.5rem);
+                word-break: break-word;
+                hyphens: auto;
+            }
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.8;
+            max-width: 500px;
+            margin-bottom: 2rem;
+            opacity: 0;
+            animation: fadeSlideUp 0.8s ease 0.3s forwards;
+        }
+
+        .hero-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            opacity: 0;
+            animation: fadeSlideUp 0.8s ease 0.4s forwards;
+        }
+
+        .meta-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.6rem 1rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.9rem;
+            backdrop-filter: blur(10px);
+        }
+
+        .meta-tag svg {
+            width: 16px;
+            height: 16px;
+            stroke: var(--seminar-accent);
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 1rem;
+            opacity: 0;
+            animation: fadeSlideUp 0.8s ease 0.5s forwards;
+        }
+
+        .btn-glow {
+            position: relative;
+            background: linear-gradient(135deg, var(--seminar-accent), #7c3aed);
+            color: #fff;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            font-weight: 600;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .btn-glow::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transform: translateX(-100%);
+            transition: transform 0.5s;
+        }
+
+        .btn-glow:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 40px var(--seminar-accent-glow);
+        }
+
+        .btn-glow:hover::before {
+            transform: translateX(100%);
+        }
+
+        .btn-outline-light {
+            padding: 1rem 2rem;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 8px;
+            color: #fff;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .btn-outline-light:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.5);
+        }
+
+        .hero-visual {
+            position: relative;
+            opacity: 0;
+            animation: fadeSlideLeft 1s ease 0.6s forwards;
+        }
+
+        .visual-card {
+            background: linear-gradient(145deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.02));
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 24px;
+            padding: 3rem;
+            position: relative;
+        }
+
+        .visual-card::before {
+            content: '';
+            position: absolute;
+            inset: -1px;
+            border-radius: 24px;
+            padding: 1px;
+            background: linear-gradient(135deg, var(--seminar-accent), transparent, rgba(255, 255, 255, 0.1));
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+        }
+
+        .quote-icon {
+            font-size: 4rem;
+            color: var(--seminar-accent);
+            opacity: 0.3;
+            line-height: 1;
+            margin-bottom: 1rem;
+        }
+
+        .visual-quote {
+            font-family: var(--font-heading);
+            font-size: 1.3rem;
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.7;
+            font-style: italic;
+        }
+
+        @keyframes fadeSlideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeSlideLeft {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .intro-section {
+            padding: 6rem 0;
+            background: var(--color-cream);
+            position: relative;
+        }
+
+        .intro-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .intro-content .section-label {
+            display: inline-block;
+            color: var(--seminar-accent);
+            font-weight: 600;
+            font-size: 0.85rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+
+        .intro-content h2 {
+            font-size: clamp(1.75rem, 3vw, 2.5rem);
+            margin-bottom: 1.5rem;
+        }
+
+        .intro-text {
+            font-size: 1.15rem;
+            line-height: 1.9;
+            color: var(--color-text-light);
+        }
+
+        .goals-section {
+            padding: 6rem 0;
+            background: #fff;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-label {
+            display: inline-block;
+            color: var(--seminar-accent);
+            font-weight: 600;
+            font-size: 0.85rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+
+        .accent-line {
+            width: 60px;
+            height: 3px;
+            background: var(--seminar-accent);
+            margin: 1.5rem auto 0;
+        }
+
+        .goals-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .goal-card {
+            background: #fff;
+            border: 1px solid var(--color-border);
+            border-radius: 16px;
+            padding: 2rem;
+            position: relative;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            overflow: hidden;
+        }
+
+        .goal-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--seminar-accent);
+            transform: scaleY(0);
+            transform-origin: bottom;
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .goal-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(139, 92, 246, 0.1);
+            border-color: var(--seminar-accent);
+        }
+
+        .goal-card:hover::before {
+            transform: scaleY(1);
+        }
+
+        .goal-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: var(--seminar-accent-light);
+            color: var(--seminar-accent);
+            border-radius: 10px;
+            font-weight: 700;
+            font-size: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .goal-text {
+            font-size: 1.05rem;
+            color: var(--color-text);
+            line-height: 1.7;
+            margin: 0;
+        }
+
+        .benefits-section {
+            padding: 6rem 0;
+            background: #fff;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .benefits-content h2 {
+            margin-bottom: 1.5rem;
+        }
+
+        .benefit-box {
+            background: var(--seminar-accent-light);
+            border-left: 4px solid var(--seminar-accent);
+            padding: 2rem;
+            border-radius: 0 16px 16px 0;
+        }
+
+        .benefit-box p {
+            margin: 0;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--color-text);
+        }
+
+        .benefits-visual {
+            display: flex;
+            justify-content: center;
+        }
+
+        .icon-showcase {
+            width: 200px;
+            height: 200px;
+            background: linear-gradient(135deg, var(--seminar-accent-light), rgba(167, 139, 250, 0.1));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .icon-showcase::before {
+            content: '';
+            position: absolute;
+            inset: -10px;
+            border: 2px dashed var(--seminar-accent);
+            border-radius: 50%;
+            opacity: 0.3;
+            animation: rotate 20s linear infinite;
+        }
+
+        @keyframes rotate {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .icon-showcase svg {
+            width: 80px;
+            height: 80px;
+            stroke: var(--seminar-accent);
+        }
+
+        .contact-section {
+            padding: 4rem 0;
+            background: linear-gradient(180deg, #f8faf9 0%, #fff 100%);
+        }
+
+        .contact-card {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #fff;
+            border-radius: 20px;
+            padding: 2.5rem;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .contact-image {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--seminar-accent);
+            flex-shrink: 0;
+        }
+
+        .contact-info h3 {
+            margin: 0 0 0.5rem;
+            color: var(--color-text);
+            font-size: 1.25rem;
+        }
+
+        .contact-role {
+            color: var(--seminar-accent);
+            font-weight: 600;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .contact-details {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .contact-details a {
+            color: var(--color-text-light);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: color 0.3s;
+        }
+
+        .contact-details a:hover {
+            color: var(--seminar-accent);
+        }
+
+        .contact-details svg {
+            width: 16px;
+            height: 16px;
+            stroke: var(--seminar-accent);
+        }
+
+        @media (max-width: 600px) {
+            .contact-card {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
+        .related-section {
+            padding: 4rem 0;
+            background: var(--color-cream);
+        }
+
+        .related-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .related-card {
+            background: #fff;
+            border-radius: 16px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s;
+            border: 2px solid transparent;
+        }
+
+        .related-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--seminar-accent);
+        }
+
+        .related-card h3 {
+            font-size: 2rem;
+            color: var(--seminar-accent);
+            margin-bottom: 0.5rem;
+        }
+
+        .related-card p {
+            color: var(--color-text-light);
+            margin-bottom: 1rem;
+        }
+
+        .related-card a {
+            color: var(--seminar-accent);
+            font-weight: 600;
+        }
+
+        @media (max-width: 768px) {
+            .related-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .cta-section {
+            padding: 6rem 0;
+            background: var(--color-cream);
+        }
+
+        .cta-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        .target-card {
+            background: #fff;
+            border-radius: 20px;
+            padding: 3rem;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+        }
+
+        .target-card h3 {
+            margin-bottom: 1rem;
+        }
+
+        .target-card p {
+            color: var(--color-text-light);
+            line-height: 1.8;
+        }
+
+        .cta-card {
+            background: linear-gradient(135deg, var(--seminar-accent) 0%, #7c3aed 100%);
+            border-radius: 20px;
+            padding: 3rem;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .cta-card h3 {
+            color: #fff;
+            font-size: 1.75rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-card p {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.05rem;
+            margin-bottom: 2rem;
+        }
+
+        .cta-card .btn-white {
+            align-self: flex-start;
+        }
+
+        @media (max-width: 968px) {
+            .hero-content-wrapper {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-subtitle {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .hero-meta {
+                justify-content: center;
+            }
+
+            .hero-cta {
+                justify-content: center;
+            }
+
+            .hero-visual {
+                margin-top: 3rem;
+            }
+
+            .goals-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .benefits-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .benefits-visual {
+                margin-top: 2rem;
+            }
+
+            .cta-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+
+            .hero-meta {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .hero-cta {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <header id="header" class="header-dark">
+        <div class="container">
+            <nav>
+                <a href="../index.html" class="logo"><img src="../assets/wtm_logo_gross.png"
+                        alt="WTM Management Consulting"></a>
+                <div class="menu-toggle" id="mobile-menu"><span class="bar"></span><span class="bar"></span><span
+                        class="bar"></span></div>
+                <ul class="nav-links">
+                    <li><a href="../index.html">Startseite</a></li>
+                    <li><a href="../index.html#trainings">Seminare</a></li>
+                    <li><a href="../index.html#angebote">Angebote</a></li>
+                    <li><a href="../index.html#team">Team</a></li>
+                    <li><a href="../index.html#kontakt" class="btn btn-primary">Kontakt</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="seminar-hero">
+        <div class="hero-particles" id="particles"></div>
+        <div class="hero-gradient-orb orb-1"></div>
+        <div class="hero-gradient-orb orb-2"></div>
+
+        <div class="container">
+            <div class="hero-content-wrapper">
+                <div class="hero-text">
+                    <div class="breadcrumb">
+                        <a href="../index.html">Startseite</a>
+                        <span class="breadcrumb-sep">→</span>
+                        <a href="../index.html#trainings">Seminare</a>
+                        <span class="breadcrumb-sep">→</span>
+                        <span class="breadcrumb-current">40+</span>
+                    </div>
+
+                    <div class="category-badge">Führung</div>
+
+                    <h1 class="hero-title">
+                        Berufliche Entwicklung<br><span>40+</span>
+                    </h1>
+
+                    <p class="hero-subtitle">
+                        Die Mitte nutzen – Erfahrung einbringen und neue Perspektiven in der Lebensphase 40+ entwickeln.
+                    </p>
+
+                    <div class="hero-meta">
+                        <span class="meta-tag">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                                <line x1="16" y1="2" x2="16" y2="6"></line>
+                                <line x1="8" y1="2" x2="8" y2="6"></line>
+                                <line x1="3" y1="10" x2="21" y2="10"></line>
+                            </svg>
+                            1-2 Tage
+                        </span>
+                        <span class="meta-tag">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 20V10"></path>
+                                <path d="M18 20V4"></path>
+                                <path d="M6 20v-4"></path>
+                            </svg>
+                            Reflexion
+                        </span>
+                        <span class="meta-tag">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polygon
+                                    points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                                </polygon>
+                            </svg>
+                            Planung
+                        </span>
+                    </div>
+
+                    <div class="hero-cta">
+                        <a href="../index.html#kontakt" class="btn-glow">Jetzt anfragen →</a>
+                        <a href="#inhalte" class="btn-outline-light">Mehr erfahren</a>
+                    </div>
+                </div>
+
+                <div class="hero-visual">
+                    <div class="quote-icon">"</div>
+                    <p class="visual-quote">
+                        Es gehört zur Lebensmitte, dass man Zwischenbilanz macht und sich die Frage stellt: Wo stehe ich
+                        im Leben? Was habe ich erreicht?
+                    </p>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <section class="intro-section">
+        <div class="container">
+            <div class="intro-content">
+                <span class="section-label">Worum geht es?</span>
+                <h2>Zwischenbilanz in der Lebensmitte</h2>
+                <p class="intro-text">
+                    Es gehört zur Lebensmitte, dass man Zwischenbilanz macht und sich die Frage stellt: Wo stehe ich im
+                    Leben? Was habe ich erreicht? Wie stelle ich mir meine Zukunft beruflich und persönlich vor? Eine
+                    solche Standortbestimmung ist sinnvoll und wichtig, um seinen inneren Kompass auf 40+ zu adjustieren
+                    und erfolgsversprechende und kraftvolle Perspektiven für die Zukunft in Beruf und Privatleben zu
+                    entwickeln.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="goals-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Ihre Ziele</span>
+                <h2>Was Sie erreichen werden</h2>
+                <div class="accent-line"></div>
+            </div>
+
+            <div class="goals-grid">
+                <div class="goal-card">
+                    <div class="goal-number">1</div>
+                    <p class="goal-text">Standortbestimmung bezüglich der bisherigen beruflichen und persönlichen
+                        Entwicklungslinien</p>
+                </div>
+                <div class="goal-card">
+                    <div class="goal-number">2</div>
+                    <p class="goal-text">Sich Klarheit darüber verschaffen, von welchen „Säulen" die momentane
+                        berufliche und persönliche Situation getragen wird</p>
+                </div>
+                <div class="goal-card">
+                    <div class="goal-number">3</div>
+                    <p class="goal-text">Zukunftsvision entwickeln und Ziele ableiten</p>
+                </div>
+                <div class="goal-card">
+                    <div class="goal-number">4</div>
+                    <p class="goal-text">Zukunftsplanung der beruflichen Entwicklung mit konkreten Handlungsansätzen</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="benefits-section">
+        <div class="container">
+            <div class="benefits-grid">
+                <div class="benefits-content">
+                    <span class="section-label">Ihr Nutzen</span>
+                    <h2>Was Sie davon haben</h2>
+                    <div class="benefit-box">
+                        <p>Sie gewinnen Klarheit über Ihre berufliche Zukunft und treffen fundierte Entscheidungen für
+                            Ihre Karriere. Im Austausch mit Gleichgesinnten entwickeln Sie konkrete Handlungsansätze für
+                            die nächsten Schritte Ihrer beruflichen Entwicklung.</p>
+                    </div>
+                </div>
+                <div class="benefits-visual">
+                    <div class="icon-showcase">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M12 20V10"></path>
+                            <path d="M18 20V4"></path>
+                            <path d="M6 20v-4"></path>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Ihr Ansprechpartner</span>
+                <h2>Persönliche Beratung</h2>
+                <div class="accent-line"></div>
+            </div>
+
+            <div class="contact-card">
+                <img src="../assets/team/till-reichert.jpg" alt="Dr. Till Reichert" class="contact-image">
+                <div class="contact-info">
+                    <h3>Dr. Till Reichert</h3>
+                    <span class="contact-role">Geschäftsführer & Trainer</span>
+                    <div class="contact-details">
+                        <a href="mailto:reichert@wtm-consulting.de">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                                </path>
+                                <polyline points="22,6 12,13 2,6"></polyline>
+                            </svg>
+                            reichert@wtm-consulting.de
+                        </a>
+                        <a href="tel:+4917558181638">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path
+                                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                                </path>
+                            </svg>
+                            0175 – 58 18 163
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="related-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Weitere Lebensphasen</span>
+                <h2>Seminare für jede Lebensphase</h2>
+                <div class="accent-line"></div>
+            </div>
+
+            <div class="related-grid">
+                <div class="related-card">
+                    <h3>40+</h3>
+                    <p>Die Mitte nutzen</p>
+                    <a href="berufliche-entwicklung-in-der-lebensphase-40-plus.html">Mehr erfahren →</a>
+                </div>
+                <div class="related-card">
+                    <h3>50+</h3>
+                    <p>Bilanz und Balance</p>
+                    <a href="berufliche-entwicklung-in-der-lebensphase-50-plus.html">Mehr erfahren →</a>
+                </div>
+                <div class="related-card">
+                    <h3>60+</h3>
+                    <p>Den Übergang gestalten</p>
+                    <a href="berufliche-entwicklung-in-der-lebensphase-60-plus.html">Mehr erfahren →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-grid">
+                <div class="target-card">
+                    <span class="section-label">Zielgruppe</span>
+                    <h3>Für wen ist dieses Seminar?</h3>
+                    <p>Mitarbeiterinnen und Mitarbeiter, die in beruflichen Anfangsphasen stehen oder sich beruflich neu
+                        orientieren.</p>
+                </div>
+                <div class="cta-card">
+                    <h3>Interesse geweckt?</h3>
+                    <p>Wir beraten Sie gerne zu diesem Seminar und passen die Inhalte individuell an Ihre Bedürfnisse
+                        an.</p>
+                    <a href="../index.html#kontakt" class="btn btn-white">Jetzt Kontakt aufnehmen →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand"><a href="../index.html" class="logo"><img src="../assets/logo.png"
+                            alt="WTM Management Consulting"></a>
+                    <p>Training · Coaching · Beratung<br>Seit über 25 Jahren.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Angebote</h4>
+                    <ul class="footer-links">
+                        <li><a href="../index.html#trainings">Trainings & Seminare</a></li>
+                        <li><a href="../index.html#angebote">Coaching</a></li>
+                        <li><a href="../index.html#angebote">Teamentwicklung</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Kontakt</h4>
+                    <ul class="footer-links footer-contact">
+                        <li>Neuer Graben 61</li>
+                        <li>44139 Dortmund</li>
+                        <li><a href="tel:+4923113722666">0231 137 22 666</a></li>
+                        <li><a href="mailto:info@wtm-consulting.de">info@wtm-consulting.de</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Rechtliches</h4>
+                    <ul class="footer-links">
+                        <li><a href="../impressum.html">Impressum</a></li>
+                        <li><a href="../datenschutz.html">Datenschutz</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="copyright">
+                    <p>© 2026 WTM Management Consulting GmbH. Alle Rechte vorbehalten.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        window.addEventListener('scroll', () => { const scrollProgress = document.getElementById('scrollProgress'); const winScroll = document.body.scrollTop || document.documentElement.scrollTop; const height = document.documentElement.scrollHeight - document.documentElement.clientHeight; scrollProgress.style.width = (winScroll / height) * 100 + '%'; });
+        const header = document.getElementById('header'); window.addEventListener('scroll', () => { header.classList.toggle('scrolled', window.scrollY > 50); });
+        const particlesContainer = document.getElementById('particles'); for (let i = 0; i < 20; i++) { const particle = document.createElement('div'); particle.className = 'particle'; particle.style.left = Math.random() * 100 + '%'; particle.style.top = Math.random() * 100 + '%'; particle.style.animationDelay = Math.random() * 10 + 's'; particle.style.animationDuration = (10 + Math.random() * 10) + 's'; particlesContainer.appendChild(particle); }
+        const mobileMenu = document.getElementById('mobile-menu'); const navLinks = document.querySelector('.nav-links'); mobileMenu.addEventListener('click', () => { navLinks.classList.toggle('active'); mobileMenu.classList.toggle('active'); });
+    </script>
+</body>
+
+</html>

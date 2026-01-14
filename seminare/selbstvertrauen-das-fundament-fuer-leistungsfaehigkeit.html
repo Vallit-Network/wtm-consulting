@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="../assets/favicon.png">
-    <title>Selbstsicherheit & Durchsetzungsvermögen – WTM Management Consulting</title>
+    <title>Selbstvertrauen: Das Fundament für Leistungsfähigkeit – WTM Management Consulting</title>
     <meta name="description"
-        content="Souverän auftreten und die eigene Position vertreten – ohne andere zu überfahren. Seminar für Führungskräfte und alle, die selbstbewusster kommunizieren möchten.">
+        content="Angemessenes Selbstvertrauen entwickeln – die Basis für volle Leistungsfähigkeit. Seminar für alle, die ihre Selbstwirksamkeit entfalten möchten.">
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -21,7 +21,7 @@
 
     <style>
         /* ============================================
-           SEMINAR PAGE - INNOVATIVE STYLES
+           SEMINAR PAGE - SELBSTVERTRAUEN
            ============================================ */
 
         :root {
@@ -230,12 +230,10 @@
             background-clip: text;
         }
 
-        /* Mobile Responsive Title */
         @media (max-width: 768px) {
             .hero-title {
                 font-size: clamp(1.75rem, 8vw, 2.5rem);
                 word-break: break-word;
-                /* Ensure long words break */
                 hyphens: auto;
             }
         }
@@ -551,7 +549,6 @@
             position: relative;
         }
 
-        /* The main vertical line */
         .journey-line {
             position: absolute;
             left: 50%;
@@ -566,7 +563,6 @@
             border-radius: 4px;
         }
 
-        /* Animated fill overlay */
         .journey-line::after {
             content: '';
             position: absolute;
@@ -586,7 +582,6 @@
             height: 100%;
         }
 
-        /* Journey Items */
         .journey-item {
             display: flex;
             align-items: flex-start;
@@ -610,13 +605,11 @@
             flex-direction: row-reverse;
         }
 
-        /* Left/Right content areas */
         .journey-content {
             width: calc(50% - 50px);
             padding: 0 1.5rem;
         }
 
-        /* Center node area */
         .journey-node {
             position: absolute;
             left: 50%;
@@ -625,7 +618,6 @@
             z-index: 10;
         }
 
-        /* The dot */
         .node-dot {
             width: 24px;
             height: 24px;
@@ -651,7 +643,6 @@
             transition: transform 0.3s ease, opacity 0.3s ease;
         }
 
-        /* Only pulse on hover */
         .journey-item:hover .node-dot::before {
             animation: node-pulse 1s infinite ease-in-out;
         }
@@ -670,7 +661,6 @@
             }
         }
 
-        /* Outer ring - only animate on hover */
         .node-ring {
             position: absolute;
             inset: -8px;
@@ -705,7 +695,6 @@
                 0 0 50px rgba(16, 126, 94, 0.6);
         }
 
-        /* Connection line from dot to card */
         .node-connector {
             position: absolute;
             top: 50%;
@@ -725,7 +714,6 @@
             margin-left: 3px;
         }
 
-        /* Journey Card */
         .journey-card {
             background: #fff;
             border-radius: 16px;
@@ -764,7 +752,6 @@
             transform: scaleX(1);
         }
 
-        /* Module number badge */
         .module-badge {
             display: inline-flex;
             align-items: center;
@@ -789,7 +776,6 @@
             stroke: var(--seminar-accent);
         }
 
-        /* Card title */
         .journey-title {
             font-size: 1.15rem;
             font-weight: 600;
@@ -798,65 +784,27 @@
             line-height: 1.4;
         }
 
-        /* Card description */
         .journey-desc {
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             color: var(--color-text-light);
-            margin: 0.75rem 0 0;
             line-height: 1.6;
-            opacity: 0.9;
+            margin: 0.75rem 0 0;
         }
 
-        /* Stagger animations */
-        .journey-item:nth-child(1) {
-            transition-delay: 0.1s;
-        }
-
-        .journey-item:nth-child(2) {
-            transition-delay: 0.2s;
-        }
-
-        .journey-item:nth-child(3) {
-            transition-delay: 0.3s;
-        }
-
-        .journey-item:nth-child(4) {
-            transition-delay: 0.4s;
-        }
-
-        .journey-item:nth-child(5) {
-            transition-delay: 0.5s;
-        }
-
-        .journey-item:nth-child(6) {
-            transition-delay: 0.6s;
-        }
-
-        /* Responsive - Mobile */
+        /* Mobile Journey */
         @media (max-width: 768px) {
-            .content-section {
-                padding: 4rem 0;
-            }
-
-            .content-section::before {
-                display: none;
-            }
-
-            .journey-container {
-                max-width: 100%;
-            }
-
             .journey-line {
-                left: 24px;
-                width: 3px;
+                left: 20px;
             }
 
-            .journey-item,
-            .journey-item:nth-child(odd),
-            .journey-item:nth-child(even) {
-                flex-direction: row;
-                padding-left: 70px;
-                margin-bottom: 1.5rem;
+            .journey-item {
+                flex-direction: row !important;
+                padding-left: 50px;
+            }
+
+            .journey-node {
+                left: 20px;
+                top: 15px;
             }
 
             .journey-content {
@@ -864,56 +812,10 @@
                 padding: 0;
             }
 
-            .journey-node {
-                left: 24px;
-                top: 24px;
-            }
-
-            .node-dot {
-                width: 20px;
-                height: 20px;
-                box-shadow:
-                    0 0 0 3px #fff,
-                    0 0 0 5px var(--seminar-accent),
-                    0 0 20px rgba(16, 126, 94, 0.3);
-            }
-
-            .node-dot::before {
-                width: 6px;
-                height: 6px;
-            }
-
             .node-connector {
                 display: none;
             }
 
-            .journey-card {
-                padding: 1.25rem 1.5rem;
-            }
-
-            .module-badge {
-                padding: 0.3rem 0.6rem;
-            }
-
-            .module-number {
-                font-size: 0.65rem;
-            }
-
-            .module-icon {
-                width: 12px;
-                height: 12px;
-            }
-
-            .journey-title {
-                font-size: 1rem;
-            }
-
-            .journey-desc {
-                font-size: 0.85rem;
-                margin-top: 0.5rem;
-            }
-
-            /* Disable card lift on mobile (touch) */
             .journey-item:hover .journey-card {
                 transform: none;
             }
@@ -923,87 +825,37 @@
             }
         }
 
-        @media (max-width: 480px) {
-
-            .journey-item,
-            .journey-item:nth-child(odd),
-            .journey-item:nth-child(even) {
-                padding-left: 55px;
-            }
-
-            .journey-line {
-                left: 18px;
-            }
-
-            .journey-node {
-                left: 18px;
-            }
-
-            .node-dot {
-                width: 18px;
-                height: 18px;
-            }
-
-            .journey-card {
-                padding: 1rem 1.25rem;
-            }
-        }
-
         /* ============================================
            BENEFITS SECTION
            ============================================ */
         .benefits-section {
             padding: 6rem 0;
-            background: linear-gradient(135deg, #0f172a 0%, #1e3a4a 100%);
-            color: #fff;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .benefits-section::before {
-            content: '';
-            position: absolute;
-            width: 500px;
-            height: 500px;
-            background: var(--seminar-accent);
-            border-radius: 50%;
-            filter: blur(150px);
-            opacity: 0.15;
-            right: -200px;
-            top: -200px;
+            background: #fff;
         }
 
         .benefits-grid {
             display: grid;
-            grid-template-columns: 1fr 1.2fr;
+            grid-template-columns: 1fr 1fr;
             gap: 4rem;
             align-items: center;
-            position: relative;
-            z-index: 1;
         }
 
         .benefits-content h2 {
-            color: #fff;
             margin-bottom: 1.5rem;
         }
 
-        .benefits-content .section-label {
-            color: var(--seminar-accent);
-        }
-
         .benefit-box {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 16px;
+            background: var(--seminar-accent-light);
+            border-left: 4px solid var(--seminar-accent);
             padding: 2rem;
-            backdrop-filter: blur(10px);
+            border-radius: 0 16px 16px 0;
         }
 
         .benefit-box p {
-            font-size: 1.15rem;
-            line-height: 1.9;
-            color: rgba(255, 255, 255, 0.85);
             margin: 0;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--color-text);
         }
 
         .benefits-visual {
@@ -1014,86 +866,137 @@
         .icon-showcase {
             width: 200px;
             height: 200px;
-            background: linear-gradient(135deg, var(--seminar-accent), #0d6b4f);
+            background: linear-gradient(135deg, var(--seminar-accent-light), rgba(45, 212, 191, 0.1));
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             position: relative;
-            animation: float 6s ease-in-out infinite;
         }
 
         .icon-showcase::before {
             content: '';
             position: absolute;
-            inset: -20px;
-            border: 2px dashed rgba(255, 255, 255, 0.2);
+            inset: -10px;
+            border: 2px dashed var(--seminar-accent);
             border-radius: 50%;
-            animation: spin 20s linear infinite;
+            opacity: 0.3;
+            animation: rotate 20s linear infinite;
         }
 
-        .icon-showcase svg {
-            width: 80px;
-            height: 80px;
-            stroke: #fff;
-        }
-
-        @keyframes float {
-
-            0%,
-            100% {
-                transform: translateY(0);
-            }
-
-            50% {
-                transform: translateY(-20px);
-            }
-        }
-
-        @keyframes spin {
-            from {
-                transform: rotate(0deg);
-            }
-
+        @keyframes rotate {
             to {
                 transform: rotate(360deg);
             }
         }
 
+        .icon-showcase svg {
+            width: 80px;
+            height: 80px;
+            stroke: var(--seminar-accent);
+        }
+
         /* ============================================
-           TARGET & CTA SECTION
+           ANSPRECHPARTNER SECTION
+           ============================================ */
+        .contact-section {
+            padding: 4rem 0;
+            background: linear-gradient(180deg, #f8faf9 0%, #fff 100%);
+        }
+
+        .contact-card {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #fff;
+            border-radius: 20px;
+            padding: 2.5rem;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .contact-image {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--seminar-accent);
+            flex-shrink: 0;
+        }
+
+        .contact-info h3 {
+            margin: 0 0 0.5rem;
+            color: var(--color-text);
+            font-size: 1.25rem;
+        }
+
+        .contact-role {
+            color: var(--seminar-accent);
+            font-weight: 600;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .contact-details {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .contact-details a {
+            color: var(--color-text-light);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: color 0.3s;
+        }
+
+        .contact-details a:hover {
+            color: var(--seminar-accent);
+        }
+
+        .contact-details svg {
+            width: 16px;
+            height: 16px;
+            stroke: var(--seminar-accent);
+        }
+
+        @media (max-width: 600px) {
+            .contact-card {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
+        /* ============================================
+           CTA SECTION
            ============================================ */
         .cta-section {
             padding: 6rem 0;
-            background: #fff;
+            background: var(--color-cream);
         }
 
         .cta-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            align-items: stretch;
+            gap: 2rem;
         }
 
         .target-card {
-            background: var(--color-cream);
+            background: #fff;
             border-radius: 20px;
             padding: 3rem;
-        }
-
-        .target-card .section-label {
-            margin-bottom: 1rem;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
         }
 
         .target-card h3 {
-            font-size: 1.5rem;
             margin-bottom: 1rem;
         }
 
         .target-card p {
-            font-size: 1.05rem;
+            color: var(--color-text-light);
             line-height: 1.8;
-            margin: 0;
         }
 
         .cta-card {
@@ -1179,7 +1082,6 @@
             .hero-cta {
                 flex-direction: column;
             }
-
         }
     </style>
 </head>
@@ -1201,11 +1103,11 @@
                     <span class="bar"></span>
                 </div>
                 <ul class="nav-links">
-                    <li><a href="../index.html#haltung" class="nav-link">Haltung</a></li>
-                    <li><a href="../index.html#angebote" class="nav-link">Angebote</a></li>
-                    <li><a href="../index.html#trainings" class="nav-link">Trainings</a></li>
-                    <li><a href="../index.html#team" class="nav-link">Team</a></li>
-                    <li><a href="../index.html#kontakt" class="nav-link">Kontakt</a></li>
+                    <li><a href="../index.html">Startseite</a></li>
+                    <li><a href="../index.html#trainings">Seminare</a></li>
+                    <li><a href="../index.html#angebote">Angebote</a></li>
+                    <li><a href="../index.html#team">Team</a></li>
+                    <li><a href="../index.html#kontakt" class="btn btn-primary">Kontakt</a></li>
                 </ul>
             </nav>
         </div>
@@ -1221,19 +1123,24 @@
             <div class="hero-content-wrapper">
                 <div class="hero-text">
                     <div class="breadcrumb">
-                        <a href="../index.html">Start</a>
-                        <span class="breadcrumb-sep">›</span>
+                        <a href="../index.html">Startseite</a>
+                        <span class="breadcrumb-sep">→</span>
                         <a href="../index.html#trainings">Seminare</a>
-                        <span class="breadcrumb-sep">›</span>
-                        <span class="breadcrumb-current">Selbstsicherheit</span>
+                        <span class="breadcrumb-sep">→</span>
+                        <span class="breadcrumb-current">Selbstvertrauen</span>
                     </div>
 
-                    <div class="category-badge">Gesundheit & Persönlichkeit</div>
+                    <div class="category-badge">Gesundheit</div>
 
-                    <h1 class="hero-title">Selbstsicherheit & <span>Durchsetzungsvermögen</span></h1>
+                    <h1 class="hero-title">
+                        <span>Selbstvertrauen:</span><br>
+                        Das Fundament für Leistungsfähigkeit
+                    </h1>
 
-                    <p class="hero-subtitle">Souverän auftreten und die eigene Position vertreten – ohne andere zu
-                        überfahren oder sich selbst zu verlieren.</p>
+                    <p class="hero-subtitle">
+                        Angemessenes Selbstvertrauen entwickeln – die Basis für volle Leistungsfähigkeit ohne Über- oder
+                        Untertreibung.
+                    </p>
 
                     <div class="hero-meta">
                         <span class="meta-tag">
@@ -1252,27 +1159,31 @@
                                 <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
                                 <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
                             </svg>
-                            Praxisübungen
+                            Reflexion
                         </span>
                         <span class="meta-tag">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                                <polygon
+                                    points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                                </polygon>
                             </svg>
-                            Individuelles Feedback
+                            Praxisübungen
                         </span>
                     </div>
 
                     <div class="hero-cta">
-                        <a href="../index.html#kontakt" class="btn-glow">Jetzt anfragen</a>
-                        <a href="#content" class="btn-outline-light">Mehr erfahren</a>
+                        <a href="../index.html#kontakt" class="btn-glow">Jetzt anfragen →</a>
+                        <a href="#inhalte" class="btn-outline-light">Inhalte entdecken</a>
                     </div>
                 </div>
 
                 <div class="hero-visual">
                     <div class="visual-card">
                         <div class="quote-icon">"</div>
-                        <p class="visual-quote">Was macht uns stark im Umgang mit anderen – vor allem in
-                            Konfliktsituationen? Wie kann ich bei mir selbst bleiben und meine Interessen wahren?</p>
+                        <p class="visual-quote">
+                            Ohne Selbstvertrauen wären wir handlungsunfähig. Die Frage ist, wie viel Selbstvertrauen
+                            sinnvoll ist, um die eigene Selbstwirksamkeit voll zu entfalten.
+                        </p>
                     </div>
                 </div>
             </div>
@@ -1283,12 +1194,15 @@
     <section class="intro-section">
         <div class="container">
             <div class="intro-content">
-                <span class="section-label">Über das Seminar</span>
-                <h2>Die Kunst der Selbstbehauptung</h2>
-                <p class="intro-text">Wie gelingt es, die eigene Meinung zu vertreten, ohne aggressiv zu wirken? Wie
-                    setzen Sie sich durch, ohne Beziehungen zu beschädigen? In welchen Situationen neige ich dazu,
-                    unfruchtbare Handlungsmuster zu aktivieren – und wie kann ich sie durch selbstbewusstes Handeln
-                    ersetzen?</p>
+                <span class="section-label">Worum geht es?</span>
+                <h2>Das Fundament Ihrer Leistungsfähigkeit</h2>
+                <p class="intro-text">
+                    Was ist angemessenes Selbstvertrauen – jenseits von „Tschaka"? Was brauche ich, um mich auf mich und
+                    meine Leistungsfähigkeit verlassen zu können? Wo neige ich zu Übertreibungen, wo zu Untertreibungen?
+                    Wie viel Selbstvertrauen darf ich in meinem persönlichen Umfeld überhaupt haben? Übertriebenes oder
+                    untertriebenes Selbstbewusstsein hemmt die Nutzung der eigenen Fähigkeiten. Aber nicht zwangsweise:
+                    Denn das eigene Selbstvertrauen kann gelernt werden.
+                </p>
             </div>
         </div>
     </section>
@@ -1297,42 +1211,52 @@
     <section class="goals-section">
         <div class="container">
             <div class="section-header">
-                <span class="section-label">Lernziele</span>
-                <h2>Was Sie mitnehmen</h2>
+                <span class="section-label">Ihre Ziele</span>
+                <h2>Was Sie erreichen werden</h2>
                 <div class="accent-line"></div>
             </div>
 
             <div class="goals-grid">
                 <div class="goal-card">
-                    <span class="goal-number">01</span>
-                    <p class="goal-text">Sie kennen Ihre persönlichen Kommunikations- und Kontaktmuster – besonders in
-                        schwierigen Gesprächssituationen</p>
+                    <div class="goal-number">1</div>
+                    <p class="goal-text">Sie kennen Ihre persönliche Bereitschaft aus Fehlern zu lernen</p>
                 </div>
                 <div class="goal-card">
-                    <span class="goal-number">02</span>
-                    <p class="goal-text">Sie treten „selbst-bewusst" auf und können mit persönlichen Unsicherheiten
-                        souverän umgehen</p>
+                    <div class="goal-number">2</div>
+                    <p class="goal-text">Sie wissen, wie Selbstvertrauen vertrauensvolle Beziehungen zu anderen
+                        ermöglicht</p>
                 </div>
                 <div class="goal-card">
-                    <span class="goal-number">03</span>
-                    <p class="goal-text">Sie kennen und nutzen Möglichkeiten, Ihr Ausdrucks- und Wirkungspotenzial zu
-                        entfalten</p>
+                    <div class="goal-number">3</div>
+                    <p class="goal-text">Sie wissen, wie Sie Selbstüberschätzung vermeiden können</p>
                 </div>
                 <div class="goal-card">
-                    <span class="goal-number">04</span>
-                    <p class="goal-text">Sie bleiben in Konfliktsituationen innerlich stabil und stärken Ihr
-                        persönliches Durchsetzungsvermögen</p>
+                    <div class="goal-number">4</div>
+                    <p class="goal-text">Sie können Ihr Selbstvertrauen gezielt stärken</p>
+                </div>
+                <div class="goal-card">
+                    <div class="goal-number">5</div>
+                    <p class="goal-text">Sie können Anerkennung von sich selbst und von anderen annehmen</p>
+                </div>
+                <div class="goal-card">
+                    <div class="goal-number">6</div>
+                    <p class="goal-text">Sie kennen den Einfluss Ihres Wertesystems auf Ihre Bereitschaft, sich selbst
+                        zu vertrauen</p>
+                </div>
+                <div class="goal-card">
+                    <div class="goal-number">7</div>
+                    <p class="goal-text">Sie wissen, wie und warum Selbstvertrauen Sie leistungsfähiger macht</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Content Timeline Section -->
-    <section class="content-section" id="content">
+    <section class="content-section" id="inhalte">
         <div class="container">
             <div class="section-header">
-                <span class="section-label">Seminarinhalte</span>
-                <h2>Ihre Lernreise</h2>
+                <span class="section-label">Ihre Lernreise</span>
+                <h2>Seminarinhalte im Überblick</h2>
                 <div class="accent-line"></div>
             </div>
 
@@ -1357,7 +1281,7 @@
                                 </svg>
                                 <span class="module-number">Modul 01</span>
                             </div>
-                            <h4 class="journey-title">Selbstbild und Fremdbild</h4>
+                            <h4 class="journey-title">Selbstwahrnehmung & Fremdbild</h4>
                             <p class="journey-desc">Erkennen Sie, wie Sie sich selbst wahrnehmen und wie andere Sie
                                 erleben.</p>
                         </div>
@@ -1383,9 +1307,9 @@
                                 </svg>
                                 <span class="module-number">Modul 02</span>
                             </div>
-                            <h4 class="journey-title">Körpersprache und Stimme</h4>
-                            <p class="journey-desc">Nutzen Sie Ihre nonverbale Kommunikation bewusst und wirkungsvoll.
-                            </p>
+                            <h4 class="journey-title">Innere Kritiker erkennen</h4>
+                            <p class="journey-desc">Identifizieren Sie Ihre inneren Saboteure und lernen Sie, mit ihnen
+                                umzugehen.</p>
                         </div>
                     </div>
                 </div>
@@ -1409,9 +1333,9 @@
                                 </svg>
                                 <span class="module-number">Modul 03</span>
                             </div>
-                            <h4 class="journey-title">Assertives Verhalten</h4>
-                            <p class="journey-desc">Vertreten Sie Ihre Position klar, ohne aggressiv oder passiv zu
-                                wirken.</p>
+                            <h4 class="journey-title">Ressourcen aktivieren</h4>
+                            <p class="journey-desc">Entdecken Sie Ihre Stärken und nutzen Sie Ihre persönlichen
+                                Ressourcen.</p>
                         </div>
                     </div>
                 </div>
@@ -1433,8 +1357,8 @@
                                 </svg>
                                 <span class="module-number">Modul 04</span>
                             </div>
-                            <h4 class="journey-title">Umgang mit Manipulation</h4>
-                            <p class="journey-desc">Erkennen und kontern Sie manipulative Taktiken souverän.</p>
+                            <h4 class="journey-title">Umgang mit Rückmeldungen</h4>
+                            <p class="journey-desc">Lernen Sie, Feedback konstruktiv zu geben und anzunehmen.</p>
                         </div>
                     </div>
                 </div>
@@ -1452,41 +1376,15 @@
                             <div class="module-badge">
                                 <svg class="module-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                     stroke-width="2">
-                                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
-                                    <line x1="9" y1="9" x2="15" y2="15"></line>
-                                    <line x1="15" y1="9" x2="9" y2="15"></line>
-                                </svg>
-                                <span class="module-number">Modul 05</span>
-                            </div>
-                            <h4 class="journey-title">Grenzen setzen</h4>
-                            <p class="journey-desc">Lernen Sie, klar Nein zu sagen und Ihre Grenzen zu kommunizieren.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Module 6 -->
-                <div class="journey-item">
-                    <div class="journey-node">
-                        <div class="node-dot">
-                            <div class="node-ring"></div>
-                        </div>
-                        <div class="node-connector"></div>
-                    </div>
-                    <div class="journey-content">
-                        <div class="journey-card">
-                            <div class="module-badge">
-                                <svg class="module-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="2">
                                     <polygon
                                         points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
                                     </polygon>
                                 </svg>
-                                <span class="module-number">Modul 06</span>
+                                <span class="module-number">Modul 05</span>
                             </div>
-                            <h4 class="journey-title">Konfliktsituationen meistern</h4>
-                            <p class="journey-desc">Bleiben Sie innerlich stabil und handeln Sie konstruktiv in
-                                Konflikten.</p>
+                            <h4 class="journey-title">Selbstwirksamkeit stärken</h4>
+                            <p class="journey-desc">Entwickeln Sie Strategien, um Ihr Selbstvertrauen nachhaltig zu
+                                steigern.</p>
                         </div>
                     </div>
                 </div>
@@ -1503,9 +1401,11 @@
                     <span class="section-label">Ihr Nutzen</span>
                     <h2>Was Sie davon haben</h2>
                     <div class="benefit-box">
-                        <p>Sie treten souveräner auf, vertreten Ihre Interessen klarer und gewinnen an Ausstrahlung und
-                            Durchsetzungskraft. Sie lernen, in schwierigen Situationen bei sich zu bleiben und
-                            konstruktiv zu handeln.</p>
+                        <p>Sie werden sicherer und leistungsfähiger in Ihrem Arbeitsumfeld unterwegs sein, da Sie Ihre
+                            Kompetenzen angemessen nutzen können. Außerdem können Sie das Miteinander und die
+                            Kommunikation vertrauensvoller gestalten. Sie werden die Innovationskraft, das Engagement
+                            und alle geschäftlichen Beziehungen als effektiver erleben und mehr Freude am Gestalten des
+                            eigenen Arbeitsgebietes erfahren.</p>
                     </div>
                 </div>
                 <div class="benefits-visual">
@@ -1521,6 +1421,43 @@
         </div>
     </section>
 
+    <!-- Ansprechpartner Section -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Ihr Ansprechpartner</span>
+                <h2>Persönliche Beratung</h2>
+                <div class="accent-line"></div>
+            </div>
+
+            <div class="contact-card">
+                <img src="../assets/team/till-reichert.jpg" alt="Dr. Till Reichert" class="contact-image">
+                <div class="contact-info">
+                    <h3>Dr. Till Reichert</h3>
+                    <span class="contact-role">Geschäftsführer & Trainer</span>
+                    <div class="contact-details">
+                        <a href="mailto:reichert@wtm-consulting.de">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                                </path>
+                                <polyline points="22,6 12,13 2,6"></polyline>
+                            </svg>
+                            reichert@wtm-consulting.de
+                        </a>
+                        <a href="tel:+4917558181638">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path
+                                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                                </path>
+                            </svg>
+                            0175 – 58 18 163
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Target & CTA Section -->
     <section class="cta-section">
         <div class="container">
@@ -1528,8 +1465,9 @@
                 <div class="target-card">
                     <span class="section-label">Zielgruppe</span>
                     <h3>Für wen ist dieses Seminar?</h3>
-                    <p>Coaches, Berater, Personaler, Führungskräfte, Trainer und alle neugierigen Menschen, die eine
-                        hohe Bereitschaft zur Auseinandersetzung mit der eigenen Persönlichkeit mitbringen.</p>
+                    <p>Für alle, die fitter in Selbstvertrauen werden möchten und ihre Leistungsfähigkeit voll entfalten
+                        wollen. Für Fach- und Führungskräfte, die ihre Selbstwirksamkeit steigern und vertrauensvoller
+                        kommunizieren möchten.</p>
                 </div>
                 <div class="cta-card">
                     <h3>Interesse geweckt?</h3>

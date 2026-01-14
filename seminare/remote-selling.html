@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="../assets/favicon.png">
-    <title>Selbstsicherheit & Durchsetzungsvermögen – WTM Management Consulting</title>
+    <title>Remote Selling – WTM Management Consulting</title>
     <meta name="description"
-        content="Souverän auftreten und die eigene Position vertreten – ohne andere zu überfahren. Seminar für Führungskräfte und alle, die selbstbewusster kommunizieren möchten.">
+        content="Erfolgreich verkaufen auf Distanz – digitale Vertriebsgespräche professionell führen und Kunden überzeugen.">
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -21,13 +21,14 @@
 
     <style>
         /* ============================================
-           SEMINAR PAGE - INNOVATIVE STYLES
+           SEMINAR PAGE - REMOTE SELLING
+           Accent: Blue for Management/Digital
            ============================================ */
 
         :root {
-            --seminar-accent: #107e5e;
-            --seminar-accent-light: rgba(16, 126, 94, 0.1);
-            --seminar-accent-glow: rgba(16, 126, 94, 0.3);
+            --seminar-accent: #2563eb;
+            --seminar-accent-light: rgba(37, 99, 235, 0.1);
+            --seminar-accent-glow: rgba(37, 99, 235, 0.3);
         }
 
         /* Scroll Progress */
@@ -36,14 +37,14 @@
             top: 0;
             left: 0;
             height: 3px;
-            background: linear-gradient(90deg, var(--seminar-accent), #2dd4bf);
+            background: linear-gradient(90deg, var(--seminar-accent), #60a5fa);
             z-index: 9999;
             width: 0%;
             transition: width 0.1s ease-out;
         }
 
         /* ============================================
-           HERO SECTION - IMMERSIVE
+           HERO SECTION
            ============================================ */
         .seminar-hero {
             min-height: 100vh;
@@ -115,7 +116,7 @@
         .orb-2 {
             width: 300px;
             height: 300px;
-            background: #2dd4bf;
+            background: #60a5fa;
             bottom: -50px;
             left: -50px;
             animation-delay: 4s;
@@ -224,18 +225,16 @@
         }
 
         .hero-title span {
-            background: linear-gradient(135deg, var(--seminar-accent), #2dd4bf);
+            background: linear-gradient(135deg, var(--seminar-accent), #60a5fa);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
 
-        /* Mobile Responsive Title */
         @media (max-width: 768px) {
             .hero-title {
                 font-size: clamp(1.75rem, 8vw, 2.5rem);
                 word-break: break-word;
-                /* Ensure long words break */
                 hyphens: auto;
             }
         }
@@ -287,7 +286,7 @@
 
         .btn-glow {
             position: relative;
-            background: linear-gradient(135deg, var(--seminar-accent), #0d6b4f);
+            background: linear-gradient(135deg, var(--seminar-accent), #1d4ed8);
             color: #fff;
             padding: 1rem 2rem;
             border-radius: 8px;
@@ -328,7 +327,6 @@
             border-color: rgba(255, 255, 255, 0.5);
         }
 
-        /* Hero Visual */
         .hero-visual {
             position: relative;
             opacity: 0;
@@ -434,7 +432,7 @@
         }
 
         /* ============================================
-           GOALS SECTION - CARDS GRID
+           GOALS SECTION
            ============================================ */
         .goals-section {
             padding: 6rem 0;
@@ -496,7 +494,7 @@
 
         .goal-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(16, 126, 94, 0.1);
+            box-shadow: 0 20px 40px rgba(37, 99, 235, 0.1);
             border-color: var(--seminar-accent);
         }
 
@@ -526,7 +524,7 @@
         }
 
         /* ============================================
-           CONTENT TIMELINE - PREMIUM DESIGN
+           CONTENT TIMELINE
            ============================================ */
         .content-section {
             padding: 6rem 0;
@@ -551,7 +549,6 @@
             position: relative;
         }
 
-        /* The main vertical line */
         .journey-line {
             position: absolute;
             left: 50%;
@@ -560,13 +557,12 @@
             width: 4px;
             background: linear-gradient(180deg,
                     var(--seminar-accent) 0%,
-                    rgba(16, 126, 94, 0.6) 50%,
-                    rgba(16, 126, 94, 0.2) 100%);
+                    rgba(37, 99, 235, 0.6) 50%,
+                    rgba(37, 99, 235, 0.2) 100%);
             transform: translateX(-50%);
             border-radius: 4px;
         }
 
-        /* Animated fill overlay */
         .journey-line::after {
             content: '';
             position: absolute;
@@ -574,19 +570,16 @@
             left: 0;
             right: 0;
             height: 0%;
-            background: linear-gradient(180deg,
-                    #2dd4bf 0%,
-                    var(--seminar-accent) 100%);
+            background: linear-gradient(180deg, #60a5fa 0%, var(--seminar-accent) 100%);
             border-radius: 4px;
             transition: height 1.5s cubic-bezier(0.4, 0, 0.2, 1);
-            box-shadow: 0 0 20px rgba(16, 126, 94, 0.4);
+            box-shadow: 0 0 20px rgba(37, 99, 235, 0.4);
         }
 
         .journey-line.animated::after {
             height: 100%;
         }
 
-        /* Journey Items */
         .journey-item {
             display: flex;
             align-items: flex-start;
@@ -610,13 +603,11 @@
             flex-direction: row-reverse;
         }
 
-        /* Left/Right content areas */
         .journey-content {
             width: calc(50% - 50px);
             padding: 0 1.5rem;
         }
 
-        /* Center node area */
         .journey-node {
             position: absolute;
             left: 50%;
@@ -625,11 +616,10 @@
             z-index: 10;
         }
 
-        /* The dot */
         .node-dot {
             width: 24px;
             height: 24px;
-            background: linear-gradient(135deg, var(--seminar-accent), #0d6b4f);
+            background: linear-gradient(135deg, var(--seminar-accent), #1d4ed8);
             border-radius: 50%;
             position: relative;
             display: flex;
@@ -638,7 +628,7 @@
             box-shadow:
                 0 0 0 4px #fff,
                 0 0 0 6px var(--seminar-accent),
-                0 0 30px rgba(16, 126, 94, 0.4);
+                0 0 30px rgba(37, 99, 235, 0.4);
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
@@ -651,7 +641,6 @@
             transition: transform 0.3s ease, opacity 0.3s ease;
         }
 
-        /* Only pulse on hover */
         .journey-item:hover .node-dot::before {
             animation: node-pulse 1s infinite ease-in-out;
         }
@@ -670,7 +659,6 @@
             }
         }
 
-        /* Outer ring - only animate on hover */
         .node-ring {
             position: absolute;
             inset: -8px;
@@ -702,10 +690,9 @@
             box-shadow:
                 0 0 0 4px #fff,
                 0 0 0 8px var(--seminar-accent),
-                0 0 50px rgba(16, 126, 94, 0.6);
+                0 0 50px rgba(37, 99, 235, 0.6);
         }
 
-        /* Connection line from dot to card */
         .node-connector {
             position: absolute;
             top: 50%;
@@ -725,13 +712,12 @@
             margin-left: 3px;
         }
 
-        /* Journey Card */
         .journey-card {
             background: #fff;
             border-radius: 16px;
             padding: 1.75rem 2rem;
             position: relative;
-            border: 1px solid rgba(16, 126, 94, 0.15);
+            border: 1px solid rgba(37, 99, 235, 0.15);
             box-shadow:
                 0 4px 20px rgba(0, 0, 0, 0.04),
                 0 1px 3px rgba(0, 0, 0, 0.02);
@@ -746,7 +732,7 @@
             left: 0;
             right: 0;
             height: 3px;
-            background: linear-gradient(90deg, var(--seminar-accent), #2dd4bf);
+            background: linear-gradient(90deg, var(--seminar-accent), #60a5fa);
             transform: scaleX(0);
             transform-origin: left;
             transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -756,7 +742,7 @@
             transform: translateY(-5px);
             border-color: var(--seminar-accent);
             box-shadow:
-                0 20px 50px rgba(16, 126, 94, 0.12),
+                0 20px 50px rgba(37, 99, 235, 0.12),
                 0 8px 20px rgba(0, 0, 0, 0.06);
         }
 
@@ -764,13 +750,12 @@
             transform: scaleX(1);
         }
 
-        /* Module number badge */
         .module-badge {
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
             padding: 0.4rem 0.8rem;
-            background: linear-gradient(135deg, var(--seminar-accent-light), rgba(45, 212, 191, 0.1));
+            background: linear-gradient(135deg, var(--seminar-accent-light), rgba(96, 165, 250, 0.1));
             border-radius: 20px;
             margin-bottom: 0.75rem;
         }
@@ -789,7 +774,6 @@
             stroke: var(--seminar-accent);
         }
 
-        /* Card title */
         .journey-title {
             font-size: 1.15rem;
             font-weight: 600;
@@ -798,65 +782,26 @@
             line-height: 1.4;
         }
 
-        /* Card description */
         .journey-desc {
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             color: var(--color-text-light);
-            margin: 0.75rem 0 0;
             line-height: 1.6;
-            opacity: 0.9;
+            margin: 0.75rem 0 0;
         }
 
-        /* Stagger animations */
-        .journey-item:nth-child(1) {
-            transition-delay: 0.1s;
-        }
-
-        .journey-item:nth-child(2) {
-            transition-delay: 0.2s;
-        }
-
-        .journey-item:nth-child(3) {
-            transition-delay: 0.3s;
-        }
-
-        .journey-item:nth-child(4) {
-            transition-delay: 0.4s;
-        }
-
-        .journey-item:nth-child(5) {
-            transition-delay: 0.5s;
-        }
-
-        .journey-item:nth-child(6) {
-            transition-delay: 0.6s;
-        }
-
-        /* Responsive - Mobile */
         @media (max-width: 768px) {
-            .content-section {
-                padding: 4rem 0;
-            }
-
-            .content-section::before {
-                display: none;
-            }
-
-            .journey-container {
-                max-width: 100%;
-            }
-
             .journey-line {
-                left: 24px;
-                width: 3px;
+                left: 20px;
             }
 
-            .journey-item,
-            .journey-item:nth-child(odd),
-            .journey-item:nth-child(even) {
-                flex-direction: row;
-                padding-left: 70px;
-                margin-bottom: 1.5rem;
+            .journey-item {
+                flex-direction: row !important;
+                padding-left: 50px;
+            }
+
+            .journey-node {
+                left: 20px;
+                top: 15px;
             }
 
             .journey-content {
@@ -864,56 +809,10 @@
                 padding: 0;
             }
 
-            .journey-node {
-                left: 24px;
-                top: 24px;
-            }
-
-            .node-dot {
-                width: 20px;
-                height: 20px;
-                box-shadow:
-                    0 0 0 3px #fff,
-                    0 0 0 5px var(--seminar-accent),
-                    0 0 20px rgba(16, 126, 94, 0.3);
-            }
-
-            .node-dot::before {
-                width: 6px;
-                height: 6px;
-            }
-
             .node-connector {
                 display: none;
             }
 
-            .journey-card {
-                padding: 1.25rem 1.5rem;
-            }
-
-            .module-badge {
-                padding: 0.3rem 0.6rem;
-            }
-
-            .module-number {
-                font-size: 0.65rem;
-            }
-
-            .module-icon {
-                width: 12px;
-                height: 12px;
-            }
-
-            .journey-title {
-                font-size: 1rem;
-            }
-
-            .journey-desc {
-                font-size: 0.85rem;
-                margin-top: 0.5rem;
-            }
-
-            /* Disable card lift on mobile (touch) */
             .journey-item:hover .journey-card {
                 transform: none;
             }
@@ -923,87 +822,58 @@
             }
         }
 
-        @media (max-width: 480px) {
-
-            .journey-item,
-            .journey-item:nth-child(odd),
-            .journey-item:nth-child(even) {
-                padding-left: 55px;
-            }
-
-            .journey-line {
-                left: 18px;
-            }
-
-            .journey-node {
-                left: 18px;
-            }
-
-            .node-dot {
-                width: 18px;
-                height: 18px;
-            }
-
-            .journey-card {
-                padding: 1rem 1.25rem;
-            }
-        }
-
         /* ============================================
            BENEFITS SECTION
            ============================================ */
         .benefits-section {
             padding: 6rem 0;
-            background: linear-gradient(135deg, #0f172a 0%, #1e3a4a 100%);
-            color: #fff;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .benefits-section::before {
-            content: '';
-            position: absolute;
-            width: 500px;
-            height: 500px;
-            background: var(--seminar-accent);
-            border-radius: 50%;
-            filter: blur(150px);
-            opacity: 0.15;
-            right: -200px;
-            top: -200px;
+            background: #fff;
         }
 
         .benefits-grid {
             display: grid;
-            grid-template-columns: 1fr 1.2fr;
+            grid-template-columns: 1fr 1fr;
             gap: 4rem;
             align-items: center;
-            position: relative;
-            z-index: 1;
         }
 
         .benefits-content h2 {
-            color: #fff;
             margin-bottom: 1.5rem;
         }
 
-        .benefits-content .section-label {
-            color: var(--seminar-accent);
-        }
-
         .benefit-box {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 16px;
+            background: var(--seminar-accent-light);
+            border-left: 4px solid var(--seminar-accent);
             padding: 2rem;
-            backdrop-filter: blur(10px);
+            border-radius: 0 16px 16px 0;
         }
 
         .benefit-box p {
-            font-size: 1.15rem;
-            line-height: 1.9;
-            color: rgba(255, 255, 255, 0.85);
             margin: 0;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--color-text);
+        }
+
+        .benefit-list {
+            list-style: none;
+            padding: 0;
+            margin: 1.5rem 0 0;
+        }
+
+        .benefit-list li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+            color: var(--color-text);
+        }
+
+        .benefit-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--seminar-accent);
+            font-weight: bold;
         }
 
         .benefits-visual {
@@ -1014,90 +884,141 @@
         .icon-showcase {
             width: 200px;
             height: 200px;
-            background: linear-gradient(135deg, var(--seminar-accent), #0d6b4f);
+            background: linear-gradient(135deg, var(--seminar-accent-light), rgba(96, 165, 250, 0.1));
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             position: relative;
-            animation: float 6s ease-in-out infinite;
         }
 
         .icon-showcase::before {
             content: '';
             position: absolute;
-            inset: -20px;
-            border: 2px dashed rgba(255, 255, 255, 0.2);
+            inset: -10px;
+            border: 2px dashed var(--seminar-accent);
             border-radius: 50%;
-            animation: spin 20s linear infinite;
+            opacity: 0.3;
+            animation: rotate 20s linear infinite;
         }
 
-        .icon-showcase svg {
-            width: 80px;
-            height: 80px;
-            stroke: #fff;
-        }
-
-        @keyframes float {
-
-            0%,
-            100% {
-                transform: translateY(0);
-            }
-
-            50% {
-                transform: translateY(-20px);
-            }
-        }
-
-        @keyframes spin {
-            from {
-                transform: rotate(0deg);
-            }
-
+        @keyframes rotate {
             to {
                 transform: rotate(360deg);
             }
         }
 
+        .icon-showcase svg {
+            width: 80px;
+            height: 80px;
+            stroke: var(--seminar-accent);
+        }
+
         /* ============================================
-           TARGET & CTA SECTION
+           ANSPRECHPARTNER SECTION
+           ============================================ */
+        .contact-section {
+            padding: 4rem 0;
+            background: linear-gradient(180deg, #f8faf9 0%, #fff 100%);
+        }
+
+        .contact-card {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #fff;
+            border-radius: 20px;
+            padding: 2.5rem;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .contact-image {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--seminar-accent);
+            flex-shrink: 0;
+        }
+
+        .contact-info h3 {
+            margin: 0 0 0.5rem;
+            color: var(--color-text);
+            font-size: 1.25rem;
+        }
+
+        .contact-role {
+            color: var(--seminar-accent);
+            font-weight: 600;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .contact-details {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .contact-details a {
+            color: var(--color-text-light);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: color 0.3s;
+        }
+
+        .contact-details a:hover {
+            color: var(--seminar-accent);
+        }
+
+        .contact-details svg {
+            width: 16px;
+            height: 16px;
+            stroke: var(--seminar-accent);
+        }
+
+        @media (max-width: 600px) {
+            .contact-card {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
+        /* ============================================
+           CTA SECTION
            ============================================ */
         .cta-section {
             padding: 6rem 0;
-            background: #fff;
+            background: var(--color-cream);
         }
 
         .cta-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            align-items: stretch;
+            gap: 2rem;
         }
 
         .target-card {
-            background: var(--color-cream);
+            background: #fff;
             border-radius: 20px;
             padding: 3rem;
-        }
-
-        .target-card .section-label {
-            margin-bottom: 1rem;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
         }
 
         .target-card h3 {
-            font-size: 1.5rem;
             margin-bottom: 1rem;
         }
 
         .target-card p {
-            font-size: 1.05rem;
+            color: var(--color-text-light);
             line-height: 1.8;
-            margin: 0;
         }
 
         .cta-card {
-            background: linear-gradient(135deg, var(--seminar-accent) 0%, #0d6b4f 100%);
+            background: linear-gradient(135deg, var(--seminar-accent) 0%, #1d4ed8 100%);
             border-radius: 20px;
             padding: 3rem;
             color: #fff;
@@ -1179,7 +1100,6 @@
             .hero-cta {
                 flex-direction: column;
             }
-
         }
     </style>
 </head>
@@ -1201,11 +1121,11 @@
                     <span class="bar"></span>
                 </div>
                 <ul class="nav-links">
-                    <li><a href="../index.html#haltung" class="nav-link">Haltung</a></li>
-                    <li><a href="../index.html#angebote" class="nav-link">Angebote</a></li>
-                    <li><a href="../index.html#trainings" class="nav-link">Trainings</a></li>
-                    <li><a href="../index.html#team" class="nav-link">Team</a></li>
-                    <li><a href="../index.html#kontakt" class="nav-link">Kontakt</a></li>
+                    <li><a href="../index.html">Startseite</a></li>
+                    <li><a href="../index.html#trainings">Seminare</a></li>
+                    <li><a href="../index.html#angebote">Angebote</a></li>
+                    <li><a href="../index.html#team">Team</a></li>
+                    <li><a href="../index.html#kontakt" class="btn btn-primary">Kontakt</a></li>
                 </ul>
             </nav>
         </div>
@@ -1221,58 +1141,65 @@
             <div class="hero-content-wrapper">
                 <div class="hero-text">
                     <div class="breadcrumb">
-                        <a href="../index.html">Start</a>
-                        <span class="breadcrumb-sep">›</span>
+                        <a href="../index.html">Startseite</a>
+                        <span class="breadcrumb-sep">→</span>
                         <a href="../index.html#trainings">Seminare</a>
-                        <span class="breadcrumb-sep">›</span>
-                        <span class="breadcrumb-current">Selbstsicherheit</span>
+                        <span class="breadcrumb-sep">→</span>
+                        <span class="breadcrumb-current">Remote Selling</span>
                     </div>
 
-                    <div class="category-badge">Gesundheit & Persönlichkeit</div>
+                    <div class="category-badge">Management</div>
 
-                    <h1 class="hero-title">Selbstsicherheit & <span>Durchsetzungsvermögen</span></h1>
+                    <h1 class="hero-title">
+                        <span>Remote</span> Selling
+                    </h1>
 
-                    <p class="hero-subtitle">Souverän auftreten und die eigene Position vertreten – ohne andere zu
-                        überfahren oder sich selbst zu verlieren.</p>
+                    <p class="hero-subtitle">
+                        Erfolgreich verkaufen auf Distanz – digitale Vertriebsgespräche professionell führen und Kunden
+                        überzeugen.
+                    </p>
 
                     <div class="hero-meta">
                         <span class="meta-tag">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-                                <line x1="16" y1="2" x2="16" y2="6"></line>
-                                <line x1="8" y1="2" x2="8" y2="6"></line>
-                                <line x1="3" y1="10" x2="21" y2="10"></line>
+                                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                                <line x1="8" y1="21" x2="16" y2="21"></line>
+                                <line x1="12" y1="17" x2="12" y2="21"></line>
                             </svg>
-                            2 Tage Präsenz
+                            4 Stunden Online
                         </span>
                         <span class="meta-tag">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-                                <circle cx="9" cy="7" r="4"></circle>
-                                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-                                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                                <polygon points="23 7 16 12 23 17 23 7"></polygon>
+                                <rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect>
                             </svg>
-                            Praxisübungen
+                            Live-Online-Training
                         </span>
                         <span class="meta-tag">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <line x1="2" y1="12" x2="22" y2="12"></line>
+                                <path
+                                    d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z">
+                                </path>
                             </svg>
-                            Individuelles Feedback
+                            Auch auf Englisch
                         </span>
                     </div>
 
                     <div class="hero-cta">
-                        <a href="../index.html#kontakt" class="btn-glow">Jetzt anfragen</a>
-                        <a href="#content" class="btn-outline-light">Mehr erfahren</a>
+                        <a href="../index.html#kontakt" class="btn-glow">Jetzt anfragen →</a>
+                        <a href="#inhalte" class="btn-outline-light">Inhalte entdecken</a>
                     </div>
                 </div>
 
                 <div class="hero-visual">
                     <div class="visual-card">
                         <div class="quote-icon">"</div>
-                        <p class="visual-quote">Was macht uns stark im Umgang mit anderen – vor allem in
-                            Konfliktsituationen? Wie kann ich bei mir selbst bleiben und meine Interessen wahren?</p>
+                        <p class="visual-quote">
+                            Ein Update für erfolgreiche Präsenz-Vertriebler, um auch sicher und souverän online zu
+                            punkten.
+                        </p>
                     </div>
                 </div>
             </div>
@@ -1283,12 +1210,14 @@
     <section class="intro-section">
         <div class="container">
             <div class="intro-content">
-                <span class="section-label">Über das Seminar</span>
-                <h2>Die Kunst der Selbstbehauptung</h2>
-                <p class="intro-text">Wie gelingt es, die eigene Meinung zu vertreten, ohne aggressiv zu wirken? Wie
-                    setzen Sie sich durch, ohne Beziehungen zu beschädigen? In welchen Situationen neige ich dazu,
-                    unfruchtbare Handlungsmuster zu aktivieren – und wie kann ich sie durch selbstbewusstes Handeln
-                    ersetzen?</p>
+                <span class="section-label">Worum geht es?</span>
+                <h2>Virtuell verkaufen – professionell überzeugen</h2>
+                <p class="intro-text">
+                    In diesem Live-Online-Training erhalten Sie das nötige „Update", um als erfolgreicher
+                    Präsenz-Vertriebler auch sicher und souverän online zu punkten. Lernen Sie, wie Sie Ihre
+                    Kundenbesuche perfekt auf ein Online-Format vorbereiten, souverän vor der Kamera auftreten und Ihr
+                    Gegenüber auf der Beziehungsebene wirkungsvoll ansprechen.
+                </p>
             </div>
         </div>
     </section>
@@ -1297,42 +1226,40 @@
     <section class="goals-section">
         <div class="container">
             <div class="section-header">
-                <span class="section-label">Lernziele</span>
-                <h2>Was Sie mitnehmen</h2>
+                <span class="section-label">Ihre Ziele</span>
+                <h2>Was Sie erreichen werden</h2>
                 <div class="accent-line"></div>
             </div>
 
             <div class="goals-grid">
                 <div class="goal-card">
-                    <span class="goal-number">01</span>
-                    <p class="goal-text">Sie kennen Ihre persönlichen Kommunikations- und Kontaktmuster – besonders in
-                        schwierigen Gesprächssituationen</p>
+                    <div class="goal-number">1</div>
+                    <p class="goal-text">Sie möchten Ihre Kundenbesuche perfekt auf ein Online-Format vorbereiten</p>
                 </div>
                 <div class="goal-card">
-                    <span class="goal-number">02</span>
-                    <p class="goal-text">Sie treten „selbst-bewusst" auf und können mit persönlichen Unsicherheiten
-                        souverän umgehen</p>
+                    <div class="goal-number">2</div>
+                    <p class="goal-text">Sie wollen sicher mit der Technik umgehen</p>
                 </div>
                 <div class="goal-card">
-                    <span class="goal-number">03</span>
-                    <p class="goal-text">Sie kennen und nutzen Möglichkeiten, Ihr Ausdrucks- und Wirkungspotenzial zu
-                        entfalten</p>
+                    <div class="goal-number">3</div>
+                    <p class="goal-text">Sie möchten souverän vor der Kamera auftreten und Ihr Gegenüber auf der
+                        Beziehungsebene wirkungsvoll ansprechen</p>
                 </div>
                 <div class="goal-card">
-                    <span class="goal-number">04</span>
-                    <p class="goal-text">Sie bleiben in Konfliktsituationen innerlich stabil und stärken Ihr
-                        persönliches Durchsetzungsvermögen</p>
+                    <div class="goal-number">4</div>
+                    <p class="goal-text">Sie haben den Wunsch, Online-Kundenbesuche genauso zu lieben wie
+                        vor-Ort-Treffen</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Content Timeline Section -->
-    <section class="content-section" id="content">
+    <section class="content-section" id="inhalte">
         <div class="container">
             <div class="section-header">
-                <span class="section-label">Seminarinhalte</span>
-                <h2>Ihre Lernreise</h2>
+                <span class="section-label">Ihre Lernreise</span>
+                <h2>Trainingsinhalte im Überblick</h2>
                 <div class="accent-line"></div>
             </div>
 
@@ -1352,14 +1279,15 @@
                             <div class="module-badge">
                                 <svg class="module-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                     stroke-width="2">
-                                    <circle cx="12" cy="12" r="10"></circle>
-                                    <path d="M12 6v6l4 2"></path>
+                                    <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                                    <line x1="8" y1="21" x2="16" y2="21"></line>
+                                    <line x1="12" y1="17" x2="12" y2="21"></line>
                                 </svg>
                                 <span class="module-number">Modul 01</span>
                             </div>
-                            <h4 class="journey-title">Selbstbild und Fremdbild</h4>
-                            <p class="journey-desc">Erkennen Sie, wie Sie sich selbst wahrnehmen und wie andere Sie
-                                erleben.</p>
+                            <h4 class="journey-title">Besonderheiten virtueller Kommunikation</h4>
+                            <p class="journey-desc">Verstehen Sie die spezifischen Herausforderungen und Chancen von
+                                Remote-Vertriebssituationen.</p>
                         </div>
                     </div>
                 </div>
@@ -1377,15 +1305,14 @@
                             <div class="module-badge">
                                 <svg class="module-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                     stroke-width="2">
-                                    <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path>
-                                    <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
-                                    <line x1="12" y1="19" x2="12" y2="23"></line>
+                                    <polygon points="23 7 16 12 23 17 23 7"></polygon>
+                                    <rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect>
                                 </svg>
                                 <span class="module-number">Modul 02</span>
                             </div>
-                            <h4 class="journey-title">Körpersprache und Stimme</h4>
-                            <p class="journey-desc">Nutzen Sie Ihre nonverbale Kommunikation bewusst und wirkungsvoll.
-                            </p>
+                            <h4 class="journey-title">Kamera und Ton optimal nutzen</h4>
+                            <p class="journey-desc">Technische Grundlagen für einen professionellen Auftritt am
+                                Bildschirm.</p>
                         </div>
                     </div>
                 </div>
@@ -1403,15 +1330,15 @@
                             <div class="module-badge">
                                 <svg class="module-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                     stroke-width="2">
-                                    <path
-                                        d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z">
-                                    </path>
+                                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                                    <line x1="3" y1="9" x2="21" y2="9"></line>
+                                    <line x1="9" y1="21" x2="9" y2="9"></line>
                                 </svg>
                                 <span class="module-number">Modul 03</span>
                             </div>
-                            <h4 class="journey-title">Assertives Verhalten</h4>
-                            <p class="journey-desc">Vertreten Sie Ihre Position klar, ohne aggressiv oder passiv zu
-                                wirken.</p>
+                            <h4 class="journey-title">Visualisierung im Online-Gespräch</h4>
+                            <p class="journey-desc">Setzen Sie visuelle Hilfsmittel effektiv ein, um Ihre Botschaft zu
+                                verstärken.</p>
                         </div>
                     </div>
                 </div>
@@ -1429,12 +1356,13 @@
                             <div class="module-badge">
                                 <svg class="module-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                     stroke-width="2">
-                                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
                                 </svg>
                                 <span class="module-number">Modul 04</span>
                             </div>
-                            <h4 class="journey-title">Umgang mit Manipulation</h4>
-                            <p class="journey-desc">Erkennen und kontern Sie manipulative Taktiken souverän.</p>
+                            <h4 class="journey-title">Einwandbehandlung digital</h4>
+                            <p class="journey-desc">Meistern Sie missverständliche Gesprächssituationen souverän im
+                                virtuellen Raum.</p>
                         </div>
                     </div>
                 </div>
@@ -1452,41 +1380,15 @@
                             <div class="module-badge">
                                 <svg class="module-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                     stroke-width="2">
-                                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
-                                    <line x1="9" y1="9" x2="15" y2="15"></line>
-                                    <line x1="15" y1="9" x2="9" y2="15"></line>
-                                </svg>
-                                <span class="module-number">Modul 05</span>
-                            </div>
-                            <h4 class="journey-title">Grenzen setzen</h4>
-                            <p class="journey-desc">Lernen Sie, klar Nein zu sagen und Ihre Grenzen zu kommunizieren.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Module 6 -->
-                <div class="journey-item">
-                    <div class="journey-node">
-                        <div class="node-dot">
-                            <div class="node-ring"></div>
-                        </div>
-                        <div class="node-connector"></div>
-                    </div>
-                    <div class="journey-content">
-                        <div class="journey-card">
-                            <div class="module-badge">
-                                <svg class="module-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="2">
                                     <polygon
                                         points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
                                     </polygon>
                                 </svg>
-                                <span class="module-number">Modul 06</span>
+                                <span class="module-number">Modul 05</span>
                             </div>
-                            <h4 class="journey-title">Konfliktsituationen meistern</h4>
-                            <p class="journey-desc">Bleiben Sie innerlich stabil und handeln Sie konstruktiv in
-                                Konflikten.</p>
+                            <h4 class="journey-title">Closing-Techniken online</h4>
+                            <p class="journey-desc">Lernen Sie, auch online Kunden zu begeistern und Abschlüsse zu
+                                erzielen.</p>
                         </div>
                     </div>
                 </div>
@@ -1503,18 +1405,61 @@
                     <span class="section-label">Ihr Nutzen</span>
                     <h2>Was Sie davon haben</h2>
                     <div class="benefit-box">
-                        <p>Sie treten souveräner auf, vertreten Ihre Interessen klarer und gewinnen an Ausstrahlung und
-                            Durchsetzungskraft. Sie lernen, in schwierigen Situationen bei sich zu bleiben und
-                            konstruktiv zu handeln.</p>
+                        <ul class="benefit-list">
+                            <li>Sie sind sensibilisiert für Herausforderungen und Chancen von Remote-Situationen bei
+                                Vertriebskontakten und Präsentationen</li>
+                            <li>Durch gesteigerte Wahrnehmung und optimalen Technikeinsatz kommen Sie gut in Kontakt zu
+                                Ihren Gesprächspartnern</li>
+                            <li>Sie meistern missverständliche Gesprächssituationen und argumentieren wirkungsvoll in
+                                Körpersprache und gesprochenem Wort</li>
+                            <li>Sie haben Ansätze gewonnen, wie Sie auch online Kunden begeistern können</li>
+                        </ul>
                     </div>
                 </div>
                 <div class="benefits-visual">
                     <div class="icon-showcase">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <path
-                                d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z">
-                            </path>
+                            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                            <line x1="8" y1="21" x2="16" y2="21"></line>
+                            <line x1="12" y1="17" x2="12" y2="21"></line>
                         </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ansprechpartner Section -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Ihr Ansprechpartner</span>
+                <h2>Persönliche Beratung</h2>
+                <div class="accent-line"></div>
+            </div>
+
+            <div class="contact-card">
+                <img src="../assets/team/till-reichert.jpg" alt="Dr. Till Reichert" class="contact-image">
+                <div class="contact-info">
+                    <h3>Dr. Till Reichert</h3>
+                    <span class="contact-role">Geschäftsführer & Trainer</span>
+                    <div class="contact-details">
+                        <a href="mailto:reichert@wtm-consulting.de">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                                </path>
+                                <polyline points="22,6 12,13 2,6"></polyline>
+                            </svg>
+                            reichert@wtm-consulting.de
+                        </a>
+                        <a href="tel:+4917558181638">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path
+                                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                                </path>
+                            </svg>
+                            0175 – 58 18 163
+                        </a>
                     </div>
                 </div>
             </div>
@@ -1527,13 +1472,14 @@
             <div class="cta-grid">
                 <div class="target-card">
                     <span class="section-label">Zielgruppe</span>
-                    <h3>Für wen ist dieses Seminar?</h3>
-                    <p>Coaches, Berater, Personaler, Führungskräfte, Trainer und alle neugierigen Menschen, die eine
-                        hohe Bereitschaft zur Auseinandersetzung mit der eigenen Persönlichkeit mitbringen.</p>
+                    <h3>Für wen ist dieses Training?</h3>
+                    <p>Vertriebsmitarbeiter, die ihre Kundenbesuche online durchführen. Techniker, die Kundenschulungen
+                        und Präsentationen online abhalten. Alle, die im digitalen Vertrieb souveräner werden möchten.
+                    </p>
                 </div>
                 <div class="cta-card">
                     <h3>Interesse geweckt?</h3>
-                    <p>Wir beraten Sie gerne zu diesem Seminar und passen die Inhalte individuell an Ihre Bedürfnisse
+                    <p>Wir beraten Sie gerne zu diesem Training und passen die Inhalte individuell an Ihre Bedürfnisse
                         an.</p>
                     <a href="../index.html#kontakt" class="btn btn-white">Jetzt Kontakt aufnehmen →</a>
                 </div>

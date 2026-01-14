@@ -1563,6 +1563,34 @@ footer::before {
     display: block;
 }
 
+/* Responsive Tabs */
+@media (max-width: 768px) {
+    .training-tabs {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        height: auto !important;
+        border-radius: 16px;
+        gap: 0.5rem;
+        padding: 0.75rem;
+        justify-content: center;
+        box-sizing: border-box !important;
+    }
+
+    .training-tab {
+        flex: 1 1 auto;
+        text-align: center;
+        padding: 0.6rem 0.8rem;
+        font-size: 0.85rem;
+        white-space: normal;
+        /* Allow text to wrap if needed */
+        line-height: 1.2;
+        min-width: 120px;
+        /* Ensure tabs don't get too small before wrapping */
+    }
+}
+
 /* Carousel Container - Position Relative for Buttons */
 .training-carousel-wrapper {
     position: relative;
