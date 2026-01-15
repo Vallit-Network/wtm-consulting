@@ -2689,7 +2689,20 @@ footer::before {
     align-items: center;
     justify-content: center;
     transition: all var(--transition-fast);
-    z-index: 10;
+    z-index: 100;
+}
+
+/* Force Vallit AI Chatbot Visibility */
+div[class*="syntra-widget"] {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    z-index: 2147483647 !important;
+}
+
+.syntra-widget iframe {
+    /* Ensure iframe doesn't collapsed */
+    max-width: 100% !important;
 }
 
 .modal-close:hover {
