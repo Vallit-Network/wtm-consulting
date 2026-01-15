@@ -6719,13 +6719,3 @@ header.header-scrolled .logo img {
         font-size: 1.75rem;
     }
 }
-
-/* ============================================
-   HIDE DEFAULT VALLIT WIDGET TOGGLE
-   When using custom chatbot helper button
-   ============================================ */
-.syntra-toggle-btn,
-[data-vallit-toggle],
-.vallit-widget-toggle {
-    display: none !important;
-}
