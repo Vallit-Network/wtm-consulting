@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // =========================================
     // SCROLL REVEAL ANIMATIONS
     // =========================================
-    const revealElements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+    const revealElements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .journey-item');
 
     const revealObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
