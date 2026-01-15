@@ -810,19 +810,24 @@
 <body>
     <div class="scroll-progress" id="scrollProgress"></div>
 
-    <header id="header" class="header-dark">
+        <header id="header">
         <div class="container">
             <nav>
-                <a href="../index.html" class="logo"><img src="../assets/wtm_logo_gross.png"
-                        alt="WTM Management Consulting"></a>
-                <div class="menu-toggle" id="mobile-menu"><span class="bar"></span><span class="bar"></span><span
-                        class="bar"></span></div>
+                <a href="../index.html" class="logo">
+                    <img src="../assets/wtm_logo_gross.png" alt="WTM Management Consulting">
+                </a>
+                <div class="menu-toggle" id="mobile-menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
                 <ul class="nav-links">
-                    <li><a href="../index.html">Startseite</a></li>
-                    <li><a href="../index.html#trainings">Seminare</a></li>
-                    <li><a href="../index.html#angebote">Angebote</a></li>
-                    <li><a href="../index.html#team">Team</a></li>
-                    <li><a href="../index.html#kontakt" class="btn btn-primary">Kontakt</a></li>
+                    <li><a href="../index.html#haltung" class="nav-link">Haltung</a></li>
+                    <li><a href="../index.html#angebote" class="nav-link">Angebote</a></li>
+                    <li><a href="../index.html#trainings" class="nav-link">Trainings</a></li>
+                    <li><a href="../index.html#team" class="nav-link">Team</a></li>
+                    <li><a href="../index.html#aktuelles" class="nav-link">Aktuelles</a></li>
+                    <li><a href="../index.html#kontakt" class="nav-link">Kontakt</a></li>
                 </ul>
             </nav>
         </div>
@@ -1090,12 +1095,14 @@
         </div>
     </footer>
 
-    <script>
-        window.addEventListener('scroll', () => { const scrollProgress = document.getElementById('scrollProgress'); const winScroll = document.body.scrollTop || document.documentElement.scrollTop; const height = document.documentElement.scrollHeight - document.documentElement.clientHeight; scrollProgress.style.width = (winScroll / height) * 100 + '%'; });
-        const header = document.getElementById('header'); window.addEventListener('scroll', () => { header.classList.toggle('scrolled', window.scrollY > 50); });
-        const particlesContainer = document.getElementById('particles'); for (let i = 0; i < 20; i++) { const particle = document.createElement('div'); particle.className = 'particle'; particle.style.left = Math.random() * 100 + '%'; particle.style.top = Math.random() * 100 + '%'; particle.style.animationDelay = Math.random() * 10 + 's'; particle.style.animationDuration = (10 + Math.random() * 10) + 's'; particlesContainer.appendChild(particle); }
-        const mobileMenu = document.getElementById('mobile-menu'); const navLinks = document.querySelector('.nav-links'); mobileMenu.addEventListener('click', () => { navLinks.classList.toggle('active'); mobileMenu.classList.toggle('active'); });
-    </script>
+        <script src="../js/seminar-data.js"></script>
+    <script src="../js/main.js"></script>
+
+    <!-- Vallit AI Chat Widget -->
+    <script src="https://www.vallit.net/widget/embed.js" data-api-url="https://www.vallit.net"
+        data-company-id="e46176c5-0f35-43b8-8e8c-c72f534519e1" data-theme="minimal" data-language="de" data-position=""
+        data-color="#6366f1" data-title="Kian">
+        </script>
 </body>
 
 </html>
