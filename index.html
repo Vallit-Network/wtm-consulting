@@ -36,10 +36,47 @@
                 </div>
                 <ul class="nav-links">
                     <li><a href="#haltung" class="nav-link">Haltung</a></li>
-                    <li><a href="#angebote" class="nav-link">Angebote</a></li>
-                    <li><a href="#trainings" class="nav-link">Trainings</a></li>
-                    <li><a href="#team" class="nav-link">Team</a></li>
-                    <li><a href="#aktuelles" class="nav-link">Aktuelles</a></li>
+                    <li class="nav-dropdown">
+                        <a href="#angebote" class="nav-link nav-dropdown-toggle">
+                            Angebote
+                            <svg class="dropdown-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </a>
+                        <div class="nav-dropdown-menu">
+                            <a href="#angebote">Leistungen</a>
+                            <a href="#trainings">Trainings</a>
+                            <a href="#fuehrungskraefte">FK-Programm</a>
+                        </div>
+                    </li>
+                    <li class="nav-dropdown">
+                        <a href="#success-stories" class="nav-link nav-dropdown-toggle">
+                            Praxisbeispiele
+                            <svg class="dropdown-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </a>
+                        <div class="nav-dropdown-menu">
+                            <a href="#success-stories">Referenzen</a>
+                            <a href="#success-stories">Success Stories</a>
+                            <a href="#testimonials">Stimmen</a>
+                        </div>
+                    </li>
+                    <li class="nav-dropdown">
+                        <a href="#team" class="nav-link nav-dropdown-toggle">
+                            Wir
+                            <svg class="dropdown-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </a>
+                        <div class="nav-dropdown-menu">
+                            <a href="#team">Team</a>
+                            <a href="#zertifikate">Qualifikationen</a>
+                        </div>
+                    </li>
                     <li><a href="#kontakt" class="nav-link">Kontakt</a></li>
                 </ul>
             </nav>
@@ -227,6 +264,251 @@
             <div class="trainings-cta reveal">
                 <p>Alle Trainings auch als Inhouse-Variante für Ihr Unternehmen.</p>
                 <a href="#kontakt" class="btn btn-secondary">Inhouse-Anfrage stellen</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Führungskräfte Modularer Baukasten Section -->
+    <section id="fuehrungskraefte" class="section fk-baukasten-section">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="label">Exklusives maßgeschneidertes Angebot</span>
+                <h2>Ihr individuelles Führungskräfte-Programm</h2>
+                <div class="accent-line"></div>
+                <p>Gemeinsam mit Ihnen entwickeln wir ein maßgeschneidertes Training. Wählen Sie aus unserem modularen
+                    Baukasten die Bausteine, die Ihr Unternehmen voranbringen.</p>
+            </div>
+
+            <div class="baukasten-visual-container reveal">
+                <!-- Left: Structured Mindmap (Source) -->
+                <div class="structured-mindmap-container">
+                    <svg class="mindmap-lines" viewBox="0 0 700 500" preserveAspectRatio="none">
+                        <!-- Left Connections -->
+                        <line x1="350" y1="250" x2="200" y2="50" class="line-blue" />
+                        <line x1="350" y1="250" x2="200" y2="130" class="line-blue" />
+                        <line x1="350" y1="250" x2="200" y2="210" class="line-blue" />
+                        <line x1="350" y1="250" x2="200" y2="290" class="line-green" />
+                        <line x1="350" y1="250" x2="200" y2="370" class="line-green" />
+                        <line x1="350" y1="250" x2="200" y2="450" class="line-empty" />
+
+                        <!-- Right Connections -->
+                        <line x1="350" y1="250" x2="500" y2="50" class="line-red" />
+                        <line x1="350" y1="250" x2="500" y2="130" class="line-red" />
+                        <line x1="350" y1="250" x2="500" y2="210" class="line-yellow" />
+                        <line x1="350" y1="250" x2="500" y2="290" class="line-yellow" />
+                        <line x1="350" y1="250" x2="500" y2="370" class="line-yellow" />
+                        <line x1="350" y1="250" x2="500" y2="450" class="line-empty" />
+                    </svg>
+
+                    <div class="mindmap-col col-left">
+                        <div class="mindmap-item item-blue">Hybrides Führen</div>
+                        <div class="mindmap-item item-blue">Delegation</div>
+                        <div class="mindmap-item item-blue">Die ersten 100 Tage</div>
+                        <div class="mindmap-item item-green">Gesundes Führen</div>
+                        <div class="mindmap-item item-green">Selbstführung</div>
+                        <div class="mindmap-item item-empty">Ihr Thema</div>
+                    </div>
+
+                    <div class="mindmap-hub">
+                        <div class="hub-circle">
+                            <span>Führung</span>
+                        </div>
+                    </div>
+
+                    <div class="mindmap-col col-right">
+                        <div class="mindmap-item item-red">Vom MA zur FK</div>
+                        <div class="mindmap-item item-red">Konfliktmanagement</div>
+                        <div class="mindmap-item item-yellow">Laterales Führen</div>
+                        <div class="mindmap-item item-yellow">Führen in Beziehung</div>
+                        <div class="mindmap-item item-yellow">Kommunikation</div>
+                        <div class="mindmap-item item-empty">Ihr Thema</div>
+                    </div>
+                </div>
+
+                <!-- Center: Process Arrow -->
+                <div class="process-arrow-container">
+                    <div class="arrow-text">Gemeinsame<br>Konzeption</div>
+                    <div class="arrow-visual">→</div>
+                </div>
+
+                <!-- Right: The Stack (Outcome) -->
+                <div class="baukasten-target">
+                    <div class="stack-card">
+                        <div class="stack-header">
+                            <h3>Ihr modulares Programm</h3>
+                            <span>Maßgeschneidert</span>
+                        </div>
+                        <div class="stack-body">
+                            <!-- Visual representation of "Slots" -->
+                            <div class="stack-item item-blue"></div>
+                            <div class="stack-item item-blue"></div>
+                            <div class="stack-item item-red"></div>
+                            <div class="stack-item item-red"></div>
+                            <div class="stack-item item-yellow"></div>
+                            <div class="stack-item item-green"></div>
+                        </div>
+                        <div class="stack-footer">
+                            <span>Passt sich Ihrem Zeitplan an</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="baukasten-cta reveal">
+                <p>Jedes Unternehmen ist anders. Lassen Sie uns Ihren individuellen Plan entwickeln.</p>
+                <a href="#kontakt" class="btn btn-primary">Beratungsgespräch vereinbaren</a>
+            </div>
+        </div>
+
+
+        </div>
+    </section>
+
+    <!-- Success Stories Section -->
+    <section id="success-stories" class="section bg-cream">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="label">Praxisbeispiele</span>
+                <h2>Success Stories</h2>
+                <div class="accent-line"></div>
+                <p>Wie wir gemeinsam mit unseren Kunden nachhaltige Veränderungen bewirken.</p>
+            </div>
+
+            <div class="success-stories-grid">
+                <!-- DIAL Case Study - Featured -->
+                <article class="case-study-card featured reveal">
+                    <div class="case-study-header">
+                        <div class="client-badge">
+                            <span class="client-name">DIAL GmbH</span>
+                            <span class="client-industry">Elektronik · Software · Weltmarktführer</span>
+                        </div>
+                        <div class="client-logo-badge">
+                            <img src="assets/company-logos/dial_logo.jpg" alt="DIAL GmbH Logo">
+                        </div>
+                    </div>
+
+                    <div class="case-study-content">
+                        <h3>Entwicklung eines gemeinsamen Führungsverständnisses</h3>
+
+                        <div class="case-study-phases">
+                            <div class="phase">
+                                <div class="phase-header">
+                                    <span class="phase-icon">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <circle cx="12" cy="12" r="10" />
+                                            <path d="M12 8v4l3 3" />
+                                        </svg>
+                                    </span>
+                                    <span class="phase-label">Ausgangslage</span>
+                                </div>
+                                <p>Völlig neu installierte Führungsebene bei einem Mittelständler – gemeinsame Werte und
+                                    Führungsverständnis fehlten.</p>
+                            </div>
+
+                            <div class="phase">
+                                <div class="phase-header">
+                                    <span class="phase-icon">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path
+                                                d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
+                                        </svg>
+                                    </span>
+                                    <span class="phase-label">Vorgehen</span>
+                                </div>
+                                <p>Open Space für das gesamte Unternehmen. Wertebasiertes Führungskräftetraining über 12
+                                    Monate in 4 Modulen mit Fokus auf Haltung.</p>
+                            </div>
+
+                            <div class="phase">
+                                <div class="phase-header">
+                                    <span class="phase-icon">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                                            <polyline points="22 4 12 14.01 9 11.01" />
+                                        </svg>
+                                    </span>
+                                    <span class="phase-label">Ergebnis</span>
+                                </div>
+                                <p>Arbeiten auf Augenhöhe. Gemeinsame Führungshaltung und praktische Führungswerkzeuge
+                                    für
+                                    den Alltag.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <blockquote class="case-study-quote">
+                        <div class="quote-icon">"</div>
+                        <p>Seit vielen Jahren arbeiten wir vertrauensvoll bei WTM zusammen. Das Team und jeder Einzelne
+                            begeistern uns immer wieder und bringen uns
+                            voran. Die Arbeit mit WTM ist ein Erfolgsfaktor unseres Unternehmens.</p>
+                        <footer>
+                            <cite>
+                                <strong>Dieter Polle</strong>
+                                <span>Geschäftsführer, DIAL GmbH</span>
+                            </cite>
+                        </footer>
+                    </blockquote>
+                </article>
+            </div>
+
+            <div class="success-stories-cta reveal">
+                <p>Sie haben ein ähnliches Anliegen? Lassen Sie uns sprechen.</p>
+                <a href="#kontakt" class="btn btn-primary">Kontakt aufnehmen</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="section bg-dark">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2>Stimmen unserer Kunden</h2>
+                <div class="accent-line"></div>
+            </div>
+
+            <div class="carousel-container reveal">
+                <div class="carousel-track" id="testimonial-track">
+                    <div class="testimonial-card">
+                        <div class="testimonial-quote">"</div>
+                        <p class="testimonial-text">Die Trainings bei WTM waren intensiv, praxisnah und haben nachhaltig
+                            gewirkt. Endlich keine Tschakka-Veranstaltung, sondern echte Inhalte mit Tiefgang.</p>
+                        <div class="author-info">
+                            <div class="author-avatar"></div>
+                            <div class="author-details">
+                                <span class="author-name">Personalleiter</span>
+                                <span class="author-role">Finanzdienstleister</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <div class="testimonial-quote">"</div>
+                        <p class="testimonial-text">WTM hat uns bei der Entwicklung unserer Führungskultur begleitet.
+                            Die Zusammenarbeit war geprägt von Wertschätzung und echter Expertise.</p>
+                        <div class="author-info">
+                            <div class="author-avatar"></div>
+                            <div class="author-details">
+                                <span class="author-name">Geschäftsführerin</span>
+                                <span class="author-role">Mittelständisches Unternehmen</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <div class="testimonial-quote">"</div>
+                        <p class="testimonial-text">Die Trainerausbildung bei WTM war eine der besten Investitionen in
+                            meine berufliche Entwicklung. Professionell, fundiert und menschlich.</p>
+                        <div class="author-info">
+                            <div class="author-avatar"></div>
+                            <div class="author-details">
+                                <span class="author-name">Absolventin Trainerausbildung</span>
+                                <span class="author-role">Interne Trainerin</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="carousel-nav" id="testimonial-nav"></div>
             </div>
         </div>
     </section>
@@ -817,367 +1099,6 @@
         </div>
     </section>
 
-    <!-- Team Member Modal - Enhanced with Quick Info & Full Profile -->
-    <div class="team-modal" id="team-modal">
-        <div class="modal-backdrop"></div>
-        <div class="modal-content">
-            <button class="modal-close" aria-label="Schließen">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M18 6L6 18M6 6l12 12" />
-                </svg>
-            </button>
-            <div class="modal-grid">
-                <div class="modal-photo" id="modal-photo-container">
-                    <!-- Photo will be dynamically inserted here -->
-                    <div class="photo-placeholder large">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
-                            <circle cx="12" cy="8" r="4" />
-                            <path d="M4 20c0-4 4-6 8-6s8 2 8 6" />
-                        </svg>
-                    </div>
-                </div>
-                <div class="modal-details">
-                    <!-- Header with inline avatar for expanded state -->
-                    <div class="modal-header-row">
-                        <div class="modal-avatar" id="modal-avatar">
-                            <!-- Small avatar photo for expanded state -->
-                        </div>
-                        <div class="modal-header-text">
-                            <span class="modal-label">Coach-Profil</span>
-                            <h2 class="modal-name">Name</h2>
-                            <p class="modal-role">Rolle</p>
-                        </div>
-                    </div>
-
-                    <!-- Category Badges -->
-                    <div class="modal-categories" id="modal-categories">
-                        <!-- Categories will be dynamically inserted -->
-                    </div>
-
-                    <!-- Quick Info Section -->
-                    <div class="modal-quick-info">
-                        <h4>Schwerpunkte</h4>
-                        <ul class="quick-info-list" id="modal-quick-info">
-                            <!-- Quick info items will be dynamically inserted -->
-                        </ul>
-                    </div>
-
-                    <!-- Expandable Detail Box -->
-                    <div class="detail-expand-container">
-                        <button class="detail-expand-toggle" id="detail-expand-toggle" type="button">
-                            <span class="toggle-text">Mehr Details anzeigen</span>
-                            <svg class="toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2">
-                                <polyline points="6 9 12 15 18 9"></polyline>
-                            </svg>
-                        </button>
-
-                        <div class="detail-expand-content" id="detail-expand-content">
-                            <div class="detail-expand-scroll">
-                                <!-- Bio Section -->
-                                <div class="modal-bio-section">
-                                    <h4>Über mich</h4>
-                                    <div class="modal-bio" id="modal-bio">
-                                        <!-- Bio will be dynamically inserted -->
-                                    </div>
-                                </div>
-
-                                <!-- Qualifications -->
-                                <div class="modal-qualifications">
-                                    <h4>Qualifikationen</h4>
-                                    <ul id="modal-qualifications">
-                                        <!-- Qualifications will be dynamically inserted -->
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <a href="#kontakt" class="btn btn-primary modal-cta">Kontakt aufnehmen</a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Success Stories Section -->
-    <section id="success-stories" class="section bg-cream">
-        <div class="container">
-            <div class="section-header reveal">
-                <span class="label">Praxisbeispiele</span>
-                <h2>Success Stories</h2>
-                <div class="accent-line"></div>
-                <p>Wie wir gemeinsam mit unseren Kunden nachhaltige Veränderungen bewirken.</p>
-            </div>
-
-            <div class="success-stories-grid">
-                <!-- DIAL Case Study - Featured -->
-                <article class="case-study-card featured reveal">
-                    <div class="case-study-header">
-                        <div class="client-badge">
-                            <span class="client-name">DIAL GmbH</span>
-                            <span class="client-industry">Elektronik · Software · Weltmarktführer</span>
-                        </div>
-                        <div class="client-logo-badge">
-                            <img src="assets/company-logos/dial_logo.jpg" alt="DIAL GmbH Logo">
-                        </div>
-                    </div>
-
-                    <div class="case-study-content">
-                        <h3>Entwicklung eines gemeinsamen Führungsverständnisses</h3>
-
-                        <div class="case-study-phases">
-                            <div class="phase">
-                                <div class="phase-header">
-                                    <span class="phase-icon">
-                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                            <circle cx="12" cy="12" r="10" />
-                                            <path d="M12 8v4l3 3" />
-                                        </svg>
-                                    </span>
-                                    <span class="phase-label">Ausgangslage</span>
-                                </div>
-                                <p>Völlig neu installierte Führungsebene bei einem Mittelständler – gemeinsame Werte und
-                                    Führungsverständnis fehlten.</p>
-                            </div>
-
-                            <div class="phase">
-                                <div class="phase-header">
-                                    <span class="phase-icon">
-                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                            <path
-                                                d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
-                                        </svg>
-                                    </span>
-                                    <span class="phase-label">Vorgehen</span>
-                                </div>
-                                <p>Open Space für das gesamte Unternehmen. Wertebasiertes Führungskräftetraining über 12
-                                    Monate in 4 Modulen mit Fokus auf Haltung.</p>
-                            </div>
-
-                            <div class="phase">
-                                <div class="phase-header">
-                                    <span class="phase-icon">
-                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
-                                            <polyline points="22 4 12 14.01 9 11.01" />
-                                        </svg>
-                                    </span>
-                                    <span class="phase-label">Ergebnis</span>
-                                </div>
-                                <p>Arbeiten auf Augenhöhe. Gemeinsame Führungshaltung und praktische Führungswerkzeuge
-                                    für
-                                    den Alltag.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <blockquote class="case-study-quote">
-                        <div class="quote-icon">"</div>
-                        <p>Seit vielen Jahren arbeiten wir vertrauensvoll bei WTM zusammen. Das Team und jeder Einzelne
-                            begeistern uns immer wieder und bringen uns
-                            voran. Die Arbeit mit WTM ist ein Erfolgsfaktor unseres Unternehmens.</p>
-                        <footer>
-                            <cite>
-                                <strong>Dieter Polle</strong>
-                                <span>Geschäftsführer, DIAL GmbH</span>
-                            </cite>
-                        </footer>
-                    </blockquote>
-                </article>
-            </div>
-
-            <div class="success-stories-cta reveal">
-                <p>Sie haben ein ähnliches Anliegen? Lassen Sie uns sprechen.</p>
-                <a href="#kontakt" class="btn btn-primary">Kontakt aufnehmen</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Führungskräfte Modularer Baukasten Section -->
-    <section id="fuehrungskraefte" class="section fk-baukasten-section">
-        <div class="container">
-            <div class="section-header reveal">
-                <span class="label">Exklusives maßgeschneidertes Angebot</span>
-                <h2>Ihr individuelles Führungskräfte-Programm</h2>
-                <div class="accent-line"></div>
-                <p>Gemeinsam mit Ihnen entwickeln wir ein maßgeschneidertes Training. Wählen Sie aus unserem modularen
-                    Baukasten die Bausteine, die Ihr Unternehmen voranbringen.</p>
-            </div>
-
-            <div class="baukasten-visual-container reveal">
-                <!-- Left: Structured Mindmap (Source) -->
-                <div class="structured-mindmap-container">
-                    <svg class="mindmap-lines" viewBox="0 0 700 500" preserveAspectRatio="none">
-                        <!-- Left Connections -->
-                        <line x1="350" y1="250" x2="200" y2="50" class="line-blue" />
-                        <line x1="350" y1="250" x2="200" y2="130" class="line-blue" />
-                        <line x1="350" y1="250" x2="200" y2="210" class="line-blue" />
-                        <line x1="350" y1="250" x2="200" y2="290" class="line-green" />
-                        <line x1="350" y1="250" x2="200" y2="370" class="line-green" />
-                        <line x1="350" y1="250" x2="200" y2="450" class="line-empty" />
-
-                        <!-- Right Connections -->
-                        <line x1="350" y1="250" x2="500" y2="50" class="line-red" />
-                        <line x1="350" y1="250" x2="500" y2="130" class="line-red" />
-                        <line x1="350" y1="250" x2="500" y2="210" class="line-yellow" />
-                        <line x1="350" y1="250" x2="500" y2="290" class="line-yellow" />
-                        <line x1="350" y1="250" x2="500" y2="370" class="line-yellow" />
-                        <line x1="350" y1="250" x2="500" y2="450" class="line-empty" />
-                    </svg>
-
-                    <div class="mindmap-col col-left">
-                        <div class="mindmap-item item-blue">Hybrides Führen</div>
-                        <div class="mindmap-item item-blue">Delegation</div>
-                        <div class="mindmap-item item-blue">Die ersten 100 Tage</div>
-                        <div class="mindmap-item item-green">Gesundes Führen</div>
-                        <div class="mindmap-item item-green">Selbstführung</div>
-                        <div class="mindmap-item item-empty">Ihr Thema</div>
-                    </div>
-
-                    <div class="mindmap-hub">
-                        <div class="hub-circle">
-                            <span>Führung</span>
-                        </div>
-                    </div>
-
-                    <div class="mindmap-col col-right">
-                        <div class="mindmap-item item-red">Vom MA zur FK</div>
-                        <div class="mindmap-item item-red">Konfliktmanagement</div>
-                        <div class="mindmap-item item-yellow">Laterales Führen</div>
-                        <div class="mindmap-item item-yellow">Führen in Beziehung</div>
-                        <div class="mindmap-item item-yellow">Kommunikation</div>
-                        <div class="mindmap-item item-empty">Ihr Thema</div>
-                    </div>
-                </div>
-
-                <!-- Center: Process Arrow -->
-                <div class="process-arrow-container">
-                    <div class="arrow-text">Gemeinsame<br>Konzeption</div>
-                    <div class="arrow-visual">→</div>
-                </div>
-
-                <!-- Right: The Stack (Outcome) -->
-                <div class="baukasten-target">
-                    <div class="stack-card">
-                        <div class="stack-header">
-                            <h3>Ihr modulares Programm</h3>
-                            <span>Maßgeschneidert</span>
-                        </div>
-                        <div class="stack-body">
-                            <!-- Visual representation of "Slots" -->
-                            <div class="stack-item item-blue"></div>
-                            <div class="stack-item item-blue"></div>
-                            <div class="stack-item item-red"></div>
-                            <div class="stack-item item-red"></div>
-                            <div class="stack-item item-yellow"></div>
-                            <div class="stack-item item-green"></div>
-                        </div>
-                        <div class="stack-footer">
-                            <span>Passt sich Ihrem Zeitplan an</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="baukasten-cta reveal">
-                <p>Jedes Unternehmen ist anders. Lassen Sie uns Ihren individuellen Plan entwickeln.</p>
-                <a href="#kontakt" class="btn btn-primary">Beratungsgespräch vereinbaren</a>
-            </div>
-        </div>
-
-
-        </div>
-    </section>
-
-    <!-- Aktuelles Section -->
-    <section id="aktuelles" class="section bg-white">
-        <div class="container">
-            <div class="section-header reveal">
-                <h2>Aktuelles</h2>
-                <div class="accent-line accent-line-animated"></div>
-                <p>Neuigkeiten, Termine und Einblicke aus der WTM-Welt.</p>
-            </div>
-
-            <div class="aktuelles-grid">
-                <!-- Featured News Card -->
-                <article class="news-card news-card-featured reveal stagger-1">
-                    <div class="news-image-container">
-                        <div class="news-image-placeholder">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
-                                <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
-                                <circle cx="8.5" cy="8.5" r="1.5" />
-                                <polyline points="21 15 16 10 5 21" />
-                            </svg>
-                        </div>
-                    </div>
-                    <div class="news-content">
-                        <div class="news-meta">
-                            <span class="news-category news-category-training">Training</span>
-                            <span class="news-date">20. Dezember 2024</span>
-                        </div>
-                        <h3 class="news-title">Neue Trainerausbildung 2025 – Jetzt anmelden</h3>
-                        <p class="news-excerpt">
-                            Unsere beliebte 12-monatige Trainerausbildung startet im Frühjahr 2025.
-                            Qualifizieren Sie sich zum zertifizierten Business-Trainer mit unserem bewährten
-                            Programm. Frühanmelderrabatt bis Ende Januar.
-                        </p>
-                        <a href="#kontakt" class="news-link">Mehr erfahren →</a>
-                    </div>
-                </article>
-
-                <!-- Regular News Cards -->
-                <article class="news-card reveal stagger-2">
-                    <div class="news-content">
-                        <div class="news-meta">
-                            <span class="news-category news-category-event">Event</span>
-                            <span class="news-date">15. Dezember 2024</span>
-                        </div>
-                        <h3 class="news-title">Rückblick: Leadership Summit Dortmund</h3>
-                        <p class="news-excerpt">
-                            Über 120 Führungskräfte trafen sich zum jährlichen Leadership Summit.
-                            Keynotes zu KI und Führung, interaktive Workshops und viel Austausch.
-                        </p>
-                        <a href="#kontakt" class="news-link">Mehr erfahren →</a>
-                    </div>
-                </article>
-
-                <article class="news-card reveal stagger-3">
-                    <div class="news-content">
-                        <div class="news-meta">
-                            <span class="news-category news-category-unternehmen">Unternehmen</span>
-                            <span class="news-date">1. Dezember 2024</span>
-                        </div>
-                        <h3 class="news-title">25 Jahre WTM – Ein Vierteljahrhundert Haltung</h3>
-                        <p class="news-excerpt">
-                            Seit 1999 begleiten wir Menschen in ihrer Entwicklung. Wir blicken
-                            zurück und nach vorne – mit Dankbarkeit und neuen Ideen.
-                        </p>
-                        <a href="#kontakt" class="news-link">Mehr erfahren →</a>
-                    </div>
-                </article>
-
-                <article class="news-card reveal stagger-4">
-                    <div class="news-content">
-                        <div class="news-meta">
-                            <span class="news-category news-category-blog">Blog</span>
-                            <span class="news-date">22. November 2024</span>
-                        </div>
-                        <h3 class="news-title">Führen in unsicheren Zeiten – 5 Prinzipien</h3>
-                        <p class="news-excerpt">
-                            Was bedeutet gute Führung, wenn alles im Wandel ist? Fünf Leitgedanken
-                            für Führungskräfte, die Orientierung geben wollen.
-                        </p>
-                        <a href="#kontakt" class="news-link">Mehr erfahren →</a>
-                    </div>
-                </article>
-            </div>
-
-            <div class="aktuelles-cta reveal">
-                <a href="#" class="btn btn-secondary">Alle Beiträge ansehen</a>
-            </div>
-        </div>
-    </section>
-
     <!-- Zertifikate Section -->
     <section id="zertifikate" class="section certificates-section">
         <div class="certificates-bg-pattern"></div>
@@ -1307,57 +1228,91 @@
         </div>
     </section>
 
-    <!-- Testimonials Section -->
-    <section id="testimonials" class="section bg-dark">
+    <!-- Aktuelles Section -->
+    <section id="aktuelles" class="section bg-white">
         <div class="container">
             <div class="section-header reveal">
-                <h2>Stimmen unserer Kunden</h2>
-                <div class="accent-line"></div>
+                <h2>Aktuelles</h2>
+                <div class="accent-line accent-line-animated"></div>
+                <p>Neuigkeiten, Termine und Einblicke aus der WTM-Welt.</p>
             </div>
 
-            <div class="carousel-container reveal">
-                <div class="carousel-track" id="testimonial-track">
-                    <div class="testimonial-card">
-                        <div class="testimonial-quote">"</div>
-                        <p class="testimonial-text">Die Trainings bei WTM waren intensiv, praxisnah und haben nachhaltig
-                            gewirkt. Endlich keine Tschakka-Veranstaltung, sondern echte Inhalte mit Tiefgang.</p>
-                        <div class="author-info">
-                            <div class="author-avatar"></div>
-                            <div class="author-details">
-                                <span class="author-name">Personalleiter</span>
-                                <span class="author-role">Finanzdienstleister</span>
-                            </div>
+            <div class="aktuelles-grid">
+                <!-- Featured News Card -->
+                <article class="news-card news-card-featured reveal stagger-1">
+                    <div class="news-image-container">
+                        <div class="news-image-placeholder">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+                                <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
+                                <circle cx="8.5" cy="8.5" r="1.5" />
+                                <polyline points="21 15 16 10 5 21" />
+                            </svg>
                         </div>
                     </div>
-
-                    <div class="testimonial-card">
-                        <div class="testimonial-quote">"</div>
-                        <p class="testimonial-text">WTM hat uns bei der Entwicklung unserer Führungskultur begleitet.
-                            Die Zusammenarbeit war geprägt von Wertschätzung und echter Expertise.</p>
-                        <div class="author-info">
-                            <div class="author-avatar"></div>
-                            <div class="author-details">
-                                <span class="author-name">Geschäftsführerin</span>
-                                <span class="author-role">Mittelständisches Unternehmen</span>
-                            </div>
+                    <div class="news-content">
+                        <div class="news-meta">
+                            <span class="news-category news-category-training">Training</span>
+                            <span class="news-date">20. Dezember 2024</span>
                         </div>
+                        <h3 class="news-title">Neue Trainerausbildung 2025 – Jetzt anmelden</h3>
+                        <p class="news-excerpt">
+                            Unsere beliebte 12-monatige Trainerausbildung startet im Frühjahr 2025.
+                            Qualifizieren Sie sich zum zertifizierten Business-Trainer mit unserem bewährten
+                            Programm. Frühanmelderrabatt bis Ende Januar.
+                        </p>
+                        <a href="#kontakt" class="news-link">Mehr erfahren →</a>
                     </div>
+                </article>
 
-                    <div class="testimonial-card">
-                        <div class="testimonial-quote">"</div>
-                        <p class="testimonial-text">Die Trainerausbildung bei WTM war eine der besten Investitionen in
-                            meine berufliche Entwicklung. Professionell, fundiert und menschlich.</p>
-                        <div class="author-info">
-                            <div class="author-avatar"></div>
-                            <div class="author-details">
-                                <span class="author-name">Absolventin Trainerausbildung</span>
-                                <span class="author-role">Interne Trainerin</span>
-                            </div>
+                <!-- Regular News Cards -->
+                <article class="news-card reveal stagger-2">
+                    <div class="news-content">
+                        <div class="news-meta">
+                            <span class="news-category news-category-event">Event</span>
+                            <span class="news-date">15. Dezember 2024</span>
                         </div>
+                        <h3 class="news-title">Rückblick: Leadership Summit Dortmund</h3>
+                        <p class="news-excerpt">
+                            Über 120 Führungskräfte trafen sich zum jährlichen Leadership Summit.
+                            Keynotes zu KI und Führung, interaktive Workshops und viel Austausch.
+                        </p>
+                        <a href="#kontakt" class="news-link">Mehr erfahren →</a>
                     </div>
-                </div>
+                </article>
 
-                <div class="carousel-nav" id="testimonial-nav"></div>
+                <article class="news-card reveal stagger-3">
+                    <div class="news-content">
+                        <div class="news-meta">
+                            <span class="news-category news-category-unternehmen">Unternehmen</span>
+                            <span class="news-date">1. Dezember 2024</span>
+                        </div>
+                        <h3 class="news-title">25 Jahre WTM – Ein Vierteljahrhundert Haltung</h3>
+                        <p class="news-excerpt">
+                            Seit 1999 begleiten wir Menschen in ihrer Entwicklung. Wir blicken
+                            zurück und nach vorne – mit Dankbarkeit und neuen Ideen.
+                        </p>
+                        <a href="#kontakt" class="news-link">Mehr erfahren →</a>
+                    </div>
+                </article>
+
+                <article class="news-card reveal stagger-4">
+                    <div class="news-content">
+                        <div class="news-meta">
+                            <span class="news-category news-category-blog">Blog</span>
+                            <span class="news-date">22. November 2024</span>
+                        </div>
+                        <h3 class="news-title">Führen in unsicheren Zeiten – 5 Prinzipien</h3>
+                        <p class="news-excerpt">
+                            Was bedeutet gute Führung, wenn alles im Wandel ist? Fünf Leitgedanken
+                            für Führungskräfte, die Orientierung geben wollen.
+                        </p>
+                        <a href="#kontakt" class="news-link">Mehr erfahren →</a>
+                    </div>
+                </article>
+            </div>
+
+            <div class="aktuelles-cta reveal">
+                <a href="#" class="btn btn-secondary">Alle Beiträge ansehen</a>
             </div>
         </div>
     </section>

@@ -30,6 +30,53 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // =========================================
+    // DROPDOWN NAVIGATION
+    // =========================================
+    const navDropdownToggles = document.querySelectorAll('.nav-dropdown-toggle');
+    const navDropdowns = document.querySelectorAll('.nav-dropdown');
+
+    // Toggle dropdown on click (for mobile - touch devices)
+    navDropdownToggles.forEach(toggle => {
+        toggle.addEventListener('click', (e) => {
+            // Only on mobile (can't hover effectively)
+            if (window.innerWidth <= 968) {
+                e.preventDefault();
+                e.stopPropagation();
+
+                const parentDropdown = toggle.closest('.nav-dropdown');
+                const isActive = parentDropdown.classList.contains('active');
+
+                // Close all other dropdowns first
+                navDropdowns.forEach(d => d.classList.remove('active'));
+
+                // Toggle current dropdown
+                if (!isActive) {
+                    parentDropdown.classList.add('active');
+                }
+            }
+        });
+    });
+
+    // Close dropdowns on outside click
+    document.addEventListener('click', (e) => {
+        if (!e.target.closest('.nav-dropdown')) {
+            navDropdowns.forEach(d => d.classList.remove('active'));
+        }
+    });
+
+    // Close mobile menu when clicking dropdown menu items
+    document.querySelectorAll('.nav-dropdown-menu a').forEach(link => {
+        link.addEventListener('click', () => {
+            navDropdowns.forEach(d => d.classList.remove('active'));
+            if (mobileMenuBtn) {
+                mobileMenuBtn.classList.remove('active');
+                navLinks.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        });
+    });
+
+    // =========================================
     // STICKY HEADER
     // =========================================
     window.addEventListener('scroll', () => {

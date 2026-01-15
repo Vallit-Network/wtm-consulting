@@ -386,7 +386,13 @@ header.scrolled .logo img {
 
 .nav-links {
     display: flex;
+    align-items: center;
     gap: 2.5rem;
+}
+
+.nav-links>li {
+    display: flex;
+    align-items: center;
 }
 
 .nav-link {
@@ -395,6 +401,9 @@ header.scrolled .logo img {
     font-size: 0.95rem;
     position: relative;
     padding: 0.5rem 0;
+    display: inline-flex;
+    align-items: center;
+    line-height: 1;
 }
 
 .nav-link::after {
@@ -418,6 +427,134 @@ header.scrolled .nav-link {
 
 header.scrolled .nav-link:hover {
     color: var(--color-accent);
+}
+
+/* ============================================
+   PREMIUM DROPDOWN NAVIGATION
+   ============================================ */
+.nav-dropdown {
+    position: relative;
+}
+
+.nav-dropdown-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+}
+
+.dropdown-chevron {
+    width: 14px;
+    height: 14px;
+    stroke: currentColor;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    flex-shrink: 0;
+}
+
+.nav-dropdown:hover .dropdown-chevron,
+.nav-dropdown.active .dropdown-chevron {
+    transform: rotate(180deg);
+}
+
+.nav-dropdown-menu {
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 50%;
+    transform: translateX(-50%) translateY(10px);
+    min-width: 200px;
+    background: rgba(255, 255, 255, 0.97);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    border-radius: 12px;
+    box-shadow:
+        0 4px 6px rgba(0, 0, 0, 0.04),
+        0 10px 24px rgba(0, 0, 0, 0.08),
+        0 20px 48px rgba(0, 0, 0, 0.06);
+    padding: 0.5rem 0;
+    opacity: 0;
+    visibility: hidden;
+    transition:
+        opacity 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+        transform 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+        visibility 0.25s;
+    z-index: 1000;
+}
+
+/* Triangle pointer */
+.nav-dropdown-menu::before {
+    content: '';
+    position: absolute;
+    top: -6px;
+    left: 50%;
+    transform: translateX(-50%) rotate(45deg);
+    width: 12px;
+    height: 12px;
+    background: rgba(255, 255, 255, 0.97);
+    border-left: 1px solid rgba(0, 0, 0, 0.06);
+    border-top: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.nav-dropdown:hover .nav-dropdown-menu,
+.nav-dropdown.active .nav-dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+}
+
+.nav-dropdown-menu a {
+    display: flex;
+    align-items: center;
+    padding: 0.75rem 1.25rem;
+    color: var(--color-text);
+    font-size: 0.9rem;
+    font-weight: 500;
+    position: relative;
+    transition: all 0.2s ease;
+}
+
+.nav-dropdown-menu a::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 3px;
+    height: 0;
+    background: var(--color-accent);
+    border-radius: 0 2px 2px 0;
+    transition: height 0.2s ease;
+}
+
+.nav-dropdown-menu a:hover {
+    background: var(--color-cream);
+    color: var(--color-accent);
+    padding-left: 1.5rem;
+}
+
+.nav-dropdown-menu a:hover::before {
+    height: 60%;
+}
+
+/* Staggered reveal animation for dropdown items */
+.nav-dropdown-menu a:nth-child(1) {
+    transition-delay: 0.02s;
+}
+
+.nav-dropdown-menu a:nth-child(2) {
+    transition-delay: 0.04s;
+}
+
+.nav-dropdown-menu a:nth-child(3) {
+    transition-delay: 0.06s;
+}
+
+.nav-dropdown-menu a:nth-child(4) {
+    transition-delay: 0.08s;
+}
+
+/* Scrolled header dropdown adjustments */
+header.scrolled .nav-dropdown-menu {
+    background: rgba(255, 255, 255, 0.98);
 }
 
 /* Mobile Menu */
@@ -3116,6 +3253,66 @@ div[class*="syntra-widget"] {
     .menu-toggle.active .bar:nth-child(3) {
         transform: rotate(-45deg) translate(5px, -5px);
         background-color: var(--color-text);
+    }
+
+    /* Mobile Dropdown Styles */
+    .nav-dropdown {
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-dropdown-toggle {
+        justify-content: center;
+        width: 100%;
+    }
+
+    .nav-dropdown-menu {
+        position: static;
+        transform: none;
+        opacity: 1;
+        visibility: visible;
+        min-width: 100%;
+        max-height: 0;
+        overflow: hidden;
+        background: var(--color-cream);
+        border: none;
+        border-radius: 8px;
+        margin-top: 0;
+        padding: 0;
+        box-shadow: none;
+        transition: max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+            padding 0.35s ease,
+            margin 0.35s ease;
+    }
+
+    .nav-dropdown-menu::before {
+        display: none;
+    }
+
+    .nav-dropdown:hover .nav-dropdown-menu {
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+    }
+
+    .nav-dropdown.active .nav-dropdown-menu {
+        max-height: 300px;
+        padding: 0.5rem 0;
+        margin-top: 0.75rem;
+    }
+
+    .nav-dropdown-menu a {
+        justify-content: center;
+        padding: 0.6rem 1rem;
+        font-size: 1rem;
+    }
+
+    .nav-dropdown-menu a:hover {
+        padding-left: 1rem;
+    }
+
+    .nav-dropdown-menu a::before {
+        display: none;
     }
 
     .philosophy-grid,
