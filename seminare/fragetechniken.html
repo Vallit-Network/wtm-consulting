@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="../assets/favicon.png">
+    <title>Fragetechniken – WTM Management Consulting</title>
+    <meta name="description"
+        content="Fragetechniken – Mit den richtigen Fragen Gespräche führen und Vertrauen aufbauen.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Sans+Pro:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../styles/index.css">
+    <style>
+        :root {
+            --seminar-accent: #d6ac58;
+            --seminar-accent-light: rgba(214, 172, 88, 0.1);
+            --seminar-accent-glow: rgba(214, 172, 88, 0.3);
+        }
+
+        .scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 3px;
+            background: var(--seminar-accent);
+            z-index: 9999;
+            width: 0%;
+        }
+
+        .seminar-hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(165deg, #1f1a0f 0%, #2d2618 50%, #1f1a0f 100%);
+            position: relative;
+            overflow: hidden;
+            padding: 120px 0 80px;
+        }
+
+        .hero-gradient-orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.3;
+            animation: pulse-orb 8s infinite ease-in-out;
+        }
+
+        .orb-1 {
+            width: 400px;
+            height: 400px;
+            background: var(--seminar-accent);
+            top: -100px;
+            right: -100px;
+        }
+
+        .orb-2 {
+            width: 300px;
+            height: 300px;
+            background: #f5d89a;
+            bottom: -50px;
+            left: -50px;
+            animation-delay: 4s;
+        }
+
+        @keyframes pulse-orb {
+
+            0%,
+            100% {
+                transform: scale(1);
+                opacity: 0.2;
+            }
+
+            50% {
+                transform: scale(1.2);
+                opacity: 0.4;
+            }
+        }
+
+        .hero-content-wrapper {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+        }
+
+        .hero-text {
+            color: #fff;
+        }
+
+        .breadcrumb {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+            opacity: 0;
+            animation: fadeSlideUp 0.6s ease forwards;
+        }
+
+        .breadcrumb a {
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .category-badge {
+            display: inline-flex;
+            padding: 0.5rem 1rem;
+            background: var(--seminar-accent-light);
+            border: 1px solid var(--seminar-accent);
+            border-radius: 50px;
+            color: var(--seminar-accent);
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            opacity: 0;
+            animation: fadeSlideUp 0.6s ease 0.1s forwards;
+        }
+
+        .hero-title {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            color: #fff;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            opacity: 0;
+            animation: fadeSlideUp 0.8s ease 0.2s forwards;
+        }
+
+        .hero-title span {
+            color: var(--seminar-accent);
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.8;
+            max-width: 600px;
+            margin-bottom: 2rem;
+            opacity: 0;
+            animation: fadeSlideUp 0.8s ease 0.3s forwards;
+        }
+
+        .hero-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            opacity: 0;
+            animation: fadeSlideUp 0.8s ease 0.4s forwards;
+        }
+
+        .meta-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.6rem 1rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.9rem;
+        }
+
+        .meta-tag svg {
+            width: 16px;
+            height: 16px;
+            stroke: var(--seminar-accent);
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 1rem;
+            opacity: 0;
+            animation: fadeSlideUp 0.8s ease 0.5s forwards;
+        }
+
+        .btn-glow {
+            background: var(--seminar-accent);
+            color: #1f1a0f;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .btn-glow:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 40px var(--seminar-accent-glow);
+        }
+
+        .btn-outline-light {
+            padding: 1rem 2rem;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 8px;
+            color: #fff;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        @keyframes fadeSlideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Question Types */
+        .types-section {
+            padding: 6rem 0;
+            background: var(--color-cream);
+        }
+
+        .types-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            max-width: 800px;
+            margin: 3rem auto 0;
+        }
+
+        .type-card {
+            background: #fff;
+            border-radius: 16px;
+            padding: 2rem;
+            transition: all 0.4s;
+            border-left: 4px solid transparent;
+        }
+
+        .type-card:hover {
+            border-color: var(--seminar-accent);
+            box-shadow: 0 20px 40px var(--seminar-accent-light);
+            transform: translateX(5px);
+        }
+
+        .type-card h4 {
+            color: var(--seminar-accent);
+            margin-bottom: 0.5rem;
+        }
+
+        .type-card p {
+            color: var(--color-text-light);
+            font-size: 0.9rem;
+            margin: 0;
+        }
+
+        /* Quote */
+        .quote-section {
+            padding: 4rem 0;
+            background: #fff;
+        }
+
+        .quote-card {
+            max-width: 700px;
+            margin: 0 auto;
+            text-align: center;
+            padding: 3rem;
+            background: var(--seminar-accent-light);
+            border-radius: 20px;
+        }
+
+        .quote-card blockquote {
+            font-size: 1.5rem;
+            font-style: italic;
+            color: var(--color-text);
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        .quote-card cite {
+            display: block;
+            margin-top: 1rem;
+            color: var(--seminar-accent);
+            font-weight: 600;
+        }
+
+        /* Sections */
+        .intro-section {
+            padding: 6rem 0;
+            background: #fff;
+        }
+
+        .intro-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .section-label {
+            color: var(--seminar-accent);
+            font-weight: 600;
+            font-size: 0.85rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+            display: inline-block;
+        }
+
+        .intro-text {
+            font-size: 1.15rem;
+            line-height: 1.9;
+            color: var(--color-text-light);
+        }
+
+        .goals-section {
+            padding: 6rem 0;
+            background: var(--color-cream);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .accent-line {
+            width: 60px;
+            height: 3px;
+            background: var(--seminar-accent);
+            margin: 1.5rem auto 0;
+        }
+
+        .goals-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .goal-card {
+            background: #fff;
+            border: 1px solid var(--color-border);
+            border-radius: 16px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.4s;
+        }
+
+        .goal-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px var(--seminar-accent-light);
+            border-color: var(--seminar-accent);
+        }
+
+        .goal-card .emoji {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .goal-text {
+            font-size: 1rem;
+            color: var(--color-text);
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        .cta-section {
+            padding: 6rem 0;
+            background: #fff;
+        }
+
+        .cta-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        .target-card {
+            background: var(--color-cream);
+            border-radius: 20px;
+            padding: 3rem;
+        }
+
+        .cta-card {
+            background: var(--seminar-accent);
+            border-radius: 20px;
+            padding: 3rem;
+            color: #fff;
+        }
+
+        .cta-card h3 {
+            color: #fff;
+            font-size: 1.75rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-card p {
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 2rem;
+        }
+
+        @media (max-width: 968px) {
+            .hero-content-wrapper {
+                text-align: center;
+            }
+
+            .hero-meta,
+            .hero-cta {
+                justify-content: center;
+            }
+
+            .types-grid,
+            .goals-grid,
+            .cta-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="scroll-progress" id="scrollProgress"></div>
+    <header id="header">
+        <div class="container">
+            <nav><a href="../index.html" class="logo"><img src="../assets/wtm_logo_gross.png" alt="WTM"></a>
+                <div class="menu-toggle" id="mobile-menu"><span class="bar"></span><span class="bar"></span><span
+                        class="bar"></span></div>
+                <ul class="nav-links">
+                    <li><a href="../index.html#haltung" class="nav-link">Haltung</a></li>
+                    <li><a href="../index.html#angebote" class="nav-link">Angebote</a></li>
+                    <li><a href="../index.html#trainings" class="nav-link">Trainings</a></li>
+                    <li><a href="../index.html#team" class="nav-link">Team</a></li>
+                    <li><a href="../index.html#kontakt" class="nav-link">Kontakt</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="seminar-hero">
+        <div class="hero-gradient-orb orb-1"></div>
+        <div class="hero-gradient-orb orb-2"></div>
+        <div class="container">
+            <div class="hero-content-wrapper">
+                <div class="hero-text">
+                    <div class="breadcrumb"><a href="../index.html">Startseite</a><span
+                            class="breadcrumb-sep">→</span><a href="../index.html#trainings">Seminare</a><span
+                            class="breadcrumb-sep">→</span><span>Fragetechniken</span></div>
+                    <div class="category-badge">Kommunikation</div>
+                    <h1 class="hero-title">Die Kunst der <span>Fragen</span></h1>
+                    <p class="hero-subtitle">Das Wissen ist ein Schloss und die Frage der Schlüssel. Mit den richtigen
+                        Fragen Gespräche führen und Vertrauen aufbauen.</p>
+                    <div class="hero-meta">
+                        <span class="meta-tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                            </svg>1 Tag</span>
+                        <span class="meta-tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <circle cx="12" cy="12" r="3"></circle>
+                                <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06"></path>
+                            </svg>Gesprächsführung</span>
+                    </div>
+                    <div class="hero-cta">
+                        <a href="../index.html#kontakt" class="btn-glow">Jetzt anfragen →</a>
+                        <a href="#arten" class="btn-outline-light">Fragearten</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="quote-section">
+        <div class="container">
+            <div class="quote-card">
+                <blockquote>„Wer fragt, der führt."</blockquote>
+                <cite>— Klassische Weisheit</cite>
+            </div>
+        </div>
+    </section>
+
+    <section class="types-section" id="arten">
+        <div class="container">
+            <div class="section-header"><span class="section-label">Fragearten</span>
+                <h2>Die richtige Frage zur richtigen Zeit</h2>
+                <div class="accent-line"></div>
+            </div>
+            <div class="types-grid">
+                <div class="type-card">
+                    <h4>Offene Fragen</h4>
+                    <p>Raum für ausführliche Antworten schaffen</p>
+                </div>
+                <div class="type-card">
+                    <h4>Geschlossene Fragen</h4>
+                    <p>Konkrete Entscheidungen herbeiführen</p>
+                </div>
+                <div class="type-card">
+                    <h4>Sokratische Fragen</h4>
+                    <p>Zum Nachdenken anregen</p>
+                </div>
+                <div class="type-card">
+                    <h4>Provozierende Fragen</h4>
+                    <p>Festgefahrene Muster aufbrechen</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="goals-section">
+        <div class="container">
+            <div class="section-header"><span class="section-label">Ihre Ziele</span>
+                <h2>Was Sie lernen werden</h2>
+                <div class="accent-line"></div>
+            </div>
+            <div class="goals-grid">
+                <div class="goal-card">
+                    <div class="emoji">🔍</div>
+                    <p class="goal-text">Herausfinden, was Sie noch nicht wissen</p>
+                </div>
+                <div class="goal-card">
+                    <div class="emoji">🤔</div>
+                    <p class="goal-text">Dumme Fragen stellen lernen</p>
+                </div>
+                <div class="goal-card">
+                    <div class="emoji">🎯</div>
+                    <p class="goal-text">Gespräche gezielt steuern</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-grid">
+                <div class="target-card"><span class="section-label">Zielgruppe</span>
+                    <h3>Für wen ist dieses Seminar?</h3>
+                    <p>Alle neugierigen Menschen, die ihre Gesprächsführung verbessern möchten.</p>
+                </div>
+                <div class="cta-card">
+                    <h3>Interesse geweckt?</h3>
+                    <p>Wir beraten Sie gerne individuell.</p><a href="../index.html#kontakt" class="btn btn-white">Jetzt
+                        Kontakt aufnehmen →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand"><a href="../index.html" class="logo"><img src="../assets/logo.png"
+                            alt="WTM"></a>
+                    <p>Training · Coaching · Beratung</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Kontakt</h4>
+                    <ul class="footer-links">
+                        <li><a href="tel:+4923113722666">0231 137 22 666</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Rechtliches</h4>
+                    <ul class="footer-links">
+                        <li><a href="../impressum.html">Impressum</a></li>
+                        <li><a href="../datenschutz.html">Datenschutz</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 WTM Management Consulting GmbH.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script>window.addEventListener('scroll', () => { document.getElementById('scrollProgress').style.width = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100 + '%'; });</script>
+    <script src="https://www.vallit.net/widget/embed.js" data-api-url="https://www.vallit.net"
+        data-company-id="e46176c5-0f35-43b8-8e8c-c72f534519e1" data-theme="minimal" data-language="de"
+        data-color="#6366f1" data-title="Kian" data-metadata='{"page_title": "Fragetechniken"}'></script>
+</body>
+
+</html>

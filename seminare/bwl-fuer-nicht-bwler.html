@@ -7,18 +7,13 @@
     <link rel="icon" type="image/png" href="../assets/favicon.png">
     <title>BWL für Nicht-BWLer – WTM Management Consulting</title>
     <meta name="description"
-        content="Betriebswirtschaftliche Zusammenhänge verstehen – Grundlagen der BWL für Fach- und Führungskräfte ohne ökonomischen Hintergrund.">
-
-    <!-- Fonts -->
+        content="Betriebswirtschaftliche Zusammenhänge verstehen – Grundlagen für Fach- und Führungskräfte ohne ökonomischen Hintergrund.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Sans+Pro:wght@300;400;600;700&display=swap"
         rel="stylesheet">
-
-    <!-- Base Styles -->
     <link rel="stylesheet" href="../styles/index.css">
-
     <style>
         :root {
             --seminar-accent: #5D8AA8;
@@ -34,7 +29,6 @@
             background: var(--seminar-accent);
             z-index: 9999;
             width: 0%;
-            transition: width 0.1s ease-out;
         }
 
         .seminar-hero {
@@ -45,47 +39,6 @@
             position: relative;
             overflow: hidden;
             padding: 120px 0 80px;
-        }
-
-        .hero-particles {
-            position: absolute;
-            inset: 0;
-            overflow: hidden;
-            pointer-events: none;
-        }
-
-        .particle {
-            position: absolute;
-            width: 4px;
-            height: 4px;
-            background: var(--seminar-accent);
-            border-radius: 50%;
-            opacity: 0.3;
-            animation: float-particle 15s infinite ease-in-out;
-        }
-
-        @keyframes float-particle {
-
-            0%,
-            100% {
-                transform: translateY(0) translateX(0);
-                opacity: 0.2;
-            }
-
-            25% {
-                transform: translateY(-100px) translateX(50px);
-                opacity: 0.5;
-            }
-
-            50% {
-                transform: translateY(-50px) translateX(-30px);
-                opacity: 0.3;
-            }
-
-            75% {
-                transform: translateY(-150px) translateX(20px);
-                opacity: 0.4;
-            }
         }
 
         .hero-gradient-orb {
@@ -152,7 +105,6 @@
 
         .breadcrumb a {
             color: rgba(255, 255, 255, 0.6);
-            transition: color 0.3s;
         }
 
         .breadcrumb a:hover {
@@ -161,10 +113,6 @@
 
         .breadcrumb-sep {
             color: rgba(255, 255, 255, 0.3);
-        }
-
-        .breadcrumb-current {
-            color: rgba(255, 255, 255, 0.8);
         }
 
         .category-badge {
@@ -183,29 +131,6 @@
             animation: fadeSlideUp 0.6s ease 0.1s forwards;
         }
 
-        .category-badge::before {
-            content: '';
-            width: 8px;
-            height: 8px;
-            background: var(--seminar-accent);
-            border-radius: 50%;
-            animation: pulse-dot 2s infinite;
-        }
-
-        @keyframes pulse-dot {
-
-            0%,
-            100% {
-                opacity: 1;
-                transform: scale(1);
-            }
-
-            50% {
-                opacity: 0.5;
-                transform: scale(1.3);
-            }
-        }
-
         .hero-title {
             font-size: clamp(2.5rem, 5vw, 4rem);
             color: #fff;
@@ -216,18 +141,7 @@
         }
 
         .hero-title span {
-            background: var(--seminar-accent);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        @media (max-width: 768px) {
-            .hero-title {
-                font-size: clamp(1.75rem, 8vw, 2.5rem);
-                word-break: break-word;
-                hyphens: auto;
-            }
+            color: var(--seminar-accent);
         }
 
         .hero-subtitle {
@@ -259,7 +173,6 @@
             border-radius: 8px;
             color: rgba(255, 255, 255, 0.8);
             font-size: 0.9rem;
-            backdrop-filter: blur(10px);
         }
 
         .meta-tag svg {
@@ -276,32 +189,17 @@
         }
 
         .btn-glow {
-            position: relative;
             background: var(--seminar-accent);
             color: #fff;
             padding: 1rem 2rem;
             border-radius: 8px;
             font-weight: 600;
-            overflow: hidden;
             transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .btn-glow::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(135deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-            transform: translateX(-100%);
-            transition: transform 0.5s;
         }
 
         .btn-glow:hover {
             transform: translateY(-3px);
             box-shadow: 0 10px 40px var(--seminar-accent-glow);
-        }
-
-        .btn-glow:hover::before {
-            transform: translateX(100%);
         }
 
         .btn-outline-light {
@@ -315,51 +213,6 @@
 
         .btn-outline-light:hover {
             background: rgba(255, 255, 255, 0.1);
-            border-color: rgba(255, 255, 255, 0.5);
-        }
-
-        .hero-visual {
-            position: relative;
-            opacity: 0;
-            animation: fadeSlideLeft 1s ease 0.6s forwards;
-        }
-
-        .visual-card {
-            background: linear-gradient(145deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.02));
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 24px;
-            padding: 3rem;
-            position: relative;
-        }
-
-        .visual-card::before {
-            content: '';
-            position: absolute;
-            inset: -1px;
-            border-radius: 24px;
-            padding: 1px;
-            background: var(--seminar-accent);
-            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-            -webkit-mask-composite: xor;
-            mask-composite: exclude;
-        }
-
-        .quote-icon {
-            font-size: 4rem;
-            color: var(--seminar-accent);
-            opacity: 0.3;
-            line-height: 1;
-            margin-bottom: 1rem;
-        }
-
-        .visual-quote {
-            font-family: var(--font-heading);
-            font-size: 1.3rem;
-            color: rgba(255, 255, 255, 0.9);
-            line-height: 1.7;
-            font-style: italic;
         }
 
         @keyframes fadeSlideUp {
@@ -374,22 +227,86 @@
             }
         }
 
-        @keyframes fadeSlideLeft {
-            from {
-                opacity: 0;
-                transform: translateX(50px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-
-        .intro-section {
+        /* Glossary Cards */
+        .glossary-section {
             padding: 6rem 0;
             background: var(--color-cream);
+        }
+
+        .glossary-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .glossary-card {
+            background: #fff;
+            border-radius: 16px;
+            padding: 1.5rem;
+            text-align: center;
+            border: 2px solid transparent;
+            transition: all 0.4s;
+            cursor: pointer;
+        }
+
+        .glossary-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--seminar-accent);
+            box-shadow: 0 20px 40px rgba(93, 138, 168, 0.15);
+        }
+
+        .glossary-term {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--seminar-accent);
+            margin-bottom: 0.5rem;
+        }
+
+        .glossary-def {
+            font-size: 0.9rem;
+            color: var(--color-text-light);
+            line-height: 1.5;
+        }
+
+        /* Content Flow */
+        .content-flow {
+            padding: 6rem 0;
+            background: #fff;
+        }
+
+        .flow-steps {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+            margin-top: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .flow-step {
+            background: var(--seminar-accent-light);
+            border-radius: 16px;
+            padding: 2rem;
+            text-align: center;
+            min-width: 180px;
             position: relative;
+        }
+
+        .flow-step h4 {
+            color: var(--seminar-accent);
+            margin-bottom: 0.5rem;
+        }
+
+        .flow-arrow {
+            font-size: 2rem;
+            color: var(--seminar-accent);
+        }
+
+        /* Goals & Benefits */
+        .intro-section {
+            padding: 6rem 0;
+            background: #fff;
         }
 
         .intro-content {
@@ -399,18 +316,13 @@
         }
 
         .intro-content .section-label {
-            display: inline-block;
             color: var(--seminar-accent);
             font-weight: 600;
             font-size: 0.85rem;
             letter-spacing: 0.15em;
             text-transform: uppercase;
             margin-bottom: 1rem;
-        }
-
-        .intro-content h2 {
-            font-size: clamp(1.75rem, 3vw, 2.5rem);
-            margin-bottom: 1.5rem;
+            display: inline-block;
         }
 
         .intro-text {
@@ -421,7 +333,7 @@
 
         .goals-section {
             padding: 6rem 0;
-            background: #fff;
+            background: var(--color-cream);
         }
 
         .section-header {
@@ -430,13 +342,13 @@
         }
 
         .section-label {
-            display: inline-block;
             color: var(--seminar-accent);
             font-weight: 600;
             font-size: 0.85rem;
             letter-spacing: 0.15em;
             text-transform: uppercase;
             margin-bottom: 1rem;
+            display: inline-block;
         }
 
         .accent-line {
@@ -450,7 +362,7 @@
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 2rem;
-            max-width: 900px;
+            max-width: 1000px;
             margin: 0 auto;
         }
 
@@ -459,32 +371,13 @@
             border: 1px solid var(--color-border);
             border-radius: 16px;
             padding: 2rem;
-            position: relative;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            overflow: hidden;
-        }
-
-        .goal-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 4px;
-            height: 100%;
-            background: var(--seminar-accent);
-            transform: scaleY(0);
-            transform-origin: bottom;
-            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: all 0.4s;
         }
 
         .goal-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(139, 92, 246, 0.1);
+            box-shadow: 0 20px 40px rgba(93, 138, 168, 0.1);
             border-color: var(--seminar-accent);
-        }
-
-        .goal-card:hover::before {
-            transform: scaleY(1);
         }
 
         .goal-number {
@@ -497,7 +390,6 @@
             color: var(--seminar-accent);
             border-radius: 10px;
             font-weight: 700;
-            font-size: 1rem;
             margin-bottom: 1rem;
         }
 
@@ -520,10 +412,6 @@
             align-items: center;
         }
 
-        .benefits-content h2 {
-            margin-bottom: 1.5rem;
-        }
-
         .benefit-box {
             background: var(--seminar-accent-light);
             border-left: 4px solid var(--seminar-accent);
@@ -535,7 +423,6 @@
             margin: 0;
             font-size: 1.1rem;
             line-height: 1.8;
-            color: var(--color-text);
         }
 
         .benefits-visual {
@@ -574,126 +461,6 @@
             width: 80px;
             height: 80px;
             stroke: var(--seminar-accent);
-        }
-
-        .contact-section {
-            padding: 4rem 0;
-            background: linear-gradient(180deg, #f8faf9 0%, #fff 100%);
-        }
-
-        .contact-card {
-            max-width: 600px;
-            margin: 0 auto;
-            background: #fff;
-            border-radius: 20px;
-            padding: 2.5rem;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
-            display: flex;
-            align-items: center;
-            gap: 2rem;
-        }
-
-        .contact-image {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 4px solid var(--seminar-accent);
-            flex-shrink: 0;
-        }
-
-        .contact-info h3 {
-            margin: 0 0 0.5rem;
-            color: var(--color-text);
-            font-size: 1.25rem;
-        }
-
-        .contact-role {
-            color: var(--seminar-accent);
-            font-weight: 600;
-            margin-bottom: 1rem;
-            display: block;
-        }
-
-        .contact-details {
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
-        }
-
-        .contact-details a {
-            color: var(--color-text-light);
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            transition: color 0.3s;
-        }
-
-        .contact-details a:hover {
-            color: var(--seminar-accent);
-        }
-
-        .contact-details svg {
-            width: 16px;
-            height: 16px;
-            stroke: var(--seminar-accent);
-        }
-
-        @media (max-width: 600px) {
-            .contact-card {
-                flex-direction: column;
-                text-align: center;
-            }
-        }
-
-        .related-section {
-            padding: 4rem 0;
-            background: var(--color-cream);
-        }
-
-        .related-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1.5rem;
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        .related-card {
-            background: #fff;
-            border-radius: 16px;
-            padding: 2rem;
-            text-align: center;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-            transition: all 0.3s;
-            border: 2px solid transparent;
-        }
-
-        .related-card:hover {
-            transform: translateY(-5px);
-            border-color: var(--seminar-accent);
-        }
-
-        .related-card h3 {
-            font-size: 2rem;
-            color: var(--seminar-accent);
-            margin-bottom: 0.5rem;
-        }
-
-        .related-card p {
-            color: var(--color-text-light);
-            margin-bottom: 1rem;
-        }
-
-        .related-card a {
-            color: var(--seminar-accent);
-            font-weight: 600;
-        }
-
-        @media (max-width: 768px) {
-            .related-grid {
-                grid-template-columns: 1fr;
-            }
         }
 
         .cta-section {
@@ -741,12 +508,7 @@
 
         .cta-card p {
             color: rgba(255, 255, 255, 0.9);
-            font-size: 1.05rem;
             margin-bottom: 2rem;
-        }
-
-        .cta-card .btn-white {
-            align-self: flex-start;
         }
 
         @media (max-width: 968px) {
@@ -756,48 +518,36 @@
             }
 
             .hero-subtitle {
-                margin-left: auto;
-                margin-right: auto;
+                margin: 0 auto 2rem;
             }
 
-            .hero-meta {
-                justify-content: center;
-            }
-
+            .hero-meta,
             .hero-cta {
                 justify-content: center;
             }
 
-            .hero-visual {
-                margin-top: 3rem;
+            .glossary-grid {
+                grid-template-columns: repeat(2, 1fr);
             }
 
-            .goals-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .benefits-grid {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-
-            .benefits-visual {
-                margin-top: 2rem;
-            }
-
+            .goals-grid,
+            .benefits-grid,
             .cta-grid {
                 grid-template-columns: 1fr;
+            }
+
+            .flow-steps {
+                flex-direction: column;
+            }
+
+            .flow-arrow {
+                transform: rotate(90deg);
             }
         }
 
         @media (max-width: 600px) {
-            .hero-title {
-                font-size: 2rem;
-            }
-
-            .hero-meta {
-                flex-direction: column;
-                align-items: center;
+            .glossary-grid {
+                grid-template-columns: 1fr;
             }
 
             .hero-cta {
@@ -810,60 +560,18 @@
 <body>
     <div class="scroll-progress" id="scrollProgress"></div>
 
-        <header id="header">
+    <header id="header">
         <div class="container">
             <nav>
-                <a href="../index.html" class="logo">
-                    <img src="../assets/wtm_logo_gross.png" alt="WTM Management Consulting">
-                </a>
-                <div class="menu-toggle" id="mobile-menu">
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                </div>
+                <a href="../index.html" class="logo"><img src="../assets/wtm_logo_gross.png"
+                        alt="WTM Management Consulting"></a>
+                <div class="menu-toggle" id="mobile-menu"><span class="bar"></span><span class="bar"></span><span
+                        class="bar"></span></div>
                 <ul class="nav-links">
                     <li><a href="../index.html#haltung" class="nav-link">Haltung</a></li>
-                    <li class="nav-dropdown">
-                        <a href="../index.html#angebote" class="nav-link nav-dropdown-toggle">
-                            Angebote
-                            <svg class="dropdown-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2">
-                                <polyline points="6 9 12 15 18 9"></polyline>
-                            </svg>
-                        </a>
-                        <div class="nav-dropdown-menu">
-                            <a href="../index.html#angebote">Leistungen</a>
-                            <a href="../index.html#trainings">Trainings</a>
-                            <a href="../index.html#fuehrungskraefte">FK-Programm</a>
-                        </div>
-                    </li>
-                    <li class="nav-dropdown">
-                        <a href="../index.html#success-stories" class="nav-link nav-dropdown-toggle">
-                            Praxisbeispiele
-                            <svg class="dropdown-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2">
-                                <polyline points="6 9 12 15 18 9"></polyline>
-                            </svg>
-                        </a>
-                        <div class="nav-dropdown-menu">
-                            <a href="../index.html#success-stories">Referenzen</a>
-                            <a href="../index.html#success-stories">Success Stories</a>
-                            <a href="../index.html#testimonials">Stimmen</a>
-                        </div>
-                    </li>
-                    <li class="nav-dropdown">
-                        <a href="../index.html#team" class="nav-link nav-dropdown-toggle">
-                            Wir
-                            <svg class="dropdown-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2">
-                                <polyline points="6 9 12 15 18 9"></polyline>
-                            </svg>
-                        </a>
-                        <div class="nav-dropdown-menu">
-                            <a href="../index.html#team">Team</a>
-                            <a href="../index.html#zertifikate">Qualifikationen</a>
-                        </div>
-                    </li>
+                    <li><a href="../index.html#angebote" class="nav-link">Angebote</a></li>
+                    <li><a href="../index.html#trainings" class="nav-link">Trainings</a></li>
+                    <li><a href="../index.html#team" class="nav-link">Team</a></li>
                     <li><a href="../index.html#kontakt" class="nav-link">Kontakt</a></li>
                 </ul>
             </nav>
@@ -871,71 +579,37 @@
     </header>
 
     <section class="seminar-hero">
-        <div class="hero-particles" id="particles"></div>
         <div class="hero-gradient-orb orb-1"></div>
         <div class="hero-gradient-orb orb-2"></div>
-
         <div class="container">
             <div class="hero-content-wrapper">
                 <div class="hero-text">
                     <div class="breadcrumb">
-                        <a href="../index.html">Startseite</a>
-                        <span class="breadcrumb-sep">→</span>
-                        <a href="../index.html#trainings">Seminare</a>
-                        <span class="breadcrumb-sep">→</span>
-                        <span class="breadcrumb-current">BWL für Nicht-BWLer</span>
+                        <a href="../index.html">Startseite</a><span class="breadcrumb-sep">→</span>
+                        <a href="../index.html#trainings">Seminare</a><span class="breadcrumb-sep">→</span>
+                        <span>BWL für Nicht-BWLer</span>
                     </div>
-
                     <div class="category-badge">Management</div>
-
-                    <h1 class="hero-title">
-                        BWL für<br><span>Nicht-BWLer</span>
-                    </h1>
-
-                    <p class="hero-subtitle">
-                        Betriebswirtschaftliche Zusammenhänge verstehen – Grundlagen für die Praxis.
-                    </p>
-
+                    <h1 class="hero-title">BWL für <span>Nicht-BWLer</span></h1>
+                    <p class="hero-subtitle">Gewinn, Umsatz, Erlöse, ROI – wo ist der Unterschied? Verstehen Sie die
+                        betriebswirtschaftliche Denkweise und kommunizieren Sie auf Augenhöhe mit Kaufleuten.</p>
                     <div class="hero-meta">
-                        <span class="meta-tag">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <span class="meta-tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
                                 <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-                                <line x1="16" y1="2" x2="16" y2="6"></line>
-                                <line x1="8" y1="2" x2="8" y2="6"></line>
-                                <line x1="3" y1="10" x2="21" y2="10"></line>
-                            </svg>
-                            1-2 Tage
-                        </span>
-                        <span class="meta-tag">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M12 20V10"></path>
-                                <path d="M18 20V4"></path>
-                                <path d="M6 20v-4"></path>
-                            </svg>
-                            Reflexion
-                        </span>
-                        <span class="meta-tag">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <polygon
-                                    points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
-                                </polygon>
-                            </svg>
-                            Praxis
-                        </span>
+                            </svg>1-2 Tage</span>
+                        <span class="meta-tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                            </svg>Finanzen</span>
+                        <span class="meta-tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M18 20V10M12 20V4M6 20v-6"></path>
+                            </svg>Kennzahlen</span>
                     </div>
-
                     <div class="hero-cta">
                         <a href="../index.html#kontakt" class="btn-glow">Jetzt anfragen →</a>
-                        <a href="#inhalte" class="btn-outline-light">Mehr erfahren</a>
-                    </div>
-                </div>
-
-                <div class="hero-visual">
-                    <div class="visual-card">
-                        <div class="quote-icon">"</div>
-                        <p class="visual-quote">
-                            Führung ist die Kunst, Menschen dazu zu bringen, das zu wollen, was getan werden muss.
-                        </p>
+                        <a href="#glossar" class="btn-outline-light">BWL-Grundlagen</a>
                     </div>
                 </div>
             </div>
@@ -946,12 +620,86 @@
         <div class="container">
             <div class="intro-content">
                 <span class="section-label">Worum geht es?</span>
-                <h2>Die Grundlagen wirksamer Führung</h2>
-                <p class="intro-text">
-                    Führung will gelernt sein. In diesem Seminar erarbeiten Sie die wichtigsten Grundlagen für Ihren
-                    Erfolg als Führungskraft. Sie lernen, wie Sie Mitarbeiter motivieren, delegieren und Feedback geben
-                    – und entwickeln Ihren persönlichen Führungsstil.
-                </p>
+                <h2>Das Mindset der Betriebswirtschaft verstehen</h2>
+                <p class="intro-text">Was bedeuten diese ganzen Kennziffern in meinen Auswertungen eigentlich? Warum
+                    versteht mein zahlenorientierter Gesprächspartner nicht, dass meine Lösung die technisch beste ist?
+                    Und andererseits: Wie kann ich selbst meine Entscheidungen betriebswirtschaftlich besser fundieren
+                    und kommunizieren?</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="glossary-section" id="glossar">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">BWL-Glossar</span>
+                <h2>Die wichtigsten Begriffe</h2>
+                <div class="accent-line"></div>
+            </div>
+            <div class="glossary-grid">
+                <div class="glossary-card">
+                    <div class="glossary-term">Umsatz</div>
+                    <div class="glossary-def">Gesamterlöse aus Verkäufen</div>
+                </div>
+                <div class="glossary-card">
+                    <div class="glossary-term">Gewinn</div>
+                    <div class="glossary-def">Umsatz minus alle Kosten</div>
+                </div>
+                <div class="glossary-card">
+                    <div class="glossary-term">ROI</div>
+                    <div class="glossary-def">Return on Investment</div>
+                </div>
+                <div class="glossary-card">
+                    <div class="glossary-term">GuV</div>
+                    <div class="glossary-def">Gewinn- und Verlustrechnung</div>
+                </div>
+                <div class="glossary-card">
+                    <div class="glossary-term">Bilanz</div>
+                    <div class="glossary-def">Vermögens­übersicht</div>
+                </div>
+                <div class="glossary-card">
+                    <div class="glossary-term">Liquidität</div>
+                    <div class="glossary-def">Zahlungsfähigkeit</div>
+                </div>
+                <div class="glossary-card">
+                    <div class="glossary-term">EBIT</div>
+                    <div class="glossary-def">Operativer Gewinn</div>
+                </div>
+                <div class="glossary-card">
+                    <div class="glossary-term">Kalkulation</div>
+                    <div class="glossary-def">Kosten­berechnung</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="content-flow">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Der Lernweg</span>
+                <h2>Von der Bilanz zum Controlling</h2>
+                <div class="accent-line"></div>
+            </div>
+            <div class="flow-steps">
+                <div class="flow-step">
+                    <h4>Bilanz</h4>
+                    <p>Vermögensstruktur</p>
+                </div>
+                <span class="flow-arrow">→</span>
+                <div class="flow-step">
+                    <h4>GuV</h4>
+                    <p>Erfolgsrechnung</p>
+                </div>
+                <span class="flow-arrow">→</span>
+                <div class="flow-step">
+                    <h4>Kennzahlen</h4>
+                    <p>ROI, EBIT & Co.</p>
+                </div>
+                <span class="flow-arrow">→</span>
+                <div class="flow-step">
+                    <h4>Controlling</h4>
+                    <p>Steuerung</p>
+                </div>
             </div>
         </div>
     </section>
@@ -963,23 +711,26 @@
                 <h2>Was Sie erreichen werden</h2>
                 <div class="accent-line"></div>
             </div>
-
             <div class="goals-grid">
                 <div class="goal-card">
                     <div class="goal-number">1</div>
-                    <p class="goal-text">Die eigene Führungsrolle verstehen und gestalten</p>
+                    <p class="goal-text">Zentrale Bereiche betriebswirtschaftlichen Know-hows kennenlernen und die
+                        „spezielle Denke" von Betriebswirten verstehen</p>
                 </div>
                 <div class="goal-card">
                     <div class="goal-number">2</div>
-                    <p class="goal-text">Mitarbeiter motivieren und entwickeln</p>
+                    <p class="goal-text">Budgets, Erfolgsrechnungen und Kennziffern verstehen, prüfen und hinterfragen
+                        können</p>
                 </div>
                 <div class="goal-card">
                     <div class="goal-number">3</div>
-                    <p class="goal-text">Wirksam delegieren und Verantwortung übertragen</p>
+                    <p class="goal-text">Gewinn- und Verlustrechnungen sowie Bilanzen interpretieren und eigene
+                        Angebotskalkulationen vornehmen</p>
                 </div>
                 <div class="goal-card">
                     <div class="goal-number">4</div>
-                    <p class="goal-text">Konstruktives Feedback geben und annehmen</p>
+                    <p class="goal-text">Kompetenz für Gespräche mit Kollegen in kaufmännischen Funktionen und mit
+                        Kunden stärken – Missverständnisse vermeiden</p>
                 </div>
             </div>
         </div>
@@ -992,83 +743,18 @@
                     <span class="section-label">Ihr Nutzen</span>
                     <h2>Was Sie davon haben</h2>
                     <div class="benefit-box">
-                        <p>Sie starten sicher in Ihre Führungsrolle und wissen, wie Sie Ihre Mitarbeiter führen und
-                            entwickeln. Mit bewährten Werkzeugen und Ihrem persönlichen Führungsstil werden Sie wirksam
-                            und authentisch führen.</p>
+                        <p>Sie stärken Ihre Kompetenz für Gespräche mit Kollegen in kaufmännischen Funktionen und mit
+                            Kunden. Sie vermeiden Missverständnisse und können wirtschaftliche Zusammenhänge besser
+                            einschätzen. Sie fundieren Ihre Entscheidungen betriebswirtschaftlich und kommunizieren
+                            überzeugender.</p>
                     </div>
                 </div>
                 <div class="benefits-visual">
                     <div class="icon-showcase">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <path d="M12 20V10"></path>
-                            <path d="M18 20V4"></path>
-                            <path d="M6 20v-4"></path>
+                            <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
                         </svg>
                     </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="contact-section">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-label">Ihr Ansprechpartner</span>
-                <h2>Persönliche Beratung</h2>
-                <div class="accent-line"></div>
-            </div>
-
-            <div class="contact-card">
-                <img src="../assets/team/malte-werner.jpg" alt="Malte Werner" class="contact-image">
-                <div class="contact-info">
-                    <h3>Malte Werner</h3>
-                    <span class="contact-role">Berater & Trainer</span>
-                    <div class="contact-details">
-                        <a href="mailto:malte.werner@wtm-consulting.de">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
-                                </path>
-                                <polyline points="22,6 12,13 2,6"></polyline>
-                            </svg>
-                            malte.werner@wtm-consulting.de
-                        </a>
-                        <a href="tel:+4915777542032">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path
-                                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
-                                </path>
-                            </svg>
-                            0157 – 77 54 20 32
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="related-section">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-label">Weitere Führungsseminare</span>
-                <h2>Vertiefen Sie Ihre Führungskompetenz</h2>
-                <div class="accent-line"></div>
-            </div>
-
-            <div class="related-grid">
-                <div class="related-card">
-                    <h3>→</h3>
-                    <p>Vom Mitarbeiter zur Führungskraft</p>
-                    <a href="vom-mitarbeiter-zur-fuehrungskraft.html">Mehr erfahren →</a>
-                </div>
-                <div class="related-card">
-                    <h3>→</h3>
-                    <p>Delegation</p>
-                    <a href="delegation-das-handwerk-der-fuehrung.html">Mehr erfahren →</a>
-                </div>
-                <div class="related-card">
-                    <h3>→</h3>
-                    <p>Führen durch Persönlichkeit</p>
-                    <a href="fuehren-durch-persoenlichkeit.html">Mehr erfahren →</a>
                 </div>
             </div>
         </div>
@@ -1080,32 +766,26 @@
                 <div class="target-card">
                     <span class="section-label">Zielgruppe</span>
                     <h3>Für wen ist dieses Seminar?</h3>
-                    <p>Neue Führungskräfte, Nachwuchsführungskräfte und alle, die ihre Führungskompetenz systematisch
-                        aufbauen möchten.</p>
+                    <p>Alle, die fitter in BWL werden möchten und noch mehr auf Augenhöhe mit Fachleuten kommunizieren
+                        möchten – insbesondere Fach- und Führungskräfte ohne betriebswirtschaftlichen Hintergrund.</p>
                 </div>
                 <div class="cta-card">
                     <h3>Interesse geweckt?</h3>
-                    <p>Wir beraten Sie gerne zu diesem Seminar und passen die Inhalte individuell an Ihre Bedürfnisse
-                        an.</p>
+                    <p>Wir passen die Inhalte individuell an Ihre Bedürfnisse an. Preis, Methode und Dauer werden
+                        gemeinsam mit Ihnen in der Auftrags- und Zielklärung festgelegt.</p>
                     <a href="../index.html#kontakt" class="btn btn-white">Jetzt Kontakt aufnehmen →</a>
                 </div>
             </div>
         </div>
     </section>
 
-    
-    <!-- Chatbot Helper Button -->
     <div class="chatbot-helper" id="chatbotHelper">
         <button class="chatbot-helper-btn" id="openChatbot">
-            <div class="btn-icon-wrapper">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <div class="btn-icon-wrapper"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
-                </svg>
-            </div>
-            <div class="btn-text-content">
-                <span class="btn-title">Fragen?</span>
-                <span class="btn-subtitle">Ich helfe gerne</span>
-            </div>
+                </svg></div>
+            <div class="btn-text-content"><span class="btn-title">Fragen?</span><span class="btn-subtitle">Ich helfe
+                    gerne</span></div>
         </button>
     </div>
 
@@ -1113,24 +793,20 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-brand"><a href="../index.html" class="logo"><img src="../assets/logo.png"
-                            alt="WTM Management Consulting"></a>
+                            alt="WTM"></a>
                     <p>Training · Coaching · Beratung<br>Seit über 25 Jahren.</p>
                 </div>
                 <div class="footer-col">
                     <h4>Angebote</h4>
                     <ul class="footer-links">
-                        <li><a href="../index.html#trainings">Trainings & Seminare</a></li>
-                        <li><a href="../index.html#angebote">Coaching</a></li>
-                        <li><a href="../index.html#angebote">Teamentwicklung</a></li>
+                        <li><a href="../index.html#trainings">Trainings</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
                     <h4>Kontakt</h4>
                     <ul class="footer-links footer-contact">
-                        <li>Neuer Graben 61</li>
-                        <li>44139 Dortmund</li>
+                        <li>Neuer Graben 61, 44139 Dortmund</li>
                         <li><a href="tel:+4923113722666">0231 137 22 666</a></li>
-                        <li><a href="mailto:info@wtm-consulting.de">info@wtm-consulting.de</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
@@ -1142,21 +818,16 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <div class="copyright">
-                    <p>© 2026 WTM Management Consulting GmbH. Alle Rechte vorbehalten.</p>
-                </div>
+                <p>© 2026 WTM Management Consulting GmbH.</p>
             </div>
         </div>
     </footer>
 
-        <script src="../js/seminar-data.js"></script>
     <script src="../js/main.js"></script>
-
-    <!-- Vallit AI Chat Widget -->
+    <script>window.addEventListener('scroll', () => { document.getElementById('scrollProgress').style.width = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100 + '%'; });</script>
     <script src="https://www.vallit.net/widget/embed.js" data-api-url="https://www.vallit.net"
-        data-company-id="e46176c5-0f35-43b8-8e8c-c72f534519e1" data-theme="minimal" data-language="de" data-position=""
-        data-color="#6366f1" data-title="Kian" data-metadata='{"page_title": "BWL für Nicht-BWLer"}'>
-        </script>
+        data-company-id="e46176c5-0f35-43b8-8e8c-c72f534519e1" data-theme="minimal" data-language="de"
+        data-color="#6366f1" data-title="Kian" data-metadata='{"page_title": "BWL für Nicht-BWLer"}'></script>
 </body>
 
 </html>
