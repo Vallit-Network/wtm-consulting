@@ -1314,49 +1314,132 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Function to open Vallit chat widget
+    // Function to open Vallit chat widget with smooth animation and feedback
     function openVallitChat() {
+        console.log('Attempting to open Vallit Chat...');
+
+        const btn = document.getElementById('openChatbot');
+        if (!btn) return;
+
+        const originalContent = btn.innerHTML;
+
+        // Set loading state
+        btn.innerHTML = '<div class="btn-icon-wrapper"><div class="loading-spinner-small"></div></div><div class="btn-text-content"><span class="btn-title">Lade...</span></div>';
+        btn.style.cursor = 'wait';
+
+        // 1. Try finding the toggle button
         const findToggle = () =>
             document.querySelector('.syntra-toggle-btn') ||
             document.querySelector('[data-vallit-toggle]') ||
-            document.querySelector('.vallit-widget-toggle');
+            document.querySelector('.vallit-widget-toggle') ||
+            document.querySelector('#vallit-launcher');
 
-        const toggleBtn = findToggle();
+        const helper = document.getElementById('chatbotHelper');
 
-        const openChat = (btn) => {
-            btn.click();
-            const helper = document.getElementById('chatbotHelper');
+        const onChatOpened = () => {
             if (helper) helper.classList.add('opened');
+
+            // Reset button state
+            btn.innerHTML = originalContent;
+            btn.style.cursor = '';
 
             // Watch for chat widget closing to restore helper visibility
             watchForChatClose();
         };
 
+        const openChatViaBtn = (toggleBtn) => {
+            console.log('Found toggle button, clicking:', toggleBtn);
+            toggleBtn.click();
+
+            // Dispatch explicit click just in case
+            const clickEvent = new MouseEvent('click', {
+                view: window,
+                bubbles: true,
+                cancelable: true
+            });
+            toggleBtn.dispatchEvent(clickEvent);
+
+            onChatOpened();
+        };
+
+        // 2. Initial Attempt
+        const toggleBtn = findToggle();
+
         if (toggleBtn) {
-            openChat(toggleBtn);
+            openChatViaBtn(toggleBtn);
         } else {
-            // Widget might be loading, try polling
+            console.log('Toggle button not found immediately, polling...');
+
+            // 3. Polling / API Fallback
             let attempts = 0;
-            const maxAttempts = 20;
+            const maxAttempts = 40; // 10 seconds total (250ms interval)
 
             const pollInterval = setInterval(() => {
                 attempts++;
-                const btn = findToggle();
+                const btnFound = findToggle();
 
-                if (btn) {
+                // Strategy A: Button Found
+                if (btnFound) {
                     clearInterval(pollInterval);
-                    openChat(btn);
-                } else if (attempts >= maxAttempts) {
+                    openChatViaBtn(btnFound);
+                    return;
+                }
+
+                // Strategy B: Check for global API (Vallit / Syntra)
+                if (window.Vallit && typeof window.Vallit.open === 'function') {
+                    console.log('Opening via window.Vallit API');
                     clearInterval(pollInterval);
-                    // Redirect to contact section if widget not found
-                    const contactSection = document.getElementById('kontakt');
-                    if (contactSection) {
-                        contactSection.scrollIntoView({ behavior: 'smooth' });
-                    }
+                    window.Vallit.open();
+                    onChatOpened();
+                    return;
+                }
+
+                if (window.Syntra && typeof window.Syntra.open === 'function') {
+                    console.log('Opening via window.Syntra API');
+                    clearInterval(pollInterval);
+                    window.Syntra.open();
+                    onChatOpened();
+                    return;
+                }
+
+                // Timeout
+                if (attempts >= maxAttempts) {
+                    clearInterval(pollInterval);
+                    console.error('Chat widget not found after timeout.');
+
+                    // Reset button state
+                    btn.innerHTML = originalContent;
+                    btn.style.cursor = '';
+
+                    // Show Toast ONLY - No redirect
+                    showToast('Der Chat Assistent ist gerade nicht verfügbar. Bitte nutzen Sie das Kontaktformular.');
                 }
             }, 250);
         }
     }
+
+    // Simple Toast Notification
+    function showToast(message) {
+        const toast = document.createElement('div');
+        toast.className = 'val-toast';
+        toast.textContent = message;
+        document.body.appendChild(toast);
+
+        // Force reflow
+        toast.offsetHeight;
+
+        toast.classList.add('show');
+
+        setTimeout(() => {
+            toast.classList.remove('show');
+            setTimeout(() => {
+                if (document.body.contains(toast)) {
+                    document.body.removeChild(toast);
+                }
+            }, 300);
+        }, 3000);
+    }
+
 
     // Watch for Vallit chat widget closing to restore helper button
     function watchForChatClose() {

@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="../assets/favicon.png">
+    <title>Führungssimulation – WTM Management Consulting</title>
+    <meta name="description"
+        content="Führungssimulation 'Krankenhaus am offenen Herzen' – Immersives Führungstraining in realistischen Szenarien.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Sans+Pro:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../styles/index.css">
+    <style>
+        :root {
+            --seminar-accent: #dc2626;
+            --seminar-accent-light: rgba(220, 38, 38, 0.1);
+            --seminar-accent-glow: rgba(220, 38, 38, 0.3);
+        }
+
+        .scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 3px;
+            background: var(--seminar-accent);
+            z-index: 9999;
+            width: 0%;
+        }
+
+        .seminar-hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(165deg, #1a0f0f 0%, #2d1818 50%, #1a0f0f 100%);
+            position: relative;
+            overflow: hidden;
+            padding: 120px 0 80px;
+        }
+
+        .hero-gradient-orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.4;
+            animation: pulse-orb 8s infinite ease-in-out;
+        }
+
+        .orb-1 {
+            width: 400px;
+            height: 400px;
+            background: var(--seminar-accent);
+            top: -100px;
+            right: -100px;
+        }
+
+        .orb-2 {
+            width: 300px;
+            height: 300px;
+            background: #ef4444;
+            bottom: -50px;
+            left: -50px;
+            animation-delay: 4s;
+        }
+
+        @keyframes pulse-orb {
+
+            0%,
+            100% {
+                transform: scale(1);
+                opacity: 0.3;
+            }
+
+            50% {
+                transform: scale(1.2);
+                opacity: 0.5;
+            }
+        }
+
+        .hero-content-wrapper {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+        }
+
+        .hero-text {
+            color: #fff;
+        }
+
+        .breadcrumb {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+            opacity: 0;
+            animation: fadeSlideUp 0.6s ease forwards;
+        }
+
+        .breadcrumb a {
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .category-badge {
+            display: inline-flex;
+            padding: 0.5rem 1rem;
+            background: var(--seminar-accent-light);
+            border: 1px solid var(--seminar-accent);
+            border-radius: 50px;
+            color: #ef4444;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            opacity: 0;
+            animation: fadeSlideUp 0.6s ease 0.1s forwards;
+        }
+
+        .category-badge::before {
+            content: '🏥';
+            margin-right: 0.5rem;
+        }
+
+        .hero-title {
+            font-size: clamp(2rem, 4vw, 3.5rem);
+            color: #fff;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            opacity: 0;
+            animation: fadeSlideUp 0.8s ease 0.2s forwards;
+        }
+
+        .hero-title span {
+            color: #ef4444;
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.8;
+            max-width: 600px;
+            margin-bottom: 2rem;
+            opacity: 0;
+            animation: fadeSlideUp 0.8s ease 0.3s forwards;
+        }
+
+        .hero-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            opacity: 0;
+            animation: fadeSlideUp 0.8s ease 0.4s forwards;
+        }
+
+        .meta-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.6rem 1rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.9rem;
+        }
+
+        .meta-tag svg {
+            width: 16px;
+            height: 16px;
+            stroke: #ef4444;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 1rem;
+            opacity: 0;
+            animation: fadeSlideUp 0.8s ease 0.5s forwards;
+        }
+
+        .btn-glow {
+            background: var(--seminar-accent);
+            color: #fff;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .btn-glow:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 40px var(--seminar-accent-glow);
+        }
+
+        .btn-outline-light {
+            padding: 1rem 2rem;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 8px;
+            color: #fff;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        @keyframes fadeSlideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Simulation Game Board */
+        .game-section {
+            padding: 6rem 0;
+            background: #0a0a0a;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .game-board {
+            max-width: 900px;
+            margin: 3rem auto 0;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+        }
+
+        .game-room {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            border: 2px solid #333;
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: center;
+            transition: all 0.4s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .game-room::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--seminar-accent);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s;
+        }
+
+        .game-room:hover {
+            border-color: var(--seminar-accent);
+            transform: translateY(-5px);
+        }
+
+        .game-room:hover::before {
+            transform: scaleX(1);
+        }
+
+        .game-room .room-icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            filter: grayscale(1);
+            transition: filter 0.4s;
+        }
+
+        .game-room:hover .room-icon {
+            filter: grayscale(0);
+        }
+
+        .game-room h4 {
+            color: #fff;
+            font-size: 0.85rem;
+            margin: 0;
+        }
+
+        .game-room p {
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.75rem;
+            margin: 0.25rem 0 0;
+        }
+
+        .game-room.active {
+            border-color: var(--seminar-accent);
+            animation: pulse-room 2s infinite;
+        }
+
+        .game-room.active::before {
+            transform: scaleX(1);
+        }
+
+        .game-room.active .room-icon {
+            filter: grayscale(0);
+        }
+
+        @keyframes pulse-room {
+
+            0%,
+            100% {
+                box-shadow: 0 0 0 0 rgba(220, 38, 38, 0.4);
+            }
+
+            50% {
+                box-shadow: 0 0 0 10px rgba(220, 38, 38, 0);
+            }
+        }
+
+        /* Feedback Cycle */
+        .feedback-section {
+            padding: 6rem 0;
+            background: var(--color-cream);
+        }
+
+        .feedback-cycle {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+            margin-top: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .feedback-step {
+            background: #fff;
+            border-radius: 50%;
+            width: 120px;
+            height: 120px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.4s;
+        }
+
+        .feedback-step:hover {
+            transform: scale(1.1);
+            box-shadow: 0 15px 40px var(--seminar-accent-light);
+        }
+
+        .feedback-step .emoji {
+            font-size: 2rem;
+        }
+
+        .feedback-step span {
+            font-size: 0.8rem;
+            color: var(--seminar-accent);
+            font-weight: 600;
+            margin-top: 0.25rem;
+        }
+
+        .feedback-arrow {
+            font-size: 1.5rem;
+            color: var(--seminar-accent);
+        }
+
+        /* Sections */
+        .intro-section {
+            padding: 6rem 0;
+            background: #fff;
+        }
+
+        .intro-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .section-label {
+            color: var(--seminar-accent);
+            font-weight: 600;
+            font-size: 0.85rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+            display: inline-block;
+        }
+
+        .intro-text {
+            font-size: 1.15rem;
+            line-height: 1.9;
+            color: var(--color-text-light);
+        }
+
+        .goals-section {
+            padding: 6rem 0;
+            background: #fff;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-header.light {
+            color: #fff;
+        }
+
+        .section-header.light h2 {
+            color: #fff;
+        }
+
+        .accent-line {
+            width: 60px;
+            height: 3px;
+            background: var(--seminar-accent);
+            margin: 1.5rem auto 0;
+        }
+
+        .goals-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .goal-card {
+            background: #fff;
+            border: 1px solid var(--color-border);
+            border-radius: 16px;
+            padding: 2rem;
+            transition: all 0.4s;
+        }
+
+        .goal-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px var(--seminar-accent-light);
+            border-color: var(--seminar-accent);
+        }
+
+        .goal-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: var(--seminar-accent-light);
+            color: var(--seminar-accent);
+            border-radius: 10px;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .goal-text {
+            font-size: 1.05rem;
+            color: var(--color-text);
+            line-height: 1.7;
+            margin: 0;
+        }
+
+        .cta-section {
+            padding: 6rem 0;
+            background: var(--color-cream);
+        }
+
+        .cta-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        .target-card {
+            background: #fff;
+            border-radius: 20px;
+            padding: 3rem;
+        }
+
+        .cta-card {
+            background: var(--seminar-accent);
+            border-radius: 20px;
+            padding: 3rem;
+            color: #fff;
+        }
+
+        .cta-card h3 {
+            color: #fff;
+            font-size: 1.75rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-card p {
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 2rem;
+        }
+
+        @media (max-width: 968px) {
+            .hero-content-wrapper {
+                text-align: center;
+            }
+
+            .hero-meta,
+            .hero-cta {
+                justify-content: center;
+            }
+
+            .goals-grid,
+            .cta-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .game-board {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .feedback-arrow {
+                display: none;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .game-board {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="scroll-progress" id="scrollProgress"></div>
+    <header id="header">
+        <div class="container">
+            <nav><a href="../index.html" class="logo"><img src="../assets/wtm_logo_gross.png" alt="WTM"></a>
+                <div class="menu-toggle" id="mobile-menu"><span class="bar"></span><span class="bar"></span><span
+                        class="bar"></span></div>
+                <ul class="nav-links">
+                    <li><a href="../index.html#haltung" class="nav-link">Haltung</a></li>
+                    <li><a href="../index.html#angebote" class="nav-link">Angebote</a></li>
+                    <li><a href="../index.html#trainings" class="nav-link">Trainings</a></li>
+                    <li><a href="../index.html#team" class="nav-link">Team</a></li>
+                    <li><a href="../index.html#kontakt" class="nav-link">Kontakt</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="seminar-hero">
+        <div class="hero-gradient-orb orb-1"></div>
+        <div class="hero-gradient-orb orb-2"></div>
+        <div class="container">
+            <div class="hero-content-wrapper">
+                <div class="hero-text">
+                    <div class="breadcrumb"><a href="../index.html">Startseite</a><span
+                            class="breadcrumb-sep">→</span><a href="../index.html#trainings">Seminare</a><span
+                            class="breadcrumb-sep">→</span><span>Führungssimulation</span></div>
+                    <div class="category-badge">Immersives Training</div>
+                    <h1 class="hero-title">Führungssimulation<br><span>„Am offenen Herzen"</span></h1>
+                    <p class="hero-subtitle">Realistische Führungsszenarien im Musterkrankenhaus. Faires Feedback. Echte
+                        Erkenntnisse. 16 Teilnehmende, unzählige Lernmomente.</p>
+                    <div class="hero-meta">
+                        <span class="meta-tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                            </svg>2 Tage</span>
+                        <span class="meta-tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <circle cx="12" cy="12" r="10"></circle>
+                            </svg>16 Teilnehmende</span>
+                    </div>
+                    <div class="hero-cta">
+                        <a href="../index.html#kontakt" class="btn-glow">Jetzt anfragen →</a>
+                        <a href="#simulation" class="btn-outline-light">Die Simulation</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="intro-section">
+        <div class="container">
+            <div class="intro-content"><span class="section-label">Das Konzept</span>
+                <h2>Führen wo es drauf ankommt</h2>
+                <p class="intro-text">Kennen Sie Situationen, in denen Sie nach einem Personalgespräch dachten, dass Sie
+                    nicht den richtigen Ton getroffen haben? In der Simulation erleben Sie realistische Fälle – und
+                    erhalten sofortiges, faires Feedback.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="game-section" id="simulation">
+        <div class="container">
+            <div class="section-header light"><span class="section-label" style="color:#ef4444">Das
+                    Musterkrankenhaus</span>
+                <h2>Betreten Sie die Simulation</h2>
+                <div class="accent-line"></div>
+            </div>
+            <div class="game-board">
+                <div class="game-room active">
+                    <div class="room-icon">🏥</div>
+                    <h4>Chefarzt-Besprechung</h4>
+                    <p>Strategische Entscheidungen</p>
+                </div>
+                <div class="game-room">
+                    <div class="room-icon">🔬</div>
+                    <h4>OP-Team</h4>
+                    <p>8-Uhr-Schnittzeit</p>
+                </div>
+                <div class="game-room">
+                    <div class="room-icon">📦</div>
+                    <h4>Materialwirtschaft</h4>
+                    <p>Abteilungssitzung</p>
+                </div>
+                <div class="game-room">
+                    <div class="room-icon">👶</div>
+                    <h4>Kreißsaal</h4>
+                    <p>Kritische Kommunikation</p>
+                </div>
+                <div class="game-room">
+                    <div class="room-icon">👥</div>
+                    <h4>Personalgespräch</h4>
+                    <p>Schwierige Themen</p>
+                </div>
+                <div class="game-room">
+                    <div class="room-icon">⚖️</div>
+                    <h4>Konfliktfall</h4>
+                    <p>Diebstahl-Aufklärung</p>
+                </div>
+                <div class="game-room">
+                    <div class="room-icon">📊</div>
+                    <h4>Qualitätsmeeting</h4>
+                    <p>Prozessoptimierung</p>
+                </div>
+                <div class="game-room">
+                    <div class="room-icon">🎓</div>
+                    <h4>Feedback-Runde</h4>
+                    <p>Reflexion & Lernen</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="feedback-section">
+        <div class="container">
+            <div class="section-header"><span class="section-label">Der Lernzyklus</span>
+                <h2>Erleben → Reflektieren → Wachsen</h2>
+                <div class="accent-line"></div>
+            </div>
+            <div class="feedback-cycle">
+                <div class="feedback-step"><span class="emoji">🎭</span><span>Erleben</span></div>
+                <div class="feedback-arrow">→</div>
+                <div class="feedback-step"><span class="emoji">📹</span><span>Beobachten</span></div>
+                <div class="feedback-arrow">→</div>
+                <div class="feedback-step"><span class="emoji">💬</span><span>Feedback</span></div>
+                <div class="feedback-arrow">→</div>
+                <div class="feedback-step"><span class="emoji">🚀</span><span>Transfer</span></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="goals-section">
+        <div class="container">
+            <div class="section-header"><span class="section-label">Ihr Nutzen</span>
+                <h2>Was Sie mitnehmen</h2>
+                <div class="accent-line"></div>
+            </div>
+            <div class="goals-grid">
+                <div class="goal-card">
+                    <div class="goal-number">1</div>
+                    <p class="goal-text">Erfolgserfahrungen: Merken wo Sie schon auf dem richtigen Weg sind</p>
+                </div>
+                <div class="goal-card">
+                    <div class="goal-number">2</div>
+                    <p class="goal-text">Konkret erleben, wo Verbesserungspotentiale liegen</p>
+                </div>
+                <div class="goal-card">
+                    <div class="goal-number">3</div>
+                    <p class="goal-text">Ausschließlich praxisnahe Fälle aus der Gesundheitsbranche</p>
+                </div>
+                <div class="goal-card">
+                    <div class="goal-number">4</div>
+                    <p class="goal-text">Ausführliche Feedbackrunden mit theoretischen Erläuterungen</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-grid">
+                <div class="target-card"><span class="section-label">Zielgruppe</span>
+                    <h3>Für wen ist dieses Seminar?</h3>
+                    <p>Potentielle, junge und erfahrene Führungskräfte aller Berufsgruppen im Gesundheitswesen,
+                        Berater*innen.</p>
+                </div>
+                <div class="cta-card">
+                    <h3>Interesse geweckt?</h3>
+                    <p>Auch als individualisierte Version für Ihre Unternehmensstruktur verfügbar.</p><a
+                        href="../index.html#kontakt" class="btn btn-white">Jetzt Kontakt aufnehmen →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand"><a href="../index.html" class="logo"><img src="../assets/logo.png"
+                            alt="WTM"></a>
+                    <p>Training · Coaching · Beratung</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Kontakt</h4>
+                    <ul class="footer-links">
+                        <li><a href="tel:+4923113722666">0231 137 22 666</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Rechtliches</h4>
+                    <ul class="footer-links">
+                        <li><a href="../impressum.html">Impressum</a></li>
+                        <li><a href="../datenschutz.html">Datenschutz</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 WTM Management Consulting GmbH.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script>window.addEventListener('scroll', () => { document.getElementById('scrollProgress').style.width = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100 + '%'; });</script>
+    <script src="https://www.vallit.net/widget/embed.js" data-api-url="https://www.vallit.net"
+        data-company-id="e46176c5-0f35-43b8-8e8c-c72f534519e1" data-theme="minimal" data-language="de"
+        data-color="#6366f1" data-title="Kian" data-metadata='{"page_title": "Führungssimulation"}'></script>
+</body>
+
+</html>

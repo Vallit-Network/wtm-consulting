@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="../assets/favicon.png">
+    <title>Effektives Lesen – WTM</title>
+    <meta name="description" content="Effektives Lesen – Leseleistung um 80-100% steigern.">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Source+Sans+Pro:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../styles/index.css">
+    <style>
+        :root {
+            --seminar-accent: #5D8AA8;
+            --seminar-accent-light: rgba(93, 138, 168, 0.1);
+        }
+
+        .scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 3px;
+            background: var(--seminar-accent);
+            z-index: 9999;
+            width: 0%
+        }
+
+        .seminar-hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(165deg, #0f172a, #1e293b, #0f172a);
+            position: relative;
+            overflow: hidden;
+            padding: 120px 0 80px
+        }
+
+        .hero-gradient-orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.4;
+            animation: pulse-orb 8s infinite
+        }
+
+        .orb-1 {
+            width: 400px;
+            height: 400px;
+            background: var(--seminar-accent);
+            top: -100px;
+            right: -100px
+        }
+
+        .orb-2 {
+            width: 300px;
+            height: 300px;
+            background: #94a3b8;
+            bottom: -50px;
+            left: -50px;
+            animation-delay: 4s
+        }
+
+        @keyframes pulse-orb {
+
+            0%,
+            100% {
+                transform: scale(1);
+                opacity: 0.3
+            }
+
+            50% {
+                transform: scale(1.2);
+                opacity: 0.5
+            }
+        }
+
+        .hero-content-wrapper {
+            position: relative;
+            z-index: 2;
+            max-width: 800px
+        }
+
+        .hero-text {
+            color: #fff
+        }
+
+        .breadcrumb {
+            display: flex;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+            opacity: 0;
+            animation: fadeSlideUp 0.6s ease forwards
+        }
+
+        .breadcrumb a {
+            color: rgba(255, 255, 255, 0.6)
+        }
+
+        .category-badge {
+            display: inline-flex;
+            padding: 0.5rem 1rem;
+            background: var(--seminar-accent-light);
+            border: 1px solid var(--seminar-accent);
+            border-radius: 50px;
+            color: var(--seminar-accent);
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            opacity: 0;
+            animation: fadeSlideUp 0.6s ease 0.1s forwards
+        }
+
+        .hero-title {
+            font-size: clamp(2rem, 4vw, 3.5rem);
+            color: #fff;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            opacity: 0;
+            animation: fadeSlideUp 0.8s ease 0.2s forwards
+        }
+
+        .hero-title span {
+            color: var(--seminar-accent)
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.8;
+            margin-bottom: 2rem;
+            opacity: 0;
+            animation: fadeSlideUp 0.8s ease 0.3s forwards
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 1rem;
+            opacity: 0;
+            animation: fadeSlideUp 0.8s ease 0.5s forwards
+        }
+
+        .btn-glow {
+            background: var(--seminar-accent);
+            color: #fff;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s
+        }
+
+        .btn-glow:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 40px rgba(93, 138, 168, 0.3)
+        }
+
+        .btn-outline-light {
+            padding: 1rem 2rem;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 8px;
+            color: #fff;
+            font-weight: 600
+        }
+
+        @keyframes fadeSlideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px)
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0)
+            }
+        }
+
+        .speedometer-section {
+            padding: 6rem 0;
+            background: #0a0a0a
+        }
+
+        .speedometer {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin-top: 3rem;
+            flex-wrap: wrap
+        }
+
+        .speed-card {
+            background: linear-gradient(135deg, rgba(93, 138, 168, 0.1), rgba(93, 138, 168, 0.05));
+            border: 2px solid rgba(93, 138, 168, 0.3);
+            border-radius: 50%;
+            width: 180px;
+            height: 180px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            transition: all 0.4s
+        }
+
+        .speed-card:hover {
+            border-color: var(--seminar-accent);
+            transform: scale(1.1)
+        }
+
+        .speed-card .value {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--seminar-accent)
+        }
+
+        .speed-card .label {
+            color: #fff;
+            font-size: 0.9rem
+        }
+
+        .speed-card .sub {
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.75rem
+        }
+
+        .arrow-boost {
+            font-size: 3rem;
+            color: var(--seminar-accent);
+            display: flex;
+            align-items: center
+        }
+
+        .intro-section {
+            padding: 6rem 0;
+            background: #fff
+        }
+
+        .intro-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center
+        }
+
+        .section-label {
+            color: var(--seminar-accent);
+            font-weight: 600;
+            font-size: 0.85rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+            display: inline-block
+        }
+
+        .intro-text {
+            font-size: 1.15rem;
+            line-height: 1.9;
+            color: var(--color-text-light)
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem
+        }
+
+        .section-header.light {
+            color: #fff
+        }
+
+        .section-header.light h2 {
+            color: #fff
+        }
+
+        .accent-line {
+            width: 60px;
+            height: 3px;
+            background: var(--seminar-accent);
+            margin: 1.5rem auto 0
+        }
+
+        .techniques-section {
+            padding: 6rem 0;
+            background: var(--color-cream)
+        }
+
+        .techniques-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin-top: 3rem
+        }
+
+        .tech-card {
+            background: #fff;
+            border-radius: 16px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.4s
+        }
+
+        .tech-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px var(--seminar-accent-light)
+        }
+
+        .tech-card .emoji {
+            font-size: 2rem;
+            margin-bottom: 0.5rem
+        }
+
+        .tech-card h4 {
+            color: var(--seminar-accent);
+            font-size: 0.9rem;
+            margin: 0
+        }
+
+        .cta-section {
+            padding: 6rem 0;
+            background: #fff
+        }
+
+        .cta-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem
+        }
+
+        .target-card {
+            background: var(--color-cream);
+            border-radius: 20px;
+            padding: 3rem
+        }
+
+        .cta-card {
+            background: var(--seminar-accent);
+            border-radius: 20px;
+            padding: 3rem;
+            color: #fff
+        }
+
+        .cta-card h3 {
+            color: #fff;
+            font-size: 1.75rem;
+            margin-bottom: 1rem
+        }
+
+        @media(max-width:968px) {
+            .hero-content-wrapper {
+                text-align: center
+            }
+
+            .hero-cta {
+                justify-content: center
+            }
+
+            .cta-grid,
+            .techniques-grid {
+                grid-template-columns: 1fr
+            }
+
+            .speedometer {
+                flex-direction: column;
+                align-items: center
+            }
+
+            .arrow-boost {
+                transform: rotate(90deg)
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="scroll-progress" id="scrollProgress"></div>
+    <header id="header">
+        <div class="container">
+            <nav><a href="../index.html" class="logo"><img src="../assets/wtm_logo_gross.png" alt="WTM"></a>
+                <ul class="nav-links">
+                    <li><a href="../index.html#haltung">Haltung</a></li>
+                    <li><a href="../index.html#angebote">Angebote</a></li>
+                    <li><a href="../index.html#trainings">Trainings</a></li>
+                    <li><a href="../index.html#team">Team</a></li>
+                    <li><a href="../index.html#kontakt">Kontakt</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <section class="seminar-hero">
+        <div class="hero-gradient-orb orb-1"></div>
+        <div class="hero-gradient-orb orb-2"></div>
+        <div class="container">
+            <div class="hero-content-wrapper">
+                <div class="hero-text">
+                    <div class="breadcrumb"><a href="../index.html">Start</a>→<a
+                            href="../index.html#trainings">Seminare</a>→<span>Lesen</span></div>
+                    <div class="category-badge">📚 Management</div>
+                    <h1 class="hero-title">Effektives <span>Lesen</span></h1>
+                    <p class="hero-subtitle">Leseleistung um 80-100% steigern. Schneller UND genauer lesen.
+                        Erfahrungswerte von 2000+ Teilnehmenden.</p>
+                    <div class="hero-cta"><a href="../index.html#kontakt" class="btn-glow">Jetzt anfragen →</a><a
+                            href="#speed" class="btn-outline-light">Der Boost</a></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="intro-section">
+        <div class="container">
+            <div class="intro-content"><span class="section-label">Das Problem</span>
+                <h2>Informationsflut meistern</h2>
+                <p class="intro-text">Das Menschheitswissen steigt beständig. Dienstpost, E-Mails, Fachliteratur stapeln
+                    sich. Die Schul-Lesetechnik ist zu langsam für die gehirngerechte Informationsaufnahme.</p>
+            </div>
+        </div>
+    </section>
+    <section class="speedometer-section" id="speed">
+        <div class="container">
+            <div class="section-header light"><span class="section-label" style="color:var(--seminar-accent)">Der
+                    Effekt</span>
+                <h2>Ihre Leseleistung</h2>
+                <div class="accent-line"></div>
+            </div>
+            <div class="speedometer">
+                <div class="speed-card">
+                    <div class="value">100%</div>
+                    <div class="label">Vorher</div>
+                    <div class="sub">Basis</div>
+                </div>
+                <div class="arrow-boost">→</div>
+                <div class="speed-card">
+                    <div class="value">200%</div>
+                    <div class="label">Nachher</div>
+                    <div class="sub">+80-100%</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="techniques-section">
+        <div class="container">
+            <div class="section-header"><span class="section-label">Inhalte</span>
+                <h2>Was Sie lernen</h2>
+                <div class="accent-line"></div>
+            </div>
+            <div class="techniques-grid">
+                <div class="tech-card">
+                    <div class="emoji">👁️</div>
+                    <h4>Lesearten</h4>
+                </div>
+                <div class="tech-card">
+                    <div class="emoji">🧠</div>
+                    <h4>Mind Maps</h4>
+                </div>
+                <div class="tech-card">
+                    <div class="emoji">🧘</div>
+                    <h4>Konzentration</h4>
+                </div>
+                <div class="tech-card">
+                    <div class="emoji">👀</div>
+                    <h4>Augenentlastung</h4>
+                </div>
+                <div class="tech-card">
+                    <div class="emoji">💨</div>
+                    <h4>Speed Reading</h4>
+                </div>
+                <div class="tech-card">
+                    <div class="emoji">😌</div>
+                    <h4>Entspannung</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-grid">
+                <div class="target-card"><span class="section-label">Zielgruppe</span>
+                    <h3>Für wen?</h3>
+                    <p>Mitarbeiter und Führungskräfte, die viel lesen und in der Informationsflut untergehen.</p>
+                </div>
+                <div class="cta-card">
+                    <h3>Interesse?</h3>
+                    <p>Tägliche Lesezeit reduzieren.</p><a href="../index.html#kontakt" class="btn btn-white">Kontakt
+                        →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="container">
+            <div class="footer-bottom">
+                <p>© 2026 WTM Management Consulting GmbH</p>
+            </div>
+        </div>
+    </footer>
+    <script src="../js/main.js"></script>
+    <script>window.addEventListener('scroll', () => { document.getElementById('scrollProgress').style.width = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100 + '%' })</script>
+    <script src="https://www.vallit.net/widget/embed.js" data-api-url="https://www.vallit.net"
+        data-company-id="e46176c5-0f35-43b8-8e8c-c72f534519e1" data-theme="minimal" data-language="de"
+        data-color="#6366f1" data-title="Kian" data-metadata='{"page_title":"Effektives Lesen"}'></script>
+</body>
+
+</html>

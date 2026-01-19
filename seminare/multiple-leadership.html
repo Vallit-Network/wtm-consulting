@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="../assets/favicon.png">
+    <title>Multiple Leadership – WTM</title>
+    <meta name="description" content="Multiple Leadership – Mehrdimensionale Führung im agilen Umfeld.">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Source+Sans+Pro:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../styles/index.css">
+    <style>
+        :root {
+            --seminar-accent: #4A4A4E;
+            --seminar-accent-light: rgba(74, 74, 78, 0.1);
+            --accent-gold: #c9a227;
+        }
+
+        .scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 3px;
+            background: var(--accent-gold);
+            z-index: 9999;
+            width: 0%
+        }
+
+        .seminar-hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(165deg, #1a1a1c, #2d2d31, #1a1a1c);
+            position: relative;
+            overflow: hidden;
+            padding: 120px 0 80px
+        }
+
+        .hero-gradient-orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.3;
+            animation: pulse-orb 8s infinite
+        }
+
+        .orb-1 {
+            width: 400px;
+            height: 400px;
+            background: var(--accent-gold);
+            top: -100px;
+            right: -100px
+        }
+
+        .orb-2 {
+            width: 300px;
+            height: 300px;
+            background: var(--seminar-accent);
+            bottom: -50px;
+            left: -50px;
+            animation-delay: 4s
+        }
+
+        @keyframes pulse-orb {
+
+            0%,
+            100% {
+                transform: scale(1);
+                opacity: 0.2
+            }
+
+            50% {
+                transform: scale(1.2);
+                opacity: 0.4
+            }
+        }
+
+        .hero-content-wrapper {
+            position: relative;
+            z-index: 2;
+            max-width: 800px
+        }
+
+        .hero-text {
+            color: #fff
+        }
+
+        .breadcrumb {
+            display: flex;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+            opacity: 0;
+            animation: fadeSlideUp 0.6s ease forwards
+        }
+
+        .breadcrumb a {
+            color: rgba(255, 255, 255, 0.6)
+        }
+
+        .category-badge {
+            display: inline-flex;
+            padding: 0.5rem 1rem;
+            background: rgba(201, 162, 39, 0.15);
+            border: 1px solid var(--accent-gold);
+            border-radius: 50px;
+            color: var(--accent-gold);
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            opacity: 0;
+            animation: fadeSlideUp 0.6s ease 0.1s forwards
+        }
+
+        .hero-title {
+            font-size: clamp(2rem, 4vw, 3.5rem);
+            color: #fff;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            opacity: 0;
+            animation: fadeSlideUp 0.8s ease 0.2s forwards
+        }
+
+        .hero-title span {
+            color: var(--accent-gold)
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.8;
+            margin-bottom: 2rem;
+            opacity: 0;
+            animation: fadeSlideUp 0.8s ease 0.3s forwards
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 1rem;
+            opacity: 0;
+            animation: fadeSlideUp 0.8s ease 0.5s forwards
+        }
+
+        .btn-glow {
+            background: var(--accent-gold);
+            color: #1a1a1c;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s
+        }
+
+        .btn-glow:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 40px rgba(201, 162, 39, 0.3)
+        }
+
+        .btn-outline-light {
+            padding: 1rem 2rem;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 8px;
+            color: #fff;
+            font-weight: 600
+        }
+
+        @keyframes fadeSlideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px)
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0)
+            }
+        }
+
+        .agile-section {
+            padding: 6rem 0;
+            background: #0a0a0a
+        }
+
+        .agile-visual {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 3rem;
+            flex-wrap: wrap;
+            align-items: center
+        }
+
+        .agile-box {
+            background: linear-gradient(135deg, rgba(201, 162, 39, 0.1), rgba(201, 162, 39, 0.05));
+            border: 2px solid rgba(201, 162, 39, 0.3);
+            border-radius: 20px;
+            padding: 2.5rem;
+            text-align: center;
+            transition: all 0.4s;
+            min-width: 180px
+        }
+
+        .agile-box:hover {
+            border-color: var(--accent-gold);
+            transform: scale(1.05)
+        }
+
+        .agile-box .emoji {
+            font-size: 3rem;
+            margin-bottom: 1rem
+        }
+
+        .agile-box h4 {
+            color: var(--accent-gold);
+            margin: 0
+        }
+
+        .agile-box p {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.85rem;
+            margin: 0.5rem 0 0
+        }
+
+        .agile-arrow {
+            font-size: 2rem;
+            color: var(--accent-gold)
+        }
+
+        .intro-section {
+            padding: 6rem 0;
+            background: #fff
+        }
+
+        .intro-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center
+        }
+
+        .section-label {
+            color: var(--accent-gold);
+            font-weight: 600;
+            font-size: 0.85rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+            display: inline-block
+        }
+
+        .intro-text {
+            font-size: 1.15rem;
+            line-height: 1.9;
+            color: var(--color-text-light)
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem
+        }
+
+        .section-header.light {
+            color: #fff
+        }
+
+        .section-header.light h2 {
+            color: #fff
+        }
+
+        .accent-line {
+            width: 60px;
+            height: 3px;
+            background: var(--accent-gold);
+            margin: 1.5rem auto 0
+        }
+
+        .dimensions-section {
+            padding: 6rem 0;
+            background: var(--color-cream)
+        }
+
+        .dimensions-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin-top: 3rem
+        }
+
+        .dimension-card {
+            background: #fff;
+            border-radius: 16px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.4s;
+            border-top: 4px solid transparent
+        }
+
+        .dimension-card:hover {
+            border-color: var(--accent-gold);
+            transform: translateY(-5px)
+        }
+
+        .dimension-card .emoji {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem
+        }
+
+        .dimension-card h4 {
+            color: var(--seminar-accent);
+            font-size: 0.95rem;
+            margin: 0
+        }
+
+        .cta-section {
+            padding: 6rem 0;
+            background: #fff
+        }
+
+        .cta-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem
+        }
+
+        .target-card {
+            background: var(--color-cream);
+            border-radius: 20px;
+            padding: 3rem
+        }
+
+        .cta-card {
+            background: var(--seminar-accent);
+            border-radius: 20px;
+            padding: 3rem;
+            color: #fff
+        }
+
+        .cta-card h3 {
+            color: #fff;
+            font-size: 1.75rem;
+            margin-bottom: 1rem
+        }
+
+        @media(max-width:968px) {
+            .hero-content-wrapper {
+                text-align: center
+            }
+
+            .hero-cta {
+                justify-content: center
+            }
+
+            .cta-grid,
+            .dimensions-grid {
+                grid-template-columns: 1fr
+            }
+
+            .agile-visual {
+                flex-direction: column
+            }
+
+            .agile-arrow {
+                transform: rotate(90deg)
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="scroll-progress" id="scrollProgress"></div>
+    <header id="header">
+        <div class="container">
+            <nav><a href="../index.html" class="logo"><img src="../assets/wtm_logo_gross.png" alt="WTM"></a>
+                <ul class="nav-links">
+                    <li><a href="../index.html#haltung">Haltung</a></li>
+                    <li><a href="../index.html#angebote">Angebote</a></li>
+                    <li><a href="../index.html#trainings">Trainings</a></li>
+                    <li><a href="../index.html#team">Team</a></li>
+                    <li><a href="../index.html#kontakt">Kontakt</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <section class="seminar-hero">
+        <div class="hero-gradient-orb orb-1"></div>
+        <div class="hero-gradient-orb orb-2"></div>
+        <div class="container">
+            <div class="hero-content-wrapper">
+                <div class="hero-text">
+                    <div class="breadcrumb"><a href="../index.html">Start</a>→<a
+                            href="../index.html#trainings">Seminare</a>→<span>Agile Führung</span></div>
+                    <div class="category-badge">Führung</div>
+                    <h1 class="hero-title">Multiple <span>Leadership</span></h1>
+                    <p class="hero-subtitle">Agilität ist mehr als "Doing Scrum". Das neue multidimensionale
+                        Führungsverständnis für selbstorganisierte Teams.</p>
+                    <div class="hero-cta"><a href="../index.html#kontakt" class="btn-glow">Jetzt anfragen →</a><a
+                            href="#agile" class="btn-outline-light">Doing vs Being</a></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="intro-section">
+        <div class="container">
+            <div class="intro-content"><span class="section-label">Die Frage</span>
+                <h2>Welche Führung braucht Agilität?</h2>
+                <p class="intro-text">Welche Rolle hat die neue Führung in den Frei-Räumen der selbstorganisierten
+                    Teams? Welche Eigenschaften und Fähigkeiten braucht es?</p>
+            </div>
+        </div>
+    </section>
+    <section class="agile-section" id="agile">
+        <div class="container">
+            <div class="section-header light"><span class="section-label" style="color:var(--accent-gold)">Der
+                    Unterschied</span>
+                <h2>Doing ↔ Being Agile</h2>
+                <div class="accent-line"></div>
+            </div>
+            <div class="agile-visual">
+                <div class="agile-box">
+                    <div class="emoji">📋</div>
+                    <h4>Doing Agile</h4>
+                    <p>Scrum, Kanban, Methoden</p>
+                </div>
+                <div class="agile-arrow">→</div>
+                <div class="agile-box">
+                    <div class="emoji">💎</div>
+                    <h4>Being Agile</h4>
+                    <p>Mindset, Kultur, Haltung</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="dimensions-section">
+        <div class="container">
+            <div class="section-header"><span class="section-label">Die Dimensionen</span>
+                <h2>Mehrdimensionale Führung</h2>
+                <div class="accent-line"></div>
+            </div>
+            <div class="dimensions-grid">
+                <div class="dimension-card">
+                    <div class="emoji">🎯</div>
+                    <h4>Product Owner</h4>
+                </div>
+                <div class="dimension-card">
+                    <div class="emoji">🛡️</div>
+                    <h4>Scrum Master</h4>
+                </div>
+                <div class="dimension-card">
+                    <div class="emoji">👥</div>
+                    <h4>Führungskraft</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-grid">
+                <div class="target-card"><span class="section-label">Zielgruppe</span>
+                    <h3>Für wen?</h3>
+                    <p>Alle, die mehr über multidimensionales Führungsverständnis lernen oder im agilen Umfeld agieren.
+                    </p>
+                </div>
+                <div class="cta-card">
+                    <h3>Interesse?</h3>
+                    <p>Ressourcenorientierter Zugang zu wirksamem Führungsverhalten.</p><a href="../index.html#kontakt"
+                        class="btn btn-white">Kontakt →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="container">
+            <div class="footer-bottom">
+                <p>© 2026 WTM Management Consulting GmbH</p>
+            </div>
+        </div>
+    </footer>
+    <script src="../js/main.js"></script>
+    <script>window.addEventListener('scroll', () => { document.getElementById('scrollProgress').style.width = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100 + '%' })</script>
+    <script src="https://www.vallit.net/widget/embed.js" data-api-url="https://www.vallit.net"
+        data-company-id="e46176c5-0f35-43b8-8e8c-c72f534519e1" data-theme="minimal" data-language="de"
+        data-color="#6366f1" data-title="Kian" data-metadata='{"page_title":"Multiple Leadership"}'></script>
+</body>
+
+</html>

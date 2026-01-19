@@ -17,6 +17,44 @@
 
     <!-- Styles -->
     <link rel="stylesheet" href="styles/index.css">
+    <style>
+        .val-toast {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%) translateY(100px);
+            background: #333;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            font-family: 'Source Sans Pro', sans-serif;
+            font-size: 16px;
+            z-index: 10000;
+            opacity: 0;
+            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.3s ease;
+        }
+
+        .val-toast.show {
+            transform: translateX(-50%) translateY(0);
+            opacity: 1;
+        }
+
+        .loading-spinner-small {
+            width: 20px;
+            height: 20px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            border-top-color: #fff;
+            animation: spin 1s ease-in-out infinite;
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -430,9 +468,17 @@
             }
         }
 
-        // Open Vallit Chat Widget with smooth animation
+        // Open Vallit Chat Widget with smooth animation and feedback
         function openVallitChat() {
             console.log('Attempting to open Vallit Chat...');
+
+            const btn = document.getElementById('openChatbot');
+            const originalContent = btn.innerHTML;
+
+            // Set loading state
+            btn.innerHTML = '<div class="btn-icon-wrapper"><div class="loading-spinner-small"></div></div><div class="btn-text-content"><span class="btn-title">Lade...</span></div>';
+            btn.style.cursor = 'wait';
+
             // Helper to find the toggle button
             const findToggle = () =>
                 document.querySelector('.syntra-toggle-btn') ||
@@ -440,18 +486,24 @@
                 document.querySelector('.vallit-widget-toggle') ||
                 document.querySelector('#vallit-launcher');
 
-            const openChat = (btn) => {
-                console.log('Found toggle button, clicking:', btn);
-                btn.click();
+            const openChat = (toggleBtn) => {
+                console.log('Found toggle button, clicking:', toggleBtn);
+                toggleBtn.click();
+
                 // Dispatch explicit click just in case
                 const clickEvent = new MouseEvent('click', {
                     view: window,
                     bubbles: true,
                     cancelable: true
                 });
-                btn.dispatchEvent(clickEvent);
+                toggleBtn.dispatchEvent(clickEvent);
 
                 document.getElementById('chatbotHelper').classList.add('opened');
+
+                // Reset button state
+                btn.innerHTML = originalContent;
+                btn.style.cursor = '';
+
                 watchForChatClose();
             };
 
@@ -463,23 +515,53 @@
                 console.log('Toggle button not found immediately, polling...');
                 // Widget might be loading, try polling for a few seconds
                 let attempts = 0;
-                const maxAttempts = 20; // 5 seconds total (250ms interval)
+                const maxAttempts = 10; // 2.5 seconds total (250ms interval) - reduced from 5s
 
                 const pollInterval = setInterval(() => {
                     attempts++;
-                    const btn = findToggle();
+                    const foundBtn = findToggle();
 
-                    if (btn) {
+                    if (foundBtn) {
                         clearInterval(pollInterval);
-                        openChat(btn);
+                        openChat(foundBtn);
                     } else if (attempts >= maxAttempts) {
                         clearInterval(pollInterval);
-                        console.error('Chat widget not found after timeout, redirecting to contact');
-                        // Fallback to contact section
-                        window.location.href = 'index.html#kontakt';
+                        console.error('Chat widget not found after timeout.');
+
+                        // Reset button state
+                        btn.innerHTML = originalContent;
+                        btn.style.cursor = '';
+
+                        // Show Toast
+                        showToast('Der Chat Assistent ist gerade nicht verfügbar. Wir leiten Sie zum Kontaktformular weiter.');
+
+                        // Fallback to contact section after short delay
+                        setTimeout(() => {
+                            window.location.href = 'index.html#kontakt';
+                        }, 2500);
                     }
                 }, 250);
             }
+        }
+
+        // Simple Toast Notification
+        function showToast(message) {
+            const toast = document.createElement('div');
+            toast.className = 'val-toast';
+            toast.textContent = message;
+            document.body.appendChild(toast);
+
+            // Force reflow
+            toast.offsetHeight;
+
+            toast.classList.add('show');
+
+            setTimeout(() => {
+                toast.classList.remove('show');
+                setTimeout(() => {
+                    document.body.removeChild(toast);
+                }, 300);
+            }, 3000);
         }
 
         // Watch for Vallit chat widget closing to restore helper button
