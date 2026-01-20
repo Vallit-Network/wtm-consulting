@@ -5,16 +5,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="../assets/favicon.png">
-    <title>BWL für Nicht-BWLer – WTM</title>
-    <meta name="description" content="BWL für Nicht-BWLer – Betriebswirtschaftliches Denken verstehen und anwenden.">
+    <title>Achtsamkeit – WTM</title>
+    <meta name="description" content="Achtsamkeit – Präsenz und Bewusstheit im Führungsalltag.">
     <link
         href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Source+Sans+Pro:wght@300;400;600;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="../styles/index.css">
     <style>
         :root {
-            --seminar-accent: #5D8AA8;
-            --seminar-accent-light: rgba(93, 138, 168, 0.1);
+            --seminar-accent: #107e5e;
+            --seminar-accent-light: rgba(16, 126, 94, 0.1);
         }
 
         .scroll-progress {
@@ -31,7 +31,7 @@
             min-height: 100vh;
             display: flex;
             align-items: center;
-            background: linear-gradient(165deg, #0f172a, #1e293b, #0f172a);
+            background: linear-gradient(165deg, #0d2818, #1a3d2a, #0d2818);
             position: relative;
             overflow: hidden;
             padding: 120px 0 80px
@@ -56,7 +56,7 @@
         .orb-2 {
             width: 300px;
             height: 300px;
-            background: #94a3b8;
+            background: #4ade80;
             bottom: -50px;
             left: -50px;
             animation-delay: 4s
@@ -105,7 +105,7 @@
             background: var(--seminar-accent-light);
             border: 1px solid var(--seminar-accent);
             border-radius: 50px;
-            color: var(--seminar-accent);
+            color: #4ade80;
             font-size: 0.85rem;
             font-weight: 600;
             margin-bottom: 1.5rem;
@@ -123,7 +123,7 @@
         }
 
         .hero-title span {
-            color: var(--seminar-accent)
+            color: #4ade80
         }
 
         .hero-subtitle {
@@ -153,7 +153,7 @@
 
         .btn-glow:hover {
             transform: translateY(-3px);
-            box-shadow: 0 10px 40px rgba(93, 138, 168, 0.3)
+            box-shadow: 0 10px 40px rgba(16, 126, 94, 0.3)
         }
 
         .btn-outline-light {
@@ -176,50 +176,47 @@
             }
         }
 
-        .calc-section {
+        .breath-section {
             padding: 6rem 0;
             background: #0a0a0a
         }
 
-        .calc-visual {
+        .breath-visual {
             display: flex;
             justify-content: center;
-            gap: 2rem;
-            margin-top: 3rem;
-            flex-wrap: wrap;
-            align-items: center
+            margin-top: 3rem
         }
 
-        .calc-box {
-            text-align: center;
-            padding: 2rem;
-            background: linear-gradient(135deg, rgba(93, 138, 168, 0.15), rgba(93, 138, 168, 0.05));
-            border: 3px solid var(--seminar-accent);
-            border-radius: 16px;
-            min-width: 130px;
-            transition: all 0.4s
+        .breath-circle {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, rgba(74, 222, 128, 0.3), rgba(16, 126, 94, 0.1));
+            border: 4px solid #4ade80;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: breathe 6s ease-in-out infinite
         }
 
-        .calc-box:hover {
-            transform: scale(1.08);
-            box-shadow: 0 0 30px rgba(93, 138, 168, 0.4)
+        @keyframes breathe {
+
+            0%,
+            100% {
+                transform: scale(1);
+                box-shadow: 0 0 20px rgba(74, 222, 128, 0.3)
+            }
+
+            50% {
+                transform: scale(1.2);
+                box-shadow: 0 0 50px rgba(74, 222, 128, 0.5)
+            }
         }
 
-        .calc-box .emoji {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem
-        }
-
-        .calc-box h4 {
-            color: var(--seminar-accent);
-            font-size: 0.85rem;
-            margin: 0
-        }
-
-        .calc-operator {
-            font-size: 2rem;
-            color: var(--seminar-accent);
-            font-weight: 700
+        .breath-text {
+            font-size: 0.9rem;
+            color: #4ade80;
+            text-align: center
         }
 
         .intro-section {
@@ -269,39 +266,39 @@
             margin: 1.5rem auto 0
         }
 
-        .content-section {
+        .practices-section {
             padding: 6rem 0;
             background: var(--color-cream)
         }
 
-        .content-grid {
+        .practices-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1.5rem;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
             margin-top: 3rem
         }
 
-        .content-card {
+        .practice-card {
             background: #fff;
-            border-radius: 16px;
-            padding: 2rem;
+            border-radius: 12px;
+            padding: 1.5rem;
             text-align: center;
             transition: all 0.4s
         }
 
-        .content-card:hover {
+        .practice-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 15px 30px var(--seminar-accent-light)
         }
 
-        .content-card .emoji {
+        .practice-card .emoji {
             font-size: 2rem;
             margin-bottom: 0.5rem
         }
 
-        .content-card h4 {
+        .practice-card h4 {
             color: var(--seminar-accent);
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             margin: 0
         }
 
@@ -344,13 +341,12 @@
                 justify-content: center
             }
 
-            .cta-grid,
-            .content-grid {
+            .cta-grid {
                 grid-template-columns: 1fr
             }
 
-            .calc-visual {
-                flex-direction: column
+            .practices-grid {
+                grid-template-columns: repeat(2, 1fr)
             }
         }
     </style>
@@ -378,81 +374,61 @@
             <div class="hero-content-wrapper">
                 <div class="hero-text">
                     <div class="breadcrumb"><a href="../index.html">Start</a>→<a
-                            href="../index.html#trainings">Seminare</a>→<span>BWL für Nicht-BWLer</span></div>
-                    <div class="category-badge">📊 Management</div>
-                    <h1 class="hero-title">BWL für<br><span>Nicht-BWLer</span></h1>
-                    <p class="hero-subtitle">Gewinn, Umsatz, ROI – was bedeuten diese Begriffe? Verstehen Sie die
-                        „spezielle Denke von Betriebswirten" und kommunizieren Sie auf Augenhöhe.</p>
+                            href="../index.html#trainings">Seminare</a>→<span>Achtsamkeit</span></div>
+                    <div class="category-badge">🧘 Gesundheit</div>
+                    <h1 class="hero-title"><span>Achtsamkeit</span></h1>
+                    <p class="hero-subtitle">Präsent sein im Moment. Mit Achtsamkeit zu mehr Klarheit, weniger Stress
+                        und bewussterem Handeln im Führungsalltag.</p>
                     <div class="hero-cta"><a href="../index.html#kontakt" class="btn-glow">Jetzt anfragen →</a><a
-                            href="#formel" class="btn-outline-light">Die Formel</a></div>
+                            href="#atem" class="btn-outline-light">Atmen</a></div>
                 </div>
             </div>
         </div>
     </section>
     <section class="intro-section">
         <div class="container">
-            <div class="intro-content"><span class="section-label">Das Problem</span>
-                <h2>Warum versteht mich keiner?</h2>
-                <p class="intro-text">Warum versteht der zahlenorientierte Gesprächspartner nicht, dass Ihre Lösung die
-                    technisch beste ist? Wie können Sie Entscheidungen betriebswirtschaftlich fundieren?</p>
+            <div class="intro-content"><span class="section-label">Das Prinzip</span>
+                <h2>Hier und Jetzt</h2>
+                <p class="intro-text">Achtsamkeit bedeutet, mit voller Aufmerksamkeit im gegenwärtigen Moment zu sein –
+                    ohne zu urteilen. Diese Praxis verändert, wie Sie führen, entscheiden und kommunizieren.</p>
             </div>
         </div>
     </section>
-    <section class="calc-section" id="formel">
+    <section class="breath-section" id="atem">
         <div class="container">
-            <div class="section-header light"><span class="section-label" style="color:var(--seminar-accent)">Die
-                    Gleichung</span>
-                <h2>BWL auf den Punkt</h2>
+            <div class="section-header light"><span class="section-label" style="color:#4ade80">Die Übung</span>
+                <h2>Bewusstes Atmen</h2>
                 <div class="accent-line"></div>
             </div>
-            <div class="calc-visual">
-                <div class="calc-box">
-                    <div class="emoji">💰</div>
-                    <h4>Umsatz</h4>
-                </div>
-                <div class="calc-operator">−</div>
-                <div class="calc-box">
-                    <div class="emoji">📉</div>
-                    <h4>Kosten</h4>
-                </div>
-                <div class="calc-operator">=</div>
-                <div class="calc-box">
-                    <div class="emoji">🎯</div>
-                    <h4>Gewinn</h4>
+            <div class="breath-visual">
+                <div class="breath-circle">
+                    <div class="breath-text">Ein...<br>Aus...</div>
                 </div>
             </div>
         </div>
     </section>
-    <section class="content-section">
+    <section class="practices-section">
         <div class="container">
-            <div class="section-header"><span class="section-label">Inhalte</span>
-                <h2>Was Sie lernen</h2>
+            <div class="section-header"><span class="section-label">Die Praktiken</span>
+                <h2>Achtsamkeit üben</h2>
                 <div class="accent-line"></div>
             </div>
-            <div class="content-grid">
-                <div class="content-card">
-                    <div class="emoji">📚</div>
-                    <h4>Fachbegriffe</h4>
+            <div class="practices-grid">
+                <div class="practice-card">
+                    <div class="emoji">🌬️</div>
+                    <h4>Atemübungen</h4>
                 </div>
-                <div class="content-card">
-                    <div class="emoji">🧠</div>
-                    <h4>BWL-Mindset</h4>
+                <div class="practice-card">
+                    <div class="emoji">🧘</div>
+                    <h4>Body Scan</h4>
                 </div>
-                <div class="content-card">
-                    <div class="emoji">📋</div>
-                    <h4>Bilanz & GuV</h4>
+                <div class="practice-card">
+                    <div class="emoji">🚶</div>
+                    <h4>Gehmeditation</h4>
                 </div>
-                <div class="content-card">
-                    <div class="emoji">🧮</div>
-                    <h4>Kalkulation</h4>
-                </div>
-                <div class="content-card">
-                    <div class="emoji">💳</div>
-                    <h4>Finanzierung</h4>
-                </div>
-                <div class="content-card">
-                    <div class="emoji">📈</div>
-                    <h4>Investitionen</h4>
+                <div class="practice-card">
+                    <div class="emoji">👀</div>
+                    <h4>Bewusstes Sehen</h4>
                 </div>
             </div>
         </div>
@@ -462,12 +438,11 @@
             <div class="cta-grid">
                 <div class="target-card"><span class="section-label">Zielgruppe</span>
                     <h3>Für wen?</h3>
-                    <p>Alle, die fitter in BWL werden und auf Augenhöhe mit Fachleuten kommunizieren möchten.</p>
+                    <p>Führungskräfte, gestresste Mitarbeiter:innen, alle, die mehr Präsenz und Ruhe suchen.</p>
                 </div>
                 <div class="cta-card">
                     <h3>Interesse?</h3>
-                    <p>Betriebswirtschaft verstehen.</p><a href="../index.html#kontakt" class="btn btn-white">Kontakt
-                        →</a>
+                    <p>Im Moment ankommen.</p><a href="../index.html#kontakt" class="btn btn-white">Kontakt →</a>
                 </div>
             </div>
         </div>
@@ -483,7 +458,7 @@
     <script>window.addEventListener('scroll', () => { document.getElementById('scrollProgress').style.width = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100 + '%' })</script>
     <script src="https://www.vallit.net/widget/embed.js" data-api-url="https://www.vallit.net"
         data-company-id="e46176c5-0f35-43b8-8e8c-c72f534519e1" data-theme="minimal" data-language="de"
-        data-color="#6366f1" data-title="Kian" data-metadata='{"page_title":"BWL für Nicht-BWLer"}'></script>
+        data-color="#6366f1" data-title="Kian" data-metadata='{"page_title":"Achtsamkeit"}'></script>
 </body>
 
 </html>

@@ -5,16 +5,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="../assets/favicon.png">
-    <title>BWL für Nicht-BWLer – WTM</title>
-    <meta name="description" content="BWL für Nicht-BWLer – Betriebswirtschaftliches Denken verstehen und anwenden.">
+    <title>Wertschätzende Kommunikation – WTM</title>
+    <meta name="description" content="Wertschätzende Kommunikation – Respektvoll und verbindend kommunizieren.">
     <link
         href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Source+Sans+Pro:wght@300;400;600;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="../styles/index.css">
     <style>
         :root {
-            --seminar-accent: #5D8AA8;
-            --seminar-accent-light: rgba(93, 138, 168, 0.1);
+            --seminar-accent: #d6ac58;
+            --seminar-accent-light: rgba(214, 172, 88, 0.1);
         }
 
         .scroll-progress {
@@ -31,7 +31,7 @@
             min-height: 100vh;
             display: flex;
             align-items: center;
-            background: linear-gradient(165deg, #0f172a, #1e293b, #0f172a);
+            background: linear-gradient(165deg, #1f1a0f, #2d2618, #1f1a0f);
             position: relative;
             overflow: hidden;
             padding: 120px 0 80px
@@ -41,7 +41,7 @@
             position: absolute;
             border-radius: 50%;
             filter: blur(80px);
-            opacity: 0.4;
+            opacity: 0.3;
             animation: pulse-orb 8s infinite
         }
 
@@ -56,7 +56,7 @@
         .orb-2 {
             width: 300px;
             height: 300px;
-            background: #94a3b8;
+            background: #f5d89a;
             bottom: -50px;
             left: -50px;
             animation-delay: 4s
@@ -67,12 +67,12 @@
             0%,
             100% {
                 transform: scale(1);
-                opacity: 0.3
+                opacity: 0.2
             }
 
             50% {
                 transform: scale(1.2);
-                opacity: 0.5
+                opacity: 0.4
             }
         }
 
@@ -144,7 +144,7 @@
 
         .btn-glow {
             background: var(--seminar-accent);
-            color: #fff;
+            color: #1f1a0f;
             padding: 1rem 2rem;
             border-radius: 8px;
             font-weight: 600;
@@ -153,7 +153,7 @@
 
         .btn-glow:hover {
             transform: translateY(-3px);
-            box-shadow: 0 10px 40px rgba(93, 138, 168, 0.3)
+            box-shadow: 0 10px 40px rgba(214, 172, 88, 0.3)
         }
 
         .btn-outline-light {
@@ -176,50 +176,101 @@
             }
         }
 
-        .calc-section {
+        .heart-section {
             padding: 6rem 0;
             background: #0a0a0a
         }
 
-        .calc-visual {
+        .heart-visual {
             display: flex;
             justify-content: center;
-            gap: 2rem;
-            margin-top: 3rem;
-            flex-wrap: wrap;
-            align-items: center
+            margin-top: 3rem
         }
 
-        .calc-box {
-            text-align: center;
-            padding: 2rem;
-            background: linear-gradient(135deg, rgba(93, 138, 168, 0.15), rgba(93, 138, 168, 0.05));
-            border: 3px solid var(--seminar-accent);
-            border-radius: 16px;
-            min-width: 130px;
-            transition: all 0.4s
+        .heart-container {
+            position: relative;
+            width: 200px;
+            height: 200px
         }
 
-        .calc-box:hover {
-            transform: scale(1.08);
-            box-shadow: 0 0 30px rgba(93, 138, 168, 0.4)
+        .heart-shape {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 8rem;
+            animation: heartbeat 1.5s infinite;
+            filter: drop-shadow(0 0 30px rgba(214, 172, 88, 0.5))
         }
 
-        .calc-box .emoji {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem
+        @keyframes heartbeat {
+
+            0%,
+            100% {
+                transform: translate(-50%, -50%) scale(1)
+            }
+
+            15% {
+                transform: translate(-50%, -50%) scale(1.15)
+            }
+
+            30% {
+                transform: translate(-50%, -50%) scale(1)
+            }
+
+            45% {
+                transform: translate(-50%, -50%) scale(1.1)
+            }
         }
 
-        .calc-box h4 {
+        .heart-orbit {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            animation: orbit 8s linear infinite
+        }
+
+        .heart-word {
+            position: absolute;
+            background: linear-gradient(135deg, rgba(214, 172, 88, 0.3), rgba(214, 172, 88, 0.1));
+            border: 2px solid var(--seminar-accent);
+            border-radius: 20px;
+            padding: 0.4rem 0.75rem;
+            font-size: 0.7rem;
             color: var(--seminar-accent);
-            font-size: 0.85rem;
-            margin: 0
+            white-space: nowrap
         }
 
-        .calc-operator {
-            font-size: 2rem;
-            color: var(--seminar-accent);
-            font-weight: 700
+        .word-1 {
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%)
+        }
+
+        .word-2 {
+            top: 30%;
+            right: -15%
+        }
+
+        .word-3 {
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%)
+        }
+
+        .word-4 {
+            top: 30%;
+            left: -15%
+        }
+
+        @keyframes orbit {
+            from {
+                transform: rotate(0deg)
+            }
+
+            to {
+                transform: rotate(360deg)
+            }
         }
 
         .intro-section {
@@ -269,39 +320,53 @@
             margin: 1.5rem auto 0
         }
 
-        .content-section {
+        .gfk-section {
             padding: 6rem 0;
             background: var(--color-cream)
         }
 
-        .content-grid {
+        .gfk-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1.5rem;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
             margin-top: 3rem
         }
 
-        .content-card {
+        .gfk-card {
             background: #fff;
-            border-radius: 16px;
-            padding: 2rem;
+            border-radius: 12px;
+            padding: 1.5rem;
             text-align: center;
-            transition: all 0.4s
+            transition: all 0.4s;
+            position: relative
         }
 
-        .content-card:hover {
+        .gfk-card:not(:last-child)::after {
+            content: '→';
+            position: absolute;
+            right: -10px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--seminar-accent);
+            font-size: 1rem;
+            z-index: 5
+        }
+
+        .gfk-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 15px 30px var(--seminar-accent-light)
         }
 
-        .content-card .emoji {
-            font-size: 2rem;
-            margin-bottom: 0.5rem
+        .gfk-card .number {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--seminar-accent);
+            margin-bottom: 0.25rem
         }
 
-        .content-card h4 {
-            color: var(--seminar-accent);
-            font-size: 0.85rem;
+        .gfk-card h4 {
+            color: var(--color-text);
+            font-size: 0.8rem;
             margin: 0
         }
 
@@ -344,13 +409,16 @@
                 justify-content: center
             }
 
-            .cta-grid,
-            .content-grid {
+            .cta-grid {
                 grid-template-columns: 1fr
             }
 
-            .calc-visual {
-                flex-direction: column
+            .gfk-grid {
+                grid-template-columns: repeat(2, 1fr)
+            }
+
+            .gfk-card::after {
+                display: none
             }
         }
     </style>
@@ -378,81 +446,66 @@
             <div class="hero-content-wrapper">
                 <div class="hero-text">
                     <div class="breadcrumb"><a href="../index.html">Start</a>→<a
-                            href="../index.html#trainings">Seminare</a>→<span>BWL für Nicht-BWLer</span></div>
-                    <div class="category-badge">📊 Management</div>
-                    <h1 class="hero-title">BWL für<br><span>Nicht-BWLer</span></h1>
-                    <p class="hero-subtitle">Gewinn, Umsatz, ROI – was bedeuten diese Begriffe? Verstehen Sie die
-                        „spezielle Denke von Betriebswirten" und kommunizieren Sie auf Augenhöhe.</p>
+                            href="../index.html#trainings">Seminare</a>→<span>Wertschätzung</span></div>
+                    <div class="category-badge">💛 Kommunikation</div>
+                    <h1 class="hero-title">Wertschätzende<br><span>Kommunikation</span></h1>
+                    <p class="hero-subtitle">Respektvoll, empathisch und verbindend kommunizieren. Gewaltfreie
+                        Kommunikation nach Marshall B. Rosenberg.</p>
                     <div class="hero-cta"><a href="../index.html#kontakt" class="btn-glow">Jetzt anfragen →</a><a
-                            href="#formel" class="btn-outline-light">Die Formel</a></div>
+                            href="#herz" class="btn-outline-light">Von Herzen</a></div>
                 </div>
             </div>
         </div>
     </section>
     <section class="intro-section">
         <div class="container">
-            <div class="intro-content"><span class="section-label">Das Problem</span>
-                <h2>Warum versteht mich keiner?</h2>
-                <p class="intro-text">Warum versteht der zahlenorientierte Gesprächspartner nicht, dass Ihre Lösung die
-                    technisch beste ist? Wie können Sie Entscheidungen betriebswirtschaftlich fundieren?</p>
+            <div class="intro-content"><span class="section-label">Das Prinzip</span>
+                <h2>Verbinden statt trennen</h2>
+                <p class="intro-text">Wertschätzende Kommunikation schafft Verbindung statt Trennung. Sie ermöglicht
+                    gegenseitiges Verstehen und stärkt Beziehungen nachhaltig.</p>
             </div>
         </div>
     </section>
-    <section class="calc-section" id="formel">
+    <section class="heart-section" id="herz">
         <div class="container">
-            <div class="section-header light"><span class="section-label" style="color:var(--seminar-accent)">Die
-                    Gleichung</span>
-                <h2>BWL auf den Punkt</h2>
+            <div class="section-header light"><span class="section-label" style="color:var(--seminar-accent)">Das
+                    Zentrum</span>
+                <h2>Von Herzen sprechen</h2>
                 <div class="accent-line"></div>
             </div>
-            <div class="calc-visual">
-                <div class="calc-box">
-                    <div class="emoji">💰</div>
-                    <h4>Umsatz</h4>
-                </div>
-                <div class="calc-operator">−</div>
-                <div class="calc-box">
-                    <div class="emoji">📉</div>
-                    <h4>Kosten</h4>
-                </div>
-                <div class="calc-operator">=</div>
-                <div class="calc-box">
-                    <div class="emoji">🎯</div>
-                    <h4>Gewinn</h4>
+            <div class="heart-visual">
+                <div class="heart-container">
+                    <div class="heart-shape">💛</div>
+                    <div class="heart-orbit"><span class="heart-word word-1">Respekt</span><span
+                            class="heart-word word-2">Empathie</span><span
+                            class="heart-word word-3">Ehrlichkeit</span><span class="heart-word word-4">Achtung</span>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
-    <section class="content-section">
+    <section class="gfk-section">
         <div class="container">
-            <div class="section-header"><span class="section-label">Inhalte</span>
-                <h2>Was Sie lernen</h2>
+            <div class="section-header"><span class="section-label">Die 4 Schritte</span>
+                <h2>Gewaltfreie Kommunikation</h2>
                 <div class="accent-line"></div>
             </div>
-            <div class="content-grid">
-                <div class="content-card">
-                    <div class="emoji">📚</div>
-                    <h4>Fachbegriffe</h4>
+            <div class="gfk-grid">
+                <div class="gfk-card">
+                    <div class="number">1</div>
+                    <h4>Beobachtung</h4>
                 </div>
-                <div class="content-card">
-                    <div class="emoji">🧠</div>
-                    <h4>BWL-Mindset</h4>
+                <div class="gfk-card">
+                    <div class="number">2</div>
+                    <h4>Gefühl</h4>
                 </div>
-                <div class="content-card">
-                    <div class="emoji">📋</div>
-                    <h4>Bilanz & GuV</h4>
+                <div class="gfk-card">
+                    <div class="number">3</div>
+                    <h4>Bedürfnis</h4>
                 </div>
-                <div class="content-card">
-                    <div class="emoji">🧮</div>
-                    <h4>Kalkulation</h4>
-                </div>
-                <div class="content-card">
-                    <div class="emoji">💳</div>
-                    <h4>Finanzierung</h4>
-                </div>
-                <div class="content-card">
-                    <div class="emoji">📈</div>
-                    <h4>Investitionen</h4>
+                <div class="gfk-card">
+                    <div class="number">4</div>
+                    <h4>Bitte</h4>
                 </div>
             </div>
         </div>
@@ -462,12 +515,11 @@
             <div class="cta-grid">
                 <div class="target-card"><span class="section-label">Zielgruppe</span>
                     <h3>Für wen?</h3>
-                    <p>Alle, die fitter in BWL werden und auf Augenhöhe mit Fachleuten kommunizieren möchten.</p>
+                    <p>Führungskräfte, Mediatoren, Teams – alle, die respektvoller kommunizieren möchten.</p>
                 </div>
                 <div class="cta-card">
                     <h3>Interesse?</h3>
-                    <p>Betriebswirtschaft verstehen.</p><a href="../index.html#kontakt" class="btn btn-white">Kontakt
-                        →</a>
+                    <p>Verbindung statt Konflikt.</p><a href="../index.html#kontakt" class="btn btn-white">Kontakt →</a>
                 </div>
             </div>
         </div>
@@ -483,7 +535,7 @@
     <script>window.addEventListener('scroll', () => { document.getElementById('scrollProgress').style.width = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100 + '%' })</script>
     <script src="https://www.vallit.net/widget/embed.js" data-api-url="https://www.vallit.net"
         data-company-id="e46176c5-0f35-43b8-8e8c-c72f534519e1" data-theme="minimal" data-language="de"
-        data-color="#6366f1" data-title="Kian" data-metadata='{"page_title":"BWL für Nicht-BWLer"}'></script>
+        data-color="#6366f1" data-title="Kian" data-metadata='{"page_title":"Wertschätzende Kommunikation"}'></script>
 </body>
 
 </html>

@@ -5,16 +5,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="../assets/favicon.png">
-    <title>BWL für Nicht-BWLer – WTM</title>
-    <meta name="description" content="BWL für Nicht-BWLer – Betriebswirtschaftliches Denken verstehen und anwenden.">
+    <title>Führen in Zentralbereichen – WTM</title>
+    <meta name="description" content="Führen in Zentralbereichen – Führen ohne direkte Weisungsbefugnis.">
     <link
         href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Source+Sans+Pro:wght@300;400;600;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="../styles/index.css">
     <style>
         :root {
-            --seminar-accent: #5D8AA8;
-            --seminar-accent-light: rgba(93, 138, 168, 0.1);
+            --seminar-accent: #4A4A4E;
+            --seminar-accent-light: rgba(74, 74, 78, 0.1);
+            --accent-silver: #94a3b8;
         }
 
         .scroll-progress {
@@ -22,7 +23,7 @@
             top: 0;
             left: 0;
             height: 3px;
-            background: var(--seminar-accent);
+            background: var(--accent-silver);
             z-index: 9999;
             width: 0%
         }
@@ -31,7 +32,7 @@
             min-height: 100vh;
             display: flex;
             align-items: center;
-            background: linear-gradient(165deg, #0f172a, #1e293b, #0f172a);
+            background: linear-gradient(165deg, #1a1a1c, #2d2d31, #1a1a1c);
             position: relative;
             overflow: hidden;
             padding: 120px 0 80px
@@ -41,14 +42,14 @@
             position: absolute;
             border-radius: 50%;
             filter: blur(80px);
-            opacity: 0.4;
+            opacity: 0.3;
             animation: pulse-orb 8s infinite
         }
 
         .orb-1 {
             width: 400px;
             height: 400px;
-            background: var(--seminar-accent);
+            background: var(--accent-silver);
             top: -100px;
             right: -100px
         }
@@ -56,7 +57,7 @@
         .orb-2 {
             width: 300px;
             height: 300px;
-            background: #94a3b8;
+            background: var(--seminar-accent);
             bottom: -50px;
             left: -50px;
             animation-delay: 4s
@@ -67,12 +68,12 @@
             0%,
             100% {
                 transform: scale(1);
-                opacity: 0.3
+                opacity: 0.2
             }
 
             50% {
                 transform: scale(1.2);
-                opacity: 0.5
+                opacity: 0.4
             }
         }
 
@@ -102,10 +103,10 @@
         .category-badge {
             display: inline-flex;
             padding: 0.5rem 1rem;
-            background: var(--seminar-accent-light);
-            border: 1px solid var(--seminar-accent);
+            background: rgba(148, 163, 184, 0.15);
+            border: 1px solid var(--accent-silver);
             border-radius: 50px;
-            color: var(--seminar-accent);
+            color: var(--accent-silver);
             font-size: 0.85rem;
             font-weight: 600;
             margin-bottom: 1.5rem;
@@ -123,7 +124,7 @@
         }
 
         .hero-title span {
-            color: var(--seminar-accent)
+            color: var(--accent-silver)
         }
 
         .hero-subtitle {
@@ -143,8 +144,8 @@
         }
 
         .btn-glow {
-            background: var(--seminar-accent);
-            color: #fff;
+            background: var(--accent-silver);
+            color: #1a1a1c;
             padding: 1rem 2rem;
             border-radius: 8px;
             font-weight: 600;
@@ -153,7 +154,7 @@
 
         .btn-glow:hover {
             transform: translateY(-3px);
-            box-shadow: 0 10px 40px rgba(93, 138, 168, 0.3)
+            box-shadow: 0 10px 40px rgba(148, 163, 184, 0.3)
         }
 
         .btn-outline-light {
@@ -176,50 +177,98 @@
             }
         }
 
-        .calc-section {
+        .network-section {
             padding: 6rem 0;
             background: #0a0a0a
         }
 
-        .calc-visual {
+        .network-visual {
             display: flex;
             justify-content: center;
-            gap: 2rem;
-            margin-top: 3rem;
-            flex-wrap: wrap;
-            align-items: center
+            margin-top: 3rem
         }
 
-        .calc-box {
-            text-align: center;
-            padding: 2rem;
-            background: linear-gradient(135deg, rgba(93, 138, 168, 0.15), rgba(93, 138, 168, 0.05));
-            border: 3px solid var(--seminar-accent);
-            border-radius: 16px;
-            min-width: 130px;
-            transition: all 0.4s
+        .network-diagram {
+            position: relative;
+            width: 320px;
+            height: 200px
         }
 
-        .calc-box:hover {
-            transform: scale(1.08);
-            box-shadow: 0 0 30px rgba(93, 138, 168, 0.4)
-        }
-
-        .calc-box .emoji {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem
-        }
-
-        .calc-box h4 {
-            color: var(--seminar-accent);
-            font-size: 0.85rem;
-            margin: 0
-        }
-
-        .calc-operator {
+        .central-node {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--accent-silver), rgba(148, 163, 184, 0.6));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             font-size: 2rem;
-            color: var(--seminar-accent);
-            font-weight: 700
+            z-index: 5
+        }
+
+        .department-node {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background: rgba(148, 163, 184, 0.2);
+            border: 2px solid var(--accent-silver);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            transition: all 0.3s
+        }
+
+        .department-node:hover {
+            transform: scale(1.15);
+            background: rgba(148, 163, 184, 0.4)
+        }
+
+        .node-1 {
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%)
+        }
+
+        .node-2 {
+            top: 30%;
+            right: 5%
+        }
+
+        .node-3 {
+            bottom: 30%;
+            right: 5%
+        }
+
+        .node-4 {
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%)
+        }
+
+        .node-5 {
+            bottom: 30%;
+            left: 5%
+        }
+
+        .node-6 {
+            top: 30%;
+            left: 5%
+        }
+
+        .connection {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--accent-silver), transparent);
+            transform-origin: left center;
+            opacity: 0.4
         }
 
         .intro-section {
@@ -265,23 +314,23 @@
         .accent-line {
             width: 60px;
             height: 3px;
-            background: var(--seminar-accent);
+            background: var(--accent-silver);
             margin: 1.5rem auto 0
         }
 
-        .content-section {
+        .skills-section {
             padding: 6rem 0;
             background: var(--color-cream)
         }
 
-        .content-grid {
+        .skills-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 1.5rem;
             margin-top: 3rem
         }
 
-        .content-card {
+        .skill-card {
             background: #fff;
             border-radius: 16px;
             padding: 2rem;
@@ -289,17 +338,17 @@
             transition: all 0.4s
         }
 
-        .content-card:hover {
+        .skill-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 15px 30px var(--seminar-accent-light)
         }
 
-        .content-card .emoji {
+        .skill-card .emoji {
             font-size: 2rem;
             margin-bottom: 0.5rem
         }
 
-        .content-card h4 {
+        .skill-card h4 {
             color: var(--seminar-accent);
             font-size: 0.85rem;
             margin: 0
@@ -345,12 +394,8 @@
             }
 
             .cta-grid,
-            .content-grid {
+            .skills-grid {
                 grid-template-columns: 1fr
-            }
-
-            .calc-visual {
-                flex-direction: column
             }
         }
     </style>
@@ -378,81 +423,76 @@
             <div class="hero-content-wrapper">
                 <div class="hero-text">
                     <div class="breadcrumb"><a href="../index.html">Start</a>→<a
-                            href="../index.html#trainings">Seminare</a>→<span>BWL für Nicht-BWLer</span></div>
-                    <div class="category-badge">📊 Management</div>
-                    <h1 class="hero-title">BWL für<br><span>Nicht-BWLer</span></h1>
-                    <p class="hero-subtitle">Gewinn, Umsatz, ROI – was bedeuten diese Begriffe? Verstehen Sie die
-                        „spezielle Denke von Betriebswirten" und kommunizieren Sie auf Augenhöhe.</p>
+                            href="../index.html#trainings">Seminare</a>→<span>Führen in Zentralbereichen</span></div>
+                    <div class="category-badge">🔗 Führung</div>
+                    <h1 class="hero-title">Führen in<br><span>Zentralbereichen</span></h1>
+                    <p class="hero-subtitle">Führen ohne direkte Weisungsbefugnis. Durch Überzeugung, Expertise und
+                        Beziehungsarbeit Einfluss nehmen.</p>
                     <div class="hero-cta"><a href="../index.html#kontakt" class="btn-glow">Jetzt anfragen →</a><a
-                            href="#formel" class="btn-outline-light">Die Formel</a></div>
+                            href="#netzwerk" class="btn-outline-light">Das Netzwerk</a></div>
                 </div>
             </div>
         </div>
     </section>
     <section class="intro-section">
         <div class="container">
-            <div class="intro-content"><span class="section-label">Das Problem</span>
-                <h2>Warum versteht mich keiner?</h2>
-                <p class="intro-text">Warum versteht der zahlenorientierte Gesprächspartner nicht, dass Ihre Lösung die
-                    technisch beste ist? Wie können Sie Entscheidungen betriebswirtschaftlich fundieren?</p>
+            <div class="intro-content"><span class="section-label">Die Herausforderung</span>
+                <h2>Einfluss ohne Macht</h2>
+                <p class="intro-text">In Zentralbereichen wie HR, IT, Controlling führen Sie über Fachexpertise und
+                    Beziehungen – nicht über disziplinarische Macht. Das erfordert besondere Kompetenzen.</p>
             </div>
         </div>
     </section>
-    <section class="calc-section" id="formel">
+    <section class="network-section" id="netzwerk">
         <div class="container">
-            <div class="section-header light"><span class="section-label" style="color:var(--seminar-accent)">Die
-                    Gleichung</span>
-                <h2>BWL auf den Punkt</h2>
+            <div class="section-header light"><span class="section-label" style="color:var(--accent-silver)">Die
+                    Position</span>
+                <h2>Im Zentrum des Netzwerks</h2>
                 <div class="accent-line"></div>
             </div>
-            <div class="calc-visual">
-                <div class="calc-box">
-                    <div class="emoji">💰</div>
-                    <h4>Umsatz</h4>
-                </div>
-                <div class="calc-operator">−</div>
-                <div class="calc-box">
-                    <div class="emoji">📉</div>
-                    <h4>Kosten</h4>
-                </div>
-                <div class="calc-operator">=</div>
-                <div class="calc-box">
-                    <div class="emoji">🎯</div>
-                    <h4>Gewinn</h4>
+            <div class="network-visual">
+                <div class="network-diagram">
+                    <div class="central-node">🎯</div>
+                    <div class="department-node node-1">📊</div>
+                    <div class="department-node node-2">💻</div>
+                    <div class="department-node node-3">🏭</div>
+                    <div class="department-node node-4">📦</div>
+                    <div class="department-node node-5">💰</div>
+                    <div class="department-node node-6">👥</div>
                 </div>
             </div>
         </div>
     </section>
-    <section class="content-section">
+    <section class="skills-section">
         <div class="container">
-            <div class="section-header"><span class="section-label">Inhalte</span>
-                <h2>Was Sie lernen</h2>
+            <div class="section-header"><span class="section-label">Die Kompetenzen</span>
+                <h2>Führen durch...</h2>
                 <div class="accent-line"></div>
             </div>
-            <div class="content-grid">
-                <div class="content-card">
-                    <div class="emoji">📚</div>
-                    <h4>Fachbegriffe</h4>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <div class="emoji">🎓</div>
+                    <h4>Fachexpertise</h4>
                 </div>
-                <div class="content-card">
-                    <div class="emoji">🧠</div>
-                    <h4>BWL-Mindset</h4>
+                <div class="skill-card">
+                    <div class="emoji">🤝</div>
+                    <h4>Beziehungsarbeit</h4>
                 </div>
-                <div class="content-card">
-                    <div class="emoji">📋</div>
-                    <h4>Bilanz & GuV</h4>
+                <div class="skill-card">
+                    <div class="emoji">💡</div>
+                    <h4>Überzeugungskraft</h4>
                 </div>
-                <div class="content-card">
-                    <div class="emoji">🧮</div>
-                    <h4>Kalkulation</h4>
+                <div class="skill-card">
+                    <div class="emoji">🌐</div>
+                    <h4>Netzwerken</h4>
                 </div>
-                <div class="content-card">
-                    <div class="emoji">💳</div>
-                    <h4>Finanzierung</h4>
+                <div class="skill-card">
+                    <div class="emoji">🔍</div>
+                    <h4>Serviceorientierung</h4>
                 </div>
-                <div class="content-card">
+                <div class="skill-card">
                     <div class="emoji">📈</div>
-                    <h4>Investitionen</h4>
+                    <h4>Mehrwert liefern</h4>
                 </div>
             </div>
         </div>
@@ -462,12 +502,11 @@
             <div class="cta-grid">
                 <div class="target-card"><span class="section-label">Zielgruppe</span>
                     <h3>Für wen?</h3>
-                    <p>Alle, die fitter in BWL werden und auf Augenhöhe mit Fachleuten kommunizieren möchten.</p>
+                    <p>Führungskräfte in HR, IT, Finanzen, Controlling, Marketing und anderen Zentralbereichen.</p>
                 </div>
                 <div class="cta-card">
                     <h3>Interesse?</h3>
-                    <p>Betriebswirtschaft verstehen.</p><a href="../index.html#kontakt" class="btn btn-white">Kontakt
-                        →</a>
+                    <p>Einfluss durch Expertise.</p><a href="../index.html#kontakt" class="btn btn-white">Kontakt →</a>
                 </div>
             </div>
         </div>
@@ -483,7 +522,7 @@
     <script>window.addEventListener('scroll', () => { document.getElementById('scrollProgress').style.width = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100 + '%' })</script>
     <script src="https://www.vallit.net/widget/embed.js" data-api-url="https://www.vallit.net"
         data-company-id="e46176c5-0f35-43b8-8e8c-c72f534519e1" data-theme="minimal" data-language="de"
-        data-color="#6366f1" data-title="Kian" data-metadata='{"page_title":"BWL für Nicht-BWLer"}'></script>
+        data-color="#6366f1" data-title="Kian" data-metadata='{"page_title":"Führen in Zentralbereichen"}'></script>
 </body>
 
 </html>

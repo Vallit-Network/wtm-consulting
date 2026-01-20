@@ -5,16 +5,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="../assets/favicon.png">
-    <title>BWL für Nicht-BWLer – WTM</title>
-    <meta name="description" content="BWL für Nicht-BWLer – Betriebswirtschaftliches Denken verstehen und anwenden.">
+    <title>Stimm- und Sprechtraining – WTM</title>
+    <meta name="description" content="Stimm- und Sprechtraining – Ihre Stimme als kraftvolles Instrument nutzen.">
     <link
         href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Source+Sans+Pro:wght@300;400;600;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="../styles/index.css">
     <style>
         :root {
-            --seminar-accent: #5D8AA8;
-            --seminar-accent-light: rgba(93, 138, 168, 0.1);
+            --seminar-accent: #d6ac58;
+            --seminar-accent-light: rgba(214, 172, 88, 0.1);
         }
 
         .scroll-progress {
@@ -31,7 +31,7 @@
             min-height: 100vh;
             display: flex;
             align-items: center;
-            background: linear-gradient(165deg, #0f172a, #1e293b, #0f172a);
+            background: linear-gradient(165deg, #1f1a0f, #2d2618, #1f1a0f);
             position: relative;
             overflow: hidden;
             padding: 120px 0 80px
@@ -41,7 +41,7 @@
             position: absolute;
             border-radius: 50%;
             filter: blur(80px);
-            opacity: 0.4;
+            opacity: 0.3;
             animation: pulse-orb 8s infinite
         }
 
@@ -56,7 +56,7 @@
         .orb-2 {
             width: 300px;
             height: 300px;
-            background: #94a3b8;
+            background: #f5d89a;
             bottom: -50px;
             left: -50px;
             animation-delay: 4s
@@ -67,12 +67,12 @@
             0%,
             100% {
                 transform: scale(1);
-                opacity: 0.3
+                opacity: 0.2
             }
 
             50% {
                 transform: scale(1.2);
-                opacity: 0.5
+                opacity: 0.4
             }
         }
 
@@ -144,7 +144,7 @@
 
         .btn-glow {
             background: var(--seminar-accent);
-            color: #fff;
+            color: #1f1a0f;
             padding: 1rem 2rem;
             border-radius: 8px;
             font-weight: 600;
@@ -153,7 +153,7 @@
 
         .btn-glow:hover {
             transform: translateY(-3px);
-            box-shadow: 0 10px 40px rgba(93, 138, 168, 0.3)
+            box-shadow: 0 10px 40px rgba(214, 172, 88, 0.3)
         }
 
         .btn-outline-light {
@@ -176,50 +176,96 @@
             }
         }
 
-        .calc-section {
+        .wave-section {
             padding: 6rem 0;
             background: #0a0a0a
         }
 
-        .calc-visual {
+        .wave-visual {
             display: flex;
             justify-content: center;
-            gap: 2rem;
-            margin-top: 3rem;
-            flex-wrap: wrap;
-            align-items: center
+            margin-top: 3rem
         }
 
-        .calc-box {
-            text-align: center;
-            padding: 2rem;
-            background: linear-gradient(135deg, rgba(93, 138, 168, 0.15), rgba(93, 138, 168, 0.05));
-            border: 3px solid var(--seminar-accent);
-            border-radius: 16px;
-            min-width: 130px;
-            transition: all 0.4s
+        .soundwave {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            height: 100px
         }
 
-        .calc-box:hover {
-            transform: scale(1.08);
-            box-shadow: 0 0 30px rgba(93, 138, 168, 0.4)
+        .wave-bar {
+            width: 8px;
+            background: var(--seminar-accent);
+            border-radius: 4px;
+            animation: wave 1s ease-in-out infinite
         }
 
-        .calc-box .emoji {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem
+        .wave-bar:nth-child(1) {
+            height: 30%;
+            animation-delay: 0s
         }
 
-        .calc-box h4 {
-            color: var(--seminar-accent);
-            font-size: 0.85rem;
-            margin: 0
+        .wave-bar:nth-child(2) {
+            height: 50%;
+            animation-delay: 0.1s
         }
 
-        .calc-operator {
-            font-size: 2rem;
-            color: var(--seminar-accent);
-            font-weight: 700
+        .wave-bar:nth-child(3) {
+            height: 80%;
+            animation-delay: 0.2s
+        }
+
+        .wave-bar:nth-child(4) {
+            height: 100%;
+            animation-delay: 0.3s
+        }
+
+        .wave-bar:nth-child(5) {
+            height: 70%;
+            animation-delay: 0.4s
+        }
+
+        .wave-bar:nth-child(6) {
+            height: 90%;
+            animation-delay: 0.5s
+        }
+
+        .wave-bar:nth-child(7) {
+            height: 60%;
+            animation-delay: 0.6s
+        }
+
+        .wave-bar:nth-child(8) {
+            height: 100%;
+            animation-delay: 0.7s
+        }
+
+        .wave-bar:nth-child(9) {
+            height: 80%;
+            animation-delay: 0.8s
+        }
+
+        .wave-bar:nth-child(10) {
+            height: 50%;
+            animation-delay: 0.9s
+        }
+
+        .wave-bar:nth-child(11) {
+            height: 30%;
+            animation-delay: 1s
+        }
+
+        @keyframes wave {
+
+            0%,
+            100% {
+                transform: scaleY(1)
+            }
+
+            50% {
+                transform: scaleY(0.5)
+            }
         }
 
         .intro-section {
@@ -269,39 +315,39 @@
             margin: 1.5rem auto 0
         }
 
-        .content-section {
+        .elements-section {
             padding: 6rem 0;
             background: var(--color-cream)
         }
 
-        .content-grid {
+        .elements-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1.5rem;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
             margin-top: 3rem
         }
 
-        .content-card {
+        .element-card {
             background: #fff;
-            border-radius: 16px;
-            padding: 2rem;
+            border-radius: 12px;
+            padding: 1.5rem;
             text-align: center;
             transition: all 0.4s
         }
 
-        .content-card:hover {
+        .element-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 15px 30px var(--seminar-accent-light)
         }
 
-        .content-card .emoji {
+        .element-card .emoji {
             font-size: 2rem;
             margin-bottom: 0.5rem
         }
 
-        .content-card h4 {
+        .element-card h4 {
             color: var(--seminar-accent);
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             margin: 0
         }
 
@@ -344,13 +390,12 @@
                 justify-content: center
             }
 
-            .cta-grid,
-            .content-grid {
+            .cta-grid {
                 grid-template-columns: 1fr
             }
 
-            .calc-visual {
-                flex-direction: column
+            .elements-grid {
+                grid-template-columns: repeat(2, 1fr)
             }
         }
     </style>
@@ -378,81 +423,88 @@
             <div class="hero-content-wrapper">
                 <div class="hero-text">
                     <div class="breadcrumb"><a href="../index.html">Start</a>→<a
-                            href="../index.html#trainings">Seminare</a>→<span>BWL für Nicht-BWLer</span></div>
-                    <div class="category-badge">📊 Management</div>
-                    <h1 class="hero-title">BWL für<br><span>Nicht-BWLer</span></h1>
-                    <p class="hero-subtitle">Gewinn, Umsatz, ROI – was bedeuten diese Begriffe? Verstehen Sie die
-                        „spezielle Denke von Betriebswirten" und kommunizieren Sie auf Augenhöhe.</p>
+                            href="../index.html#trainings">Seminare</a>→<span>Stimmtraining</span></div>
+                    <div class="category-badge">🎙️ Kommunikation</div>
+                    <h1 class="hero-title">Stimm- und<br><span>Sprechtraining</span></h1>
+                    <p class="hero-subtitle">Ihre Stimme ist Ihr kraftvollstes Instrument. Lernen Sie, sie bewusst
+                        einzusetzen und Ihre Botschaft mit Wirkung zu transportieren.</p>
                     <div class="hero-cta"><a href="../index.html#kontakt" class="btn-glow">Jetzt anfragen →</a><a
-                            href="#formel" class="btn-outline-light">Die Formel</a></div>
+                            href="#welle" class="btn-outline-light">Die Stimme</a></div>
                 </div>
             </div>
         </div>
     </section>
     <section class="intro-section">
         <div class="container">
-            <div class="intro-content"><span class="section-label">Das Problem</span>
-                <h2>Warum versteht mich keiner?</h2>
-                <p class="intro-text">Warum versteht der zahlenorientierte Gesprächspartner nicht, dass Ihre Lösung die
-                    technisch beste ist? Wie können Sie Entscheidungen betriebswirtschaftlich fundieren?</p>
+            <div class="intro-content"><span class="section-label">Ihr Instrument</span>
+                <h2>Die Kraft der Stimme</h2>
+                <p class="intro-text">Stimme ist Persönlichkeit. Mit der richtigen Technik sprechen Sie überzeugender,
+                    werden besser verstanden und schonen gleichzeitig Ihre Stimme.</p>
             </div>
         </div>
     </section>
-    <section class="calc-section" id="formel">
+    <section class="wave-section" id="welle">
         <div class="container">
-            <div class="section-header light"><span class="section-label" style="color:var(--seminar-accent)">Die
-                    Gleichung</span>
-                <h2>BWL auf den Punkt</h2>
+            <div class="section-header light"><span class="section-label" style="color:var(--seminar-accent)">Ihre
+                    Frequenz</span>
+                <h2>Die Schallwelle</h2>
                 <div class="accent-line"></div>
             </div>
-            <div class="calc-visual">
-                <div class="calc-box">
-                    <div class="emoji">💰</div>
-                    <h4>Umsatz</h4>
-                </div>
-                <div class="calc-operator">−</div>
-                <div class="calc-box">
-                    <div class="emoji">📉</div>
-                    <h4>Kosten</h4>
-                </div>
-                <div class="calc-operator">=</div>
-                <div class="calc-box">
-                    <div class="emoji">🎯</div>
-                    <h4>Gewinn</h4>
+            <div class="wave-visual">
+                <div class="soundwave">
+                    <div class="wave-bar"></div>
+                    <div class="wave-bar"></div>
+                    <div class="wave-bar"></div>
+                    <div class="wave-bar"></div>
+                    <div class="wave-bar"></div>
+                    <div class="wave-bar"></div>
+                    <div class="wave-bar"></div>
+                    <div class="wave-bar"></div>
+                    <div class="wave-bar"></div>
+                    <div class="wave-bar"></div>
+                    <div class="wave-bar"></div>
                 </div>
             </div>
         </div>
     </section>
-    <section class="content-section">
+    <section class="elements-section">
         <div class="container">
-            <div class="section-header"><span class="section-label">Inhalte</span>
-                <h2>Was Sie lernen</h2>
+            <div class="section-header"><span class="section-label">Die Elemente</span>
+                <h2>Ihre Werkzeuge</h2>
                 <div class="accent-line"></div>
             </div>
-            <div class="content-grid">
-                <div class="content-card">
-                    <div class="emoji">📚</div>
-                    <h4>Fachbegriffe</h4>
+            <div class="elements-grid">
+                <div class="element-card">
+                    <div class="emoji">🌬️</div>
+                    <h4>Atmung</h4>
                 </div>
-                <div class="content-card">
-                    <div class="emoji">🧠</div>
-                    <h4>BWL-Mindset</h4>
+                <div class="element-card">
+                    <div class="emoji">🎵</div>
+                    <h4>Tonhöhe</h4>
                 </div>
-                <div class="content-card">
-                    <div class="emoji">📋</div>
-                    <h4>Bilanz & GuV</h4>
+                <div class="element-card">
+                    <div class="emoji">⚡</div>
+                    <h4>Dynamik</h4>
                 </div>
-                <div class="content-card">
-                    <div class="emoji">🧮</div>
-                    <h4>Kalkulation</h4>
+                <div class="element-card">
+                    <div class="emoji">⏸️</div>
+                    <h4>Pausen</h4>
                 </div>
-                <div class="content-card">
-                    <div class="emoji">💳</div>
-                    <h4>Finanzierung</h4>
+                <div class="element-card">
+                    <div class="emoji">🗣️</div>
+                    <h4>Artikulation</h4>
                 </div>
-                <div class="content-card">
-                    <div class="emoji">📈</div>
-                    <h4>Investitionen</h4>
+                <div class="element-card">
+                    <div class="emoji">🏃</div>
+                    <h4>Tempo</h4>
+                </div>
+                <div class="element-card">
+                    <div class="emoji">💪</div>
+                    <h4>Resonanz</h4>
+                </div>
+                <div class="element-card">
+                    <div class="emoji">🎭</div>
+                    <h4>Ausdruck</h4>
                 </div>
             </div>
         </div>
@@ -462,12 +514,12 @@
             <div class="cta-grid">
                 <div class="target-card"><span class="section-label">Zielgruppe</span>
                     <h3>Für wen?</h3>
-                    <p>Alle, die fitter in BWL werden und auf Augenhöhe mit Fachleuten kommunizieren möchten.</p>
+                    <p>Führungskräfte, Trainer, Präsentierende – alle, die mit Stimme überzeugen wollen.</p>
                 </div>
                 <div class="cta-card">
                     <h3>Interesse?</h3>
-                    <p>Betriebswirtschaft verstehen.</p><a href="../index.html#kontakt" class="btn btn-white">Kontakt
-                        →</a>
+                    <p>Stimme als kraftvolles Instrument nutzen.</p><a href="../index.html#kontakt"
+                        class="btn btn-white">Kontakt →</a>
                 </div>
             </div>
         </div>
@@ -483,7 +535,7 @@
     <script>window.addEventListener('scroll', () => { document.getElementById('scrollProgress').style.width = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100 + '%' })</script>
     <script src="https://www.vallit.net/widget/embed.js" data-api-url="https://www.vallit.net"
         data-company-id="e46176c5-0f35-43b8-8e8c-c72f534519e1" data-theme="minimal" data-language="de"
-        data-color="#6366f1" data-title="Kian" data-metadata='{"page_title":"BWL für Nicht-BWLer"}'></script>
+        data-color="#6366f1" data-title="Kian" data-metadata='{"page_title":"Stimm- und Sprechtraining"}'></script>
 </body>
 
 </html>

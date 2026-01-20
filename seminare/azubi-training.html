@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="../assets/favicon.png">
-    <title>BWL für Nicht-BWLer – WTM</title>
-    <meta name="description" content="BWL für Nicht-BWLer – Betriebswirtschaftliches Denken verstehen und anwenden.">
+    <title>Azubi-Training – WTM</title>
+    <meta name="description" content="Azubi-Training – Der erfolgreiche Start ins Berufsleben.">
     <link
         href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Source+Sans+Pro:wght@300;400;600;700&display=swap"
         rel="stylesheet">
@@ -176,50 +176,82 @@
             }
         }
 
-        .calc-section {
+        .rocket-section {
             padding: 6rem 0;
             background: #0a0a0a
         }
 
-        .calc-visual {
+        .rocket-visual {
             display: flex;
             justify-content: center;
-            gap: 2rem;
-            margin-top: 3rem;
-            flex-wrap: wrap;
-            align-items: center
+            margin-top: 3rem
         }
 
-        .calc-box {
-            text-align: center;
-            padding: 2rem;
-            background: linear-gradient(135deg, rgba(93, 138, 168, 0.15), rgba(93, 138, 168, 0.05));
-            border: 3px solid var(--seminar-accent);
-            border-radius: 16px;
-            min-width: 130px;
-            transition: all 0.4s
+        .launch-pad {
+            position: relative;
+            width: 200px;
+            height: 250px
         }
 
-        .calc-box:hover {
-            transform: scale(1.08);
-            box-shadow: 0 0 30px rgba(93, 138, 168, 0.4)
+        .rocket {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 5rem;
+            animation: launch 4s ease-in-out infinite
         }
 
-        .calc-box .emoji {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem
+        @keyframes launch {
+            0% {
+                bottom: 30px
+            }
+
+            50% {
+                bottom: 150px
+            }
+
+            100% {
+                bottom: 30px
+            }
         }
 
-        .calc-box h4 {
-            color: var(--seminar-accent);
-            font-size: 0.85rem;
-            margin: 0
+        .rocket-trail {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 40px;
+            height: 80px;
+            background: linear-gradient(to top, rgba(93, 138, 168, 0), rgba(93, 138, 168, 0.5), rgba(93, 138, 168, 0));
+            animation: trail 4s ease-in-out infinite
         }
 
-        .calc-operator {
-            font-size: 2rem;
-            color: var(--seminar-accent);
-            font-weight: 700
+        @keyframes trail {
+            0% {
+                height: 20px;
+                opacity: 0.3
+            }
+
+            50% {
+                height: 100px;
+                opacity: 0.8
+            }
+
+            100% {
+                height: 20px;
+                opacity: 0.3
+            }
+        }
+
+        .platform {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 10px;
+            background: linear-gradient(90deg, var(--seminar-accent), #94a3b8);
+            border-radius: 5px
         }
 
         .intro-section {
@@ -269,39 +301,39 @@
             margin: 1.5rem auto 0
         }
 
-        .content-section {
+        .skills-section {
             padding: 6rem 0;
             background: var(--color-cream)
         }
 
-        .content-grid {
+        .skills-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1.5rem;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
             margin-top: 3rem
         }
 
-        .content-card {
+        .skill-card {
             background: #fff;
-            border-radius: 16px;
-            padding: 2rem;
+            border-radius: 12px;
+            padding: 1.5rem;
             text-align: center;
             transition: all 0.4s
         }
 
-        .content-card:hover {
+        .skill-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 15px 30px var(--seminar-accent-light)
         }
 
-        .content-card .emoji {
+        .skill-card .emoji {
             font-size: 2rem;
             margin-bottom: 0.5rem
         }
 
-        .content-card h4 {
+        .skill-card h4 {
             color: var(--seminar-accent);
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             margin: 0
         }
 
@@ -344,13 +376,12 @@
                 justify-content: center
             }
 
-            .cta-grid,
-            .content-grid {
+            .cta-grid {
                 grid-template-columns: 1fr
             }
 
-            .calc-visual {
-                flex-direction: column
+            .skills-grid {
+                grid-template-columns: repeat(2, 1fr)
             }
         }
     </style>
@@ -378,81 +409,80 @@
             <div class="hero-content-wrapper">
                 <div class="hero-text">
                     <div class="breadcrumb"><a href="../index.html">Start</a>→<a
-                            href="../index.html#trainings">Seminare</a>→<span>BWL für Nicht-BWLer</span></div>
-                    <div class="category-badge">📊 Management</div>
-                    <h1 class="hero-title">BWL für<br><span>Nicht-BWLer</span></h1>
-                    <p class="hero-subtitle">Gewinn, Umsatz, ROI – was bedeuten diese Begriffe? Verstehen Sie die
-                        „spezielle Denke von Betriebswirten" und kommunizieren Sie auf Augenhöhe.</p>
+                            href="../index.html#trainings">Seminare</a>→<span>Azubi-Training</span></div>
+                    <div class="category-badge">🚀 Management</div>
+                    <h1 class="hero-title">Azubi<br><span>Training</span></h1>
+                    <p class="hero-subtitle">Der erfolgreiche Start ins Berufsleben. Grundlagen für Kommunikation,
+                        Zusammenarbeit und professionelles Auftreten.</p>
                     <div class="hero-cta"><a href="../index.html#kontakt" class="btn-glow">Jetzt anfragen →</a><a
-                            href="#formel" class="btn-outline-light">Die Formel</a></div>
+                            href="#start" class="btn-outline-light">Der Start</a></div>
                 </div>
             </div>
         </div>
     </section>
     <section class="intro-section">
         <div class="container">
-            <div class="intro-content"><span class="section-label">Das Problem</span>
-                <h2>Warum versteht mich keiner?</h2>
-                <p class="intro-text">Warum versteht der zahlenorientierte Gesprächspartner nicht, dass Ihre Lösung die
-                    technisch beste ist? Wie können Sie Entscheidungen betriebswirtschaftlich fundieren?</p>
+            <div class="intro-content"><span class="section-label">Der Anfang</span>
+                <h2>Gut starten, erfolgreich bleiben</h2>
+                <p class="intro-text">Die ersten Monate im Beruf prägen die gesamte Karriere. Wir geben Auszubildenden
+                    das Rüstzeug für einen erfolgreichen Start.</p>
             </div>
         </div>
     </section>
-    <section class="calc-section" id="formel">
+    <section class="rocket-section" id="start">
         <div class="container">
-            <div class="section-header light"><span class="section-label" style="color:var(--seminar-accent)">Die
-                    Gleichung</span>
-                <h2>BWL auf den Punkt</h2>
+            <div class="section-header light"><span class="section-label" style="color:var(--seminar-accent)">Der
+                    Abschuss</span>
+                <h2>Bereit für den Start</h2>
                 <div class="accent-line"></div>
             </div>
-            <div class="calc-visual">
-                <div class="calc-box">
-                    <div class="emoji">💰</div>
-                    <h4>Umsatz</h4>
-                </div>
-                <div class="calc-operator">−</div>
-                <div class="calc-box">
-                    <div class="emoji">📉</div>
-                    <h4>Kosten</h4>
-                </div>
-                <div class="calc-operator">=</div>
-                <div class="calc-box">
-                    <div class="emoji">🎯</div>
-                    <h4>Gewinn</h4>
+            <div class="rocket-visual">
+                <div class="launch-pad">
+                    <div class="rocket">🚀</div>
+                    <div class="rocket-trail"></div>
+                    <div class="platform"></div>
                 </div>
             </div>
         </div>
     </section>
-    <section class="content-section">
+    <section class="skills-section">
         <div class="container">
-            <div class="section-header"><span class="section-label">Inhalte</span>
-                <h2>Was Sie lernen</h2>
+            <div class="section-header"><span class="section-label">Die Grundlagen</span>
+                <h2>Was Azubis lernen</h2>
                 <div class="accent-line"></div>
             </div>
-            <div class="content-grid">
-                <div class="content-card">
-                    <div class="emoji">📚</div>
-                    <h4>Fachbegriffe</h4>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <div class="emoji">🗣️</div>
+                    <h4>Kommunikation</h4>
                 </div>
-                <div class="content-card">
-                    <div class="emoji">🧠</div>
-                    <h4>BWL-Mindset</h4>
+                <div class="skill-card">
+                    <div class="emoji">🤝</div>
+                    <h4>Teamarbeit</h4>
                 </div>
-                <div class="content-card">
+                <div class="skill-card">
+                    <div class="emoji">⏰</div>
+                    <h4>Zeitmanagement</h4>
+                </div>
+                <div class="skill-card">
+                    <div class="emoji">👔</div>
+                    <h4>Auftreten</h4>
+                </div>
+                <div class="skill-card">
+                    <div class="emoji">📱</div>
+                    <h4>Digitalkompetenz</h4>
+                </div>
+                <div class="skill-card">
+                    <div class="emoji">💡</div>
+                    <h4>Eigeninitiative</h4>
+                </div>
+                <div class="skill-card">
                     <div class="emoji">📋</div>
-                    <h4>Bilanz & GuV</h4>
+                    <h4>Selbstorganisation</h4>
                 </div>
-                <div class="content-card">
-                    <div class="emoji">🧮</div>
-                    <h4>Kalkulation</h4>
-                </div>
-                <div class="content-card">
-                    <div class="emoji">💳</div>
-                    <h4>Finanzierung</h4>
-                </div>
-                <div class="content-card">
-                    <div class="emoji">📈</div>
-                    <h4>Investitionen</h4>
+                <div class="skill-card">
+                    <div class="emoji">🎯</div>
+                    <h4>Verantwortung</h4>
                 </div>
             </div>
         </div>
@@ -462,11 +492,11 @@
             <div class="cta-grid">
                 <div class="target-card"><span class="section-label">Zielgruppe</span>
                     <h3>Für wen?</h3>
-                    <p>Alle, die fitter in BWL werden und auf Augenhöhe mit Fachleuten kommunizieren möchten.</p>
+                    <p>Auszubildende aller Berufsgruppen, besonders am Anfang ihrer Ausbildung.</p>
                 </div>
                 <div class="cta-card">
                     <h3>Interesse?</h3>
-                    <p>Betriebswirtschaft verstehen.</p><a href="../index.html#kontakt" class="btn btn-white">Kontakt
+                    <p>Den Grundstein für Erfolg legen.</p><a href="../index.html#kontakt" class="btn btn-white">Kontakt
                         →</a>
                 </div>
             </div>
@@ -483,7 +513,7 @@
     <script>window.addEventListener('scroll', () => { document.getElementById('scrollProgress').style.width = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100 + '%' })</script>
     <script src="https://www.vallit.net/widget/embed.js" data-api-url="https://www.vallit.net"
         data-company-id="e46176c5-0f35-43b8-8e8c-c72f534519e1" data-theme="minimal" data-language="de"
-        data-color="#6366f1" data-title="Kian" data-metadata='{"page_title":"BWL für Nicht-BWLer"}'></script>
+        data-color="#6366f1" data-title="Kian" data-metadata='{"page_title":"Azubi-Training"}'></script>
 </body>
 
 </html>

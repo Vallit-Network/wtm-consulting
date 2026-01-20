@@ -5,8 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="../assets/favicon.png">
-    <title>BWL für Nicht-BWLer – WTM</title>
-    <meta name="description" content="BWL für Nicht-BWLer – Betriebswirtschaftliches Denken verstehen und anwenden.">
+    <title>Professionell Verhandeln – WTM</title>
+    <meta name="description"
+        content="Professionell Verhandeln – Win-Win-Situationen durch strategische Verhandlungsführung.">
     <link
         href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Source+Sans+Pro:wght@300;400;600;700&display=swap"
         rel="stylesheet">
@@ -176,50 +177,77 @@
             }
         }
 
-        .calc-section {
+        .chess-section {
             padding: 6rem 0;
             background: #0a0a0a
         }
 
-        .calc-visual {
+        .chess-visual {
             display: flex;
             justify-content: center;
-            gap: 2rem;
+            align-items: center;
+            gap: 3rem;
             margin-top: 3rem;
-            flex-wrap: wrap;
-            align-items: center
+            flex-wrap: wrap
         }
 
-        .calc-box {
-            text-align: center;
-            padding: 2rem;
-            background: linear-gradient(135deg, rgba(93, 138, 168, 0.15), rgba(93, 138, 168, 0.05));
+        .chess-side {
+            text-align: center
+        }
+
+        .chess-piece {
+            width: 100px;
+            height: 120px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, rgba(93, 138, 168, 0.2), rgba(93, 138, 168, 0.05));
             border: 3px solid var(--seminar-accent);
             border-radius: 16px;
-            min-width: 130px;
+            font-size: 3.5rem;
             transition: all 0.4s
         }
 
-        .calc-box:hover {
-            transform: scale(1.08);
-            box-shadow: 0 0 30px rgba(93, 138, 168, 0.4)
+        .chess-piece:hover {
+            transform: scale(1.1) rotate(-5deg);
+            box-shadow: 0 0 40px rgba(93, 138, 168, 0.4)
         }
 
-        .calc-box .emoji {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem
-        }
-
-        .calc-box h4 {
+        .chess-side h4 {
             color: var(--seminar-accent);
-            font-size: 0.85rem;
-            margin: 0
+            font-size: 0.9rem;
+            margin-top: 0.75rem
         }
 
-        .calc-operator {
-            font-size: 2rem;
+        .vs-connector {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem
+        }
+
+        .handshake {
+            font-size: 4rem;
+            animation: shake 2s infinite
+        }
+
+        @keyframes shake {
+
+            0%,
+            100% {
+                transform: rotate(-5deg)
+            }
+
+            50% {
+                transform: rotate(5deg)
+            }
+        }
+
+        .vs-text {
             color: var(--seminar-accent);
-            font-weight: 700
+            font-weight: 700;
+            font-size: 1rem
         }
 
         .intro-section {
@@ -269,39 +297,39 @@
             margin: 1.5rem auto 0
         }
 
-        .content-section {
+        .tactics-section {
             padding: 6rem 0;
             background: var(--color-cream)
         }
 
-        .content-grid {
+        .tactics-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1.5rem;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
             margin-top: 3rem
         }
 
-        .content-card {
+        .tactic-card {
             background: #fff;
-            border-radius: 16px;
-            padding: 2rem;
+            border-radius: 12px;
+            padding: 1.5rem;
             text-align: center;
             transition: all 0.4s
         }
 
-        .content-card:hover {
+        .tactic-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 15px 30px var(--seminar-accent-light)
         }
 
-        .content-card .emoji {
+        .tactic-card .emoji {
             font-size: 2rem;
             margin-bottom: 0.5rem
         }
 
-        .content-card h4 {
+        .tactic-card h4 {
             color: var(--seminar-accent);
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             margin: 0
         }
 
@@ -344,13 +372,20 @@
                 justify-content: center
             }
 
-            .cta-grid,
-            .content-grid {
+            .cta-grid {
                 grid-template-columns: 1fr
             }
 
-            .calc-visual {
+            .tactics-grid {
+                grid-template-columns: repeat(2, 1fr)
+            }
+
+            .chess-visual {
                 flex-direction: column
+            }
+
+            .vs-connector {
+                transform: rotate(90deg)
             }
         }
     </style>
@@ -378,81 +413,70 @@
             <div class="hero-content-wrapper">
                 <div class="hero-text">
                     <div class="breadcrumb"><a href="../index.html">Start</a>→<a
-                            href="../index.html#trainings">Seminare</a>→<span>BWL für Nicht-BWLer</span></div>
-                    <div class="category-badge">📊 Management</div>
-                    <h1 class="hero-title">BWL für<br><span>Nicht-BWLer</span></h1>
-                    <p class="hero-subtitle">Gewinn, Umsatz, ROI – was bedeuten diese Begriffe? Verstehen Sie die
-                        „spezielle Denke von Betriebswirten" und kommunizieren Sie auf Augenhöhe.</p>
+                            href="../index.html#trainings">Seminare</a>→<span>Verhandeln</span></div>
+                    <div class="category-badge">♟️ Management</div>
+                    <h1 class="hero-title">Professionell<br><span>Verhandeln</span></h1>
+                    <p class="hero-subtitle">Verhandlungen sind wie Schach: strategisch, taktisch, aber mit dem Ziel
+                        einer Win-Win-Situation für alle Parteien.</p>
                     <div class="hero-cta"><a href="../index.html#kontakt" class="btn-glow">Jetzt anfragen →</a><a
-                            href="#formel" class="btn-outline-light">Die Formel</a></div>
+                            href="#strategie" class="btn-outline-light">Die Strategie</a></div>
                 </div>
             </div>
         </div>
     </section>
     <section class="intro-section">
         <div class="container">
-            <div class="intro-content"><span class="section-label">Das Problem</span>
-                <h2>Warum versteht mich keiner?</h2>
-                <p class="intro-text">Warum versteht der zahlenorientierte Gesprächspartner nicht, dass Ihre Lösung die
-                    technisch beste ist? Wie können Sie Entscheidungen betriebswirtschaftlich fundieren?</p>
+            <div class="intro-content"><span class="section-label">Das Ziel</span>
+                <h2>Win-Win schaffen</h2>
+                <p class="intro-text">Erfolgreiche Verhandlungen enden nicht mit Siegern und Verlierern. Sie schaffen
+                    Lösungen, von denen alle profitieren und die Beziehungen stärken.</p>
             </div>
         </div>
     </section>
-    <section class="calc-section" id="formel">
+    <section class="chess-section" id="strategie">
         <div class="container">
-            <div class="section-header light"><span class="section-label" style="color:var(--seminar-accent)">Die
-                    Gleichung</span>
-                <h2>BWL auf den Punkt</h2>
+            <div class="section-header light"><span class="section-label" style="color:var(--seminar-accent)">Das
+                    Spiel</span>
+                <h2>Strategie trifft Empathie</h2>
                 <div class="accent-line"></div>
             </div>
-            <div class="calc-visual">
-                <div class="calc-box">
-                    <div class="emoji">💰</div>
-                    <h4>Umsatz</h4>
+            <div class="chess-visual">
+                <div class="chess-side">
+                    <div class="chess-piece">♔</div>
+                    <h4>Sie</h4>
                 </div>
-                <div class="calc-operator">−</div>
-                <div class="calc-box">
-                    <div class="emoji">📉</div>
-                    <h4>Kosten</h4>
+                <div class="vs-connector">
+                    <div class="handshake">🤝</div><span class="vs-text">WIN-WIN</span>
                 </div>
-                <div class="calc-operator">=</div>
-                <div class="calc-box">
+                <div class="chess-side">
+                    <div class="chess-piece">♚</div>
+                    <h4>Partner</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="tactics-section">
+        <div class="container">
+            <div class="section-header"><span class="section-label">Die Taktiken</span>
+                <h2>Ihre Werkzeuge</h2>
+                <div class="accent-line"></div>
+            </div>
+            <div class="tactics-grid">
+                <div class="tactic-card">
                     <div class="emoji">🎯</div>
-                    <h4>Gewinn</h4>
+                    <h4>BATNA</h4>
                 </div>
-            </div>
-        </div>
-    </section>
-    <section class="content-section">
-        <div class="container">
-            <div class="section-header"><span class="section-label">Inhalte</span>
-                <h2>Was Sie lernen</h2>
-                <div class="accent-line"></div>
-            </div>
-            <div class="content-grid">
-                <div class="content-card">
-                    <div class="emoji">📚</div>
-                    <h4>Fachbegriffe</h4>
+                <div class="tactic-card">
+                    <div class="emoji">👂</div>
+                    <h4>Aktiv Zuhören</h4>
                 </div>
-                <div class="content-card">
-                    <div class="emoji">🧠</div>
-                    <h4>BWL-Mindset</h4>
+                <div class="tactic-card">
+                    <div class="emoji">🧊</div>
+                    <h4>Emotionen</h4>
                 </div>
-                <div class="content-card">
-                    <div class="emoji">📋</div>
-                    <h4>Bilanz & GuV</h4>
-                </div>
-                <div class="content-card">
-                    <div class="emoji">🧮</div>
-                    <h4>Kalkulation</h4>
-                </div>
-                <div class="content-card">
-                    <div class="emoji">💳</div>
-                    <h4>Finanzierung</h4>
-                </div>
-                <div class="content-card">
-                    <div class="emoji">📈</div>
-                    <h4>Investitionen</h4>
+                <div class="tactic-card">
+                    <div class="emoji">🎭</div>
+                    <h4>Rollenspiele</h4>
                 </div>
             </div>
         </div>
@@ -462,11 +486,11 @@
             <div class="cta-grid">
                 <div class="target-card"><span class="section-label">Zielgruppe</span>
                     <h3>Für wen?</h3>
-                    <p>Alle, die fitter in BWL werden und auf Augenhöhe mit Fachleuten kommunizieren möchten.</p>
+                    <p>Führungskräfte, Vertriebler, Einkäufer – alle, die professionell verhandeln wollen.</p>
                 </div>
                 <div class="cta-card">
                     <h3>Interesse?</h3>
-                    <p>Betriebswirtschaft verstehen.</p><a href="../index.html#kontakt" class="btn btn-white">Kontakt
+                    <p>Verhandlungen zum Erfolg führen.</p><a href="../index.html#kontakt" class="btn btn-white">Kontakt
                         →</a>
                 </div>
             </div>
@@ -483,7 +507,7 @@
     <script>window.addEventListener('scroll', () => { document.getElementById('scrollProgress').style.width = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100 + '%' })</script>
     <script src="https://www.vallit.net/widget/embed.js" data-api-url="https://www.vallit.net"
         data-company-id="e46176c5-0f35-43b8-8e8c-c72f534519e1" data-theme="minimal" data-language="de"
-        data-color="#6366f1" data-title="Kian" data-metadata='{"page_title":"BWL für Nicht-BWLer"}'></script>
+        data-color="#6366f1" data-title="Kian" data-metadata='{"page_title":"Professionell Verhandeln"}'></script>
 </body>
 
 </html>

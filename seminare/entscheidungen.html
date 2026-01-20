@@ -5,8 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="../assets/favicon.png">
-    <title>BWL für Nicht-BWLer – WTM</title>
-    <meta name="description" content="BWL für Nicht-BWLer – Betriebswirtschaftliches Denken verstehen und anwenden.">
+    <title>Entscheidungen treffen – WTM</title>
+    <meta name="description"
+        content="Entscheidungen treffen – Kluge Entscheidungen unter Unsicherheit und Komplexität.">
     <link
         href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Source+Sans+Pro:wght@300;400;600;700&display=swap"
         rel="stylesheet">
@@ -176,50 +177,138 @@
             }
         }
 
-        .calc-section {
+        .crossroads-section {
             padding: 6rem 0;
             background: #0a0a0a
         }
 
-        .calc-visual {
+        .crossroads-visual {
             display: flex;
             justify-content: center;
-            gap: 2rem;
-            margin-top: 3rem;
-            flex-wrap: wrap;
-            align-items: center
+            margin-top: 3rem
         }
 
-        .calc-box {
-            text-align: center;
-            padding: 2rem;
-            background: linear-gradient(135deg, rgba(93, 138, 168, 0.15), rgba(93, 138, 168, 0.05));
-            border: 3px solid var(--seminar-accent);
-            border-radius: 16px;
-            min-width: 130px;
-            transition: all 0.4s
+        .crossroads {
+            position: relative;
+            width: 280px;
+            height: 280px
         }
 
-        .calc-box:hover {
-            transform: scale(1.08);
-            box-shadow: 0 0 30px rgba(93, 138, 168, 0.4)
-        }
-
-        .calc-box .emoji {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem
-        }
-
-        .calc-box h4 {
-            color: var(--seminar-accent);
-            font-size: 0.85rem;
-            margin: 0
-        }
-
-        .calc-operator {
+        .crossroads-center {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--seminar-accent), #94a3b8);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             font-size: 2rem;
+            z-index: 5;
+            animation: pulse-decision 2s infinite
+        }
+
+        @keyframes pulse-decision {
+
+            0%,
+            100% {
+                box-shadow: 0 0 0 0 rgba(93, 138, 168, 0.4)
+            }
+
+            50% {
+                box-shadow: 0 0 0 20px rgba(93, 138, 168, 0)
+            }
+        }
+
+        .path {
+            position: absolute;
+            width: 4px;
+            background: linear-gradient(to bottom, var(--seminar-accent), transparent);
+            transform-origin: top center;
+            opacity: 0.7
+        }
+
+        .path-1 {
+            top: 50%;
+            left: 50%;
+            height: 100px;
+            transform: translate(-50%, -100%) rotate(-45deg)
+        }
+
+        .path-2 {
+            top: 50%;
+            left: 50%;
+            height: 100px;
+            transform: translate(-50%, -100%) rotate(0deg)
+        }
+
+        .path-3 {
+            top: 50%;
+            left: 50%;
+            height: 100px;
+            transform: translate(-50%, -100%) rotate(45deg)
+        }
+
+        .option {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, rgba(93, 138, 168, 0.3), rgba(93, 138, 168, 0.1));
+            border: 2px solid var(--seminar-accent);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            transition: all 0.4s;
+            cursor: pointer
+        }
+
+        .option:hover {
+            transform: scale(1.2);
+            box-shadow: 0 0 30px rgba(93, 138, 168, 0.5)
+        }
+
+        .option-1 {
+            top: 5%;
+            left: 15%
+        }
+
+        .option-2 {
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%)
+        }
+
+        .option-3 {
+            top: 5%;
+            right: 15%
+        }
+
+        .option-label {
+            position: absolute;
             color: var(--seminar-accent);
-            font-weight: 700
+            font-size: 0.65rem;
+            text-align: center
+        }
+
+        .label-1 {
+            top: 60px;
+            left: 10%
+        }
+
+        .label-2 {
+            top: 55px;
+            left: 50%;
+            transform: translateX(-50%)
+        }
+
+        .label-3 {
+            top: 60px;
+            right: 10%
         }
 
         .intro-section {
@@ -269,19 +358,19 @@
             margin: 1.5rem auto 0
         }
 
-        .content-section {
+        .methods-section {
             padding: 6rem 0;
             background: var(--color-cream)
         }
 
-        .content-grid {
+        .methods-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 1.5rem;
             margin-top: 3rem
         }
 
-        .content-card {
+        .method-card {
             background: #fff;
             border-radius: 16px;
             padding: 2rem;
@@ -289,17 +378,17 @@
             transition: all 0.4s
         }
 
-        .content-card:hover {
+        .method-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 15px 30px var(--seminar-accent-light)
         }
 
-        .content-card .emoji {
+        .method-card .emoji {
             font-size: 2rem;
             margin-bottom: 0.5rem
         }
 
-        .content-card h4 {
+        .method-card h4 {
             color: var(--seminar-accent);
             font-size: 0.85rem;
             margin: 0
@@ -345,12 +434,8 @@
             }
 
             .cta-grid,
-            .content-grid {
+            .methods-grid {
                 grid-template-columns: 1fr
-            }
-
-            .calc-visual {
-                flex-direction: column
             }
         }
     </style>
@@ -378,81 +463,77 @@
             <div class="hero-content-wrapper">
                 <div class="hero-text">
                     <div class="breadcrumb"><a href="../index.html">Start</a>→<a
-                            href="../index.html#trainings">Seminare</a>→<span>BWL für Nicht-BWLer</span></div>
-                    <div class="category-badge">📊 Management</div>
-                    <h1 class="hero-title">BWL für<br><span>Nicht-BWLer</span></h1>
-                    <p class="hero-subtitle">Gewinn, Umsatz, ROI – was bedeuten diese Begriffe? Verstehen Sie die
-                        „spezielle Denke von Betriebswirten" und kommunizieren Sie auf Augenhöhe.</p>
+                            href="../index.html#trainings">Seminare</a>→<span>Entscheidungen</span></div>
+                    <div class="category-badge">🔀 Management</div>
+                    <h1 class="hero-title">Entscheidungen<br><span>treffen</span></h1>
+                    <p class="hero-subtitle">Am Scheideweg stehen und den richtigen Weg wählen. Kluge Entscheidungen
+                        unter Unsicherheit und Komplexität.</p>
                     <div class="hero-cta"><a href="../index.html#kontakt" class="btn-glow">Jetzt anfragen →</a><a
-                            href="#formel" class="btn-outline-light">Die Formel</a></div>
+                            href="#kreuzung" class="btn-outline-light">Die Weggabelung</a></div>
                 </div>
             </div>
         </div>
     </section>
     <section class="intro-section">
         <div class="container">
-            <div class="intro-content"><span class="section-label">Das Problem</span>
-                <h2>Warum versteht mich keiner?</h2>
-                <p class="intro-text">Warum versteht der zahlenorientierte Gesprächspartner nicht, dass Ihre Lösung die
-                    technisch beste ist? Wie können Sie Entscheidungen betriebswirtschaftlich fundieren?</p>
+            <div class="intro-content"><span class="section-label">Die Herausforderung</span>
+                <h2>Entscheiden heißt Verzichten</h2>
+                <p class="intro-text">Jede Entscheidung schließt Alternativen aus. Lernen Sie, mit dieser Verantwortung
+                    umzugehen und fundierte Entscheidungen zu treffen.</p>
             </div>
         </div>
     </section>
-    <section class="calc-section" id="formel">
+    <section class="crossroads-section" id="kreuzung">
         <div class="container">
             <div class="section-header light"><span class="section-label" style="color:var(--seminar-accent)">Die
-                    Gleichung</span>
-                <h2>BWL auf den Punkt</h2>
+                    Weggabelung</span>
+                <h2>Drei Wege, eine Wahl</h2>
                 <div class="accent-line"></div>
             </div>
-            <div class="calc-visual">
-                <div class="calc-box">
-                    <div class="emoji">💰</div>
-                    <h4>Umsatz</h4>
-                </div>
-                <div class="calc-operator">−</div>
-                <div class="calc-box">
-                    <div class="emoji">📉</div>
-                    <h4>Kosten</h4>
-                </div>
-                <div class="calc-operator">=</div>
-                <div class="calc-box">
-                    <div class="emoji">🎯</div>
-                    <h4>Gewinn</h4>
+            <div class="crossroads-visual">
+                <div class="crossroads">
+                    <div class="crossroads-center">🤔</div>
+                    <div class="path path-1"></div>
+                    <div class="path path-2"></div>
+                    <div class="path path-3"></div>
+                    <div class="option option-1">🅰️</div>
+                    <div class="option option-2">🅱️</div>
+                    <div class="option option-3">🅲</div><span class="option-label label-1">Sicher</span><span
+                        class="option-label label-2">Mutig</span><span class="option-label label-3">Kreativ</span>
                 </div>
             </div>
         </div>
     </section>
-    <section class="content-section">
+    <section class="methods-section">
         <div class="container">
-            <div class="section-header"><span class="section-label">Inhalte</span>
-                <h2>Was Sie lernen</h2>
+            <div class="section-header"><span class="section-label">Die Methoden</span>
+                <h2>Entscheidungswerkzeuge</h2>
                 <div class="accent-line"></div>
             </div>
-            <div class="content-grid">
-                <div class="content-card">
-                    <div class="emoji">📚</div>
-                    <h4>Fachbegriffe</h4>
+            <div class="methods-grid">
+                <div class="method-card">
+                    <div class="emoji">⚖️</div>
+                    <h4>Pro-Contra-Listen</h4>
                 </div>
-                <div class="content-card">
+                <div class="method-card">
+                    <div class="emoji">🎲</div>
+                    <h4>Szenarioplanung</h4>
+                </div>
+                <div class="method-card">
                     <div class="emoji">🧠</div>
-                    <h4>BWL-Mindset</h4>
+                    <h4>Intuition nutzen</h4>
                 </div>
-                <div class="content-card">
-                    <div class="emoji">📋</div>
-                    <h4>Bilanz & GuV</h4>
+                <div class="method-card">
+                    <div class="emoji">📊</div>
+                    <h4>Entscheidungsmatrix</h4>
                 </div>
-                <div class="content-card">
-                    <div class="emoji">🧮</div>
-                    <h4>Kalkulation</h4>
+                <div class="method-card">
+                    <div class="emoji">👥</div>
+                    <h4>Konsultativ</h4>
                 </div>
-                <div class="content-card">
-                    <div class="emoji">💳</div>
-                    <h4>Finanzierung</h4>
-                </div>
-                <div class="content-card">
-                    <div class="emoji">📈</div>
-                    <h4>Investitionen</h4>
+                <div class="method-card">
+                    <div class="emoji">⏰</div>
+                    <h4>Timeboxing</h4>
                 </div>
             </div>
         </div>
@@ -462,11 +543,11 @@
             <div class="cta-grid">
                 <div class="target-card"><span class="section-label">Zielgruppe</span>
                     <h3>Für wen?</h3>
-                    <p>Alle, die fitter in BWL werden und auf Augenhöhe mit Fachleuten kommunizieren möchten.</p>
+                    <p>Führungskräfte, Projektleiter – alle, die wichtige Entscheidungen treffen müssen.</p>
                 </div>
                 <div class="cta-card">
                     <h3>Interesse?</h3>
-                    <p>Betriebswirtschaft verstehen.</p><a href="../index.html#kontakt" class="btn btn-white">Kontakt
+                    <p>Entscheidungsstärke entwickeln.</p><a href="../index.html#kontakt" class="btn btn-white">Kontakt
                         →</a>
                 </div>
             </div>
@@ -483,7 +564,7 @@
     <script>window.addEventListener('scroll', () => { document.getElementById('scrollProgress').style.width = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100 + '%' })</script>
     <script src="https://www.vallit.net/widget/embed.js" data-api-url="https://www.vallit.net"
         data-company-id="e46176c5-0f35-43b8-8e8c-c72f534519e1" data-theme="minimal" data-language="de"
-        data-color="#6366f1" data-title="Kian" data-metadata='{"page_title":"BWL für Nicht-BWLer"}'></script>
+        data-color="#6366f1" data-title="Kian" data-metadata='{"page_title":"Entscheidungen treffen"}'></script>
 </body>
 
 </html>

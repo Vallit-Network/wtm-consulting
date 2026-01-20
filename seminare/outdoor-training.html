@@ -5,16 +5,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="../assets/favicon.png">
-    <title>BWL für Nicht-BWLer – WTM</title>
-    <meta name="description" content="BWL für Nicht-BWLer – Betriebswirtschaftliches Denken verstehen und anwenden.">
+    <title>Outdoor-Training – WTM</title>
+    <meta name="description" content="Outdoor-Training – Lernen in der Natur mit unmittelbarer Erfahrung.">
     <link
         href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Source+Sans+Pro:wght@300;400;600;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="../styles/index.css">
     <style>
         :root {
-            --seminar-accent: #5D8AA8;
-            --seminar-accent-light: rgba(93, 138, 168, 0.1);
+            --seminar-accent: #107e5e;
+            --seminar-accent-light: rgba(16, 126, 94, 0.1);
         }
 
         .scroll-progress {
@@ -31,7 +31,7 @@
             min-height: 100vh;
             display: flex;
             align-items: center;
-            background: linear-gradient(165deg, #0f172a, #1e293b, #0f172a);
+            background: linear-gradient(165deg, #0d2818, #1a3d2a, #0d2818);
             position: relative;
             overflow: hidden;
             padding: 120px 0 80px
@@ -56,7 +56,7 @@
         .orb-2 {
             width: 300px;
             height: 300px;
-            background: #94a3b8;
+            background: #4ade80;
             bottom: -50px;
             left: -50px;
             animation-delay: 4s
@@ -105,7 +105,7 @@
             background: var(--seminar-accent-light);
             border: 1px solid var(--seminar-accent);
             border-radius: 50px;
-            color: var(--seminar-accent);
+            color: #4ade80;
             font-size: 0.85rem;
             font-weight: 600;
             margin-bottom: 1.5rem;
@@ -123,7 +123,7 @@
         }
 
         .hero-title span {
-            color: var(--seminar-accent)
+            color: #4ade80
         }
 
         .hero-subtitle {
@@ -153,7 +153,7 @@
 
         .btn-glow:hover {
             transform: translateY(-3px);
-            box-shadow: 0 10px 40px rgba(93, 138, 168, 0.3)
+            box-shadow: 0 10px 40px rgba(16, 126, 94, 0.3)
         }
 
         .btn-outline-light {
@@ -176,50 +176,86 @@
             }
         }
 
-        .calc-section {
+        .nature-section {
             padding: 6rem 0;
             background: #0a0a0a
         }
 
-        .calc-visual {
+        .nature-visual {
             display: flex;
             justify-content: center;
-            gap: 2rem;
-            margin-top: 3rem;
-            flex-wrap: wrap;
-            align-items: center
+            margin-top: 3rem
         }
 
-        .calc-box {
-            text-align: center;
-            padding: 2rem;
-            background: linear-gradient(135deg, rgba(93, 138, 168, 0.15), rgba(93, 138, 168, 0.05));
-            border: 3px solid var(--seminar-accent);
-            border-radius: 16px;
-            min-width: 130px;
-            transition: all 0.4s
+        .nature-scene {
+            position: relative;
+            width: 350px;
+            height: 200px;
+            background: linear-gradient(180deg, #0d2818 0%, #1a3d2a 50%, #107e5e 100%);
+            border-radius: 20px;
+            overflow: hidden
         }
 
-        .calc-box:hover {
-            transform: scale(1.08);
-            box-shadow: 0 0 30px rgba(93, 138, 168, 0.4)
+        .sun {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: radial-gradient(circle, #fbbf24, #f59e0b);
+            border-radius: 50%;
+            animation: sun-glow 3s infinite
         }
 
-        .calc-box .emoji {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem
+        @keyframes sun-glow {
+
+            0%,
+            100% {
+                box-shadow: 0 0 20px rgba(251, 191, 36, 0.5)
+            }
+
+            50% {
+                box-shadow: 0 0 40px rgba(251, 191, 36, 0.8)
+            }
         }
 
-        .calc-box h4 {
-            color: var(--seminar-accent);
-            font-size: 0.85rem;
-            margin: 0
+        .tree {
+            position: absolute;
+            bottom: 0;
+            font-size: 3rem
         }
 
-        .calc-operator {
+        .tree-1 {
+            left: 20%
+        }
+
+        .tree-2 {
+            left: 50%
+        }
+
+        .tree-3 {
+            left: 75%
+        }
+
+        .hiker {
+            position: absolute;
+            bottom: 30px;
             font-size: 2rem;
-            color: var(--seminar-accent);
-            font-weight: 700
+            animation: hike 5s ease-in-out infinite
+        }
+
+        @keyframes hike {
+            0% {
+                left: 10%
+            }
+
+            50% {
+                left: 80%
+            }
+
+            100% {
+                left: 10%
+            }
         }
 
         .intro-section {
@@ -269,39 +305,39 @@
             margin: 1.5rem auto 0
         }
 
-        .content-section {
+        .activities-section {
             padding: 6rem 0;
             background: var(--color-cream)
         }
 
-        .content-grid {
+        .activities-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1.5rem;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
             margin-top: 3rem
         }
 
-        .content-card {
+        .activity-card {
             background: #fff;
-            border-radius: 16px;
-            padding: 2rem;
+            border-radius: 12px;
+            padding: 1.5rem;
             text-align: center;
             transition: all 0.4s
         }
 
-        .content-card:hover {
+        .activity-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 15px 30px var(--seminar-accent-light)
         }
 
-        .content-card .emoji {
+        .activity-card .emoji {
             font-size: 2rem;
             margin-bottom: 0.5rem
         }
 
-        .content-card h4 {
+        .activity-card h4 {
             color: var(--seminar-accent);
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             margin: 0
         }
 
@@ -344,13 +380,12 @@
                 justify-content: center
             }
 
-            .cta-grid,
-            .content-grid {
+            .cta-grid {
                 grid-template-columns: 1fr
             }
 
-            .calc-visual {
-                flex-direction: column
+            .activities-grid {
+                grid-template-columns: repeat(2, 1fr)
             }
         }
     </style>
@@ -378,81 +413,78 @@
             <div class="hero-content-wrapper">
                 <div class="hero-text">
                     <div class="breadcrumb"><a href="../index.html">Start</a>→<a
-                            href="../index.html#trainings">Seminare</a>→<span>BWL für Nicht-BWLer</span></div>
-                    <div class="category-badge">📊 Management</div>
-                    <h1 class="hero-title">BWL für<br><span>Nicht-BWLer</span></h1>
-                    <p class="hero-subtitle">Gewinn, Umsatz, ROI – was bedeuten diese Begriffe? Verstehen Sie die
-                        „spezielle Denke von Betriebswirten" und kommunizieren Sie auf Augenhöhe.</p>
+                            href="../index.html#trainings">Seminare</a>→<span>Outdoor-Training</span></div>
+                    <div class="category-badge">🏕️ Gesundheit</div>
+                    <h1 class="hero-title">Outdoor<br><span>Training</span></h1>
+                    <p class="hero-subtitle">Lernen in der Natur. Unmittelbare Erfahrungen, die tiefer gehen als jedes
+                        Seminar im Konferenzraum.</p>
                     <div class="hero-cta"><a href="../index.html#kontakt" class="btn-glow">Jetzt anfragen →</a><a
-                            href="#formel" class="btn-outline-light">Die Formel</a></div>
+                            href="#natur" class="btn-outline-light">Die Natur</a></div>
                 </div>
             </div>
         </div>
     </section>
     <section class="intro-section">
         <div class="container">
-            <div class="intro-content"><span class="section-label">Das Problem</span>
-                <h2>Warum versteht mich keiner?</h2>
-                <p class="intro-text">Warum versteht der zahlenorientierte Gesprächspartner nicht, dass Ihre Lösung die
-                    technisch beste ist? Wie können Sie Entscheidungen betriebswirtschaftlich fundieren?</p>
+            <div class="intro-content"><span class="section-label">Das Prinzip</span>
+                <h2>Raus aus dem Seminarraum</h2>
+                <p class="intro-text">Die Natur als Lernumgebung bietet unmittelbares Feedback. Hier zeigen sich echte
+                    Teamdynamiken, Führungsverhalten und persönliche Grenzen.</p>
             </div>
         </div>
     </section>
-    <section class="calc-section" id="formel">
+    <section class="nature-section" id="natur">
         <div class="container">
-            <div class="section-header light"><span class="section-label" style="color:var(--seminar-accent)">Die
-                    Gleichung</span>
-                <h2>BWL auf den Punkt</h2>
+            <div class="section-header light"><span class="section-label" style="color:#4ade80">Die Umgebung</span>
+                <h2>Lernen unter freiem Himmel</h2>
                 <div class="accent-line"></div>
             </div>
-            <div class="calc-visual">
-                <div class="calc-box">
-                    <div class="emoji">💰</div>
-                    <h4>Umsatz</h4>
-                </div>
-                <div class="calc-operator">−</div>
-                <div class="calc-box">
-                    <div class="emoji">📉</div>
-                    <h4>Kosten</h4>
-                </div>
-                <div class="calc-operator">=</div>
-                <div class="calc-box">
-                    <div class="emoji">🎯</div>
-                    <h4>Gewinn</h4>
+            <div class="nature-visual">
+                <div class="nature-scene">
+                    <div class="sun"></div><span class="tree tree-1">🌲</span><span class="tree tree-2">🌳</span><span
+                        class="tree tree-3">🌲</span><span class="hiker">🚶</span>
                 </div>
             </div>
         </div>
     </section>
-    <section class="content-section">
+    <section class="activities-section">
         <div class="container">
-            <div class="section-header"><span class="section-label">Inhalte</span>
-                <h2>Was Sie lernen</h2>
+            <div class="section-header"><span class="section-label">Die Aktivitäten</span>
+                <h2>Was Sie erwartet</h2>
                 <div class="accent-line"></div>
             </div>
-            <div class="content-grid">
-                <div class="content-card">
-                    <div class="emoji">📚</div>
-                    <h4>Fachbegriffe</h4>
+            <div class="activities-grid">
+                <div class="activity-card">
+                    <div class="emoji">🧗</div>
+                    <h4>Klettern</h4>
                 </div>
-                <div class="content-card">
-                    <div class="emoji">🧠</div>
-                    <h4>BWL-Mindset</h4>
+                <div class="activity-card">
+                    <div class="emoji">🛶</div>
+                    <h4>Kanu/Floß</h4>
                 </div>
-                <div class="content-card">
-                    <div class="emoji">📋</div>
-                    <h4>Bilanz & GuV</h4>
+                <div class="activity-card">
+                    <div class="emoji">🏔️</div>
+                    <h4>Bergwandern</h4>
                 </div>
-                <div class="content-card">
-                    <div class="emoji">🧮</div>
-                    <h4>Kalkulation</h4>
+                <div class="activity-card">
+                    <div class="emoji">🔥</div>
+                    <h4>Lagerfeuer</h4>
                 </div>
-                <div class="content-card">
-                    <div class="emoji">💳</div>
-                    <h4>Finanzierung</h4>
+                <div class="activity-card">
+                    <div class="emoji">🧩</div>
+                    <h4>Teamaufgaben</h4>
                 </div>
-                <div class="content-card">
-                    <div class="emoji">📈</div>
-                    <h4>Investitionen</h4>
+                <div class="activity-card">
+                    <div class="emoji">🌉</div>
+                    <h4>Brückenbau</h4>
+                </div>
+                <div class="activity-card">
+                    <div class="emoji">🧭</div>
+                    <h4>Navigation</h4>
+                </div>
+                <div class="activity-card">
+                    <div class="emoji">⛺</div>
+                    <h4>Übernachtung</h4>
                 </div>
             </div>
         </div>
@@ -462,12 +494,11 @@
             <div class="cta-grid">
                 <div class="target-card"><span class="section-label">Zielgruppe</span>
                     <h3>Für wen?</h3>
-                    <p>Alle, die fitter in BWL werden und auf Augenhöhe mit Fachleuten kommunizieren möchten.</p>
+                    <p>Teams, Führungskräfte, Projektgruppen – alle, die gemeinsam wachsen wollen.</p>
                 </div>
                 <div class="cta-card">
                     <h3>Interesse?</h3>
-                    <p>Betriebswirtschaft verstehen.</p><a href="../index.html#kontakt" class="btn btn-white">Kontakt
-                        →</a>
+                    <p>Erleben statt nur reden.</p><a href="../index.html#kontakt" class="btn btn-white">Kontakt →</a>
                 </div>
             </div>
         </div>
@@ -483,7 +514,7 @@
     <script>window.addEventListener('scroll', () => { document.getElementById('scrollProgress').style.width = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100 + '%' })</script>
     <script src="https://www.vallit.net/widget/embed.js" data-api-url="https://www.vallit.net"
         data-company-id="e46176c5-0f35-43b8-8e8c-c72f534519e1" data-theme="minimal" data-language="de"
-        data-color="#6366f1" data-title="Kian" data-metadata='{"page_title":"BWL für Nicht-BWLer"}'></script>
+        data-color="#6366f1" data-title="Kian" data-metadata='{"page_title":"Outdoor-Training"}'></script>
 </body>
 
 </html>

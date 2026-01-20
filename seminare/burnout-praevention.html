@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="../assets/favicon.png">
+    <title>Burnout-Prävention – WTM</title>
+    <meta name="description" content="Burnout-Prävention – Warnsignale erkennen und gezielt gegensteuern.">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Source+Sans+Pro:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../styles/index.css">
+    <style>
+        :root {
+            --seminar-accent: #107e5e;
+            --seminar-accent-light: rgba(16, 126, 94, 0.1);
+            --warning: #ef4444;
+        }
+
+        .scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 3px;
+            background: var(--seminar-accent);
+            z-index: 9999;
+            width: 0%
+        }
+
+        .seminar-hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(165deg, #0d2818, #1a3d2a, #0d2818);
+            position: relative;
+            overflow: hidden;
+            padding: 120px 0 80px
+        }
+
+        .hero-gradient-orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.4;
+            animation: pulse-orb 8s infinite
+        }
+
+        .orb-1 {
+            width: 400px;
+            height: 400px;
+            background: var(--seminar-accent);
+            top: -100px;
+            right: -100px
+        }
+
+        .orb-2 {
+            width: 300px;
+            height: 300px;
+            background: #4ade80;
+            bottom: -50px;
+            left: -50px;
+            animation-delay: 4s
+        }
+
+        @keyframes pulse-orb {
+
+            0%,
+            100% {
+                transform: scale(1);
+                opacity: 0.3
+            }
+
+            50% {
+                transform: scale(1.2);
+                opacity: 0.5
+            }
+        }
+
+        .hero-content-wrapper {
+            position: relative;
+            z-index: 2;
+            max-width: 800px
+        }
+
+        .hero-text {
+            color: #fff
+        }
+
+        .breadcrumb {
+            display: flex;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+            opacity: 0;
+            animation: fadeSlideUp 0.6s ease forwards
+        }
+
+        .breadcrumb a {
+            color: rgba(255, 255, 255, 0.6)
+        }
+
+        .category-badge {
+            display: inline-flex;
+            padding: 0.5rem 1rem;
+            background: var(--seminar-accent-light);
+            border: 1px solid var(--seminar-accent);
+            border-radius: 50px;
+            color: #4ade80;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            opacity: 0;
+            animation: fadeSlideUp 0.6s ease 0.1s forwards
+        }
+
+        .hero-title {
+            font-size: clamp(2rem, 4vw, 3.5rem);
+            color: #fff;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            opacity: 0;
+            animation: fadeSlideUp 0.8s ease 0.2s forwards
+        }
+
+        .hero-title span {
+            color: #4ade80
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.8;
+            margin-bottom: 2rem;
+            opacity: 0;
+            animation: fadeSlideUp 0.8s ease 0.3s forwards
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 1rem;
+            opacity: 0;
+            animation: fadeSlideUp 0.8s ease 0.5s forwards
+        }
+
+        .btn-glow {
+            background: var(--seminar-accent);
+            color: #fff;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s
+        }
+
+        .btn-glow:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 40px rgba(16, 126, 94, 0.3)
+        }
+
+        .btn-outline-light {
+            padding: 1rem 2rem;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 8px;
+            color: #fff;
+            font-weight: 600
+        }
+
+        @keyframes fadeSlideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px)
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0)
+            }
+        }
+
+        .meter-section {
+            padding: 6rem 0;
+            background: #0a0a0a
+        }
+
+        .meter-visual {
+            display: flex;
+            justify-content: center;
+            margin-top: 3rem
+        }
+
+        .energy-meter {
+            position: relative;
+            width: 200px;
+            height: 200px
+        }
+
+        .meter-bg {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border: 12px solid rgba(74, 222, 128, 0.2);
+            border-radius: 50%
+        }
+
+        .meter-progress {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border: 12px solid transparent;
+            border-radius: 50%;
+            border-top-color: var(--warning);
+            border-right-color: var(--warning);
+            animation: drain 4s ease-in-out infinite alternate
+        }
+
+        @keyframes drain {
+            0% {
+                transform: rotate(0deg);
+                border-top-color: var(--seminar-accent);
+                border-right-color: var(--seminar-accent)
+            }
+
+            100% {
+                transform: rotate(180deg);
+                border-top-color: var(--warning);
+                border-right-color: var(--warning)
+            }
+        }
+
+        .meter-center {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center
+        }
+
+        .meter-icon {
+            font-size: 2.5rem
+        }
+
+        .meter-label {
+            color: #4ade80;
+            font-size: 0.8rem;
+            margin-top: 0.25rem
+        }
+
+        .intro-section {
+            padding: 6rem 0;
+            background: #fff
+        }
+
+        .intro-content {
+            max-width: 800px;
+            margin: 0 auto;
+
+            text-align:center] .section-label {
+                color: var(--seminar-accent);
+                font-weight: 600;
+                font-size: 0.85rem;
+                letter-spacing: 0.15em;
+                text-transform: uppercase;
+                margin-bottom: 1rem;
+                display: inline-block
+            }
+
+            .intro-text {
+                font-size: 1.15rem;
+                line-height: 1.9;
+                color: var(--color-text-light)
+            }
+
+            .section-header {
+                text-align: center;
+                margin-bottom: 4rem
+            }
+
+            .section-header.light {
+                color: #fff
+            }
+
+            .section-header.light h2 {
+                color: #fff
+            }
+
+            .accent-line {
+                width: 60px;
+                height: 3px;
+                background: var(--seminar-accent);
+                margin: 1.5rem auto 0
+            }
+
+            .warning-section {
+                padding: 6rem 0;
+                background: var(--color-cream)
+            }
+
+            .warning-grid {
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                gap: 1rem;
+                margin-top: 3rem
+            }
+
+            .warning-card {
+                background: #fff;
+                border-radius: 12px;
+                padding: 1.5rem;
+                text-align: center;
+                transition: all 0.4s;
+                border-left: 4px solid var(--warning)
+            }
+
+            .warning-card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 15px 30px var(--seminar-accent-light)
+            }
+
+            .warning-card .emoji {
+                font-size: 1.75rem;
+                margin-bottom: 0.5rem
+            }
+
+            .warning-card h4 {
+                color: var(--color-text);
+                font-size: 0.75rem;
+                margin: 0
+            }
+
+            .cta-section {
+                padding: 6rem 0;
+                background: #fff
+            }
+
+            .cta-grid {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 2rem
+            }
+
+            .target-card {
+                background: var(--color-cream);
+                border-radius: 20px;
+                padding: 3rem
+            }
+
+            .cta-card {
+                background: var(--seminar-accent);
+                border-radius: 20px;
+                padding: 3rem;
+                color: #fff
+            }
+
+            .cta-card h3 {
+                color: #fff;
+                font-size: 1.75rem;
+                margin-bottom: 1rem
+            }
+
+            @media(max-width:968px) {
+                .hero-content-wrapper {
+                    text-align: center
+                }
+
+                .hero-cta {
+                    justify-content: center
+                }
+
+                .cta-grid {
+                    grid-template-columns: 1fr
+                }
+
+                .warning-grid {
+                    grid-template-columns: repeat(2, 1fr)
+                }
+            }
+    </style>
+</head>
+
+<body>
+    <div class="scroll-progress" id="scrollProgress"></div>
+    <header id="header">
+        <div class="container">
+            <nav><a href="../index.html" class="logo"><img src="../assets/wtm_logo_gross.png" alt="WTM"></a>
+                <ul class="nav-links">
+                    <li><a href="../index.html#haltung">Haltung</a></li>
+                    <li><a href="../index.html#angebote">Angebote</a></li>
+                    <li><a href="../index.html#trainings">Trainings</a></li>
+                    <li><a href="../index.html#team">Team</a></li>
+                    <li><a href="../index.html#kontakt">Kontakt</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <section class="seminar-hero">
+        <div class="hero-gradient-orb orb-1"></div>
+        <div class="hero-gradient-orb orb-2"></div>
+        <div class="container">
+            <div class="hero-content-wrapper">
+                <div class="hero-text">
+                    <div class="breadcrumb"><a href="../index.html">Start</a>→<a
+                            href="../index.html#trainings">Seminare</a>→<span>Burnout-Prävention</span></div>
+                    <div class="category-badge">🔋 Gesundheit</div>
+                    <h1 class="hero-title">Burnout<br><span>Prävention</span></h1>
+                    <p class="hero-subtitle">Warnsignale erkennen, bevor es zu spät ist. Gezielt gegensteuern und die
+                        eigene Energie schützen.</p>
+                    <div class="hero-cta"><a href="../index.html#kontakt" class="btn-glow">Jetzt anfragen →</a><a
+                            href="#meter" class="btn-outline-light">Energie-Check</a></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="intro-section">
+        <div class="container">
+            <div class="intro-content"><span class="section-label">Die Gefahr</span>
+                <h2>Wenn die Batterie leer ist</h2>
+                <p class="intro-text">Burnout kommt schleichend. Lernen Sie, die Warnsignale zu erkennen und rechtzeitig
+                    gegenzusteuern, bevor die Erschöpfung Sie überwältigt.</p>
+            </div>
+        </div>
+    </section>
+    <section class="meter-section" id="meter">
+        <div class="container">
+            <div class="section-header light"><span class="section-label" style="color:#4ade80">Der Energielevel</span>
+                <h2>Wie voll ist Ihre Batterie?</h2>
+                <div class="accent-line"></div>
+            </div>
+            <div class="meter-visual">
+                <div class="energy-meter">
+                    <div class="meter-bg"></div>
+                    <div class="meter-progress"></div>
+                    <div class="meter-center">
+                        <div class="meter-icon">🔋</div><span class="meter-label">Energie</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="warning-section">
+        <div class="container">
+            <div class="section-header"><span class="section-label">Die Warnsignale</span>
+                <h2>Erkennen Sie die Zeichen</h2>
+                <div class="accent-line"></div>
+            </div>
+            <div class="warning-grid">
+                <div class="warning-card">
+                    <div class="emoji">😴</div>
+                    <h4>Erschöpfung</h4>
+                </div>
+                <div class="warning-card">
+                    <div class="emoji">😤</div>
+                    <h4>Zynismus</h4>
+                </div>
+                <div class="warning-card">
+                    <div class="emoji">📉</div>
+                    <h4>Leistungsabfall</h4>
+                </div>
+                <div class="warning-card">
+                    <div class="emoji">🔇</div>
+                    <h4>Rückzug</h4>
+                </div>
+                <div class="warning-card">
+                    <div class="emoji">😰</div>
+                    <h4>Angst</h4>
+                </div>
+                <div class="warning-card">
+                    <div class="emoji">🎭</div>
+                    <h4>Depersonalisation</h4>
+                </div>
+                <div class="warning-card">
+                    <div class="emoji">🚫</div>
+                    <h4>Sinnverlust</h4>
+                </div>
+                <div class="warning-card">
+                    <div class="emoji">💔</div>
+                    <h4>Emotionale Leere</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-grid">
+                <div class="target-card"><span class="section-label">Zielgruppe</span>
+                    <h3>Für wen?</h3>
+                    <p>Führungskräfte, hochbelastete Mitarbeiter:innen, Personaler und alle, die präventiv handeln
+                        wollen.</p>
+                </div>
+                <div class="cta-card">
+                    <h3>Interesse?</h3>
+                    <p>Früh erkennen, rechtzeitig handeln.</p><a href="../index.html#kontakt"
+                        class="btn btn-white">Kontakt →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="container">
+            <div class="footer-bottom">
+                <p>© 2026 WTM Management Consulting GmbH</p>
+            </div>
+        </div>
+    </footer>
+    <script src="../js/main.js"></script>
+    <script>window.addEventListener('scroll', () => { document.getElementById('scrollProgress').style.width = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100 + '%' })</script>
+    <script src="https://www.vallit.net/widget/embed.js" data-api-url="https://www.vallit.net"
+        data-company-id="e46176c5-0f35-43b8-8e8c-c72f534519e1" data-theme="minimal" data-language="de"
+        data-color="#6366f1" data-title="Kian" data-metadata='{"page_title":"Burnout-Prävention"}'></script>
+</body>
+
+</html>

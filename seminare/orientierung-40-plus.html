@@ -5,16 +5,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="../assets/favicon.png">
-    <title>BWL für Nicht-BWLer – WTM</title>
-    <meta name="description" content="BWL für Nicht-BWLer – Betriebswirtschaftliches Denken verstehen und anwenden.">
+    <title>Berufliche Orientierung 40+ – WTM</title>
+    <meta name="description"
+        content="Berufliche Orientierung 40+ – Zwischenbilanz und kraftvolle Perspektiven für die Zukunft.">
     <link
         href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Source+Sans+Pro:wght@300;400;600;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="../styles/index.css">
     <style>
         :root {
-            --seminar-accent: #5D8AA8;
-            --seminar-accent-light: rgba(93, 138, 168, 0.1);
+            --seminar-accent: #107e5e;
+            --seminar-accent-light: rgba(16, 126, 94, 0.1);
         }
 
         .scroll-progress {
@@ -31,7 +32,7 @@
             min-height: 100vh;
             display: flex;
             align-items: center;
-            background: linear-gradient(165deg, #0f172a, #1e293b, #0f172a);
+            background: linear-gradient(165deg, #0d2818, #1a3d2a, #0d2818);
             position: relative;
             overflow: hidden;
             padding: 120px 0 80px
@@ -56,7 +57,7 @@
         .orb-2 {
             width: 300px;
             height: 300px;
-            background: #94a3b8;
+            background: #4ade80;
             bottom: -50px;
             left: -50px;
             animation-delay: 4s
@@ -105,7 +106,7 @@
             background: var(--seminar-accent-light);
             border: 1px solid var(--seminar-accent);
             border-radius: 50px;
-            color: var(--seminar-accent);
+            color: #4ade80;
             font-size: 0.85rem;
             font-weight: 600;
             margin-bottom: 1.5rem;
@@ -123,7 +124,7 @@
         }
 
         .hero-title span {
-            color: var(--seminar-accent)
+            color: #4ade80
         }
 
         .hero-subtitle {
@@ -153,7 +154,7 @@
 
         .btn-glow:hover {
             transform: translateY(-3px);
-            box-shadow: 0 10px 40px rgba(93, 138, 168, 0.3)
+            box-shadow: 0 10px 40px rgba(16, 126, 94, 0.3)
         }
 
         .btn-outline-light {
@@ -176,50 +177,96 @@
             }
         }
 
-        .calc-section {
+        .timeline-section {
             padding: 6rem 0;
             background: #0a0a0a
         }
 
-        .calc-visual {
+        .timeline-visual {
             display: flex;
             justify-content: center;
-            gap: 2rem;
-            margin-top: 3rem;
-            flex-wrap: wrap;
-            align-items: center
+            margin-top: 3rem
         }
 
-        .calc-box {
-            text-align: center;
-            padding: 2rem;
-            background: linear-gradient(135deg, rgba(93, 138, 168, 0.15), rgba(93, 138, 168, 0.05));
-            border: 3px solid var(--seminar-accent);
-            border-radius: 16px;
-            min-width: 130px;
+        .life-timeline {
+            position: relative;
+            width: 100%;
+            max-width: 500px;
+            height: 120px
+        }
+
+        .timeline-bar {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: 100%;
+            height: 6px;
+            background: linear-gradient(90deg, rgba(74, 222, 128, 0.3), var(--seminar-accent), rgba(74, 222, 128, 0.3));
+            border-radius: 3px;
+            transform: translateY(-50%)
+        }
+
+        .timeline-marker {
+            position: absolute;
+            top: 50%;
+            transform: translate(-50%, -50%);
             transition: all 0.4s
         }
 
-        .calc-box:hover {
-            transform: scale(1.08);
-            box-shadow: 0 0 30px rgba(93, 138, 168, 0.4)
+        .timeline-marker:hover {
+            transform: translate(-50%, -50%) scale(1.2)
         }
 
-        .calc-box .emoji {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem
+        .marker-dot {
+            width: 24px;
+            height: 24px;
+            background: var(--seminar-accent);
+            border: 4px solid #4ade80;
+            border-radius: 50%
         }
 
-        .calc-box h4 {
-            color: var(--seminar-accent);
-            font-size: 0.85rem;
-            margin: 0
+        .marker-40 {
+            left: 40%;
+            animation: pulse-marker 2s infinite
         }
 
-        .calc-operator {
-            font-size: 2rem;
-            color: var(--seminar-accent);
-            font-weight: 700
+        .marker-label {
+            position: absolute;
+            top: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #4ade80;
+            font-weight: 700;
+            font-size: 1.2rem;
+            white-space: nowrap
+        }
+
+        @keyframes pulse-marker {
+
+            0%,
+            100% {
+                box-shadow: 0 0 0 0 rgba(74, 222, 128, 0.4)
+            }
+
+            50% {
+                box-shadow: 0 0 0 15px rgba(74, 222, 128, 0)
+            }
+        }
+
+        .past-label {
+            position: absolute;
+            left: 10%;
+            top: -30px;
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.8rem
+        }
+
+        .future-label {
+            position: absolute;
+            right: 10%;
+            top: -30px;
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.8rem
         }
 
         .intro-section {
@@ -247,6 +294,20 @@
             font-size: 1.15rem;
             line-height: 1.9;
             color: var(--color-text-light)
+        }
+
+        .quote-block {
+            background: var(--color-cream);
+            border-left: 4px solid var(--seminar-accent);
+            padding: 1.5rem 2rem;
+            margin-top: 2rem;
+            border-radius: 0 12px 12px 0
+        }
+
+        .quote-block p {
+            font-style: italic;
+            color: var(--color-text);
+            margin: 0
         }
 
         .section-header {
@@ -348,10 +409,6 @@
             .content-grid {
                 grid-template-columns: 1fr
             }
-
-            .calc-visual {
-                flex-direction: column
-            }
         }
     </style>
 </head>
@@ -378,81 +435,77 @@
             <div class="hero-content-wrapper">
                 <div class="hero-text">
                     <div class="breadcrumb"><a href="../index.html">Start</a>→<a
-                            href="../index.html#trainings">Seminare</a>→<span>BWL für Nicht-BWLer</span></div>
-                    <div class="category-badge">📊 Management</div>
-                    <h1 class="hero-title">BWL für<br><span>Nicht-BWLer</span></h1>
-                    <p class="hero-subtitle">Gewinn, Umsatz, ROI – was bedeuten diese Begriffe? Verstehen Sie die
-                        „spezielle Denke von Betriebswirten" und kommunizieren Sie auf Augenhöhe.</p>
+                            href="../index.html#trainings">Seminare</a>→<span>Orientierung 40+</span></div>
+                    <div class="category-badge">🧭 Gesundheit</div>
+                    <h1 class="hero-title">Berufliche Orientierung<br><span>40 plus</span></h1>
+                    <p class="hero-subtitle">Zwischenbilanz in der Lebensmitte. Den inneren Kompass neu ausrichten und
+                        kraftvolle Perspektiven für Beruf und Privatleben entwickeln.</p>
                     <div class="hero-cta"><a href="../index.html#kontakt" class="btn-glow">Jetzt anfragen →</a><a
-                            href="#formel" class="btn-outline-light">Die Formel</a></div>
+                            href="#timeline" class="btn-outline-light">Wo stehe ich?</a></div>
                 </div>
             </div>
         </div>
     </section>
     <section class="intro-section">
         <div class="container">
-            <div class="intro-content"><span class="section-label">Das Problem</span>
-                <h2>Warum versteht mich keiner?</h2>
-                <p class="intro-text">Warum versteht der zahlenorientierte Gesprächspartner nicht, dass Ihre Lösung die
-                    technisch beste ist? Wie können Sie Entscheidungen betriebswirtschaftlich fundieren?</p>
+            <div class="intro-content"><span class="section-label">Die Fragen</span>
+                <h2>Wo stehe ich im Leben?</h2>
+                <p class="intro-text">Was habe ich erreicht? Wie stelle ich mir meine Zukunft beruflich und persönlich
+                    vor? Eine Standortbestimmung ist sinnvoll und wichtig.</p>
+                <div class="quote-block">
+                    <p>„Es gehört zur Lebensmitte, dass man Zwischenbilanz macht und sich die Frage stellt: Wo stehe
+                        ich?"</p>
+                </div>
             </div>
         </div>
     </section>
-    <section class="calc-section" id="formel">
+    <section class="timeline-section" id="timeline">
         <div class="container">
-            <div class="section-header light"><span class="section-label" style="color:var(--seminar-accent)">Die
-                    Gleichung</span>
-                <h2>BWL auf den Punkt</h2>
+            <div class="section-header light"><span class="section-label" style="color:#4ade80">Die Lebenslinie</span>
+                <h2>Standortbestimmung</h2>
                 <div class="accent-line"></div>
             </div>
-            <div class="calc-visual">
-                <div class="calc-box">
-                    <div class="emoji">💰</div>
-                    <h4>Umsatz</h4>
-                </div>
-                <div class="calc-operator">−</div>
-                <div class="calc-box">
-                    <div class="emoji">📉</div>
-                    <h4>Kosten</h4>
-                </div>
-                <div class="calc-operator">=</div>
-                <div class="calc-box">
-                    <div class="emoji">🎯</div>
-                    <h4>Gewinn</h4>
+            <div class="timeline-visual">
+                <div class="life-timeline"><span class="past-label">← Vergangenheit</span><span
+                        class="future-label">Zukunft →</span>
+                    <div class="timeline-bar"></div>
+                    <div class="timeline-marker marker-40">
+                        <div class="marker-dot"></div><span class="marker-label">40+</span>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
     <section class="content-section">
         <div class="container">
-            <div class="section-header"><span class="section-label">Inhalte</span>
-                <h2>Was Sie lernen</h2>
+            <div class="section-header"><span class="section-label">Ihre Themen</span>
+                <h2>Was Sie erwartet</h2>
                 <div class="accent-line"></div>
             </div>
             <div class="content-grid">
                 <div class="content-card">
-                    <div class="emoji">📚</div>
-                    <h4>Fachbegriffe</h4>
+                    <div class="emoji">📊</div>
+                    <h4>Persönliche Bilanzierung</h4>
                 </div>
                 <div class="content-card">
-                    <div class="emoji">🧠</div>
-                    <h4>BWL-Mindset</h4>
+                    <div class="emoji">🔍</div>
+                    <h4>Situationsanalyse</h4>
                 </div>
                 <div class="content-card">
-                    <div class="emoji">📋</div>
-                    <h4>Bilanz & GuV</h4>
+                    <div class="emoji">🔮</div>
+                    <h4>Zukunftsarbeit</h4>
                 </div>
                 <div class="content-card">
-                    <div class="emoji">🧮</div>
-                    <h4>Kalkulation</h4>
+                    <div class="emoji">🗺️</div>
+                    <h4>Lebensphasen-Landkarte</h4>
                 </div>
                 <div class="content-card">
-                    <div class="emoji">💳</div>
-                    <h4>Finanzierung</h4>
+                    <div class="emoji">🤝</div>
+                    <h4>Kollegiale Beratung</h4>
                 </div>
                 <div class="content-card">
-                    <div class="emoji">📈</div>
-                    <h4>Investitionen</h4>
+                    <div class="emoji">⚡</div>
+                    <h4>Krafttanken</h4>
                 </div>
             </div>
         </div>
@@ -462,12 +515,13 @@
             <div class="cta-grid">
                 <div class="target-card"><span class="section-label">Zielgruppe</span>
                     <h3>Für wen?</h3>
-                    <p>Alle, die fitter in BWL werden und auf Augenhöhe mit Fachleuten kommunizieren möchten.</p>
+                    <p>Mitarbeiter:innen, die wesentliche Schritte in ihrer Entwicklung getan haben und Orientierung für
+                        die nächste Phase suchen.</p>
                 </div>
                 <div class="cta-card">
                     <h3>Interesse?</h3>
-                    <p>Betriebswirtschaft verstehen.</p><a href="../index.html#kontakt" class="btn btn-white">Kontakt
-                        →</a>
+                    <p>Den inneren Kompass neu ausrichten.</p><a href="../index.html#kontakt"
+                        class="btn btn-white">Kontakt →</a>
                 </div>
             </div>
         </div>
@@ -483,7 +537,7 @@
     <script>window.addEventListener('scroll', () => { document.getElementById('scrollProgress').style.width = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100 + '%' })</script>
     <script src="https://www.vallit.net/widget/embed.js" data-api-url="https://www.vallit.net"
         data-company-id="e46176c5-0f35-43b8-8e8c-c72f534519e1" data-theme="minimal" data-language="de"
-        data-color="#6366f1" data-title="Kian" data-metadata='{"page_title":"BWL für Nicht-BWLer"}'></script>
+        data-color="#6366f1" data-title="Kian" data-metadata='{"page_title":"Berufliche Orientierung 40+"}'></script>
 </body>
 
 </html>

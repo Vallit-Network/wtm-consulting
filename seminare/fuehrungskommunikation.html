@@ -5,16 +5,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="../assets/favicon.png">
-    <title>BWL für Nicht-BWLer – WTM</title>
-    <meta name="description" content="BWL für Nicht-BWLer – Betriebswirtschaftliches Denken verstehen und anwenden.">
+    <title>Führungskommunikation – WTM</title>
+    <meta name="description" content="Führungskommunikation und arbeitsrechtliche Grundlagen für Führungskräfte.">
     <link
         href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Source+Sans+Pro:wght@300;400;600;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="../styles/index.css">
     <style>
         :root {
-            --seminar-accent: #5D8AA8;
-            --seminar-accent-light: rgba(93, 138, 168, 0.1);
+            --seminar-accent: #4A4A4E;
+            --seminar-accent-light: rgba(74, 74, 78, 0.1);
+            --accent-gold: #c9a227;
         }
 
         .scroll-progress {
@@ -22,7 +23,7 @@
             top: 0;
             left: 0;
             height: 3px;
-            background: var(--seminar-accent);
+            background: var(--accent-gold);
             z-index: 9999;
             width: 0%
         }
@@ -31,7 +32,7 @@
             min-height: 100vh;
             display: flex;
             align-items: center;
-            background: linear-gradient(165deg, #0f172a, #1e293b, #0f172a);
+            background: linear-gradient(165deg, #1a1a1c, #2d2d31, #1a1a1c);
             position: relative;
             overflow: hidden;
             padding: 120px 0 80px
@@ -41,14 +42,14 @@
             position: absolute;
             border-radius: 50%;
             filter: blur(80px);
-            opacity: 0.4;
+            opacity: 0.3;
             animation: pulse-orb 8s infinite
         }
 
         .orb-1 {
             width: 400px;
             height: 400px;
-            background: var(--seminar-accent);
+            background: var(--accent-gold);
             top: -100px;
             right: -100px
         }
@@ -56,7 +57,7 @@
         .orb-2 {
             width: 300px;
             height: 300px;
-            background: #94a3b8;
+            background: var(--seminar-accent);
             bottom: -50px;
             left: -50px;
             animation-delay: 4s
@@ -67,12 +68,12 @@
             0%,
             100% {
                 transform: scale(1);
-                opacity: 0.3
+                opacity: 0.2
             }
 
             50% {
                 transform: scale(1.2);
-                opacity: 0.5
+                opacity: 0.4
             }
         }
 
@@ -102,10 +103,10 @@
         .category-badge {
             display: inline-flex;
             padding: 0.5rem 1rem;
-            background: var(--seminar-accent-light);
-            border: 1px solid var(--seminar-accent);
+            background: rgba(201, 162, 39, 0.15);
+            border: 1px solid var(--accent-gold);
             border-radius: 50px;
-            color: var(--seminar-accent);
+            color: var(--accent-gold);
             font-size: 0.85rem;
             font-weight: 600;
             margin-bottom: 1.5rem;
@@ -123,7 +124,7 @@
         }
 
         .hero-title span {
-            color: var(--seminar-accent)
+            color: var(--accent-gold)
         }
 
         .hero-subtitle {
@@ -143,8 +144,8 @@
         }
 
         .btn-glow {
-            background: var(--seminar-accent);
-            color: #fff;
+            background: var(--accent-gold);
+            color: #1a1a1c;
             padding: 1rem 2rem;
             border-radius: 8px;
             font-weight: 600;
@@ -153,7 +154,7 @@
 
         .btn-glow:hover {
             transform: translateY(-3px);
-            box-shadow: 0 10px 40px rgba(93, 138, 168, 0.3)
+            box-shadow: 0 10px 40px rgba(201, 162, 39, 0.3)
         }
 
         .btn-outline-light {
@@ -176,50 +177,49 @@
             }
         }
 
-        .calc-section {
+        .dual-section {
             padding: 6rem 0;
             background: #0a0a0a
         }
 
-        .calc-visual {
+        .dual-visual {
             display: flex;
             justify-content: center;
-            gap: 2rem;
+            gap: 3rem;
             margin-top: 3rem;
             flex-wrap: wrap;
             align-items: center
         }
 
-        .calc-box {
+        .dual-box {
             text-align: center;
-            padding: 2rem;
-            background: linear-gradient(135deg, rgba(93, 138, 168, 0.15), rgba(93, 138, 168, 0.05));
-            border: 3px solid var(--seminar-accent);
-            border-radius: 16px;
-            min-width: 130px;
-            transition: all 0.4s
+            padding: 2.5rem;
+            background: linear-gradient(135deg, rgba(201, 162, 39, 0.15), rgba(201, 162, 39, 0.05));
+            border: 3px solid rgba(201, 162, 39, 0.4);
+            border-radius: 20px;
+            min-width: 180px;
+            transition: all 0.4s;
+            position: relative
         }
 
-        .calc-box:hover {
-            transform: scale(1.08);
-            box-shadow: 0 0 30px rgba(93, 138, 168, 0.4)
+        .dual-box:hover {
+            border-color: var(--accent-gold);
+            transform: scale(1.05)
         }
 
-        .calc-box .emoji {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem
+        .dual-box .emoji {
+            font-size: 3rem;
+            margin-bottom: 0.75rem
         }
 
-        .calc-box h4 {
-            color: var(--seminar-accent);
-            font-size: 0.85rem;
-            margin: 0
+        .dual-box h4 {
+            color: var(--accent-gold);
+            font-size: 1rem
         }
 
-        .calc-operator {
+        .dual-connector {
             font-size: 2rem;
-            color: var(--seminar-accent);
-            font-weight: 700
+            color: var(--accent-gold)
         }
 
         .intro-section {
@@ -234,7 +234,7 @@
         }
 
         .section-label {
-            color: var(--seminar-accent);
+            color: var(--accent-gold);
             font-weight: 600;
             font-size: 0.85rem;
             letter-spacing: 0.15em;
@@ -265,23 +265,23 @@
         .accent-line {
             width: 60px;
             height: 3px;
-            background: var(--seminar-accent);
+            background: var(--accent-gold);
             margin: 1.5rem auto 0
         }
 
-        .content-section {
+        .topics-section {
             padding: 6rem 0;
             background: var(--color-cream)
         }
 
-        .content-grid {
+        .topics-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 1.5rem;
             margin-top: 3rem
         }
 
-        .content-card {
+        .topic-card {
             background: #fff;
             border-radius: 16px;
             padding: 2rem;
@@ -289,17 +289,17 @@
             transition: all 0.4s
         }
 
-        .content-card:hover {
+        .topic-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 15px 30px var(--seminar-accent-light)
         }
 
-        .content-card .emoji {
+        .topic-card .emoji {
             font-size: 2rem;
             margin-bottom: 0.5rem
         }
 
-        .content-card h4 {
+        .topic-card h4 {
             color: var(--seminar-accent);
             font-size: 0.85rem;
             margin: 0
@@ -345,12 +345,16 @@
             }
 
             .cta-grid,
-            .content-grid {
+            .topics-grid {
                 grid-template-columns: 1fr
             }
 
-            .calc-visual {
+            .dual-visual {
                 flex-direction: column
+            }
+
+            .dual-connector {
+                transform: rotate(90deg)
             }
         }
     </style>
@@ -378,81 +382,76 @@
             <div class="hero-content-wrapper">
                 <div class="hero-text">
                     <div class="breadcrumb"><a href="../index.html">Start</a>→<a
-                            href="../index.html#trainings">Seminare</a>→<span>BWL für Nicht-BWLer</span></div>
-                    <div class="category-badge">📊 Management</div>
-                    <h1 class="hero-title">BWL für<br><span>Nicht-BWLer</span></h1>
-                    <p class="hero-subtitle">Gewinn, Umsatz, ROI – was bedeuten diese Begriffe? Verstehen Sie die
-                        „spezielle Denke von Betriebswirten" und kommunizieren Sie auf Augenhöhe.</p>
+                            href="../index.html#trainings">Seminare</a>→<span>Führungskommunikation</span></div>
+                    <div class="category-badge">💬 Führung</div>
+                    <h1 class="hero-title">Führungs<span>kommunikation</span><br>& Arbeitsrecht</h1>
+                    <p class="hero-subtitle">Die Verbindung von Kommunikationskompetenz und arbeitsrechtlichen
+                        Grundlagen für Führungskräfte.</p>
                     <div class="hero-cta"><a href="../index.html#kontakt" class="btn-glow">Jetzt anfragen →</a><a
-                            href="#formel" class="btn-outline-light">Die Formel</a></div>
+                            href="#dual" class="btn-outline-light">Die Verbindung</a></div>
                 </div>
             </div>
         </div>
     </section>
     <section class="intro-section">
         <div class="container">
-            <div class="intro-content"><span class="section-label">Das Problem</span>
-                <h2>Warum versteht mich keiner?</h2>
-                <p class="intro-text">Warum versteht der zahlenorientierte Gesprächspartner nicht, dass Ihre Lösung die
-                    technisch beste ist? Wie können Sie Entscheidungen betriebswirtschaftlich fundieren?</p>
+            <div class="intro-content"><span class="section-label">Das Konzept</span>
+                <h2>Kommunikation trifft Recht</h2>
+                <p class="intro-text">Als Führungskraft müssen Sie einerseits motivierend kommunizieren, andererseits
+                    rechtliche Rahmenbedingungen kennen. Diese Kombination macht Sie souverän.</p>
             </div>
         </div>
     </section>
-    <section class="calc-section" id="formel">
+    <section class="dual-section" id="dual">
         <div class="container">
-            <div class="section-header light"><span class="section-label" style="color:var(--seminar-accent)">Die
-                    Gleichung</span>
-                <h2>BWL auf den Punkt</h2>
+            <div class="section-header light"><span class="section-label" style="color:var(--accent-gold)">Die
+                    Säulen</span>
+                <h2>Zwei Welten vereint</h2>
                 <div class="accent-line"></div>
             </div>
-            <div class="calc-visual">
-                <div class="calc-box">
-                    <div class="emoji">💰</div>
-                    <h4>Umsatz</h4>
+            <div class="dual-visual">
+                <div class="dual-box">
+                    <div class="emoji">💬</div>
+                    <h4>Kommunikation</h4>
                 </div>
-                <div class="calc-operator">−</div>
-                <div class="calc-box">
-                    <div class="emoji">📉</div>
-                    <h4>Kosten</h4>
-                </div>
-                <div class="calc-operator">=</div>
-                <div class="calc-box">
-                    <div class="emoji">🎯</div>
-                    <h4>Gewinn</h4>
+                <div class="dual-connector">+</div>
+                <div class="dual-box">
+                    <div class="emoji">⚖️</div>
+                    <h4>Arbeitsrecht</h4>
                 </div>
             </div>
         </div>
     </section>
-    <section class="content-section">
+    <section class="topics-section">
         <div class="container">
-            <div class="section-header"><span class="section-label">Inhalte</span>
+            <div class="section-header"><span class="section-label">Themen</span>
                 <h2>Was Sie lernen</h2>
                 <div class="accent-line"></div>
             </div>
-            <div class="content-grid">
-                <div class="content-card">
-                    <div class="emoji">📚</div>
-                    <h4>Fachbegriffe</h4>
-                </div>
-                <div class="content-card">
-                    <div class="emoji">🧠</div>
-                    <h4>BWL-Mindset</h4>
-                </div>
-                <div class="content-card">
+            <div class="topics-grid">
+                <div class="topic-card">
                     <div class="emoji">📋</div>
-                    <h4>Bilanz & GuV</h4>
+                    <h4>Mitarbeitergespräche</h4>
                 </div>
-                <div class="content-card">
-                    <div class="emoji">🧮</div>
-                    <h4>Kalkulation</h4>
+                <div class="topic-card">
+                    <div class="emoji">⚠️</div>
+                    <h4>Abmahnung</h4>
                 </div>
-                <div class="content-card">
-                    <div class="emoji">💳</div>
-                    <h4>Finanzierung</h4>
+                <div class="topic-card">
+                    <div class="emoji">📜</div>
+                    <h4>Kündigung</h4>
                 </div>
-                <div class="content-card">
-                    <div class="emoji">📈</div>
-                    <h4>Investitionen</h4>
+                <div class="topic-card">
+                    <div class="emoji">💬</div>
+                    <h4>Feedback-Gespräche</h4>
+                </div>
+                <div class="topic-card">
+                    <div class="emoji">🤝</div>
+                    <h4>Konfliktgespräche</h4>
+                </div>
+                <div class="topic-card">
+                    <div class="emoji">📊</div>
+                    <h4>Zielvereinbarung</h4>
                 </div>
             </div>
         </div>
@@ -462,12 +461,12 @@
             <div class="cta-grid">
                 <div class="target-card"><span class="section-label">Zielgruppe</span>
                     <h3>Für wen?</h3>
-                    <p>Alle, die fitter in BWL werden und auf Augenhöhe mit Fachleuten kommunizieren möchten.</p>
+                    <p>Führungskräfte, Personalverantwortliche, Team- und Abteilungsleiter.</p>
                 </div>
                 <div class="cta-card">
                     <h3>Interesse?</h3>
-                    <p>Betriebswirtschaft verstehen.</p><a href="../index.html#kontakt" class="btn btn-white">Kontakt
-                        →</a>
+                    <p>Sicher führen mit Kommunikation und Recht.</p><a href="../index.html#kontakt"
+                        class="btn btn-white">Kontakt →</a>
                 </div>
             </div>
         </div>
@@ -483,7 +482,8 @@
     <script>window.addEventListener('scroll', () => { document.getElementById('scrollProgress').style.width = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100 + '%' })</script>
     <script src="https://www.vallit.net/widget/embed.js" data-api-url="https://www.vallit.net"
         data-company-id="e46176c5-0f35-43b8-8e8c-c72f534519e1" data-theme="minimal" data-language="de"
-        data-color="#6366f1" data-title="Kian" data-metadata='{"page_title":"BWL für Nicht-BWLer"}'></script>
+        data-color="#6366f1" data-title="Kian"
+        data-metadata='{"page_title":"Führungskommunikation und Arbeitsrecht"}'></script>
 </body>
 
 </html>
