@@ -1352,14 +1352,6 @@ document.addEventListener('DOMContentLoaded', () => {
             console.log('Found toggle button, clicking:', toggleBtn);
             toggleBtn.click();
 
-            // Dispatch explicit click just in case
-            const clickEvent = new MouseEvent('click', {
-                view: window,
-                bubbles: true,
-                cancelable: true
-            });
-            toggleBtn.dispatchEvent(clickEvent);
-
             onChatOpened();
         };
 
