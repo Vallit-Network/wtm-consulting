@@ -824,13 +824,13 @@
 
         @media (min-width: 992px) {
             .process-container {
-                grid-template-columns: 1fr 1.2fr;
+                grid-template-columns: 1fr 1.6fr;
             }
         }
 
         .process-visual {
             position: relative;
-            padding: 3rem 2rem;
+            padding: 4rem 1rem;
             background: #fff;
             border-radius: 24px;
             box-shadow: 0 20px 50px rgba(0, 0, 0, 0.05);
@@ -839,122 +839,154 @@
             align-items: center;
         }
 
-        .cycle-wrapper {
+        .chevron-cycle-wrapper {
             position: relative;
             width: 100%;
-            max-width: 500px;
-            aspect-ratio: 16/9;
             display: flex;
             align-items: center;
             justify-content: center;
+            padding: 40px 0;
+            /* Space for loops */
         }
 
-        .cycle-svg-layer {
+        .chevron-loop-svg {
             position: absolute;
-            inset: -20px;
+            inset: 0;
+            width: 100%;
+            height: 100%;
             pointer-events: none;
+            z-index: 5;
+            overflow: visible;
+        }
+
+        .loop-path {
+            fill: none;
+            stroke: #1e3a8a;
+            /* Dark Blue for loops */
+            stroke-width: 2;
+            stroke-linecap: round;
+        }
+
+        .loop-text {
+            font-family: var(--font-body);
+            /* Or handwriting font if available */
+            font-size: 14px;
+            fill: #1e3a8a;
+            font-weight: 600;
+            text-anchor: middle;
+            background: white;
+            /* Only works in HTML overlay, logic here handled by SVG placement */
+        }
+
+        .chevrons {
+            display: flex;
+            align-items: stretch;
+            justify-content: center;
+            width: 100%;
+            filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
+            position: relative;
+            z-index: 2;
+        }
+
+        .chevron-step {
+            position: relative;
+            height: 60px;
+            flex: 1;
+            margin-right: -15px;
+            /* Overlap amount */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 90px;
+        }
+
+        /* The background (border color) */
+        .chevron-bg {
+            position: absolute;
+            inset: 0;
+            background: #333;
+            /* Dark border color */
+            clip-path: polygon(0% 0%, 85% 0%, 100% 50%, 85% 100%, 0% 100%, 15% 50%);
             z-index: 1;
         }
 
-        .cycle-path {
-            fill: none;
-            stroke: var(--seminar-accent);
-            stroke-width: 2;
-            stroke-dasharray: 8 8;
-            stroke-linecap: round;
-            opacity: 0.4;
-        }
-
-        .cycle-label {
+        /* The content (white inner) */
+        .chevron-content {
             position: absolute;
-            top: -15px;
-            left: 50%;
-            transform: translateX(-50%);
+            inset: 2px;
+            /* Border thickness */
             background: #fff;
-            padding: 0.4rem 1.2rem;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            color: var(--seminar-accent);
-            font-weight: 700;
-            border: 1px solid var(--seminar-accent-light);
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-            z-index: 5;
-            white-space: nowrap;
-        }
-
-        .cycle-steps {
-            display: flex;
-            gap: 1rem;
+            clip-path: polygon(0% 0%, 85% 0%, 100% 50%, 85% 100%, 0% 100%, 15% 50%);
             z-index: 2;
-            width: 100%;
-            justify-content: space-between;
-            position: relative;
-        }
-
-        .cycle-step {
-            flex: 1;
-            background: #fff;
-            border: 2px solid var(--seminar-accent);
-            border-radius: 12px;
-            padding: 1.2rem 0.5rem;
-            text-align: center;
-            font-weight: 600;
-            color: var(--seminar-accent);
-            font-size: 0.9rem;
-            box-shadow: 0 10px 25px rgba(93, 138, 168, 0.1);
-            transition: all 0.3s ease;
             display: flex;
             align-items: center;
             justify-content: center;
-            min-height: 60px;
+            text-align: center;
+            padding-left: 10%;
+            /* Optically center text due to arrow tail */
+            padding-right: 5%;
         }
 
-        .cycle-step:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 35px rgba(93, 138, 168, 0.2);
-            background: var(--seminar-accent);
-            color: #fff;
+        .chevron-text {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: #333;
+            line-height: 1.1;
         }
 
-        .arrow-connector {
-            position: absolute;
-            top: 50%;
-            right: -18px;
-            transform: translateY(-50%);
-            color: var(--seminar-accent);
-            opacity: 0.6;
+        /* First Step: Flat Left */
+        .chevron-step:first-child .chevron-bg,
+        .chevron-step:first-child .chevron-content {
+            clip-path: polygon(0% 0%, 85% 0%, 100% 50%, 85% 100%, 0% 100%);
+            padding-left: 0;
         }
 
-        /* Responsive adjustments */
-        @media (max-width: 768px) {
-            .cycle-steps {
+        /* Last Step: Normal Chevron but no margin-right needed strictly, sticking to overlap pattern */
+        .chevron-step:last-child {
+            margin-right: 0;
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .chevrons {
                 flex-direction: column;
-                gap: 1.5rem;
+                gap: 1rem;
+                margin-right: 0;
             }
 
-            .cycle-wrapper {
-                aspect-ratio: auto;
-                padding: 2rem 0;
+            .chevron-step {
+                width: 100%;
+                margin-right: 0;
+                margin-bottom: -10px;
             }
 
-            .cycle-svg-layer {
+            /* Reset clip paths for vertical stacking if needed, or keep them? 
+               Usually vertical chevrons point down. Let's simplify for mobile.
+            */
+            .chevron-bg,
+            .chevron-content {
+                clip-path: none;
+                border-radius: 8px;
+                border: 2px solid #333;
+                inset: 0;
+            }
+
+            .chevron-content {
+                inset: 0;
+                clip-path: none;
+                padding: 0;
+            }
+
+            .chevron-step:first-child .chevron-bg,
+            .chevron-step:first-child .chevron-content {
+                clip-path: none;
+            }
+
+            .chevron-loop-svg {
                 display: none;
-                /* Simplify for mobile, remove complex SVG curve */
             }
 
-            .cycle-label {
-                position: relative;
-                top: auto;
-                left: auto;
-                transform: none;
-                margin-bottom: 2rem;
-                display: inline-block;
-            }
-
-            .process-visual {
-                flex-direction: column;
-                text-align: center;
-            }
+            /* Hide loops on very small screens */
         }
 
         .process-list {
@@ -1205,22 +1237,61 @@
                 </div>
 
                 <div class="process-visual">
-                    <div class="cycle-wrapper">
-                        <!-- Visual Loop Overlay -->
-                        <div class="cycle-label">Überwachung & Steuerung</div>
-                        <svg class="cycle-svg-layer" viewBox="0 0 500 200" preserveAspectRatio="none">
-                            <!-- Curve that goes over the top -->
-                            <path class="cycle-path" d="M 50,80 C 50,-20 450,-20 450,80" />
-                            <!-- Vertical dashed lines connecting to flow -->
-                            <path class="cycle-path" d="M 50,80 L 50,150" />
-                            <path class="cycle-path" d="M 450,80 L 450,150" />
+                    <div class="chevron-cycle-wrapper">
+                        <svg class="chevron-loop-svg" viewBox="0 0 500 150" preserveAspectRatio="xMidYMid meet">
+                            <defs>
+                                <marker id="arrowhead-blue" markerWidth="10" markerHeight="7" refX="9" refY="3.5"
+                                    orient="auto">
+                                    <polygon points="0 0, 10 3.5, 0 7" fill="#1e3a8a" />
+                                </marker>
+                            </defs>
+
+                            <!-- Top Loop: From start of Step 2 (approx x=125) to end of Step 3 (approx x=375) -->
+                            <!-- Coordinates based on 500px width, 4 steps ~125px each including overlap -->
+                            <!-- Step 1: 0-125, Step 2: 125-250, Step 3: 250-375, Step 4: 375-500 roughly -->
+
+                            <!-- Top Loop: Starts at x=130, curves up to y=10, lands at x=370 -->
+                            <path class="loop-path" d="M 130,50 Q 250,5 370,50" marker-end="url(#arrowhead-blue)" />
+
+                            <!-- Label Top -->
+                            <text x="250" y="30" class="loop-text">Überwachung</text>
+
+                            <!-- Bottom Loop: Starts at x=370, curves down to y=140, lands at x=130 -->
+                            <path class="loop-path" d="M 370,100 Q 250,145 130,100" marker-end="url(#arrowhead-blue)" />
+
+                            <!-- Label Bottom -->
+                            <text x="250" y="130" class="loop-text">& Steuerung</text>
                         </svg>
 
-                        <div class="cycle-steps">
-                            <div class="cycle-step">Initiierung</div>
-                            <div class="cycle-step">Planung</div>
-                            <div class="cycle-step">Durchführung</div>
-                            <div class="cycle-step">Abschluss</div>
+                        <div class="chevrons">
+                            <!-- Initiierung -->
+                            <div class="chevron-step">
+                                <div class="chevron-bg"></div>
+                                <div class="chevron-content">
+                                    <span class="chevron-text">Initii-<br>erung</span>
+                                </div>
+                            </div>
+                            <!-- Planung -->
+                            <div class="chevron-step">
+                                <div class="chevron-bg"></div>
+                                <div class="chevron-content">
+                                    <span class="chevron-text">Planung</span>
+                                </div>
+                            </div>
+                            <!-- Durchführung -->
+                            <div class="chevron-step">
+                                <div class="chevron-bg"></div>
+                                <div class="chevron-content">
+                                    <span class="chevron-text">Durch-<br>führung</span>
+                                </div>
+                            </div>
+                            <!-- Abschluss -->
+                            <div class="chevron-step">
+                                <div class="chevron-bg"></div>
+                                <div class="chevron-content">
+                                    <span class="chevron-text">Abschluss</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
