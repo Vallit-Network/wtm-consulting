@@ -1045,151 +1045,121 @@ document.addEventListener('DOMContentLoaded', () => {
     // ENHANCED MODAL FUNCTIONALITY
     // =========================================
     // =========================================
-    // MORPHING MODAL LOGIC (New Implementation)
+    // TEAM CARD MORPHING LOGIC (Inline Expansion)
     // =========================================
 
-    const teamModal = document.getElementById('team-modal');
-    const modalExpandBtn = document.getElementById('modal-expand-btn');
+    function generateMemberDetailsHTML(member) {
+        let html = '';
 
-    // Helper to create avatar element if missing
-    function ensureAvatarElement() {
-        const headerText = teamModal.querySelector('.modal-header-text');
-        if (headerText && !headerText.previousElementSibling?.classList.contains('modal-header-avatar')) {
-            const avatar = document.createElement('div');
-            avatar.className = 'modal-header-avatar';
-            headerText.parentElement.insertBefore(avatar, headerText);
-            return avatar;
+        // Bio
+        if (member.bio && member.bio.length > 0) {
+            html += `<h4>Über mich</h4>`;
+            member.bio.forEach(p => {
+                html += `<p>${p}</p>`;
+            });
         }
-        return teamModal.querySelector('.modal-header-avatar');
+
+        // Schwerpunkte (Quick Info)
+        if (member.quickInfo && member.quickInfo.length > 0) {
+            html += `<h4>Schwerpunkte</h4>`;
+            html += `<ul>`;
+            member.quickInfo.forEach(info => {
+                html += `<li>${info}</li>`;
+            });
+            html += `</ul>`;
+        }
+
+        // Qualifications
+        if (member.qualifications && member.qualifications.length > 0) {
+            html += `<h4>Qualifikationen</h4>`;
+            html += `<ul>`;
+            member.qualifications.forEach(q => {
+                html += `<li>${q}</li>`;
+            });
+            html += `</ul>`;
+        }
+
+        return html;
     }
 
-    function openTeamModal(memberId) {
-        const member = teamMembersData[memberId];
-        if (!member || !teamModal) return;
+    function toggleTeamMember(card, memberId) {
+        const isExpanded = card.classList.contains('expanded');
 
-        // 1. Reset State
-        teamModal.classList.remove('expanded');
-        if (modalExpandBtn) {
-            modalExpandBtn.querySelector('.btn-text').textContent = "Mehr erfahren";
-        }
-
-        // 2. Populate Data
-
-        // Photo
-        const photoWrapper = document.getElementById('modal-photo-wrapper');
-        const avatarDiv = ensureAvatarElement();
-
-        if (member.photo) {
-            photoWrapper.innerHTML = `<img src="${member.photo}" alt="${member.name}">`;
-            avatarDiv.innerHTML = `<img src="${member.photo}" alt="${member.name}" style="width:100%; height:100%; object-fit:cover;">`;
-        } else {
-            // Placeholder logic if needed
-            photoWrapper.innerHTML = `<div style="width:100%;height:100%;background:#eee;"></div>`;
-        }
-
-        // Text Info
-        teamModal.querySelector('.modal-name').textContent = member.name;
-        teamModal.querySelector('.modal-role').textContent = member.role;
-
-        // Categories
-        const categoriesContainer = document.getElementById('modal-categories');
-        if (categoriesContainer && member.categories) {
-            categoriesContainer.innerHTML = member.categories.map(cat => {
-                const config = categoryConfig[cat];
-                return config ? `<span class="member-tag">${config.label}</span>` : '';
-            }).join('');
-        }
-
-        // Quick Info (Initial View)
-        const quickInfoList = document.getElementById('modal-quick-info-list');
-        if (quickInfoList) {
-            quickInfoList.innerHTML = (member.quickInfo || []).map(info => `
-                <li>
-                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16">
-                        <polyline points="20 6 9 17 4 12"></polyline>
-                     </svg>
-                     ${info}
-                </li>
-             `).join('');
-        }
-
-        // Full Bio & Quals (Expanded View)
-        const fullBioContainer = document.getElementById('modal-full-bio');
-        if (fullBioContainer) {
-            fullBioContainer.innerHTML = (member.bio || []).map(p => `<p>${p}</p>`).join('');
-        }
-
-        const qualsList = document.getElementById('modal-quals-list');
-        if (qualsList) {
-            qualsList.innerHTML = (member.qualifications || []).map(q => `<li>${q}</li>`).join('');
-        }
-
-        // 3. Show Modal
-        teamModal.classList.add('active');
-        document.body.style.overflow = 'hidden';
-    }
-
-    function closeTeamModal() {
-        if (!teamModal) return;
-        teamModal.classList.add('closing'); // optional for exit animation
-        teamModal.classList.remove('active');
-        teamModal.classList.remove('expanded'); // Reset on close
-        document.body.style.overflow = '';
-    }
-
-    function toggleModalExpansion() {
-        if (!teamModal) return;
-
-        const isExpanded = teamModal.classList.contains('expanded');
+        // Auto-close others for cleaner view (Accordion style)
+        document.querySelectorAll('.team-member-card.expanded').forEach(otherCard => {
+            if (otherCard !== card) {
+                otherCard.classList.remove('expanded');
+                const btnSpan = otherCard.querySelector('.card-cta-btn span');
+                if (btnSpan) btnSpan.textContent = 'Mehr Anzeigen';
+            }
+        });
 
         if (isExpanded) {
-            teamModal.classList.remove('expanded');
-            modalExpandBtn.querySelector('.btn-text').textContent = "Mehr erfahren";
+            card.classList.remove('expanded');
+            const btnSpan = card.querySelector('.card-cta-btn span');
+            if (btnSpan) btnSpan.textContent = 'Mehr Anzeigen';
         } else {
-            teamModal.classList.add('expanded');
-            modalExpandBtn.querySelector('.btn-text').textContent = "Weniger anzeigen";
+            card.classList.add('expanded');
+            const btnSpan = card.querySelector('.card-cta-btn span');
+            if (btnSpan) btnSpan.textContent = 'Weniger Anzeigen';
         }
     }
 
-    // Event Listeners
-    if (modalExpandBtn) {
-        modalExpandBtn.addEventListener('click', toggleModalExpansion);
-    }
-
-    // Initial Team Cards Click
+    // Initialize Team Cards
     teamMemberCards.forEach(card => {
-        // Clean up old inline elements if they exist from previous step
-        const oldBtn = card.querySelector('.card-cta-btn');
-        if (oldBtn) oldBtn.remove();
-        const oldDetails = card.querySelector('.member-details');
-        if (oldDetails) oldDetails.remove();
+        const memberId = card.getAttribute('data-member');
+        const member = teamMembersData[memberId];
 
-        // Remove old listeners? No, just adding new ones. 
-        // Note: Event listeners accumulate unless removed by reference. 
-        // Since I'm not doing a full reload, the old inline listeners might still persist if I don't clone/replace the node.
-        // But for this environment, let's assume reload or just override.
-        // Actually, easiest way to clear listeners is cloning.
+        if (member) {
+            // 1. Create and Append "Mehr Anzeigen" Button
+            const infoContainer = card.querySelector('.member-info');
+            if (infoContainer) {
+                const btn = document.createElement('button');
+                btn.className = 'card-cta-btn';
+                btn.innerHTML = `
+                    <span>Mehr Anzeigen</span>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                `;
 
-        const newCard = card.cloneNode(true);
-        card.parentNode.replaceChild(newCard, card);
+                // Toggle on button click
+                btn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    toggleTeamMember(card, memberId);
+                });
 
-        newCard.addEventListener('click', () => {
-            const memberId = newCard.getAttribute('data-member');
-            openTeamModal(memberId);
-        });
-    });
+                infoContainer.appendChild(btn);
+            }
 
-    // Close Events
-    const modalCloseBtn = teamModal.querySelector('.modal-close');
-    const modalBackdrop = teamModal.querySelector('.modal-backdrop');
+            // 2. Create and Append Details Container
+            const detailsDiv = document.createElement('div');
+            detailsDiv.className = 'member-details';
+            detailsDiv.innerHTML = generateMemberDetailsHTML(member);
 
-    if (modalCloseBtn) modalCloseBtn.addEventListener('click', closeTeamModal);
-    if (modalBackdrop) modalBackdrop.addEventListener('click', closeTeamModal);
+            // Prevent click propagation inside details to avoid closing/toggling unexpectedly
+            detailsDiv.addEventListener('click', (e) => {
+                e.stopPropagation();
+            });
 
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && teamModal.classList.contains('active')) {
-            closeTeamModal();
+            card.appendChild(detailsDiv);
         }
+
+        // 3. Handle Overlay "Profil ansehen" click
+        const viewProfileOverlay = card.querySelector('.member-overlay');
+        if (viewProfileOverlay) {
+            viewProfileOverlay.addEventListener('click', (e) => {
+                e.stopPropagation();
+                toggleTeamMember(card, memberId);
+            });
+        }
+
+        // 4. Handle Main Card click (optional, but good for UX)
+        // Only if not clicking a link or button
+        card.addEventListener('click', (e) => {
+            // If checking selection to not trigger on random text selection?
+            toggleTeamMember(card, memberId);
+        });
     });
 
     // Close expanded cards on Escape
