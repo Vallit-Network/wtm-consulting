@@ -16,14 +16,16 @@
     <link rel="stylesheet" href="../styles/index.css">
     <style>
         :root {
-            /* Modified to Anthracite Theme */
+            /* Anthracite Theme */
             --seminar-accent: #2c2c2e;
+            /* Dark Anthracite */
             --seminar-accent-light: rgba(44, 44, 46, 0.1);
             --seminar-accent-glow: rgba(44, 44, 46, 0.3);
-            /* Silver/Grey for dark backgrounds where Anthracite would be invisible */
+            --color-text: #3A3A38;
+            --color-cream: #F5F5F3;
+            --color-border: #E5E5E0;
             --accent-highlight: #a0a0a5;
-            /* Darker accent for light backgrounds */
-            --text-highlight: #2c2c2e;
+            /* Silver/Grey highlight */
         }
 
         .scroll-progress {
@@ -31,7 +33,7 @@
             top: 0;
             left: 0;
             height: 3px;
-            background: var(--accent-highlight);
+            background: var(--seminar-accent);
             z-index: 9999;
             width: 0%;
         }
@@ -57,7 +59,8 @@
         .orb-1 {
             width: 400px;
             height: 400px;
-            background: var(--accent-highlight);
+            background: #9ca3af;
+            /* Silver */
             top: -100px;
             right: -100px;
         }
@@ -112,10 +115,10 @@
         .category-badge {
             display: inline-flex;
             padding: 0.5rem 1rem;
-            background: rgba(201, 162, 39, 0.15);
-            border: 1px solid var(--accent-highlight);
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
             border-radius: 50px;
-            color: var(--accent-highlight);
+            color: #fff;
             font-size: 0.85rem;
             font-weight: 600;
             margin-bottom: 1.5rem;
@@ -133,7 +136,7 @@
         }
 
         .hero-title span {
-            color: var(--accent-highlight);
+            color: #9ca3af;
         }
 
         .hero-subtitle {
@@ -170,7 +173,7 @@
         .meta-tag svg {
             width: 16px;
             height: 16px;
-            stroke: var(--accent-highlight);
+            stroke: #9ca3af;
         }
 
         .hero-cta {
@@ -181,8 +184,8 @@
         }
 
         .btn-glow {
-            background: var(--accent-highlight);
-            color: #1a1a1c;
+            background: #fff;
+            color: var(--seminar-accent);
             padding: 1rem 2rem;
             border-radius: 8px;
             font-weight: 600;
@@ -191,7 +194,7 @@
 
         .btn-glow:hover {
             transform: translateY(-3px);
-            box-shadow: 0 10px 40px rgba(201, 162, 39, 0.3);
+            box-shadow: 0 10px 40px rgba(255, 255, 255, 0.2);
         }
 
         .btn-outline-light {
@@ -215,47 +218,6 @@
             }
         }
 
-        /* Network Visual */
-        .network-section {
-            padding: 6rem 0;
-            background: var(--color-cream);
-        }
-
-        .network-visual {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin-top: 3rem;
-            flex-wrap: wrap;
-        }
-
-        .network-node {
-            background: #fff;
-            border-radius: 50%;
-            width: 100px;
-            height: 100px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 600;
-            color: var(--seminar-accent);
-            transition: all 0.4s;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-            position: relative;
-        }
-
-        .network-node:hover {
-            transform: scale(1.1);
-            box-shadow: 0 10px 30px rgba(201, 162, 39, 0.2);
-        }
-
-        .network-node.center {
-            background: var(--accent-highlight);
-            color: #1a1a1c;
-            width: 120px;
-            height: 120px;
-        }
-
         /* Sections */
         .intro-section {
             padding: 6rem 0;
@@ -269,7 +231,7 @@
         }
 
         .section-label {
-            color: var(--accent-highlight);
+            color: var(--seminar-accent);
             font-weight: 600;
             font-size: 0.85rem;
             letter-spacing: 0.15em;
@@ -281,7 +243,7 @@
         .intro-text {
             font-size: 1.15rem;
             line-height: 1.9;
-            color: var(--color-text-light);
+            color: var(--color-text);
         }
 
         .goals-section {
@@ -297,7 +259,7 @@
         .accent-line {
             width: 60px;
             height: 3px;
-            background: var(--accent-highlight);
+            background: var(--seminar-accent);
             margin: 1.5rem auto 0;
         }
 
@@ -319,8 +281,8 @@
 
         .goal-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(201, 162, 39, 0.1);
-            border-color: var(--accent-highlight);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            border-color: var(--seminar-accent);
         }
 
         .goal-number {
@@ -329,8 +291,8 @@
             justify-content: center;
             width: 40px;
             height: 40px;
-            background: rgba(201, 162, 39, 0.15);
-            color: var(--accent-highlight);
+            background: var(--seminar-accent-light);
+            color: var(--seminar-accent);
             border-radius: 10px;
             font-weight: 700;
             margin-bottom: 1rem;
@@ -344,7 +306,7 @@
         }
 
         .cta-section {
-            padding: 6rem 0;
+            padding: 6rem 0 4rem;
             background: var(--color-cream);
         }
 
@@ -394,66 +356,147 @@
             }
         }
 
-        /* Timeline Styles for Content Section */
+        /* PREMIUM TIMELINE STYLES */
         .content-section {
             padding: 6rem 0;
-            background: #f8f9fa;
-            /* Slightly off-white for contrast */
-        }
-
-        .timeline {
+            background: linear-gradient(180deg, #f8faf9 0%, #fff 100%);
             position: relative;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 2rem 0;
         }
 
-        .timeline::before {
+        .content-section::before {
             content: '';
             position: absolute;
-            left: 20px;
-            /* Adjust for mobile matches marker center */
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 1px;
+            height: 80px;
+            background: var(--seminar-accent);
+        }
+
+        .journey-container {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .journey-line {
+            position: absolute;
+            left: 50%;
             top: 0;
             bottom: 0;
-            width: 2px;
-            background: var(--seminar-accent-light);
+            width: 4px;
+            background: linear-gradient(180deg,
+                    var(--seminar-accent) 0%,
+                    rgba(44, 44, 46, 0.6) 50%,
+                    rgba(44, 44, 46, 0.2) 100%);
+            transform: translateX(-50%);
+            border-radius: 4px;
         }
 
-        .timeline-item {
+        .journey-item {
+            display: flex;
+            align-items: flex-start;
             position: relative;
-            padding-left: 60px;
-            margin-bottom: 2.5rem;
+            margin-bottom: 2rem;
+            opacity: 1;
+            /* Made visible by default */
         }
 
-        .timeline-marker {
+        .journey-item:nth-child(odd) {
+            flex-direction: row;
+        }
+
+        .journey-item:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .journey-content {
+            width: calc(50% - 50px);
+            padding: 0 1.5rem;
+        }
+
+        .journey-node {
             position: absolute;
-            left: 11px;
-            /* Center on line (20px left + 1px border - 10px half width) -> approx */
-            top: 0;
-            width: 20px;
-            height: 20px;
+            left: 50%;
+            top: 20px;
+            transform: translateX(-50%);
+            z-index: 10;
+        }
+
+        .node-dot {
+            width: 24px;
+            height: 24px;
+            background: var(--seminar-accent);
             border-radius: 50%;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 0 0 4px #fff, 0 0 0 6px var(--seminar-accent);
+            transition: all 0.4s;
+        }
+
+        .node-connector {
+            position: absolute;
+            top: 50%;
+            width: 26px;
+            height: 2px;
+            background: var(--seminar-accent);
+            transform: translateY(-50%);
+        }
+
+        .journey-item:nth-child(odd) .node-connector {
+            right: 100%;
+            margin-right: 3px;
+        }
+
+        .journey-item:nth-child(even) .node-connector {
+            left: 100%;
+            margin-left: 3px;
+        }
+
+        .journey-card {
             background: #fff;
-            border: 3px solid var(--text-highlight);
-            z-index: 1;
+            border-radius: 16px;
+            padding: 1.75rem 2rem;
+            position: relative;
+            border: 1px solid rgba(44, 44, 46, 0.15);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+            transition: all 0.4s;
         }
 
-        .timeline-content h3 {
-            margin: 0 0 0.5rem 0;
-            color: var(--seminar-accent);
-            font-size: 1.2rem;
+        .journey-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--seminar-accent);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+        }
+
+        .module-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.4rem 0.8rem;
+            background: var(--seminar-accent-light);
+            border-radius: 20px;
+            margin-bottom: 0.75rem;
+        }
+
+        .module-number {
+            font-size: 0.7rem;
             font-weight: 700;
+            color: var(--seminar-accent);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
         }
 
-        .timeline-content p {
-            margin: 0;
+        .journey-title {
+            font-size: 1.15rem;
+            font-weight: 600;
             color: var(--color-text);
-            line-height: 1.6;
-        }
-
-        .cta-section {
-            padding: 4rem 0;
-            /* Override: Reduced padding to fix footer spacing */
+            margin: 0;
+            line-height: 1.4;
+            margin-bottom: 0.5rem;
         }
     </style>
 </head>
@@ -526,55 +569,130 @@
                 <div class="accent-line"></div>
             </div>
 
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <h3>Führungskultur</h3>
-                        <p>Welche Formen von Führung sind in welcher Organisation überhaupt möglich? Welche Rolle
-                            spielen Produkte und Dienstleistungen?</p>
+            <div class="journey-container">
+                <div class="journey-line"></div>
+
+                <!-- Item 1 -->
+                <div class="journey-item">
+                    <div class="journey-content">
+                        <div class="journey-card">
+                            <div class="module-badge">
+                                <span class="module-number">Thema 01</span>
+                            </div>
+                            <h3 class="journey-title">Führungskultur</h3>
+                            <p>Welche Formen von Führung sind in welcher Organisation überhaupt möglich? Welche Rolle
+                                spielen Produkte und Dienstleistungen?</p>
+                        </div>
+                    </div>
+                    <div class="journey-node">
+                        <div class="node-dot">
+                            <div class="node-ring"></div>
+                        </div>
+                        <div class="node-connector"></div>
+                    </div>
+                    <div class="journey-content"></div>
+                </div>
+
+                <!-- Item 2 -->
+                <div class="journey-item">
+                    <div class="journey-content"></div>
+                    <div class="journey-node">
+                        <div class="node-dot">
+                            <div class="node-ring"></div>
+                        </div>
+                        <div class="node-connector"></div>
+                    </div>
+                    <div class="journey-content">
+                        <div class="journey-card">
+                            <div class="module-badge">
+                                <span class="module-number">Thema 02</span>
+                            </div>
+                            <h3 class="journey-title">Führung / Rolle</h3>
+                            <p>Aufgaben von Führung. Welche Erwartungen gibt es an mich in der Rolle der Führungskraft?
+                            </p>
+                        </div>
                     </div>
                 </div>
 
-                <div class="timeline-item">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <h3>Führung / Rolle</h3>
-                        <p>Aufgaben von Führung. Welche Erwartungen gibt es an mich in der Rolle der Führungskraft?</p>
+                <!-- Item 3 -->
+                <div class="journey-item">
+                    <div class="journey-content">
+                        <div class="journey-card">
+                            <div class="module-badge">
+                                <span class="module-number">Thema 03</span>
+                            </div>
+                            <h3 class="journey-title">Anforderungen</h3>
+                            <p>Welche Anforderungen haben Teams an Führungskräfte – organisatorisch, sozial und
+                                methodisch?</p>
+                        </div>
+                    </div>
+                    <div class="journey-node">
+                        <div class="node-dot">
+                            <div class="node-ring"></div>
+                        </div>
+                        <div class="node-connector"></div>
+                    </div>
+                    <div class="journey-content"></div>
+                </div>
+
+                <!-- Item 4 -->
+                <div class="journey-item">
+                    <div class="journey-content"></div>
+                    <div class="journey-node">
+                        <div class="node-dot">
+                            <div class="node-ring"></div>
+                        </div>
+                        <div class="node-connector"></div>
+                    </div>
+                    <div class="journey-content">
+                        <div class="journey-card">
+                            <div class="module-badge">
+                                <span class="module-number">Thema 04</span>
+                            </div>
+                            <h3 class="journey-title">Führung ohne Autorisierung</h3>
+                            <p>Wie funktioniert wirksame Führung in Netzwerken ohne Hierarchie? In gleichberechtigten
+                                Teams?</p>
+                        </div>
                     </div>
                 </div>
 
-                <div class="timeline-item">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <h3>Anforderungen</h3>
-                        <p>Welche Anforderungen haben Teams an Führungskräfte – organisatorisch, sozial und methodisch?
-                        </p>
+                <!-- Item 5 -->
+                <div class="journey-item">
+                    <div class="journey-content">
+                        <div class="journey-card">
+                            <div class="module-badge">
+                                <span class="module-number">Thema 05</span>
+                            </div>
+                            <h3 class="journey-title">Führung gestalten</h3>
+                            <p>Wie muss ich Führung gestalten, damit effektive Selbstorganisation möglich wird?</p>
+                        </div>
                     </div>
+                    <div class="journey-node">
+                        <div class="node-dot">
+                            <div class="node-ring"></div>
+                        </div>
+                        <div class="node-connector"></div>
+                    </div>
+                    <div class="journey-content"></div>
                 </div>
 
-                <div class="timeline-item">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <h3>Führung ohne Autorisierung</h3>
-                        <p>Wie funktioniert wirksame Führung in Netzwerken ohne Hierarchie? In gleichberechtigten Teams?
-                        </p>
+                <!-- Item 6 -->
+                <div class="journey-item">
+                    <div class="journey-content"></div>
+                    <div class="journey-node">
+                        <div class="node-dot">
+                            <div class="node-ring"></div>
+                        </div>
+                        <div class="node-connector"></div>
                     </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <h3>Führung gestalten</h3>
-                        <p>Wie muss ich Führung gestalten, damit effektive Selbstorganisation möglich wird?</p>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <h3>Raum halten</h3>
-                        <p>Wie hält die Führungskraft den Raum für die Selbstorganisation des Teams?</p>
+                    <div class="journey-content">
+                        <div class="journey-card">
+                            <div class="module-badge">
+                                <span class="module-number">Thema 06</span>
+                            </div>
+                            <h3 class="journey-title">Raum halten</h3>
+                            <p>Wie hält die Führungskraft den Raum für die Selbstorganisation des Teams?</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -634,11 +752,54 @@
                 <div class="footer-brand"><a href="../index.html" class="logo"><img src="../assets/logo.png"
                             alt="WTM"></a>
                     <p>Training · Coaching · Beratung</p>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/wtm_management_consulting/" target="_blank" rel="noopener"
+                            aria-label="Instagram">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                            </svg>
+                        </a>
+                        <a href="https://www.linkedin.com/company/wtm-management-consulting" target="_blank"
+                            rel="noopener" aria-label="LinkedIn">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                            </svg>
+                        </a>
+                        <a href="https://www.youtube.com/channel/UC4rGdW9ApMpjFxbosjRshQg" target="_blank"
+                            rel="noopener" aria-label="YouTube">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Angebote</h4>
+                    <ul class="footer-links">
+                        <li><a href="../index.html#trainings">Trainings & Seminare</a></li>
+                        <li><a href="../index.html#angebote">Coaching</a></li>
+                        <li><a href="../index.html#angebote">Teamentwicklung</a></li>
+                        <li><a href="../index.html#trainings">Ausbildungen</a></li>
+                    </ul>
                 </div>
                 <div class="footer-col">
                     <h4>Kontakt</h4>
-                    <ul class="footer-links">
-                        <li><a href="tel:+4923113722666">0231 137 22 666</a></li>
+                    <ul class="footer-links footer-contact">
+                        <li>Neuer Graben 61</li>
+                        <li>44139 Dortmund</li>
+                        <li>
+                            <a href="tel:+4923113722666">
+                                <span class="contact-mode">Tel:</span> 0231 / 137 22 666
+                            </a>
+                        </li>
+                        <li>
+                            <a href="mailto:info@wtm-consulting.de">
+                                <span class="contact-mode">Mail:</span> info@wtm-consulting.de
+                            </a>
+                        </li>
                     </ul>
                 </div>
                 <div class="footer-col">
@@ -650,7 +811,9 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>© 2026 WTM Management Consulting GmbH.</p>
+                <div class="copyright">
+                    <p>&copy; 2026 WTM Management Consulting GmbH. Alle Rechte vorbehalten.</p>
+                </div>
             </div>
         </div>
     </footer>
