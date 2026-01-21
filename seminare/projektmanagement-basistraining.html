@@ -1098,110 +1098,84 @@
 
     <div class="process-visual">
         <div class="svg-container">
-            <svg viewBox="0 0 800 300" preserveAspectRatio="xMidYMid meet" class="process-svg">
-                <defs>
-                    <marker id="arrowhead-blue" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
-                        <polygon points="0 0, 10 3.5, 0 7" fill="#1e3a8a" />
-                    </marker>
-                    <filter id="dropShadow" x="-20%" y="-20%" width="140%" height="140%">
-                        <feGaussianBlur in="SourceAlpha" stdDeviation="3" />
-                        <feOffset dx="2" dy="4" result="offsetblur" />
-                        <feComponentTransfer>
-                            <feFuncA type="linear" slope="0.1" />
-                        </feComponentTransfer>
-                        <feMerge>
-                            <feMergeNode />
-                            <feMergeNode in="SourceGraphic" />
-                        </feMerge>
-                    </filter>
-                </defs>
+<svg viewBox="0 0 700 300" preserveAspectRatio="xMidYMid meet" class="process-svg">
+    <defs>
+        <marker id="arrowhead-blue" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+            <polygon points="0 0, 10 3.5, 0 7" fill="#1d4ed8" />
+        </marker>
+        <filter id="dropShadow" x="-20%" y="-20%" width="140%" height="140%">
+            <feGaussianBlur in="SourceAlpha" stdDeviation="2" />
+            <feOffset dx="1" dy="2" result="offsetblur" />
+            <feComponentTransfer>
+                <feFuncA type="linear" slope="0.15" />
+            </feComponentTransfer>
+            <feMerge>
+                <feMergeNode />
+                <feMergeNode in="SourceGraphic" />
+            </feMerge>
+        </filter>
+    </defs>
 
-                <!-- 
-                                Grid/Layout Logic:
-                                Y-Center of Boxes: 150
-                                Box Height: 80
-                                Box Width: 180
-                                Gap: 10
-                                Arrow Depth: 20
-                                
-                                X Start positions:
-                                1. Init: 10
-                                2. Plan: 200
-                                3. Durch: 390
-                                4. Abschl: 580
-                            -->
+    <!-- STYLES -->
+    <style>
+        .svg-text {
+            font-family: system-ui, -apple-system, sans-serif;
+            font-weight: 700;
+            font-size: 15px;
+            fill: #2c2c2e;
+        }
 
-                <!-- STEP 1: Initiierung -->
-                <!-- Flat Left (10,110) -> Arrow Right (190,150) -> (170,190) -> Flat Left Bottom (10,190) -->
-                <path d="M 10,110 L 170,110 L 190,150 L 170,190 L 10,190 Z" fill="#ffffff" stroke="#333333"
-                    stroke-width="2.5" filter="url(#dropShadow)" />
-                <text x="90" y="155" text-anchor="middle" font-family="sans-serif" font-weight="bold" font-size="16"
-                    fill="#333">Initiierung</text>
+        .svg-shape {
+            fill: #ffffff;
+            stroke: #2c2c2e;
+            stroke-width: 2;
+            vector-effect: non-scaling-stroke;
+        }
 
-                <!-- STEP 2: Planung -->
-                <!-- Indent Left (200,110 -> 220,150 -> 200,190) -> Arrow Right (360,110 -> 380,150 -> 360,190) -->
-                <!-- Coordinates: 
-                                 TopLeft: 200,110 (Indent Start) -> Needs to receive the arrow from prev.
-                                 Actually, prev arrow tip is at 190. 
-                                 So this box should start around 200. Indent creates a notch.
-                                 Notch: The previous arrow point is at 190. The gap is 10.
-                                 So the "inner" point of this notch should be at 200 + arrow_depth? No.
-                                 The visual gap should be uniform parallel lines.
-                                 
-                                 Correction:
-                                 Path 1 (Init) Tip: 190,150.
-                                 Path 2 (Plan) Notch Tip: 200,150 (If gap is 10).
-                                 So Top Left is 180,110? No that would overlap.
-                                 Let's use parallel shifting.
-                                 Step 1 Right Edge: (170,110) -> (190,150) -> (170,190).
-                                 Step 2 Left Edge: (180,110) -> (200,150) -> (180,190).
-                                 This creates a 10px parallel gap.
-                                 Step 2 Right Edge: (340,110) -> (360,150) -> (340,190).
-                            -->
-                <path d="M 210,110 L 370,110 L 390,150 L 370,190 L 210,190 L 230,150 Z" fill="#ffffff" stroke="#333333"
-                    stroke-width="2.5" filter="url(#dropShadow)" />
-                <text x="300" y="155" text-anchor="middle" font-family="sans-serif" font-weight="bold" font-size="16"
-                    fill="#333">Planung</text>
+        .svg-loop {
+            fill: none;
+            stroke: #1d4ed8;
+            stroke-width: 2.5;
+            stroke-linecap: round;
+        }
 
-                <!-- STEP 3: Durchführung -->
-                <!-- Left Edge: (380,110) -> (400,150) -> (380,190) [10px gap from Step 2's 370/390] -->
-                <!-- Right Edge: (540,110) -> (560,150) -> (540,190) -->
-                <path d="M 410,110 L 570,110 L 590,150 L 570,190 L 410,190 L 430,150 Z" fill="#ffffff" stroke="#333333"
-                    stroke-width="2.5" filter="url(#dropShadow)" />
-                <text x="500" y="155" text-anchor="middle" font-family="sans-serif" font-weight="bold" font-size="16"
-                    fill="#333">Durchführung</text>
+        .svg-loop-text {
+            font-family: system-ui, -apple-system, sans-serif;
+            font-weight: 700;
+            font-size: 14px;
+            fill: #1d4ed8;
+        }
+    </style>
 
-                <!-- STEP 4: Abschluss -->
-                <!-- Left Edge: (580,110) -> (600,150) -> (580,190). -->
-                <!-- Right Edge: Flat Vertical at 740? Or Arrow? -->
-                <!-- Hand drawn sketch shows clear FLAT vertical right edge. -->
-                <!-- Coordinates: (610,110) -> (770,110) -> (770,190) -> (610,190) -> (630,150) -->
-                <path d="M 610,110 L 770,110 L 770,190 L 610,190 L 630,150 Z" fill="#ffffff" stroke="#333333"
-                    stroke-width="2.5" filter="url(#dropShadow)" />
-                <text x="700" y="155" text-anchor="middle" font-family="sans-serif" font-weight="bold" font-size="16"
-                    fill="#333">Abschluss</text>
+    <!-- STEP 1: Initiierung -->
+    <path class="svg-shape" filter="url(#dropShadow)" d="M 10,110 L 170,110 L 190,150 L 170,190 L 10,190 Z" />
+    <text x="90" y="155" text-anchor="middle" class="svg-text">Initiierung</text>
+
+    <!-- STEP 2: Planung -->
+    <path class="svg-shape" filter="url(#dropShadow)"
+        d="M 180,110 L 340,110 L 360,150 L 340,190 L 180,190 L 200,150 Z" />
+    <text x="270" y="155" text-anchor="middle" class="svg-text">Planung</text>
+
+    <!-- STEP 3: Durchführung -->
+    <path class="svg-shape" filter="url(#dropShadow)"
+        d="M 350,110 L 510,110 L 530,150 L 510,190 L 350,190 L 370,150 Z" />
+    <text x="440" y="155" text-anchor="middle" class="svg-text">Durchführung</text>
+
+    <!-- STEP 4: Abschluss -->
+    <path class="svg-shape" filter="url(#dropShadow)" d="M 520,110 L 680,110 L 680,190 L 520,190 L 540,150 Z" />
+    <text x="610" y="155" text-anchor="middle" class="svg-text">Abschluss</text>
 
 
-                <!-- LOOPS -->
-                <!-- Top Loop: Überwachung -->
-                <!-- Curves from top of Planung (approx 300,110) to top of Durchführung (approx 500,110) -->
-                <!-- Start: 260,100 (Top of Planung). End: 540,100 (Top of Durch) -->
-                <!-- Control points to make it arch up -->
-                <path d="M 280,100 Q 400,20 520,100" fill="none" stroke="#1e3a8a" stroke-width="3"
-                    marker-end="url(#arrowhead-blue)" />
-                <text x="400" y="80" text-anchor="middle" font-family="sans-serif" font-weight="bold" font-size="16"
-                    fill="#1e3a8a">Überwachung</text>
+    <!-- LOOPS -->
+    <!-- Top Loop: Überwachung -->
+    <path class="svg-loop" marker-end="url(#arrowhead-blue)" d="M 270,100 Q 355,30 440,100" />
+    <text x="355" y="50" text-anchor="middle" class="svg-loop-text">Überwachung</text>
 
-                <!-- Bottom Loop: & Steuerung -->
-                <!-- Curves from bottom of Durchführung to bottom of Planung -->
-                <!-- Start: 520,200. End: 280,200. -->
-                <path d="M 520,200 Q 400,280 280,200" fill="none" stroke="#1e3a8a" stroke-width="3"
-                    marker-end="url(#arrowhead-blue)" />
-                <text x="400" y="235" text-anchor="middle" font-family="sans-serif" font-weight="bold" font-size="16"
-                    fill="#1e3a8a">& Steuerung</text>
+    <!-- Bottom Loop: & Steuerung -->
+    <path class="svg-loop" marker-end="url(#arrowhead-blue)" d="M 440,200 Q 355,270 270,200" />
+    <text x="355" y="245" text-anchor="middle" class="svg-loop-text">& Steuerung</text>
 
-            </svg>
-        </div>
+</svg>        </div>
     </div>
     </div>
     </div>
