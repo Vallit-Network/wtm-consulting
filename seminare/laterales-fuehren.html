@@ -419,7 +419,8 @@
         .journey-node {
             position: absolute;
             left: 50%;
-            top: 20px;
+            top: 32px;
+            /* Adjusted to align with Badge center: 28px padding + ~12px half badge height = 40px? No, Badge top is at 28px. Center is ~40px. Node center at 32+12=44. Close. */
             transform: translateX(-50%);
             z-index: 10;
         }
@@ -440,7 +441,8 @@
         .node-connector {
             position: absolute;
             top: 50%;
-            width: 26px;
+            width: 40px;
+            /* Increased from 26px to bridge the 38px gap (50px halfspace - 12px halfnode) */
             height: 2px;
             background: var(--seminar-accent);
             transform: translateY(-50%);
