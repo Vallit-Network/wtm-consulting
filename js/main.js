@@ -327,12 +327,53 @@ document.addEventListener('DOMContentLoaded', () => {
     const carouselNext = document.querySelector('.carousel-btn.next');
 
     if (carouselPrev && carouselNext && seminarGrid) {
-        carouselPrev.addEventListener('click', () => {
-            seminarGrid.scrollBy({ left: -450, behavior: 'smooth' });
-        });
+        const getCardWidth = () => {
+            const card = seminarGrid.querySelector('.training-card');
+            if (!card) return 372; // Fallback: 340px width + 32px gap
+            const style = window.getComputedStyle(seminarGrid);
+            const gap = parseFloat(style.gap) || 32;
+            return card.offsetWidth + gap;
+        };
+
+        const isScrollAtEnd = () => {
+            // Use a small tolerance for distinct browser sub-pixel rendering
+            return seminarGrid.scrollLeft + seminarGrid.clientWidth >= seminarGrid.scrollWidth - 10;
+        };
+
+        const isScrollAtStart = () => {
+            return seminarGrid.scrollLeft <= 10;
+        };
 
         carouselNext.addEventListener('click', () => {
-            seminarGrid.scrollBy({ left: 450, behavior: 'smooth' });
+            const cardWidth = getCardWidth();
+
+            // If we are at the end, move the first item to the back to create an infinite loop
+            if (isScrollAtEnd()) {
+                const firstCard = seminarGrid.firstElementChild;
+                if (firstCard) {
+                    seminarGrid.appendChild(firstCard);
+                    // Adjust scroll position to prevent visual jump
+                    seminarGrid.scrollLeft -= cardWidth;
+                }
+            }
+
+            seminarGrid.scrollBy({ left: cardWidth, behavior: 'smooth' });
+        });
+
+        carouselPrev.addEventListener('click', () => {
+            const cardWidth = getCardWidth();
+
+            // If we are at the start, move the last item to the front
+            if (isScrollAtStart()) {
+                const lastCard = seminarGrid.lastElementChild;
+                if (lastCard) {
+                    seminarGrid.prepend(lastCard);
+                    // Adjust scroll position to prevent visual jump
+                    seminarGrid.scrollLeft += cardWidth;
+                }
+            }
+
+            seminarGrid.scrollBy({ left: -cardWidth, behavior: 'smooth' });
         });
     }
 
