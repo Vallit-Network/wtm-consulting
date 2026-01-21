@@ -807,110 +807,154 @@
 
         /* Process Section & Cycle Diagram */
         .process-section {
-            padding: 6rem 0;
+            padding: 8rem 0;
             background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
             overflow: hidden;
+            position: relative;
         }
 
         .process-container {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 1fr;
             gap: 4rem;
             align-items: center;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        @media (min-width: 992px) {
+            .process-container {
+                grid-template-columns: 1fr 1.2fr;
+            }
         }
 
         .process-visual {
             position: relative;
-            padding: 2rem;
+            padding: 3rem 2rem;
             background: #fff;
             border-radius: 24px;
             box-shadow: 0 20px 50px rgba(0, 0, 0, 0.05);
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
-        .process-flow {
+        .cycle-wrapper {
+            position: relative;
+            width: 100%;
+            max-width: 500px;
+            aspect-ratio: 16/9;
             display: flex;
             align-items: center;
-            justify-content: space-between;
-            position: relative;
-            padding: 40px 0;
+            justify-content: center;
         }
 
-        .process-step {
-            background: #fff;
-            border: 2px solid var(--seminar-accent);
-            border-radius: 12px;
-            padding: 1rem 1.5rem;
-            text-align: center;
-            font-weight: 600;
-            color: var(--seminar-accent);
-            position: relative;
-            z-index: 2;
-            box-shadow: 0 10px 20px rgba(93, 138, 168, 0.15);
-            width: 140px;
-            font-size: 0.9rem;
-        }
-
-        .process-step::after {
-            content: '';
+        .cycle-svg-layer {
             position: absolute;
-            right: -25px;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 25px;
-            height: 2px;
-            background: var(--seminar-accent);
+            inset: -20px;
+            pointer-events: none;
             z-index: 1;
         }
 
-        .process-step:last-child::after {
-            display: none;
-        }
-
-        /* Arrow heads for steps */
-        .process-step::before {
-            content: '';
-            position: absolute;
-            right: -25px;
-            top: 50%;
-            transform: translateY(-50%) rotate(-45deg);
-            width: 8px;
-            height: 8px;
-            border-right: 2px solid var(--seminar-accent);
-            border-bottom: 2px solid var(--seminar-accent);
-            z-index: 2;
-        }
-
-        .process-step:last-child::before {
-            display: none;
-        }
-
-        .process-loop {
-            position: absolute;
-            top: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80%;
-            height: 100%;
-            border: 2px dashed var(--seminar-accent);
-            border-bottom: none;
-            border-radius: 50% 50% 0 0 / 40px 40px 0 0;
-            z-index: 1;
+        .cycle-path {
+            fill: none;
+            stroke: var(--seminar-accent);
+            stroke-width: 2;
+            stroke-dasharray: 8 8;
+            stroke-linecap: round;
             opacity: 0.4;
         }
 
-        .loop-label {
+        .cycle-label {
             position: absolute;
             top: -15px;
             left: 50%;
             transform: translateX(-50%);
             background: #fff;
-            padding: 0.3rem 1rem;
+            padding: 0.4rem 1.2rem;
             border-radius: 20px;
-            font-size: 0.8rem;
+            font-size: 0.85rem;
             color: var(--seminar-accent);
             font-weight: 700;
             border: 1px solid var(--seminar-accent-light);
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            z-index: 5;
+            white-space: nowrap;
+        }
+
+        .cycle-steps {
+            display: flex;
+            gap: 1rem;
+            z-index: 2;
+            width: 100%;
+            justify-content: space-between;
+            position: relative;
+        }
+
+        .cycle-step {
+            flex: 1;
+            background: #fff;
+            border: 2px solid var(--seminar-accent);
+            border-radius: 12px;
+            padding: 1.2rem 0.5rem;
+            text-align: center;
+            font-weight: 600;
+            color: var(--seminar-accent);
+            font-size: 0.9rem;
+            box-shadow: 0 10px 25px rgba(93, 138, 168, 0.1);
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 60px;
+        }
+
+        .cycle-step:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(93, 138, 168, 0.2);
+            background: var(--seminar-accent);
+            color: #fff;
+        }
+
+        .arrow-connector {
+            position: absolute;
+            top: 50%;
+            right: -18px;
+            transform: translateY(-50%);
+            color: var(--seminar-accent);
+            opacity: 0.6;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .cycle-steps {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+
+            .cycle-wrapper {
+                aspect-ratio: auto;
+                padding: 2rem 0;
+            }
+
+            .cycle-svg-layer {
+                display: none;
+                /* Simplify for mobile, remove complex SVG curve */
+            }
+
+            .cycle-label {
+                position: relative;
+                top: auto;
+                left: auto;
+                transform: none;
+                margin-bottom: 2rem;
+                display: inline-block;
+            }
+
+            .process-visual {
+                flex-direction: column;
+                text-align: center;
+            }
         }
 
         .process-list {
@@ -921,60 +965,30 @@
 
         .process-list li {
             position: relative;
-            padding-left: 2rem;
-            margin-bottom: 1.5rem;
+            padding-left: 2.5rem;
+            margin-bottom: 2rem;
             color: var(--color-text);
             line-height: 1.6;
             font-size: 1.05rem;
         }
 
-        .process-list li::before {
-            content: '✓';
-            position: absolute;
-            left: 0;
-            top: 0;
+        .process-list li strong {
+            display: block;
             color: var(--seminar-accent);
-            font-weight: bold;
-            font-size: 1.2rem;
+            margin-bottom: 0.3rem;
+            font-size: 1.1rem;
         }
 
-        @media (max-width: 968px) {
-            .process-container {
-                grid-template-columns: 1fr;
-            }
-
-            .process-flow {
-                flex-direction: column;
-                gap: 2rem;
-            }
-
-            .process-step {
-                width: 100%;
-            }
-
-            .process-step::after {
-                right: auto;
-                bottom: -25px;
-                top: auto;
-                width: 2px;
-                height: 25px;
-                left: 50%;
-                transform: translateX(-50%);
-            }
-
-            .process-step::before {
-                right: auto;
-                left: 50%;
-                bottom: -25px;
-                top: auto;
-                transform: translateX(-50%) rotate(45deg);
-                margin-left: 0;
-            }
-
-            .process-loop {
-                width: 100%;
-                height: 90%;
-            }
+        .process-list li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 6px;
+            width: 24px;
+            height: 24px;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%235D8AA8' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E");
+            background-size: contain;
+            background-repeat: no-repeat;
         }
     </style>
 </head>
@@ -1178,26 +1192,36 @@
             <div class="process-container">
                 <div class="process-content">
                     <ul class="process-list">
-                        <li><strong>Einführung:</strong> Kennzeichen eines Projekts, Projekt vs. Tagesgeschäft,
-                            klassisch vs. agil.</li>
-                        <li><strong>Projektauftrag:</strong> Von der Idee zum Auftrag, Lastenheft/Pflichtenheft,
+                        <li><strong>Einführung</strong> Kennzeichen eines Projekts, Projekt vs. Tagesgeschäft, klassisch
+                            vs. agil.</li>
+                        <li><strong>Projektauftrag</strong> Von der Idee zum Auftrag, Lastenheft/Pflichtenheft,
                             Zieldefinition und Stakeholderanalyse.</li>
-                        <li><strong>Projektplanung:</strong> Projektstrukturplan, Terminplanung, Ressourcen und Kosten.
+                        <li><strong>Projektplanung</strong> Projektstrukturplan, Terminplanung, Ressourcen und Kosten.
                         </li>
-                        <li><strong>Begleitprozesse:</strong> Risikomanagement, Change Requests, Qualitätsplanung.</li>
-                        <li><strong>Kontrolle & Abschluss:</strong> Soll-Ist-Vergleich, Berichte, Lessons Learned und
+                        <li><strong>Begleitprozesse</strong> Risikomanagement, Change Requests, Qualitätsplanung.</li>
+                        <li><strong>Kontrolle & Abschluss</strong> Soll-Ist-Vergleich, Berichte, Lessons Learned und
                             Abschluss.</li>
                     </ul>
                 </div>
 
                 <div class="process-visual">
-                    <div class="loop-label">Überwachung & Steuerung</div>
-                    <div class="process-loop"></div>
-                    <div class="process-flow">
-                        <div class="process-step">Initiierung</div>
-                        <div class="process-step">Planung</div>
-                        <div class="process-step">Durchführung</div>
-                        <div class="process-step">Abschluss</div>
+                    <div class="cycle-wrapper">
+                        <!-- Visual Loop Overlay -->
+                        <div class="cycle-label">Überwachung & Steuerung</div>
+                        <svg class="cycle-svg-layer" viewBox="0 0 500 200" preserveAspectRatio="none">
+                            <!-- Curve that goes over the top -->
+                            <path class="cycle-path" d="M 50,80 C 50,-20 450,-20 450,80" />
+                            <!-- Vertical dashed lines connecting to flow -->
+                            <path class="cycle-path" d="M 50,80 L 50,150" />
+                            <path class="cycle-path" d="M 450,80 L 450,150" />
+                        </svg>
+
+                        <div class="cycle-steps">
+                            <div class="cycle-step">Initiierung</div>
+                            <div class="cycle-step">Planung</div>
+                            <div class="cycle-step">Durchführung</div>
+                            <div class="cycle-step">Abschluss</div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1266,34 +1290,6 @@
         </div>
     </section>
 
-    <section class="related-section">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-label">Weitere Führungsseminare</span>
-                <h2>Vertiefen Sie Ihre Führungskompetenz</h2>
-                <div class="accent-line"></div>
-            </div>
-
-            <div class="related-grid">
-                <div class="related-card">
-                    <h3>→</h3>
-                    <p>Vom Mitarbeiter zur Führungskraft</p>
-                    <a href="vom-mitarbeiter-zur-fuehrungskraft.html">Mehr erfahren →</a>
-                </div>
-                <div class="related-card">
-                    <h3>→</h3>
-                    <p>Delegation</p>
-                    <a href="delegation-das-handwerk-der-fuehrung.html">Mehr erfahren →</a>
-                </div>
-                <div class="related-card">
-                    <h3>→</h3>
-                    <p>Führen durch Persönlichkeit</p>
-                    <a href="fuehren-durch-persoenlichkeit.html">Mehr erfahren →</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <section class="cta-section">
         <div class="container">
             <div class="cta-grid">
@@ -1313,7 +1309,6 @@
         </div>
     </section>
 
-
     <!-- Chatbot Helper Button -->
     <div class="chatbot-helper" id="chatbotHelper">
         <button class="chatbot-helper-btn" id="openChatbot">
@@ -1329,7 +1324,7 @@
         </button>
     </div>
 
-        <footer>
+    <footer>
         <div class="container">
             <div class="footer-grid">
                 <!-- Brand Column -->
@@ -1409,7 +1404,7 @@
                     </ul>
                 </div>
             </div>
-            
+
             <div class="footer-bottom reveal">
                 <div class="copyright">
                     <p>&copy; 2026 WTM Management Consulting GmbH. Alle Rechte vorbehalten.</p>
