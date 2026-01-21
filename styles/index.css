@@ -2769,6 +2769,125 @@ footer::before {
 /* ============================================
    TEAM MODAL
    ============================================ */
+/* Expanded Card State */
+.team-member-card.expanded {
+    grid-column: span 2;
+    z-index: 10;
+    box-shadow: var(--shadow-xl);
+    border-color: var(--color-primary);
+}
+
+@media (max-width: 900px) {
+    .team-member-card.expanded {
+        grid-column: span 1;
+    }
+}
+
+.member-details {
+    padding: 0 1.5rem 1.5rem;
+    border-top: 1px solid var(--color-border);
+    margin-top: 0;
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.team-member-card.expanded .member-details {
+    opacity: 1;
+    max-height: 1000px;
+    /* Arbitrary large height */
+    margin-top: 1rem;
+    padding-top: 1rem;
+}
+
+/* New "Mehr Anzeigen" Button */
+.card-cta-btn {
+    margin-top: 1rem;
+    background: transparent;
+    border: 1px solid var(--color-primary);
+    color: var(--color-primary);
+    width: 100%;
+    padding: 0.6rem;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all var(--transition-fast);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.card-cta-btn:hover {
+    background: var(--color-primary);
+    color: white;
+}
+
+.card-cta-btn svg {
+    width: 18px;
+    height: 18px;
+    transition: transform var(--transition-fast);
+}
+
+.team-member-card.expanded .card-cta-btn svg {
+    transform: rotate(180deg);
+}
+
+.team-member-card.expanded .card-cta-btn {
+    background: var(--color-cream);
+    border-color: transparent;
+    color: var(--color-text);
+}
+
+/* Detail Content Styling */
+.member-details h4 {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-primary-dark);
+    margin-bottom: 0.5rem;
+    margin-top: 1.25rem;
+}
+
+.member-details h4:first-child {
+    margin-top: 0;
+}
+
+.member-details p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--color-text);
+    margin-bottom: 0.75rem;
+}
+
+.member-details ul {
+    list-style: none;
+    padding: 0;
+}
+
+.member-details li {
+    position: relative;
+    padding-left: 1rem;
+    font-size: 0.9rem;
+    margin-bottom: 0.4rem;
+    color: var(--color-text-light);
+}
+
+.member-details li::before {
+    content: '•';
+    color: var(--color-primary);
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+
+/* ============================================
+   TEAM MODAL (LEGACY - DISABLED)
+   ============================================ */
+/* 
 .team-modal {
     position: fixed;
     inset: 0;
@@ -2779,12 +2898,18 @@ footer::before {
     opacity: 0;
     visibility: hidden;
     transition: all 0.4s ease;
+} 
+*/
+.team-modal {
+    display: none !important;
 }
 
+/*
 .team-modal.active {
     opacity: 1;
     visibility: visible;
 }
+*/
 
 .modal-backdrop {
     position: absolute;
