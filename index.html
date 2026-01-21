@@ -1484,7 +1484,78 @@
         </div>
     </div>
 
-    <!-- Modal Removed: Replaced with Inline Morphing Cards -->
+    <!-- Team Member Modal (Morphing) -->
+    <div id="team-modal" class="team-modal">
+        <div class="modal-backdrop"></div>
+        <div class="modal-content">
+            <button class="modal-close" aria-label="Schließen">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+
+            <div class="modal-inner">
+                <!-- 1. Left Side: Photo (Morphs to Avatar) -->
+                <div class="modal-media-col">
+                    <div class="modal-photo-wrapper" id="modal-photo-wrapper">
+                        <!-- Image injected via JS -->
+                    </div>
+                </div>
+
+                <!-- 2. Right Side: Content -->
+                <div class="modal-info-col">
+                    <!-- Header: Always visible -->
+                    <div class="modal-header">
+                        <div class="modal-header-text">
+                            <span class="modal-label">Team Member</span>
+                            <h3 class="modal-name">Name Placeholder</h3>
+                            <p class="modal-role">Role Placeholder</p>
+                        </div>
+                    </div>
+
+                    <!-- Categories: Always visible -->
+                    <div class="modal-tags" id="modal-categories"></div>
+
+                    <!-- Initial View: Quick Info -->
+                    <div class="modal-state-initial">
+                        <div class="modal-quick-info">
+                            <h4>Schwerpunkte</h4>
+                            <ul id="modal-quick-info-list" class="quick-info-list"></ul>
+                        </div>
+                        <p class="modal-short-bio" id="modal-short-bio">
+                            <!-- Helper text like "Click exapnd to read full bio..." -->
+                        </p>
+                    </div>
+
+                    <!-- Expanded View: Full Bio & Quals -->
+                    <div class="modal-state-expanded">
+                        <div class="modal-scroll-content">
+                            <div class="modal-section-bio">
+                                <h4>Über mich</h4>
+                                <div id="modal-full-bio"></div>
+                            </div>
+                            <div class="modal-section-quals">
+                                <h4>Qualifikationen</h4>
+                                <ul id="modal-quals-list"></ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Toggle Button -->
+                    <button class="modal-expand-btn" id="modal-expand-btn">
+                        <span class="btn-text">Mehr erfahren</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </button>
+
+                    <!-- Contact CTA -->
+                    <button class="btn btn-primary modal-contact-btn">Kontakt aufnehmen</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script src="js/seminar-data.js"></script>
     <script src="js/main.js"></script>

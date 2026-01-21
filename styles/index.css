@@ -2767,127 +2767,10 @@ footer::before {
 }
 
 /* ============================================
-   TEAM MODAL
+   MORPHING TEAM MODAL
    ============================================ */
-/* Expanded Card State */
-.team-member-card.expanded {
-    grid-column: span 2;
-    z-index: 10;
-    box-shadow: var(--shadow-xl);
-    border-color: var(--color-primary);
-}
 
-@media (max-width: 900px) {
-    .team-member-card.expanded {
-        grid-column: span 1;
-    }
-}
-
-.member-details {
-    padding: 0 1.5rem 1.5rem;
-    border-top: 1px solid var(--color-border);
-    margin-top: 0;
-    opacity: 0;
-    max-height: 0;
-    overflow: hidden;
-    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.team-member-card.expanded .member-details {
-    opacity: 1;
-    max-height: 1000px;
-    /* Arbitrary large height */
-    margin-top: 1rem;
-    padding-top: 1rem;
-}
-
-/* New "Mehr Anzeigen" Button */
-.card-cta-btn {
-    margin-top: 1rem;
-    background: transparent;
-    border: 1px solid var(--color-primary);
-    color: var(--color-primary);
-    width: 100%;
-    padding: 0.6rem;
-    border-radius: var(--radius-sm);
-    cursor: pointer;
-    font-weight: 600;
-    font-size: 0.9rem;
-    transition: all var(--transition-fast);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
-}
-
-.card-cta-btn:hover {
-    background: var(--color-primary);
-    color: white;
-}
-
-.card-cta-btn svg {
-    width: 18px;
-    height: 18px;
-    transition: transform var(--transition-fast);
-}
-
-.team-member-card.expanded .card-cta-btn svg {
-    transform: rotate(180deg);
-}
-
-.team-member-card.expanded .card-cta-btn {
-    background: var(--color-cream);
-    border-color: transparent;
-    color: var(--color-text);
-}
-
-/* Detail Content Styling */
-.member-details h4 {
-    font-size: 0.75rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    color: var(--color-primary-dark);
-    margin-bottom: 0.5rem;
-    margin-top: 1.25rem;
-}
-
-.member-details h4:first-child {
-    margin-top: 0;
-}
-
-.member-details p {
-    font-size: 0.95rem;
-    line-height: 1.6;
-    color: var(--color-text);
-    margin-bottom: 0.75rem;
-}
-
-.member-details ul {
-    list-style: none;
-    padding: 0;
-}
-
-.member-details li {
-    position: relative;
-    padding-left: 1rem;
-    font-size: 0.9rem;
-    margin-bottom: 0.4rem;
-    color: var(--color-text-light);
-}
-
-.member-details li::before {
-    content: '•';
-    color: var(--color-primary);
-    position: absolute;
-    left: 0;
-    font-weight: bold;
-}
-
-/* ============================================
-   TEAM MODAL (LEGACY - DISABLED)
-   ============================================ */
-/* 
+/* Modal Container & Backdrop */
 .team-modal {
     position: fixed;
     inset: 0;
@@ -2898,18 +2781,351 @@ footer::before {
     opacity: 0;
     visibility: hidden;
     transition: all 0.4s ease;
-} 
-*/
-.team-modal {
-    display: none !important;
+    padding: 1rem;
 }
 
-/*
 .team-modal.active {
     opacity: 1;
     visibility: visible;
 }
+
+.modal-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(15, 23, 42, 0.85);
+    /* Darker, modern backdrop */
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+/* Modal Content Box */
+.modal-content {
+    position: relative;
+    background: var(--color-white);
+    border-radius: var(--radius-lg);
+    width: 100%;
+    max-width: 900px;
+    background: #fff;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    overflow: hidden;
+    transition: max-width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    /* Initial state max-width matches the 'compact' look */
+}
+
+.modal-inner {
+    display: flex;
+    align-items: stretch;
+    min-height: 400px;
+    transition: all 0.5s ease;
+}
+
+/* Left Col: Photo Wrapper */
+.modal-media-col {
+    width: 45%;
+    background: var(--color-cream);
+    position: relative;
+    overflow: hidden;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Initial styling: Full height image */
+.modal-photo-wrapper {
+    width: 100%;
+    height: 100%;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-photo-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Right Col: Info */
+.modal-info-col {
+    width: 55%;
+    padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    transition: width 0.5s ease;
+}
+
+/* Close Button */
+.modal-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: white;
+    border: 1px solid var(--color-border);
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 50;
+    transition: all 0.2s ease;
+    color: var(--color-text-light);
+}
+
+.modal-close:hover {
+    background: var(--color-cream);
+    color: var(--color-accent);
+}
+
+/* Header Text */
+.modal-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--color-text-muted);
+    font-weight: 600;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.modal-name {
+    font-size: 1.75rem;
+    font-family: var(--font-heading);
+    color: var(--color-deep-blue);
+    margin-bottom: 0.5rem;
+    line-height: 1.2;
+}
+
+.modal-role {
+    font-size: 1rem;
+    color: var(--color-accent);
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
+/* Categories */
+.modal-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+}
+
+/* Quick Info List (Initial View) */
+.modal-state-initial {
+    opacity: 1;
+    transition: all 0.3s ease;
+    transform: translateY(0);
+}
+
+.quick-info-list {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 1rem;
+}
+
+.quick-info-list li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    color: var(--color-text);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.quick-info-list li:last-child {
+    border-bottom: none;
+}
+
+/* Expanded Content (Hidden Initially) */
+.modal-state-expanded {
+    display: none;
+    /* Hidden by default layout flow */
+    opacity: 0;
+    flex: 1;
+    overflow: hidden;
+    animation: fadeIn 0.5s forwards;
+}
+
+.modal-scroll-content {
+    height: 100%;
+    overflow-y: auto;
+    padding-right: 1rem;
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-border) transparent;
+}
+
+.modal-section-bio h4,
+.modal-section-quals h4 {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: var(--color-primary);
+    margin: 1.5rem 0 0.75rem;
+}
+
+.modal-section-bio p {
+    margin-bottom: 1rem;
+    line-height: 1.6;
+    color: var(--color-text);
+}
+
+.modal-section-quals ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.modal-section-quals li {
+    position: relative;
+    padding-left: 1rem;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.modal-section-quals li::before {
+    content: "•";
+    color: var(--color-accent);
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+
+/* Toggle Button */
+.modal-expand-btn {
+    margin-top: auto;
+    background: transparent;
+    border: 1px solid var(--color-border);
+    padding: 0.75rem 1.5rem;
+    border-radius: var(--radius-sm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--color-text);
+    transition: all 0.2s ease;
+    width: 100%;
+    margin-bottom: 0.75rem;
+}
+
+.modal-expand-btn:hover {
+    background: var(--color-cream);
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+}
+
+.modal-expand-btn svg {
+    width: 18px;
+    height: 18px;
+    transition: transform 0.3s ease;
+}
+
+.modal-contact-btn {
+    width: 100%;
+}
+
+
+/* =========================================
+   EXPANDED STATE (Morphing Magic)
+   ========================================= */
+.team-modal.expanded .modal-inner {
+    /* Slightly taller or same */
+    min-height: 500px;
+}
+
+/* 1. Shrink the Left Column width effectively to 0 or very small, 
+   but we want it to become the "Avatar" container at the top usually.
 */
+.team-modal.expanded .modal-media-col {
+    /* We effectively "remove" the left column */
+    width: 0;
+    flex-basis: 0;
+    overflow: hidden;
+}
+
+/* 2. Make the modal full width info */
+.team-modal.expanded .modal-info-col {
+    width: 100%;
+}
+
+/* 3. The Avatar appears in the header row */
+.team-modal.expanded .modal-header {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.modal-header-avatar {
+    width: 0;
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 1rem;
+    opacity: 0;
+    transform: scale(0);
+    transition: all 0.4s ease;
+    display: none;
+    /* Hidden from layout initially */
+}
+
+.team-modal.expanded .modal-header-avatar {
+    display: block;
+    opacity: 1;
+    transform: scale(1);
+    border: 2px solid var(--color-primary);
+}
+
+.team-modal.expanded .modal-state-initial {
+    display: none;
+}
+
+.team-modal.expanded .modal-state-expanded {
+    display: block;
+}
+
+.team-modal.expanded .modal-expand-btn svg {
+    transform: rotate(180deg);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* MOBILE RESPONSIVENESS */
+@media (max-width: 768px) {
+    .modal-inner {
+        flex-direction: column;
+    }
+
+    .modal-media-col {
+        width: 100%;
+        height: 250px;
+    }
+
+    .modal-info-col {
+        width: 100%;
+        padding: 1.5rem;
+    }
+
+    .team-modal.expanded .modal-media-col {
+        height: 0;
+        /* Hide image on expand for mobile too */
+    }
+
+    .modal-name {
+        font-size: 1.5rem;
+    }
+}
 
 .modal-backdrop {
     position: absolute;
