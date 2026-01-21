@@ -380,6 +380,32 @@
             position: relative;
         }
 
+        /* ============================================
+           CONTENT TIMELINE - PREMIUM DESIGN (Reference)
+           ============================================ */
+        .content-section {
+            padding: 6rem 0;
+            background: linear-gradient(180deg, #f8faf9 0%, #fff 100%);
+            position: relative;
+        }
+
+        .content-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 1px;
+            height: 80px;
+            background: var(--seminar-accent);
+        }
+
+        .journey-container {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+        }
+
         .journey-line {
             position: absolute;
             left: 50%;
@@ -394,21 +420,45 @@
             border-radius: 4px;
         }
 
+        .journey-line::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 0%;
+            background: linear-gradient(180deg,
+                    var(--accent-highlight) 0%,
+                    var(--seminar-accent) 100%);
+            border-radius: 4px;
+            transition: height 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 0 20px rgba(44, 44, 46, 0.4);
+        }
+
+        .journey-line.animated::after {
+            height: 100%;
+        }
+
         .journey-item {
             display: flex;
             align-items: flex-start;
             position: relative;
             margin-bottom: 2rem;
             opacity: 1;
-            /* Made visible by default */
+            /* Keeping it visible by default to avoid JS dependency for now, or match reference animation later */
+            /* transform: translateY(40px); */
+            /* transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1); */
         }
 
+        /* Note: first-child is journey-line. So Item 1 is nth-child(2) -> Even. */
         .journey-item:nth-child(odd) {
             flex-direction: row;
+            /* Content Left */
         }
 
         .journey-item:nth-child(even) {
             flex-direction: row-reverse;
+            /* Content Right */
         }
 
         .journey-content {
@@ -419,8 +469,7 @@
         .journey-node {
             position: absolute;
             left: 50%;
-            top: 32px;
-            /* Adjusted to align with Badge center: 28px padding + ~12px half badge height = 40px? No, Badge top is at 28px. Center is ~40px. Node center at 32+12=44. Close. */
+            top: 20px;
             transform: translateX(-50%);
             z-index: 10;
         }
@@ -434,15 +483,71 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 0 0 4px #fff, 0 0 0 6px var(--seminar-accent);
-            transition: all 0.4s;
+            box-shadow:
+                0 0 0 4px #fff,
+                0 0 0 6px var(--seminar-accent),
+                0 0 30px rgba(44, 44, 46, 0.4);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .node-dot::before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            background: #fff;
+            border-radius: 50%;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+
+        .journey-item:hover .node-dot::before {
+            animation: node-pulse 1s infinite ease-in-out;
+        }
+
+        @keyframes node-pulse {
+
+            0%,
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+
+            50% {
+                transform: scale(0.6);
+                opacity: 0.6;
+            }
+        }
+
+        .node-ring {
+            position: absolute;
+            inset: -8px;
+            border: 2px solid var(--seminar-accent);
+            border-radius: 50%;
+            opacity: 0;
+            transform: scale(0.8);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+
+        .journey-item:hover .node-ring {
+            animation: ring-expand 1.5s infinite ease-out;
+        }
+
+        @keyframes ring-expand {
+            0% {
+                transform: scale(0.8);
+                opacity: 0.8;
+            }
+
+            100% {
+                transform: scale(1.8);
+                opacity: 0;
+            }
         }
 
         .node-connector {
             position: absolute;
             top: 50%;
-            width: 40px;
-            /* Increased from 26px to bridge the 38px gap (50px halfspace - 12px halfnode) */
+            width: 42px;
+            /* Increased slightly from 26px to ensure connection based on math (38px gap) + overlap */
             height: 2px;
             background: var(--seminar-accent);
             transform: translateY(-50%);
@@ -464,14 +569,36 @@
             padding: 1.75rem 2rem;
             position: relative;
             border: 1px solid rgba(44, 44, 46, 0.15);
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
-            transition: all 0.4s;
+            box-shadow:
+                0 4px 20px rgba(0, 0, 0, 0.04),
+                0 1px 3px rgba(0, 0, 0, 0.02);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            overflow: hidden;
         }
 
-        .journey-card:hover {
+        .journey-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--seminar-accent);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .journey-item:hover .journey-card {
             transform: translateY(-5px);
             border-color: var(--seminar-accent);
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+            box-shadow:
+                0 20px 50px rgba(44, 44, 46, 0.12),
+                0 8px 20px rgba(0, 0, 0, 0.06);
+        }
+
+        .journey-item:hover .journey-card::before {
+            transform: scaleX(1);
         }
 
         .module-badge {
@@ -498,7 +625,6 @@
             color: var(--color-text);
             margin: 0;
             line-height: 1.4;
-            margin-bottom: 0.5rem;
         }
     </style>
 </head>
@@ -572,10 +698,16 @@
             </div>
 
             <div class="journey-container">
-                <div class="journey-line"></div>
+                <div class="journey-line" id="journeyLine"></div>
 
                 <!-- Item 1 -->
                 <div class="journey-item">
+                    <div class="journey-node">
+                        <div class="node-dot">
+                            <div class="node-ring"></div>
+                        </div>
+                        <div class="node-connector"></div>
+                    </div>
                     <div class="journey-content">
                         <div class="journey-card">
                             <div class="module-badge">
@@ -586,18 +718,10 @@
                                 spielen Produkte und Dienstleistungen?</p>
                         </div>
                     </div>
-                    <div class="journey-node">
-                        <div class="node-dot">
-                            <div class="node-ring"></div>
-                        </div>
-                        <div class="node-connector"></div>
-                    </div>
-                    <div class="journey-content"></div>
                 </div>
 
                 <!-- Item 2 -->
                 <div class="journey-item">
-                    <div class="journey-content"></div>
                     <div class="journey-node">
                         <div class="node-dot">
                             <div class="node-ring"></div>
@@ -618,6 +742,12 @@
 
                 <!-- Item 3 -->
                 <div class="journey-item">
+                    <div class="journey-node">
+                        <div class="node-dot">
+                            <div class="node-ring"></div>
+                        </div>
+                        <div class="node-connector"></div>
+                    </div>
                     <div class="journey-content">
                         <div class="journey-card">
                             <div class="module-badge">
@@ -628,18 +758,10 @@
                                 methodisch?</p>
                         </div>
                     </div>
-                    <div class="journey-node">
-                        <div class="node-dot">
-                            <div class="node-ring"></div>
-                        </div>
-                        <div class="node-connector"></div>
-                    </div>
-                    <div class="journey-content"></div>
                 </div>
 
                 <!-- Item 4 -->
                 <div class="journey-item">
-                    <div class="journey-content"></div>
                     <div class="journey-node">
                         <div class="node-dot">
                             <div class="node-ring"></div>
@@ -660,6 +782,12 @@
 
                 <!-- Item 5 -->
                 <div class="journey-item">
+                    <div class="journey-node">
+                        <div class="node-dot">
+                            <div class="node-ring"></div>
+                        </div>
+                        <div class="node-connector"></div>
+                    </div>
                     <div class="journey-content">
                         <div class="journey-card">
                             <div class="module-badge">
@@ -669,18 +797,10 @@
                             <p>Wie muss ich Führung gestalten, damit effektive Selbstorganisation möglich wird?</p>
                         </div>
                     </div>
-                    <div class="journey-node">
-                        <div class="node-dot">
-                            <div class="node-ring"></div>
-                        </div>
-                        <div class="node-connector"></div>
-                    </div>
-                    <div class="journey-content"></div>
                 </div>
 
                 <!-- Item 6 -->
                 <div class="journey-item">
-                    <div class="journey-content"></div>
                     <div class="journey-node">
                         <div class="node-dot">
                             <div class="node-ring"></div>
