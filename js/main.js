@@ -1042,135 +1042,177 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // =========================================
-    // ENHANCED MODAL FUNCTIONALITY
-    // =========================================
-    // =========================================
-    // TEAM CARD MORPHING LOGIC (Inline Expansion)
+    // TEAM MODAL WITH MORPHING EFFECT
     // =========================================
 
-    function generateMemberDetailsHTML(member) {
-        let html = '';
-
-        // Bio
-        if (member.bio && member.bio.length > 0) {
-            html += `<h4>Über mich</h4>`;
-            member.bio.forEach(p => {
-                html += `<p>${p}</p>`;
-            });
-        }
-
-        // Schwerpunkte (Quick Info)
-        if (member.quickInfo && member.quickInfo.length > 0) {
-            html += `<h4>Schwerpunkte</h4>`;
-            html += `<ul>`;
-            member.quickInfo.forEach(info => {
-                html += `<li>${info}</li>`;
-            });
-            html += `</ul>`;
-        }
-
-        // Qualifications
-        if (member.qualifications && member.qualifications.length > 0) {
-            html += `<h4>Qualifikationen</h4>`;
-            html += `<ul>`;
-            member.qualifications.forEach(q => {
-                html += `<li>${q}</li>`;
-            });
-            html += `</ul>`;
-        }
-
-        return html;
-    }
-
-    function toggleTeamMember(card, memberId) {
-        const isExpanded = card.classList.contains('expanded');
-
-        // Auto-close others for cleaner view (Accordion style)
-        document.querySelectorAll('.team-member-card.expanded').forEach(otherCard => {
-            if (otherCard !== card) {
-                otherCard.classList.remove('expanded');
-                const btnSpan = otherCard.querySelector('.card-cta-btn span');
-                if (btnSpan) btnSpan.textContent = 'Mehr Anzeigen';
-            }
-        });
-
-        if (isExpanded) {
-            card.classList.remove('expanded');
-            const btnSpan = card.querySelector('.card-cta-btn span');
-            if (btnSpan) btnSpan.textContent = 'Mehr Anzeigen';
-        } else {
-            card.classList.add('expanded');
-            const btnSpan = card.querySelector('.card-cta-btn span');
-            if (btnSpan) btnSpan.textContent = 'Weniger Anzeigen';
-        }
-    }
-
-    // Initialize Team Cards
-    teamMemberCards.forEach(card => {
-        const memberId = card.getAttribute('data-member');
+    function openTeamModal(memberId) {
         const member = teamMembersData[memberId];
+        if (!member || !teamModal) return;
 
-        if (member) {
-            // 1. Create and Append "Mehr Anzeigen" Button
-            const infoContainer = card.querySelector('.member-info');
-            if (infoContainer) {
-                const btn = document.createElement('button');
-                btn.className = 'card-cta-btn';
-                btn.innerHTML = `
-                    <span>Mehr Anzeigen</span>
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <polyline points="6 9 12 15 18 9"></polyline>
-                    </svg>
+        // Get modal elements
+        const modalName = teamModal.querySelector('.modal-name');
+        const modalRole = teamModal.querySelector('.modal-role');
+        const modalCategories = document.getElementById('modal-categories');
+        const modalQuickInfo = document.getElementById('modal-quick-info');
+        const modalBio = document.getElementById('modal-bio');
+        const modalQualifications = document.getElementById('modal-qualifications');
+        const modalPhotoContainer = document.getElementById('modal-photo-container');
+        const modalAvatar = document.getElementById('modal-avatar');
+
+        // Populate name and role
+        if (modalName) modalName.textContent = member.name;
+        if (modalRole) modalRole.textContent = member.role;
+
+        // Update photo and avatar
+        if (modalPhotoContainer) {
+            if (member.photo) {
+                modalPhotoContainer.innerHTML = `<img src="${member.photo}" alt="${member.name}" loading="lazy">`;
+                if (modalAvatar) {
+                    modalAvatar.innerHTML = `<img src="${member.photo}" alt="${member.name}" loading="lazy">`;
+                }
+            } else {
+                modalPhotoContainer.innerHTML = `
+                    <div class="photo-placeholder large">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+                            <circle cx="12" cy="8" r="4" />
+                            <path d="M4 20c0-4 4-6 8-6s8 2 8 6" />
+                        </svg>
+                    </div>
                 `;
-
-                // Toggle on button click
-                btn.addEventListener('click', (e) => {
-                    e.stopPropagation();
-                    toggleTeamMember(card, memberId);
-                });
-
-                infoContainer.appendChild(btn);
+                if (modalAvatar) {
+                    modalAvatar.innerHTML = '';
+                }
             }
-
-            // 2. Create and Append Details Container
-            const detailsDiv = document.createElement('div');
-            detailsDiv.className = 'member-details';
-            detailsDiv.innerHTML = generateMemberDetailsHTML(member);
-
-            // Prevent click propagation inside details to avoid closing/toggling unexpectedly
-            detailsDiv.addEventListener('click', (e) => {
-                e.stopPropagation();
-            });
-
-            card.appendChild(detailsDiv);
         }
 
-        // 3. Handle Overlay "Profil ansehen" click
-        const viewProfileOverlay = card.querySelector('.member-overlay');
-        if (viewProfileOverlay) {
-            viewProfileOverlay.addEventListener('click', (e) => {
-                e.stopPropagation();
-                toggleTeamMember(card, memberId);
-            });
+        // Update category badges
+        if (modalCategories && member.categories) {
+            modalCategories.innerHTML = member.categories.map(cat => {
+                const config = categoryConfig[cat];
+                if (!config) return '';
+                return `
+                    <span class="category-badge" style="--category-color: ${config.color}">
+                        ${config.label}
+                    </span>
+                `;
+            }).join('');
         }
 
-        // 4. Handle Main Card click (optional, but good for UX)
-        // Only if not clicking a link or button
-        card.addEventListener('click', (e) => {
-            // If checking selection to not trigger on random text selection?
-            toggleTeamMember(card, memberId);
+        // Update quick info
+        if (modalQuickInfo && member.quickInfo) {
+            modalQuickInfo.innerHTML = member.quickInfo.map(info => `
+                <li>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                    ${info}
+                </li>
+            `).join('');
+        }
+
+        // Update bio
+        if (modalBio && member.bio) {
+            modalBio.innerHTML = member.bio.map(p => `<p>${p}</p>`).join('');
+        }
+
+        // Update qualifications
+        if (modalQualifications && member.qualifications) {
+            modalQualifications.innerHTML = member.qualifications.map(q =>
+                `<li>${q}</li>`
+            ).join('');
+        }
+
+        // Show modal with animation
+        teamModal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+
+        // Reset morphing state
+        const modalContent = teamModal.querySelector('.modal-content');
+        const detailContainer = teamModal.querySelector('.detail-expand-container');
+        if (detailContainer) {
+            detailContainer.classList.remove('expanded');
+            const toggleText = teamModal.querySelector('.toggle-text');
+            if (toggleText) toggleText.textContent = 'Mehr Details anzeigen';
+        }
+        if (modalContent) {
+            modalContent.classList.remove('photo-minimized');
+        }
+    }
+
+    function closeTeamModal() {
+        if (!teamModal) return;
+        teamModal.classList.remove('active');
+        document.body.style.overflow = '';
+
+        // Reset morphing state
+        const modalContent = teamModal.querySelector('.modal-content');
+        const detailContainer = teamModal.querySelector('.detail-expand-container');
+        if (detailContainer) {
+            detailContainer.classList.remove('expanded');
+            const toggleText = teamModal.querySelector('.toggle-text');
+            if (toggleText) toggleText.textContent = 'Mehr Details anzeigen';
+        }
+        if (modalContent) {
+            modalContent.classList.remove('photo-minimized');
+        }
+    }
+
+    // =========================================
+    // MORPHING TOGGLE INSIDE MODAL
+    // =========================================
+    const detailExpandToggle = document.getElementById('detail-expand-toggle');
+    if (detailExpandToggle) {
+        detailExpandToggle.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const container = detailExpandToggle.closest('.detail-expand-container');
+            const toggleText = detailExpandToggle.querySelector('.toggle-text');
+            const modalContent = document.querySelector('.modal-content');
+
+            if (container) {
+                container.classList.toggle('expanded');
+
+                if (container.classList.contains('expanded')) {
+                    toggleText.textContent = 'Details ausblenden';
+                    // Morph: photo shrinks to avatar
+                    if (modalContent) modalContent.classList.add('photo-minimized');
+                } else {
+                    toggleText.textContent = 'Mehr Details anzeigen';
+                    // Restore photo
+                    if (modalContent) modalContent.classList.remove('photo-minimized');
+                }
+            }
+        });
+    }
+
+    // Event listeners for team cards -> open modal
+    teamMemberCards.forEach(card => {
+        card.addEventListener('click', () => {
+            const memberId = card.getAttribute('data-member');
+            openTeamModal(memberId);
         });
     });
 
-    // Close expanded cards on Escape
+    // Close modal events
+    if (modalClose) {
+        modalClose.addEventListener('click', closeTeamModal);
+    }
+
+    if (modalBackdrop) {
+        modalBackdrop.addEventListener('click', closeTeamModal);
+    }
+
+    // Close modal on Escape key
     document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape') {
-            document.querySelectorAll('.team-member-card.expanded').forEach(card => {
-                toggleTeamMember(card); // Will toggle to close
-            });
+        if (e.key === 'Escape' && teamModal && teamModal.classList.contains('active')) {
+            closeTeamModal();
         }
     });
 
+    // Close modal when clicking contact button inside
+    const modalCta = teamModal ? teamModal.querySelector('.modal-cta') : null;
+    if (modalCta) {
+        modalCta.addEventListener('click', closeTeamModal);
+    }
 
 
     // =========================================
