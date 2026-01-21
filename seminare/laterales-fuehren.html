@@ -16,10 +16,14 @@
     <link rel="stylesheet" href="../styles/index.css">
     <style>
         :root {
-            --seminar-accent: #4A4A4E;
-            --seminar-accent-light: rgba(74, 74, 78, 0.1);
-            --seminar-accent-glow: rgba(74, 74, 78, 0.3);
-            --accent-highlight: #c9a227;
+            /* Modified to Anthracite Theme */
+            --seminar-accent: #2c2c2e;
+            --seminar-accent-light: rgba(44, 44, 46, 0.1);
+            --seminar-accent-glow: rgba(44, 44, 46, 0.3);
+            /* Silver/Grey for dark backgrounds where Anthracite would be invisible */
+            --accent-highlight: #a0a0a5;
+            /* Darker accent for light backgrounds */
+            --text-highlight: #2c2c2e;
         }
 
         .scroll-progress {
@@ -389,6 +393,68 @@
                 grid-template-columns: 1fr;
             }
         }
+
+        /* Timeline Styles for Content Section */
+        .content-section {
+            padding: 6rem 0;
+            background: #f8f9fa;
+            /* Slightly off-white for contrast */
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 20px;
+            /* Adjust for mobile matches marker center */
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--seminar-accent-light);
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-left: 60px;
+            margin-bottom: 2.5rem;
+        }
+
+        .timeline-marker {
+            position: absolute;
+            left: 11px;
+            /* Center on line (20px left + 1px border - 10px half width) -> approx */
+            top: 0;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #fff;
+            border: 3px solid var(--text-highlight);
+            z-index: 1;
+        }
+
+        .timeline-content h3 {
+            margin: 0 0 0.5rem 0;
+            color: var(--seminar-accent);
+            font-size: 1.2rem;
+            font-weight: 700;
+        }
+
+        .timeline-content p {
+            margin: 0;
+            color: var(--color-text);
+            line-height: 1.6;
+        }
+
+        .cta-section {
+            padding: 4rem 0;
+            /* Override: Reduced padding to fix footer spacing */
+        }
     </style>
 </head>
 
@@ -453,18 +519,64 @@
         </div>
     </section>
 
-    <section class="network-section" id="netzwerk">
+    <section class="content-section">
         <div class="container">
-            <div class="section-header"><span class="section-label">Das Prinzip</span>
-                <h2>Führung im Netzwerk</h2>
+            <div class="section-header"><span class="section-label">Der Inhalt</span>
+                <h2>Themenübersicht</h2>
                 <div class="accent-line"></div>
             </div>
-            <div class="network-visual">
-                <div class="network-node">Team A</div>
-                <div class="network-node">Team B</div>
-                <div class="network-node center">Sie</div>
-                <div class="network-node">Team C</div>
-                <div class="network-node">Team D</div>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h3>Führungskultur</h3>
+                        <p>Welche Formen von Führung sind in welcher Organisation überhaupt möglich? Welche Rolle
+                            spielen Produkte und Dienstleistungen?</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h3>Führung / Rolle</h3>
+                        <p>Aufgaben von Führung. Welche Erwartungen gibt es an mich in der Rolle der Führungskraft?</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h3>Anforderungen</h3>
+                        <p>Welche Anforderungen haben Teams an Führungskräfte – organisatorisch, sozial und methodisch?
+                        </p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h3>Führung ohne Autorisierung</h3>
+                        <p>Wie funktioniert wirksame Führung in Netzwerken ohne Hierarchie? In gleichberechtigten Teams?
+                        </p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h3>Führung gestalten</h3>
+                        <p>Wie muss ich Führung gestalten, damit effektive Selbstorganisation möglich wird?</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h3>Raum halten</h3>
+                        <p>Wie hält die Führungskraft den Raum für die Selbstorganisation des Teams?</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -491,6 +603,10 @@
                 <div class="goal-card">
                     <div class="goal-number">4</div>
                     <p class="goal-text">Führungsverhalten an organisatorische Gegebenheiten anpassen</p>
+                </div>
+                <div class="goal-card">
+                    <div class="goal-number">5</div>
+                    <p class="goal-text">Inklusive konkretem Maßnahmenplan zur Umsetzung in der Praxis</p>
                 </div>
             </div>
         </div>
