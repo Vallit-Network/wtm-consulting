@@ -602,6 +602,109 @@ const seminarsData = {
         }
     },
 
+
+    "visualisieren": {
+        id: "visualisieren",
+        title: "Gekonnt Visualisieren",
+        url: "seminare/visualisieren.html",
+        category: "communication",
+        badge: "🎨 Kommunikation",
+        shortDescription: "Mit einfachen Zeichentechniken komplexe Inhalte vermitteln. Flipcharts und Grafiken, die begeistern!",
+        details: ["2 Tage", "Praxis", "Transfer"],
+        heroImage: "assets/hero-meeting.jpg",
+        content: {
+            intro: "Ein Bild sagt mehr als tausend Worte. Lernen Sie, Ihre Ideen, Konzepte und Botschaften visuell ansprechend und einprägsam darzustellen.",
+            ziele: ['Trainings & Seminare', 'Coaching & Beratung', 'Neuer Graben 61', '44139 Dortmund', 'Tel: 0231 / 137 22 666'],
+            inhalte: "Charts Figuren Symbole Schriften Icons Container Verbindungen Farben",
+            nutzen: "Sie erweitern ihre Kompetenzen in Gekonnt Visualisieren.",
+            zielgruppe: "Trainer, Moderatoren, Präsentierende – alle, die ihre Botschaften visuell verstärken wollen."
+        }
+    },
+    "resilienz": {
+        id: "resilienz",
+        title: "Resilienz",
+        url: "seminare/resilienz.html",
+        category: "health",
+        badge: "🌱 Gesundheit",
+        shortDescription: "Die innere Widerstandskraft stärken. Gestärkt aus Krisen hervorgehen und an Herausforderungen wachsen.",
+        details: ["2 Tage", "Praxis", "Transfer"],
+        heroImage: "assets/hero-meeting.jpg",
+        content: {
+            intro: "Resilienz ist die Fähigkeit, trotz widriger Umstände nicht zu zerbrechen, sondern flexibel zu bleiben und gestärkt zurückzukommen – wie eine Feder.",
+            ziele: ['Trainings & Seminare', 'Coaching & Beratung', 'Neuer Graben 61', '44139 Dortmund', 'Tel: 0231 / 137 22 666'],
+            inhalte: "Detaillierte Seminarinhalte und Praxisübungen.",
+            nutzen: "Sie erweitern ihre Kompetenzen in Resilienz.",
+            zielgruppe: "Führungskräfte, Mitarbeiter:innen in belastenden Situationen, alle, die ihre Widerstandskraft stärken wollen."
+        }
+    },
+    "change-kompetenz": {
+        id: "change-kompetenz",
+        title: "Change Kompetenz",
+        url: "seminare/change-kompetenz.html",
+        category: "change",
+        badge: "Change",
+        shortDescription: "In Zeiten schnellen Wandels mental stark bleiben. Veränderungen konstruktiv begegnen und beeinflussbare von nicht beeinflussbaren Bereichen unterscheiden.",
+        details: ["2 Tage", "Praxis", "Transfer"],
+        heroImage: "assets/hero-meeting.jpg",
+        content: {
+            intro: "Wir alle stehen in einer Zeit immer schnelleren technologischen und gesellschaftlichen Wandels vor immensen Herausforderungen: kürzere Entwicklungszyklen, häufige Umstrukturierungen, härterer Wettbewerb. Viele empfinden dies als Stress, mehr Firefighting, weniger Strategie. Dieses Seminar hilft Ihnen, konstruktiv mit diesen Veränderungen umzugehen.",
+            ziele: ['Mentale Klarheit und Stärke erreichen – konstruktiven, aktiven Umgang mit\n                        Veränderungen entwickeln', 'Beeinflussbare von nicht beeinflussbaren Lebensbereichen unterscheiden können', 'Behindernde Suggestionen loslassen und Mut zu neuen Verhaltensmustern fassen', 'Standhaftigkeit und Ausdauer gegenüber Unsicherheiten und Widerständen erhöhen'],
+            inhalte: "Detaillierte Seminarinhalte und Praxisübungen.",
+            nutzen: "Sie erweitern ihre Kompetenzen in Change Kompetenz.",
+            zielgruppe: "Alle Menschen, die kompetenter mit Veränderungen umgehen möchten – Fach- und Führungskräfte in dynamischen Arbeitsumgebungen."
+        }
+    },
+    "storytelling": {
+        id: "storytelling",
+        title: "Story telling",
+        url: "seminare/storytelling.html",
+        category: "communication",
+        badge: "📖 Kommunikation",
+        shortDescription: "Geschichten sind die älteste Form der Kommunikation. Lernen Sie, mit Narrativen zu führen, zu überzeugen und zu inspirieren.",
+        details: ["2 Tage", "Praxis", "Transfer"],
+        heroImage: "assets/hero-meeting.jpg",
+        content: {
+            intro: "Fakten informieren, Geschichten transformieren. Daten werden vergessen, Geschichten bleiben. Nutzen Sie diese Kraft für Ihre Führung und Kommunikation.",
+            ziele: ['Anschaulich präsentieren', 'Spannung erzeugen', 'Botschaften verankern'],
+            inhalte: "Detaillierte Seminarinhalte und Praxisübungen.",
+            nutzen: "Sie erweitern ihre Kompetenzen in Story telling.",
+            zielgruppe: "Führungskräfte, Trainer, Vertriebler – alle, die mit Geschichten überzeugen wollen."
+        }
+    },
+    "fuehrungssimulation": {
+        id: "fuehrungssimulation",
+        title: "Führungssimulation ‚Am offenen Herzen‘",
+        url: "seminare/fuehrungssimulation.html",
+        category: "leadership",
+        badge: "Immersives Training",
+        shortDescription: "Realistische Führungsszenarien im Musterkrankenhaus. Faires Feedback. Echte Erkenntnisse. 16 Teilnehmende, unzählige Lernmomente.",
+        details: ["2 Tage", "Praxis", "Transfer"],
+        heroImage: "assets/hero-meeting.jpg",
+        content: {
+            intro: "Kennen Sie Situationen, in denen Sie nach einem Personalgespräch dachten, dass Sie nicht den richtigen Ton getroffen haben? In der Simulation erleben Sie realistische Fälle – und erhalten sofortiges, faires Feedback.",
+            ziele: ['Erfolgserfahrungen: Merken wo Sie schon auf dem richtigen Weg sind', 'Konkret erleben, wo Verbesserungspotentiale liegen', 'Ausschließlich praxisnahe Fälle aus der Gesundheitsbranche', 'Ausführliche Feedbackrunden mit theoretischen Erläuterungen'],
+            inhalte: "Chefarzt-Besprechung (Strategische Entscheidungen) OP-Team (8-Uhr-Schnittzeit) Materialwirtschaft (Abteilungssitzung) Kreißsaal (Kritische Kommunikation) Personalgespräch (Schwierige Themen) Konfliktfall (Diebstahl-Aufklärung) Qualitätsmeeting (Prozessoptimierung) Feedback-Runde (Reflexion & Lernen)",
+            nutzen: "Sie erweitern ihre Kompetenzen in Führungssimulation ‚Am offenen Herzen‘.",
+            zielgruppe: "Potentielle, junge und erfahrene Führungskräfte aller Berufsgruppen im Gesundheitswesen, Berater*innen."
+        }
+    },
+    "argumentieren-verhandeln": {
+        id: "argumentieren-verhandeln",
+        title: "Argumentieren & Verhandeln",
+        url: "seminare/argumentieren-verhandeln.html",
+        category: "communication",
+        badge: "Kommunikation",
+        shortDescription: "Doppelte Stimmigkeit – nach außen situationsgerecht, nach innen authentisch. So sprechen, dass man dazu stehen kann.",
+        details: ["2 Tage", "Praxis", "Transfer"],
+        heroImage: "assets/hero-meeting.jpg",
+        content: {
+            intro: "Gute Kommunikation erfordert eine doppelte Stimmigkeit. Was wir sagen, muss situationsgerecht sein – und wir sollten authentisch sprechen, in Übereinstimmung mit uns selbst.",
+            ziele: ['Überzeugend argumentieren', 'Interessen durchsetzen', 'Beziehungen wahren'],
+            inhalte: "Körpersprache Rhetorik Argumentation Verhandlung Fragetechniken Einwandbehandlung",
+            nutzen: "Sie erweitern ihre Kompetenzen in Argumentieren & Verhandeln.",
+            zielgruppe: "Alle Menschen, die in Gesprächen Einfluss ausüben wollen."
+        }
+    },
 };
 
 // Make it available globally
