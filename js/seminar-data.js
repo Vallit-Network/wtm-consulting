@@ -458,16 +458,16 @@ const seminarsData = {
         details: ["2 Tage", "Reflexion", "Coaching"],
         heroImage: "assets/hero-meeting.jpg",
         content: {
-            intro: "Wer andere führen will, muss sich selbst kennen. Welche Muster prägen Sie? Was treibt Sie an?",
+            intro: "Die Idee der positiven Psychologie ist es nicht, in allem was wir tun, nur das Positive zu sehen oder die Dinge schön zu reden. Es geht vielmehr darum, uns auf den Einsatz unserer Stärken, unter Berücksichtigung unserer Ressourcen und Potentiale, zu fokussieren. Basis für ein positives Selbstkonzept ist das Wissen um unsere Stärken, Werte und Motive.",
             ziele: [
-                "Persönlichkeitsmuster erkennen",
-                "Selbstführungskompetenzen entwickeln",
-                "Blinde Flecken aufdecken",
-                "Persönliche Entwicklungsziele formulieren"
+                "verstehen, dass Stärkenorientierung stark macht",
+                "setzen sich mit eigenen Denkbremsen und inneren Kritikern auseinander",
+                "haben erste Ideen ihrer wesentlichen Werte",
+                "erforschen ihre Motive"
             ],
-            inhalte: "Persönlichkeitsmodelle. Innere Antreiber. Werte und Glaubenssätze. Selbstreflexion. Entwicklungsplanung.",
-            nutzen: "Sie führen sich selbst bewusster und wirksamer.",
-            zielgruppe: "Führungskräfte und alle, die ihre Selbstführung stärken möchten."
+            inhalte: "Interrogativer Vortrag (Positive Psychologie/ Stärken-stärken-Konzept, Denkbremsen). Werte und Werteentwicklung (Spiral Dynamics). Motive (Lebensmotive). Erkennen des Zusammenhanges von Stärken, Werten und Motiven anhand der eigenen Biographie. Einschränkende Glaubenssätze, klassische Denkbremsen, innere Kritiker. Gegebenenfalls Meditation zur Stärkenorientierung.",
+            nutzen: "Wir bringen unsere Stärken dann zum Einsatz, wenn diese im Einklang mit unseren Werten stehen. Neben unseren Werten haben auch unsere Motive Einfluss auf unser Handeln in unterschiedlichen Kontexten. Sie sind der eigentliche Motor unseres Handelns. Sie bieten den Rahmen, unsere Fähigkeiten richtig zu zeigen.",
+            zielgruppe: "Alle Menschen, die sich kennen lernen und stärken wollen"
         }
     },
     "selbstmanagement": {
