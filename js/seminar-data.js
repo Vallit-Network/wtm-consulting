@@ -726,10 +726,14 @@ const seminarsData = {
         details: ["2 Tage", "Praxis", "Transfer"],
         heroImage: "assets/hero-meeting.jpg",
         content: {
-            intro: "Kennen Sie Situationen, in denen Sie nach einem Personalgespräch dachten, dass Sie nicht den richtigen Ton getroffen haben? In der Simulation erleben Sie realistische Fälle – und erhalten sofortiges, faires Feedback.",
-            ziele: ['Erfolgserfahrungen: Merken wo Sie schon auf dem richtigen Weg sind', 'Konkret erleben, wo Verbesserungspotentiale liegen', 'Ausschließlich praxisnahe Fälle aus der Gesundheitsbranche', 'Ausführliche Feedbackrunden mit theoretischen Erläuterungen'],
-            inhalte: "Chefarzt-Besprechung (Strategische Entscheidungen) OP-Team (8-Uhr-Schnittzeit) Materialwirtschaft (Abteilungssitzung) Kreißsaal (Kritische Kommunikation) Personalgespräch (Schwierige Themen) Konfliktfall (Diebstahl-Aufklärung) Qualitätsmeeting (Prozessoptimierung) Feedback-Runde (Reflexion & Lernen)",
-            nutzen: "Sie erweitern ihre Kompetenzen in Führungssimulation ‚Am offenen Herzen‘.",
+            intro: "Möchten Sie sich in einem Übungsumfeld auf schwierige Situationen vorbereiten, denen Sie in Ihrer neuen Führungsaufgabe begegnen könnten? Haben Sie schon manchmal nach einem Personalgespräch gedacht, dass Sie nicht den richtigen Ton getroffen haben? Kennen Sie Führungssituationen, in denen Sie aufgrund der Vielzahl der Aufgaben Ihren Prioritäten nicht gerecht werden konnten? Finden Sie es sinnvoll, bei einem Seminar realistische Übungen mit theoretischem Hintergrund zu verbinden? Fanden Sie, dass bisherige Seminare und Übungen nicht wirklich Ihren Führungsalltag widerspiegeln? Ist es Ihnen wichtig, faires und konkretes Feedback auf Ihr Führungsverhalten im Einzelfall zu erhalten?",
+            ziele: [
+                "Nach diesem Seminar gehen Sie mit größerer Leichtigkeit und Gelassenheit in schwierige Führungssituationen.",
+                "Sie haben erfahren, wo Sie schon souverän unterwegs sind.",
+                "Sie haben als „Führungskraft“ oder „Mitarbeitende“ im Übungsumfeld Lösungen erlebt, die Sie in der Praxis neu einsetzen können, um mit weniger Stress Ihre Ziele zu erreichen."
+            ],
+            inhalte: "Die Simulation „Am offenen Herzen“ eröffnet den Teilnehmenden vielfältige Erkenntnisse und Entwicklungsmöglichkeiten für schwierige Führungssituationen und Personalgespräche. Sie lernen, in stressigen und herausfordernden Situationen, klar zu kommunizieren, zu priorisieren und zu delegieren. Anhand eines Musterkrankenhauses bearbeiten 16 Teilnehmende Fälle aus der echten Krankenhauspraxis. So wird z.B. die nötige Ablaufveränderung zur Einhaltung der 8-Uhr-Schnittzeit im OP, ein Geburtsschaden wegen mangelnder interner Kommunikation oder ein Mitarbeitergespräch nach einem Diebstahl bearbeitet. Die Fälle sind unterschiedlichen Besprechungsrunden und Arbeitsgruppen (wie z.B. einer Chefarztbesprechung, einer Abteilungssitzung Materialwirtschaft oder einer OP-Team-Sitzung) zugeordnet. Jede/r Teilnehmende ist einmal in einer Führungskraftrolle. Nach jeder Trainingsrunde erhalten die Teilnehmenden ausführliche Feedbacks.",
+            nutzen: "Sie gewinnen Sicherheit durch realistisches Üben. Sie erhalten ehrliches Feedback und konkrete Handlungsoptionen für Ihren Führungsalltag.",
             zielgruppe: "Potentielle, junge und erfahrene Führungskräfte aller Berufsgruppen im Gesundheitswesen, Berater*innen."
         }
     },
