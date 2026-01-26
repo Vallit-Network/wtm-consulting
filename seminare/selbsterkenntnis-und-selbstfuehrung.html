@@ -17,14 +17,16 @@
     <link href="../styles/index.css" rel="stylesheet" />
     <style>
         :root {
-            /* Leadership/Self-Reflextion Theme - Deep Anthracite & Warm Gold/Bronze Accents */
-            --seminar-accent: #2c2c2e;
-            --seminar-accent-light: rgba(44, 44, 46, 0.1);
+            /* Leadership Theme - Anthracite */
+            --seminar-accent: #4A4A4E;
+            /* Anthracite */
+            --seminar-accent-light: rgba(74, 74, 78, 0.1);
+            --seminar-accent-glow: rgba(74, 74, 78, 0.3);
             --color-text: #3A3A38;
             --color-cream: #F5F5F3;
             --color-border: #E5E5E0;
-            --accent-highlight: #c5a065;
-            /* Warm Gold for Self-Discovery */
+            --accent-highlight: #a0a0a5;
+            /* Silver highlight */
         }
 
         .scroll-progress {
@@ -32,7 +34,7 @@
             top: 0;
             left: 0;
             height: 3px;
-            background: var(--accent-highlight);
+            background: var(--seminar-accent);
             z-index: 9999;
             width: 0%;
         }
@@ -58,7 +60,8 @@
         .orb-1 {
             width: 400px;
             height: 400px;
-            background: var(--accent-highlight);
+            background: #9ca3af;
+            /* Silver */
             top: -100px;
             right: -100px;
         }
@@ -113,11 +116,10 @@
         .category-badge {
             display: inline-flex;
             padding: 0.5rem 1rem;
-            background: rgba(197, 160, 101, 0.2);
-            /* Gold tint */
-            border: 1px solid rgba(197, 160, 101, 0.4);
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
             border-radius: 50px;
-            color: #efdcb0;
+            color: #fff;
             font-size: 0.85rem;
             font-weight: 600;
             margin-bottom: 1.5rem;
@@ -135,13 +137,12 @@
         }
 
         .hero-title span {
-            color: #c5a065;
-            /* Highlight Color */
+            color: #9ca3af;
         }
 
         .hero-subtitle {
             font-size: 1.2rem;
-            color: rgba(255, 255, 255, 0.8);
+            color: rgba(255, 255, 255, 0.7);
             line-height: 1.8;
             max-width: 600px;
             margin-bottom: 2rem;
@@ -173,7 +174,7 @@
         .meta-tag svg {
             width: 16px;
             height: 16px;
-            stroke: #c5a065;
+            stroke: #9ca3af;
         }
 
         .hero-cta {
@@ -194,8 +195,7 @@
 
         .btn-glow:hover {
             transform: translateY(-3px);
-            box-shadow: 0 10px 40px rgba(197, 160, 101, 0.4);
-            /* Gold Glow */
+            box-shadow: 0 10px 40px rgba(255, 255, 255, 0.2);
         }
 
         .btn-outline-light {
@@ -232,7 +232,7 @@
         }
 
         .section-label {
-            color: var(--accent-highlight);
+            color: var(--seminar-accent);
             font-weight: 600;
             font-size: 0.85rem;
             letter-spacing: 0.15em;
@@ -260,7 +260,7 @@
         .accent-line {
             width: 60px;
             height: 3px;
-            background: var(--accent-highlight);
+            background: var(--seminar-accent);
             margin: 1.5rem auto 0;
         }
 
@@ -283,7 +283,7 @@
         .goal-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-            border-color: var(--accent-highlight);
+            border-color: var(--seminar-accent);
         }
 
         .goal-number {
@@ -292,8 +292,8 @@
             justify-content: center;
             width: 40px;
             height: 40px;
-            background: rgba(197, 160, 101, 0.1);
-            color: var(--accent-highlight);
+            background: var(--seminar-accent-light);
+            color: var(--seminar-accent);
             border-radius: 10px;
             font-weight: 700;
             margin-bottom: 1rem;
@@ -387,9 +387,31 @@
             top: 0;
             bottom: 0;
             width: 4px;
-            background: linear-gradient(180deg, var(--seminar-accent) 0%, rgba(44, 44, 46, 0.5) 100%);
+            background: linear-gradient(180deg,
+                    var(--seminar-accent) 0%,
+                    rgba(74, 74, 78, 0.6) 50%,
+                    rgba(74, 74, 78, 0.2) 100%);
             transform: translateX(-50%);
             border-radius: 4px;
+        }
+
+        .journey-line::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 0%;
+            background: linear-gradient(180deg,
+                    var(--accent-highlight) 0%,
+                    var(--seminar-accent) 100%);
+            border-radius: 4px;
+            transition: height 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 0 20px rgba(74, 74, 78, 0.4);
+        }
+
+        .journey-line.animated::after {
+            height: 100%;
         }
 
         .journey-item {
@@ -424,13 +446,70 @@
         .node-dot {
             width: 24px;
             height: 24px;
-            background: var(--accent-highlight);
-            /* Gold Dot */
+            background: var(--seminar-accent);
             border-radius: 50%;
+            position: relative;
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 0 0 4px #fff, 0 0 0 6px var(--accent-highlight);
+            box-shadow:
+                0 0 0 4px #fff,
+                0 0 0 6px var(--seminar-accent),
+                0 0 30px rgba(74, 74, 78, 0.4);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .node-dot::before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            background: #fff;
+            border-radius: 50%;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+
+        .journey-item:hover .node-dot::before {
+            animation: node-pulse 1s infinite ease-in-out;
+        }
+
+        @keyframes node-pulse {
+
+            0%,
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+
+            50% {
+                transform: scale(0.6);
+                opacity: 0.6;
+            }
+        }
+
+        .node-ring {
+            position: absolute;
+            inset: -8px;
+            border: 2px solid var(--seminar-accent);
+            border-radius: 50%;
+            opacity: 0;
+            transform: scale(0.8);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+
+        .journey-item:hover .node-ring {
+            animation: ring-expand 1.5s infinite ease-out;
+        }
+
+        @keyframes ring-expand {
+            0% {
+                transform: scale(0.8);
+                opacity: 0.8;
+            }
+
+            100% {
+                transform: scale(1.8);
+                opacity: 0;
+            }
         }
 
         .node-connector {
@@ -438,7 +517,7 @@
             top: 50%;
             width: 42px;
             height: 2px;
-            background: var(--accent-highlight);
+            background: var(--seminar-accent);
             transform: translateY(-50%);
         }
 
@@ -456,21 +535,46 @@
             background: #fff;
             border-radius: 16px;
             padding: 1.75rem 2rem;
-            border: 1px solid rgba(44, 44, 46, 0.15);
-            transition: all 0.4s;
+            position: relative;
+            border: 1px solid rgba(74, 74, 78, 0.15);
+            box-shadow:
+                0 4px 20px rgba(0, 0, 0, 0.04),
+                0 1px 3px rgba(0, 0, 0, 0.02);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            overflow: hidden;
+        }
+
+        .journey-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--seminar-accent);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         .journey-item:hover .journey-card {
             transform: translateY(-5px);
-            border-color: var(--accent-highlight);
-            box-shadow: 0 20px 50px rgba(197, 160, 101, 0.15);
+            border-color: var(--seminar-accent);
+            box-shadow:
+                0 20px 50px rgba(74, 74, 78, 0.12),
+                0 8px 20px rgba(0, 0, 0, 0.06);
+        }
+
+        .journey-item:hover .journey-card::before {
+            transform: scaleX(1);
         }
 
         .module-badge {
             display: inline-flex;
+            align-items: center;
             gap: 0.5rem;
             padding: 0.4rem 0.8rem;
-            background: rgba(197, 160, 101, 0.1);
+            background: var(--seminar-accent-light);
             border-radius: 20px;
             margin-bottom: 0.75rem;
         }
@@ -478,7 +582,7 @@
         .module-number {
             font-size: 0.7rem;
             font-weight: 700;
-            color: var(--accent-highlight);
+            color: var(--seminar-accent);
             text-transform: uppercase;
             letter-spacing: 0.1em;
         }
