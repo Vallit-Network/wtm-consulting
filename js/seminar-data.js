@@ -470,26 +470,28 @@ const seminarsData = {
             zielgruppe: "Alle Menschen, die sich kennen lernen und stärken wollen"
         }
     },
-    "selbstmanagement": {
-        id: "selbstmanagement",
-        title: "Selbstmanagement",
-        url: "seminare/selbstmanagement",
-        category: "health",
+    "change-kompetenz": {
+        id: "change-kompetenz",
+        title: "Change-Kompetenz",
+        url: "seminare/change-kompetenz",
+        category: "change",
         badge: "Seminar",
-        shortDescription: "Sich selbst organisieren und steuern – Zeit, Energie und Prioritäten bewusst managen.",
-        details: ["1-2 Tage", "Methoden", "Übungen"],
+        shortDescription: "Den Wandel verstehen und gestalten. Mentale Stärke und konstruktiver Umgang mit Veränderungen.",
+        details: ["2 Tage", "Change-Modelle", "Resilienz"],
         heroImage: "assets/hero-meeting.jpg",
         content: {
-            intro: "Gutes Selbstmanagement ist die Basis für Erfolg und Zufriedenheit. Wie organisieren Sie sich optimal?",
+            intro: "Nicht nur Organisationen, wir alle stehen in einer Zeit immer schnelleren technologischen und gesellschaftlichen Wandels vor immensen Herausforderungen: Immer neuere und schnellere Abläufe führen zu immer kürzeren Entwicklungszyklen, sich ändernden Arbeitsfeldern und häufigen Umstrukturierungen. Der härter werdende Wettbewerb gibt dem Kunden einen bisher nicht gekannten Einfluss auf die interne Organisation. Viele Menschen empfinden dies zunächst als Schock, als großen Unterschied zwischen den meist hohen Erwartungen und der eingetroffenen Realität: als zunehmenden Stress, schnellere Abläufe, weniger Zeit für langfristige, konzeptuelle Arbeit – kurz: mehr Firefighting, weniger Strategie. Daraus resultieren oft Demotivation, Lähmung, übertriebenes Sicherheitsdenken oder Dienst nach Vorschrift.",
             ziele: [
-                "Zeit effektiver nutzen",
-                "Prioritäten setzen",
-                "Energie managen",
-                "Persönliches System entwickeln"
+                "wie sie mentale Klarheit und Stärke erreichen können",
+                "wie sie einen konstruktiven, aktiven Umgang mit Veränderungen bewirken und beeinflussbare von nicht beeinflussbaren Lebensbereichen unterscheiden können",
+                "wie sie behindernde Suggestionen loslassen und Mut zu neuen Verhaltensmustern fassen können",
+                "über die Bedeutung von Zielen für die Lebenskompetenz",
+                "wie sie einen konstruktiv mit auftauchenden Hindernissen umgehen können",
+                "welchen Bereichen (emotional, familiär, beruflich...) sie verstärkt Aufmerksamkeit widmen sollten"
             ],
-            inhalte: "Zeitmanagement-Methoden. Prioritätensetzung. Energiemanagement. Gewohnheiten. Planung und Struktur.",
-            nutzen: "Sie managen sich selbst effektiver und erreichen Ihre Ziele.",
-            zielgruppe: "Alle, die ihre Selbstorganisation verbessern möchten."
+            inhalte: "House of Change. Die Changekurve. Risiken: bedeuten sie Gefahr oder Chance für mich? Folge ich unbewussten Leitsätzen und Verhaltensgewohnheiten? Wie kann ich sie in Stärken umsetzen? Wie erhöhe ich meine Standhaftigkeit und Ausdauer gegenüber Unsicherheiten und Widerständen? Wie setze ich motivierende Ziele?",
+            nutzen: "Sie lernen, die Situation erst einmal als solche zu verstehen, die Gesamtheit der Fakten in ihrer Komplexität zu erfassen und nicht der Versuchung der Simplifizierung zu erliegen. Über diesen Blick auf die Vernetztheit der Fakten finden Sie neue Handlungsspielräume.",
+            zielgruppe: "Alle Menschen, die ihre Change-Kompetenz stärken wollen."
         }
     },
     "selbstmitgefuehl": {
