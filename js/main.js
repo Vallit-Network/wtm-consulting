@@ -242,7 +242,7 @@ document.addEventListener('DOMContentLoaded', () => {
         `).join('');
 
         const categoryIcon = categoryIcons[seminar.category] || categoryIcons.leadership;
-        const seminarUrl = seminar.url || `seminar.html?id=${seminar.id}`;
+        const seminarUrl = seminar.url || `seminar?id=${seminar.id}`;
 
         return `
             <article class="training-card reveal" data-category="${seminar.category}" onclick="window.location.href='${seminarUrl}'">
