@@ -115,11 +115,16 @@ const seminarsData = {
         details: ["1-2 Tage", "Praxisübungen", "Fallarbeit"],
         heroImage: "assets/hero-meeting.jpg",
         content: {
-            intro: "Delegation: das Handwerk der F\u00fchrung\nJa, Haltung kommt vor Technik. Ganz ohne Technik wird es aber auch schwierig.\nWie k\u00f6nnen Sie sicherstellen, dass das, was Sie wollen, auch umgesetzt wird? Wie\nviel Einfluss sollte ein Mitarbeiter auf die Ziele und Aufgaben haben? Wie kann ich\nmotivieren? Wie kontrollieren?",
-            ziele: ["kennen Hilfsmittel und Arbeitsmethoden zur effizienten Organisation Ihres", "Verantwortungsbereiches.", "wissen, welche Aufgaben Sie gut delegieren k\u00f6nnen und welche Sie besser", "selbst erledigen.", "erkennen M\u00f6glichkeiten und Grenzen des Delegierens von Aufgaben in Ar-", "beitsgruppen.", "kennen Methoden zur effizienten Kontrolle delegierter Aufgaben."],
-            inhalte: "\u2022  Ziele und Aufgaben definieren\n\u2022  Priorit\u00e4ten setzen\n\u2022  Grundlagen der Delegation\n\u2022  Zielvereinbarung, Zielsetzung, Delegation, Anweisung\n\u2022  Das Verh\u00e4ltnis von Fachkompetenz und Motivation\n\u2022  Zust\u00e4ndigkeiten: Aufgaben und Grenzen des eigenen Arbeitsgebietes\n\u2022  Motivation\n\u2022  Kontrolle",
-            nutzen: "Sie sind sicher in der Anwendung unterschiedlicher Delegationsmethoden und k\u00f6n-\nnen sie passgenau je nach Mitarbeiter und Aufgabe einsetzen. Auf diese Weise\nk\u00f6nnen Sie Delegation gezielt als Instrument der Mitarbeiterentwicklung einsetzen.",
-            zielgruppe: "F\u00fchrungskr\u00e4fte, mit und ohne Personalverantwortung"
+            intro: "Ja, Haltung kommt vor Technik. Ganz ohne Technik wird es aber auch schwierig. Wie können Sie sicherstellen, dass das, was Sie wollen, auch umgesetzt wird? Wie viel Einfluss sollte ein Mitarbeiter auf die Ziele und Aufgaben haben? Wie kann ich motivieren? Wie kontrollieren?",
+            ziele: [
+                "kennen Hilfsmittel und Arbeitsmethoden zur effizienten Organisation Ihres Verantwortungsbereiches.",
+                "wissen, welche Aufgaben Sie gut delegieren können und welche Sie besser selbst erledigen.",
+                "erkennen Möglichkeiten und Grenzen des Delegierens von Aufgaben in Arbeitsgruppen.",
+                "kennen Methoden zur effizienten Kontrolle delegierter Aufgaben."
+            ],
+            inhalte: "Ziele und Aufgaben definieren. Prioritäten setzen. Grundlagen der Delegation. Zielvereinbarung, Zielsetzung, Delegation, Anweisung. Das Verhältnis von Fachkompetenz und Motivation. Zuständigkeiten: Aufgaben und Grenzen des eigenen Arbeitsgebietes. Motivation. Kontrolle.",
+            nutzen: "Sie sind sicher in der Anwendung unterschiedlicher Delegationsmethoden und können sie passgenau je nach Mitarbeiter und Aufgabe einsetzen. Auf diese Weise können Sie Delegation gezielt als Instrument der Mitarbeiterentwicklung einsetzen.",
+            zielgruppe: "Führungskräfte, mit und ohne Personalverantwortung"
         }
     },
     "gekonnt-visualisieren-an-flipchart-und-pinnwand": {
