@@ -295,9 +295,13 @@ const seminarsData = {
         title: "Laterales Führen wirksam gestalten",
         url: "seminare/laterales-fuehren",
         category: "leadership",
-        badge: "Seminar",
+        badge: "2 Tage / 14 Schulungsstunden",
         shortDescription: "Führung ohne formale Hierarchie klar gestalten – mit Verständnis für Entscheidungsprozesse und Teamdynamiken.",
-        details: ["2 Tage / 14 Std.", "Wirksame Führung", "Entscheidungsprozesse", "Selbstorganisation"],
+        details: [
+            "Wirksame Führung ohne Hierarchie entwickeln",
+            "Entscheidungsprozesse und Gruppendynamik besser handhaben",
+            "Selbstorganisation gezielt unterstützen"
+        ],
         heroImage: "assets/hero-meeting.jpg",
         content: {
             intro: "Führung ohne formale Hierarchie wird wirksam, wenn Entscheidungsprozesse und Teamdynamiken klar erkennbar sind und Führungshandeln passend zum System entwickelt wird.",
@@ -306,7 +310,7 @@ const seminarsData = {
                 "Entscheidungsprozesse und Gruppendynamik besser handhaben",
                 "Selbstorganisation gezielt unterstützen"
             ],
-            inhalte: "Führungskultur & Organisationslogik. Rolle & Erwartungen an Führung. Anforderungen von Teams. Führung ohne formale Autorisierung. Führung gestalten für Selbstorganisation.",
+            inhalte: "Führungskultur & Organisationslogik. Rolle & Erwartungen an Führung. Anforderungen von Teams an Führung. Führung ohne formale Autorisierung. Führung gestalten für Selbstorganisation.",
             nutzen: "Sie gestalten Führung auch ohne Hierarchie klarer, begleiten Entscheidungsprozesse strukturierter und unterstützen Selbstorganisation aktiv.",
             zielgruppe: "Mitarbeitende, die Teams ohne Hierarchie führen möchten."
         }
@@ -395,9 +399,13 @@ const seminarsData = {
         title: "Projektmanagement Grundlagen – Projekte sicher steuern",
         url: "seminare/projektmanagement-basistraining",
         category: "management",
-        badge: "Seminar",
+        badge: "2 Tage / 14 Stunden",
         shortDescription: "Systematisches Projektmanagement für den Unternehmensalltag – von Auftragsklärung bis Steuerung.",
-        details: ["2 Tage / 14 Std.", "Struktur & Methoden", "Vorlagen/Standards", "Projekt-Reporting"],
+        details: [
+            "Struktur und Methoden für professionelle Projektarbeit",
+            "Direkt nutzbare Vorlagen/Standards",
+            "Besseres Verständnis für Projekt-Reporting"
+        ],
         heroImage: "assets/hero-meeting.jpg",
         content: {
             intro: "Viele Projekte scheitern oder werden teurer und dauern länger als geplant. Systematisches Projektmanagement unterstützt dabei, Projekte professionell aufzusetzen, zu steuern und erfolgreich abzuschließen.",
@@ -406,7 +414,7 @@ const seminarsData = {
                 "Direkt nutzbare Vorlagen/Standards",
                 "Besseres Verständnis für Projekt-Reporting"
             ],
-            inhalte: "Rollen, Phasen, Vorgehensmodelle. Auftragsklärung. Stakeholder- & Risikoanalyse. Planung & Steuerung. Steuerungsgrößen: Zeit, Kosten, Scope, Qualität.",
+            inhalte: "Rollen, Phasen, Vorgehensmodelle (agil/klassisch). Auftragsklärung & Projektauftrag. Stakeholder- & Risikoanalyse. Planung & Steuerung: Werkzeuge je Phase. Steuerungsgrößen: Zeit, Kosten, Scope, Qualität.",
             nutzen: "Projekte werden sauberer aufgesetzt und stabiler gesteuert. Ein klarer Werkzeugkasten unterstützt Planung und Umsetzung.",
             zielgruppe: "Einsteiger und zur Vertiefung."
         }
