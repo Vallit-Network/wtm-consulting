@@ -127,6 +127,30 @@ const seminarsData = {
             zielgruppe: "Führungskräfte, mit und ohne Personalverantwortung"
         }
     },
+    "fuehren-durch-persoenlichkeit": {
+        id: "fuehren-durch-persoenlichkeit",
+        title: "Führen durch Persönlichkeit",
+        url: "seminare/fuehren-durch-persoenlichkeit",
+        category: "leadership",
+        badge: "Seminar",
+        shortDescription: "Führungskompetenz durch Persönlichkeit stärken – Haltung, Selbstreflexion und wirksamer Umgang mit Macht.",
+        details: ["2 Tage", "Intensiv", "Reflexion"],
+        heroImage: "assets/hero-meeting.jpg",
+        content: {
+            intro: "Wie funktioniert „Führung“, wenn vertraute Organisationsformen wegfallen, wenn Abläufe immer komplexer und unsicherer werden? Worauf kann Führung dann noch bauen? Was hilft mir, diese Unsicherheit auszuhalten? Wie gehe ich mit der Gefahr des Scheiterns um? Welchen Belastungen kann ich leicht standhalten, welchen nur schwer? Wie bekomme ich den Zugang zu einem ressourcenorientierten und wirksamen Führungsverhalten?",
+            ziele: [
+                "kennen das Potential Ihrer Führungspersönlichkeit",
+                "wissen, welche Bedürfnisse und Verwundbarkeiten hinter Ihrem Führungsstil stehen",
+                "kennen die Verführbarkeit durch Macht",
+                "können Ihren Einfluss situationsgerecht einsetzen",
+                "haben die Balance zwischen Führen und Dienen",
+                "haben eine innere Haltung zu ihrem Führungsanspruch entwickelt und sind motiviert, diese Haltung auch zu leben"
+            ],
+            inhalte: "Was ist Führung? Was unterscheidet sie von Management, Hierarchie oder Dominanz? Persönliches Rollenbild und Selbstverständnis von Führung - wo und wie habe ich Führung erlebt? Wie lebe ich sie heute und morgen? Gibt es „die“ Führungspersönlichkeit? Das Verhältnis von Macht und Dienen. Wie kann ich verantwortlich sein ohne Steuerungsmöglichkeiten?",
+            nutzen: "Sie haben eine klare Haltung zu sich und Ihrer Führungspersönlichkeit. Jenseits von Tools und Methoden finden Sie einen angemessenen Umgang mit Macht und Verantwortung.",
+            zielgruppe: "Alle Menschen, die verantwortungsbewusst mit ihrer Führungsposition umgehen möchten."
+        }
+    },
     "gekonnt-visualisieren-an-flipchart-und-pinnwand": {
         id: "gekonnt-visualisieren-an-flipchart-und-pinnwand",
         title: "Visualisieren an Flipchart & Pinnwand",
