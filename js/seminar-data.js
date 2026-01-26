@@ -568,11 +568,19 @@ const seminarsData = {
         details: ["2-3 Tage Präsenz", "Rollenarbeit", "Coaching"],
         heroImage: "assets/hero-meeting.jpg",
         content: {
-            intro: "Vom Mitarbeiter zur F\u00fchrungskraft\nDie vielleicht schwierigste Ver\u00e4nderung auf dem Karriereweg ist der Schritt vom\nMitarbeiter zur F\u00fchrungskraft. Das Aufgabengebiet \u00e4ndert sich von der Ausf\u00fchrung\nzur Organisation, wird zudem gr\u00f6\u00dfer, die Verantwortung w\u00e4chst. Und vor allem:\ndas Verh\u00e4ltnis zu den ehemaligen Kollegen ver\u00e4ndert sich v\u00f6llig. Welches sind die\nwichtigsten Fallen auf diesem Weg? Was hilft, sie zu umgehen? Worauf sollte ich\nmein Augenmerk richten?",
-            ziele: ["kennen die Erwartungen an Ihren neuen Job", "wissen, wie Sie Spielregeln etablieren", "entwickeln einen angemessenen F\u00fchrungsstil", "kennen die wichtigsten gruppendynamischen Prozesse", "beherrschen grundlegende Kommunikationsinstrumente: Feedback, Kon-", "trolle, Anerkennungs- und Kritikgespr\u00e4che", "kennen unterschiedliche Delegationsweisen", "wissen, was Mitarbeiter motiviert"],
-            inhalte: "\u2022  Die ersten 100 Tage gestalten\n\u2022  Die F\u00fchrungsstile\n\u2022  Teamprozesse\n\u2022  Feedback\n\u2022  F\u00fchrungsinstrumente\n\u2022  Delegation\n\u2022  Mitarbeitermotivation",
-            nutzen: "Eine neue Rolle braucht auch andere Verhaltensweisen. Sie bekommen Sicherheit\nin deren Anwendung und haben Orientierung f\u00fcr die ersten 100 Tage. Sie wissen\nmit welchen Spielregeln Sie am besten an Ihr neues Team ankoppeln k\u00f6nnen.",
-            zielgruppe: "Alle Menschen, die zum ersten Mal in F\u00fchrungsverantwortung stehen"
+            intro: "Die vielleicht schwierigste Veränderung auf dem Karriereweg ist der Schritt vom Mitarbeiter zur Führungskraft. Das Aufgabengebiet ändert sich von der Ausführung zur Organisation, wird zudem größer, die Verantwortung wächst. Und vor allem: das Verhältnis zu den ehemaligen Kollegen verändert sich völlig. Welches sind die wichtigsten Fallen auf diesem Weg? Was hilft, sie zu umgehen? Worauf sollte ich mein Augenmerk richten?",
+            ziele: [
+                "kennen die Erwartungen an Ihren neuen Job",
+                "wissen, wie Sie Spielregeln etablieren",
+                "entwickeln einen angemessenen Führungsstil",
+                "kennen die wichtigsten gruppendynamischen Prozesse",
+                "beherrschen grundlegende Kommunikationsinstrumente: Feedback, Kontrolle, Anerkennungs- und Kritikgespräche",
+                "kennen unterschiedliche Delegationsweisen",
+                "wissen, was Mitarbeiter motiviert"
+            ],
+            inhalte: "Die ersten 100 Tage gestalten. Die Führungsstile. Teamprozesse. Feedback. Führungsinstrumente. Delegation. Mitarbeitermotivation.",
+            nutzen: "Eine neue Rolle braucht auch andere Verhaltensweisen. Sie bekommen Sicherheit in deren Anwendung und haben Orientierung für die ersten 100 Tage. Sie wissen mit welchen Spielregeln Sie am besten an Ihr neues Team ankoppeln können.",
+            zielgruppe: "Alle Menschen, die zum ersten Mal in Führungsverantwortung stehen"
         }
     },
     "widerstandsfaehigkeit-staerken": {
