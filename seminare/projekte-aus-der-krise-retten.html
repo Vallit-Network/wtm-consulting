@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="../assets/favicon.png">
-    <title>Konflikterkennung & Prävention – WTM Management Consulting</title>
+    <title>Projekte aus der Krise retten – WTM Management Consulting</title>
     <meta name="description"
-        content="Konflikte in Unternehmen erkennen, behandeln und vorbeugen. Stärken Sie Ihre Konfliktkompetenz für eine produktive Zusammenarbeit.">
+        content="Projekte aus der Krise retten – Strategisches Krisenmanagement für Projektleiter: Probleme erkennen, Stellschrauben nutzen, Projekte retten.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -16,14 +16,16 @@
     <link rel="stylesheet" href="../styles/index.css">
     <style>
         :root {
-            /* Anthracite Theme (Leadership) */
-            --seminar-accent: #4A4A4E;
-            --seminar-accent-light: rgba(74, 74, 78, 0.1);
-            --seminar-accent-glow: rgba(74, 74, 78, 0.3);
+            /* Project Management Theme (Blue) */
+            --seminar-accent: #2563eb;
+            /* Tech Blue */
+            --seminar-accent-light: rgba(37, 99, 235, 0.1);
+            --seminar-accent-glow: rgba(37, 99, 235, 0.3);
             --color-text: #3A3A38;
             --color-cream: #F5F5F3;
             --color-border: #E5E5E0;
-            --accent-highlight: #a0a0a5;
+            --accent-highlight: #60a5fa;
+            /* Lighter Blue highlight */
         }
 
         .scroll-progress {
@@ -36,12 +38,11 @@
             width: 0%;
         }
 
-        /* Hero */
         .seminar-hero {
             min-height: 100vh;
             display: flex;
             align-items: center;
-            background: linear-gradient(145deg, #1a1a1c 0%, #2c2c2e 100%);
+            background: linear-gradient(135deg, #1e3a8a 0%, #172554 100%);
             position: relative;
             overflow: hidden;
             padding: 120px 0 80px;
@@ -58,7 +59,7 @@
         .orb-1 {
             width: 400px;
             height: 400px;
-            background: #9ca3af;
+            background: #3b82f6;
             top: -100px;
             right: -100px;
         }
@@ -134,7 +135,7 @@
         }
 
         .hero-title span {
-            color: #9ca3af;
+            color: #60a5fa;
         }
 
         .hero-subtitle {
@@ -171,7 +172,7 @@
         .meta-tag svg {
             width: 16px;
             height: 16px;
-            stroke: #9ca3af;
+            stroke: #60a5fa;
         }
 
         .hero-cta {
@@ -303,198 +304,6 @@
             margin: 0;
         }
 
-        /* Thomas-Kilmann Model SVG */
-        .model-container {
-            max-width: 800px;
-            margin: 4rem auto 0;
-            position: relative;
-        }
-
-        .tki-svg {
-            width: 100%;
-            height: auto;
-            overflow: visible;
-        }
-
-        .tki-axis {
-            stroke: var(--color-text);
-            stroke-width: 2;
-            marker-end: url(#arrowhead);
-        }
-
-        .tki-label {
-            font-size: 14px;
-            font-weight: 600;
-            fill: var(--color-text);
-            text-transform: uppercase;
-        }
-
-        .tki-mode {
-            cursor: pointer;
-            transition: all 0.4s ease;
-        }
-
-        .tki-mode circle {
-            fill: var(--seminar-accent-light);
-            stroke: var(--seminar-accent);
-            stroke-width: 2;
-            transition: all 0.3s ease;
-        }
-
-        .tki-mode:hover circle {
-            fill: var(--seminar-accent);
-            r: 55;
-        }
-
-        .tki-mode-text {
-            fill: var(--color-text);
-            font-weight: 600;
-            font-size: 14px;
-            text-anchor: middle;
-            transition: all 0.3s ease;
-            pointer-events: none;
-        }
-
-        .tki-mode:hover .tki-mode-text {
-            fill: #fff;
-        }
-
-        /* Timeline / Journey */
-        .content-section {
-            padding: 6rem 0;
-            background: linear-gradient(180deg, #f8faf9 0%, #fff 100%);
-            position: relative;
-        }
-
-        .content-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 1px;
-            height: 80px;
-            background: var(--seminar-accent);
-        }
-
-        .journey-container {
-            max-width: 900px;
-            margin: 0 auto;
-            position: relative;
-        }
-
-        .journey-line {
-            position: absolute;
-            left: 50%;
-            top: 0;
-            bottom: 0;
-            width: 4px;
-            background: linear-gradient(180deg, var(--seminar-accent) 0%, rgba(74, 74, 78, 0.6) 50%, rgba(74, 74, 78, 0.2) 100%);
-            transform: translateX(-50%);
-            border-radius: 4px;
-        }
-
-        .journey-item {
-            display: flex;
-            align-items: flex-start;
-            position: relative;
-            margin-bottom: 2rem;
-        }
-
-        .journey-item:nth-child(odd) {
-            flex-direction: row;
-        }
-
-        .journey-item:nth-child(even) {
-            flex-direction: row-reverse;
-        }
-
-        .journey-content {
-            width: calc(50% - 50px);
-            padding: 0 1.5rem;
-        }
-
-        .journey-node {
-            position: absolute;
-            left: 50%;
-            top: 20px;
-            transform: translateX(-50%);
-            z-index: 10;
-        }
-
-        .node-dot {
-            width: 24px;
-            height: 24px;
-            background: var(--seminar-accent);
-            border-radius: 50%;
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 0 0 4px #fff, 0 0 0 6px var(--seminar-accent);
-        }
-
-        .node-connector {
-            position: absolute;
-            top: 50%;
-            width: 42px;
-            height: 2px;
-            background: var(--seminar-accent);
-            transform: translateY(-50%);
-        }
-
-        .journey-item:nth-child(odd) .node-connector {
-            right: 100%;
-            margin-right: 3px;
-        }
-
-        .journey-item:nth-child(even) .node-connector {
-            left: 100%;
-            margin-left: 3px;
-        }
-
-        .journey-card {
-            background: #fff;
-            border-radius: 16px;
-            padding: 1.75rem 2rem;
-            border: 1px solid rgba(74, 74, 78, 0.15);
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
-            transition: all 0.4s;
-        }
-
-        .journey-item:hover .journey-card {
-            transform: translateY(-5px);
-            border-color: var(--seminar-accent);
-            box-shadow: 0 20px 50px rgba(74, 74, 78, 0.12);
-        }
-
-        .module-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.4rem 0.8rem;
-            background: var(--seminar-accent-light);
-            border-radius: 20px;
-            margin-bottom: 0.75rem;
-        }
-
-        .module-number {
-            font-size: 0.7rem;
-            font-weight: 700;
-            color: var(--seminar-accent);
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-        }
-
-        .journey-title {
-            font-size: 1.15rem;
-            font-weight: 600;
-            color: var(--color-text);
-            margin: 0;
-            line-height: 1.4;
-        }
-
-        /* CTA */
         .cta-section {
             padding: 6rem 0 4rem;
             background: var(--color-cream);
@@ -545,6 +354,251 @@
                 grid-template-columns: 1fr;
             }
         }
+
+        /* PREMIUM TIMELINE STYLES */
+        .content-section {
+            padding: 6rem 0;
+            background: linear-gradient(180deg, #f8faf9 0%, #fff 100%);
+            position: relative;
+        }
+
+        .content-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 1px;
+            height: 80px;
+            background: var(--seminar-accent);
+        }
+
+        .journey-container {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .journey-line {
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: linear-gradient(180deg,
+                    var(--seminar-accent) 0%,
+                    rgba(37, 99, 235, 0.6) 50%,
+                    rgba(37, 99, 235, 0.2) 100%);
+            transform: translateX(-50%);
+            border-radius: 4px;
+        }
+
+        .journey-line::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 0%;
+            background: linear-gradient(180deg,
+                    var(--accent-highlight) 0%,
+                    var(--seminar-accent) 100%);
+            border-radius: 4px;
+            transition: height 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 0 20px rgba(37, 99, 235, 0.4);
+        }
+
+        .journey-line.animated::after {
+            height: 100%;
+        }
+
+        .journey-item {
+            display: flex;
+            align-items: flex-start;
+            position: relative;
+            margin-bottom: 2rem;
+            opacity: 1;
+        }
+
+        .journey-item:nth-child(odd) {
+            flex-direction: row;
+        }
+
+        .journey-item:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .journey-content {
+            width: calc(50% - 50px);
+            padding: 0 1.5rem;
+        }
+
+        .journey-node {
+            position: absolute;
+            left: 50%;
+            top: 20px;
+            transform: translateX(-50%);
+            z-index: 10;
+        }
+
+        .node-dot {
+            width: 24px;
+            height: 24px;
+            background: var(--seminar-accent);
+            border-radius: 50%;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow:
+                0 0 0 4px #fff,
+                0 0 0 6px var(--seminar-accent),
+                0 0 30px rgba(37, 99, 235, 0.4);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .node-dot::before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            background: #fff;
+            border-radius: 50%;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+
+        .journey-item:hover .node-dot::before {
+            animation: node-pulse 1s infinite ease-in-out;
+        }
+
+        @keyframes node-pulse {
+
+            0%,
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+
+            50% {
+                transform: scale(0.6);
+                opacity: 0.6;
+            }
+        }
+
+        .node-ring {
+            position: absolute;
+            inset: -8px;
+            border: 2px solid var(--seminar-accent);
+            border-radius: 50%;
+            opacity: 0;
+            transform: scale(0.8);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+
+        .journey-item:hover .node-ring {
+            animation: ring-expand 1.5s infinite ease-out;
+        }
+
+        @keyframes ring-expand {
+            0% {
+                transform: scale(0.8);
+                opacity: 0.8;
+            }
+
+            100% {
+                transform: scale(1.8);
+                opacity: 0;
+            }
+        }
+
+        .node-connector {
+            position: absolute;
+            top: 50%;
+            width: 42px;
+            height: 2px;
+            background: var(--seminar-accent);
+            transform: translateY(-50%);
+        }
+
+        .journey-item:nth-child(odd) .node-connector {
+            right: 100%;
+            margin-right: 3px;
+        }
+
+        .journey-item:nth-child(even) .node-connector {
+            left: 100%;
+            margin-left: 3px;
+        }
+
+        .journey-card {
+            background: #fff;
+            border-radius: 16px;
+            padding: 1.75rem 2rem;
+            position: relative;
+            border: 1px solid rgba(37, 99, 235, 0.15);
+            box-shadow:
+                0 4px 20px rgba(0, 0, 0, 0.04),
+                0 1px 3px rgba(0, 0, 0, 0.02);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            overflow: hidden;
+        }
+
+        .journey-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--seminar-accent);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .journey-item:hover .journey-card {
+            transform: translateY(-5px);
+            border-color: var(--seminar-accent);
+            box-shadow:
+                0 20px 50px rgba(37, 99, 235, 0.12),
+                0 8px 20px rgba(0, 0, 0, 0.06);
+        }
+
+        .journey-item:hover .journey-card::before {
+            transform: scaleX(1);
+        }
+
+        .module-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.4rem 0.8rem;
+            background: var(--seminar-accent-light);
+            border-radius: 20px;
+            margin-bottom: 0.75rem;
+        }
+
+        .module-number {
+            font-size: 0.7rem;
+            font-weight: 700;
+            color: var(--seminar-accent);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        .journey-title {
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: var(--color-text);
+            margin: 0;
+            line-height: 1.4;
+        }
+
+        /* Visual Model Styles */
+        .intro-visual {
+            margin: 4rem auto;
+            max-width: 600px;
+            position: relative;
+        }
     </style>
 </head>
 
@@ -573,31 +627,34 @@
             <div class="hero-content-wrapper">
                 <div class="hero-text">
                     <div class="breadcrumb"><a href="../index">Startseite</a><span class="breadcrumb-sep">→</span><a
-                            href="../index#trainings">Seminare</a><span
-                            class="breadcrumb-sep">→</span><span>Konflikte</span></div>
-                    <div class="category-badge">Leadership & Kommunikation</div>
-                    <h1 class="hero-title">Konflikte erkennen & <span>lösen</span></h1>
-                    <p class="hero-subtitle">Konflikte sind in Unternehmen Alltag. Sie kosten Energie und senken die
-                        Produktivität. Lernen Sie, Konflikte frühzeitig zu erkennen, professionell zu behandeln und
-                        nachhaltig vorzubeugen.</p>
+                            href="../index#trainings">Seminare</a><span class="breadcrumb-sep">→</span><span>Projekte
+                            aus der Krise retten</span></div>
+                    <div class="category-badge">Projektmanagement</div>
+                    <h1 class="hero-title">Projekte aus der Krise <span>retten</span></h1>
+                    <p class="hero-subtitle">Projekte sind Vorstöße in Neuland. Lernen Sie, Probleme und Krisen
+                        frühzeitig zu erkennen, strategisch zu lösen und auch in kritischen Situationen souverän zu
+                        agieren.
+                    </p>
                     <div class="hero-meta">
                         <span class="meta-tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                 stroke-width="2">
                                 <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-                            </svg>2 Tage</span>
+                            </svg>1-2 Tage</span>
                         <span class="meta-tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                 stroke-width="2">
                                 <circle cx="12" cy="12" r="10"></circle>
-                            </svg>Praxis &amp; Reflexion</span>
+                            </svg>Praxisübungen & Fallstudien</span>
                         <span class="meta-tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                 stroke-width="2">
                                 <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
                                 <circle cx="9" cy="7" r="4"></circle>
-                            </svg>Führungskräfte &amp; PL</span>
+                                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                            </svg>Für Projektmanager & Krisenverantwortliche</span>
                     </div>
                     <div class="hero-cta">
                         <a href="../index#kontakt" class="btn-glow">Unverbindlich anfragen →</a>
-                        <a href="#nutzen" class="btn-outline-light">Mehr erfahren</a>
+                        <a href="#konzept" class="btn-outline-light">Konzept erhalten</a>
                     </div>
                 </div>
             </div>
@@ -608,78 +665,48 @@
         <div class="container">
             <div class="intro-content">
                 <span class="section-label">Herausforderung</span>
-                <h2>Warum Konflikte teuer sind</h2>
-                <p class="intro-text">
-                    Konflikte zwischen Führungskräften oder Mitarbeitern sind häufig und belasten alle Beteiligten
-                    stark.
-                    Sie mindern die Bindung zum Unternehmen und senken die Arbeitsproduktivität.
-                    Ob zwischen Standorten, mit Kunden oder Zulieferern – ungelöste Konflikte binden wertvolle Energie.
-                    Durch ineffiziente Prozesse, schlechtere Qualität und Fluktuation entstehen vermeidbare Kosten.
-                    Ein Konflikt, der nicht dauerhaft befriedet wird, schwelt im Untergrund weiter.
+                <h2>Warum Projekte scheitern</h2>
+                <p class="intro-text" style="margin-top: 2rem;">
+                    Selbst mit einem erfahrenen Projektmanager können Projekte ins Schleudern geraten, dies liegt in der
+                    Natur der Sache. Denn Projekte sind per definitionem Vorstöße in Neuland und sollen Lösungen
+                    herbeiführen, die es so noch nicht gibt. Das A und O des professionellen Krisenmanagements ist es,
+                    Probleme und Krisen anhand typischer Merkmale frühzeitig zu erkennen und strategisch lösen zu
+                    können.
                 </p>
-            </div>
+                <p class="intro-text">
+                    <strong>Kurzum die Beantwortung der Frage: Welche Maßnahmen sind an welcher Stellschraube wann
+                        sinnvoll?</strong>
+                </p>
 
-            <!-- Thomas-Kilmann Conflict Mode Instrument SVG -->
-            <div class="model-container">
-                <div style="text-align:center; margin-bottom: 2rem;">
-                    <span class="section-label">Modell</span>
-                    <h3>Thomas-Kilmann-Conflict-Mode</h3>
+                <!-- Visual Model: The Crisis Curve -->
+                <div class="intro-visual">
+                    <svg viewBox="0 0 600 200" fill="none" stroke="currentColor" stroke-width="2"
+                        style="width: 100%; height: auto;">
+                        <!-- Axis -->
+                        <line x1="50" y1="180" x2="550" y2="180" stroke="#e5e5e0" />
+
+                        <!-- Curve -->
+                        <path d="M50,150 Q150,150 200,100 T300,50 T450,150" fill="none" stroke="var(--seminar-accent)"
+                            stroke-width="4" stroke-dasharray="600" stroke-dashoffset="0">
+                            <animate attributeName="stroke-dashoffset" from="600" to="0" dur="2s" fill="freeze" />
+                        </path>
+
+                        <!-- Points -->
+                        <circle cx="50" cy="150" r="6" fill="#fff" stroke="var(--seminar-accent)" stroke-width="3" />
+                        <text x="50" y="195" text-anchor="middle" font-size="12" fill="var(--color-text)">Start</text>
+
+                        <circle cx="200" cy="100" r="6" fill="#fff" stroke="var(--seminar-accent)" stroke-width="3" />
+                        <text x="200" y="85" text-anchor="middle" font-size="12"
+                            fill="var(--color-text)">Warnsignale</text>
+
+                        <circle cx="300" cy="50" r="8" fill="var(--seminar-accent)" />
+                        <text x="300" y="30" text-anchor="middle" font-weight="bold" font-size="14"
+                            fill="var(--seminar-accent)">Krise</text>
+
+                        <circle cx="450" cy="150" r="6" fill="#fff" stroke="var(--seminar-accent)" stroke-width="3" />
+                        <text x="450" y="195" text-anchor="middle" font-size="12" fill="var(--color-text)">Lösung</text>
+                    </svg>
                 </div>
-                <svg viewBox="0 0 600 500" class="tki-svg">
-                    <defs>
-                        <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
-                            <polygon points="0 0, 10 3.5, 0 7" fill="var(--color-text)" />
-                        </marker>
-                    </defs>
-
-                    <!-- Axes -->
-                    <line x1="50" y1="450" x2="550" y2="450" class="tki-axis" /> <!-- X Axis -->
-                    <line x1="50" y1="450" x2="50" y2="50" class="tki-axis" /> <!-- Y Axis -->
-
-                    <!-- Labels -->
-                    <text x="300" y="490" text-anchor="middle" class="tki-label">Kooperativität (Auf andere
-                        eingehen)</text>
-                    <text x="15" y="250" text-anchor="middle" transform="rotate(-90, 15, 250)"
-                        class="tki-label">Durchsetzungsfähigkeit (Eigene Interessen)</text>
-
-                    <!-- Modes -->
-                    <g class="tki-modes">
-                        <!-- Competing (Throughsetzend) - Top Left -->
-                        <g class="tki-mode" transform="translate(150, 150)">
-                            <circle cx="0" cy="0" r="50" />
-                            <text x="0" y="5" class="tki-mode-text">Durchsetzen</text>
-                            <title>Hohe Durchsetzung, wenig Kooperation: Machtorientiert, schnell entscheiden.</title>
-                        </g>
-
-                        <!-- Collaborating (Kooperierend) - Top Right -->
-                        <g class="tki-mode" transform="translate(450, 150)">
-                            <circle cx="0" cy="0" r="50" />
-                            <text x="0" y="5" class="tki-mode-text">Integrieren</text>
-                            <title>Hohe Durchsetzung, hohe Kooperation: Gemeinsame Lösungen finden, Win-Win.</title>
-                        </g>
-
-                        <!-- Compromising (Kompromissbereit) - Center -->
-                        <g class="tki-mode" transform="translate(300, 300)">
-                            <circle cx="0" cy="0" r="50" />
-                            <text x="0" y="5" class="tki-mode-text">Kompromiss</text>
-                            <title>Mitte: Schnelle, aber oft nicht perfekte Lösung. Beide Seiten geben nach.</title>
-                        </g>
-
-                        <!-- Avoiding (Vermeidend) - Bottom Left -->
-                        <g class="tki-mode" transform="translate(150, 450)">
-                            <circle cx="0" cy="-60" r="50" /> <!-- Adjusted Y slightly up -->
-                            <text x="0" y="-55" class="tki-mode-text">Vermeiden</text>
-                            <title>Wenig Durchsetzung, wenig Kooperation: Konflikt aus dem Weg gehen.</title>
-                        </g>
-
-                        <!-- Accommodating (Nachgebend) - Bottom Right -->
-                        <g class="tki-mode" transform="translate(450, 450)">
-                            <circle cx="0" cy="-60" r="50" /> <!-- Adjusted Y slightly up -->
-                            <text x="0" y="-55" class="tki-mode-text">Anpassen</text>
-                            <title>Wenig Durchsetzung, hohe Kooperation: Auf Bedürfnisse des anderen eingehen.</title>
-                        </g>
-                    </g>
-                </svg>
             </div>
         </div>
     </section>
@@ -693,26 +720,21 @@
             <div class="goals-grid">
                 <div class="goal-card">
                     <div class="goal-number">1</div>
-                    <p class="goal-text">Sie reflektieren Ihre bisherigen Lösungsstrategien und erkennen deren Stärken
-                        und Schwächen.</p>
+                    <p class="goal-text">Sie erkennen Probleme und Krisen im Projekt anhand typischer Merkmale
+                        frühzeitig.</p>
                 </div>
                 <div class="goal-card">
                     <div class="goal-number">2</div>
-                    <p class="goal-text">Sie verstärken, ergänzen oder verändern Ihr Verhaltensrepertoire im
-                        Konfliktfall.</p>
+                    <p class="goal-text">Sie sind sich der Stellschrauben des Krisenmanagements bewusst.</p>
                 </div>
                 <div class="goal-card">
                     <div class="goal-number">3</div>
-                    <p class="goal-text">Sie lernen, Konflikte frühzeitig zu erkennen und klar zu benennen.</p>
+                    <p class="goal-text">Sie wissen um die Werkzeuge der Projektkrisenphasen und setzen diese gezielt
+                        ein.</p>
                 </div>
                 <div class="goal-card">
                     <div class="goal-number">4</div>
-                    <p class="goal-text">Sie kommunizieren klar und eindeutig, ohne andere persönlich zu verletzen.</p>
-                </div>
-                <div class="goal-card">
-                    <div class="goal-number">5</div>
-                    <p class="goal-text">Sie bringen die Organisation durch nachhaltige Klärung strittiger Themen voran.
-                    </p>
+                    <p class="goal-text">Sie agieren auch in kritischen Situationen souverän.</p>
                 </div>
             </div>
         </div>
@@ -721,72 +743,103 @@
     <section class="content-section">
         <div class="container">
             <div class="section-header"><span class="section-label">Der Inhalt</span>
-                <h2>Themenübersicht</h2>
+                <h2>Inhalte</h2>
                 <div class="accent-line"></div>
             </div>
 
             <div class="journey-container">
-                <div class="journey-line"></div>
+                <div class="journey-line" id="journeyLine"></div>
 
                 <div class="journey-item">
                     <div class="journey-node">
-                        <div class="node-dot"></div>
+                        <div class="node-dot">
+                            <div class="node-ring"></div>
+                        </div>
                         <div class="node-connector"></div>
                     </div>
                     <div class="journey-content">
                         <div class="journey-card">
-                            <div class="module-badge"><span class="module-number">Thema 01</span></div>
-                            <h3 class="journey-title">Grundlagen & Dynamik</h3>
-                            <p>Wodurch entstehen Konflikte? Materielle Kosten und die Dynamik der Eskalation. Woran
-                                erkenne ich Konflikte frühzeitig?</p>
+                            <div class="module-badge"><span class="module-number">Phase 01</span></div>
+                            <h3 class="journey-title">Dynamik und Phasen von Krisenprojekten</h3>
                         </div>
                     </div>
                 </div>
 
                 <div class="journey-item">
                     <div class="journey-node">
-                        <div class="node-dot"></div>
+                        <div class="node-dot">
+                            <div class="node-ring"></div>
+                        </div>
                         <div class="node-connector"></div>
                     </div>
                     <div class="journey-content">
                         <div class="journey-card">
-                            <div class="module-badge"><span class="module-number">Thema 02</span></div>
-                            <h3 class="journey-title">Selbstreflexion</h3>
-                            <p>Umgang mit bisherigen Verhaltensmustern im Streitfall. Die Rolle der inneren Antreiber
-                                und der eigenen (Führungs-)Rolle.</p>
+                            <div class="module-badge"><span class="module-number">Phase 02</span></div>
+                            <h3 class="journey-title">Ursachen und Frühwarnindikatoren für Krisen</h3>
                         </div>
                     </div>
                 </div>
 
                 <div class="journey-item">
                     <div class="journey-node">
-                        <div class="node-dot"></div>
+                        <div class="node-dot">
+                            <div class="node-ring"></div>
+                        </div>
                         <div class="node-connector"></div>
                     </div>
                     <div class="journey-content">
                         <div class="journey-card">
-                            <div class="module-badge"><span class="module-number">Thema 03</span></div>
-                            <h3 class="journey-title">Tools & Modelle</h3>
-                            <p>Arbeit mit dem Thomas-Kilmann-Conflict-Mode Instrument. Die Rolle der Emotionen verstehen
-                                und steuern.</p>
+                            <div class="module-badge"><span class="module-number">Phase 03</span></div>
+                            <h3 class="journey-title">Kommunikation – präventiv und in der Krise</h3>
                         </div>
                     </div>
                 </div>
 
                 <div class="journey-item">
                     <div class="journey-node">
-                        <div class="node-dot"></div>
+                        <div class="node-dot">
+                            <div class="node-ring"></div>
+                        </div>
                         <div class="node-connector"></div>
                     </div>
                     <div class="journey-content">
                         <div class="journey-card">
-                            <div class="module-badge"><span class="module-number">Thema 04</span></div>
-                            <h3 class="journey-title">Lössungskompetenz</h3>
-                            <p>Persönliches Wachstum auf diesem Gebiet. Klar kommunizieren, ohne zu verletzen.
-                                Nachhaltige Klärung herbeiführen.</p>
+                            <div class="module-badge"><span class="module-number">Phase 04</span></div>
+                            <h3 class="journey-title">Werkzeuge für einzelne Phasen</h3>
                         </div>
                     </div>
                 </div>
+
+                <div class="journey-item">
+                    <div class="journey-node">
+                        <div class="node-dot">
+                            <div class="node-ring"></div>
+                        </div>
+                        <div class="node-connector"></div>
+                    </div>
+                    <div class="journey-content">
+                        <div class="journey-card">
+                            <div class="module-badge"><span class="module-number">Phase 05</span></div>
+                            <h3 class="journey-title">Situatives Führen in Krisen / Krisencoaching</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="journey-item">
+                    <div class="journey-node">
+                        <div class="node-dot">
+                            <div class="node-ring"></div>
+                        </div>
+                        <div class="node-connector"></div>
+                    </div>
+                    <div class="journey-content">
+                        <div class="journey-card">
+                            <div class="module-badge"><span class="module-number">Transfer</span></div>
+                            <h3 class="journey-title">Fallarbeit – Reflektion der eigenen beruflichen Praxis</h3>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
@@ -794,22 +847,14 @@
     <section class="cta-section">
         <div class="container">
             <div class="cta-grid">
-                <div class="target-card">
-                    <span class="section-label">Zielgruppe</span>
+                <div class="target-card"><span class="section-label">Zielgruppe</span>
                     <h3>Für wen ist das?</h3>
-                    <p style="color: var(--color-text); margin-bottom: 2rem;">
-                        Führungskräfte, Projektleiter und alle, die Konflikte souverän meistern möchten. Werden Sie zum
-                        geschätzten Ansprechpartner in kritischen Situationen.
-                    </p>
-                    <ul style="list-style: none; padding: 0; color: var(--color-text);">
-                        <li style="margin-bottom: 0.5rem">✓ Führungskräfte aller Ebenen</li>
-                        <li style="margin-bottom: 0.5rem">✓ Projektleiter & Teamleads</li>
-                        <li style="margin-bottom: 0.5rem">✓ HR-Verantwortliche</li>
-                    </ul>
+                    <p>Projektmanager und alle, die mit schwierigen Projekten zu tun haben.</p>
                 </div>
                 <div class="cta-card">
                     <h3>Kontakt aufnehmen</h3>
-                    <p>Haben Sie Fragen zum Seminar oder wünschen Sie ein individuelles Inhouse-Angebot?</p>
+                    <p>Gerne können wir dieses Menü nach Ihren Vorschlägen abändern! Preis, Methode und Dauer werden
+                        gemeinsam festgelegt.</p>
                     <a href="../index#kontakt" class="btn-glow" style="color: var(--seminar-accent);">Unverbindlich
                         anfragen →</a>
                 </div>
@@ -820,38 +865,59 @@
     <footer>
         <div class="container">
             <div class="footer-grid">
+                <!-- Brand Column -->
                 <div class="footer-brand">
-                    <a href="../index" class="logo"><img src="../assets/logo.png" alt="WTM Management Consulting"></a>
+                    <a href="../index" class="logo">
+                        <img src="../assets/logo.png" alt="WTM Management Consulting">
+                    </a>
                     <p>Ihr Partner für wirksame Führung, lebendige Teams und gesunde Organisationen.</p>
                 </div>
+                <!-- Links -->
                 <div class="footer-col">
                     <h4>Angebote</h4>
                     <ul class="footer-links">
                         <li><a href="../index#trainings">Trainings & Seminare</a></li>
                         <li><a href="../index#angebote">Coaching & Beratung</a></li>
-                        <li><a href="../index#team">Unser Team</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Kontakt</h4>
-                    <ul class="footer-links footer-contact">
-                        <li>Neuer Graben 61</li>
-                        <li>44139 Dortmund</li>
-                        <li><a href="tel:+4923113722666">0231 / 137 22 666</a></li>
                     </ul>
                 </div>
             </div>
         </div>
     </footer>
 
-    <script src="../js/main.js"></script>
     <script>
-        // Scroll Progress
+        // Scroll Progress Bar
         window.addEventListener('scroll', () => {
             const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
             const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
             const scrolled = (winScroll / height) * 100;
             document.getElementById("scrollProgress").style.width = scrolled + "%";
+
+            // Trigger animations for journey content
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.2 });
+
+            document.querySelectorAll('.journey-item').forEach(item => {
+                observer.observe(item);
+            });
+
+            const line = document.getElementById('journeyLine');
+            const rect = line.getBoundingClientRect();
+            if (rect.top < window.innerHeight && rect.bottom > 0) {
+                line.classList.add('animated');
+            }
+        });
+
+        // Mobile Menu
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navLinks = document.querySelector('.nav-links');
+
+        mobileMenu.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
         });
     </script>
 </body>

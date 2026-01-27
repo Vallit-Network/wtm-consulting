@@ -283,23 +283,47 @@ const seminarsData = {
         id: "konflikterkennung-behandlung-praevention",
         title: "Konflikterkennung & Prävention",
         url: "seminare/konflikterkennung-behandlung-praevention",
-        category: "communication",
+        category: "leadership",
         badge: "Seminar",
-        shortDescription: "Konflikte frühzeitig erkennen, professionell behandeln und nachhaltig vorbeugen. Für eine produktive Zusammenarbeit.",
+        shortDescription: "Konflikte sind in Unternehmen Alltag. Lernen Sie, diese frühzeitig zu erkennen, professionell zu behandeln und präventiv zu wirken.",
         details: ["2 Tage Präsenz", "Fallarbeit", "Praxistransfer"],
         heroImage: "assets/hero-meeting.jpg",
         content: {
-            intro: "Konflikte sind in Unternehmen Alltag. Innerbetriebliche Auseinandersetzungen zwischen Führungskräften oder Mitarbeitern belasten und mindern die Arbeitsproduktivität. Konflikte kosten allen Beteiligten viel Energie, die dringend für die eigentlichen Aufgaben benötigt wird.",
+            intro: "Konflikte sind in Unternehmen Alltag. Innerbetriebliche Auseinandersetzungen zwischen Führungskräften oder zwischen Führungskräften und Mitarbeiter/innen sind häufig. Letztere belasten Mitarbeiter/innen stark, mindern ihre Bindung zum Unternehmen und senken ihre Arbeitsproduktivität. Vielleicht treten auch Konflikte zwischen den Standorten, zwischen Unternehmen und Zentrale auf. Konflikte mit Kunden können entstehen zu Art und Umfang der erbrachten Leistungen, zur Geschwindigkeit der Bearbeitung von Anfragen oder zum Kommunikationsverhalten der Beschäftigten. Aber auch mit Zulieferern können Konflikte zu Preisen, Terminen oder der Qualität der erbrachten Leistung auftreten. Nicht selten kann ein Konflikt zu keinem für alle Seiten befriedigenden und dauerhaft stabilen Ergebnis gebracht werden. Er schwelt im Untergrund weiter. Konflikte kosten allen Beteiligten viel Energie, die dringend für die eigentlichen Aufgaben benötigt wird. Durch ineffiziente Prozesse, schlechtere Qualität, Krankheitsausfälle und Fluktuation entstehen vermeidbare Kosten, die Produktivität und Wirtschaftlichkeit sinkt.",
             ziele: [
-                "Bisherige Lösungsstrategien reflektieren und Stärken erkennen",
-                "Verhaltensrepertoire verstärken und ergänzen",
-                "Konflikte erkennen und benennen können",
-                "Klar und eindeutig kommunizieren ohne andere zu verletzen",
-                "Geschätzter Ansprechpartner für kritische Situationen werden"
+                "reflektieren ihre bisherigen Lösungsstrategien und erkennen die Stärken und Schwächen davon",
+                "verstärken, ergänzen oder verändern ihr Verhaltensrepertoire",
+                "erkennen Konflikte und können sie benennen",
+                "erfreuen sich am persönlichen Wachstum auf diesem Gebiet",
+                "bringen die Organisation durch die nachhaltige Klärung strittiger Themen voran",
+                "werden geschätzte Ansprechpartner für andere in kritischen beruflichen Situationen",
+                "kommunizieren klar und eindeutig, ohne andere persönlich zu verletzen"
             ],
-            inhalte: "Konfliktarten und Eskalationsstufen. Eigene Konfliktmuster erkennen. Deeskalationstechniken. Präventive Maßnahmen. Fallarbeit an eigenen Praxisbeispielen.",
-            nutzen: "Sie bringen die Organisation durch nachhaltige Klärung strittiger Themen voran. Ihre Konfliktfähigkeit wird zur Kernkompetenz.",
+            inhalte: "Materielle Kosten von Konflikten. Wodurch entstehen Konflikte? Woran erkenne ich Konflikte? Die Rolle der Emotionen. Dynamik des Konflikts. Umgang mit den bisherigen Verhaltensmustern im Streitfall. Thomas-Kilman-Conflict-Mode. Rolle der inneren Antreiber. Reflektion der eigenen (Führungs-)Rolle.",
+            nutzen: "Sie bringen die Organisation durch nachhaltige Klärung strittiger Themen voran und werden zum geschätzten Ansprechpartner in kritischen Situationen.",
             zielgruppe: "Führungskräfte, Projektleiter und alle, die Konflikte souverän meistern möchten."
+        }
+    },
+    "projekte-aus-der-krise-retten": {
+        id: "projekte-aus-der-krise-retten",
+        title: "Projekte aus der Krise retten",
+        url: "seminare/projekte-aus-der-krise-retten",
+        category: "management",
+        badge: "Seminar",
+        shortDescription: "Strategisches Krisenmanagement für Projektleiter: Probleme erkennen, Stellschrauben nutzen, Projekte retten.",
+        details: ["1-2 Tage", "Praxisübungen", "Fallstudien"],
+        heroImage: "assets/hero-meeting.jpg",
+        content: {
+            intro: "Selbst mit einem erfahrenen Projektmanager können Projekte ins Schleudern geraten. Das A und O des professionellen Krisenmanagements ist es, Probleme und Krisen anhand typischer Merkmale frühzeitig zu erkennen und strategisch lösen zu können.",
+            ziele: [
+                "Sie erkennen Probleme und Krisen im Projekt anhand typischer Merkmale frühzeitig.",
+                "Sie sind sich der Stellschrauben des Krisenmanagements bewusst.",
+                "Sie wissen um die Werkzeuge der Projektkrisenphasen und setzen diese gezielt ein.",
+                "Sie agieren auch in kritischen Situationen souverän."
+            ],
+            inhalte: "Dynamik und Phasen von Krisenprojekten. Ursachen und Frühwarnindikatoren für Krisen. Kommunikation – präventiv und in der Krise. Werkzeuge für einzelne Phasen. Situatives Führen in Krisen. Krisencoaching. Fallarbeit.",
+            nutzen: "Sie erlangen Sicherheit im Umgang mit Projekten in Schieflage und können strategisch gegensteuern.",
+            zielgruppe: "Projektmanager und alle, die mit schwierigen Projekten zu tun haben."
         }
     },
     "krisenmanagement-fuer-projektmanager": {
