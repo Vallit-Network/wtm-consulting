@@ -223,22 +223,24 @@ const seminarsData = {
         id: "gruppendynamik-in-teams",
         title: "Gruppendynamik in Teams",
         url: "seminare/gruppendynamik-in-teams",
-        category: "leadership",
-        badge: "Seminar",
+        category: "change",
+        badge: "Change",
         shortDescription: "Teamdynamiken verstehen und nutzen – Rollen, Phasen und Prozesse in der Teamarbeit steuern.",
-        details: ["2 Tage", "Praxis", "Reflexion"],
+        details: ["2 Tage", "Praxis", "Teamentwicklung"],
         heroImage: "assets/hero-meeting.jpg",
         content: {
-            intro: "Was ist Gruppendynamik? Wie unterscheiden sich Gruppe und Team? Lässt sich Dynamik steuern? Welche Rollen sind wichtig?",
+            intro: "Was ist eigentlich Gruppendynamik? Was ist der Unterschied zwischen Gruppe und Team? Lässt sich Gruppendynamik steuern? Welche Rollen und Funktionen sind wichtig? Welche Phasen in der Zusammenarbeit gibt es? Welche Aufgaben hat die Teamleitung dabei? Und wie ist das in virtuellen Teams? Und in agilen?",
             ziele: [
-                "Psychologische Prozesse im Team verstehen",
-                "Eigene Rolle in Gruppen herausarbeiten",
-                "Förderliche Rahmenbedingungen schaffen",
-                "Werkzeuge zur Teamsteuerung anwenden"
+                "verstehen die psychologischen Prozesse unterhalb der Sachebene in Ihrem Team und können sie für Ihre Arbeit nutzen.",
+                "arbeiten ihre Rolle in Gruppen heraus und ihre Einflussmöglichkeiten auf andere bzw. das Team.",
+                "kennen hinderliche und förderliche Rahmenbedingungen für die Teamarbeit.",
+                "kennen die Bedeutung von Zielen, Werten und Normen in der Teamarbeit.",
+                "lernen Werkzeuge zur Teamsteuerung kennen und üben sie in der Anwendung.",
+                "können kreative Prozesse in Teams fördern."
             ],
-            inhalte: "Gruppenentwicklungsphasen. Rollen und Funktionen. Normen und Werte. Konflikte in Teams. Kreative Prozesse fördern.",
-            nutzen: "Sie steuern Teamprozesse gezielter und nutzen Dynamiken konstruktiv.",
-            zielgruppe: "Teamleiter, Projektleiter und alle, die Teams führen."
+            inhalte: "Teamrollen nach Belbin. Teamphasen nach Tuckman. Teamrollen nach Schindler. Drei Ebenen der Teamarbeit nach Cohn. Entscheidungsfindung im Team. Konflikte in Gruppen und Lösungswege. Übungen zur Teamentwicklung.",
+            nutzen: "Sie gewinnen Sicherheit innerhalb der sozialen Prozesse in Teams und erhöhen Ihre Einflussmöglichkeiten. Außerdem wissen Sie, wie ein Wir-Gefühl und gleichzeitig eine Vielfalt an Meinungen entstehen.",
+            zielgruppe: "Alle Menschen, die an der Leistungsfähigkeit von Teams interessiert sind und die Arbeitsatmosphäre verbessern möchten."
         }
     },
     "intuition-ist-doch-logisch": {
