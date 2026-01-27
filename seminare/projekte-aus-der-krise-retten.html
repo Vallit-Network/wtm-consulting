@@ -16,16 +16,16 @@
     <link rel="stylesheet" href="../styles/index.css">
     <style>
         :root {
-            /* Project Management Theme (Blue) */
-            --seminar-accent: #2563eb;
-            /* Tech Blue */
-            --seminar-accent-light: rgba(37, 99, 235, 0.1);
-            --seminar-accent-glow: rgba(37, 99, 235, 0.3);
+            /* Change Management Theme (Red) */
+            --seminar-accent: #c24c4c;
+            /* Change Red */
+            --seminar-accent-light: rgba(194, 76, 76, 0.1);
+            --seminar-accent-glow: rgba(194, 76, 76, 0.3);
             --color-text: #3A3A38;
             --color-cream: #F5F5F3;
             --color-border: #E5E5E0;
-            --accent-highlight: #60a5fa;
-            /* Lighter Blue highlight */
+            --accent-highlight: #e57373;
+            /* Lighter Red highlight */
         }
 
         .scroll-progress {
@@ -43,6 +43,7 @@
             display: flex;
             align-items: center;
             background: linear-gradient(135deg, #1e3a8a 0%, #172554 100%);
+            /* Blue background remains for Change theme as per guidelines */
             position: relative;
             overflow: hidden;
             padding: 120px 0 80px;
@@ -59,7 +60,8 @@
         .orb-1 {
             width: 400px;
             height: 400px;
-            background: #3b82f6;
+            background: #cd5c5c;
+            /* Light Red */
             top: -100px;
             right: -100px;
         }
@@ -135,7 +137,7 @@
         }
 
         .hero-title span {
-            color: #60a5fa;
+            color: #e57373;
         }
 
         .hero-subtitle {
@@ -172,7 +174,7 @@
         .meta-tag svg {
             width: 16px;
             height: 16px;
-            stroke: #60a5fa;
+            stroke: #e57373;
         }
 
         .hero-cta {
@@ -387,8 +389,8 @@
             width: 4px;
             background: linear-gradient(180deg,
                     var(--seminar-accent) 0%,
-                    rgba(37, 99, 235, 0.6) 50%,
-                    rgba(37, 99, 235, 0.2) 100%);
+                    rgba(194, 76, 76, 0.6) 50%,
+                    rgba(194, 76, 76, 0.2) 100%);
             transform: translateX(-50%);
             border-radius: 4px;
         }
@@ -405,7 +407,7 @@
                     var(--seminar-accent) 100%);
             border-radius: 4px;
             transition: height 1.5s cubic-bezier(0.4, 0, 0.2, 1);
-            box-shadow: 0 0 20px rgba(37, 99, 235, 0.4);
+            box-shadow: 0 0 20px rgba(194, 76, 76, 0.4);
         }
 
         .journey-line.animated::after {
@@ -453,7 +455,7 @@
             box-shadow:
                 0 0 0 4px #fff,
                 0 0 0 6px var(--seminar-accent),
-                0 0 30px rgba(37, 99, 235, 0.4);
+                0 0 30px rgba(194, 76, 76, 0.4);
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
@@ -534,7 +536,7 @@
             border-radius: 16px;
             padding: 1.75rem 2rem;
             position: relative;
-            border: 1px solid rgba(37, 99, 235, 0.15);
+            border: 1px solid rgba(194, 76, 76, 0.15);
             box-shadow:
                 0 4px 20px rgba(0, 0, 0, 0.04),
                 0 1px 3px rgba(0, 0, 0, 0.02);
@@ -559,7 +561,7 @@
             transform: translateY(-5px);
             border-color: var(--seminar-accent);
             box-shadow:
-                0 20px 50px rgba(37, 99, 235, 0.12),
+                0 20px 50px rgba(194, 76, 76, 0.12),
                 0 8px 20px rgba(0, 0, 0, 0.06);
         }
 
@@ -629,7 +631,7 @@
                     <div class="breadcrumb"><a href="../index">Startseite</a><span class="breadcrumb-sep">→</span><a
                             href="../index#trainings">Seminare</a><span class="breadcrumb-sep">→</span><span>Projekte
                             aus der Krise retten</span></div>
-                    <div class="category-badge">Projektmanagement</div>
+                    <div class="category-badge">Change</div>
                     <h1 class="hero-title">Projekte aus der Krise <span>retten</span></h1>
                     <p class="hero-subtitle">Projekte sind Vorstöße in Neuland. Lernen Sie, Probleme und Krisen
                         frühzeitig zu erkennen, strategisch zu lösen und auch in kritischen Situationen souverän zu
