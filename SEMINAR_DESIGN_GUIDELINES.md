@@ -15,88 +15,113 @@ Dieses Dokument definiert die strikten Regeln, das Design-System und den Aufbau 
 
 Jede Seminar-Seite muss im `<style>`-Block der Seite die entsprechenden CSS-Variablen überschreiben.
 
-### A. Leadership (Führung)
-Wird genutzt für: *Führungssimulation, Selbsterkenntnis, Laterales Führen, etc.*
-*   **Accent Color:** `Anthrazit (#4A4A4E)`
-*   **Secondary/Highlight:** `Silber/Grau (#a0a0a5)`
+### 1. Führung (Leadership)
+Wird genutzt für: *Führungssimulation, Selbsterkenntnis, Laterales Führen*
+*   **Farbe:** `Anthrazit (#4A4A4E)`
 *   **Vibe:** Seriös, Klar, Erfahren.
 
 ```css
 :root {
     --seminar-accent: #4A4A4E;
-    --seminar-secondary: #a0a0a5;
-    --seminar-accent-light: rgba(74, 74, 78, 0.1);
+    --seminar-secondary: #a0a0a5; /* Silber/Grau Highlight */
 }
 ```
 
-### B. Change Management
-Wird genutzt für: *Change-Kompetenz, Change-Kommunikation, etc.*
-*   **Hero Background:** Dominanz von Corporate Blue Tones (Deep Blue `#2C3E50` -> Soft Teal/Blue `#527a90`).
-*   **Accent Color:** `Change Red (#c24c4c)` (Dezent eingesetzt für Badges, Keywords, Icons).
+### 2. Change Management
+Wird genutzt für: *Change-Kompetenz, Change-Kommunikation*
+*   **Farbe:** `Rot (#c24c4c)`
+*   **Special Rule:** **Hero-Sektion in Corporate Blues** (Deep Blue `#2C3E50` -> Soft Teal `#527a90`), Rot nur als **Akzent** (Badges, Buttons).
 *   **Vibe:** Souverän, Transformierend, Unternehmensnah.
 
 ```css
 :root {
-    --seminar-accent: #c24c4c; /* Red for highlights */
-    --seminar-secondary: #2C3E50; /* Deep Corporate Blue */
-    --seminar-primary-blue: #9DD4D0; /* Corp. Teal/Blue */
+    --seminar-accent: #c24c4c; /* Red Accent */
+    --seminar-secondary: #2C3E50; /* Deep Blue */
+    --seminar-primary-blue: #9DD4D0; /* Corporate Teal */
 }
-/* Hero Background Rule: Blue Dominant */
 .seminar-hero { background: linear-gradient(135deg, #2C3E50 0%, #527a90 100%); }
 ```
 
-### C. Projektmanagement
-Wird genutzt für: *PM-Basics, Krisenmanagement, etc.*
-*   **Accent Color:** `Tech Blue (#2563eb)` (oder spezifisiertes Blau)
-*   **Vibe:** Strukturiert, Technisch, Verlässlich.
+### 3. Gesundheit (Health)
+Wird genutzt für: *Resilienz, Stressmanagement, Gesunde Führung*
+*   **Farbe:** `Dunkles Smaragdgrün (#107e5e)`
+*   **Vibe:** Ausgeglichen, Vital, Stabil.
 
-*(Weitere Kategorien folgen diesem Muster: Kommunikation, Gesundheit/Resilienz)*
+```css
+:root {
+    --seminar-accent: #107e5e;
+    --seminar-secondary: #34d399; /* Lighter Green */
+}
+```
+
+### 4. Kommunikation (Communication)
+Wird genutzt für: *Konfliktmanagement, Storytelling*
+*   **Farbe:** `Gold (#d6ac58)`
+*   **Vibe:** Wertig, Warm, Verbindend.
+
+```css
+:root {
+    --seminar-accent: #d6ac58;
+    --seminar-secondary: #fef3c7; /* Pale Gold/Cream */
+}
+```
+
+### 5. Management
+Wird genutzt für: *Projektmanagement, BWL*
+*   **Farbe:** `Blau (#5D8AA8)`
+*   **Vibe:** Strukturiert, Klar, Professionell.
+
+```css
+:root {
+    --seminar-accent: #5D8AA8;
+    --seminar-secondary: #e0f2fe; /* Light Blue */
+}
+```
 
 ---
 
-## 3. Seiten-Struktur (Der Standard-Aufbau)
+## 3. Seiten-Struktur (Der 8-Phasen-Standard)
 
-Jede Seite folgt dieser Reihenfolge:
+Jeder Seminar-Content muss in diese 8 Sektionen gegliedert sein:
 
-### 1. Hero Section (Pflicht)
-*   **Hintergrund:** Linearer Gradient in den Themen-Farben + animierte "Orbs" (Lichtkugeln) im Hintergrund.
-*   **Elemente:**
-    *   Breadcrumbs: `Startseite -> Seminare -> Kategorie`
-    *   Category Badge: Umrandet, Themen-Farbe.
-    *   H1 Title: Groß, mit `<span>` in Akzentfarbe für das Schlüsselwort.
-    *   Subtitle: Kurze Zusammenfassung (1-2 Sätze).
-    *   Meta-Tags: Dauer (Icon), enthaltene Modelle (Icon).
-    *   CTA-Buttons: "Unverbindlich anfragen" (Glow) & "Konzept erhalten" (Outline).
+### 1. Hero Section
+*   **Titel:** Aussagekräftig & prägnant.
+*   **Subline:** 1-2 Sätze, die das Kernproblem und die Lösung anreißen.
+*   **Badges:** Dauer (z.B. "2 Tage"), Format (z.B. "Optional online"), Zielgruppe.
+*   **CTA:** "Unverbindlich anfragen" | "Konzept erhalten".
 
-### 2. Intro / Herausforderung
-*   **Ziel:** Den Schmerzpunkt ("Pain Point") des Kunden adressieren.
-*   **Label:** "HERAUSFORDERUNG" (in Akzentfarbe).
-*   **Inhalt:** Warum braucht man dieses Seminar? Was passiert ohne dieses Wissen?
+### 2. Nutzen & Wirkung
+*   **Format:** Liste (Bullets).
+*   **Inhalt:** Was "kann" der Teilnehmer danach? (Kompetenzentwicklung).
+*   **Wording:** "Wirksame Führung entwickeln...", "Besseres Verständnis für..."
 
-### 3. Visual Model 1 (Das Highlight)
-*   **Wichtig:** Ein zentrales Konzept des Seminars visuell darstellen.
-*   **Technik:** SVG (für Kurven/Pfade) oder CSS-Grid (für Räume/Matrizen).
-*   **Regel:**
-    *   **SVG:** Labels und Punkte müssen Teil des SVG sein (`<text>`, `<circle>`), keine HTML-Overlays (vermeidet Verrutschen auf Mobile).
-    *   **Animation:** Draw-In Effekte für Linien (`stroke-dasharray`), Pulse-Effekte für Punkte.
+### 3. Nach dem Training (Die Transformation)
+*   **Format:** Liste (Bullets).
+*   **Inhalt:** Konkrete Handlungskompetenz im Arbeitsalltag.
+*   **Beispiel:** "Führung im eigenen Organisationskontext einordnen", "Entscheidungslogiken erkennen".
 
-### 4. Ziele & Nutzen (Grid)
-*   **Layout:** 2-Spalten Grid.
-*   **Cards:** Weiße Karten mit leichtem Schatten/Border.
-*   **Numbering:** 1, 2, 3, 4 Icons in Akzentfarbe.
-*   **Inhalt:** "Was nehme ich mit?"
+### 4. Inhalte
+*   **Format:** Nummerierte Liste (1-5 Module) ODER Interaktive Grafik (Modell).
+*   **Inhalt:** Die Sach-Themen des Seminars (Curriculum).
+*   **Beispiel:** "1. Führungskultur", "2. Rolle & Erwartungen".
 
-### 5. Deep Dive / Die Reise (Inhalte)
-*   **Format:** Keine Bullet-Point-Liste!
-*   **Darstellung:**
-    *   Als "Reise" (Pfad-Visualisierung).
-    *   Als "Treppe" (Stufenweise Entwicklung).
-    *   Als "Simulation" (Szenario-Timeline).
-*   **Zweck:** Zeigen, dass das Seminar einer logischen Struktur folgt.
+### 5. Praxis & Transfer
+*   **Inhalt:** Beschreibung der Methodik.
+*   **Beispiel:** "Arbeit an einer Fallstudie", "Konkrete Fallbeispiele der Teilnehmer", "Transfer in den eigenen Arbeitskontext".
 
-### 6. CTA & Zielgruppe
-*   **Target Card:** "Für wen ist das?" (Zielgruppe).
-*   **Contact Card:** Dunkler Hintergrund (Akzentfarbe), direkter Link zum Kontaktformular.
+### 6. Typische Anlässe (Der "Trigger")
+*   **Format:** Bullets.
+*   **Inhalt:** Wann bucht ein Unternehmen genau dieses Seminar?
+*   **Beispiel:** "Projekte geraten in Verzug", "Teams arbeiten ohne klare Hierarchie".
+
+### 7. Wirkung nach 4 Wochen (Nachhaltigkeit)
+*   **Format:** Bullets.
+*   **Inhalt:** Was hat sich langfristig verändert?
+*   **Beispiel:** "Führung wirkt klarer", "Prozesse sind stabiler".
+
+### 8. Footer-CTA
+*   **Text:** "Unverbindlich abstimmen – Schwerpunkte, Beispiele und Umfang passend zum Kontext."
+*   **Action:** Kontakt aufnehmen.
 
 ---
 
@@ -105,19 +130,18 @@ Jede Seite folgt dieser Reihenfolge:
 ### ✅ DO
 *   **Do:** Nutze CSS-Variablen (`var(--seminar-accent)`), um Farben überall konsistent zu halten.
 *   **Do:** Prüfe Grafiken auf Mobile-View (Chrome DevTools).
-*   **Do:** Kopiere Texte 1:1 aus den Briefings.
+*   **Do:** Halte dich STRIKT an den 8-Phasen-Aufbau.
 *   **Do:** Commit Messages müssen aussagekräftig sein.
 
 ### ❌ DON'T
 *   **Don't:** Mische Farben aus verschiedenen Kategorien (z.B. Gold bei Leadership).
-*   **Don't:** Nutze absolute Positionierung für Text über Bildern/SVGs (skaliert nicht).
-*   **Don't:** Erfinde Inhalte dazu, wenn keine da sind → Frage den User.
+*   **Don't:** Lösche Sektionen (z.B. "Nach dem Training" weglassen), nur weil sie "ähnlich" klingen.
 *   **Don't:** Nutze Standard-Bootstrap-Look. Es muss "Custom Premium" aussehen.
 
 ---
 
 ## 5. Checkliste vor Fertigstellung
-1.  [ ] Stimmt die Kategorie-Farbe überall (Icons, Badges, Buttons, Gradient)?
-2.  [ ] Sind alle visuellen Modelle (SVG) auf Handygröße korrekt ausgerichtet?
-3.  [ ] Funktionieren alle Links (Breadcrumbs, Footer, CTAs)?
-4.  [ ] Wurde `js/seminar-data.js` mit den korrekten Metadaten (Intro, Ziele) geupdatet?
+1.  [ ] Stimmt die Kategorie-Farbe? (Prüfung gegen Farb-System Tabelle).
+2.  [ ] Sind alle 8 Sektionen vorhanden?
+3.  [ ] Ist die Change-Seite Blau-Dominiert (Hero)?
+4.  [ ] Funktionieren alle Links (Breadcrumbs, Footer, CTAs)?
