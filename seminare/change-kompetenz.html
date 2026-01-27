@@ -16,12 +16,15 @@
     <link href="../styles/index.css" rel="stylesheet" />
     <style>
         :root {
-            /* Change Theme - Red & Corporate Blue (Transformation/Strength) */
+            /* Change Theme - Corporate Blue Dominant with Red Accent */
             --seminar-accent: #c24c4c;
-            /* Change Red */
+            /* Change Red (Accent only) */
             --seminar-accent-light: rgba(194, 76, 76, 0.1);
-            --seminar-secondary: #0f172a;
-            /* Corporate Blue */
+            --seminar-secondary: #2C3E50;
+            /* Corporate Deep Blue */
+            --seminar-primary-blue: #9DD4D0;
+            /* Corporate Light Teal/Blue */
+
             --color-text: #3A3A38;
             --color-cream: #F5F5F3;
             --color-border: #E5E5E0;
@@ -32,7 +35,7 @@
             top: 0;
             left: 0;
             height: 3px;
-            background: var(--seminar-secondary);
+            background: var(--seminar-accent);
             z-index: 9999;
             width: 0%;
         }
@@ -41,7 +44,8 @@
             min-height: 100vh;
             display: flex;
             align-items: center;
-            background: linear-gradient(135deg, #7f1d1d 0%, #0f172a 100%);
+            background: linear-gradient(135deg, #2C3E50 0%, #527a90 100%);
+            /* Deep Blue to Muted Blue */
             position: relative;
             overflow: hidden;
             padding: 120px 0 80px;
@@ -58,18 +62,23 @@
         .orb-1 {
             width: 500px;
             height: 500px;
-            background: var(--seminar-accent);
+            background: var(--seminar-primary-blue);
+            /* Corporate Light Blue */
             top: -150px;
             right: -100px;
+            opacity: 0.3;
         }
 
         .orb-2 {
-            width: 300px;
-            height: 300px;
-            background: var(--seminar-secondary);
-            bottom: -50px;
+            width: 400px;
+            height: 400px;
+            background: var(--seminar-accent);
+            /* Red Accent */
+            bottom: -100px;
             left: -50px;
             animation-delay: 2s;
+            opacity: 0.15;
+            /* Very subtle red */
         }
 
         @keyframes pulse-orb {
@@ -113,8 +122,8 @@
         .category-badge {
             display: inline-flex;
             padding: 0.5rem 1rem;
-            background: rgba(194, 76, 76, 0.2);
-            border: 1px solid rgba(194, 76, 76, 0.4);
+            background: rgba(194, 76, 76, 0.1);
+            border: 1px solid rgba(194, 76, 76, 0.3);
             border-radius: 50px;
             color: #f87171;
             font-size: 0.85rem;
@@ -135,6 +144,7 @@
 
         .hero-title span {
             color: #f87171;
+            /* Red Accent for Key Word */
         }
 
         .hero-subtitle {
