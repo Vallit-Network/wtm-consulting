@@ -79,13 +79,23 @@ document.addEventListener('DOMContentLoaded', () => {
     // =========================================
     // STICKY HEADER
     // =========================================
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 80) {
-            header.classList.add('scrolled');
-        } else {
-            header.classList.remove('scrolled');
+    function initStickyHeader() {
+        const header = document.querySelector('header');
+        if (header) {
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 80) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            });
+            // Check immediately in case of refresh
+            if (window.scrollY > 80) {
+                header.classList.add('scrolled');
+            }
         }
-    });
+    }
+    initStickyHeader(); // Call for existing header (index.html)
 
     // =========================================
     // SMOOTH SCROLL FOR ANCHOR LINKS
@@ -1688,6 +1698,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     }
                 });
             });
+            initStickyHeader();
         }
 
         // 2. CHATBOT AND HELPER BUTTON
