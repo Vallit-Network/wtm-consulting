@@ -52,40 +52,45 @@ const seminarsData = {
     "betriebsorganisation": {
         id: "betriebsorganisation",
         title: "Betriebsorganisation",
-        url: "seminare/betriebsorganisation",
+        url: "seminare/betriebsorganisation.html",
         category: "management",
         badge: "Seminar",
         shortDescription: "Strukturen und Prozesse optimieren – Abläufe effizienter gestalten und Schnittstellen verbessern.",
         details: ["1-2 Tage", "Analyse", "Optimierung"],
         heroImage: "assets/hero-meeting.jpg",
         content: {
-            intro: "Effiziente Betriebsorganisation ist die Grundlage für reibungslose Abläufe. Wie analysieren und optimieren Sie Strukturen und Prozesse in Ihrem Verantwortungsbereich?",
+            intro: "Eine durchdachte Organisation des Unternehmens ist wichtig, um effektive und effiziente Prozesse zu leben und das Zusammenspiel der elementaren Produktionsfaktoren (Arbeit, Werkstoffe und Betriebsmittel) sicherzustellen. Dieses Seminar vermittelt die notwendigen Grundlagen und Werkzeuge.",
             ziele: [
-                "Organisationsstrukturen analysieren und bewerten",
-                "Prozesse identifizieren und optimieren",
-                "Schnittstellen verbessern",
-                "Effizienzpotenziale heben"
+                "Das Kennen von Grundbegriffen in der Organisationsarbeit",
+                "Einen Überblick zum Thema Aufbauorganisation erhalten",
+                "Die Analyse und Gestaltung der Prozessorganisation im Detail kennenlernen",
+                "Einige wichtige Werkzeuge in der Organisationsarbeit erlernen"
             ],
-            inhalte: "Organisationsformen. Prozessanalyse. Schnittstellenmanagement. Lean Management Grundlagen. Kontinuierliche Verbesserung.",
-            nutzen: "Sie optimieren Abläufe in Ihrem Bereich und reduzieren Reibungsverluste.",
+            inhalte: "Grundbegriffe (Organisation, Improvisation, Disposition). Aufbauorganisation (Stellen, Abteilungen, Leitungssysteme, Organigramme). Ablauf-/Prozessorganisation (Prozessbegriff, Business Process Reengineering, Geschäftsprozessoptimierung). Techniken/Methoden (Auftragsklärung, Informationsgewinnung, Analyse, Design Thinking). Weitere Konzepte (Lean Ansätze, QM-Ansätze).",
+            nutzen: "Sie optimieren Abläufe in Ihrem Bereich, reduzieren Reibungsverluste und schaffen klare Strukturen.",
             zielgruppe: "Führungskräfte, Organisationsentwickler und Prozessverantwortliche."
         }
     },
     "bwl-fuer-nicht-bwler": {
         id: "bwl-fuer-nicht-bwler",
         title: "BWL für Nicht-BWLer",
-        url: "seminare/bwl-fuer-nicht-bwler",
+        url: "seminare/bwl-fuer-nicht-bwler.html",
         category: "management",
-        badge: "Seminar",
-        shortDescription: "Betriebswirtschaftliche Zusammenhänge verstehen und sicher mitreden.",
-        details: ["Grundlagen", "Finanzen", "Kennzahlen"],
+        badge: "📊 Management",
+        shortDescription: "Betriebswirtschaftliche Zusammenhänge verstehen und sicher mitreden. Gewinn, Umsatz, Bilanzen und Kennzahlen für Nicht-Ökonomen.",
+        details: ["2 Tage", "Grundlagen", "Praxisnah"],
         heroImage: "assets/hero-meeting.jpg",
         content: {
-            intro: "BWL f\u00fcr Nicht-BWLer\nGewinn, Umsatz, Erl\u00f6se, Net Sales, Turnover, Revenues, ROI \u2013 wo ist denn da der\nUnterschied? Was bedeuten diese ganzen Kennziffern in meinen Auswertungen\neigentlich? Warum versteht mein zahlenorientierter Gespr\u00e4chspartner nicht, dass\nmeine L\u00f6sung die technisch (emotional, \u00e4sthetisch etc.) beste ist? Und\nandererseits: Wie kann ich selbst meine Entscheidungen betriebswirtschaftlich\nbesser fundieren und kommunizieren?",
-            ziele: ["Sie kennen zentrale Bereiche betriebswirtschaftlichen Know-hows und", "erfahren die \u201eganz spezielle Denke von Betriebswirten\u201c.", "Sie sind in der Lage, Budgets, Erfolgsrechnungen und Kennziffern zu", "verstehen, zu pr\u00fcfen und zu hinterfragen.", "Sie k\u00f6nnen Gewinn- und Verlustrechnungen sowie Bilanzen interpretieren", "und eigene Angebotskalkulationen vornehmen.", "Sie st\u00e4rken Ihre Kompetenz f\u00fcr Gespr\u00e4che mit Kollegen in kaufm\u00e4nnischen", "Funktionen und mit Kunden. Sie vermeiden Missverst\u00e4ndnisse."],
-            inhalte: "\u2022  Warum \u201eBWL\u201c? Erste Fachbegriffe & Kennzahlen\n\u2022  Das Mindset von BWLern\n\u2022  Jahresabschluss, Bilanz, Gewinn- und Verlustrechnung (GuV)\n\u2022  Kalkulation als Kernst\u00fcck der Kosten- und Leistungsrechnung\n\u2022  Kostenstrukturen in Projekten\n\u2022\n\u2022  Finanzierung: Eigen- und Fremdkapital, Liquidit\u00e4t & mehr\n\u2022  Hoher Praxisanteil \u2013 Fragen und Antworten\nInvestitionsentscheidungen: Zinsen, Diskontierung, Kapitalwert",
-            nutzen: "",
-            zielgruppe: "Alle, die fitter in BWL werden m\u00f6chten und noch mehr auf Augenh\u00f6he mit\nFachleuten kommunizieren m\u00f6chten"
+            intro: "Gewinn, Umsatz, Erlöse, Net Sales, Turnover, Revenues, ROI – wo ist denn da der Unterschied? Was bedeuten diese ganzen Kennziffern in meinen Auswertungen eigentlich? Warum versteht der zahlenorientierte Mensch, mit dem ich spreche, nicht, dass meine Lösung die technisch (emotional, ästhetisch etc.) beste ist? Und andererseits: Wie kann ich selbst meine Entscheidungen betriebswirtschaftlich besser fundieren und kommunizieren?",
+            ziele: [
+                "Sie kennen zentrale Bereiche betriebswirtschaftlichen Know-hows und erfahren die „ganz spezielle Denke von betriebswirtschaftlich ausgebildeten Menschen“.",
+                "Sie sind in der Lage, Budgets, Erfolgsrechnungen und Kennziffern zu verstehen, zu prüfen und zu hinterfragen.",
+                "Sie können Gewinn- und Verlustrechnungen sowie Bilanzen interpretieren und eigene Angebotskalkulationen vornehmen.",
+                "Sie stärken Ihre Kompetenz für Gespräche mit Teammitgliedern in kaufmännischen Funktionen und mit der Kundschaft. Sie vermeiden Missverständnisse."
+            ],
+            inhalte: "Warum „BWL“? Erste Fachbegriffe & Kennzahlen. Das Mindset von BWL-Profis. Jahresabschluss, Bilanz, Gewinn- und Verlustrechnung (GuV). Kalkulation als Kernstück der Kosten- und Leistungsrechnung. Kostenstrukturen in Projekten. Investitionsentscheidungen: Zinsen, Diskontierung, Kapitalwert. Finanzierung: Eigen- und Fremdkapital, Liquidität & mehr. Hoher Praxisanteil – Fragen und Antworten.",
+            nutzen: "Sie optimieren Ihre Kommunikation mit kaufmännischen Abteilungen, verstehen finanzielle Zusammenhänge und können Ihre eigenen Entscheidungen besser wirtschaftlich begründen.",
+            zielgruppe: "Alle, die fitter in BWL werden möchten und noch mehr auf Augenhöhe mit Fachleuten kommunizieren möchten."
         }
     },
     "change-kommunikation-professionelle-kommunikation-im-veraenderungsprozess": {
@@ -159,24 +164,26 @@ const seminarsData = {
     },
     "gekonnt-visualisieren-an-flipchart-und-pinnwand": {
         id: "gekonnt-visualisieren-an-flipchart-und-pinnwand",
-        title: "Visualisieren an Flipchart & Pinnwand",
+        title: "Gekonnt Visualisieren an Flipchart und Pinnwand",
         url: "seminare/gekonnt-visualisieren",
         category: "communication",
-        badge: "Workshop",
-        shortDescription: "Ideen sichtbar machen – mit einfachen Mitteln professionell visualisieren und Inhalte einprägsam präsentieren.",
-        details: ["1 Tag", "Praxis", "Kreativtechniken"],
+        badge: "🎨 Kommunikation",
+        shortDescription: "Faszinieren Sie Ihr Publikum mit gut gestalteten Flipcharts – vermitteln Sie Fachwissen auf einfache, mitreißende Art und Weise ohne ablenkende Elektronik.",
+        details: ["1-2 Tage", "Praxis-Workshop", "Kein Zeichentalent nötig"],
         heroImage: "assets/hero-meeting.jpg",
         content: {
-            intro: "Visualisierungen machen Inhalte verständlicher und einprägsamer. Lernen Sie, auch ohne Zeichentalent professionell zu visualisieren.",
+            intro: "Kennen und fürchten Sie Präsentationen mit dreistelliger Folienzahl? Kennen und fürchten Sie Präsentatoren, die genau das ablesen, was Sie auf der Folie sowieso schon sehen? Machen Sie es besser und ziehen Sie die Konzentration Ihrer Zuhörer auf das Wichtigste, das es gerade gibt: auf Sie! Faszinieren Sie mit gut gestalteten Flipcharts Ihr Publikum oder vermitteln Sie Ihr Fachwissen auf einfache, mitreißende Art und Weise ohne ablenkende Elektronik.",
             ziele: [
-                "Grundtechniken der Visualisierung beherrschen",
-                "Schrift und Symbole gekonnt einsetzen",
-                "Flipcharts wirkungsvoll gestalten",
-                "Präsentationen visuell unterstützen"
+                "Kennen alles Wissenswerte über Moderationsmarker und andere Materialien",
+                "Nutzen ein einfaches Aufteilen und Gestalten von Flipcharts",
+                "Erlernen die „offizielle“ Moderationsschrift",
+                "Können mit einfachen Grundformen beeindruckende Charts erstellen",
+                "Malen verschiedene Personen – einfach und flexibel",
+                "Sind in der Lage einfache, aber hochwirksame visuelle Effekte zu erzeugen"
             ],
-            inhalte: "Grundformen und Symbole. Schriftgestaltung. Farbwirkung. Aufbau und Struktur. Live-Übungen mit Feedback.",
-            nutzen: "Sie visualisieren überzeugend und unterstützen Ihre Inhalte visuell.",
-            zielgruppe: "Trainer, Moderatoren und alle, die häufig präsentieren."
+            inhalte: "Grundaufteilungen von Flipcharts. Handwerkszeug für den Visualisierer. Farben und ihre Wirkung. Von Grundformen zu wirkungsvollen Elementen. Ideogramme und ihre Nutzung. Schattierungen – einfach und genial. Eine leserliche Moderationsschrift erwerben.",
+            nutzen: "Schnell und einfach können Sie optisch ansprechende Flipcharts erstellen, mit denen Sie in Präsentationen, Trainings, Verkaufsgesprächen u.v.m. punkten. Dadurch erhalten Sie nicht nur Bewunderung für Ihr Talent, sondern zeigen Ihre Fachkenntnis auf zusätzliche Weise und vermitteln nachhaltig Lernstoff.",
+            zielgruppe: "Alle, die viel vor anderen präsentieren oder Wissen vermitteln und die das erfrischend anders machen möchten. Neugier und Interesse reichen aus, Sie brauchen kein Zeichentalent zu haben!"
         }
     },
     "gesunde-selbstfuehrung": {
@@ -184,22 +191,24 @@ const seminarsData = {
         title: "Gesunde Selbstführung",
         url: "seminare/gesunde-selbstfuehrung",
         category: "health",
-        badge: "Seminar",
-        shortDescription: "Das innere Gleichgewicht bewahren – auch in stürmischen Zeiten. Resilienz und Stressmanagement für Führungskräfte.",
-        details: ["2 Tage Präsenz", "Reflexion", "Maßnahmenplan"],
+        badge: "🌱 Gesundheit",
+        shortDescription: "Bei stürmischer See in sich Ruhe bewahren – das innere Gleichgewicht aufrechterhalten auch in dynamischen Zeiten mit Veränderungsprozessen und Belastungen.",
+        details: ["2 Tage Präsenz", "Reflexion & Übungen", "Maßnahmenplan"],
         heroImage: "assets/hero-meeting.jpg",
         content: {
-            intro: "Gerade in dynamischen Zeiten – geprägt von Veränderungsprozessen, belastenden Arbeitsbedingungen und Unsicherheit – fällt es oft schwer, das innere Gleichgewicht aufrechtzuerhalten. Ziel einer gesunden Selbstführung ist es, bei stürmischer See in sich Ruhe zu bewahren und mit festem Stand jede Welle zu reiten.",
+            intro: "Gerade in dynamischen Zeiten – charakterisiert durch Veränderungsprozesse, belastende Arbeitsbedingungen, Rollenunklarheit, Überstunden und Unsicherheit – fällt es oftmals schwer, das innere Gleichgewicht aufrechtzuerhalten. Daher werden eigene Bewältigungskompetenzen (Ressourcen) benötigt, um negative Stressoren und Belastungen auszugleichen. Ziel einer gesunden Selbstführung ist es, bei stürmischer See in sich Ruhe zu bewahren und mit festem Stand jede Welle zu reiten.",
             ziele: [
-                "Grundlagen gesunder Selbstführung und Stressmanagement kennen",
-                "Techniken zur gesunden Selbstführung anwenden",
-                "Empathie und achtsamer Umgang mit sich und anderen",
-                "Strategien gegen Hektik, Stress und schlechtes Gewissen",
-                "Selbststeuerungskompetenz erhöhen"
+                "Kennen die Grundlagen gesunder Selbstführung und des Stressmanagements",
+                "Lernen Techniken kennen, um sich gesund zu führen",
+                "Reflektieren Herausforderungen und erarbeiten gemeinsam passende Lösungen",
+                "Haben einen konkreten Maßnahmenplan zur Umsetzung in der Praxis",
+                "Lernen Empathie und achtsamen Umgang mit sich und anderen",
+                "Verantwortungsvolles Selbstmanagement und Strategien gegen Hektik, Stress und schlechtes Gewissen",
+                "Erhöhung der Selbststeuerungskompetenz"
             ],
-            inhalte: "Stressoren und Ressourcen. Bewältigungsstrategien. Achtsamkeit im Alltag. Work-Life-Balance. Persönlicher Maßnahmenplan.",
-            nutzen: "Sie entwickeln Ihre Bewältigungskompetenzen (Ressourcen), um negative Stressoren und Belastungen auszugleichen.",
-            zielgruppe: "Führungskräfte und Fachkräfte, die ihre Resilienz stärken möchten."
+            inhalte: "Was bedeutet gesunde Führung und wie entsteht Stress? Was sind somatische Marker als Signalgeber? Warum ist gesunde Selbstführung wichtig? Reflexion innerer und äußerer Ansprüche und Erwartungen. Welche Methoden und Techniken gibt es und welche passen zu mir?",
+            nutzen: "Sie haben eine Vorstellung von gesunder Selbstführung und wissen, wie Sie Ihren Alltag bewusst gesund gestalten können. Sie erhöhen Ihre Selbstwahrnehmung, Selbstregulierung, Selbstführung und mentale Stärke und lernen relevante Einflussfaktoren auf den eigenen Gesundheitszustand kennen.",
+            zielgruppe: "Alle, die ihr inneres Gleichgewicht und ihre Widerstandsfähigkeit stärken möchten."
         }
     },
     "gesundheitsorientiertes-fuehren": {
@@ -207,18 +216,24 @@ const seminarsData = {
         title: "Gesundheitsorientiertes Führen",
         url: "seminare/gesundheitsorientiertes-fuehren",
         category: "health",
-        badge: "Seminar",
-        shortDescription: "Teams gesund führen – als Führungskraft Belastungen erkennen und Ressourcen fördern.",
-        details: ["1-2 Tage", "Prävention", "Fallarbeit"],
+        badge: "🌱 Gesundheit",
+        shortDescription: "Führungskräfte beeinflussen die Gesundheit ihrer Teams. Lernen Sie, wie Sie Belastungen erkennen, Ressourcen fördern und gesundheitsorientiert führen.",
+        details: ["1-2 Tage Präsenz", "Prävention & Reflexion", "Führungskräfte"],
         heroImage: "assets/hero-meeting.jpg",
         content: {
-            intro: "Gesundheitsorientiertes F\u00fchren\nDie Arbeits- und Lebenswelt hat sich ver\u00e4ndert: zunehmend pr\u00e4gen Globalisierung, Ver-\nnetzung sowie die Always-On-Kultur, unseren Alltag. Rasches Reagieren und h\u00f6chste Fle-\nxibilit\u00e4t werden gefordert. Die evolution\u00e4re Entwicklung des Menschen ist jedoch langsa-\nmer als die Anforderungen der Arbeitswelt!\nMitarbeiter*innen sowie F\u00fchrungskr\u00e4fte geraten in eine \u00dcberforderungsspirale. Stressreak-\ntionen, psychische Erkrankungen, Pra\u0308sentismus und Absentismus ko\u0308nnen die Folge sein.\nInnovative, lernende Organisationen brauchen jedoch gesunde und motivierte Mitarbeiter.",
-            ziele: ["Sie reflektieren, was in Ihrer Unternehmenskultur schon an gesundheitsf\u00f6rderlichen", "Aspekten vorhanden ist und was zu Ihrer Kultur passt.", "Sie bauen Wissen zum Thema Gesundheit auf und lernen die Zusammenh\u00e4nge", "zwischen Gesundheit und gesundheitsf\u00f6rderlichem F\u00fchren kennen.", "Sie erleben, welche Haltung gesundheitsf\u00f6rderlich ist und welches Handeln.", "Und Sie lernen, wie Sie dazu beitragen k\u00f6nnen, Belastungen zu reduzieren und wo", "Ihre Grenzen sind. Dies kann Sie entlasten."],
-            inhalte: "\u2022  Zusammenh\u00e4nge F\u00fchrung, Gesundheit, Belastung: Studien\n\u2022  Begriffskl\u00e4rung Absentismus, Pr\u00e4sentismus vs. Leistung und F\u00fchrung im demogra-\nfischen Wandel\n\u2022  Self Care und die Gesundheit der F\u00fchrungskraft\n\u2022  Dimensionen gesunder F\u00fchrung und Einflussm\u00f6glichkeiten sowie Grenzen\n\u2022  Kollegiale Fallberatung und arbeiten an den Themen der Teilnehmenden\n\u2022  Transfer in den Alltag\n\u2022",
-            nutzen: "F\u00fchrungskr\u00e4fte beeinflussen die Gesundheit und Arbeitsf\u00e4higkeit Ihrer Mitarbeitenden \u2013\nund gleichzeitig arbeiten Sie selber h\u00e4ufig an der Belastungsgrenze.\nDas Seminar sensibilisiert die Teilnehmenden f\u00fcr die Zusammenh\u00e4nge zwischen Zusam-\nmenarbeit, F\u00fchrung und Gesundheit. F\u00fchrende reflektieren Ihre Verantwortung f\u00fcr das\nThema Gesundheit \u2013 f\u00fcr ihre eigene und f\u00fcr die ihrer Mitarbeitenden. Damit ist dies ein\nzentraler Baustein um die Unternehmenskultur gesundheitsf\u00f6rderlicher zu gestalten.\nEs geht nicht darum einseitig Fehlzeiten zu reduzieren, sondern pr\u00e4ventiv Ma\u00dfnahmen f\u00fcr\ndie Erhaltung und F\u00f6rderung der psychischen Gesundheit zu ergreifen.",
-            zielgruppe: "Gesch\u00e4ftsf\u00fchrer*innen, F\u00fchrungskr\u00e4fte, Projektleiter*innen"
+            intro: "Die Arbeits- und Lebenswelt hat sich verändert: zunehmend prägen Globalisierung, Vernetzung sowie die Always-On-Kultur unseren Alltag. Rasches Reagieren und höchste Flexibilität werden gefordert. Die evolutionäre Entwicklung des Menschen ist jedoch langsamer als die Anforderungen der Arbeitswelt! Mitarbeiter*innen sowie Führungskräfte geraten in eine Überforderungsspirale. Stressreaktionen, psychische Erkrankungen, Präsentismus und Absentismus können die Folge sein. Innovative, lernende Organisationen brauchen jedoch gesunde und motivierte Mitarbeiter.",
+            ziele: [
+                "Sie reflektieren, was in Ihrer Unternehmenskultur schon an gesundheitsförderlichen Aspekten vorhanden ist und was zu Ihrer Kultur passt.",
+                "Sie bauen Wissen zum Thema Gesundheit auf und lernen die Zusammenhänge zwischen Gesundheit und gesundheitsförderlichem Führen kennen.",
+                "Sie erleben, welche Haltung gesundheitsförderlich ist und welches Handeln.",
+                "Sie lernen, wie Sie dazu beitragen können, Belastungen zu reduzieren und wo Ihre Grenzen sind. Dies kann Sie entlasten."
+            ],
+            inhalte: "Zusammenhänge Führung, Gesundheit, Belastung: Studien. Begriffsklärung Absentismus, Präsentismus vs. Leistung und Führung im demografischen Wandel. Self Care und die Gesundheit der Führungskraft. Dimensionen gesunder Führung und Einflussmöglichkeiten sowie Grenzen. Kollegiale Fallberatung und arbeiten an den Themen der Teilnehmenden. Transfer in den Alltag.",
+            nutzen: "Führungskräfte beeinflussen die Gesundheit und Arbeitsfähigkeit Ihrer Mitarbeitenden – und gleichzeitig arbeiten Sie selber häufig an der Belastungsgrenze. Das Seminar sensibilisiert die Teilnehmenden für die Zusammenhänge zwischen Zusammenarbeit, Führung und Gesundheit. Führende reflektieren Ihre Verantwortung für das Thema Gesundheit – für ihre eigene und für die ihrer Mitarbeitenden. Damit ist dies ein zentraler Baustein, um die Unternehmenskultur gesundheitsförderlicher zu gestalten. Es geht nicht darum, einseitig Fehlzeiten zu reduzieren, sondern präventiv Maßnahmen für die Erhaltung und Förderung der psychischen Gesundheit zu ergreifen.",
+            zielgruppe: "Geschäftsführer*innen, Führungskräfte, Projektleiter*innen"
         }
     },
+
     "gruppendynamik-in-teams": {
         id: "gruppendynamik-in-teams",
         title: "Gruppendynamik in Teams",
@@ -245,24 +260,26 @@ const seminarsData = {
     },
     "intuition-ist-doch-logisch": {
         id: "intuition-ist-doch-logisch",
-        title: "Intuition ist doch logisch",
+        title: "Intuition: ist doch logisch",
         url: "seminare/intuition",
         category: "health",
-        badge: "Seminar",
-        shortDescription: "Bauchgefühl verstehen und nutzen – intuitive Entscheidungen als ergänzende Kompetenz entwickeln.",
-        details: ["1-2 Tage", "Reflexion", "Praxisübungen"],
+        badge: "🌱 Gesundheit",
+        shortDescription: "Neuere Forschungsergebnisse zeigen, dass Intuition keineswegs nur emotionales ‚Bauchgefühl' ist, sondern auch rationale Instrumente nutzt wie Logik, Mathematik. Der Unterschied ist: sie nutzt sie unbewusst.",
+        details: ["1-2 Tage Präsenz", "Reflexion & Übungen", "Praxistransfer"],
         heroImage: "assets/hero-meeting.jpg",
         content: {
-            intro: "Intuition ist keine Magie, sondern verdichtete Erfahrung. Wie nutzen Sie Ihr Bauchgefühl gezielt für bessere Entscheidungen?",
+            intro: "Ein Widerspruch? Das hat man lange gedacht. Neuere Forschungsergebnisse zeigen allerdings, dass Intuition keineswegs nur emotionales „Bauchgefühl“ ist, sondern auch rationale Instrumente nutzt wie Logik, Mathematik, usw.Der Unterschied ist: sie nutzt sie unbewusst.Und das ist auch gut so.Denn wenn wir alle etwa 80.000 Entscheidungen des Tages bewusst treffen müssten, wären wir völlig überfordert.Aber auch die berufliche Problemlösung nutzt großenteils unbewusste Kreativität.So zeigen wissenschaftliche Untersuchungen, dass nicht nur im Top- Management die meisten Entscheidungen intuitiv getroffen werden.",
             ziele: [
-                "Intuition als Kompetenz verstehen",
-                "Bauchgefühl bewusst wahrnehmen",
-                "Intuition und Ratio kombinieren",
-                "Bessere Entscheidungen treffen"
+                "Kennen ihren eigenen Intuitionsstil",
+                "Haben ihre Wahrnehmungsfähigkeit für komplexe Situationen gestärkt",
+                "Heben einen verbesserten Zugang zu unbewusstem Wissen und Fähigkeiten",
+                "Wissen, wann sie ihre Intuition besser auf den Prüfstand stellen sollten",
+                "Können gezielt intuitionsfördernde Zustände herstellen",
+                "Haben Instrumente, mit denen sie Intuition weiter trainieren können"
             ],
-            inhalte: "Was ist Intuition? Intuition vs. Ratio. Conditions für gute Intuition. Intuition trainieren. Umgang mit Unsicherheit.",
-            nutzen: "Sie nutzen Ihre Intuition gezielt als Entscheidungshilfe.",
-            zielgruppe: "Alle, die ihre Entscheidungskompetenz erweitern möchten."
+            inhalte: "Was ist Intuition? Was nicht? Wo kann ich sie nutzen? Intuition beim Entscheiden, beim Problemlösen, in der Gruppe. Wie kann ich sie nutzen? Für mich, in meinem Arbeitsumfeld? Welche Bedingungen sind förderlich, welche sind hinderlich? Grenzen von Intuition. Wie kann ich Intuition in meinen Alltag integrieren?",
+            nutzen: "Kreative Problemlösungen entwickeln. Besseres Verständnis für Ihr soziales Umfeld. Sicherere Entscheidungen treffen.",
+            zielgruppe: "Alle Menschen, die ihre mentalen Fähigkeiten erweitern möchten."
         }
     },
     "kommunikation-im-zielgruppenspezifischen-design": {
@@ -402,14 +419,14 @@ const seminarsData = {
     "medientraining-und-professionelles-auftreten-vor-der-kamera": {
         id: "medientraining-und-professionelles-auftreten-vor-der-kamera",
         title: "Medientraining & Kameraauftritt",
-        url: "seminare/medientraining",
-        category: "leadership",
-        badge: "Workshop",
+        url: "seminare/medientraining.html",
+        category: "communication",
+        badge: "🎥 Kommunikation",
         shortDescription: "Überzeugend vor der Kamera – Interviews und Videoaufnahmen professionell meistern.",
         details: ["1 Tag", "Praxis", "Videofeedback"],
         heroImage: "assets/hero-meeting.jpg",
         content: {
-            intro: "Ob Interview, Webinar oder Video-Statement – der Auftritt vor der Kamera erfordert besondere Fähigkeiten.",
+            intro: "Ob Interview, Webinar oder Video-Statement – der Auftritt vor der Kamera erfordert besondere Fähigkeiten. Nur wer mit Spaß, selbstsicher und authentisch das Thema Kommunikation angeht, wirkt sympathisch und glaubwürdig.",
             ziele: [
                 "Vor der Kamera sicher auftreten",
                 "Kernbotschaften prägnant formulieren",
@@ -440,44 +457,53 @@ const seminarsData = {
     },
     "praesentieren-verstaendlich-erklaeren": {
         id: "praesentieren-verstaendlich-erklaeren",
-        title: "Präsentieren & verständlich erklären",
+        title: "Präsentieren - verständlich erklären & mehr",
         url: "seminare/praesentieren-verstaendlich-erklaeren",
-        category: "leadership",
-        badge: "Seminar",
-        shortDescription: "Überzeugend präsentieren – komplexe Inhalte einfach und verständlich vermitteln.",
-        details: ["1-2 Tage", "Praxisübungen", "Feedback"],
+        category: "communication",
+        badge: "💬 Kommunikation",
+        shortDescription: "„Es genügt nicht, keine Gedanken zu haben, man muss auch unfähig sein, sie auszudrücken.“ (Karl Kraus) – Fachleute überzeugen mit klaren Präsentationen.",
+        details: ["1-2 Tage", "Praxisübungen", "Medieneinsatz"],
         heroImage: "assets/hero-meeting.jpg",
         content: {
-            intro: "Pr\u00e4sentieren - verst\u00e4ndlich erkl\u00e4ren\n\u201eEs gen\u00fcgt nicht, keine Gedanken zu haben, man muss auch unf\u00e4hig sein, sie auszudr\u00fc-\ncken.\u201c (Karl Kaus) Gerade Fachleuten passiert das oft am Anfang einer Pr\u00e4sentation. Sie\nhaben lange gut gearbeitet und nun finden sie keine passenden Worte, um ihr Ergebnis\nvorzustellen. Dabei ist eine \u00fcberzeugende und verst\u00e4ndliche Darstellung gerade vor Kun-\nden oder Vorgesetzten besonders wichtig, damit Sie auch die Fr\u00fcchte Ihrer Arbeit ernten\nk\u00f6nnen. Aber gerade Fachleute haben eine Scheu davor, Ihre Erfolge zu \u201everkaufen\u201c, weil\nsie ja sowieso kein Talent zum Pr\u00e4sentieren h\u00e4tten...",
-            ziele: ["Pr\u00e4sentationen mit geeignetem Medieneinsatz planen und durchf\u00fchren", "", "Optimierung der eigenen Pr\u00e4sentationspers\u00f6nlichkeit \u2013 Pr\u00e4sentationen mit gr\u00f6-"],
-            inhalte: "\u2022  Wie finde ich heraus, was meine H\u00f6rer schon wissen, und was ich ihnen noch\nerkl\u00e4ren mu\u00df?\n\u2022  Was macht meine Ausf\u00fchrungen verst\u00e4ndlich?\n\u2022  Welche Argumentationsformen sind der Sache und den H\u00f6rern angemessen?\n\u2022  Wie baue ich eine Pr\u00e4sentation zweckm\u00e4\u00dfig auf?\n\u2022  Wie gehe ich am besten mit H\u00f6rerbeitr\u00e4gen um?\n\u2022  Was sollte ich in Bezug auf meine Sprache und meine Sprechweise beachten?\n\u2022  Was kann ich f\u00fcr meine Selbstsicherheit tun?\n\u2022  Was ist Visualisierung und welche Gestaltungsregeln gibt es daf\u00fcr?\n\u2022  Wann setze ich am besten welche Medien ein?",
-            nutzen: "Meist gen\u00fcgt es, einige Kleinigkeiten zu ver\u00e4ndern und schon wird aus der langweiligen,\nabstrakten Darstellung von Fakten ein interessanter Vorgang, aus dem Zahlenfriedhof eine\nklare, sich selbst erkl\u00e4rende Folie.",
-            zielgruppe: "Alle Menschen, die darstellen und verst\u00e4ndlich erkl\u00e4ren m\u00f6chten"
+            intro: "„Es genügt nicht, keine Gedanken zu haben, man muss auch unfähig sein, sie auszudrücken.“ (Karl Kraus) Gerade Fachleuten passiert das oft am Anfang einer Präsentation. Sie haben lange gut gearbeitet und nun finden sie keine passenden Worte, um ihr Ergebnis vorzustellen. Dabei ist eine überzeugende und verständliche Darstellung gerade vor Kunden oder Vorgesetzten besonders wichtig, damit Sie auch die Früchte Ihrer Arbeit ernten können. Aber gerade Fachleute haben eine Scheu davor, Ihre Erfolge zu „verkaufen“, weil sie ja sowieso kein Talent zum Präsentieren hätten...",
+            ziele: [
+                "Präsentationen mit geeignetem Medieneinsatz planen und durchführen",
+                "Inhalte ziel- und zielgruppengerecht vermitteln",
+                "Optimierung der eigenen Präsentationspersönlichkeit – Präsentationen mit größerer Präsenz und Sicherheit halten",
+                "Möglichkeiten und Grenzen der Einflussnahme kennenlernen",
+                "Souveräner Umgang mit Einwänden, Fragen und Störungen"
+            ],
+            inhalte: "Wie finde ich heraus, was meine Hörer schon wissen, und was ich ihnen noch erklären muß? Was macht meine Ausführungen verständlich? Welche Argumentationsformen sind der Sache und den Hörern angemessen? Wie baue ich eine Präsentation zweckmäßig auf? Wie gehe ich am besten mit Hörerbeiträgen um? Was sollte ich in Bezug auf meine Sprache und meine Sprechweise beachten? Was kann ich für meine Selbstsicherheit tun? Was ist Visualisierung und welche Gestaltungsregeln gibt es dafür? Wann setze ich am besten welche Medien ein?",
+            nutzen: "Meist genügt es, einige Kleinigkeiten zu verändern und schon wird aus der langweiligen, abstrakten Darstellung von Fakten ein interessanter Vorgang, aus dem Zahlenfriedhof eine klare, sich selbst erklärende Folie.",
+            zielgruppe: "Alle Menschen, die darstellen und verständlich erklären möchten"
         }
     },
     "projektmanagement-basistraining": {
         id: "projektmanagement-basistraining",
-        title: "Projektmanagement Grundlagen – Projekte sicher steuern",
-        url: "seminare/projektmanagement-basistraining",
+        title: "Projektmanagement Grundlagen",
+        url: "seminare/projektmanagement-basistraining.html",
         category: "management",
         badge: "2 Tage / 14 Stunden",
-        shortDescription: "Systematisches Projektmanagement für den Unternehmensalltag – von Auftragsklärung bis Steuerung.",
+        shortDescription: "Projekte sicher aufsetzen, professionell überwachen und erfolgreich abschließen – Grundlagen für den Projekterfolg.",
         details: [
-            "Struktur und Methoden für professionelle Projektarbeit",
-            "Direkt nutzbare Vorlagen/Standards",
-            "Besseres Verständnis für Projekt-Reporting"
+            "Auftragsklärung & Ziele",
+            "Planung & Steuerung",
+            "Risiko & Stakeholder",
+            "Fallstudienarbeit"
         ],
         heroImage: "assets/hero-meeting.jpg",
         content: {
-            intro: "Viele Projekte scheitern oder werden teurer und dauern länger als geplant. Systematisches Projektmanagement unterstützt dabei, Projekte professionell aufzusetzen, zu steuern und erfolgreich abzuschließen.",
+            intro: "Manche Projekte scheitern, viele dauern länger oder werden teurer als geplant. Ein wirkungsvolles, systematisches Projektmanagement unterstützt Sie dabei, Projekte sicher aufzusetzen, die Durchführung professionell zu überwachen und erfolgreich abzuschließen.",
             ziele: [
-                "Struktur und Methoden für professionelle Projektarbeit",
-                "Direkt nutzbare Vorlagen/Standards",
-                "Besseres Verständnis für Projekt-Reporting"
+                "Wie Sie am besten bei der Auftragsklärung vorgehen",
+                "Warum ein offizieller Projektauftrag die Basis darstellt",
+                "Warum Stakeholder- und Risikoanalyse essenziell sind",
+                "Welche Werkzeuge in welcher Phase sinnvoll sind",
+                "Wie Sie Zeit, Kosten, Scope und Qualität im Fokus behalten"
             ],
-            inhalte: "Rollen, Phasen, Vorgehensmodelle (agil/klassisch). Auftragsklärung & Projektauftrag. Stakeholder- & Risikoanalyse. Planung & Steuerung: Werkzeuge je Phase. Steuerungsgrößen: Zeit, Kosten, Scope, Qualität.",
-            nutzen: "Projekte werden sauberer aufgesetzt und stabiler gesteuert. Ein klarer Werkzeugkasten unterstützt Planung und Umsetzung.",
-            zielgruppe: "Einsteiger und zur Vertiefung."
+            inhalte: "Einführung (Agil vs. Klassisch). Projektauftrag & Ziele. Projektplanung (PSP, Termine, Kosten). Begleitprozesse (Risiken, Change). Kontrolle & Abschluss.",
+            nutzen: "Sie erwerben praxisnah Grundlagen für ein professionelles Projektmanagement. In einer Fallstudie (auf Wunsch ein Projekt Ihres Hauses) wenden Sie das Wissen direkt an.",
+            zielgruppe: "Projektleiter, Projektmitarbeiter und alle, die Methodenkompetenz im Projektmanagement aufbauen wollen."
         }
     },
     "selbsterkenntnis-und-selbstfuehrung": {
@@ -526,48 +552,71 @@ const seminarsData = {
             zielgruppe: "Alle Menschen, die ihre Change-Kompetenz stärken wollen."
         }
     },
+    "selbstmanagement": {
+        id: "selbstmanagement",
+        title: "Selbstmanagement",
+        url: "seminare/selbstmanagement.html",
+        category: "management",
+        badge: "Seminar",
+        shortDescription: "Sich selbst besser steuern, Ressourcen aktivieren und sinnvolle Ziele setzen.",
+        details: ["1-2 Tage", "Reflexion", "Methoden"],
+        heroImage: "assets/hero-meeting.jpg",
+        content: {
+            intro: "Was macht mich aus? Was sind meine Rollen, meine Werte, meine Ziele? Passen sie zusammen? Was motiviert mich? Wie aktiviere ich meine Ressourcen? Gibt es hemmende unbewusste Verhaltensmuster? Wie passe ich in meine Arbeitswelt? Was sollte ich jetzt tun?",
+            ziele: [
+                "kennen Stärken und Schwächen Ihres Arbeitsverhaltens und können Ihre Ressourcen optimal einsetzen.",
+                "sind sich Ihrer Motivation und Ihrer Ziele bewusst und setzen diese zur Identifikation mit Ihrem Beruf ein.",
+                "können Ihre Belastbarkeit und Ihre Grenzen realistisch einschätzen.",
+                "können Ihren Arbeitsalltag selbst besser steuern, indem Sie den Anteil an Fremdbestimmung verringern."
+            ],
+            inhalte: "Arbeitshindernisse in der Tätigkeit und ihre Ursachen. Unbewusste Verhaltensmuster, die die Arbeit behindern. Motivierende und behindernde Werte. Ressourcen für die Zukunft. Umgang mit Stress und Belastungen. Orientierung an persönlichen und beruflichen Ziele.",
+            nutzen: "Sie können Ihren Arbeitsalltag selbst besser steuern. Die Kenntnis Ihres persönlichen Arbeitsstils hilft Ihnen, sinnvolle Ziele und Prioritäten zu setzen und unbewusste Fallen zu vermeiden.",
+            zielgruppe: "Alle Menschen, die ihre Selbstorganisation verbessern möchten."
+        }
+    },
     "selbstmitgefuehl": {
         id: "selbstmitgefuehl",
         title: "Selbstmitgefühl",
         url: "seminare/selbstmitgefuehl",
         category: "health",
-        badge: "Seminar",
-        shortDescription: "Freundlich zu sich selbst sein – Selbstmitgefühl als Ressource für Leistungsfähigkeit und Wohlbefinden.",
-        details: ["1-2 Tage", "Reflexion", "Übungen"],
+        badge: "🌱 Gesundheit",
+        shortDescription: "Sich selbst freundlich und vergebend begegnen – Selbstmitgefühl als Ressource für konstruktive Lebensgestaltung und Persönlichkeitsentfaltung.",
+        details: ["1-2 Tage", "Reflexion & Übungen", "Achtsamkeit"],
         heroImage: "assets/hero-meeting.jpg",
         content: {
-            intro: "Selbstmitgefühl ist kein weicher Trend, sondern eine evidenzbasierte Kompetenz für Resilienz und Leistung.",
+            intro: "Selbstmitgefühl ist nicht misszuverstehen als Egozentrismus, Egoismus, oder gar als Selbstmitleid. Vielmehr ist es die Fähigkeit, sich selber gegenüber freundlich und vergebend zu begegnen. In einer Welt der Selbstkritik und Leistungsorientierung wird dies zu einer Herausforderung, deren Bewältigung über eine konstruktive Lebensgestaltung und Persönlichkeitsentfaltung entscheiden kann.",
             ziele: [
-                "Selbstmitgefühl verstehen und entwickeln",
-                "Inneren Kritiker zähmen",
-                "Selbstfürsorge praktizieren",
-                "Resilienz stärken"
+                "Sie verstehen das Konzept des Selbstmitgefühls",
+                "Sie lernen die drei Komponenten des Selbstmitgefühls kennen (Achtsamkeit, Freundlichkeit und Verbundenheit)",
+                "Sie erkennen persönliche Wachstumsbremsen aufgrund fehlenden Selbstmitgefühls",
+                "Sie bekommen Möglichkeiten zur Entwicklung ihres persönlichen Selbstmitgefühls aufgezeigt"
             ],
-            inhalte: "Was ist Selbstmitgefühl? Drei Komponenten. Praktische Übungen. Umgang mit dem inneren Kritiker. Abgrenzung zu Selbstmitleid.",
-            nutzen: "Sie sind resilenter und begegnen sich selbst mit mehr Wohlwollen.",
-            zielgruppe: "Alle, die ihre Selbstfürsorge stärken möchten."
+            inhalte: "Abgrenzung zu Selbstmitleid und Egozentrismus. Reflektion der Auswirkungen des Selbstmitgefühls auf unsere psychosoziale Gesundheit, unsere Resilienz und auf zwischenmenschliche Beziehungen. Reflektion von Ablehnung und/oder Abwertung in unserer Kindheit und deren Folgen. Einschränkung unseres Potentials. Entstehung kritischer „innerer Stimmen“. Übernahme von Selbstverantwortung. Potentialentfaltung durch ein „Ja!“ zu uns und unserem Leben. Gegebenenfalls Meditation zur Förderung der Selbstannahme.",
+            nutzen: "Sie lernen, sich auf die Dinge zu konzentrieren, die Ihnen gut tun, die Sie bereichern und die Dinge über Bord zu werfen, die Ihnen letztlich nur Kraft rauben. Sie bekommen ein Gespür dafür, wie Sie durch Selbstannahme und Wertschätzung der eigenen Bedürfnisse auch zu einer Bereicherung für andere werden können.",
+            zielgruppe: "Alle Menschen, die mehr zu sich und zu einer konstruktiven Lebensgestaltung finden möchten."
         }
     },
     "soft-skills-fuer-controller-und-zahlenprofis": {
         id: "soft-skills-fuer-controller-und-zahlenprofis",
         title: "Soft Skills für Zahlenprofis",
-        url: "seminare/soft-skills-fuer-controller",
-        category: "leadership",
-        badge: "Seminar",
-        shortDescription: "Zahlen vermitteln – als Controller oder Finanzexperte überzeugend kommunizieren und verhandeln.",
-        details: ["1-2 Tage", "Praxisübungen", "Fallarbeit"],
+        url: "seminare/soft-skills-fuer-controller.html",
+        category: "management",
+        badge: "📊 Management",
+        shortDescription: "Sie als Zahlenprofi 'ticken anders'. Lernen Sie, Ergebnisse prägnant aufzubereiten und komplexe Sachverhalte selbstbewusst zu präsentieren.",
+        details: ["Individuell", "Praxisnah", "Kommunikation"],
         heroImage: "assets/hero-meeting.jpg",
         content: {
-            intro: "Controller und Finanzexperten brauchen mehr als Zahlen. Wie kommunizieren und verhandeln Sie mit Fachfremden?",
+            intro: "Ist es Ihnen bewusst? Sie als Zahlenprofi „ticken anders“ als andere Menschen. Vielleicht kennen Sie die Situation, dass Ihnen jemand einen Sachverhalt, ein Produkt, einen Prozess begeistert beschreibt, und Sie nur denken: „Und was kostet das jetzt?“. Umgekehrt gibt es Menschen, die denken: „Zahlen und Tabellen sind ja nett und grundsätzlich verstanden habe ich das auch, ABER…“. Es ist wichtig, andere da abzuholen, wo sie stehen. Hier helfen Soft Skills: Haltung, gute Vorbereitung, Werkzeuge, Tipps & Tricks.",
             ziele: [
-                "Zahlen verständlich kommunizieren",
-                "Überzeugend argumentieren",
-                "Erfolgreiche Verhandlungen führen",
-                "Beziehungen zu Fachbereichen stärken"
+                "Sie sind sich Ihres besonderen Mindsets als Zahlenprofi bewusst und kennen die Welt des anderen, um ihn da abholen zu können, wo er steht.",
+                "Sie können die Ergebnisse Ihrer Arbeit prägnant aufbereiten und darstellen.",
+                "Sie sind in der Lage, auch komplexe und kritische Sachverhalte selbstbewusst zu kommunizieren und präsentieren.",
+                "Sie verfügen über flexibel einsetzbare Soft-Skill-Werkzeuge.",
+                "Sie sorgen für nachhaltig angenehmere und effektivere Zusammenarbeit in Projekten und Prozessen."
             ],
-            inhalte: "Kommunikation für Zahlenexperten. Storytelling mit Zahlen. Präsentationstechnik. Verhandlungsführung. Konfliktlösung.",
-            nutzen: "Sie vermitteln Ihre Botschaften überzeugender und werden besser gehört.",
-            zielgruppe: "Controller, Finanzexperten und alle Zahlenprofis."
+            inhalte: "Grundlagen – Warum helfen Soft Skills? Aufbereiten und darstellen. Zahlen und Psychologie. Kommunizieren, kooperieren, überzeugen. 5P: Proper Preparation Prevents Poor Performance. Smalltalk & Überzeugungstechniken. Werkzeuge in Krisensituationen. Hoher Praxisanteil – Fragen und Antworten.",
+            nutzen: "Sie optimieren die Kommunikation zwischen Controlling/Finanzbereich und anderen Abteilungen, vermeiden Missverständnisse und sorgen dafür, dass Ihre Zahlen die gewünschte Wirkung erzielen.",
+            zielgruppe: "Alle Zahlenprofis, die ihre Soft Skills verfeinern möchten."
         }
     },
     "verkaufen-reloaded": {
@@ -622,20 +671,19 @@ const seminarsData = {
         title: "Widerstandsfähigkeit stärken",
         url: "seminare/widerstandsfaehigkeit-staerken",
         category: "health",
-        badge: "Seminar",
-        shortDescription: "Resilienztraining für den Umgang mit Stress und Herausforderungen.",
-        details: ["Resilienz", "Achtsamkeit", "Mindset"],
+        badge: "🌱 Gesundheit",
+        shortDescription: "Was macht mich eigentlich widerstandsfähig? Erkennen Sie Denkfallen, stärken Sie die Perspektivübernahme und entwickeln Sie Ihr Growth-Mindset.",
+        details: ["Resilienz", "Denkfallen erkennen", "Growth-Mindset"],
         heroImage: "assets/hero-meeting.jpg",
         content: {
-            intro: "Die wichtige Frage lautet: 'Was macht mich eigentlich widerstandsfähig?' Eine wichtige Erkenntnis für viele gestresste Menschen ist: 'Mein Stress ist hausgemacht'. Wie sehr beeinflussen uns Glaubenssätze, Denk- und Verhaltensmuster? In diesem Seminar stärken wir Ihre psychische Widerstandskraft.",
+            intro: "Die wichtige Frage lautet „Was macht mich eigentlich widerstandsfähig?“ Eine wichtige Erkenntnis für viele „gestresste Menschen“ ist: „Mein Stress ist hausgemacht“. Wie sehr beeinflusst uns unser Mindset? Wie sehr beeinflussen uns Glaubenssätze, Denk- und Verhaltensmuster und daraus resultierende Reaktionen bzw. Handlungen? Warum sind manche Menschen widerstandsfähiger als andere? Was kann ich von diesen Menschen lernen? ",
             ziele: [
-                "Erkennen eigener Denkfallen und Glaubenssätze",
-                "Stärkung der Fähigkeit zur Perspektivübernahme",
-                "Erkennen, wie Sie sich in kritischen Situationen abgrenzen können",
-                "Stärkung Ihres Growth-Mindsets",
-                "Entwicklung von Gelassenheit"
+                "Erkennen eigene Denkfallen",
+                "Stärken die Fähigkeit zur Perspektivübernahme",
+                "Erkennen, wie sie sich in kritischen Situationen abgrenzen können",
+                "Stärken ihr Growth-Mindset"
             ],
-            inhalte: "Grundlagen der Resilienz. Die 7 Säulen der Widerstandskraft. Analyse persönlicher Stressverstärker. Achtsamkeitsübungen. Strategien zur Bewältigung von Krisen. Transfer in den Alltag.",
+            inhalte: "Stresserzeugende Denkfallen. Wie unsere Emotionen uns verleiten und wie wir sie bewusst regulieren können. Der Umgang mit Rückschlägen. Was macht uns glücklich und was hat das mit Widerstandsfähigkeit zu tun? Praktische Übungen für den Alltag. Reflexion der eigenen Ressourcen, Stärken, Fähigkeiten und Einsichten.",
             nutzen: "Sie kommen Ihren irrationalen Überzeugungen auf die Spur und erhalten Anregungen zum Neu-Denken. Sie finden versteckte Ressourcen, indem Sie lernen, Situationen anders wahrzunehmen und zu bewerten.",
             zielgruppe: "Alle Menschen, die ihre Fähigkeit zur Resilienz stärken möchten."
         }
@@ -643,24 +691,24 @@ const seminarsData = {
     "zeitmanagement": {
         id: "zeitmanagement",
         title: "Zeitmanagement",
-        url: "seminare/zeitmanagement",
+        url: "seminare/zeitmanagement.html",
         category: "management",
-        badge: "Seminar",
-        shortDescription: "Prioritäten setzen, Zeitfresser eliminieren und die Informationsflut beherrschen. Für mehr Effizienz im Alltag.",
-        details: ["2 Tage Präsenz", "Planungstools", "Praxistransfer"],
+        badge: "📊 Management",
+        shortDescription: "Prioritäten setzen, Zeitfresser eliminieren und die Informationsflut beherrschen. Effizienz durch Planung und Arbeitsplatzgestaltung.",
+        details: ["1-2 Tage", "Prio-Tools", "Praxistransfer"],
         heroImage: "assets/hero-meeting.jpg",
         content: {
-            intro: "Was sind funktionale Methoden der Planung und Prioritätensetzung? Wie können Sie Ihr Schreibtischmanagement an Ihre Arbeitsweise anpassen? Welche Zeitfresser können Sie minimieren? Wie werden Sie Herr über die Informationsflut?",
+            intro: "Was sind funktionale Methoden der Planung und Prioritätensetzung? Wie können Sie Ihr Schreibtischmanagement an Ihre Arbeitsweise anpassen? Welche Zeitfresser können Sie minimieren? Wie beherrschen Sie die Informationsflut? Haben Sie Stress? Zu viel, zu wenig oder gerade richtig? Wie können Sie sich für ungeliebte Aufgaben motivieren?",
             ziele: [
-                "Entlastung durch angemessene, flexible und schriftliche Planung",
-                "Die wichtigsten Planungsinstrumente kennen und auswählen",
-                "Wissen, wann Eskalation sinnvoll ist und konstruktiv Nein sagen",
-                "Stärken und Schwächen des eigenen Arbeitsverhaltens kennen",
-                "Belastbarkeit und Grenzen realistisch einschätzen"
+                "Sie entlasten sich durch angemessene, flexible und schriftliche Planung",
+                "Kennen die wichtigsten Planungsinstrumente und wählen das passende aus",
+                "Wissen, wann eine Eskalation sinnvoll ist und können konstruktiv Nein sagen",
+                "Kennen Stärken und Schwächen Ihres Arbeitsverhaltens und können Ihre Ressourcen optimal einsetzen",
+                "Können Ihre Belastbarkeit und Ihre Grenzen realistisch einschätzen"
             ],
-            inhalte: "Zeitfresser-Analyse. Priorisierungstechniken. Planungsinstrumente. Umgang mit Unterbrechungen. Selbstmotivation. Delegation.",
-            nutzen: "Sie können Ihre Ressourcen optimal einsetzen und gewinnen mehr Zeit für die wirklich wichtigen Aufgaben.",
-            zielgruppe: "Alle, die ihre Arbeitszeit besser nutzen und ihren Alltag strukturierter gestalten möchten."
+            inhalte: "Zielsetzung und Zielvereinbarung. Prioritätensetzung. Planungsmethoden. Arbeitsplatzgestaltung. Informationsmanagement. Das konstruktive Nein. Stressmanagement.",
+            nutzen: "Sie nehmen einen Maßnahmenkatalog mit, der Ihrem persönlichen Arbeitsstil entspricht. Sie können wichtige und dringende Aufgaben identifizieren, von nicht-zielführenden unterscheiden und Ihre Arbeitseinteilung danach ausrichten. Sie haben einen Arbeitsplatz, der unter den Gesichtspunkten Ergonomie und Arbeitsablauf den persönlichen Anforderungen entspricht.",
+            zielgruppe: "Alle Menschen, die ihre Arbeit besser organisieren möchten"
         }
     },
     "zusammenarbeit-von-generationen": {
@@ -771,23 +819,77 @@ const seminarsData = {
             zielgruppe: "Potentielle, junge und erfahrene Führungskräfte aller Berufsgruppen im Gesundheitswesen, Berater*innen."
         }
     },
+    "resilienz-staerke-ausdauer": {
+        id: "resilienz-staerke-ausdauer",
+        title: "Resilienz – Stärke und Ausdauer im Berufsalltag",
+        url: "seminare/resilienz-staerke-ausdauer",
+        category: "health",
+        badge: "🌱 Gesundheit",
+        shortDescription: "Verstehen, wie Resilienz entsteht, Strategien zur Stressbewältigung entwickeln und langfristig leistungsfähig sowie gesund bleiben.",
+        details: ["14 Schulungsstunden", "2 Tage", "Praxisübungen"],
+        heroImage: "assets/hero-meeting.jpg",
+        content: {
+            intro: "Verstehen, wie Resilienz entsteht und welche Faktoren sie beeinflussen. Strategien zur Stressbewältigung entwickeln und langfristig leistungsfähig sowie gesund bleiben.",
+            ziele: [
+                "Verstehen, wie Resilienz entsteht und welche Faktoren sie beeinflussen",
+                "Strategien zur Stressbewältigung entwickeln und anwenden",
+                "Langfristig leistungsfähig und gesund bleiben",
+                "Individuelle Stressmuster erkennen und reflektieren",
+                "Resilient kommunizieren – achtsam, klar und konstruktiv"
+            ],
+            inhalte: "Was ist Resilienz? – Grundlagen und die 7 Säulen der Resilienz. Stress verstehen – Ursachen und Auswirkungen analysieren. Individuelle Stressmuster erkennen und reflektieren. Resiliente Kommunikation – achtsam, klar und konstruktiv. Praktische Techniken zur Verbesserung der Kommunikation. Persönliche Ressourcen aktivieren – innere Stärke nutzen. Tools wie Visualisierung, Achtsamkeit und Priorisierung. Vom Wissen zum Handeln – Resilienz im Alltag integrieren. Konkrete Pläne für den persönlichen und beruflichen Kontext.",
+            nutzen: "Sie verstehen, wie Resilienz entsteht und entwickeln wirksame Strategien zur Stressbewältigung. Nach dem Training kommunizieren Sie resilienter und bleiben langfristig leistungsfähig sowie gesund.",
+            zielgruppe: "Mitarbeiter:innen, die erstmalig mit dem Thema in Berührung kommen, als auch Mitarbeiter:innen, welche ihre Kenntnisse vertiefen möchten."
+        }
+    },
     "argumentieren-verhandeln": {
         id: "argumentieren-verhandeln",
         title: "Argumentieren & Verhandeln",
-        url: "seminare/argumentieren-verhandeln",
+        url: "seminare/argumentieren-verhandeln.html",
         category: "communication",
-        badge: "Kommunikation",
-        shortDescription: "Doppelte Stimmigkeit – nach außen situationsgerecht, nach innen authentisch. So sprechen, dass man dazu stehen kann.",
-        details: ["2 Tage", "Praxis", "Transfer"],
+        badge: "💬 Kommunikation",
+        shortDescription: "Gute Kommunikation erfordert eine doppelte Stimmigkeit - nach außen situationsgerecht, nach innen authentisch. So sprechen, dass man dazu stehen kann.",
+        details: ["2 Tage", "Praxisintensiv", "Selbstreflexion"],
         heroImage: "assets/hero-meeting.jpg",
         content: {
-            intro: "Gute Kommunikation erfordert eine doppelte Stimmigkeit. Was wir sagen, muss situationsgerecht sein – und wir sollten authentisch sprechen, in Übereinstimmung mit uns selbst.",
-            ziele: ['Überzeugend argumentieren', 'Interessen durchsetzen', 'Beziehungen wahren'],
-            inhalte: "Körpersprache Rhetorik Argumentation Verhandlung Fragetechniken Einwandbehandlung",
-            nutzen: "Sie erweitern ihre Kompetenzen in Argumentieren & Verhandeln.",
-            zielgruppe: "Alle Menschen, die in Gesprächen Einfluss ausüben wollen."
+            intro: "Gute Kommunikation erfordert eine doppelte Stimmigkeit - nach außen und nach innen. Was wir sagen, muss einerseits situationsgerecht sein. Andererseits sollten wir so sprechen, dass wir authentisch sind - d. h. in Übereinstimmung mit uns selbst - sind und dazu stehen können.",
+            ziele: [
+                "Kennen die notwendigen Phasen eines Gesprächs und stimmen Ihre Argumentation daraufhin ab",
+                "Können sich ziel-, themen- und situationsorientiert auf Gespräche vorbereiten",
+                "Haben einen Überblick über die wichtigsten Argumentationstechniken",
+                "Können Ihre Gesprächspartner einschätzen und Ihre Argumentation danach ausrichten",
+                "Können die Gesprächsatmosphäre positiv beeinflussen",
+                "Kennen die Rolle von Einwänden im Gespräch und Strategien zum Umgang mit ihnen",
+                "Können konfliktträchtige Situationen wahrnehmen und Handlungsalternativen entwickeln"
+            ],
+            inhalte: "Körpersprache und Sprache: Was macht überzeugend, was erweckt Widerstand? Vorbereitung: Wie kann ich mich durch zielorientierte Vorbereitung motivieren? Darstellung: Wie kann ich Sachverhalte verständlich und eingängig schildern? Rhetorische Mittel: Was wirkt wie warum? Argumentationsformen: Wie kann ich meine Argumente wirkungsvoll anordnen? Verhandlungstechniken: Wie kann ich den Verlauf eines Gesprächs planen? Fragetechniken: Wie bewege ich meinen Gesprächspartner durch geschicktes Fragen? Umgang mit Widerständen: Was kann ich tun, wenn der Andere einfach nicht will? Selbstverständnis: Mit welchem Selbstbild gehe ich in Gespräche? Selbstmotivation: Will ich dieses Gespräch führen? Will ich überzeugen?",
+            nutzen: "In diesem sehr praxisintensiven Seminar haben Sie vielfach die Gelegenheit zur Selbstreflexion. Sie gewinnen an Klarheit über sich selbst und finden Wege zu einer stimmigen Kommunikation.",
+            zielgruppe: "Alle Menschen, die in Gesprächen Einfluss ausüben wollen und ihre Überzeugungskraft stärken möchten."
         }
     },
+    "praxis-werkstatt-projektmanagement": {
+        id: "praxis-werkstatt-projektmanagement",
+        title: "Praxis-Werkstatt Projektmanagement",
+        url: "seminare/praxis-werkstatt-projektmanagement.html",
+        category: "management",
+        badge: "📊 Management",
+        shortDescription: "Vertiefen Sie Ihre Projektmanagement-Kompetenz: Rolle, Konflikte, Stakeholder und Praxisreflexion.",
+        details: ["2 Tage", "Praxiswerkstatt", "Erfahrungsaustausch"],
+        heroImage: "assets/hero-meeting.jpg",
+        content: {
+            intro: "In dieser Praxiswerkstatt vertiefst du dein Projektmanagement-Wissen anhand eigener Beispiele. Du reflektierst dein Führungsverhalten, bearbeitest typische Herausforderungen und stärkst deine Kompetenz im Umgang mit Teams, Konflikten und Dynamiken im Projektalltag.",
+            ziele: [
+                "Lernen, Projekte sicher und wirkungsvoll zu steuern",
+                "Die eigene Führungsrolle klären",
+                "Aus Erfahrungen anderer profitieren",
+                "Gezieltes Vertiefen und Erweitern des eigenen Methodenbaukastens",
+                "Austausch, Reflexion und praktische Anwendung"
+            ],
+            inhalte: "Meine Rolle als Projektleitung. Typische Stolpersteine im Projektalltag erkennen und meistern. Kommunikation und Konfliktlösung im Projektkontext. Stakeholder-Management und Selbstpositionierung. Erfahrungsaustausch zu eigenen Projekten und Praxisfällen.",
+            nutzen: "Sie vertiefen Ihre vorhandenen PM-Kenntnisse, reflektieren Ihren eigenen Stil und erhalten kollegiale Beratung für konkrete Herausforderungen aus Ihrem Projektalltag.",
+            zielgruppe: "Alle, die bereits sicher in den Grundlagen des Projektmanagements sind und ihre Kompetenz in der Rolle als Projektleitung gezielt vertiefen möchten."
+        }
+    }
 };
 
 // Make it available globally

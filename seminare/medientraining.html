@@ -1,28 +1,30 @@
 <!DOCTYPE html>
-
 <html lang="de">
+
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<link href="../assets/favicon.png" rel="icon" type="image/png"/>
-<title>Medientraining &amp; Kameraauftritt – WTM Management Consulting</title>
-<meta content="Überzeugend vor der Kamera – Interviews und Videoaufnahmen professionell meistern." name="description"/>
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&amp;family=Source+Sans+Pro:wght@300;400;600;700&amp;display=swap" rel="stylesheet"/>
-<link href="../styles/index.css" rel="stylesheet"/>
-<style>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <link href="../assets/favicon.png" rel="icon" type="image/png" />
+    <title>Medientraining & Kameraauftritt – WTM Management Consulting</title>
+    <meta
+        content="Professionelles Auftreten vor der Kamera: Medientraining für Führungskräfte. Lernen Sie, Interviews und Statements souverän, authentisch und glaubwürdig zu meistern."
+        name="description" />
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&amp;family=Source+Sans+Pro:wght@300;400;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <link href="../styles/index.css" rel="stylesheet" />
+    <style>
         :root {
-            /* Anthracite Theme */
-            --seminar-accent: #2c2c2e;
-            /* Dark Anthracite */
-            --seminar-accent-light: rgba(44, 44, 46, 0.1);
-            --seminar-accent-glow: rgba(44, 44, 46, 0.3);
-            --color-text: #3A3A38;
-            --color-cream: #F5F5F3;
-            --color-border: #E5E5E0;
-            --accent-highlight: #a0a0a5;
-            /* Silver/Grey highlight */
+            --seminar-accent: #d6ac58;
+            /* Communication Gold */
+            --seminar-secondary: #fef3c7;
+            --seminar-accent-light: rgba(214, 172, 88, 0.1);
+            --color-text: #1f2937;
+            --color-bg: #ffffff;
+            --color-bg-secondary: #f3f4f6;
+            --color-border: #e5e7eb;
         }
 
         .scroll-progress {
@@ -56,8 +58,8 @@
         .orb-1 {
             width: 400px;
             height: 400px;
-            background: #9ca3af;
-            /* Silver */
+            background: #fcd34d;
+            /* Gold-ish */
             top: -100px;
             right: -100px;
         }
@@ -107,6 +109,12 @@
 
         .breadcrumb a {
             color: rgba(255, 255, 255, 0.6);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .breadcrumb a:hover {
+            color: #fff;
         }
 
         .category-badge {
@@ -130,10 +138,6 @@
             margin-bottom: 1.5rem;
             opacity: 0;
             animation: fadeSlideUp 0.8s ease 0.2s forwards;
-        }
-
-        .hero-title span {
-            color: #9ca3af;
         }
 
         .hero-subtitle {
@@ -187,6 +191,7 @@
             border-radius: 8px;
             font-weight: 600;
             transition: all 0.3s;
+            text-decoration: none;
         }
 
         .btn-glow:hover {
@@ -201,6 +206,12 @@
             color: #fff;
             font-weight: 600;
             transition: all 0.3s;
+            text-decoration: none;
+        }
+
+        .btn-outline-light:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: #fff;
         }
 
         @keyframes fadeSlideUp {
@@ -215,16 +226,10 @@
             }
         }
 
-        /* Sections */
-        .intro-section {
-            padding: 6rem 0;
-            background: #fff;
-        }
-
-        .intro-content {
-            max-width: 800px;
-            margin: 0 auto;
+        /* Sections common styles */
+        .section-header {
             text-align: center;
+            margin-bottom: 4rem;
         }
 
         .section-label {
@@ -237,27 +242,34 @@
             display: inline-block;
         }
 
+        .accent-line {
+            width: 60px;
+            height: 3px;
+            background: var(--seminar-accent);
+            margin: 1.5rem auto 0;
+        }
+
         .intro-text {
             font-size: 1.15rem;
             line-height: 1.9;
             color: var(--color-text);
         }
 
-        .goals-section {
+        /* Specific Section Styles */
+        .intro-section {
             padding: 6rem 0;
             background: #fff;
         }
 
-        .section-header {
+        .intro-content {
+            max-width: 800px;
+            margin: 0 auto;
             text-align: center;
-            margin-bottom: 4rem;
         }
 
-        .accent-line {
-            width: 60px;
-            height: 3px;
-            background: var(--seminar-accent);
-            margin: 1.5rem auto 0;
+        .goals-section {
+            padding: 6rem 0;
+            background: #fff;
         }
 
         .goals-grid {
@@ -302,9 +314,153 @@
             margin: 0;
         }
 
+        /* Timeline Content */
+        .content-section {
+            padding: 6rem 0;
+            background: linear-gradient(180deg, #f8faf9 0%, #fff 100%);
+            position: relative;
+        }
+
+        .content-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 1px;
+            height: 80px;
+            background: var(--seminar-accent);
+        }
+
+        .journey-container {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .journey-line {
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: linear-gradient(180deg, var(--seminar-accent) 0%, rgba(44, 44, 46, 0.6) 50%, rgba(44, 44, 46, 0.2) 100%);
+            transform: translateX(-50%);
+            border-radius: 4px;
+        }
+
+        .journey-item {
+            display: flex;
+            align-items: flex-start;
+            position: relative;
+            margin-bottom: 2rem;
+        }
+
+        .journey-item:nth-child(odd) {
+            flex-direction: row;
+        }
+
+        .journey-item:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .journey-content {
+            width: calc(50% - 50px);
+            padding: 0 1.5rem;
+        }
+
+        .journey-node {
+            position: absolute;
+            left: 50%;
+            top: 20px;
+            transform: translateX(-50%);
+            z-index: 10;
+        }
+
+        .node-dot {
+            width: 24px;
+            height: 24px;
+            background: var(--seminar-accent);
+            border-radius: 50%;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 0 0 4px #fff, 0 0 0 6px var(--seminar-accent);
+        }
+
+        .node-dot::before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            background: #fff;
+            border-radius: 50%;
+        }
+
+        .node-connector {
+            position: absolute;
+            top: 50%;
+            width: 42px;
+            height: 2px;
+            background: var(--seminar-accent);
+            transform: translateY(-50%);
+        }
+
+        .journey-item:nth-child(odd) .node-connector {
+            right: 100%;
+            margin-right: 3px;
+        }
+
+        .journey-item:nth-child(even) .node-connector {
+            left: 100%;
+            margin-left: 3px;
+        }
+
+        .journey-card {
+            background: #fff;
+            border-radius: 16px;
+            padding: 1.75rem 2rem;
+            position: relative;
+            border: 1px solid rgba(44, 44, 46, 0.15);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+            transition: all 0.4s;
+        }
+
+        .journey-item:hover .journey-card {
+            transform: translateY(-5px);
+            border-color: var(--seminar-accent);
+        }
+
+        .module-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.4rem 0.8rem;
+            background: var(--seminar-accent-light);
+            border-radius: 20px;
+            margin-bottom: 0.75rem;
+        }
+
+        .module-number {
+            font-size: 0.7rem;
+            font-weight: 700;
+            color: var(--seminar-accent);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        .journey-title {
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: var(--color-text);
+            margin: 0;
+            line-height: 1.4;
+        }
+
+        /* CTA Section */
         .cta-section {
             padding: 6rem 0 4rem;
-            background: var(--color-cream);
+            background: var(--color-bg-secondary);
         }
 
         .cta-grid {
@@ -337,6 +493,22 @@
             margin-bottom: 2rem;
         }
 
+        .btn-white {
+            background: #fff;
+            color: var(--seminar-accent);
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+            display: inline-block;
+        }
+
+        .btn-white:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
         @media (max-width: 968px) {
             .hero-content-wrapper {
                 text-align: center;
@@ -351,478 +523,363 @@
             .cta-grid {
                 grid-template-columns: 1fr;
             }
-        }
 
-        /* PREMIUM TIMELINE STYLES */
-        .content-section {
-            padding: 6rem 0;
-            background: linear-gradient(180deg, #f8faf9 0%, #fff 100%);
-            position: relative;
-        }
-
-        .content-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 1px;
-            height: 80px;
-            background: var(--seminar-accent);
-        }
-
-        .journey-container {
-            max-width: 900px;
-            margin: 0 auto;
-            position: relative;
-        }
-
-        /* ============================================
-           CONTENT TIMELINE - PREMIUM DESIGN (Reference)
-           ============================================ */
-        .content-section {
-            padding: 6rem 0;
-            background: linear-gradient(180deg, #f8faf9 0%, #fff 100%);
-            position: relative;
-        }
-
-        .content-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 1px;
-            height: 80px;
-            background: var(--seminar-accent);
-        }
-
-        .journey-container {
-            max-width: 900px;
-            margin: 0 auto;
-            position: relative;
-        }
-
-        .journey-line {
-            position: absolute;
-            left: 50%;
-            top: 0;
-            bottom: 0;
-            width: 4px;
-            background: linear-gradient(180deg,
-                    var(--seminar-accent) 0%,
-                    rgba(44, 44, 46, 0.6) 50%,
-                    rgba(44, 44, 46, 0.2) 100%);
-            transform: translateX(-50%);
-            border-radius: 4px;
-        }
-
-        .journey-line::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 0%;
-            background: linear-gradient(180deg,
-                    var(--accent-highlight) 0%,
-                    var(--seminar-accent) 100%);
-            border-radius: 4px;
-            transition: height 1.5s cubic-bezier(0.4, 0, 0.2, 1);
-            box-shadow: 0 0 20px rgba(44, 44, 46, 0.4);
-        }
-
-        .journey-line.animated::after {
-            height: 100%;
-        }
-
-        .journey-item {
-            display: flex;
-            align-items: flex-start;
-            position: relative;
-            margin-bottom: 2rem;
-            opacity: 1;
-            /* Keeping it visible by default to avoid JS dependency for now, or match reference animation later */
-            /* transform: translateY(40px); */
-            /* transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1); */
-        }
-
-        /* Note: first-child is journey-line. So Item 1 is nth-child(2) -> Even. */
-        .journey-item:nth-child(odd) {
-            flex-direction: row;
-            /* Content Left */
-        }
-
-        .journey-item:nth-child(even) {
-            flex-direction: row-reverse;
-            /* Content Right */
-        }
-
-        .journey-content {
-            width: calc(50% - 50px);
-            padding: 0 1.5rem;
-        }
-
-        .journey-node {
-            position: absolute;
-            left: 50%;
-            top: 20px;
-            transform: translateX(-50%);
-            z-index: 10;
-        }
-
-        .node-dot {
-            width: 24px;
-            height: 24px;
-            background: var(--seminar-accent);
-            border-radius: 50%;
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow:
-                0 0 0 4px #fff,
-                0 0 0 6px var(--seminar-accent),
-                0 0 30px rgba(44, 44, 46, 0.4);
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .node-dot::before {
-            content: '';
-            width: 8px;
-            height: 8px;
-            background: #fff;
-            border-radius: 50%;
-            transition: transform 0.3s ease, opacity 0.3s ease;
-        }
-
-        .journey-item:hover .node-dot::before {
-            animation: node-pulse 1s infinite ease-in-out;
-        }
-
-        @keyframes node-pulse {
-
-            0%,
-            100% {
-                transform: scale(1);
-                opacity: 1;
+            .journey-line {
+                left: 20px;
+                transform: none;
             }
 
-            50% {
-                transform: scale(0.6);
-                opacity: 0.6;
-            }
-        }
-
-        .node-ring {
-            position: absolute;
-            inset: -8px;
-            border: 2px solid var(--seminar-accent);
-            border-radius: 50%;
-            opacity: 0;
-            transform: scale(0.8);
-            transition: opacity 0.3s ease, transform 0.3s ease;
-        }
-
-        .journey-item:hover .node-ring {
-            animation: ring-expand 1.5s infinite ease-out;
-        }
-
-        @keyframes ring-expand {
-            0% {
-                transform: scale(0.8);
-                opacity: 0.8;
+            .journey-item,
+            .journey-item:nth-child(even) {
+                flex-direction: row;
+                padding-left: 45px;
             }
 
-            100% {
-                transform: scale(1.8);
-                opacity: 0;
+            .journey-content {
+                width: 100%;
+                padding: 0;
             }
-        }
 
-        .node-connector {
-            position: absolute;
-            top: 50%;
-            width: 42px;
-            /* Increased slightly from 26px to ensure connection based on math (38px gap) + overlap */
-            height: 2px;
-            background: var(--seminar-accent);
-            transform: translateY(-50%);
-        }
+            .journey-node {
+                left: 20px;
+                transform: translateX(-50%);
+            }
 
-        .journey-item:nth-child(odd) .node-connector {
-            right: 100%;
-            margin-right: 3px;
-        }
-
-        .journey-item:nth-child(even) .node-connector {
-            left: 100%;
-            margin-left: 3px;
-        }
-
-        .journey-card {
-            background: #fff;
-            border-radius: 16px;
-            padding: 1.75rem 2rem;
-            position: relative;
-            border: 1px solid rgba(44, 44, 46, 0.15);
-            box-shadow:
-                0 4px 20px rgba(0, 0, 0, 0.04),
-                0 1px 3px rgba(0, 0, 0, 0.02);
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            overflow: hidden;
-        }
-
-        .journey-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 3px;
-            background: var(--seminar-accent);
-            transform: scaleX(0);
-            transform-origin: left;
-            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .journey-item:hover .journey-card {
-            transform: translateY(-5px);
-            border-color: var(--seminar-accent);
-            box-shadow:
-                0 20px 50px rgba(44, 44, 46, 0.12),
-                0 8px 20px rgba(0, 0, 0, 0.06);
-        }
-
-        .journey-item:hover .journey-card::before {
-            transform: scaleX(1);
-        }
-
-        .module-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.4rem 0.8rem;
-            background: var(--seminar-accent-light);
-            border-radius: 20px;
-            margin-bottom: 0.75rem;
-        }
-
-        .module-number {
-            font-size: 0.7rem;
-            font-weight: 700;
-            color: var(--seminar-accent);
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-        }
-
-        .journey-title {
-            font-size: 1.15rem;
-            font-weight: 600;
-            color: var(--color-text);
-            margin: 0;
-            line-height: 1.4;
+            .node-connector {
+                display: none;
+            }
         }
     </style>
 </head>
+
 <body>
-<div class="scroll-progress" id="scrollProgress"></div>
-<header id="header">
-<div class="container">
-<nav><a class="logo" href="../index"><img alt="WTM" src="../assets/wtm_logo_gross.png"/></a>
-<div class="menu-toggle" id="mobile-menu"><span class="bar"></span><span class="bar"></span><span class="bar"></span></div>
-<ul class="nav-links">
-<li><a class="nav-link" href="../index#haltung">Haltung</a></li>
-<li><a class="nav-link" href="../index#angebote">Angebote</a></li>
-<li><a class="nav-link" href="../index#trainings">Trainings</a></li>
-<li><a class="nav-link" href="../index#team">Team</a></li>
-<li><a class="nav-link" href="../index#kontakt">Kontakt</a></li>
-</ul>
-</nav>
-</div>
-</header>
-<section class="seminar-hero">
-<div class="hero-gradient-orb orb-1"></div>
-<div class="hero-gradient-orb orb-2"></div>
-<div class="container">
-<div class="hero-content-wrapper">
-<div class="hero-text">
-<div class="breadcrumb"><a href="../index">Startseite</a><span class="breadcrumb-sep">→</span><a href="../index#trainings">Seminare</a><span class="breadcrumb-sep">→</span><span>Medientraining &amp; Kameraauftritt</span></div>
-<div class="category-badge">Workshop</div>
-<h1 class="hero-title">Medientraining &amp; Kameraauftritt</h1>
-<p class="hero-subtitle">Überzeugend vor der Kamera – Interviews und Videoaufnahmen professionell meistern.</p>
-<div class="hero-meta"><span class="meta-tag"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect height="18" rx="2" ry="2" width="18" x="3" y="4"></rect></svg>1 Tag</span><span class="meta-tag"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle></svg>Praxis</span><span class="meta-tag"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle></svg>Videofeedback</span></div>
-<div class="hero-cta">
-<a class="btn-glow" href="../index#kontakt">Unverbindlich anfragen →</a>
-<a class="btn-outline-light" href="#konzept">Konzept erhalten</a>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section class="goals-section" id="nutzen">
-<div class="container">
-<div class="section-header"><span class="section-label">Ihr Vorteil</span>
-<h2>Nutzen &amp; Wirkung</h2>
-<div class="accent-line"></div>
-</div>
-<div class="goals-grid"><div class="goal-card"><div class="goal-number">1</div><p class="goal-text">Vor der Kamera sicher auftreten</p></div><div class="goal-card"><div class="goal-number">2</div><p class="goal-text">Kernbotschaften prägnant formulieren</p></div><div class="goal-card"><div class="goal-number">3</div><p class="goal-text">Körpersprache bewusst einsetzen</p></div><div class="goal-card"><div class="goal-number">4</div><p class="goal-text">Schwierige Fragen souverän beantworten</p></div></div>
-</div>
-</section>
-<section class="intro-section" style="background-color: #f8f9fa;">
-<div class="container">
-<div class="intro-content">
-<span class="section-label">Transfer</span>
-<h2>Über das Training</h2>
-<div style="text-align: left; max-width: 600px; margin: 2rem auto;">
+    <div class="scroll-progress" id="scrollProgress"></div>
+    <header id="header">
+        <div class="container">
+            <nav><a class="logo" href="../index.html"><img alt="WTM" src="../assets/wtm_logo_gross.png" /></a>
+                <div class="menu-toggle" id="mobile-menu"><span class="bar"></span><span class="bar"></span><span
+                        class="bar"></span></div>
+                <ul class="nav-links">
+                    <li><a class="nav-link" href="../index.html#haltung">Haltung</a></li>
+                    <li><a class="nav-link" href="../index.html#angebote">Angebote</a></li>
+                    <li><a class="nav-link" href="../index.html#trainings">Trainings</a></li>
+                    <li><a class="nav-link" href="../index.html#team">Team</a></li>
+                    <li><a class="nav-link" href="../index.html#kontakt">Kontakt</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-</div>
-<p class="intro-text" style="margin-top: 1.5rem;">Ob Interview, Webinar oder Video-Statement – der Auftritt vor der Kamera erfordert besondere Fähigkeiten.</p></div>
-</div>
-</section>
-<section class="content-section">
-<div class="container">
-<div class="section-header"><span class="section-label">Der Inhalt</span>
-<h2>Themenübersicht</h2>
-<div class="accent-line"></div>
-</div>
-<div class="journey-container"><div class="journey-line" id="journeyLine"></div><div class="journey-item"><div class="journey-node"><div class="node-dot"><div class="node-ring"></div></div><div class="node-connector"></div></div><div class="journey-content"><div class="journey-card"><div class="module-badge"><span class="module-number">Thema 01</span></div><h3 class="journey-title">Seminarinhalte</h3><p>Kameratechnik. Körpersprache und Stimme. Botschaftsentwicklung. Interviewtechniken. Live-Übungen mit Videoanalyse.</p></div></div></div></div>
-</div>
-</section>
-<section class="intro-section">
-<div class="container">
-<div class="intro-content">
-<span class="section-label">Praxis</span>
-<h2>Praxis &amp; Transfer</h2>
-<p class="intro-text">Wir legen großen Wert auf den Transfer in den eigenen Arbeitskontext. Durch
-                    konkrete Fallbeispiele, Simulationen und die Entwicklung individueller Handlungsoptionen stellen wir
-                    sicher, dass Sie das Gelernte direkt anwenden können.</p>
-</div>
-</div>
-</section>
-<section class="goals-section" style="background-color: #f8f9fa;">
-<div class="container">
-<div class="section-header"><span class="section-label">Kontext</span>
-<h2>Typische Anlässe</h2>
-<div class="accent-line"></div>
-</div>
-<div class="goals-grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));">
-<div class="goal-card">
-<p class="goal-text">Projektleiter, die ohne Disziplinarverantwortung Teams steuern.</p>
-</div>
-<div class="goal-card">
-<p class="goal-text">Experten, die fachlich führen, aber nicht disziplinarisch.</p>
-</div>
-<div class="goal-card">
-<p class="goal-text">Einführung von agilen Arbeitsweisen oder Matrix-Strukturen.</p>
-</div>
-</div>
-</div>
-</section>
-<section class="intro-section">
-<div class="container">
-<div class="intro-content">
-<span class="section-label">Nachhaltigkeit</span>
-<h2>Wirkung nach 4 Wochen</h2>
-<div style="text-align: left; max-width: 600px; margin: 2rem auto;">
+    <!-- 1. HERO SECTION -->
+    <section class="seminar-hero">
+        <div class="hero-gradient-orb orb-1"></div>
+        <div class="hero-gradient-orb orb-2"></div>
+        <div class="container">
+            <div class="hero-content-wrapper">
+                <div class="hero-text">
+                    <div class="breadcrumb">
+                        <a href="../index.html">Startseite</a>
+                        <span class="breadcrumb-sep">→</span>
+                        <a href="../index.html#trainings">Seminare</a>
+                        <span class="breadcrumb-sep">→</span>
+                        <span>Medientraining</span>
+                    </div>
+                    <div class="category-badge">🎥 Kommunikation</div>
+                    <h1 class="hero-title">Medientraining & Kameraauftritt</h1>
+                    <p class="hero-subtitle">Professionelles Auftreten vor der Kamera. Nur wer mit Spaß, selbstsicher
+                        und authentisch das Thema Kommunikation angeht, wirkt sympathisch und glaubwürdig.</p>
+                    <div class="hero-meta">
+                        <span class="meta-tag">
+                            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                <rect height="18" rx="2" ry="2" width="18" x="3" y="4"></rect>
+                            </svg>
+                            1 Tag
+                        </span>
+                        <span class="meta-tag">
+                            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                <path d="M15 10l5 5-5 5"></path>
+                                <path d="M4 4v7a4 4 0 0 0 4 4h12"></path>
+                            </svg>
+                            Praxis-Workshop
+                        </span>
+                        <span class="meta-tag">
+                            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                <path d="M23 7l-7 5 7 5V7z"></path>
+                                <rect height="14" rx="2" ry="2" width="15" x="1" y="5"></rect>
+                            </svg>
+                            Kameratraining
+                        </span>
+                    </div>
+                    <div class="hero-cta">
+                        <a class="btn-glow" href="#anfrage">Unverbindlich anfragen →</a>
+                        <a class="btn-outline-light" href="#nutzen">Mehr erfahren</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-</div>
-<p class="intro-text">Sie treten souverän vor der Kamera auf und vermitteln Ihre Botschaften überzeugend.</p></div>
-</div>
-</section>
-<section class="cta-section">
-<div class="container">
-<div class="cta-grid">
-<div class="target-card"><span class="section-label">Maßgeschneidert</span>
-<h3>Inhouse-Lösung?</h3>
-<p>Führungskräfte und alle, die vor der Kamera präsentieren.</p>
-</div>
-<div class="cta-card">
-<h3>Kontakt aufnehmen</h3>
-<p>Lassen Sie uns über Ihren Bedarf sprechen.</p><a class="btn btn-white" href="../index#kontakt">Unverbindlich anfragen →</a>
-</div>
-</div>
-</div>
-</section>
-<footer>
-<div class="container">
-<div class="footer-grid">
-<!-- Brand Column -->
-<div class="footer-brand reveal stagger-1">
-<a class="logo" href="../index">
-<img alt="WTM Management Consulting" src="../assets/logo.png"/>
-</a>
-<p>Ihr Partner für wirksame Führung, lebendige Teams und gesunde Organisationen. Seit über 25 Jahren
-                        begleiten wir Menschen und Unternehmen in Veränderungsprozessen.</p>
-<div class="footer-social">
-<a aria-label="Facebook" href="https://www.facebook.com/wtm.mc" rel="noopener" target="_blank">
-<svg fill="currentColor" viewbox="0 0 24 24">
-<path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"></path>
-</svg>
-</a>
-<a aria-label="Twitter" href="https://twitter.com/WTM_Consulting" rel="noopener" target="_blank">
-<svg fill="currentColor" viewbox="0 0 24 24">
-<path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"></path>
-</svg>
-</a>
-<a aria-label="LinkedIn" href="https://www.linkedin.com/company/wtm-management-consulting" rel="noopener" target="_blank">
-<svg fill="currentColor" viewbox="0 0 24 24">
-<path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"></path>
-</svg>
-</a>
-<a aria-label="YouTube" href="https://www.youtube.com/channel/UC4rGdW9ApMpjFxbosjRshQg" rel="noopener" target="_blank">
-<svg fill="currentColor" viewbox="0 0 24 24">
-<path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"></path>
-</svg>
-</a>
-</div>
-</div>
-<!-- Offerings Column -->
-<div class="footer-col reveal stagger-2">
-<h4>Angebote</h4>
-<ul class="footer-links">
-<li><a href="../index#trainings">Trainings &amp; Seminare</a></li>
-<li><a href="../index#angebote">Coaching &amp; Beratung</a></li>
-<li><a href="../index#team">Unser Team</a></li>
-<li><a href="../index#unternehmen">Über Uns</a></li>
-</ul>
-</div>
-<!-- Contact Column -->
-<div class="footer-col reveal stagger-3">
-<h4>Kontakt</h4>
-<ul class="footer-links footer-contact">
-<li>Neuer Graben 61</li>
-<li>44139 Dortmund</li>
-<li>
-<a href="tel:+4923113722666">
-<span>Tel:</span> 0231 / 137 22 666
-                            </a>
-</li>
-<li>
-<a href="mailto:info@wtm-consulting.de">
-<span>Mail:</span> info@wtm-consulting.de
-                            </a>
-</li>
-</ul>
-</div>
-<!-- Legal Column -->
-<div class="footer-col reveal stagger-4">
-<h4>Rechtliches</h4>
-<ul class="footer-links">
-<li><a href="../impressum">Impressum</a></li>
-<li><a href="../datenschutz">Datenschutz</a></li>
-</ul>
-</div>
-</div>
-<div class="footer-bottom reveal">
-<div class="copyright">
-<p>© 2026 WTM Management Consulting GmbH. Alle Rechte vorbehalten.</p>
-</div>
-</div>
-</div>
-</footer>
-<script src="../js/main.js"></script>
-<script>window.addEventListener('scroll', () => { document.getElementById('scrollProgress').style.width = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100 + '%'; });</script>
-<script data-api-url="https://www.vallit.net" data-color="#6366f1" data-company-id="e46176c5-0f35-43b8-8e8c-c72f534519e1" data-language="de" data-metadata='{"page_title": "Laterales Führen"}' data-theme="minimal" data-title="Kian" src="https://www.vallit.net/widget/embed.js"></script>
+    <!-- 2. NUTZEN & WIRKUNG -->
+    <section class="goals-section" id="nutzen">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Ihr Vorteil</span>
+                <h2>Nutzen & Wirkung</h2>
+                <div class="accent-line"></div>
+                <p class="intro-text" style="max-width: 800px; margin: 2rem auto;">
+                    „Ich möchte mich herzlich für das Training bedanken, ich habe wirklich viel gelernt.
+                    Meine Abneigung der Kamera gegenüber ist fast verflogen, außerdem hat es sehr viel Spaß gebracht.“
+                    <br><em>– Feedback einer Führungskraft</em>
+                </p>
+            </div>
+            <div class="goals-grid">
+                <div class="goal-card">
+                    <div class="goal-number">1</div>
+                    <p class="goal-text"><strong>Sicher auftreten:</strong> Sie wissen genau, wie Sie sich vor der
+                        Kamera verhalten müssen, um kompetent und sympathisch zu wirken.</p>
+                </div>
+                <div class="goal-card">
+                    <div class="goal-number">2</div>
+                    <p class="goal-text"><strong>Kernbotschaften platzieren:</strong> Auch bei schwierigen Themen
+                        gelingt es Ihnen, komplizierte Sachverhalte verständlich zu erklären.</p>
+                </div>
+                <div class="goal-card">
+                    <div class="goal-number">3</div>
+                    <p class="goal-text"><strong>Krisenfest:</strong> Sie kommunizieren auch unter Druck und in
+                        kritischen Situationen (z.B. "Überfall"-Interviews) authentisch und glaubwürdig.</p>
+                </div>
+                <div class="goal-card">
+                    <div class="goal-number">4</div>
+                    <p class="goal-text"><strong>Hürden abbauen:</strong> Der Auftritt vor der Kamera wird von einer
+                        Hürde zu einer einmaligen Chance für Sie und Ihr Unternehmen.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. NACH DEM TRAINING (TRANSFORMATION) -->
+    <section class="intro-section" style="background-color: #f8f9fa;">
+        <div class="container">
+            <div class="intro-content">
+                <span class="section-label">Transformation</span>
+                <h2>Nach dem Training</h2>
+                <p class="intro-text">
+                    Managerinnen und Manager stehen oft vor einer großen Hürde, wenn sie das erste Mal vor die Kamera
+                    sollen.
+                    Nach diesem Training verstehen Sie den Kameraauftritt nicht mehr als Stresssituation, sondern als
+                    Chance.
+                    Sie wissen, wie Journalisten arbeiten und können deren Bedürfnisse bedienen, ohne Ihre eigenen
+                    Botschaften aus den Augen zu verlieren.
+                    Sie gewinnen die Sicherheit, dass Sie auch unvorhergesehene Fragen souverän meistern können.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. INHALTE -->
+    <section class="content-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Curriculum</span>
+                <h2>Die Inhalte</h2>
+                <div class="accent-line"></div>
+            </div>
+            <div class="journey-container">
+                <div class="journey-line"></div>
+
+                <div class="journey-item">
+                    <div class="journey-node">
+                        <div class="node-dot">
+                            <div class="node-ring"></div>
+                        </div>
+                        <div class="node-connector"></div>
+                    </div>
+                    <div class="journey-content">
+                        <div class="journey-card">
+                            <div class="module-badge"><span class="module-number">Modul 01</span></div>
+                            <h3 class="journey-title">Grundlagen erfolgreicher Kommunikation</h3>
+                            <p>Einführung in die grundsätzlichen Regeln der Medien-Kommunikation. Verständnis für die
+                                Arbeitsweise und Bedürfnisse von Journalisten entwickeln.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="journey-item">
+                    <div class="journey-node">
+                        <div class="node-dot">
+                            <div class="node-ring"></div>
+                        </div>
+                        <div class="node-connector"></div>
+                    </div>
+                    <div class="journey-content">
+                        <div class="journey-card">
+                            <div class="module-badge"><span class="module-number">Modul 02</span></div>
+                            <h3 class="journey-title">Eingangsübung: Das Statement</h3>
+                            <p>Kernbotschaften entwickeln und in sprech- und merkfähige Sätze übersetzen. Erste
+                                Erfahrungen vor der Kamera sammeln.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="journey-item">
+                    <div class="journey-node">
+                        <div class="node-dot">
+                            <div class="node-ring"></div>
+                        </div>
+                        <div class="node-connector"></div>
+                    </div>
+                    <div class="journey-content">
+                        <div class="journey-card">
+                            <div class="module-badge"><span class="module-number">Modul 03</span></div>
+                            <h3 class="journey-title">Körpersprache & Wirkung</h3>
+                            <p>Vertrautwerden mit dem Medium Fernsehen. Gefühl für die richtige Körperhaltung, Mimik,
+                                Gestik und Stimmführung sowie das entscheidende Timing entwickeln.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="journey-item">
+                    <div class="journey-node">
+                        <div class="node-dot">
+                            <div class="node-ring"></div>
+                        </div>
+                        <div class="node-connector"></div>
+                    </div>
+                    <div class="journey-content">
+                        <div class="journey-card">
+                            <div class="module-badge"><span class="module-number">Modul 04</span></div>
+                            <h3 class="journey-title">Die Interview-Übung</h3>
+                            <p>Lernen, auch auf kritische Nachfragen konzentriert zu antworten und die vorher
+                                definierten Kernbotschaften sicher zu platzieren.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="journey-item">
+                    <div class="journey-node">
+                        <div class="node-dot">
+                            <div class="node-ring"></div>
+                        </div>
+                        <div class="node-connector"></div>
+                    </div>
+                    <div class="journey-content">
+                        <div class="journey-card">
+                            <div class="module-badge"><span class="module-number">Modul 05</span></div>
+                            <h3 class="journey-title">Krisen & Live-Situationen</h3>
+                            <p>Simulation von Live-Diskussionsrunden und "Überfall-Situationen". Stressresistenz vor der
+                                Kamera trainieren.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. PRAXIS & TRANSFER -->
+    <section class="intro-section">
+        <div class="container">
+            <div class="intro-content">
+                <span class="section-label">Methodik</span>
+                <h2>Praxis & Transfer</h2>
+                <p class="intro-text">
+                    Bei unseren Kommunikationstrainings stehen die praktischen Übungen im Vordergrund, ohne die
+                    theoretischen Grundlagen außer Acht zu lassen.
+                    Anhand von drei aufeinander aufbauenden Übungsblöcken (Statement, Interview und
+                    Live-Diskussionsrunde) lernen Sie, Ihr generelles Kommunikationsverhalten zu optimieren und souverän
+                    mit Medienvertretern umzugehen.
+                    Videofeedback ist dabei ein zentrales Element, um Selbst- und Fremdbild abzugleichen.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. TYPISCHE ANLÄSSE -->
+    <section class="goals-section" style="background-color: #f8f9fa;">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Kontext</span>
+                <h2>Wann ist dieses Seminar wichtig?</h2>
+                <div class="accent-line"></div>
+            </div>
+            <div class="goals-grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));">
+                <div class="goal-card">
+                    <p class="goal-text">Sie haben eine neue Führungsposition und müssen das Unternehmen extern
+                        vertreten.</p>
+                </div>
+                <div class="goal-card">
+                    <p class="goal-text">Ein konkretes Interview oder TV-Auftritt steht bevor und Sie wollen nichts dem
+                        Zufall überlassen.</p>
+                </div>
+                <div class="goal-card">
+                    <p class="goal-text">Ihr Unternehmen befindet sich in einer Krise oder Veränderung und Sie erwarten
+                        kritische Presseanfragen.</p>
+                </div>
+                <div class="goal-card">
+                    <p class="goal-text">Sie möchten Ihre allgemeine Redegewandtheit und Präsenz – auch für interne
+                        Video-Calls – verbessern.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. WIRKUNG NACH 4 WOCHEN -->
+    <section class="intro-section">
+        <div class="container">
+            <div class="intro-content">
+                <span class="section-label">Nachhaltigkeit</span>
+                <h2>Wirkung nach 4 Wochen</h2>
+                <p class="intro-text">
+                    Teilnehmende berichten oft, dass die anfängliche Scheu vor der Kamera einer routinierten
+                    Gelassenheit gewichen ist.
+                    Sie bereiten sich effizienter auf Gespräche vor, indem sie sich auf Kernbotschaften fokussieren
+                    statt Antworten auswendig zu lernen.
+                    Die erlernten Techniken für Mimik, Gestik und Stimme wirken sich auch positiv auf "normale"
+                    Präsentationen und Meetings aus.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. FOOTER CTA -->
+    <section class="cta-section" id="anfrage">
+        <div class="container">
+            <div class="cta-grid">
+                <div class="target-card">
+                    <span class="section-label">Zielgruppe</span>
+                    <h3>Für wen?</h3>
+                    <p>Führungskräfte, Pressesprecher und Fachexperten, die ihr Unternehmen oder ihren Bereich in Medien
+                        und Öffentlichkeit vertreten.</p>
+                </div>
+                <div class="cta-card">
+                    <h3>Kontakt aufnehmen</h3>
+                    <p>Unverbindlich abstimmen – Schwerpunkte, Beispiele und Umfang passend zum Kontext.</p>
+                    <a class="btn-white" href="../index.html#kontakt">Jetzt anfragen →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 WTM Management Consulting. Alle Rechte vorbehalten.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Scroll Progress
+        window.addEventListener('scroll', () => {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById("scrollProgress").style.width = scrolled + "%";
+        });
+
+        // Mobile Menu
+        document.getElementById('mobile-menu').addEventListener('click', function () {
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+    </script>
 </body>
+
 </html>

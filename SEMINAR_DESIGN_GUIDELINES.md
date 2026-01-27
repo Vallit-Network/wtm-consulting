@@ -129,7 +129,6 @@ Jeder Seminar-Content muss in diese 8 Sektionen gegliedert sein:
 
 ### ✅ DO
 *   **Do:** Nutze CSS-Variablen (`var(--seminar-accent)`), um Farben überall konsistent zu halten.
-*   **Do:** Prüfe Grafiken auf Mobile-View (Chrome DevTools).
 *   **Do:** Halte dich STRIKT an den 8-Phasen-Aufbau.
 *   **Do:** Commit Messages müssen aussagekräftig sein.
 
@@ -137,6 +136,7 @@ Jeder Seminar-Content muss in diese 8 Sektionen gegliedert sein:
 *   **Don't:** Mische Farben aus verschiedenen Kategorien (z.B. Gold bei Leadership).
 *   **Don't:** Lösche Sektionen (z.B. "Nach dem Training" weglassen), nur weil sie "ähnlich" klingen.
 *   **Don't:** Nutze Standard-Bootstrap-Look. Es muss "Custom Premium" aussehen.
+*   **Don't:** Öffne KEINEN Browser zur Überprüfung. Verlasse dich ausschließlich auf den Code (Static Analysis).
 
 ---
 

@@ -1,28 +1,31 @@
 <!DOCTYPE html>
-
 <html lang="de">
+
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<link href="../assets/favicon.png" rel="icon" type="image/png"/>
-<title>Selbstsicherheit &amp; Durchsetzungsvermögen – WTM Management Consulting</title>
-<meta content="Souverän auftreten und die eigene Position vertreten – ohne andere zu überfahren oder sich selbst zu verlieren." name="description"/>
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&amp;family=Source+Sans+Pro:wght@300;400;600;700&amp;display=swap" rel="stylesheet"/>
-<link href="../styles/index.css" rel="stylesheet"/>
-<style>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <link href="../assets/favicon.png" rel="icon" type="image/png" />
+    <title>Selbstsicherheit & Durchsetzungsvermögen – WTM Management Consulting</title>
+    <meta
+        content="Souverän auftreten und die eigene Position vertreten – ohne andere zu überfahren oder sich selbst zu verlieren."
+        name="description" />
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&amp;family=Source+Sans+Pro:wght@300;400;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <link href="../styles/index.css" rel="stylesheet" />
+    <style>
         :root {
-            /* Anthracite Theme */
-            --seminar-accent: #2c2c2e;
-            /* Dark Anthracite */
-            --seminar-accent-light: rgba(44, 44, 46, 0.1);
-            --seminar-accent-glow: rgba(44, 44, 46, 0.3);
+            /* Health Theme - Emerald Green */
+            --seminar-accent: #107e5e;
+            --seminar-secondary: #34d399;
+            --seminar-accent-light: rgba(16, 126, 94, 0.1);
+            --seminar-accent-glow: rgba(16, 126, 94, 0.3);
             --color-text: #3A3A38;
             --color-cream: #F5F5F3;
             --color-border: #E5E5E0;
-            --accent-highlight: #a0a0a5;
-            /* Silver/Grey highlight */
+            --accent-highlight: #34d399;
         }
 
         .scroll-progress {
@@ -39,7 +42,7 @@
             min-height: 100vh;
             display: flex;
             align-items: center;
-            background: linear-gradient(145deg, #0f172a 0%, #1a2a3a 100%);
+            background: linear-gradient(145deg, #064e3b 0%, #107e5e 100%);
             position: relative;
             overflow: hidden;
             padding: 120px 0 80px;
@@ -56,8 +59,7 @@
         .orb-1 {
             width: 400px;
             height: 400px;
-            background: #9ca3af;
-            /* Silver */
+            background: #34d399;
             top: -100px;
             right: -100px;
         }
@@ -112,10 +114,10 @@
         .category-badge {
             display: inline-flex;
             padding: 0.5rem 1rem;
-            background: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            background: rgba(52, 211, 153, 0.2);
+            border: 1px solid rgba(52, 211, 153, 0.4);
             border-radius: 50px;
-            color: #fff;
+            color: #34d399;
             font-size: 0.85rem;
             font-weight: 600;
             margin-bottom: 1.5rem;
@@ -133,12 +135,12 @@
         }
 
         .hero-title span {
-            color: #9ca3af;
+            color: #34d399;
         }
 
         .hero-subtitle {
             font-size: 1.2rem;
-            color: rgba(255, 255, 255, 0.7);
+            color: rgba(255, 255, 255, 0.8);
             line-height: 1.8;
             max-width: 600px;
             margin-bottom: 2rem;
@@ -170,7 +172,7 @@
         .meta-tag svg {
             width: 16px;
             height: 16px;
-            stroke: #9ca3af;
+            stroke: #34d399;
         }
 
         .hero-cta {
@@ -191,7 +193,7 @@
 
         .btn-glow:hover {
             transform: translateY(-3px);
-            box-shadow: 0 10px 40px rgba(255, 255, 255, 0.2);
+            box-shadow: 0 10px 40px rgba(52, 211, 153, 0.3);
         }
 
         .btn-outline-light {
@@ -201,6 +203,11 @@
             color: #fff;
             font-weight: 600;
             transition: all 0.3s;
+        }
+
+        .btn-outline-light:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.5);
         }
 
         @keyframes fadeSlideUp {
@@ -278,7 +285,7 @@
 
         .goal-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 20px 40px rgba(16, 126, 94, 0.15);
             border-color: var(--seminar-accent);
         }
 
@@ -337,6 +344,21 @@
             margin-bottom: 2rem;
         }
 
+        .btn-white {
+            background: #fff;
+            color: var(--seminar-accent);
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            font-weight: 600;
+            display: inline-block;
+            transition: all 0.3s;
+        }
+
+        .btn-white:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
         @media (max-width: 968px) {
             .hero-content-wrapper {
                 text-align: center;
@@ -356,33 +378,7 @@
         /* PREMIUM TIMELINE STYLES */
         .content-section {
             padding: 6rem 0;
-            background: linear-gradient(180deg, #f8faf9 0%, #fff 100%);
-            position: relative;
-        }
-
-        .content-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 1px;
-            height: 80px;
-            background: var(--seminar-accent);
-        }
-
-        .journey-container {
-            max-width: 900px;
-            margin: 0 auto;
-            position: relative;
-        }
-
-        /* ============================================
-           CONTENT TIMELINE - PREMIUM DESIGN (Reference)
-           ============================================ */
-        .content-section {
-            padding: 6rem 0;
-            background: linear-gradient(180deg, #f8faf9 0%, #fff 100%);
+            background: linear-gradient(180deg, #f0fdf4 0%, #fff 100%);
             position: relative;
         }
 
@@ -411,8 +407,8 @@
             width: 4px;
             background: linear-gradient(180deg,
                     var(--seminar-accent) 0%,
-                    rgba(44, 44, 46, 0.6) 50%,
-                    rgba(44, 44, 46, 0.2) 100%);
+                    rgba(16, 126, 94, 0.6) 50%,
+                    rgba(16, 126, 94, 0.2) 100%);
             transform: translateX(-50%);
             border-radius: 4px;
         }
@@ -429,7 +425,7 @@
                     var(--seminar-accent) 100%);
             border-radius: 4px;
             transition: height 1.5s cubic-bezier(0.4, 0, 0.2, 1);
-            box-shadow: 0 0 20px rgba(44, 44, 46, 0.4);
+            box-shadow: 0 0 20px rgba(16, 126, 94, 0.4);
         }
 
         .journey-line.animated::after {
@@ -442,20 +438,14 @@
             position: relative;
             margin-bottom: 2rem;
             opacity: 1;
-            /* Keeping it visible by default to avoid JS dependency for now, or match reference animation later */
-            /* transform: translateY(40px); */
-            /* transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1); */
         }
 
-        /* Note: first-child is journey-line. So Item 1 is nth-child(2) -> Even. */
         .journey-item:nth-child(odd) {
             flex-direction: row;
-            /* Content Left */
         }
 
         .journey-item:nth-child(even) {
             flex-direction: row-reverse;
-            /* Content Right */
         }
 
         .journey-content {
@@ -483,7 +473,7 @@
             box-shadow:
                 0 0 0 4px #fff,
                 0 0 0 6px var(--seminar-accent),
-                0 0 30px rgba(44, 44, 46, 0.4);
+                0 0 30px rgba(16, 126, 94, 0.4);
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
@@ -544,7 +534,6 @@
             position: absolute;
             top: 50%;
             width: 42px;
-            /* Increased slightly from 26px to ensure connection based on math (38px gap) + overlap */
             height: 2px;
             background: var(--seminar-accent);
             transform: translateY(-50%);
@@ -565,7 +554,7 @@
             border-radius: 16px;
             padding: 1.75rem 2rem;
             position: relative;
-            border: 1px solid rgba(44, 44, 46, 0.15);
+            border: 1px solid rgba(16, 126, 94, 0.15);
             box-shadow:
                 0 4px 20px rgba(0, 0, 0, 0.04),
                 0 1px 3px rgba(0, 0, 0, 0.02);
@@ -590,7 +579,7 @@
             transform: translateY(-5px);
             border-color: var(--seminar-accent);
             box-shadow:
-                0 20px 50px rgba(44, 44, 46, 0.12),
+                0 20px 50px rgba(16, 126, 94, 0.12),
                 0 8px 20px rgba(0, 0, 0, 0.06);
         }
 
@@ -620,209 +609,488 @@
             font-size: 1.15rem;
             font-weight: 600;
             color: var(--color-text);
-            margin: 0;
+            margin: 0 0 0.5rem 0;
             line-height: 1.4;
+        }
+
+        .journey-card p {
+            color: #666;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin: 0;
         }
     </style>
 </head>
+
 <body>
-<div class="scroll-progress" id="scrollProgress"></div>
-<header id="header">
-<div class="container">
-<nav><a class="logo" href="../index"><img alt="WTM" src="../assets/wtm_logo_gross.png"/></a>
-<div class="menu-toggle" id="mobile-menu"><span class="bar"></span><span class="bar"></span><span class="bar"></span></div>
-<ul class="nav-links">
-<li><a class="nav-link" href="../index#haltung">Haltung</a></li>
-<li><a class="nav-link" href="../index#angebote">Angebote</a></li>
-<li><a class="nav-link" href="../index#trainings">Trainings</a></li>
-<li><a class="nav-link" href="../index#team">Team</a></li>
-<li><a class="nav-link" href="../index#kontakt">Kontakt</a></li>
-</ul>
-</nav>
-</div>
-</header>
-<section class="seminar-hero">
-<div class="hero-gradient-orb orb-1"></div>
-<div class="hero-gradient-orb orb-2"></div>
-<div class="container">
-<div class="hero-content-wrapper">
-<div class="hero-text">
-<div class="breadcrumb"><a href="../index">Startseite</a><span class="breadcrumb-sep">→</span><a href="../index#trainings">Seminare</a><span class="breadcrumb-sep">→</span><span>Selbstsicherheit &amp; Durchsetzungsvermögen</span></div>
-<div class="category-badge">Seminar</div>
-<h1 class="hero-title">Selbstsicherheit &amp; Durchsetzungsvermögen</h1>
-<p class="hero-subtitle">Souverän auftreten und die eigene Position vertreten – ohne andere zu überfahren oder sich selbst zu verlieren.</p>
-<div class="hero-meta"><span class="meta-tag"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect height="18" rx="2" ry="2" width="18" x="3" y="4"></rect></svg>2 Tage Präsenz</span><span class="meta-tag"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle></svg>Übungen</span><span class="meta-tag"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle></svg>Feedback</span></div>
-<div class="hero-cta">
-<a class="btn-glow" href="../index#kontakt">Unverbindlich anfragen →</a>
-<a class="btn-outline-light" href="#konzept">Konzept erhalten</a>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section class="goals-section" id="nutzen">
-<div class="container">
-<div class="section-header"><span class="section-label">Ihr Vorteil</span>
-<h2>Nutzen &amp; Wirkung</h2>
-<div class="accent-line"></div>
-</div>
-<div class="goals-grid"><div class="goal-card"><div class="goal-number">1</div><p class="goal-text">Eigene Stärken und Unsicherheiten erkennen</p></div><div class="goal-card"><div class="goal-number">2</div><p class="goal-text">Selbstbewusst kommunizieren und auftreten</p></div><div class="goal-card"><div class="goal-number">3</div><p class="goal-text">Grenzen setzen und Nein sagen können</p></div><div class="goal-card"><div class="goal-number">4</div><p class="goal-text">Konstruktiv mit Kritik umgehen</p></div></div>
-</div>
-</section>
-<section class="intro-section" style="background-color: #f8f9fa;">
-<div class="container">
-<div class="intro-content">
-<span class="section-label">Transfer</span>
-<h2>Über das Training</h2>
-<div style="text-align: left; max-width: 600px; margin: 2rem auto;">
+    <div class="scroll-progress" id="scrollProgress"></div>
+    <header id="header">
+        <div class="container">
+            <nav>
+                <a class="logo" href="../index"><img alt="WTM" src="../assets/wtm_logo_gross.png" /></a>
+                <div class="menu-toggle" id="mobile-menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+                <ul class="nav-links">
+                    <li><a class="nav-link" href="../index#haltung">Haltung</a></li>
+                    <li><a class="nav-link" href="../index#angebote">Angebote</a></li>
+                    <li><a class="nav-link" href="../index#trainings">Trainings</a></li>
+                    <li><a class="nav-link" href="../index#team">Team</a></li>
+                    <li><a class="nav-link" href="../index#kontakt">Kontakt</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-</div>
-<p class="intro-text" style="margin-top: 1.5rem;">Selbstsicherheit ist die Basis für beruflichen Erfolg. Wie gelingt es, die eigene Meinung zu vertreten, ohne aggressiv zu wirken? Wie setzen Sie sich durch, ohne Beziehungen zu beschädigen?</p></div>
-</div>
-</section>
-<section class="content-section">
-<div class="container">
-<div class="section-header"><span class="section-label">Der Inhalt</span>
-<h2>Themenübersicht</h2>
-<div class="accent-line"></div>
-</div>
-<div class="journey-container"><div class="journey-line" id="journeyLine"></div><div class="journey-item"><div class="journey-node"><div class="node-dot"><div class="node-ring"></div></div><div class="node-connector"></div></div><div class="journey-content"><div class="journey-card"><div class="module-badge"><span class="module-number">Thema 01</span></div><h3 class="journey-title">Seminarinhalte</h3><p>Selbstbild und Fremdbild. Körpersprache und Stimme. Assertives Verhalten. Umgang mit Manipulation. Grenzen setzen. Konfliktsituationen meistern.</p></div></div></div></div>
-</div>
-</section>
-<section class="intro-section">
-<div class="container">
-<div class="intro-content">
-<span class="section-label">Praxis</span>
-<h2>Praxis &amp; Transfer</h2>
-<p class="intro-text">Wir legen großen Wert auf den Transfer in den eigenen Arbeitskontext. Durch
-                    konkrete Fallbeispiele, Simulationen und die Entwicklung individueller Handlungsoptionen stellen wir
-                    sicher, dass Sie das Gelernte direkt anwenden können.</p>
-</div>
-</div>
-</section>
-<section class="goals-section" style="background-color: #f8f9fa;">
-<div class="container">
-<div class="section-header"><span class="section-label">Kontext</span>
-<h2>Typische Anlässe</h2>
-<div class="accent-line"></div>
-</div>
-<div class="goals-grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));">
-<div class="goal-card">
-<p class="goal-text">Projektleiter, die ohne Disziplinarverantwortung Teams steuern.</p>
-</div>
-<div class="goal-card">
-<p class="goal-text">Experten, die fachlich führen, aber nicht disziplinarisch.</p>
-</div>
-<div class="goal-card">
-<p class="goal-text">Einführung von agilen Arbeitsweisen oder Matrix-Strukturen.</p>
-</div>
-</div>
-</div>
-</section>
-<section class="intro-section">
-<div class="container">
-<div class="intro-content">
-<span class="section-label">Nachhaltigkeit</span>
-<h2>Wirkung nach 4 Wochen</h2>
-<div style="text-align: left; max-width: 600px; margin: 2rem auto;">
+    <!-- Hero Section -->
+    <section class="seminar-hero">
+        <div class="hero-gradient-orb orb-1"></div>
+        <div class="hero-gradient-orb orb-2"></div>
+        <div class="container">
+            <div class="hero-content-wrapper">
+                <div class="hero-text">
+                    <div class="breadcrumb">
+                        <a href="../index">Startseite</a>
+                        <span class="breadcrumb-sep">→</span>
+                        <a href="../index#trainings">Seminare</a>
+                        <span class="breadcrumb-sep">→</span>
+                        <span>Selbstsicherheit & Durchsetzungsvermögen</span>
+                    </div>
+                    <div class="category-badge">🌱 Gesundheit</div>
+                    <h1 class="hero-title">Selbstsicherheit & <span>Durchsetzungsvermögen</span></h1>
+                    <p class="hero-subtitle">Was macht uns stark im Umgang mit anderen – vor allem in
+                        Konfliktsituationen? Wie kann ich bei mir selbst bleiben und meine Interessen wahren, ohne mich
+                        in nutzlosen Grabenkämpfen zu verausgaben?</p>
+                    <div class="hero-meta">
+                        <span class="meta-tag">
+                            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                <rect height="18" rx="2" ry="2" width="18" x="3" y="4"></rect>
+                            </svg>
+                            2 Tage Präsenz
+                        </span>
+                        <span class="meta-tag">
+                            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                <circle cx="12" cy="12" r="10"></circle>
+                            </svg>
+                            Übungen & Feedback
+                        </span>
+                        <span class="meta-tag">
+                            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="9" cy="7" r="4"></circle>
+                            </svg>
+                            Persönlichkeitsentwicklung
+                        </span>
+                    </div>
+                    <div class="hero-cta">
+                        <a class="btn-glow" href="../index#kontakt">Unverbindlich anfragen →</a>
+                        <a class="btn-outline-light" href="#inhalte">Inhalte entdecken</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-</div>
-<p class="intro-text">Sie treten souveräner auf, vertreten Ihre Interessen klarer und gewinnen an Ausstrahlung und Durchsetzungskraft.</p></div>
-</div>
-</section>
-<section class="cta-section">
-<div class="container">
-<div class="cta-grid">
-<div class="target-card"><span class="section-label">Maßgeschneidert</span>
-<h3>Inhouse-Lösung?</h3>
-<p>Alle, die ihr Selbstbewusstsein stärken und ihre Wirkung verbessern möchten.</p>
-</div>
-<div class="cta-card">
-<h3>Kontakt aufnehmen</h3>
-<p>Lassen Sie uns über Ihren Bedarf sprechen.</p><a class="btn btn-white" href="../index#kontakt">Unverbindlich anfragen →</a>
-</div>
-</div>
-</div>
-</section>
-<footer>
-<div class="container">
-<div class="footer-grid">
-<!-- Brand Column -->
-<div class="footer-brand reveal stagger-1">
-<a class="logo" href="../index">
-<img alt="WTM Management Consulting" src="../assets/logo.png"/>
-</a>
-<p>Ihr Partner für wirksame Führung, lebendige Teams und gesunde Organisationen. Seit über 25 Jahren
+    <!-- Intro Section -->
+    <section class="intro-section">
+        <div class="container">
+            <div class="intro-content">
+                <span class="section-label">Darum geht's</span>
+                <h2>Das Seminar</h2>
+                <p class="intro-text">Was macht uns stark im Umgang mit anderen – vor allem in Konfliktsituationen?
+                    Wie kann ich bei mir selbst bleiben und meine Interessen wahren, ohne mich in einem nutzlosen
+                    Grabenkrieg
+                    mit dem Anderen zu verausgaben? In welchen Situationen neige ich dazu, unfruchtbare Handlungsmuster
+                    zu aktivieren –
+                    und warum? Und wie kann ich sie durch selbstbewusstes und sicheres Handeln ersetzen?</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Nutzen & Wirkung -->
+    <section class="goals-section" id="nutzen">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Ihr Vorteil</span>
+                <h2>Ziele – das nehmen Sie mit</h2>
+                <div class="accent-line"></div>
+            </div>
+            <div class="goals-grid">
+                <div class="goal-card">
+                    <div class="goal-number">1</div>
+                    <p class="goal-text">Sie kennen Ihre persönlichen Kommunikations- und Kontaktmuster – besonders in
+                        schwierigen Gesprächssituationen</p>
+                </div>
+                <div class="goal-card">
+                    <div class="goal-number">2</div>
+                    <p class="goal-text">Sie treten "selbst-bewusst" auf und können mit persönlichen Unsicherheiten
+                        umgehen</p>
+                </div>
+                <div class="goal-card">
+                    <div class="goal-number">3</div>
+                    <p class="goal-text">Sie kennen und nutzen Möglichkeiten, Ihr Ausdrucks- und Wirkungspotenzial zu
+                        entfalten und weiterzuentwickeln</p>
+                </div>
+                <div class="goal-card">
+                    <div class="goal-number">4</div>
+                    <p class="goal-text">Sie bleiben in Konfliktsituationen innerlich stabil und stärken Ihr
+                        persönliches Durchsetzungsvermögen</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Inhalte -->
+    <section class="content-section" id="inhalte">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Curriculum</span>
+                <h2>Inhalte</h2>
+                <div class="accent-line"></div>
+            </div>
+            <div class="journey-container">
+                <div class="journey-line" id="journeyLine"></div>
+                <div class="journey-item">
+                    <div class="journey-node">
+                        <div class="node-dot">
+                            <div class="node-ring"></div>
+                        </div>
+                        <div class="node-connector"></div>
+                    </div>
+                    <div class="journey-content">
+                        <div class="journey-card">
+                            <div class="module-badge">
+                                <span class="module-number">Thema 01</span>
+                            </div>
+                            <h3 class="journey-title">Verhaltensmuster</h3>
+                            <p>Auseinandersetzung mit automatisierten Verhaltensmustern – erkennen und verstehen, wie
+                                sie wirken.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="journey-item">
+                    <div class="journey-node">
+                        <div class="node-dot">
+                            <div class="node-ring"></div>
+                        </div>
+                        <div class="node-connector"></div>
+                    </div>
+                    <div class="journey-content">
+                        <div class="journey-card">
+                            <div class="module-badge">
+                                <span class="module-number">Thema 02</span>
+                            </div>
+                            <h3 class="journey-title">Unsicherheiten & Selbstblockaden</h3>
+                            <p>Umgang mit Unsicherheiten und Selbstblockaden – innere Hürden erkennen und überwinden.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="journey-item">
+                    <div class="journey-node">
+                        <div class="node-dot">
+                            <div class="node-ring"></div>
+                        </div>
+                        <div class="node-connector"></div>
+                    </div>
+                    <div class="journey-content">
+                        <div class="journey-card">
+                            <div class="module-badge">
+                                <span class="module-number">Thema 03</span>
+                            </div>
+                            <h3 class="journey-title">Selbststärkung</h3>
+                            <p>Möglichkeiten und Techniken der Selbststärkung – praktische Werkzeuge für den Alltag.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="journey-item">
+                    <div class="journey-node">
+                        <div class="node-dot">
+                            <div class="node-ring"></div>
+                        </div>
+                        <div class="node-connector"></div>
+                    </div>
+                    <div class="journey-content">
+                        <div class="journey-card">
+                            <div class="module-badge">
+                                <span class="module-number">Thema 04</span>
+                            </div>
+                            <h3 class="journey-title">Konfliktgestaltung</h3>
+                            <p>Innere Klarheit und Stabilität in der konstruktiven Konfliktgestaltung entwickeln.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="journey-item">
+                    <div class="journey-node">
+                        <div class="node-dot">
+                            <div class="node-ring"></div>
+                        </div>
+                        <div class="node-connector"></div>
+                    </div>
+                    <div class="journey-content">
+                        <div class="journey-card">
+                            <div class="module-badge">
+                                <span class="module-number">Thema 05</span>
+                            </div>
+                            <h3 class="journey-title">Grenzen setzen</h3>
+                            <p>Grenzen setzen und wahren: Wie sage ich "Nein"? Klare Kommunikation ohne Schuldgefühle.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="journey-item">
+                    <div class="journey-node">
+                        <div class="node-dot">
+                            <div class="node-ring"></div>
+                        </div>
+                        <div class="node-connector"></div>
+                    </div>
+                    <div class="journey-content">
+                        <div class="journey-card">
+                            <div class="module-badge">
+                                <span class="module-number">Thema 06</span>
+                            </div>
+                            <h3 class="journey-title">Agieren statt reagieren</h3>
+                            <p>Vom reaktiven zum aktiven Handeln – proaktiv die Initiative ergreifen.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="journey-item">
+                    <div class="journey-node">
+                        <div class="node-dot">
+                            <div class="node-ring"></div>
+                        </div>
+                        <div class="node-connector"></div>
+                    </div>
+                    <div class="journey-content">
+                        <div class="journey-card">
+                            <div class="module-badge">
+                                <span class="module-number">Thema 07</span>
+                            </div>
+                            <h3 class="journey-title">Durchsetzungskraft</h3>
+                            <p>Entfaltung der persönlichen Durchsetzungskraft – authentisch und wirkungsvoll auftreten.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="journey-item">
+                    <div class="journey-node">
+                        <div class="node-dot">
+                            <div class="node-ring"></div>
+                        </div>
+                        <div class="node-connector"></div>
+                    </div>
+                    <div class="journey-content">
+                        <div class="journey-card">
+                            <div class="module-badge">
+                                <span class="module-number">Thema 08</span>
+                            </div>
+                            <h3 class="journey-title">Schwierige Gesprächspartner</h3>
+                            <p>Handlungsmöglichkeiten im Kontakt mit schwierigen Gesprächspartnern – souverän bleiben.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Nutzen -->
+    <section class="intro-section" style="background-color: #f8f9fa;">
+        <div class="container">
+            <div class="intro-content">
+                <span class="section-label">Ihr Gewinn</span>
+                <h2>Nutzen</h2>
+                <p class="intro-text">Sie treten souveräner auf, vertreten Ihre Interessen klarer und gewinnen
+                    an Ausstrahlung und Durchsetzungskraft. Sie erkennen Ihre eigenen Stärken und Unsicherheiten,
+                    können selbstbewusst kommunizieren, Grenzen setzen und konstruktiv mit Kritik umgehen.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Praxis & Transfer -->
+    <section class="intro-section">
+        <div class="container">
+            <div class="intro-content">
+                <span class="section-label">Methodik</span>
+                <h2>Praxis & Transfer</h2>
+                <p class="intro-text">Wir legen großen Wert auf den Transfer in den eigenen Arbeitskontext. Durch
+                    praktische Übungen, persönliches Feedback und die Arbeit an konkreten Situationen aus Ihrem Alltag
+                    stellen wir sicher, dass Sie das Gelernte direkt anwenden können. Preis, Methode und Dauer werden
+                    gemeinsam mit Ihnen in der Auftrags- und Zielklärung festgelegt.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Typische Anlässe -->
+    <section class="goals-section" style="background-color: #f8f9fa;">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Kontext</span>
+                <h2>Typische Anlässe</h2>
+                <div class="accent-line"></div>
+            </div>
+            <div class="goals-grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));">
+                <div class="goal-card">
+                    <p class="goal-text">Sie möchten in Konfliktsituationen souveräner auftreten</p>
+                </div>
+                <div class="goal-card">
+                    <p class="goal-text">Es fällt Ihnen schwer, "Nein" zu sagen oder Grenzen zu setzen</p>
+                </div>
+                <div class="goal-card">
+                    <p class="goal-text">Sie wollen Ihre Wirkung auf andere besser verstehen und steuern</p>
+                </div>
+                <div class="goal-card">
+                    <p class="goal-text">Sie haben häufig mit schwierigen Gesprächspartnern zu tun</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Wirkung nach 4 Wochen -->
+    <section class="intro-section">
+        <div class="container">
+            <div class="intro-content">
+                <span class="section-label">Nachhaltigkeit</span>
+                <h2>Wirkung nach 4 Wochen</h2>
+                <div style="text-align: left; max-width: 700px; margin: 2rem auto;">
+                    <ul style="list-style: none; padding: 0;">
+                        <li
+                            style="padding: 0.75rem 0; border-bottom: 1px solid #e5e5e0; display: flex; align-items: flex-start; gap: 1rem;">
+                            <span style="color: var(--seminar-accent); font-weight: bold;">✓</span>
+                            <span>Sie gehen gelassener und selbstbewusster in Konfliktsituationen</span>
+                        </li>
+                        <li
+                            style="padding: 0.75rem 0; border-bottom: 1px solid #e5e5e0; display: flex; align-items: flex-start; gap: 1rem;">
+                            <span style="color: var(--seminar-accent); font-weight: bold;">✓</span>
+                            <span>Sie setzen klare Grenzen ohne schlechtes Gewissen</span>
+                        </li>
+                        <li
+                            style="padding: 0.75rem 0; border-bottom: 1px solid #e5e5e0; display: flex; align-items: flex-start; gap: 1rem;">
+                            <span style="color: var(--seminar-accent); font-weight: bold;">✓</span>
+                            <span>Ihre Ausstrahlung und Wirkung auf andere hat sich verbessert</span>
+                        </li>
+                        <li style="padding: 0.75rem 0; display: flex; align-items: flex-start; gap: 1rem;">
+                            <span style="color: var(--seminar-accent); font-weight: bold;">✓</span>
+                            <span>Sie agieren proaktiv statt reaktiv – auch bei schwierigen Gesprächspartnern</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer CTA -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-grid">
+                <div class="target-card">
+                    <span class="section-label">Zielgruppe</span>
+                    <h3>Für wen?</h3>
+                    <p>Coaches, Berater, Personaler, Führungskräfte, Trainer und alle neugierigen Menschen,
+                        die eine hohe Bereitschaft zur Auseinandersetzung mit der eigenen Persönlichkeit mitbringen.</p>
+                </div>
+                <div class="cta-card">
+                    <h3>Kontakt aufnehmen</h3>
+                    <p>Selbstverständlich ist dies nur ein Vorschlag. Gerne können wir dieses Menü nach Ihren
+                        Vorschlägen abändern! Preis, Methode und Dauer werden gemeinsam mit Ihnen in der
+                        Auftrags- und Zielklärung festgelegt.</p>
+                    <a class="btn btn-white" href="../index#kontakt">Unverbindlich anfragen →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand reveal stagger-1">
+                    <a class="logo" href="../index">
+                        <img alt="WTM Management Consulting" src="../assets/logo.png" />
+                    </a>
+                    <p>Ihr Partner für wirksame Führung, lebendige Teams und gesunde Organisationen. Seit über 25 Jahren
                         begleiten wir Menschen und Unternehmen in Veränderungsprozessen.</p>
-<div class="footer-social">
-<a aria-label="Facebook" href="https://www.facebook.com/wtm.mc" rel="noopener" target="_blank">
-<svg fill="currentColor" viewbox="0 0 24 24">
-<path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"></path>
-</svg>
-</a>
-<a aria-label="Twitter" href="https://twitter.com/WTM_Consulting" rel="noopener" target="_blank">
-<svg fill="currentColor" viewbox="0 0 24 24">
-<path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"></path>
-</svg>
-</a>
-<a aria-label="LinkedIn" href="https://www.linkedin.com/company/wtm-management-consulting" rel="noopener" target="_blank">
-<svg fill="currentColor" viewbox="0 0 24 24">
-<path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"></path>
-</svg>
-</a>
-<a aria-label="YouTube" href="https://www.youtube.com/channel/UC4rGdW9ApMpjFxbosjRshQg" rel="noopener" target="_blank">
-<svg fill="currentColor" viewbox="0 0 24 24">
-<path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"></path>
-</svg>
-</a>
-</div>
-</div>
-<!-- Offerings Column -->
-<div class="footer-col reveal stagger-2">
-<h4>Angebote</h4>
-<ul class="footer-links">
-<li><a href="../index#trainings">Trainings &amp; Seminare</a></li>
-<li><a href="../index#angebote">Coaching &amp; Beratung</a></li>
-<li><a href="../index#team">Unser Team</a></li>
-<li><a href="../index#unternehmen">Über Uns</a></li>
-</ul>
-</div>
-<!-- Contact Column -->
-<div class="footer-col reveal stagger-3">
-<h4>Kontakt</h4>
-<ul class="footer-links footer-contact">
-<li>Neuer Graben 61</li>
-<li>44139 Dortmund</li>
-<li>
-<a href="tel:+4923113722666">
-<span>Tel:</span> 0231 / 137 22 666
+                    <div class="footer-social">
+                        <a aria-label="Facebook" href="https://www.facebook.com/wtm.mc" rel="noopener" target="_blank">
+                            <svg fill="currentColor" viewbox="0 0 24 24">
+                                <path
+                                    d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z">
+                                </path>
+                            </svg>
+                        </a>
+                        <a aria-label="Twitter" href="https://twitter.com/WTM_Consulting" rel="noopener"
+                            target="_blank">
+                            <svg fill="currentColor" viewbox="0 0 24 24">
+                                <path
+                                    d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z">
+                                </path>
+                            </svg>
+                        </a>
+                        <a aria-label="LinkedIn" href="https://www.linkedin.com/company/wtm-management-consulting"
+                            rel="noopener" target="_blank">
+                            <svg fill="currentColor" viewbox="0 0 24 24">
+                                <path
+                                    d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z">
+                                </path>
+                            </svg>
+                        </a>
+                        <a aria-label="YouTube" href="https://www.youtube.com/channel/UC4rGdW9ApMpjFxbosjRshQg"
+                            rel="noopener" target="_blank">
+                            <svg fill="currentColor" viewbox="0 0 24 24">
+                                <path
+                                    d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z">
+                                </path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-col reveal stagger-2">
+                    <h4>Angebote</h4>
+                    <ul class="footer-links">
+                        <li><a href="../index#trainings">Trainings &amp; Seminare</a></li>
+                        <li><a href="../index#angebote">Coaching &amp; Beratung</a></li>
+                        <li><a href="../index#team">Unser Team</a></li>
+                        <li><a href="../index#unternehmen">Über Uns</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col reveal stagger-3">
+                    <h4>Kontakt</h4>
+                    <ul class="footer-links footer-contact">
+                        <li>Neuer Graben 61</li>
+                        <li>44139 Dortmund</li>
+                        <li>
+                            <a href="tel:+4923113722666">
+                                <span>Tel:</span> 0231 / 137 22 666
                             </a>
-</li>
-<li>
-<a href="mailto:info@wtm-consulting.de">
-<span>Mail:</span> info@wtm-consulting.de
+                        </li>
+                        <li>
+                            <a href="mailto:kontakt@wtm-consulting.de">
+                                <span>Mail:</span> kontakt@wtm-consulting.de
                             </a>
-</li>
-</ul>
-</div>
-<!-- Legal Column -->
-<div class="footer-col reveal stagger-4">
-<h4>Rechtliches</h4>
-<ul class="footer-links">
-<li><a href="../impressum">Impressum</a></li>
-<li><a href="../datenschutz">Datenschutz</a></li>
-</ul>
-</div>
-</div>
-<div class="footer-bottom reveal">
-<div class="copyright">
-<p>© 2026 WTM Management Consulting GmbH. Alle Rechte vorbehalten.</p>
-</div>
-</div>
-</div>
-</footer>
-<script src="../js/main.js"></script>
-<script>window.addEventListener('scroll', () => { document.getElementById('scrollProgress').style.width = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100 + '%'; });</script>
-<script data-api-url="https://www.vallit.net" data-color="#6366f1" data-company-id="e46176c5-0f35-43b8-8e8c-c72f534519e1" data-language="de" data-metadata='{"page_title": "Laterales Führen"}' data-theme="minimal" data-title="Kian" src="https://www.vallit.net/widget/embed.js"></script>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer-col reveal stagger-4">
+                    <h4>Rechtliches</h4>
+                    <ul class="footer-links">
+                        <li><a href="../impressum">Impressum</a></li>
+                        <li><a href="../datenschutz">Datenschutz</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom reveal stagger-5">
+                <div class="copyright">
+                    <p>© 2026 WTM Management Consulting GmbH. Alle Rechte vorbehalten.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/seminar-data.js"></script>
+    <script src="../js/main.js"></script>
 </body>
+
 </html>
