@@ -111,29 +111,6 @@ const seminarsData = {
             zielgruppe: "Vorstände, Geschäftsführende, Führungskräfte vor allem auch aus den Bereichen Personal, Recht, Unternehmensentwicklung, HSE sowie Mitarbeitende von Kommunikationsabteilungen."
         }
     },
-    "change-kommunikation": {
-        id: "change-kommunikation",
-        title: "Change-Kommunikation",
-        url: "seminare/change-kommunikation.html",
-        category: "change",
-        badge: "Seminar",
-        shortDescription: "Professionell kommunizieren im Veränderungsprozess – Botschaften klar formulieren und Mitarbeiter mitnehmen.",
-        details: ["1-2 Tage", "Praxisübungen", "Fallbeispiele"],
-        heroImage: "assets/hero-meeting.jpg",
-        content: {
-            intro: "Change-Kommunikation – professionelle Kommunikation im Veränderungsprozess. Erfolgreiche Change-Prozesse brauchen Führungskräfte und Mitarbeitende, die den Change verstehen und unterstützen. Dabei gilt: Machen Sie Mitarbeitende zu Beteiligten und nicht zu Betroffenen! Eine klare Change-Kommunikation vermindert den Flurfunk und das Brodeln in der Gerüchteküche und trägt dazu bei, Unsicherheiten zu verringern und Zuversicht zu vermitteln.",
-            ziele: [
-                "Sie lernen, warum Change-Kommunikation für den langfristigen Erfolg einer Organisation notwendig ist.",
-                "Sie erhalten einen Überblick über die wesentlichen Grundsätze der Change-Kommunikation.",
-                "Sie bekommen einen Überblick über die wesentlichen Werkzeuge der Change-Kommunikation und wie sie am besten einzusetzen sind.",
-                "Sie lernen, wie ein Frühwarnsystem (Issue Management) aufgebaut werden kann.",
-                "Sie erkennen, wie wichtig eine grundlegende Stakeholderanalyse bei Veränderungsprozessen ist."
-            ],
-            inhalte: "Fragen zu Beginn des Veränderungsprozesses. Grundlagen, Phasen und Instrumente. Umgang mit Emotionen der Mitarbeitenden. Die Change-Story als zentrales Instrument. Die Informationskaskade. Dialog- und Partizipationsformate. Grundsätze zur CEO-Positionierung.",
-            nutzen: "Sie erhalten einen Überblick über den aktuellen Stand einer gelingenden Change-Kommunikation. Sie sind in der Lage, Veränderungsprozesse kommunikativ professionell zu steuern.",
-            zielgruppe: "Vorstände, Geschäftsführende, Führungskräfte vor allem auch aus den Bereichen Personal, Recht, Unternehmensentwicklung, HSE sowie Mitarbeitende von Kommunikationsabteilungen."
-        }
-    },
     "delegation-das-handwerk-der-fuehrung": {
         id: "delegation-das-handwerk-der-fuehrung",
         title: "Delegation: Das Handwerk der Führung",
@@ -312,7 +289,7 @@ const seminarsData = {
         id: "konflikterkennung-behandlung-praevention",
         title: "Konflikterkennung & Prävention",
         url: "seminare/konflikterkennung-behandlung-praevention",
-        category: "leadership",
+        category: "change",
         badge: "Seminar",
         shortDescription: "Konflikte sind in Unternehmen Alltag. Lernen Sie, diese frühzeitig zu erkennen, professionell zu behandeln und präventiv zu wirken.",
         details: ["2 Tage Präsenz", "Fallarbeit", "Praxistransfer"],
