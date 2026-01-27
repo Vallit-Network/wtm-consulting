@@ -1,846 +1,304 @@
 <!DOCTYPE html>
-
 <html lang="de">
+
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<link href="../assets/favicon.png" rel="icon" type="image/png"/>
-<title>Change-Kommunikation – WTM Management Consulting</title>
-<meta content="Professionell kommunizieren im Veränderungsprozess – Botschaften klar formulieren und Mitarbeiter mitnehmen." name="description"/>
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&amp;family=Source+Sans+Pro:wght@300;400;600;700&amp;display=swap" rel="stylesheet"/>
-<link href="../styles/index.css" rel="stylesheet"/>
-<style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change-Kommunikation – WTM Management Consulting</title>
+    <meta name="description"
+        content="Professionelle Kommunikation im Veränderungsprozess. Lernen Sie, Botschaften klar zu formulieren, Mitarbeitende zu beteiligen und Change-Prozesse erfolgreich zu begleiten.">
+
+    <!-- Design System -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/seminar-detail.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* SEMINAR THEME: Change Management */
         :root {
-            /* Anthracite Theme */
-            --seminar-accent: #2c2c2e;
-            /* Dark Anthracite */
-            --seminar-accent-light: rgba(44, 44, 46, 0.1);
-            --seminar-accent-glow: rgba(44, 44, 46, 0.3);
-            --color-text: #3A3A38;
-            --color-cream: #F5F5F3;
-            --color-border: #E5E5E0;
-            --accent-highlight: #a0a0a5;
-            /* Silver/Grey highlight */
+            --seminar-accent: #c24c4c;
+            /* Red Accent for Change */
+            --seminar-secondary: #2C3E50;
+            /* Deep Blue */
+            --seminar-primary-blue: #9DD4D0;
+            /* Corporate Teal */
         }
 
-        .scroll-progress {
-            position: fixed;
-            top: 0;
-            left: 0;
-            height: 3px;
-            background: var(--seminar-accent);
-            z-index: 9999;
-            width: 0%;
-        }
-
+        /* Change Category Special Rule: Blue Hero Gradient */
         .seminar-hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            background: linear-gradient(145deg, #0f172a 0%, #1a2a3a 100%);
-            position: relative;
-            overflow: hidden;
-            padding: 120px 0 80px;
+            background: linear-gradient(135deg, #2C3E50 0%, #527a90 100%);
         }
 
-        .hero-gradient-orb {
-            position: absolute;
-            border-radius: 50%;
-            filter: blur(80px);
-            opacity: 0.3;
-            animation: pulse-orb 8s infinite ease-in-out;
-        }
-
-        .orb-1 {
-            width: 400px;
-            height: 400px;
-            background: #9ca3af;
-            /* Silver */
-            top: -100px;
-            right: -100px;
-        }
-
-        .orb-2 {
-            width: 300px;
-            height: 300px;
-            background: var(--seminar-accent);
-            bottom: -50px;
-            left: -50px;
-            animation-delay: 4s;
-        }
-
-        @keyframes pulse-orb {
-
-            0%,
-            100% {
-                transform: scale(1);
-                opacity: 0.2;
-            }
-
-            50% {
-                transform: scale(1.2);
-                opacity: 0.4;
-            }
-        }
-
-        .hero-content-wrapper {
-            position: relative;
-            z-index: 2;
-            max-width: 800px;
-        }
-
-        .hero-text {
-            color: #fff;
-        }
-
-        .breadcrumb {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-size: 0.9rem;
-            margin-bottom: 1.5rem;
-            opacity: 0;
-            animation: fadeSlideUp 0.6s ease forwards;
-        }
-
-        .breadcrumb a {
-            color: rgba(255, 255, 255, 0.6);
-        }
-
-        .category-badge {
-            display: inline-flex;
-            padding: 0.5rem 1rem;
-            background: rgba(255, 255, 255, 0.1);
+        .seminar-badge {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(4px);
             border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 50px;
-            color: #fff;
-            font-size: 0.85rem;
-            font-weight: 600;
-            margin-bottom: 1.5rem;
-            opacity: 0;
-            animation: fadeSlideUp 0.6s ease 0.1s forwards;
+            color: white;
         }
 
-        .hero-title {
-            font-size: clamp(2.5rem, 5vw, 4rem);
-            color: #fff;
-            line-height: 1.1;
-            margin-bottom: 1.5rem;
-            opacity: 0;
-            animation: fadeSlideUp 0.8s ease 0.2s forwards;
-        }
-
-        .hero-title span {
-            color: #9ca3af;
-        }
-
-        .hero-subtitle {
-            font-size: 1.2rem;
-            color: rgba(255, 255, 255, 0.7);
-            line-height: 1.8;
-            max-width: 600px;
-            margin-bottom: 2rem;
-            opacity: 0;
-            animation: fadeSlideUp 0.8s ease 0.3s forwards;
-        }
-
-        .hero-meta {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-            margin-bottom: 2rem;
-            opacity: 0;
-            animation: fadeSlideUp 0.8s ease 0.4s forwards;
-        }
-
-        .meta-tag {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.6rem 1rem;
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 8px;
-            color: rgba(255, 255, 255, 0.8);
-            font-size: 0.9rem;
-        }
-
-        .meta-tag svg {
-            width: 16px;
-            height: 16px;
-            stroke: #9ca3af;
-        }
-
-        .hero-cta {
-            display: flex;
-            gap: 1rem;
-            opacity: 0;
-            animation: fadeSlideUp 0.8s ease 0.5s forwards;
-        }
-
-        .btn-glow {
-            background: #fff;
+        .check-list li::before {
             color: var(--seminar-accent);
-            padding: 1rem 2rem;
-            border-radius: 8px;
-            font-weight: 600;
-            transition: all 0.3s;
         }
 
-        .btn-glow:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 40px rgba(255, 255, 255, 0.2);
-        }
-
-        .btn-outline-light {
-            padding: 1rem 2rem;
-            border: 2px solid rgba(255, 255, 255, 0.3);
-            border-radius: 8px;
-            color: #fff;
-            font-weight: 600;
-            transition: all 0.3s;
-        }
-
-        @keyframes fadeSlideUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Sections */
-        .intro-section {
-            padding: 6rem 0;
-            background: #fff;
-        }
-
-        .intro-content {
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .section-label {
+        .feature-icon {
+            background: rgba(194, 76, 76, 0.1);
+            /* Red tint */
             color: var(--seminar-accent);
-            font-weight: 600;
-            font-size: 0.85rem;
-            letter-spacing: 0.15em;
-            text-transform: uppercase;
-            margin-bottom: 1rem;
-            display: inline-block;
-        }
-
-        .intro-text {
-            font-size: 1.15rem;
-            line-height: 1.9;
-            color: var(--color-text);
-        }
-
-        .goals-section {
-            padding: 6rem 0;
-            background: #fff;
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 4rem;
-        }
-
-        .accent-line {
-            width: 60px;
-            height: 3px;
-            background: var(--seminar-accent);
-            margin: 1.5rem auto 0;
-        }
-
-        .goals-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 2rem;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-
-        .goal-card {
-            background: #fff;
-            border: 1px solid var(--color-border);
-            border-radius: 16px;
-            padding: 2rem;
-            transition: all 0.4s;
-        }
-
-        .goal-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-            border-color: var(--seminar-accent);
-        }
-
-        .goal-number {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            background: var(--seminar-accent-light);
-            color: var(--seminar-accent);
-            border-radius: 10px;
-            font-weight: 700;
-            margin-bottom: 1rem;
-        }
-
-        .goal-text {
-            font-size: 1.05rem;
-            color: var(--color-text);
-            line-height: 1.7;
-            margin: 0;
-        }
-
-        .cta-section {
-            padding: 6rem 0 4rem;
-            background: var(--color-cream);
-        }
-
-        .cta-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2rem;
-        }
-
-        .target-card {
-            background: #fff;
-            border-radius: 20px;
-            padding: 3rem;
-        }
-
-        .cta-card {
-            background: var(--seminar-accent);
-            border-radius: 20px;
-            padding: 3rem;
-            color: #fff;
-        }
-
-        .cta-card h3 {
-            color: #fff;
-            font-size: 1.75rem;
-            margin-bottom: 1rem;
-        }
-
-        .cta-card p {
-            color: rgba(255, 255, 255, 0.9);
-            margin-bottom: 2rem;
-        }
-
-        @media (max-width: 968px) {
-            .hero-content-wrapper {
-                text-align: center;
-            }
-
-            .hero-meta,
-            .hero-cta {
-                justify-content: center;
-            }
-
-            .goals-grid,
-            .cta-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        /* PREMIUM TIMELINE STYLES */
-        .content-section {
-            padding: 6rem 0;
-            background: linear-gradient(180deg, #f8faf9 0%, #fff 100%);
-            position: relative;
-        }
-
-        .content-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 1px;
-            height: 80px;
-            background: var(--seminar-accent);
-        }
-
-        .journey-container {
-            max-width: 900px;
-            margin: 0 auto;
-            position: relative;
-        }
-
-        /* ============================================
-           CONTENT TIMELINE - PREMIUM DESIGN (Reference)
-           ============================================ */
-        .content-section {
-            padding: 6rem 0;
-            background: linear-gradient(180deg, #f8faf9 0%, #fff 100%);
-            position: relative;
-        }
-
-        .content-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 1px;
-            height: 80px;
-            background: var(--seminar-accent);
-        }
-
-        .journey-container {
-            max-width: 900px;
-            margin: 0 auto;
-            position: relative;
-        }
-
-        .journey-line {
-            position: absolute;
-            left: 50%;
-            top: 0;
-            bottom: 0;
-            width: 4px;
-            background: linear-gradient(180deg,
-                    var(--seminar-accent) 0%,
-                    rgba(44, 44, 46, 0.6) 50%,
-                    rgba(44, 44, 46, 0.2) 100%);
-            transform: translateX(-50%);
-            border-radius: 4px;
-        }
-
-        .journey-line::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 0%;
-            background: linear-gradient(180deg,
-                    var(--accent-highlight) 0%,
-                    var(--seminar-accent) 100%);
-            border-radius: 4px;
-            transition: height 1.5s cubic-bezier(0.4, 0, 0.2, 1);
-            box-shadow: 0 0 20px rgba(44, 44, 46, 0.4);
-        }
-
-        .journey-line.animated::after {
-            height: 100%;
-        }
-
-        .journey-item {
-            display: flex;
-            align-items: flex-start;
-            position: relative;
-            margin-bottom: 2rem;
-            opacity: 1;
-            /* Keeping it visible by default to avoid JS dependency for now, or match reference animation later */
-            /* transform: translateY(40px); */
-            /* transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1); */
-        }
-
-        /* Note: first-child is journey-line. So Item 1 is nth-child(2) -> Even. */
-        .journey-item:nth-child(odd) {
-            flex-direction: row;
-            /* Content Left */
-        }
-
-        .journey-item:nth-child(even) {
-            flex-direction: row-reverse;
-            /* Content Right */
-        }
-
-        .journey-content {
-            width: calc(50% - 50px);
-            padding: 0 1.5rem;
-        }
-
-        .journey-node {
-            position: absolute;
-            left: 50%;
-            top: 20px;
-            transform: translateX(-50%);
-            z-index: 10;
-        }
-
-        .node-dot {
-            width: 24px;
-            height: 24px;
-            background: var(--seminar-accent);
-            border-radius: 50%;
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow:
-                0 0 0 4px #fff,
-                0 0 0 6px var(--seminar-accent),
-                0 0 30px rgba(44, 44, 46, 0.4);
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .node-dot::before {
-            content: '';
-            width: 8px;
-            height: 8px;
-            background: #fff;
-            border-radius: 50%;
-            transition: transform 0.3s ease, opacity 0.3s ease;
-        }
-
-        .journey-item:hover .node-dot::before {
-            animation: node-pulse 1s infinite ease-in-out;
-        }
-
-        @keyframes node-pulse {
-
-            0%,
-            100% {
-                transform: scale(1);
-                opacity: 1;
-            }
-
-            50% {
-                transform: scale(0.6);
-                opacity: 0.6;
-            }
-        }
-
-        .node-ring {
-            position: absolute;
-            inset: -8px;
-            border: 2px solid var(--seminar-accent);
-            border-radius: 50%;
-            opacity: 0;
-            transform: scale(0.8);
-            transition: opacity 0.3s ease, transform 0.3s ease;
-        }
-
-        .journey-item:hover .node-ring {
-            animation: ring-expand 1.5s infinite ease-out;
-        }
-
-        @keyframes ring-expand {
-            0% {
-                transform: scale(0.8);
-                opacity: 0.8;
-            }
-
-            100% {
-                transform: scale(1.8);
-                opacity: 0;
-            }
-        }
-
-        .node-connector {
-            position: absolute;
-            top: 50%;
-            width: 42px;
-            /* Increased slightly from 26px to ensure connection based on math (38px gap) + overlap */
-            height: 2px;
-            background: var(--seminar-accent);
-            transform: translateY(-50%);
-        }
-
-        .journey-item:nth-child(odd) .node-connector {
-            right: 100%;
-            margin-right: 3px;
-        }
-
-        .journey-item:nth-child(even) .node-connector {
-            left: 100%;
-            margin-left: 3px;
-        }
-
-        .journey-card {
-            background: #fff;
-            border-radius: 16px;
-            padding: 1.75rem 2rem;
-            position: relative;
-            border: 1px solid rgba(44, 44, 46, 0.15);
-            box-shadow:
-                0 4px 20px rgba(0, 0, 0, 0.04),
-                0 1px 3px rgba(0, 0, 0, 0.02);
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            overflow: hidden;
-        }
-
-        .journey-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 3px;
-            background: var(--seminar-accent);
-            transform: scaleX(0);
-            transform-origin: left;
-            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .journey-item:hover .journey-card {
-            transform: translateY(-5px);
-            border-color: var(--seminar-accent);
-            box-shadow:
-                0 20px 50px rgba(44, 44, 46, 0.12),
-                0 8px 20px rgba(0, 0, 0, 0.06);
-        }
-
-        .journey-item:hover .journey-card::before {
-            transform: scaleX(1);
-        }
-
-        .module-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.4rem 0.8rem;
-            background: var(--seminar-accent-light);
-            border-radius: 20px;
-            margin-bottom: 0.75rem;
-        }
-
-        .module-number {
-            font-size: 0.7rem;
-            font-weight: 700;
-            color: var(--seminar-accent);
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-        }
-
-        .journey-title {
-            font-size: 1.15rem;
-            font-weight: 600;
-            color: var(--color-text);
-            margin: 0;
-            line-height: 1.4;
         }
     </style>
 </head>
+
 <body>
-<div class="scroll-progress" id="scrollProgress"></div>
-<header id="header">
-<div class="container">
-<nav><a class="logo" href="../index"><img alt="WTM" src="../assets/wtm_logo_gross.png"/></a>
-<div class="menu-toggle" id="mobile-menu"><span class="bar"></span><span class="bar"></span><span class="bar"></span></div>
-<ul class="nav-links">
-<li><a class="nav-link" href="../index#haltung">Haltung</a></li>
-<li><a class="nav-link" href="../index#angebote">Angebote</a></li>
-<li><a class="nav-link" href="../index#trainings">Trainings</a></li>
-<li><a class="nav-link" href="../index#team">Team</a></li>
-<li><a class="nav-link" href="../index#kontakt">Kontakt</a></li>
-</ul>
-</nav>
-</div>
-</header>
-<section class="seminar-hero">
-<div class="hero-gradient-orb orb-1"></div>
-<div class="hero-gradient-orb orb-2"></div>
-<div class="container">
-<div class="hero-content-wrapper">
-<div class="hero-text">
-<div class="breadcrumb"><a href="../index">Startseite</a><span class="breadcrumb-sep">→</span><a href="../index#trainings">Seminare</a><span class="breadcrumb-sep">→</span><span>Change-Kommunikation</span></div>
-<div class="category-badge">Seminar</div>
-<h1 class="hero-title">Change-Kommunikation</h1>
-<p class="hero-subtitle">Professionell kommunizieren im Veränderungsprozess – Botschaften klar formulieren und Mitarbeiter mitnehmen.</p>
-<div class="hero-meta"><span class="meta-tag"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect height="18" rx="2" ry="2" width="18" x="3" y="4"></rect></svg>1-2 Tage</span><span class="meta-tag"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle></svg>Praxisübungen</span><span class="meta-tag"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle></svg>Fallbeispiele</span></div>
-<div class="hero-cta">
-<a class="btn-glow" href="../index#kontakt">Unverbindlich anfragen →</a>
-<a class="btn-outline-light" href="#konzept">Konzept erhalten</a>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section class="goals-section" id="nutzen">
-<div class="container">
-<div class="section-header"><span class="section-label">Ihr Vorteil</span>
-<h2>Nutzen &amp; Wirkung</h2>
-<div class="accent-line"></div>
-</div>
-<div class="goals-grid"><div class="goal-card"><div class="goal-number">1</div><p class="goal-text">Sie lernen, warum Change-Kommunikation für den langfristigen Erfolg einer</p></div><div class="goal-card"><div class="goal-number">2</div><p class="goal-text">Organisation notwendig ist.</p></div><div class="goal-card"><div class="goal-number">3</div><p class="goal-text">Sie erhalten einen Überblick über die wesentlichen Grundsätze der Change-</p></div><div class="goal-card"><div class="goal-number">4</div><p class="goal-text">Kommunikation.</p></div><div class="goal-card"><div class="goal-number">5</div><p class="goal-text">Sie bekommen einen Überblick über die wesentlichen Werkzeuge der Change-</p></div><div class="goal-card"><div class="goal-number">6</div><p class="goal-text">Kommunikation und wie sie am besten einzusetzen sind.</p></div><div class="goal-card"><div class="goal-number">7</div><p class="goal-text">Sie lernen, wie ein Frühwarnsystem (Issue Management) aufgebaut werden kann, um</p></div><div class="goal-card"><div class="goal-number">8</div><p class="goal-text">Veränderungsbedarfe rechtzeitig zu erkennen und kommunikativ professionell zu</p></div><div class="goal-card"><div class="goal-number">9</div><p class="goal-text">begleiten.</p></div><div class="goal-card"><div class="goal-number">10</div><p class="goal-text">Sie erkennen, wie wichtig eine grundlegende Stakeholderanalyse bei</p></div><div class="goal-card"><div class="goal-number">11</div><p class="goal-text">Veränderungsprozessen ist.</p></div></div>
-</div>
-</section>
-<section class="intro-section" style="background-color: #f8f9fa;">
-<div class="container">
-<div class="intro-content">
-<span class="section-label">Transfer</span>
-<h2>Über das Training</h2>
-<div style="text-align: left; max-width: 600px; margin: 2rem auto;">
 
-</div>
-<p class="intro-text" style="margin-top: 1.5rem;">Change-Kommunikation – professionelle
-Kommunikation im Veränderungsprozess
-Erfolgreiche Change-Prozesse brauchen Führungskräfte und Mitarbeitende, die den
-Change verstehen und unterstützen. Dabei gilt: Machen Sie Mitarbeitende zu Beteiligten
-und nicht zu Betroffenen! Eine klare Change-Kommunikation vermindert den Flurfunk und
-das Brodeln in der Gerüchteküche und trägt dazu bei, Unsicherheiten zu verringern und
-Zuversicht zu vermitteln. Neben der reinen Information der Mitarbeitenden sind vor allem
-Formate gefragt, die einen Dialog und die Partizipation von Mitarbeitenden ermöglichen.</p></div>
-</div>
-</section>
-<section class="content-section">
-<div class="container">
-<div class="section-header"><span class="section-label">Der Inhalt</span>
-<h2>Themenübersicht</h2>
-<div class="accent-line"></div>
-</div>
-<div class="journey-container"><div class="journey-line" id="journeyLine"></div><div class="journey-item"><div class="journey-node"><div class="node-dot"><div class="node-ring"></div></div><div class="node-connector"></div></div><div class="journey-content"><div class="journey-card"><div class="module-badge"><span class="module-number">Thema 01</span></div><h3 class="journey-title">Seminarinhalte</h3><p>•  Fragen, die zu Beginn des Veränderungsprozesses geklärt werden sollten.
-•  Grundlagen, Phasen und Instrumente der Change-Kommunikation.
-•  Wie mit den Emotionen der Mitarbeitenden umgehen?
-•  Die Change-Story als zentrales Kommunikationsinstrument einsetzen.
-•  Die Informationskaskade hilft, Botschaften zielgenau zu platzieren.
-•  Dialog- und Partizipationsformate sind besonders wirksam. Wie können solche
-Formate realisiert werden?
-•  Grundsätze zur CEO-Positionierung.</p></div></div></div></div>
-</div>
-</section>
-<section class="intro-section">
-<div class="container">
-<div class="intro-content">
-<span class="section-label">Praxis</span>
-<h2>Praxis &amp; Transfer</h2>
-<p class="intro-text">Wir legen großen Wert auf den Transfer in den eigenen Arbeitskontext. Durch
-                    konkrete Fallbeispiele, Simulationen und die Entwicklung individueller Handlungsoptionen stellen wir
-                    sicher, dass Sie das Gelernte direkt anwenden können.</p>
-</div>
-</div>
-</section>
-<section class="goals-section" style="background-color: #f8f9fa;">
-<div class="container">
-<div class="section-header"><span class="section-label">Kontext</span>
-<h2>Typische Anlässe</h2>
-<div class="accent-line"></div>
-</div>
-<div class="goals-grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));">
-<div class="goal-card">
-<p class="goal-text">Projektleiter, die ohne Disziplinarverantwortung Teams steuern.</p>
-</div>
-<div class="goal-card">
-<p class="goal-text">Experten, die fachlich führen, aber nicht disziplinarisch.</p>
-</div>
-<div class="goal-card">
-<p class="goal-text">Einführung von agilen Arbeitsweisen oder Matrix-Strukturen.</p>
-</div>
-</div>
-</div>
-</section>
-<section class="intro-section">
-<div class="container">
-<div class="intro-content">
-<span class="section-label">Nachhaltigkeit</span>
-<h2>Wirkung nach 4 Wochen</h2>
-<div style="text-align: left; max-width: 600px; margin: 2rem auto;">
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="../index.html" class="logo">
+                <img src="../assets/wtm-logo.png" alt="WTM Management Consulting">
+            </a>
+            <div class="nav-links">
+                <a href="../index.html#seminare">Seminare</a>
+                <a href="../index.html#team">Team</a>
+                <a href="../index.html#kontakt" class="btn btn-primary">Kontakt</a>
+            </div>
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
 
-</div>
-<p class="intro-text">Sie erhalten einen Überblick über den aktuellen Stand einer gelingenden Change-
-Kommunikation. Sie sind in der Lage, Veränderungsprozesse kommunikativ professionell
-zu steuern.</p></div>
-</div>
-</section>
-<section class="cta-section">
-<div class="container">
-<div class="cta-grid">
-<div class="target-card"><span class="section-label">Maßgeschneidert</span>
-<h3>Inhouse-Lösung?</h3>
-<p>Vorstände, Geschäftsführende, Führungskräfte vor allem auch aus den Bereichen
-Personal, Recht, Unternehmensentwicklung, Health, Safety und Environment sowie
-Mitarbeitende von Kommunikationsabteilungen.</p>
-</div>
-<div class="cta-card">
-<h3>Kontakt aufnehmen</h3>
-<p>Lassen Sie uns über Ihren Bedarf sprechen.</p><a class="btn btn-white" href="../index#kontakt">Unverbindlich anfragen →</a>
-</div>
-</div>
-</div>
-</section>
-<footer>
-<div class="container">
-<div class="footer-grid">
-<!-- Brand Column -->
-<div class="footer-brand reveal stagger-1">
-<a class="logo" href="../index">
-<img alt="WTM Management Consulting" src="../assets/logo.png"/>
-</a>
-<p>Ihr Partner für wirksame Führung, lebendige Teams und gesunde Organisationen. Seit über 25 Jahren
-                        begleiten wir Menschen und Unternehmen in Veränderungsprozessen.</p>
-<div class="footer-social">
-<a aria-label="Facebook" href="https://www.facebook.com/wtm.mc" rel="noopener" target="_blank">
-<svg fill="currentColor" viewbox="0 0 24 24">
-<path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"></path>
-</svg>
-</a>
-<a aria-label="Twitter" href="https://twitter.com/WTM_Consulting" rel="noopener" target="_blank">
-<svg fill="currentColor" viewbox="0 0 24 24">
-<path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"></path>
-</svg>
-</a>
-<a aria-label="LinkedIn" href="https://www.linkedin.com/company/wtm-management-consulting" rel="noopener" target="_blank">
-<svg fill="currentColor" viewbox="0 0 24 24">
-<path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"></path>
-</svg>
-</a>
-<a aria-label="YouTube" href="https://www.youtube.com/channel/UC4rGdW9ApMpjFxbosjRshQg" rel="noopener" target="_blank">
-<svg fill="currentColor" viewbox="0 0 24 24">
-<path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"></path>
-</svg>
-</a>
-</div>
-</div>
-<!-- Offerings Column -->
-<div class="footer-col reveal stagger-2">
-<h4>Angebote</h4>
-<ul class="footer-links">
-<li><a href="../index#trainings">Trainings &amp; Seminare</a></li>
-<li><a href="../index#angebote">Coaching &amp; Beratung</a></li>
-<li><a href="../index#team">Unser Team</a></li>
-<li><a href="../index#unternehmen">Über Uns</a></li>
-</ul>
-</div>
-<!-- Contact Column -->
-<div class="footer-col reveal stagger-3">
-<h4>Kontakt</h4>
-<ul class="footer-links footer-contact">
-<li>Neuer Graben 61</li>
-<li>44139 Dortmund</li>
-<li>
-<a href="tel:+4923113722666">
-<span>Tel:</span> 0231 / 137 22 666
-                            </a>
-</li>
-<li>
-<a href="mailto:info@wtm-consulting.de">
-<span>Mail:</span> info@wtm-consulting.de
-                            </a>
-</li>
-</ul>
-</div>
-<!-- Legal Column -->
-<div class="footer-col reveal stagger-4">
-<h4>Rechtliches</h4>
-<ul class="footer-links">
-<li><a href="../impressum">Impressum</a></li>
-<li><a href="../datenschutz">Datenschutz</a></li>
-</ul>
-</div>
-</div>
-<div class="footer-bottom reveal">
-<div class="copyright">
-<p>© 2026 WTM Management Consulting GmbH. Alle Rechte vorbehalten.</p>
-</div>
-</div>
-</div>
-</footer>
-<script src="../js/main.js"></script>
-<script>window.addEventListener('scroll', () => { document.getElementById('scrollProgress').style.width = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100 + '%'; });</script>
-<script data-api-url="https://www.vallit.net" data-color="#6366f1" data-company-id="e46176c5-0f35-43b8-8e8c-c72f534519e1" data-language="de" data-metadata='{"page_title": "Laterales Führen"}' data-theme="minimal" data-title="Kian" src="https://www.vallit.net/widget/embed.js"></script>
+    <!-- 1. Hero Section -->
+    <header class="seminar-hero">
+        <div class="container hero-content">
+            <div class="hero-badges">
+                <span class="seminar-badge"><i class="far fa-clock"></i> 1-2 Tage</span>
+                <span class="seminar-badge"><i class="fas fa-users"></i> Führungskräfte & Kommunikation</span>
+                <span class="seminar-badge"><i class="fas fa-sync-alt"></i> Change Management</span>
+            </div>
+            <h1>Change-Kommunikation</h1>
+            <p class="hero-subline">Professionelle Kommunikation im Veränderungsprozess – Machen Sie Mitarbeitende zu
+                Beteiligten!</p>
+            <div class="hero-actions">
+                <a href="#kontakt" class="btn btn-light">Unverbindlich anfragen</a>
+                <a href="#inhalte" class="btn btn-outline-light">Inhalte ansehen</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- 2. Nutzen & Wirkung (Ziele) -->
+    <section class="section section-benefits">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-tag">Ziele</span>
+                <h2>Das nehmen Sie mit</h2>
+                <p>Eine klare Change-Kommunikation vermindert den Flurfunk und trägt dazu bei, Unsicherheiten zu
+                    verringern und Zuversicht zu vermitteln.</p>
+            </div>
+
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="feature-icon"><i class="fas fa-bullseye"></i></div>
+                    <h3>Erfolg sichern</h3>
+                    <p>Sie lernen, warum Change-Kommunikation für den langfristigen Erfolg einer Organisation notwendig
+                        ist.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="feature-icon"><i class="fas fa-tools"></i></div>
+                    <h3>Werkzeuge beherrschen</h3>
+                    <p>Sie erhalten einen Überblick über die wesentlichen Werkzeuge der Change-Kommunikation und deren
+                        Einsatz.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="feature-icon"><i class="fas fa-radar"></i></div>
+                    <h3>Frühwarnsystem</h3>
+                    <p>Sie lernen, wie ein Issue Management aufgebaut wird, um Veränderungsbedarfe rechtzeitig zu
+                        erkennen.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="feature-icon"><i class="fas fa-users-cog"></i></div>
+                    <h3>Stakeholderanalyse</h3>
+                    <p>Sie erkennen, wie wichtig eine grundlegende Stakeholderanalyse bei Veränderungsprozessen ist.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Nach dem Training (Transformation) -->
+    <section class="section section-transformation bg-light">
+        <div class="container">
+            <div class="row align-center">
+                <div class="col-lg-6">
+                    <h2>Ihre Transformation</h2>
+                    <p class="lead">Vom Informationsverteiler zum Change-Gestalter.</p>
+                    <ul class="check-list">
+                        <li>Sie sind in der Lage, Veränderungsprozesse kommunikativ professionell zu steuern.</li>
+                        <li>Sie wissen genau, wie Sie Unsicherheiten bei Mitarbeitenden verringern.</li>
+                        <li>Sie können Dialog- und Partizipationsformate wirksam realisieren.</li>
+                        <li>Sie vermeiden "Flurfunk" durch klare, proaktive Kommunikation.</li>
+                    </ul>
+                </div>
+                <div class="col-lg-6">
+                    <!-- Placeholder visual for Change Communication structure -->
+                    <div class="content-visual-box"
+                        style="background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); border-left: 4px solid var(--seminar-accent);">
+                        <h4 style="color: var(--seminar-secondary); margin-bottom: 1rem;">Kommunikations-Dreiklang</h4>
+                        <div style="display: flex; gap: 1rem; align-items: center; margin-bottom: 1rem;">
+                            <div
+                                style="background: #eef2f5; padding: 0.8rem; border-radius: 8px; flex: 1; text-align: center;">
+                                <strong>Information</strong><br><small>Klarheit schaffen</small></div>
+                            <i class="fas fa-arrow-right" style="color: var(--seminar-accent);"></i>
+                            <div
+                                style="background: #eef2f5; padding: 0.8rem; border-radius: 8px; flex: 1; text-align: center;">
+                                <strong>Dialog</strong><br><small>Fragen klären</small></div>
+                            <i class="fas fa-arrow-right" style="color: var(--seminar-accent);"></i>
+                            <div
+                                style="background: #eef2f5; padding: 0.8rem; border-radius: 8px; flex: 1; text-align: center;">
+                                <strong>Partizipation</strong><br><small>Beteiligte machen</small></div>
+                        </div>
+                        <p style="font-size: 0.9rem; color: #666; margin: 0;">Neben reiner Information sind Formate
+                            gefragt, die echten Dialog und Mitgestaltung ermöglichen.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Inhalte -->
+    <section id="inhalte" class="section">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-tag">Curriculum</span>
+                <h2>Inhalte im Detail</h2>
+            </div>
+
+            <div class="curriculum-list">
+                <div class="curriculum-item">
+                    <div class="curr-number">01</div>
+                    <div class="curr-content">
+                        <h3>Startphase & Grundlagen</h3>
+                        <p>Fragen, die zu Beginn geklärt werden sollten, sowie Grundlagen, Phasen und Instrumente der
+                            Change-Kommunikation.</p>
+                    </div>
+                </div>
+                <div class="curriculum-item">
+                    <div class="curr-number">02</div>
+                    <div class="curr-content">
+                        <h3>Emotionen & Change-Story</h3>
+                        <p>Wie mit Emotionen umgehen? Einsatz der Change-Story als zentrales Instrument. Die
+                            Informationskaskade zur zielgenauen Platzierung.</p>
+                    </div>
+                </div>
+                <div class="curriculum-item">
+                    <div class="curr-number">03</div>
+                    <div class="curr-content">
+                        <h3>Dialog & Positionierung</h3>
+                        <p>Wirksame Dialog- und Partizipationsformate realisieren. Grundsätze zur Positionierung des
+                            CEO/der Führung.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Praxis & Transfer -->
+    <section class="section bg-light">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2>Praxis & Transfer</h2>
+                <p>Theorie trifft auf Ihre Unternehmensrealität.</p>
+            </div>
+            <div class="transfer-grid">
+                <div class="transfer-item">
+                    <i class="fas fa-briefcase"></i>
+                    <h4>Fallarbeit</h4>
+                    <p>Arbeit an konkreten Kommunikations-Szenarien aus Ihrem Alltag.</p>
+                </div>
+                <div class="transfer-item">
+                    <i class="fas fa-comments"></i>
+                    <h4>Simulation</h4>
+                    <p>Üben von Dialogformaten und Umgang mit kritischen Rückfragen.</p>
+                </div>
+                <div class="transfer-item">
+                    <i class="fas fa-file-contract"></i>
+                    <h4>Konzept-Entwurf</h4>
+                    <p>Erste Skizzen für Ihren eigenen Change-Kommunikationsplan.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. Typische Anlässe -->
+    <section class="section">
+        <div class="container">
+            <h2>Wann ist dieses Seminar wichtig?</h2>
+            <p class="mb-4">Typische Anlässe für den Bedarf an professioneller Change-Kommunikation:</p>
+            <div class="occasions-grid">
+                <div class="occasion-card">
+                    <i class="fas fa-check-circle"></i>
+                    <p>Anstehende Restrukturierungen, Fusionen oder Übernahmen.</p>
+                </div>
+                <div class="occasion-card">
+                    <i class="fas fa-check-circle"></i>
+                    <p>Einführung neuer Strategien, IT-Systeme oder Prozesse.</p>
+                </div>
+                <div class="occasion-card">
+                    <i class="fas fa-check-circle"></i>
+                    <p>Wahrnehmbarer Widerstand oder Gerüchteküche in der Belegschaft.</p>
+                </div>
+                <div class="occasion-card">
+                    <i class="fas fa-check-circle"></i>
+                    <p>Wechsel in der Geschäftsführung oder Neuausrichtung der Kultur.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. Wirkung nach 4 Wochen -->
+    <section class="section bg-secondary text-white">
+        <div class="container text-center">
+            <div class="impact-box">
+                <h3>Wirkung nach 4 Wochen</h3>
+                <p class="lead">"Die Stimmung hat sich gedreht – wir reden wieder miteinander statt übereinander."</p>
+                <div class="impact-metrics">
+                    <div class="metric">
+                        <span class="value">Weniger</span>
+                        <span class="label">Flurfunk</span>
+                    </div>
+                    <div class="metric">
+                        <span class="value">Mehr</span>
+                        <span class="label">Akzeptanz</span>
+                    </div>
+                    <div class="metric">
+                        <span class="value">Klarer</span>
+                        <span class="label">Fokus</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. Footer CTA -->
+    <section id="kontakt" class="section cta-section">
+        <div class="container text-center">
+            <h2>Change professionell kommunizieren</h2>
+            <p class="lead mb-4">Unverbindlich abstimmen – Schwerpunkte, Beispiele und Umfang passend zu Ihrem Kontext.
+            </p>
+            <form class="simple-contact-form">
+                <input type="email" placeholder="Ihre E-Mail-Adresse" required>
+                <button type="submit" class="btn btn-primary">Konzept anfordern</button>
+            </form>
+            <p class="small text-muted mt-3">Oder direkt anrufen: <a href="tel:+49023113722666">0231 / 137 22 666</a>
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container text-center">
+            <p>&copy; 2025 WTM Management Consulting. Alle Rechte vorbehalten.</p>
+        </div>
+    </footer>
+
 </body>
+
 </html>

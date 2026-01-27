@@ -91,18 +91,47 @@ const seminarsData = {
     "change-kommunikation-professionelle-kommunikation-im-veraenderungsprozess": {
         id: "change-kommunikation-professionelle-kommunikation-im-veraenderungsprozess",
         title: "Change-Kommunikation",
-        url: "seminare/change-kommunikation",
+        url: "seminare/change-kommunikation.html",
         category: "change",
         badge: "Seminar",
         shortDescription: "Professionell kommunizieren im Veränderungsprozess – Botschaften klar formulieren und Mitarbeiter mitnehmen.",
         details: ["1-2 Tage", "Praxisübungen", "Fallbeispiele"],
         heroImage: "assets/hero-meeting.jpg",
         content: {
-            intro: "Change-Kommunikation \u2013 professionelle\nKommunikation im Ver\u00e4nderungsprozess\nErfolgreiche Change-Prozesse brauchen F\u00fchrungskr\u00e4fte und Mitarbeitende, die den\nChange verstehen und unterst\u00fctzen. Dabei gilt: Machen Sie Mitarbeitende zu Beteiligten\nund nicht zu Betroffenen! Eine klare Change-Kommunikation vermindert den Flurfunk und\ndas Brodeln in der Ger\u00fcchtek\u00fcche und tr\u00e4gt dazu bei, Unsicherheiten zu verringern und\nZuversicht zu vermitteln. Neben der reinen Information der Mitarbeitenden sind vor allem\nFormate gefragt, die einen Dialog und die Partizipation von Mitarbeitenden erm\u00f6glichen.",
-            ziele: ["Sie lernen, warum Change-Kommunikation f\u00fcr den langfristigen Erfolg einer", "Organisation notwendig ist.", "Sie erhalten einen \u00dcberblick \u00fcber die wesentlichen Grunds\u00e4tze der Change-", "Kommunikation.", "Sie bekommen einen \u00dcberblick \u00fcber die wesentlichen Werkzeuge der Change-", "Kommunikation und wie sie am besten einzusetzen sind.", "Sie lernen, wie ein Fr\u00fchwarnsystem (Issue Management) aufgebaut werden kann, um", "Ver\u00e4nderungsbedarfe rechtzeitig zu erkennen und kommunikativ professionell zu", "begleiten.", "Sie erkennen, wie wichtig eine grundlegende Stakeholderanalyse bei", "Ver\u00e4nderungsprozessen ist."],
-            inhalte: "\u2022  Fragen, die zu Beginn des Ver\u00e4nderungsprozesses gekl\u00e4rt werden sollten.\n\u2022  Grundlagen, Phasen und Instrumente der Change-Kommunikation.\n\u2022  Wie mit den Emotionen der Mitarbeitenden umgehen?\n\u2022  Die Change-Story als zentrales Kommunikationsinstrument einsetzen.\n\u2022  Die Informationskaskade hilft, Botschaften zielgenau zu platzieren.\n\u2022  Dialog- und Partizipationsformate sind besonders wirksam. Wie k\u00f6nnen solche\nFormate realisiert werden?\n\u2022  Grunds\u00e4tze zur CEO-Positionierung.",
-            nutzen: "Sie erhalten einen \u00dcberblick \u00fcber den aktuellen Stand einer gelingenden Change-\nKommunikation. Sie sind in der Lage, Ver\u00e4nderungsprozesse kommunikativ professionell\nzu steuern.",
-            zielgruppe: "Vorst\u00e4nde, Gesch\u00e4ftsf\u00fchrende, F\u00fchrungskr\u00e4fte vor allem auch aus den Bereichen\nPersonal, Recht, Unternehmensentwicklung, Health, Safety und Environment sowie\nMitarbeitende von Kommunikationsabteilungen."
+            intro: "Change-Kommunikation – professionelle Kommunikation im Veränderungsprozess. Erfolgreiche Change-Prozesse brauchen Führungskräfte und Mitarbeitende, die den Change verstehen und unterstützen. Dabei gilt: Machen Sie Mitarbeitende zu Beteiligten und nicht zu Betroffenen! Eine klare Change-Kommunikation vermindert den Flurfunk und das Brodeln in der Gerüchteküche und trägt dazu bei, Unsicherheiten zu verringern und Zuversicht zu vermitteln.",
+            ziele: [
+                "Sie lernen, warum Change-Kommunikation für den langfristigen Erfolg einer Organisation notwendig ist.",
+                "Sie erhalten einen Überblick über die wesentlichen Grundsätze der Change-Kommunikation.",
+                "Sie bekommen einen Überblick über die wesentlichen Werkzeuge der Change-Kommunikation und wie sie am besten einzusetzen sind.",
+                "Sie lernen, wie ein Frühwarnsystem (Issue Management) aufgebaut werden kann.",
+                "Sie erkennen, wie wichtig eine grundlegende Stakeholderanalyse bei Veränderungsprozessen ist."
+            ],
+            inhalte: "Fragen zu Beginn des Veränderungsprozesses. Grundlagen, Phasen und Instrumente. Umgang mit Emotionen der Mitarbeitenden. Die Change-Story als zentrales Instrument. Die Informationskaskade. Dialog- und Partizipationsformate. Grundsätze zur CEO-Positionierung.",
+            nutzen: "Sie erhalten einen Überblick über den aktuellen Stand einer gelingenden Change-Kommunikation. Sie sind in der Lage, Veränderungsprozesse kommunikativ professionell zu steuern.",
+            zielgruppe: "Vorstände, Geschäftsführende, Führungskräfte vor allem auch aus den Bereichen Personal, Recht, Unternehmensentwicklung, HSE sowie Mitarbeitende von Kommunikationsabteilungen."
+        }
+    },
+    "change-kommunikation": {
+        id: "change-kommunikation",
+        title: "Change-Kommunikation",
+        url: "seminare/change-kommunikation.html",
+        category: "change",
+        badge: "Seminar",
+        shortDescription: "Professionell kommunizieren im Veränderungsprozess – Botschaften klar formulieren und Mitarbeiter mitnehmen.",
+        details: ["1-2 Tage", "Praxisübungen", "Fallbeispiele"],
+        heroImage: "assets/hero-meeting.jpg",
+        content: {
+            intro: "Change-Kommunikation – professionelle Kommunikation im Veränderungsprozess. Erfolgreiche Change-Prozesse brauchen Führungskräfte und Mitarbeitende, die den Change verstehen und unterstützen. Dabei gilt: Machen Sie Mitarbeitende zu Beteiligten und nicht zu Betroffenen! Eine klare Change-Kommunikation vermindert den Flurfunk und das Brodeln in der Gerüchteküche und trägt dazu bei, Unsicherheiten zu verringern und Zuversicht zu vermitteln.",
+            ziele: [
+                "Sie lernen, warum Change-Kommunikation für den langfristigen Erfolg einer Organisation notwendig ist.",
+                "Sie erhalten einen Überblick über die wesentlichen Grundsätze der Change-Kommunikation.",
+                "Sie bekommen einen Überblick über die wesentlichen Werkzeuge der Change-Kommunikation und wie sie am besten einzusetzen sind.",
+                "Sie lernen, wie ein Frühwarnsystem (Issue Management) aufgebaut werden kann.",
+                "Sie erkennen, wie wichtig eine grundlegende Stakeholderanalyse bei Veränderungsprozessen ist."
+            ],
+            inhalte: "Fragen zu Beginn des Veränderungsprozesses. Grundlagen, Phasen und Instrumente. Umgang mit Emotionen der Mitarbeitenden. Die Change-Story als zentrales Instrument. Die Informationskaskade. Dialog- und Partizipationsformate. Grundsätze zur CEO-Positionierung.",
+            nutzen: "Sie erhalten einen Überblick über den aktuellen Stand einer gelingenden Change-Kommunikation. Sie sind in der Lage, Veränderungsprozesse kommunikativ professionell zu steuern.",
+            zielgruppe: "Vorstände, Geschäftsführende, Führungskräfte vor allem auch aus den Bereichen Personal, Recht, Unternehmensentwicklung, HSE sowie Mitarbeitende von Kommunikationsabteilungen."
         }
     },
     "delegation-das-handwerk-der-fuehrung": {

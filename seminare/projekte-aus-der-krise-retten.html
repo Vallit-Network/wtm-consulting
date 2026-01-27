@@ -42,8 +42,8 @@
             min-height: 100vh;
             display: flex;
             align-items: center;
-            background: linear-gradient(135deg, #1e3a8a 0%, #172554 100%);
-            /* Blue background remains for Change theme as per guidelines */
+            background: linear-gradient(135deg, #2C3E50 0%, #527a90 100%);
+            /* Corporate Blue gradient for Change theme */
             position: relative;
             overflow: hidden;
             padding: 120px 0 80px;
@@ -60,8 +60,8 @@
         .orb-1 {
             width: 400px;
             height: 400px;
-            background: #cd5c5c;
-            /* Light Red */
+            background: #527a90;
+            /* Soft Teal */
             top: -100px;
             right: -100px;
         }
@@ -680,35 +680,6 @@
                         sinnvoll?</strong>
                 </p>
 
-                <!-- Visual Model: The Crisis Curve -->
-                <div class="intro-visual">
-                    <svg viewBox="0 0 600 200" fill="none" stroke="currentColor" stroke-width="2"
-                        style="width: 100%; height: auto;">
-                        <!-- Axis -->
-                        <line x1="50" y1="180" x2="550" y2="180" stroke="#e5e5e0" />
-
-                        <!-- Curve -->
-                        <path d="M50,150 Q150,150 200,100 T300,50 T450,150" fill="none" stroke="var(--seminar-accent)"
-                            stroke-width="4" stroke-dasharray="600" stroke-dashoffset="0">
-                            <animate attributeName="stroke-dashoffset" from="600" to="0" dur="2s" fill="freeze" />
-                        </path>
-
-                        <!-- Points -->
-                        <circle cx="50" cy="150" r="6" fill="#fff" stroke="var(--seminar-accent)" stroke-width="3" />
-                        <text x="50" y="195" text-anchor="middle" font-size="12" fill="var(--color-text)">Start</text>
-
-                        <circle cx="200" cy="100" r="6" fill="#fff" stroke="var(--seminar-accent)" stroke-width="3" />
-                        <text x="200" y="85" text-anchor="middle" font-size="12"
-                            fill="var(--color-text)">Warnsignale</text>
-
-                        <circle cx="300" cy="50" r="8" fill="var(--seminar-accent)" />
-                        <text x="300" y="30" text-anchor="middle" font-weight="bold" font-size="14"
-                            fill="var(--seminar-accent)">Krise</text>
-
-                        <circle cx="450" cy="150" r="6" fill="#fff" stroke="var(--seminar-accent)" stroke-width="3" />
-                        <text x="450" y="195" text-anchor="middle" font-size="12" fill="var(--color-text)">Lösung</text>
-                    </svg>
-                </div>
             </div>
         </div>
     </section>
