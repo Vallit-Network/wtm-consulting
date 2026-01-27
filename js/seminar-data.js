@@ -165,7 +165,7 @@ const seminarsData = {
     "gekonnt-visualisieren-an-flipchart-und-pinnwand": {
         id: "gekonnt-visualisieren-an-flipchart-und-pinnwand",
         title: "Gekonnt Visualisieren an Flipchart und Pinnwand",
-        url: "seminare/gekonnt-visualisieren",
+        url: "seminare/gekonnt-visualisieren.html",
         category: "communication",
         badge: "🎨 Kommunikation",
         shortDescription: "Faszinieren Sie Ihr Publikum mit gut gestalteten Flipcharts – vermitteln Sie Fachwissen auf einfache, mitreißende Art und Weise ohne ablenkende Elektronik.",
@@ -619,28 +619,6 @@ const seminarsData = {
             zielgruppe: "Alle Zahlenprofis, die ihre Soft Skills verfeinern möchten."
         }
     },
-    "verkaufen-reloaded": {
-        id: "verkaufen-reloaded",
-        title: "Verkaufen Reloaded",
-        url: "seminare/verkaufen-reloaded",
-        category: "management",
-        badge: "Seminar",
-        shortDescription: "Modern verkaufen – Verkaufstechniken für die digitale Welt und anspruchsvolle Kunden.",
-        details: ["1-2 Tage", "Praxis", "Rollenspiele"],
-        heroImage: "assets/hero-meeting.jpg",
-        content: {
-            intro: "Der Verkauf hat sich gewandelt. Kunden sind informierter, Kanäle sind vielfältiger. Wie verkaufen Sie erfolgreich in dieser neuen Welt?",
-            ziele: [
-                "Moderne Verkaufstechniken beherrschen",
-                "Kundenzentriert beraten",
-                "Digital und analog verkaufen",
-                "Abschlussstärke entwickeln"
-            ],
-            inhalte: "Bedarfsanalyse. Nutzenargumentation. Einwandbehandlung. Abschlusstechniken. Social Selling. Remote-Verkauf.",
-            nutzen: "Sie verkaufen erfolgreicher und kundenorientierter.",
-            zielgruppe: "Verkaufsmitarbeiter und alle mit Kundenkontakt."
-        }
-    },
     "vom-mitarbeiter-zur-fuehrungskraft": {
         id: "vom-mitarbeiter-zur-fuehrungskraft",
         title: "Vom Mitarbeiter zur Führungskraft",
@@ -730,23 +708,7 @@ const seminarsData = {
     },
 
 
-    "visualisieren": {
-        id: "visualisieren",
-        title: "Gekonnt Visualisieren",
-        url: "seminare/visualisieren",
-        category: "communication",
-        badge: "🎨 Kommunikation",
-        shortDescription: "Mit einfachen Zeichentechniken komplexe Inhalte vermitteln. Flipcharts und Grafiken, die begeistern!",
-        details: ["2 Tage", "Praxis", "Transfer"],
-        heroImage: "assets/hero-meeting.jpg",
-        content: {
-            intro: "Ein Bild sagt mehr als tausend Worte. Lernen Sie, Ihre Ideen, Konzepte und Botschaften visuell ansprechend und einprägsam darzustellen.",
-            ziele: ['Trainings & Seminare', 'Coaching & Beratung', 'Neuer Graben 61', '44139 Dortmund', 'Tel: 0231 / 137 22 666'],
-            inhalte: "Charts Figuren Symbole Schriften Icons Container Verbindungen Farben",
-            nutzen: "Sie erweitern ihre Kompetenzen in Gekonnt Visualisieren.",
-            zielgruppe: "Trainer, Moderatoren, Präsentierende – alle, die ihre Botschaften visuell verstärken wollen."
-        }
-    },
+
     "resilienz": {
         id: "resilienz",
         title: "Resilienz",

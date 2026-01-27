@@ -554,21 +554,7 @@
 
 <body>
     <div class="scroll-progress" id="scrollProgress"></div>
-    <header id="header">
-        <div class="container">
-            <nav><a class="logo" href="../index.html"><img alt="WTM" src="../assets/wtm_logo_gross.png" /></a>
-                <div class="menu-toggle" id="mobile-menu"><span class="bar"></span><span class="bar"></span><span
-                        class="bar"></span></div>
-                <ul class="nav-links">
-                    <li><a class="nav-link" href="../index.html#haltung">Haltung</a></li>
-                    <li><a class="nav-link" href="../index.html#angebote">Angebote</a></li>
-                    <li><a class="nav-link" href="../index.html#trainings">Trainings</a></li>
-                    <li><a class="nav-link" href="../index.html#team">Team</a></li>
-                    <li><a class="nav-link" href="../index.html#kontakt">Kontakt</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+    <div id="nav-placeholder"></div>
 
     <!-- 1. HERO SECTION -->
     <section class="seminar-hero">
@@ -860,11 +846,7 @@
         </div>
     </section>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 WTM Management Consulting. Alle Rechte vorbehalten.</p>
-        </div>
-    </footer>
+    <div id="footer-placeholder"></div>
 
     <script>
         // Scroll Progress
@@ -880,6 +862,7 @@
             document.querySelector('.nav-links').classList.toggle('active');
         });
     </script>
+    <script src="../js/main.js"></script>
 </body>
 
 </html>

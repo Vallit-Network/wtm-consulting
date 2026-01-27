@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="de">
+<!-- Updated 2026-01-27T17:28:00+01:00 to fix deployment -->
 
 <head>
     <meta charset="utf-8" />
@@ -641,25 +642,7 @@
 
 <body>
     <div class="scroll-progress" id="scrollProgress"></div>
-    <header id="header">
-        <div class="container">
-            <nav>
-                <a class="logo" href="../index"><img alt="WTM" src="../assets/wtm_logo_gross.png" /></a>
-                <div class="menu-toggle" id="mobile-menu">
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                </div>
-                <ul class="nav-links">
-                    <li><a class="nav-link" href="../index#haltung">Haltung</a></li>
-                    <li><a class="nav-link" href="../index#angebote">Angebote</a></li>
-                    <li><a class="nav-link" href="../index#trainings">Trainings</a></li>
-                    <li><a class="nav-link" href="../index#team">Team</a></li>
-                    <li><a class="nav-link" href="../index#kontakt">Kontakt</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+    <div id="nav-placeholder"></div>
 
     <!-- Hero Section -->
     <section class="seminar-hero">
@@ -911,23 +894,12 @@
         </div>
     </section>
 
-    <footer id="footer"></footer>
+    <div id="footer-placeholder"></div>
 
     <script src="../js/main.js"></script>
     <script>
         // Load Header and Footer
-        fetch('../components/header.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('header').innerHTML = data;
-                // Re-initialize mobile menu script if needed
-            });
-
-        fetch('../components/footer.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('footer').innerHTML = data;
-            });
+        
 
         // Scroll Progress
         window.onscroll = function () {

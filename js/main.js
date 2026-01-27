@@ -1584,5 +1584,187 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 120000);
     }
 
+    // =========================================
+    // JOINT HEADER / FOOTER / CHATBOT INJECTION
+    // =========================================
+    function injectSharedComponents() {
+        // Only run if placeholders exist
+        const navPlaceholder = document.getElementById('nav-placeholder');
+        const footerPlaceholder = document.getElementById('footer-placeholder');
+
+        // 1. HEADER
+        if (navPlaceholder) {
+            navPlaceholder.innerHTML = `
+            <header id="header">
+                <div class="container">
+                    <nav>
+                        <a href="../index.html" class="logo">
+                            <img src="../assets/wtm_logo_gross.png" alt="WTM Management Consulting">
+                        </a>
+                        <div class="menu-toggle" id="mobile-menu-injected">
+                            <span class="bar"></span>
+                            <span class="bar"></span>
+                            <span class="bar"></span>
+                        </div>
+                        <ul class="nav-links">
+                            <li><a href="../index.html#haltung" class="nav-link">Haltung</a></li>
+                            <li class="nav-dropdown">
+                                <a href="../index.html#angebote" class="nav-link nav-dropdown-toggle">
+                                    Angebote
+                                    <svg class="dropdown-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <polyline points="6 9 12 15 18 9"></polyline>
+                                    </svg>
+                                </a>
+                                <div class="nav-dropdown-menu">
+                                    <a href="../index.html#angebote">Leistungen</a>
+                                    <a href="../index.html#trainings">Trainings</a>
+                                    <a href="../index.html#fuehrungskraefte">FK-Programm</a>
+                                </div>
+                            </li>
+                            <li class="nav-dropdown">
+                                <a href="../index.html#success-stories" class="nav-link nav-dropdown-toggle">
+                                    Praxisbeispiele
+                                    <svg class="dropdown-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <polyline points="6 9 12 15 18 9"></polyline>
+                                    </svg>
+                                </a>
+                                <div class="nav-dropdown-menu">
+                                    <a href="../index.html#success-stories">Referenzen</a>
+                                    <a href="../index.html#success-stories">Success Stories</a>
+                                    <a href="../index.html#testimonials">Stimmen</a>
+                                </div>
+                            </li>
+                            <li class="nav-dropdown">
+                                <a href="../index.html#team" class="nav-link nav-dropdown-toggle">
+                                    Wir
+                                    <svg class="dropdown-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <polyline points="6 9 12 15 18 9"></polyline>
+                                    </svg>
+                                </a>
+                                <div class="nav-dropdown-menu">
+                                    <a href="../index.html#team">Team</a>
+                                    <a href="../index.html#zertifikate">Qualifikationen</a>
+                                </div>
+                            </li>
+                            <li><a href="../index.html#kontakt" class="nav-link">Kontakt</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </header>`;
+
+            // Re-initialize mobile menu listeners for injected header
+            const mobileMenuBtn = document.getElementById('mobile-menu-injected');
+            const navLinks = document.querySelector('.nav-links');
+
+            if (mobileMenuBtn && navLinks) {
+                mobileMenuBtn.addEventListener('click', () => {
+                    mobileMenuBtn.classList.toggle('active');
+                    navLinks.classList.toggle('active');
+                    document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
+                });
+
+                navLinks.querySelectorAll('a').forEach(link => {
+                    link.addEventListener('click', () => {
+                        mobileMenuBtn.classList.remove('active');
+                        navLinks.classList.remove('active');
+                        document.body.style.overflow = '';
+                    });
+                });
+            }
+
+            // Re-initialize dropdowns
+            const navDropdownToggles = document.querySelectorAll('.nav-dropdown-toggle');
+            const navDropdowns = document.querySelectorAll('.nav-dropdown');
+
+            navDropdownToggles.forEach(toggle => {
+                toggle.addEventListener('click', (e) => {
+                    if (window.innerWidth <= 968) {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        const parentDropdown = toggle.closest('.nav-dropdown');
+                        const isActive = parentDropdown.classList.contains('active');
+                        navDropdowns.forEach(d => d.classList.remove('active'));
+                        if (!isActive) parentDropdown.classList.add('active');
+                    }
+                });
+            });
+        }
+
+        // 2. CHATBOT AND HELPER BUTTON
+        const existingChatbot = document.querySelector('script[src*="vallit.net"]');
+        if (!existingChatbot) {
+            // Inject Script
+            const script = document.createElement('script');
+            script.src = "https://www.vallit.net/widget/embed.js";
+            script.dataset.companyId = "5f929157-5f9e-48e3-b7f7-a6dcd0e24142";
+            script.dataset.theme = "glassmorphism";
+            script.defer = true;
+            document.body.appendChild(script);
+
+            // Inject Helper Button
+            const helperBtnHTML = `
+            <div class="chatbot-helper" id="chatbotHelper">
+                <button class="chatbot-helper-btn" id="openChatbot" onclick="if(window.VallitWidget) window.VallitWidget.open();">
+                    <div class="btn-icon-wrapper">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                        </svg>
+                    </div>
+                    <div class="btn-text-content">
+                        <span class="btn-title">Fragen?</span>
+                        <span class="btn-subtitle">Ich helfe gerne</span>
+                    </div>
+                </button>
+            </div>`;
+            document.body.insertAdjacentHTML('beforeend', helperBtnHTML);
+        }
+
+        // 3. FOOTER
+        if (footerPlaceholder) {
+            footerPlaceholder.innerHTML = `
+            <footer>
+                <div class="container">
+                    <div class="footer-grid">
+                        <div class="footer-brand">
+                            <a href="../index.html" class="logo">
+                                <img src="../assets/wtm_logo_gross.png" alt="WTM Management Consulting">
+                            </a>
+                            <p>Ihr Partner für wirksame Führung, lebendige Teams und gesunde Organisationen.</p>
+                            <div class="footer-social">
+                                <a href="https://www.facebook.com/wtm.mc" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" /></svg></a>
+                                <a href="https://www.linkedin.com/company/wtm-management-consulting" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" /></svg></a>
+                            </div>
+                        </div>
+                        <div class="footer-col">
+                            <h4>Links</h4>
+                            <ul class="footer-links">
+                                <li><a href="../index.html#trainings">Trainings</a></li>
+                                <li><a href="../index.html#angebote">Coaching</a></li>
+                                <li><a href="../index.html#kontakt">Kontakt</a></li>
+                                <li><a href="../impressum.html">Impressum</a></li>
+                                <li><a href="../datenschutz.html">Datenschutz</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-col">
+                            <h4>Kontakt</h4>
+                            <ul class="footer-links footer-contact">
+                                <li><a href="tel:+4923113722666">0231 / 137 22 666</a></li>
+                                <li><a href="mailto:kontakt@wtm-consulting.de">kontakt@wtm-consulting.de</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="footer-bottom">
+                         <div class="copyright">
+                            <p>&copy; 2026 WTM Management Consulting GmbH. Alle Rechte vorbehalten.</p>
+                        </div>
+                    </div>
+                </div>
+            </footer>`;
+        }
+    }
+
+    // Call injection on load
+    injectSharedComponents();
+
     console.log('WTM Corporate Website Loaded');
 });

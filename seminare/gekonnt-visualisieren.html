@@ -2,19 +2,21 @@
 <html lang="de">
 
 <head>
-    <meta charset="utf-8" />
-    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <link href="../assets/favicon.png" rel="icon" type="image/png" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gekonnt Visualisieren an Flipchart und Pinnwand – WTM Management Consulting</title>
-    <meta
-        content="Faszinieren Sie Ihr Publikum mit gut gestalteten Flipcharts – vermitteln Sie Fachwissen ohne ablenkende Elektronik, einfach und mitreißend."
-        name="description" />
-    <link href="https://fonts.googleapis.com" rel="preconnect" />
-    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <meta name="description"
+        content="Faszinieren Sie Ihr Publikum mit gut gestalteten Flipcharts – vermitteln Sie Fachwissen auf einfache, mitreißende Art und Weise ohne ablenkende Elektronik.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&amp;family=Source+Sans+Pro:wght@300;400;600;700&amp;display=swap"
-        rel="stylesheet" />
-    <link href="../styles/index.css" rel="stylesheet" />
+        href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Sans+Pro:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="../styles/index.css">
     <style>
         :root {
             /* Communication Theme - Gold */
@@ -22,6 +24,8 @@
             --seminar-accent-light: rgba(214, 172, 88, 0.1);
             --seminar-accent-glow: rgba(214, 172, 88, 0.3);
             --seminar-secondary: #fef3c7;
+            /* Pale Gold/Cream */
+
             --color-text: #3A3A38;
             --color-cream: #F5F5F3;
             --color-border: #E5E5E0;
@@ -38,6 +42,7 @@
             width: 0%;
         }
 
+        /* Hero Section - Communication Gold Vibe */
         .seminar-hero {
             min-height: 100vh;
             display: flex;
@@ -109,6 +114,16 @@
 
         .breadcrumb a {
             color: rgba(255, 255, 255, 0.6);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .breadcrumb a:hover {
+            color: var(--seminar-accent);
+        }
+
+        .breadcrumb-sep {
+            color: rgba(255, 255, 255, 0.3);
         }
 
         .category-badge {
@@ -126,6 +141,7 @@
         }
 
         .hero-title {
+            font-family: 'Libre Baskerville', serif;
             font-size: clamp(2.5rem, 5vw, 4rem);
             color: #fff;
             line-height: 1.1;
@@ -136,11 +152,12 @@
 
         .hero-title span {
             color: #d6ac58;
+            font-style: italic;
         }
 
         .hero-subtitle {
             font-size: 1.2rem;
-            color: rgba(255, 255, 255, 0.7);
+            color: rgba(255, 255, 255, 0.85);
             line-height: 1.8;
             max-width: 600px;
             margin-bottom: 2rem;
@@ -165,13 +182,13 @@
             background: rgba(255, 255, 255, 0.05);
             border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 8px;
-            color: rgba(255, 255, 255, 0.8);
+            color: rgba(255, 255, 255, 0.9);
             font-size: 0.9rem;
         }
 
         .meta-tag svg {
-            width: 16px;
-            height: 16px;
+            width: 18px;
+            height: 18px;
             stroke: #d6ac58;
         }
 
@@ -183,11 +200,13 @@
         }
 
         .btn-glow {
+            display: inline-block;
             background: #d6ac58;
             color: #2c2a1f;
             padding: 1rem 2rem;
             border-radius: 8px;
             font-weight: 600;
+            text-decoration: none;
             transition: all 0.3s;
         }
 
@@ -198,11 +217,13 @@
         }
 
         .btn-outline-light {
+            display: inline-block;
             padding: 1rem 2rem;
             border: 2px solid rgba(255, 255, 255, 0.3);
             border-radius: 8px;
             color: #fff;
             font-weight: 600;
+            text-decoration: none;
             transition: all 0.3s;
         }
 
@@ -223,7 +244,25 @@
             }
         }
 
-        /* Sections */
+        /* 8-Phase Sections */
+        .section-label {
+            color: var(--seminar-accent);
+            font-weight: 600;
+            font-size: 0.85rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+            display: inline-block;
+        }
+
+        .accent-line {
+            width: 60px;
+            height: 3px;
+            background: var(--seminar-accent);
+            margin: 1.5rem auto 0;
+        }
+
+        /* Intro / Nutzen & Wirkung */
         .intro-section {
             padding: 6rem 0;
             background: #fff;
@@ -235,37 +274,32 @@
             text-align: center;
         }
 
-        .section-label {
-            color: var(--seminar-accent);
-            font-weight: 600;
-            font-size: 0.85rem;
-            letter-spacing: 0.15em;
-            text-transform: uppercase;
-            margin-bottom: 1rem;
-            display: inline-block;
-        }
-
         .intro-text {
             font-size: 1.15rem;
             line-height: 1.9;
             color: var(--color-text);
         }
 
+        .highlight-box {
+            background: var(--seminar-secondary);
+            border-left: 4px solid var(--seminar-accent);
+            padding: 2rem;
+            margin: 2rem 0;
+            text-align: left;
+            border-radius: 0 12px 12px 0;
+        }
+
+        .highlight-box p {
+            font-size: 1.1rem;
+            font-style: italic;
+            color: #5a5a55;
+            margin: 0;
+        }
+
+        /* Goals / Transformation */
         .goals-section {
             padding: 6rem 0;
             background: #fff;
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 4rem;
-        }
-
-        .accent-line {
-            width: 60px;
-            height: 3px;
-            background: var(--seminar-accent);
-            margin: 1.5rem auto 0;
         }
 
         .goals-grid {
@@ -273,7 +307,7 @@
             grid-template-columns: repeat(2, 1fr);
             gap: 2rem;
             max-width: 1000px;
-            margin: 0 auto;
+            margin: 3rem auto 0;
         }
 
         .goal-card {
@@ -286,7 +320,7 @@
 
         .goal-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
             border-color: var(--seminar-accent);
         }
 
@@ -303,365 +337,175 @@
             margin-bottom: 1rem;
         }
 
-        .goal-text {
-            font-size: 1.05rem;
-            color: var(--color-text);
-            line-height: 1.7;
-            margin: 0;
-        }
-
-        .cta-section {
-            padding: 6rem 0 4rem;
-            background: var(--color-cream);
-        }
-
-        .cta-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2rem;
-        }
-
-        .target-card {
-            background: #fff;
-            border-radius: 20px;
-            padding: 3rem;
-        }
-
-        .cta-card {
-            background: var(--seminar-accent);
-            border-radius: 20px;
-            padding: 3rem;
-            color: #2c2a1f;
-        }
-
-        .cta-card h3 {
-            color: #2c2a1f;
-            font-size: 1.75rem;
-            margin-bottom: 1rem;
-        }
-
-        .cta-card p {
-            color: rgba(44, 42, 31, 0.9);
-            margin-bottom: 2rem;
-        }
-
-        .cta-card .btn-white {
-            background: #fff;
-            color: var(--seminar-accent);
-            padding: 1rem 2rem;
-            border-radius: 8px;
-            font-weight: 600;
-            transition: all 0.3s;
-        }
-
-        .cta-card .btn-white:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-        }
-
-        @media (max-width: 968px) {
-            .hero-content-wrapper {
-                text-align: center;
-            }
-
-            .hero-meta,
-            .hero-cta {
-                justify-content: center;
-            }
-
-            .goals-grid,
-            .cta-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        /* PREMIUM TIMELINE STYLES */
+        /* Timeline / Inhalt */
         .content-section {
             padding: 6rem 0;
             background: linear-gradient(180deg, #fffbf0 0%, #fff 100%);
-            position: relative;
         }
 
-        .content-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 1px;
-            height: 80px;
-            background: var(--seminar-accent);
-        }
-
-        .journey-container {
-            max-width: 900px;
+        .timeline-container {
+            max-width: 800px;
             margin: 0 auto;
             position: relative;
         }
 
-        .journey-line {
-            position: absolute;
-            left: 50%;
-            top: 0;
-            bottom: 0;
-            width: 4px;
-            background: linear-gradient(180deg,
-                    var(--seminar-accent) 0%,
-                    rgba(214, 172, 88, 0.6) 50%,
-                    rgba(214, 172, 88, 0.2) 100%);
-            transform: translateX(-50%);
-            border-radius: 4px;
-        }
-
-        .journey-line::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 0%;
-            background: linear-gradient(180deg,
-                    var(--accent-highlight) 0%,
-                    var(--seminar-accent) 100%);
-            border-radius: 4px;
-            transition: height 1.5s cubic-bezier(0.4, 0, 0.2, 1);
-            box-shadow: 0 0 20px rgba(214, 172, 88, 0.4);
-        }
-
-        .journey-line.animated::after {
-            height: 100%;
-        }
-
-        .journey-item {
+        .timeline-item {
             display: flex;
-            align-items: flex-start;
-            position: relative;
+            gap: 1.5rem;
             margin-bottom: 2rem;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease;
+        }
+
+        .timeline-item.visible {
             opacity: 1;
+            transform: translateY(0);
         }
 
-        .journey-item:nth-child(odd) {
-            flex-direction: row;
-        }
-
-        .journey-item:nth-child(even) {
-            flex-direction: row-reverse;
-        }
-
-        .journey-content {
-            width: calc(50% - 50px);
-            padding: 0 1.5rem;
-        }
-
-        .journey-node {
-            position: absolute;
-            left: 50%;
-            top: 20px;
-            transform: translateX(-50%);
-            z-index: 10;
-        }
-
-        .node-dot {
-            width: 24px;
-            height: 24px;
-            background: var(--seminar-accent);
+        .timeline-marker {
+            flex-shrink: 0;
+            width: 50px;
+            height: 50px;
+            background: #fff;
+            border: 2px solid var(--seminar-accent);
             border-radius: 50%;
-            position: relative;
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow:
-                0 0 0 4px #fff,
-                0 0 0 6px var(--seminar-accent),
-                0 0 30px rgba(214, 172, 88, 0.4);
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .node-dot::before {
-            content: '';
-            width: 8px;
-            height: 8px;
-            background: #fff;
-            border-radius: 50%;
-            transition: transform 0.3s ease, opacity 0.3s ease;
-        }
-
-        .journey-item:hover .node-dot::before {
-            animation: node-pulse 1s infinite ease-in-out;
-        }
-
-        @keyframes node-pulse {
-
-            0%,
-            100% {
-                transform: scale(1);
-                opacity: 1;
-            }
-
-            50% {
-                transform: scale(0.6);
-                opacity: 0.6;
-            }
-        }
-
-        .node-ring {
-            position: absolute;
-            inset: -8px;
-            border: 2px solid var(--seminar-accent);
-            border-radius: 50%;
-            opacity: 0;
-            transform: scale(0.8);
-            transition: opacity 0.3s ease, transform 0.3s ease;
-        }
-
-        .journey-item:hover .node-ring {
-            animation: ring-expand 1.5s infinite ease-out;
-        }
-
-        @keyframes ring-expand {
-            0% {
-                transform: scale(0.8);
-                opacity: 0.8;
-            }
-
-            100% {
-                transform: scale(1.8);
-                opacity: 0;
-            }
-        }
-
-        .node-connector {
-            position: absolute;
-            top: 50%;
-            width: 42px;
-            height: 2px;
-            background: var(--seminar-accent);
-            transform: translateY(-50%);
-        }
-
-        .journey-item:nth-child(odd) .node-connector {
-            right: 100%;
-            margin-right: 3px;
-        }
-
-        .journey-item:nth-child(even) .node-connector {
-            left: 100%;
-            margin-left: 3px;
-        }
-
-        .journey-card {
-            background: #fff;
-            border-radius: 16px;
-            padding: 1.75rem 2rem;
+            font-weight: 700;
+            color: var(--seminar-accent);
             position: relative;
-            border: 1px solid rgba(214, 172, 88, 0.15);
-            box-shadow:
-                0 4px 20px rgba(0, 0, 0, 0.04),
-                0 1px 3px rgba(0, 0, 0, 0.02);
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            z-index: 2;
+        }
+
+        .timeline-content {
+            background: #fff;
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            border: 1px solid rgba(214, 172, 88, 0.2);
+            flex-grow: 1;
+        }
+
+        .timeline-title {
+            color: var(--seminar-accent);
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        /* Anlässe Grid */
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            max-width: 1100px;
+            margin: 3rem auto 0;
+        }
+
+        .trigger-card {
+            background: var(--color-cream);
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .trigger-icon {
+            width: 50px;
+            height: 50px;
+            margin: 0 auto 1rem;
+            color: var(--seminar-accent);
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 6rem 0;
+            background: var(--color-cream);
+        }
+
+        .cta-box {
+            background: var(--seminar-accent);
+            border-radius: 20px;
+            padding: 4rem 2rem;
+            text-align: center;
+            color: #2c2a1f;
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
             overflow: hidden;
         }
 
-        .journey-card::before {
-            content: '';
+        .cta-pattern {
             position: absolute;
             top: 0;
             left: 0;
             right: 0;
-            height: 3px;
-            background: var(--seminar-accent);
-            transform: scaleX(0);
-            transform-origin: left;
-            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            bottom: 0;
+            opacity: 0.1;
+            background-image: repeating-linear-gradient(45deg, #000 0, #000 1px, transparent 0, transparent 50%);
+            background-size: 10px 10px;
         }
 
-        .journey-item:hover .journey-card {
-            transform: translateY(-5px);
-            border-color: var(--seminar-accent);
-            box-shadow:
-                0 20px 50px rgba(214, 172, 88, 0.12),
-                0 8px 20px rgba(0, 0, 0, 0.06);
+        .cta-content-inner {
+            position: relative;
+            z-index: 2;
         }
 
-        .journey-item:hover .journey-card::before {
-            transform: scaleX(1);
-        }
-
-        .module-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.4rem 0.8rem;
-            background: var(--seminar-accent-light);
-            border-radius: 20px;
-            margin-bottom: 0.75rem;
-        }
-
-        .module-number {
-            font-size: 0.7rem;
-            font-weight: 700;
+        .btn-white {
+            background: #fff;
             color: var(--seminar-accent);
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
+            padding: 1rem 2.5rem;
+            border-radius: 8px;
+            font-weight: 700;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 2rem;
+            transition: all 0.3s;
         }
 
-        .journey-title {
-            font-size: 1.15rem;
-            font-weight: 600;
-            color: var(--color-text);
-            margin: 0;
-            line-height: 1.4;
+        .btn-white:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
         }
 
-        .journey-card p {
-            margin: 0.75rem 0 0;
-            font-size: 0.95rem;
-            color: #666;
-            line-height: 1.6;
-        }
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
 
-        /* Highlight questions */
-        .highlight-box {
-            background: var(--seminar-secondary);
-            border-left: 4px solid var(--seminar-accent);
-            padding: 1.5rem 2rem;
-            border-radius: 0 12px 12px 0;
-            margin: 2rem auto;
-            max-width: 700px;
-        }
+            .goals-grid,
+            .grid-3 {
+                grid-template-columns: 1fr;
+            }
 
-        .highlight-box p {
-            margin: 0;
-            font-style: italic;
-            color: var(--color-text);
-            line-height: 1.8;
+            .hero-cta {
+                flex-direction: column;
+            }
+
+            .timeline-item {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            .timeline-marker {
+                width: 40px;
+                height: 40px;
+                font-size: 0.9rem;
+                align-self: flex-start;
+            }
         }
     </style>
 </head>
 
 <body>
-    <div class="scroll-progress" id="scrollProgress"></div>
-    <header id="header">
-        <div class="container">
-            <nav>
-                <a class="logo" href="../index"><img alt="WTM" src="../assets/wtm_logo_gross.png" /></a>
-                <div class="menu-toggle" id="mobile-menu">
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                </div>
-                <ul class="nav-links">
-                    <li><a class="nav-link" href="../index#haltung">Haltung</a></li>
-                    <li><a class="nav-link" href="../index#angebote">Angebote</a></li>
-                    <li><a class="nav-link" href="../index#trainings">Trainings</a></li>
-                    <li><a class="nav-link" href="../index#team">Team</a></li>
-                    <li><a class="nav-link" href="../index#kontakt">Kontakt</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
 
-    <!-- Hero Section -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <!-- Navigation -->
+    <div id="nav-placeholder"></div>
+
+    <!-- Phase 1: Hero -->
     <section class="seminar-hero">
         <div class="hero-gradient-orb orb-1"></div>
         <div class="hero-gradient-orb orb-2"></div>
@@ -669,411 +513,338 @@
             <div class="hero-content-wrapper">
                 <div class="hero-text">
                     <div class="breadcrumb">
-                        <a href="../index">Startseite</a>
+                        <a href="../index.html">Startseite</a>
                         <span class="breadcrumb-sep">→</span>
-                        <a href="../index#trainings">Seminare</a>
+                        <a href="../index.html#trainings">Seminare</a>
                         <span class="breadcrumb-sep">→</span>
                         <span>Gekonnt Visualisieren</span>
                     </div>
+
                     <div class="category-badge">🎨 Kommunikation</div>
+
                     <h1 class="hero-title">Gekonnt Visualisieren <span>an Flipchart und Pinnwand</span></h1>
-                    <p class="hero-subtitle">Faszinieren Sie Ihr Publikum mit gut gestalteten Flipcharts – vermitteln
-                        Sie Fachwissen auf einfache, mitreißende Art und Weise ohne ablenkende Elektronik.</p>
+
+                    <p class="hero-subtitle">
+                        Faszinieren Sie Ihr Publikum mit gut gestalteten Flipcharts oder vermitteln Sie Ihr Fachwissen
+                        auf einfache, mitreißende Art und Weise ohne ablenkende Elektronik.
+                    </p>
+
                     <div class="hero-meta">
                         <span class="meta-tag">
-                            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                                <rect height="18" rx="2" ry="2" width="18" x="3" y="4"></rect>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <polyline points="12 6 12 12 16 14"></polyline>
                             </svg>
                             1-2 Tage
                         </span>
                         <span class="meta-tag">
-                            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                                <circle cx="12" cy="12" r="10"></circle>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+                                <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
                             </svg>
                             Praxis-Workshop
                         </span>
                         <span class="meta-tag">
-                            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-                                <circle cx="9" cy="7" r="4"></circle>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 20h9"></path>
+                                <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path>
                             </svg>
                             Kein Zeichentalent nötig
                         </span>
                     </div>
+
                     <div class="hero-cta">
-                        <a class="btn-glow" href="../index#kontakt">Unverbindlich anfragen →</a>
-                        <a class="btn-outline-light" href="#konzept">Konzept erhalten</a>
+                        <a href="#kontakt" class="btn-glow">Unverbindlich anfragen</a>
+                        <a href="#inhalt" class="btn-outline-light">Inhalte ansehen</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Intro Section with provocative questions -->
-    <section class="intro-section" style="background-color: #fffbf0;">
+    <!-- Phase 2: Nutzen & Wirkung (Ziele) -->
+    <section class="intro-section" id="intro">
         <div class="container">
             <div class="intro-content">
-                <span class="section-label">Der Auslöser</span>
-                <h2>Kennen Sie das?</h2>
-                <div class="highlight-box">
-                    <p>Kennen und fürchten Sie Präsentationen mit dreistelliger Folienzahl? Kennen und fürchten Sie
-                        Präsentatoren, die genau das ablesen, was Sie auf der Folie sowieso schon sehen?</p>
-                </div>
-                <p class="intro-text" style="margin-top: 1.5rem;">Machen Sie es besser und ziehen Sie die Konzentration
-                    Ihrer Zuhörer auf das Wichtigste, das es gerade gibt: auf Sie! Faszinieren Sie mit gut gestalteten
-                    Flipcharts Ihr Publikum oder vermitteln Sie Ihr Fachwissen auf einfache, mitreißende Art und Weise
-                    ohne ablenkende Elektronik.</p>
-            </div>
-        </div>
-    </section>
+                <span class="section-label">Warum dieses Seminar?</span>
+                <h2 style="font-size: 2.5rem; margin-bottom: 2rem;">Weg von Folien-Wüsten, hin zum lebendigen Dialog
+                </h2>
 
-    <!-- Nutzen & Wirkung -->
-    <section class="goals-section" id="nutzen">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-label">Ihre Ziele</span>
-                <h2>Nach dem Training...</h2>
-                <div class="accent-line"></div>
+                <div class="highlight-box">
+                    <p>
+                        "Kennen und fürchten Sie Präsentationen mit dreistelliger Folienzahl? Kennen und fürchten Sie
+                        Präsentatoren, die genau das ablesen, was Sie auf der Folie sowieso schon sehen?"
+                    </p>
+                </div>
+
+                <p class="intro-text">
+                    Machen Sie es besser und ziehen Sie die Konzentration Ihrer Zuhörer auf das Wichtigste, das es
+                    gerade gibt: auf Sie! Faszinieren Sie mit gut gestalteten Flipcharts Ihr Publikum.
+                </p>
             </div>
+
             <div class="goals-grid">
                 <div class="goal-card">
                     <div class="goal-number">1</div>
-                    <p class="goal-text">Kennen alles Wissenswerte über Moderationsmarker und andere Materialien</p>
+                    <h3>Material & Technik</h3>
+                    <p>Sie kennen alles Wissenswerte über Moderationsmarker und andere Materialien für professionelle
+                        Ergebnisse.</p>
                 </div>
                 <div class="goal-card">
                     <div class="goal-number">2</div>
-                    <p class="goal-text">Nutzen ein einfaches Aufteilen und Gestalten von Flipcharts</p>
+                    <h3>Layout & Schrift</h3>
+                    <p>Sie nutzen einfaches Aufteilen und Gestalten von Flipcharts und erlernen die leserliche
+                        „offizielle“ Moderationsschrift.</p>
                 </div>
                 <div class="goal-card">
                     <div class="goal-number">3</div>
-                    <p class="goal-text">Erlernen die „offizielle" Moderationsschrift</p>
+                    <h3>Einfache Visualisierung</h3>
+                    <p>Sie können mit einfachen Grundformen beeindruckende Charts erstellen und verschiedene Personen
+                        einfach und flexibel malen.</p>
                 </div>
                 <div class="goal-card">
                     <div class="goal-number">4</div>
-                    <p class="goal-text">Können mit einfachen Grundformen beeindruckende Charts erstellen</p>
-                </div>
-                <div class="goal-card">
-                    <div class="goal-number">5</div>
-                    <p class="goal-text">Malen verschiedene Personen – einfach und flexibel</p>
-                </div>
-                <div class="goal-card">
-                    <div class="goal-number">6</div>
-                    <p class="goal-text">Sind in der Lage einfache, aber hochwirksame visuelle Effekte zu erzeugen</p>
+                    <h3>Visuelle Effekte</h3>
+                    <p>Sie sind in der Lage, einfache, aber hochwirksame visuelle Effekte (wie Schattierungen) zu
+                        erzeugen.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Inhalte Timeline -->
-    <section class="content-section" id="konzept">
+    <!-- Phase 3: Nach dem Training (Nutzen) -->
+    <section class="goals-section" style="background-color: #fffbf0;">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Ihr Vorteil</span>
+                <h2>Das nehmen Sie mit</h2>
+                <div class="accent-line"></div>
+            </div>
+            <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+                <p class="intro-text">
+                    Schnell und einfach können Sie optisch ansprechende Flipcharts erstellen, mit denen Sie in
+                    Präsentationen, Trainings, Verkaufsgesprächen u.v.m. punkten. Dadurch erhalten Sie nicht nur
+                    Bewunderung für Ihr Talent, sondern zeigen Ihre Fachkenntnis auf zusätzliche Weise und vermitteln
+                    nachhaltig Lernstoff.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Phase 4: Inhalte -->
+    <section class="content-section" id="inhalt">
         <div class="container">
             <div class="section-header">
                 <span class="section-label">Der Inhalt</span>
                 <h2>Themenübersicht</h2>
                 <div class="accent-line"></div>
             </div>
-            <div class="journey-container">
-                <div class="journey-line" id="journeyLine"></div>
 
-                <div class="journey-item">
-                    <div class="journey-node">
-                        <div class="node-dot">
-                            <div class="node-ring"></div>
-                        </div>
-                        <div class="node-connector"></div>
-                    </div>
-                    <div class="journey-content">
-                        <div class="journey-card">
-                            <div class="module-badge">
-                                <span class="module-number">Modul 01</span>
-                            </div>
-                            <h3 class="journey-title">Grundaufteilungen von Flipcharts</h3>
-                            <p>Strukturen und Layouts, die sofort professionell wirken.</p>
-                        </div>
+            <div class="timeline-container">
+                <!-- Module 1 -->
+                <div class="timeline-item">
+                    <div class="timeline-marker">01</div>
+                    <div class="timeline-content">
+                        <span class="timeline-title">Grundlagen</span>
+                        <p>Grundaufteilungen von Flipcharts und das nötige Handwerkszeug für den Visualisierer.</p>
                     </div>
                 </div>
 
-                <div class="journey-item">
-                    <div class="journey-node">
-                        <div class="node-dot">
-                            <div class="node-ring"></div>
-                        </div>
-                        <div class="node-connector"></div>
-                    </div>
-                    <div class="journey-content">
-                        <div class="journey-card">
-                            <div class="module-badge">
-                                <span class="module-number">Modul 02</span>
-                            </div>
-                            <h3 class="journey-title">Handwerkszeug für den Visualisierer</h3>
-                            <p>Marker, Papiere und Materialien richtig einsetzen.</p>
-                        </div>
+                <!-- Module 2 -->
+                <div class="timeline-item">
+                    <div class="timeline-marker">02</div>
+                    <div class="timeline-content">
+                        <span class="timeline-title">Farben & Wirkung</span>
+                        <p>Wie Farben wirken und wie Sie sie gezielt einsetzen, um Aufmerksamkeit zu lenken.</p>
                     </div>
                 </div>
 
-                <div class="journey-item">
-                    <div class="journey-node">
-                        <div class="node-dot">
-                            <div class="node-ring"></div>
-                        </div>
-                        <div class="node-connector"></div>
-                    </div>
-                    <div class="journey-content">
-                        <div class="journey-card">
-                            <div class="module-badge">
-                                <span class="module-number">Modul 03</span>
-                            </div>
-                            <h3 class="journey-title">Farben und ihre Wirkung</h3>
-                            <p>Psychologische Wirkung von Farben gezielt nutzen.</p>
-                        </div>
+                <!-- Module 3 -->
+                <div class="timeline-item">
+                    <div class="timeline-marker">03</div>
+                    <div class="timeline-content">
+                        <span class="timeline-title">Formen & Symbole</span>
+                        <p>Von einfachen Grundformen zu wirkungsvollen Elementen. Ideogramme und ihre Nutzung.</p>
                     </div>
                 </div>
 
-                <div class="journey-item">
-                    <div class="journey-node">
-                        <div class="node-dot">
-                            <div class="node-ring"></div>
-                        </div>
-                        <div class="node-connector"></div>
-                    </div>
-                    <div class="journey-content">
-                        <div class="journey-card">
-                            <div class="module-badge">
-                                <span class="module-number">Modul 04</span>
-                            </div>
-                            <h3 class="journey-title">Von Grundformen zu wirkungsvollen Elementen</h3>
-                            <p>Aus Kreisen, Quadraten und Linien aussagekräftige Visualisierungen bauen.</p>
-                        </div>
+                <!-- Module 4 -->
+                <div class="timeline-item">
+                    <div class="timeline-marker">04</div>
+                    <div class="timeline-content">
+                        <span class="timeline-title">Effekte</span>
+                        <p>Schattierungen – einfach und genial. So verleihen Sie Ihren Charts Tiefe.</p>
                     </div>
                 </div>
 
-                <div class="journey-item">
-                    <div class="journey-node">
-                        <div class="node-dot">
-                            <div class="node-ring"></div>
-                        </div>
-                        <div class="node-connector"></div>
-                    </div>
-                    <div class="journey-content">
-                        <div class="journey-card">
-                            <div class="module-badge">
-                                <span class="module-number">Modul 05</span>
-                            </div>
-                            <h3 class="journey-title">Ideogramme und ihre Nutzung</h3>
-                            <p>Symbole und Icons, die sofort verstanden werden.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="journey-item">
-                    <div class="journey-node">
-                        <div class="node-dot">
-                            <div class="node-ring"></div>
-                        </div>
-                        <div class="node-connector"></div>
-                    </div>
-                    <div class="journey-content">
-                        <div class="journey-card">
-                            <div class="module-badge">
-                                <span class="module-number">Modul 06</span>
-                            </div>
-                            <h3 class="journey-title">Schattierungen – einfach und genial</h3>
-                            <p>Tiefe und Dimension mit wenigen Strichen erzeugen.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="journey-item">
-                    <div class="journey-node">
-                        <div class="node-dot">
-                            <div class="node-ring"></div>
-                        </div>
-                        <div class="node-connector"></div>
-                    </div>
-                    <div class="journey-content">
-                        <div class="journey-card">
-                            <div class="module-badge">
-                                <span class="module-number">Modul 07</span>
-                            </div>
-                            <h3 class="journey-title">Eine leserliche Moderationsschrift erwerben</h3>
-                            <p>Die „offizielle" Schrift für Flipcharts üben und anwenden.</p>
-                        </div>
+                <!-- Module 5 -->
+                <div class="timeline-item">
+                    <div class="timeline-marker">05</div>
+                    <div class="timeline-content">
+                        <span class="timeline-title">Schrift</span>
+                        <p>Eine leserliche und professionelle Moderationsschrift erwerben und sicher anwenden.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Praxis & Transfer -->
+    <!-- Phase 5: Praxis & Transfer -->
     <section class="intro-section">
-        <div class="container">
-            <div class="intro-content">
-                <span class="section-label">Nutzen</span>
-                <h2>Ihr Mehrwert</h2>
-                <p class="intro-text">Schnell und einfach können Sie optisch ansprechende Flipcharts erstellen, mit
-                    denen Sie in Präsentationen, Trainings, Verkaufsgesprächen u.v.m. punkten. Dadurch erhalten Sie
-                    nicht nur Bewunderung für Ihr Talent, sondern zeigen Ihre Fachkenntnis auf zusätzliche Weise und
-                    vermitteln nachhaltig Lernstoff.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Typische Anlässe -->
-    <section class="goals-section" style="background-color: #f8f9fa;">
         <div class="container">
             <div class="section-header">
-                <span class="section-label">Zielgruppe</span>
-                <h2">Für wen ist das Training?</h2>
-                    <div class="accent-line"></div>
+                <span class="section-label">Methodik</span>
+                <h2>Praxis statt Theorie</h2>
+                <div class="accent-line"></div>
             </div>
-            <div class="goals-grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));">
-                <div class="goal-card">
-                    <p class="goal-text">Alle, die viel vor anderen präsentieren oder Wissen vermitteln und die das
-                        erfrischend anders machen möchten.</p>
-                </div>
-                <div class="goal-card">
-                    <p class="goal-text">Neugier und Interesse reichen aus – Sie brauchen <strong>kein
-                            Zeichentalent</strong> zu haben!</p>
-                </div>
-                <div class="goal-card">
-                    <p class="goal-text">Trainer, Moderatoren, Coaches, Projektleiter und Führungskräfte, die Meetings
-                        visuell bereichern wollen.</p>
+            <div class="intro-content">
+                <p class="intro-text">
+                    Dies ist ein reiner Praxis-Workshop. Wir arbeiten fast ausschließlich am Flipchart und an der
+                    Pinnwand. Sie probieren Techniken direkt aus, erhalten sofortiges Feedback und entwickeln Ihren
+                    eigenen Stil. Neugier und Interesse reichen aus – Sie brauchen <b>kein Zeichentalent</b> zu haben!
+                </p>
+                <div style="margin-top: 2rem;">
+                    <div
+                        style="background: var(--seminar-accent-light); padding: 1.5rem; border-radius: 8px; display: inline-block;">
+                        <strong>Hinweis:</strong> Wir stellen professionelles Material zur Verfügung.
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Wirkung nach 4 Wochen -->
+    <!-- Phase 6: Typische Anlässe -->
+    <section class="goals-section" style="background-color: var(--color-cream);">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Zielgruppe & Anlässe</span>
+                <h2>Wann ist dieses Seminar richtig für Sie?</h2>
+                <div class="accent-line"></div>
+            </div>
+
+            <div class="grid-3">
+                <div class="trigger-card">
+                    <div class="trigger-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="9" cy="7" r="4"></circle>
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                        </svg>
+                    </div>
+                    <h4>Für Präsentatoren</h4>
+                    <p>Sie präsentieren häufig vor Gruppen und möchten sich von der Masse der PowerPoint-Schlachten
+                        abheben.</p>
+                </div>
+                <div class="trigger-card">
+                    <div class="trigger-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+                            <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+                        </svg>
+                    </div>
+                    <h4>Für Trainer & Coaches</h4>
+                    <p>Sie möchten Inhalte flexibel entwickeln und visuell verankern, um nachhaltiges Lernen zu
+                        ermöglichen.</p>
+                </div>
+                <div class="trigger-card">
+                    <div class="trigger-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polygon
+                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                            </polygon>
+                        </svg>
+                    </div>
+                    <h4>Für den "Wow"-Effekt</h4>
+                    <p>Sie möchten Bewunderung für Ihre Darstellung ernten, ohne Künstler sein zu müssen.</p>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 3rem;">
+                <p><strong>Zielgruppe:</strong> Alle, die viel vor anderen präsentieren oder Wissen vermitteln und die
+                    das erfrischend anders machen möchten.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Phase 7: Wirkung nach 4 Wochen -->
     <section class="intro-section">
         <div class="container">
-            <div class="intro-content">
+            <div class="section-header">
                 <span class="section-label">Nachhaltigkeit</span>
                 <h2>Wirkung nach 4 Wochen</h2>
-                <p class="intro-text">Sie visualisieren überzeugend und unterstützen Ihre Inhalte visuell.
-                    Präsentationen werden einprägsamer, Workshops interaktiver und Ihre Botschaften bleiben nachhaltig
-                    im Gedächtnis Ihrer Teilnehmer.</p>
+                <div class="accent-line"></div>
             </div>
-        </div>
-    </section>
-
-    <!-- Hinweis zur Anpassung -->
-    <section class="intro-section" style="background-color: #fffbf0;">
-        <div class="container">
             <div class="intro-content">
-                <div class="highlight-box">
-                    <p>Selbstverständlich ist dies nur ein Vorschlag. Gerne können wir dieses Menü nach Ihren
-                        Vorschlägen abändern! Preis, Methode und Dauer werden deshalb gemeinsam mit Ihnen in der
-                        Auftrags- und Zielklärung festgelegt.</p>
-                </div>
+                <ul style="text-align: left; list-style: none; padding: 0; max-width: 600px; margin: 0 auto;">
+                    <li style="margin-bottom: 1rem; padding-left: 2rem; position: relative;">
+                        <span
+                            style="position: absolute; left: 0; color: var(--seminar-accent); font-weight: bold;">✓</span>
+                        Sie greifen in Ihren Meetings selbstverständlich zum Stift und visualisieren Ergebnisse live.
+                    </li>
+                    <li style="margin-bottom: 1rem; padding-left: 2rem; position: relative;">
+                        <span
+                            style="position: absolute; left: 0; color: var(--seminar-accent); font-weight: bold;">✓</span>
+                        Ihre Vorbereitung für Präsentationen hat sich verändert: Sie skizzieren Ideen, statt Folien zu
+                        bauen.
+                    </li>
+                    <li style="margin-bottom: 1rem; padding-left: 2rem; position: relative;">
+                        <span
+                            style="position: absolute; left: 0; color: var(--seminar-accent); font-weight: bold;">✓</span>
+                        Sie erhalten positives Feedback von Kollegen und Kunden für die Klarheit Ihrer Darstellungen.
+                    </li>
+                </ul>
             </div>
         </div>
     </section>
 
-    <!-- CTA Section -->
-    <section class="cta-section">
+    <!-- Phase 8: Footer CTA -->
+    <section class="cta-section" id="kontakt">
         <div class="container">
-            <div class="cta-grid">
-                <div class="target-card">
-                    <span class="section-label">Maßgeschneidert</span>
-                    <h3>Inhouse-Lösung?</h3>
-                    <p>Trainer, Moderatoren und alle, die häufig präsentieren – wir passen das Training exakt an Ihre
-                        Bedürfnisse an.</p>
-                </div>
-                <div class="cta-card">
-                    <h3>Kontakt aufnehmen</h3>
-                    <p>Lassen Sie uns über Ihren Bedarf sprechen.</p>
-                    <a class="btn-white" href="../index#kontakt">Unverbindlich anfragen →</a>
+            <div class="cta-box">
+                <div class="cta-pattern"></div>
+                <div class="cta-content-inner">
+                    <h2 style="color: #2c2a1f; margin-bottom: 1.5rem;">Lust auf Visualisierung?</h2>
+                    <p
+                        style="font-size: 1.2rem; margin-bottom: 2rem; max-width: 700px; margin-left: auto; margin-right: auto;">
+                        Selbstverständlich ist dies nur ein Vorschlag. Gerne können wir dieses Menü nach Ihren
+                        Vorschlägen abändern! Preis, Methode und Dauer werden deshalb gemeinsam mit Ihnen festgelegt.
+                    </p>
+                    <a href="mailto:info@wtm-consulting.de?subject=Anfrage%20Visualisierung%20Seminar"
+                        class="btn-white">Kontakt aufnehmen</a>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-brand reveal stagger-1">
-                    <a class="logo" href="../index">
-                        <img alt="WTM Management Consulting" src="../assets/logo.png" />
-                    </a>
-                    <p>Ihr Partner für wirksame Führung, lebendige Teams und gesunde Organisationen. Seit über 25 Jahren
-                        begleiten wir Menschen und Unternehmen in Veränderungsprozessen.</p>
-                    <div class="footer-social">
-                        <a aria-label="Facebook" href="https://www.facebook.com/wtm.mc" rel="noopener" target="_blank">
-                            <svg fill="currentColor" viewbox="0 0 24 24">
-                                <path
-                                    d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z">
-                                </path>
-                            </svg>
-                        </a>
-                        <a aria-label="Twitter" href="https://twitter.com/WTM_Consulting" rel="noopener"
-                            target="_blank">
-                            <svg fill="currentColor" viewbox="0 0 24 24">
-                                <path
-                                    d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z">
-                                </path>
-                            </svg>
-                        </a>
-                        <a aria-label="LinkedIn" href="https://www.linkedin.com/company/wtm-management-consulting"
-                            rel="noopener" target="_blank">
-                            <svg fill="currentColor" viewbox="0 0 24 24">
-                                <path
-                                    d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z">
-                                </path>
-                            </svg>
-                        </a>
-                        <a aria-label="YouTube" href="https://www.youtube.com/channel/UC4rGdW9ApMpjFxbosjRshQg"
-                            rel="noopener" target="_blank">
-                            <svg fill="currentColor" viewbox="0 0 24 24">
-                                <path
-                                    d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z">
-                                </path>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-                <div class="footer-col reveal stagger-2">
-                    <h4>Angebote</h4>
-                    <ul class="footer-links">
-                        <li><a href="../index#trainings">Trainings &amp; Seminare</a></li>
-                        <li><a href="../index#angebote">Coaching &amp; Beratung</a></li>
-                        <li><a href="../index#team">Unser Team</a></li>
-                        <li><a href="../index#unternehmen">Über Uns</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col reveal stagger-3">
-                    <h4>Kontakt</h4>
-                    <ul class="footer-links footer-contact">
-                        <li>Neuer Graben 61</li>
-                        <li>44139 Dortmund</li>
-                        <li>
-                            <a href="tel:+4923113722666">
-                                <span>Tel:</span> 0231 / 137 22 666
-                            </a>
-                        </li>
-                        <li>
-                            <a href="mailto:kontakt@wtm-consulting.de">
-                                <span>Mail:</span> kontakt@wtm-consulting.de
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="footer-col reveal stagger-4">
-                    <h4>Rechtliches</h4>
-                    <ul class="footer-links">
-                        <li><a href="../impressum">Impressum</a></li>
-                        <li><a href="../datenschutz">Datenschutz</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom reveal stagger-4">
-                <div class="copyright">
-                    <p>© 2026 WTM Management Consulting GmbH. Alle Rechte vorbehalten.</p>
-                </div>
-            </div>
-        </div>
-    </footer>
+    <div id="footer-placeholder"></div>
 
+    <!-- Scripts -->
+    <script>
+        // Scroll Progress
+        window.onscroll = function () {
+            let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            let scrolled = (winScroll / height) * 100;
+            document.getElementById("scrollProgress").style.width = scrolled + "%";
+
+            // Reveal timeline items
+            document.querySelectorAll('.timeline-item').forEach(item => {
+                if (item.getBoundingClientRect().top < window.innerHeight * 0.8) {
+                    item.classList.add('visible');
+                }
+            });
+        };
+
+        // Mobile Menu
+        const mobileMenuBtn = document.getElementById('mobile-menu');
+        const navLinks = document.querySelector('.nav-links');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            mobileMenuBtn.classList.toggle('active');
+        });
+    </script>
     <script src="../js/main.js"></script>
 </body>
 

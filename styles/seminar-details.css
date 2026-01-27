@@ -1,0 +1,488 @@
+/* 
+   SEMINAR DETAILS SHARED STYLES 
+   Based on "Premium" Layout 
+*/
+
+/* PROGRESS BAR */
+.scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 3px;
+    background: var(--seminar-accent);
+    z-index: 9999;
+    width: 0%;
+}
+
+/* 1. HERO SECTION */
+.seminar-hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(145deg, #0f172a 0%, #1a2a3a 100%);
+    position: relative;
+    overflow: hidden;
+    padding: 120px 0 80px;
+}
+
+.hero-gradient-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.3;
+    animation: pulse-orb 8s infinite ease-in-out;
+}
+
+.orb-1 {
+    width: 400px;
+    height: 400px;
+    background: #9ca3af;
+    top: -100px;
+    right: -100px;
+}
+
+.orb-2 {
+    width: 300px;
+    height: 300px;
+    background: var(--seminar-accent);
+    bottom: -50px;
+    left: -50px;
+    animation-delay: 4s;
+}
+
+@keyframes pulse-orb {
+
+    0%,
+    100% {
+        transform: scale(1);
+        opacity: 0.2;
+    }
+
+    50% {
+        transform: scale(1.2);
+        opacity: 0.4;
+    }
+}
+
+.hero-content-wrapper {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+}
+
+.hero-text {
+    color: #fff;
+}
+
+.breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+    opacity: 0;
+    animation: fadeSlideUp 0.6s ease forwards;
+}
+
+.breadcrumb a {
+    color: rgba(255, 255, 255, 0.6);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.breadcrumb a:hover {
+    color: #fff;
+}
+
+.category-badge {
+    display: inline-flex;
+    padding: 0.5rem 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50px;
+    color: #fff;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    opacity: 0;
+    animation: fadeSlideUp 0.6s ease 0.1s forwards;
+}
+
+.hero-title {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    color: #fff;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    opacity: 0;
+    animation: fadeSlideUp 0.8s ease 0.2s forwards;
+}
+
+.hero-title span {
+    color: #9ca3af;
+}
+
+.hero-subtitle {
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.8;
+    max-width: 600px;
+    margin-bottom: 2rem;
+    opacity: 0;
+    animation: fadeSlideUp 0.8s ease 0.3s forwards;
+}
+
+.hero-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    opacity: 0;
+    animation: fadeSlideUp 0.8s ease 0.4s forwards;
+}
+
+.meta-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.6rem 1rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.9rem;
+}
+
+.meta-tag svg {
+    width: 16px;
+    height: 16px;
+    stroke: #9ca3af;
+}
+
+.hero-cta {
+    display: flex;
+    gap: 1rem;
+    opacity: 0;
+    animation: fadeSlideUp 0.8s ease 0.5s forwards;
+}
+
+.btn-glow {
+    background: #fff;
+    color: var(--seminar-accent);
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.3s;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-glow:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 40px rgba(255, 255, 255, 0.2);
+}
+
+.btn-outline-light {
+    padding: 1rem 2rem;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+    color: #fff;
+    font-weight: 600;
+    transition: all 0.3s;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-outline-light:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+@keyframes fadeSlideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* SECTION STYLES */
+.section-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.section-label {
+    color: var(--seminar-accent);
+    font-weight: 600;
+    font-size: 0.85rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    display: inline-block;
+}
+
+.accent-line {
+    width: 60px;
+    height: 3px;
+    background: var(--seminar-accent);
+    margin: 1.5rem auto 0;
+}
+
+.goals-section,
+.intro-section,
+.content-section,
+.transfer-section,
+.trigger-section,
+.impact-section {
+    padding: 6rem 0;
+}
+
+.goals-section {
+    background: #fff;
+}
+
+.intro-section {
+    background: var(--color-cream, #F5F5F3);
+}
+
+.goals-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.goal-card {
+    background: #fff;
+    border: 1px solid var(--color-border, #E5E5E0);
+    border-radius: 16px;
+    padding: 2rem;
+    transition: all 0.4s;
+}
+
+.goal-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    border-color: var(--seminar-accent);
+}
+
+.goal-number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: var(--seminar-accent-light, rgba(93, 138, 168, 0.1));
+    color: var(--seminar-accent);
+    border-radius: 10px;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.goal-text {
+    font-size: 1.05rem;
+    color: var(--color-text, #3A3A38);
+    line-height: 1.7;
+    margin: 0;
+}
+
+.check-list li {
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: start;
+}
+
+.check-list li span:first-child {
+    color: var(--seminar-accent);
+    margin-right: 12px;
+    font-weight: bold;
+}
+
+/* JOURNEY/TIMELINE STYLES */
+.journey-container {
+    max-width: 900px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.journey-line {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: linear-gradient(180deg, var(--seminar-accent) 0%, rgba(93, 138, 168, 0.2) 100%);
+    transform: translateX(-50%);
+    border-radius: 4px;
+}
+
+.journey-item {
+    display: flex;
+    align-items: flex-start;
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+.journey-item:nth-child(odd) {
+    flex-direction: row;
+}
+
+.journey-item:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+.journey-content {
+    width: calc(50% - 40px);
+}
+
+.journey-node {
+    position: absolute;
+    left: 50%;
+    top: 20px;
+    transform: translateX(-50%);
+    z-index: 10;
+}
+
+.node-dot {
+    width: 24px;
+    height: 24px;
+    background: var(--seminar-accent);
+    border-radius: 50%;
+    box-shadow: 0 0 0 4px #fff, 0 0 0 6px var(--seminar-accent);
+}
+
+.node-connector {
+    position: absolute;
+    top: 50%;
+    width: 40px;
+    height: 2px;
+    background: var(--seminar-accent);
+    transform: translateY(-50%);
+}
+
+.journey-item:nth-child(odd) .node-connector {
+    right: 100%;
+    margin-right: -10px;
+}
+
+.journey-item:nth-child(even) .node-connector {
+    left: 100%;
+    margin-left: -10px;
+}
+
+.journey-item:nth-child(odd) .journey-content {
+    margin-left: auto;
+    text-align: left;
+    padding-left: 20px;
+}
+
+.journey-item:nth-child(even) .journey-content {
+    margin-right: auto;
+    text-align: left;
+    padding-right: 20px;
+}
+
+.journey-card {
+    background: #fff;
+    border-radius: 16px;
+    padding: 1.5rem;
+    position: relative;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
+    transition: all 0.3s;
+}
+
+.journey-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+.module-badge {
+    display: inline-flex;
+    padding: 0.3rem 0.8rem;
+    background: var(--seminar-accent-light, rgba(93, 138, 168, 0.1));
+    border-radius: 20px;
+    color: var(--seminar-accent);
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 0.8rem;
+}
+
+.journey-title {
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin: 0 0 0.5rem 0;
+    color: var(--color-text, #3A3A38);
+}
+
+.journey-desc {
+    font-size: 0.95rem;
+    color: #666;
+    line-height: 1.6;
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .journey-line {
+        left: 20px;
+    }
+
+    .journey-item {
+        flex-direction: column !important;
+        padding-left: 50px;
+    }
+
+    .journey-item:nth-child(even) {
+        align-items: flex-start;
+    }
+
+    .journey-content {
+        width: 100%;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    .journey-node {
+        left: 20px;
+    }
+
+    .node-connector {
+        display: none;
+    }
+}
+
+/* FOOTER CTA */
+.cta-section {
+    padding: 6rem 0;
+    background: var(--color-cream, #F5F5F3);
+    text-align: center;
+}
+
+.cta-box {
+    background: var(--seminar-accent);
+    border-radius: 20px;
+    padding: 4rem 2rem;
+    color: #fff;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.cta-box h2 {
+    color: #fff;
+    margin-bottom: 1.5rem;
+}
+
+.cta-box p {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
