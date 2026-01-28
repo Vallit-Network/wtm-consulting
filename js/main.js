@@ -546,25 +546,30 @@ document.addEventListener('DOMContentLoaded', () => {
         if (morphImages.length === 0) return;
 
         let currentIndex = 0;
+        let zIndex = 1;
         const displayTime = 8000; // Time each image is displayed
         const fadeTime = 2000;    // Crossfade duration (matches CSS)
 
         // Initial setup: first image is active
         morphImages.forEach((img, idx) => {
-            img.className = 'morph-image';
+            img.style.zIndex = idx === 0 ? zIndex : 0;
             if (idx === 0) img.classList.add('active');
         });
 
         setInterval(() => {
             const nextIndex = (currentIndex + 1) % morphImages.length;
-
             const currentImg = morphImages[currentIndex];
             const nextImg = morphImages[nextIndex];
+
+            // Increase z-index so next image is on top
+            zIndex++;
+            nextImg.style.zIndex = zIndex;
 
             // Start crossfade: Add active to next (triggers fade in + Ken Burns)
             nextImg.classList.add('active');
 
             // After fade completes, remove active from current
+            // Note: We don't reset z-index immediately to prevent flickering
             setTimeout(() => {
                 currentImg.classList.remove('active');
                 currentIndex = nextIndex;

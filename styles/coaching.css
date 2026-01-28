@@ -352,6 +352,17 @@
     stroke: var(--color-secondary);
 }
 
+/* Placeholder variants */
+.coach-photo-placeholder.large svg {
+    width: 64px;
+    height: 64px;
+}
+
+.coach-photo-placeholder.small svg {
+    width: 32px;
+    height: 32px;
+}
+
 .coach-header-info {
     flex: 1;
     min-width: 0;

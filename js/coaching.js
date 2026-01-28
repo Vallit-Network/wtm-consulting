@@ -264,7 +264,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Populate Photo (Main & Avatar)
         const photoHtml = coach.photo
             ? `<img src="../${coach.photo}" alt="${coach.name}" class="modal-main-photo">`
-            : `<div class="photo-placeholder large">
+            : `<div class="coach-photo-placeholder large">
                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
                     <circle cx="12" cy="8" r="4" />
                     <path d="M4 20c0-4 4-6 8-6s8 2 8 6" />
@@ -275,7 +275,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (modalAvatar) {
             modalAvatar.innerHTML = coach.photo
                 ? `<img src="../${coach.photo}" alt="${coach.name}">`
-                : `<div class="photo-placeholder small">
+                : `<div class="coach-photo-placeholder small">
                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
                         <circle cx="12" cy="8" r="4" />
                         <path d="M4 20c0-4 4-6 8-6s8 2 8 6" />
