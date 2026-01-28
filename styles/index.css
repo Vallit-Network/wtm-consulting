@@ -2637,12 +2637,9 @@ footer::before {
     margin-bottom: 0.75rem;
 }
 
-/* Member Tags */
+/* Member Tags - Hidden per design request */
 .member-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.4rem;
-    justify-content: center;
+    display: none !important;
 }
 
 .member-tag {
@@ -3021,10 +3018,8 @@ div[class*="syntra-widget"] {
 }
 
 .modal-qualifications {
-    background: var(--color-cream);
-    padding: 1.25rem 1.5rem;
-    border-radius: var(--radius-sm);
-    margin-bottom: 1.5rem;
+    display: none !important;
+    /* Hidden - qualifications now shown in extendedBio */
 }
 
 .modal-qualifications h4 {

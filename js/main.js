@@ -79,23 +79,29 @@ document.addEventListener('DOMContentLoaded', () => {
     // =========================================
     // STICKY HEADER
     // =========================================
-    function initStickyHeader() {
-        const header = document.querySelector('header');
+    // =========================================
+    // STICKY HEADER
+    // =========================================
+    // Robust approach: Check for header dynamically on every scroll
+    // This ensures it works for both static (index.html) and injected (seminar pages) headers
+    window.addEventListener('scroll', () => {
+        const header = document.getElementById('header') || document.querySelector('header');
         if (header) {
-            window.addEventListener('scroll', () => {
-                if (window.scrollY > 80) {
-                    header.classList.add('scrolled');
-                } else {
-                    header.classList.remove('scrolled');
-                }
-            });
-            // Check immediately in case of refresh
             if (window.scrollY > 80) {
                 header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
             }
         }
-    }
-    initStickyHeader(); // Call for existing header (index.html)
+    });
+
+    // Check immediately on load (wait a tick for injection)
+    setTimeout(() => {
+        const header = document.getElementById('header') || document.querySelector('header');
+        if (header && window.scrollY > 80) {
+            header.classList.add('scrolled');
+        }
+    }, 100);
 
     // =========================================
     // SMOOTH SCROLL FOR ANCHOR LINKS
@@ -571,7 +577,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Category configuration - Colors match mindmap section
     const categoryConfig = {
-        leadership: { label: 'Führung', color: '#8B7B8B' },         // Warm Purple/Plum (distinct)
+        leadership: { label: 'Führung', color: '#4A4A4A' },         // Anthrazit
         change: { label: 'Change', color: '#C08585' },              // Rot (item-red)
         health: { label: 'Gesundheit', color: '#2D5F5C' },          // Grün (primary-dark)
         communication: { label: 'Kommunikation', color: '#CABBA0' }, // Gelb (item-yellow)
@@ -586,19 +592,35 @@ document.addEventListener('DOMContentLoaded', () => {
             role: 'Geschäftsführer',
             photo: 'assets/team/till-reichert.jpg',
             categories: ['leadership', 'communication', 'management'],
-            quickInfo: [
-                'Führungskräfteentwicklung',
-                'Business Coaching',
-                'Projektmanagement'
+            motto: '20% Theorie und 80% Praxis.',
+            shortDescription: [
+                'Verbindung von Fachkompetenz und pragmatischer, lösungsfokussierter Herangehensweise',
+                'Mehrere Tausend Menschen zu den Themen Führung und Kommunikation unterstützt',
+                'Maßgeschneiderte Lösungen im Bereich Personal- und Organisationsentwicklung',
+                'Business Trainings auf Deutsch und Englisch, in Präsenz und Live-Online'
             ],
-            bio: [
-                'Als Business Trainer und Coach sowie als Lehr-Coach und Hochschuldozent hat Till Reichert mehrere Tausend Menschen u.a. zu den Themen Führung und Kommunikation unterstützt.',
-                'Als Geschäftsführer und Mitgesellschafter von WTM Management Consulting entwirft er mit Kunden maßgeschneiderte Lösungen im Bereich der Personal- und Organisationsentwicklung.'
-            ],
-            qualifications: [
-                'Dr. rer. oec., Diplom-Ökonom (Ruhr-Universität Bochum)',
-                'Zertifizierter Coach (Dr. Migge-Seminare)',
-                'Geprüfter Business-Trainer BDVT'
+            extendedBio: [
+                'Aktuelle Schwerpunkte:',
+                '• Führungskräfteentwicklung',
+                '• Führen ohne Vorgesetztenfunktion',
+                '• Projektmanagement sowie Krisenmanagement für Projektmanager',
+                '• Kommunikation & Persönlichkeit sowie Zeit- und Selbstmanagement',
+                '• Teamentwicklung',
+                '',
+                'Stationen im Beruf:',
+                '• Seit 2014 Coach-Ausbilder',
+                '• Seit 2009 Business Coach & Trainer',
+                '• 10 Jahre Hochschuldozent für Management, Marketing & Wirtschaftspsychologie',
+                '• 10 Jahre klassischer Unternehmensberater (zuletzt Projektleiter & Gesellschafter)',
+                '• Industrieerfahrung: Assistent des Vorstandsvorsitzenden einer AG',
+                '',
+                'Aus- und Weiterbildungen:',
+                '• Dr. rer. oec., Diplom-Ökonom (Ruhr-Universität Bochum)',
+                '• Zertifizierter Coach (Dr. Björn Migge – Dr. Migge-Seminare)',
+                '• Geprüfter Business-Trainer BDVT (Christa Mesnaric – Michl Group)',
+                '• Zertifizierter Lehr-Coach (Dr. Björn Migge – DFC)',
+                '',
+                'Arbeitssprachen: Deutsch und Englisch'
             ]
         },
         2: {
@@ -606,439 +628,693 @@ document.addEventListener('DOMContentLoaded', () => {
             role: 'Geschäftsführer',
             photo: 'assets/team/malte-werner.jpg',
             categories: ['leadership', 'change', 'management'],
-            quickInfo: [
-                'Führungskräfteentwicklung',
-                'Teamentwicklung',
-                'Digitale Transformation'
+            motto: 'Balance zwischen humorvollem Elan und der nötigen Seriosität.',
+            shortDescription: [
+                'Hohe Beobachtungsgabe für Details ermöglicht ihm, die kleinen Stellschrauben zu identifizieren',
+                'Analytisches Geschick und viel Fingerspitzengefühl',
+                'Wissbegierig, unaufgeregt und humorvoll',
+                'Sorgt für eine produktive Arbeitsatmosphäre'
             ],
-            bio: [
-                'Malte Werner hat Philosophie, Politik und Ökonomik sowie Ethik & Organisation an der Universität Witten/Herdecke studiert. Er ist Mitgesellschafter und Teil der Geschäftsleitung von WTM Management Consulting.',
-                'Durch eine Balance zwischen humorvollem Elan und der nötigen Seriosität gestaltet er Coachings und Trainings ausgewogen. Eine hohe Beobachtungsgabe für Details ermöglicht ihm, die kleinen Stellschrauben zu identifizieren.'
-            ],
-            qualifications: [
-                'M.A. Ethik & Organisation (Universität Witten/Herdecke)',
-                'Coachingausbildung',
-                'Organisationsberater'
+            extendedBio: [
+                'Professionalität:',
+                'Malte Werner hat im Bachelor Philosophie, Politik und Ökonomik und im Master Ethik & Organisation an der Universität Witten/Herdecke studiert. Neben dem Studium hat er die studentische Unternehmensberatung denkleister GmbH geführt und eine Coachingausbildung absolviert. Nach dem Studium hat er 5 Jahre als freiberuflicher Coach und Trainer gearbeitet und wurde dann Teil der Geschäftsleitung von WTM Management Consulting, dessen Mitgesellschafter er auch heute ist.',
+                '',
+                'Aktuelle Themenschwerpunkte:',
+                '• Führungskräfteentwicklung',
+                '• Zeit- und Selbstmanagement',
+                '• Generationen und Zusammenarbeit',
+                '• Teamentwicklung',
+                '• Digitale Transformationsprozesse'
             ]
         },
         3: {
             name: 'Dr. Olaf Werner',
-            role: 'Trainer & Coach',
+            role: 'Geschäftsführer',
             photo: '',
-            categories: ['communication', 'management'],
-            quickInfo: [
-                'Rhetorik',
-                'Selbstmanagement',
-                'Systemische Beratung'
+            categories: ['leadership', 'communication', 'management'],
+            motto: 'Das Zusammenspiel von Mensch und Organisation fasziniert mich.',
+            shortDescription: [
+                'Erkennt wie verschiedene Arbeitsumgebungen Einfluss auf das Verhalten der Einzelnen ausüben',
+                'Kreativ, zugewandt und feinfühlig',
+                'Breites Wissen um Fragestellungen von Organisationen und Hierarchien',
+                'Lösungsfokussierte und ökonomische Beratung'
             ],
-            bio: [
-                'Dr. Olaf Werner ist Trainer bei WTM Management Consulting mit Expertise in Selbstmanagement, KVP (Kontinuierlicher Verbesserungsprozess) und Rhetorik.',
-                'Sein Ansatz verbindet systemische Beratung mit praktischen Werkzeugen für den beruflichen Alltag.'
-            ],
-            qualifications: [
-                'Promotion',
-                'Rhetorik-Trainer',
-                'Systemischer Berater'
+            extendedBio: [
+                'Aktuelle Schwerpunkte:',
+                '• Trainings und modulare Curricula zu Führung, Selbst- und Zeitmanagement',
+                '• Gestaltung und Balance der eigenen Rolle im Beruf und Privaten',
+                '• Verbesserung von Performance in Bereichen, Teams und Projekten',
+                '• Persönlichkeitsentwicklung und Selbststeuerung',
+                '• Konfliktbearbeitung und Krisenintervention',
+                '• Komplexität und Intuition',
+                '• Gestaltung von Veränderungsprozessen',
+                '• Ausbildung von Coaches und Beratern',
+                '',
+                'Stationen im Beruf:',
+                '• 1989 Tätigkeit in der Weiterbildungsabteilung der Robert Bosch GmbH',
+                '• Seit 1990 selbständiger Trainer und Berater',
+                '• Seit 2015 Mit-Geschäftsführer der WTM Management Consulting GmbH',
+                '',
+                'Professionalität:',
+                '• Magisterexamen in Germanistik, Geschichte und Philosophie',
+                '• Promotion in Psychologie und Ethnologie',
+                '• Systemischer Berater, Organisationsaufstellung, Transaktionsanalyse',
+                '• Gruppendynamik, Psychodrama, Trainer und Berater seit 1990'
             ]
         },
         4: {
             name: 'Carmen Werner',
             role: 'Trainerin & Coach',
             photo: 'assets/team/Carmen-Werner-Team_500x500.jpg',
-            categories: ['communication', 'health'],
-            quickInfo: [
-                'Kommunikationstraining',
-                'Coaching',
-                'Persönlichkeitsentwicklung'
+            categories: ['leadership', 'communication', 'health'],
+            motto: 'Den Menschen im Ganzen sehen, wertschätzen und ihn in seiner Balance zwischen Menschlichkeit und Professionalität unterstützen.',
+            shortDescription: [
+                'Selbständige Trainerin und Beraterin seit 1999',
+                'Breites Kompetenzfeld durch Weiterbildungen in Kommunikationspsychologie, Konfliktmanagement und Menschenführung',
+                'Begleitet Führungskräfteentwicklungsprogramme und klärt Konflikte in Unternehmen',
+                'Lehrbeauftragte für Sparkassenakademien und Hochschulen'
             ],
-            bio: [
-                'Carmen Werner ist Trainerin und Coach bei WTM Management Consulting.',
-                'Sie unterstützt Menschen in ihrer Kommunikation und Entwicklung.'
-            ],
-            qualifications: [
-                'Trainerin',
-                'Coach',
-                'Kommunikationsexpertin'
+            extendedBio: [
+                'Aktuelle Schwerpunkte:',
+                '• Ausbildung und Begleitung von Führungskräften in Seminaren und Einzelcoachings',
+                '• Messung und Implementierung von Führungskriterien in Unternehmen',
+                '• Begleitung von Veränderungsprozessen in Unternehmen',
+                '• Kommunikationsberatung',
+                '• Konfliktklärungshilfe',
+                '• Gesundheitsmanagement',
+                '• Generationen-Kompetenz',
+                '',
+                'Stationen im Beruf:',
+                '• Selbständige Trainerin und Beraterin seit 1999',
+                '• Vertrieb im Finanzdienstsektor',
+                '• Immobilienfinanzierung bei der LBS',
+                '',
+                'Weiterbildung und Qualifizierung:',
+                '• Zertifizierte Kommunikationsberaterin, Prof. Dr. Friedemann Schulz von Thun',
+                '• Zertifizierte Konfliktklärungshelferin, Dr. Christoph Thomann',
+                '• Ausbildung zum Coach, Dr. Andreas Knierim Kassel',
+                '• Ausbildung in Gruppendynamik, Team Dr. Rosenkranz und Eberhard Stahl',
+                '• Heilpraktikerin für Psychotherapie'
             ]
         },
         5: {
             name: 'Philipp Besch',
             role: 'Trainer & Coach',
             photo: 'assets/team/Team-Phillip_Besch-500x500-1.jpg',
-            categories: ['leadership', 'change'],
-            quickInfo: [
-                'Training',
-                'Coaching',
-                'Entwicklung'
+            categories: ['leadership', 'change', 'health'],
+            motto: 'Authentizität, ein unerschütterliches Vertrauen in die Entfaltungsmöglichkeiten von Menschen und Humor zeichnen meine Arbeitsweise aus.',
+            shortDescription: [
+                'Expertise auf dem Gebiet Persönlichkeitsentwicklung',
+                'Langjährige Arbeit in der Drogen- und Jugendhilfe sowie Führungskraft in der Sozialwirtschaft',
+                'Stärken stärken und Aufbau von Resilienz als Schwerpunkt',
+                'Systemischer Organisationsentwicklungsberater'
             ],
-            bio: [
-                'Philipp Besch ist Trainer und Coach bei WTM Management Consulting.',
-                'Er begleitet Menschen in ihrer beruflichen Entwicklung.'
-            ],
-            qualifications: [
-                'Trainer',
-                'Coach',
-                'Entwicklungsbegleiter'
+            extendedBio: [
+                'Aktuelle Schwerpunkte:',
+                '• Team- und Organisationsentwicklung',
+                '• Workshops zu Kommunikation und Persönlichkeit, (laterale) Führung, Resilienz',
+                '• Coaching',
+                '• Supervision',
+                '',
+                'Stationen im Beruf:',
+                '• Seit 2015 Supervision in der Sozialwirtschaft',
+                '• Seit 2004 Trainer, Berater und Coach',
+                '• Mehr als 15 Jahre Mitarbeiter und Führungskraft in Sozialwirtschaft und Bildungswesen',
+                '',
+                'Aus- und Weiterbildungen:',
+                '• Systemischer Organisationsentwicklungsberater (Alwart & Team, Hamburg)',
+                '• NLP-Resonanz-Master (Institut Kutschera, DVNLP)',
+                '• LINC Personality Profiler Coach (LINC-Institut)',
+                '• Trainingsdesigner (Anna Langheiter)',
+                '• Systemischer Businesscoach (Alwart & Team, Hamburg)',
+                '• Diplompädagoge (Universität Hamburg)'
             ]
         },
         6: {
             name: 'Dr. Bettina Brendel',
             role: 'Trainerin & Coach',
             photo: 'assets/team/Team-Dr.-Bettina-Brendel-500x500-1.jpg',
-            categories: ['communication', 'leadership'],
-            quickInfo: [
-                'Kommunikation',
-                'Führung',
-                'Persönlichkeit'
+            categories: ['leadership', 'communication', 'change'],
+            motto: 'Es geht um die Wirkungen von Handlung oder Verhalten und nicht um richtig oder falsch.',
+            shortDescription: [
+                'Kommunikationsberaterin und Mediatorin seit 2005',
+                'Begleitet Unternehmen, Teams und Führungskräfte bei Fragestellungen der Kooperation',
+                'Geprägt durch Weiterbildungen bei Prof. Friedemann Schulz von Thun',
+                'Langjährige Berufserfahrung als Stellvertretende Geschäftsführerin in einer Agentur'
             ],
-            bio: [
-                'Dr. Bettina Brendel ist Trainerin und Coach bei WTM Management Consulting.',
-                'Sie unterstützt Führungskräfte und Teams in ihrer Entwicklung.'
-            ],
-            qualifications: [
-                'Promotion',
-                'Trainerin',
-                'Coach'
+            extendedBio: [
+                'Themenschwerpunkte:',
+                '• Konfliktklärung',
+                '• Schwierige Gespräche führen',
+                '• Metakommunikation im Team',
+                '• Umgang mit Unterschieden und Störungen',
+                '• Führen im Spannungsfeld zwischen Authentizität, Unternehmensvorgaben und Mitarbeiterorientierung',
+                '• Selbstcoaching durch Rollenklärung und Zielsetzungen',
+                '',
+                'Berufserfahrung:',
+                '• Kommunikationsberaterin und Mediatorin seit 2005',
+                '• 1994-2004 Berufserfahrung in einer Agentur, zuletzt als Stellvertretende Geschäftsführerin',
+                '',
+                'Die Haltung ihrer systemischen Arbeit: Es geht um Anteile an Situationen, nicht um Schuld.'
             ]
         },
         7: {
             name: 'Andreas Cludius',
             role: 'Trainer & Berater',
             photo: 'assets/team/Cludius-Andreas-Team-500x500-1.jpg',
-            categories: ['leadership', 'change'],
-            quickInfo: [
-                'Vertrauen in Führung',
-                'Teamdynamik',
-                'Organisationsentwicklung'
+            categories: ['leadership', 'management', 'change'],
+            motto: 'Menschen erkennen oft selbst den Bedarf einer Veränderung. Dabei ist die Umsetzung die eigentliche Herausforderung.',
+            shortDescription: [
+                'Business-Coach seit 2003, hauptberuflich seit 2011',
+                'Schwerpunkt Personal- und Betriebsführung für Inhaber, Gesellschafter oder Geschäftsführer von KMU',
+                'Seit 2015 zusätzliche Tätigkeit als Wirtschafts-Mediator',
+                '3 Jahrzehnte Berufstätigkeit im Bankgeschäft, überwiegend in leitender Funktion'
             ],
-            bio: [
-                'Andreas Cludius ist Trainer und Berater bei WTM Management Consulting.',
-                'Er beschäftigt sich intensiv mit den Themen Vertrauen in der Führung und organisationale Freundschaft.'
-            ],
-            qualifications: [
-                'Trainer',
-                'Berater',
-                'Führungsexperte'
+            extendedBio: [
+                'Erfahrung:',
+                '• Business-Coach seit 2003 (nebenberuflich), seit 2011 hauptberuflich',
+                '• Schwerpunkt: Personal- und Betriebsführung für KMU-Inhaber und Führungskräfte',
+                '• Wirtschafts-Mediator seit 2015, Schwerpunkt innerbetriebliche Konfliktsituationen',
+                '',
+                'Berufserfahrung im Bankgeschäft:',
+                '• 3 Jahrzehnte Berufstätigkeit, überwiegend in leitender Funktion',
+                '• Kundenbetreuung von Groß- und Mittelstandskunden',
+                '• Vertriebsorganisation, Strategieentwicklung und -umsetzung',
+                '• Projektarbeit und -leitung',
+                '• Führung und Führungskräfteentwicklung',
+                '• Zuletzt in direkter Zusammenarbeit mit dem Vorstand',
+                '',
+                'Arbeitsweise:',
+                'Kontinuierliche Begleitung in schwierigen Situationen bis zur Lösung des Problems.'
             ]
         },
         8: {
             name: 'Dr. Bettina Hailer',
             role: 'Trainerin & Coach',
             photo: 'assets/team/Team-Dr.-Bettina-Hailer-500x500-1.jpg',
-            categories: ['leadership', 'communication'],
-            quickInfo: [
-                'Führungsentwicklung',
-                'Kommunikation',
-                'Coaching'
+            categories: ['leadership', 'communication', 'change'],
+            motto: 'Wertschätzung gegenüber dem Erreichten und den Potentialen sind mir ein besonderes Anliegen.',
+            shortDescription: [
+                'Über 20 Jahre Führungserfahrung im Gesundheitswesen, zuletzt als Vorständin eines Universitätsklinikums',
+                'Authentische, klare und offene Art',
+                'Fähigkeit zur Analyse, Strukturierung und Verbindlichkeit',
+                'BWL-Studium und Promotion an der Universität Mannheim'
             ],
-            bio: [
-                'Dr. Bettina Hailer ist Trainerin und Coach bei WTM Management Consulting.',
-                'Sie unterstützt Führungskräfte bei ihrer Entwicklung.'
-            ],
-            qualifications: [
-                'Promotion',
-                'Trainerin',
-                'Coach'
+            extendedBio: [
+                'Professionalität:',
+                '• 20 Jahre Führungserfahrung im Gesundheitswesen',
+                '• Zuletzt Vorständin eines Universitätsklinikums',
+                '• Langjährige Dozentin an der Hochschule Neu-Ulm',
+                '• Seit 2014 Beraterin, Trainerin und Mediatorin',
+                '',
+                'Schwerpunktthemen:',
+                '• Begleitung und Training von Führungskräften',
+                '• Konfliktmanagement und Mediation',
+                '',
+                'Ausbildung:',
+                '• BWL-Studium und Promotion an der Universität Mannheim',
+                '• Wirtschaftsmediatorin (IHK)',
+                '• Systemische Beraterin und Coach',
+                '',
+                'Haltung:',
+                'Veränderungsprozesse so steuern und strukturieren, dass ein für das individuelle Unternehmen passendes Ergebnis erzielt werden kann.'
             ]
         },
         9: {
             name: 'Wolfgang Hoffmann',
             role: 'Trainer & Coach',
             photo: 'assets/team/Team-Foto-Wolfgang-Hoffmann.jpg',
-            categories: ['leadership', 'management'],
-            quickInfo: [
-                'Training',
-                'Coaching',
-                'Führung'
+            categories: ['leadership', 'communication', 'change'],
+            motto: 'Führung bedeutet nicht nur, Verantwortung zu tragen, sondern auch Vertrauen zu schaffen und zu erhalten.',
+            shortDescription: [
+                'Leidenschaftlicher Verfechter von lebendiger Führung',
+                '35 Jahre in operativer Transport- und Lagerlogistik',
+                '20 Jahre Geschäftsführer von Speditionen und Logistikunternehmen',
+                'Fokus auf Persönlichkeitsentwicklung, Teamentwicklung und Führungskompetenzen'
             ],
-            bio: [
-                'Wolfgang Hoffmann ist Trainer und Coach bei WTM Management Consulting.',
-                'Er unterstützt Führungskräfte und Teams.'
-            ],
-            qualifications: [
-                'Trainer',
-                'Coach',
-                'Führungsentwickler'
+            extendedBio: [
+                'Aktuelle Schwerpunkte:',
+                '• Teambuilding-Seminare: Entfachen der Teamdynamik und Schaffen einer offenen Kommunikationskultur',
+                '• 1:1 Business-Coaching für Führungskräfte',
+                '• Modulares Führungskräfteentwicklungsprogramm',
+                '• Multikulturelle Arbeitswelt und interkulturelle Fähigkeiten',
+                '• Berufs- und Karriereorientierung',
+                '',
+                'Erfahrung im Beruf:',
+                '• 35 Jahre in operativer Transport- und Lagerlogistik',
+                '• 20 Jahre Geschäftsführer von Speditionen und Logistikunternehmen',
+                '• Weg vom Sachbearbeiter zum Geschäftsführer',
+                '• 2022 Trainer, Berater, Coach',
+                '',
+                'Ausbildung:',
+                '• Industriekaufmann',
+                '• Betriebswirt (VWA)',
+                '• Ausbilder IHK für Logistikberufe',
+                '• Coach- und Beraterausbildung nach ICF-Standards (WTM)',
+                '',
+                'Sprachen: Deutsch (Muttersprache), Englisch, Spanisch, Französisch'
             ]
         },
         10: {
             name: 'Melanie Kubala',
             role: 'Trainerin & Coach',
             photo: 'assets/team/Team-Melanie-Kubala-500x500-1.jpg',
-            categories: ['change', 'health'],
-            quickInfo: [
-                'Veränderungsbegleitung',
-                'Entwicklung',
-                'Coaching'
+            categories: ['leadership', 'change', 'communication'],
+            motto: 'Mutig sein und Verantwortung übernehmen ist mein Kredo.',
+            shortDescription: [
+                'Fokussierter Blick auf den Menschen der Unterstützung benötigt',
+                'Größte Talente: Einfühlungsvermögen, Einzelwahrnehmung und das Benennen von Unentdecktem',
+                'Gepaart mit Wortwitz und Humor bekommen schwierige Situationen Leichtigkeit',
+                'Methoden richten sich immer nach dem Anliegen und den Wünschen des Coachees'
             ],
-            bio: [
-                'Melanie Kubala ist Trainerin und Coach bei WTM Management Consulting.',
-                'Sie begleitet Menschen und Organisationen in Veränderungsprozessen mit einem Fokus auf nachhaltige Entwicklung.'
-            ],
-            qualifications: [
-                'Zertifizierte Trainerin',
-                'Systemischer Coach',
-                'Personalentwicklerin'
+            extendedBio: [
+                'Aktuelle Schwerpunkte:',
+                '• Einzel- und Teamcoachings zu Veränderungsprozessen',
+                '• Persönlichkeitsentwicklung und Lösen von Blockaden',
+                '• Führungstrainings und Kommunikation',
+                '• Teamentwicklung und Rollenmodell',
+                '• Onboarding neuer Mitarbeiter',
+                '',
+                'Stationen im Beruf:',
+                '• Seit 2015 Coach/Trainerin für Persönlichkeitsentwicklung',
+                '• 2010-2014 HR-Managerin',
+                '• 2008-2010 Personalreferentin',
+                '• 2006-2007 Personaldisponentin/Projektleiterin',
+                '',
+                'Aus- und Weiterbildungen:',
+                '• WTM zertifizierte Coaching und Beraterausbildung',
+                '• Ausbildung zur Heilpraktikerin für Psychotherapie',
+                '• Bachelor Professional of Human Resources CCI',
+                '• Staatlich geprüfte Betriebswirtin'
             ]
         },
         11: {
             name: 'Hermann Josef Leiders',
             role: 'Trainer & Coach',
             photo: 'assets/team/Harry_Leiders_team_500x500.jpg',
-            categories: ['leadership', 'communication'],
-            quickInfo: [
-                'Training',
-                'Coaching',
-                'Führung'
+            categories: ['leadership', 'communication', 'health'],
+            motto: 'Schwerpunkte der heutigen Arbeit sind Führung, Kommunikation und Umgang mit Stress und Belastung.',
+            shortDescription: [
+                'Selbständiger Trainer und Berater seit 2000',
+                'Zunächst Führungsaufgaben innerhalb der Polizei NRW',
+                'Lehrtrainer für Verhaltenstraining mit Programm zur Stressbewältigung',
+                'Personal- und Organisationsentwicklung für Industrieunternehmen und öffentliche Verwaltungen'
             ],
-            bio: [
-                'Hermann Josef Leiders ist Trainer und Coach bei WTM Management Consulting.',
-                'Er unterstützt Führungskräfte bei ihrer Entwicklung.'
-            ],
-            qualifications: [
-                'Trainer',
-                'Coach',
-                'Führungsentwickler'
+            extendedBio: [
+                'Schwerpunkte:',
+                '• Führungs- und Kommunikationstrainings',
+                '• Teamentwicklungen',
+                '• Krisenmanagement in Konfliktsituationen',
+                '• Gestaltung der Zeit',
+                '• Hilfestellungen im Umgang mit Stress und Belastung',
+                '',
+                'Berufserfahrung:',
+                '• Führungsaufgaben innerhalb der Polizei NRW',
+                '• Ab 1985 Verhaltenstrainer, dann Lehrtrainer',
+                '• Bis 2000 Vermittlung eines Stressbewältigungsprogramms an Polizeibeamte',
+                '• Seit 2000 selbständiger Trainer und Berater',
+                '',
+                'Weiterbildungen:',
+                '• Supervisor (DGSv)',
+                '• Personalentwicklung im lernenden Unternehmen (Universität Kaiserslautern)',
+                '• NLP-Master (DGLNP)',
+                '• Qualifizierung zum Coach (Hephaistos, München)'
             ]
         },
         12: {
             name: 'Heike Neidhart',
             role: 'Trainerin & Coach',
             photo: 'assets/team/Profilbild_Heike_Neidhart_Team_500x500.jpg',
-            categories: ['health', 'communication'],
-            quickInfo: [
-                'Persönlichkeitsentwicklung',
-                'Training',
-                'Coaching'
+            categories: ['health', 'communication', 'change'],
+            motto: 'Menschen auf Ihrem Weg zu begleiten ist meine Leidenschaft.',
+            shortDescription: [
+                'Reich gefüllter, stetig wachsender Methodenkoffer',
+                'Kunden schätzen Neugierde, Offenheit und wertschätzende, empathische Art',
+                'Erfahrung als Coach, Trainerin, IT-Consultant und Familienmanagerin',
+                'Vertrauensvolle Atmosphäre ermöglicht es, das eigene Potential zu entfalten'
             ],
-            bio: [
-                'Heike Neidhart ist Trainerin und Coach bei WTM Management Consulting.',
-                'Sie begleitet Menschen bei ihrer persönlichen Entwicklung.'
-            ],
-            qualifications: [
-                'Trainerin',
-                'Coach',
-                'Persönlichkeitsentwicklerin'
+            extendedBio: [
+                'Aktuelle Schwerpunkte:',
+                '• Mindset- und Persönlichkeitsentwicklung',
+                '• Teamentwicklung und Teambuilding',
+                '• Berufsorientierung für Erwachsene und Jugendliche',
+                '• Einzelcoaching: Orientierung, Entscheidungsfindung, Zielklarheit',
+                '',
+                'Stationen im Beruf:',
+                '• Seit 07/2023 Partnerin WTM Management Consulting GmbH',
+                '• Seit 2022 Trainerin, Coach (selbständig nebenberuflich)',
+                '• Seit 2014 IT-Compliance, Informationssicherheit',
+                '• 2001-2014 Entwicklung und Produktmanagerin Kredit-/Debitkarten',
+                '• 1998-2001 Studium Dipl. Wirtschaftsinformatikerin',
+                '',
+                'Aus- und Weiterbildung:',
+                '• LINC Personality Profiler (LPP)',
+                '• Coach- und Beraterausbildung, ICF zertifiziert (WTM)',
+                '• ProfilPASS® Beraterin',
+                '',
+                'Sprachen: Deutsch (Muttersprache), Englisch'
             ]
         },
         13: {
             name: 'Gerold Pohl',
             role: 'Trainer & Coach',
             photo: 'assets/team/Gerold-Pohl-Team-500-x-500.jpg',
-            categories: ['change', 'management'],
-            quickInfo: [
-                'Training',
-                'Coaching',
-                'Entwicklung'
+            categories: ['leadership', 'change', 'management'],
+            motto: 'In mehr als 25 Jahren als Führungskraft hat sich mein Führungsverständnis zum agilen Prinzip der Selbstorganisation und Eigenverantwortung entwickelt.',
+            shortDescription: [
+                'Wert von Vertrauen, Offenheit und Zuverlässigkeit kennengelernt',
+                'Systemisch, agile Arbeitsweise hilft Unternehmen zu Orten lebendiger Arbeit zu werden',
+                'Menschen sind das Herzstück jeder Organisation',
+                'Veränderungen bis ins "hohe" Alter möglich und zur persönlichen Erfüllung beitragend'
             ],
-            bio: [
-                'Gerold Pohl ist Trainer und Coach bei WTM Management Consulting.',
-                'Er unterstützt Menschen und Teams bei ihrer Entwicklung.'
-            ],
-            qualifications: [
-                'Trainer',
-                'Coach',
-                'Entwicklungsbegleiter'
+            extendedBio: [
+                'Aktuelle Schwerpunkte:',
+                '• Moderne Führung (New Leadership): Offenheit, Vertrauen, Kooperation, Empathie',
+                '• Führen mit OKR (Objectives and Key Results)',
+                '• Strategie und Vision',
+                '• Agile Transformation im Unternehmen',
+                '• Liberating Structures für bessere Meetings',
+                '• Hybride Arbeit und Zusammenarbeit',
+                '• Generationen begreifen, Durchstarten mit 60+',
+                '',
+                'Erfahrung im Beruf:',
+                '• Seit 1990 in verschiedenen Führungsrollen',
+                '• Von lateraler Führung als Projektleiter zum Bereichsleiter mit 100 Mitarbeitern',
+                '• Team-Entwicklung und agile Transformation',
+                '',
+                'Ausbildungen:',
+                '• Liberating Structures',
+                '• Berater und Coach nach ICF Standards (WTM)',
+                '• Agile Transformation / Agiles Arbeiten',
+                '• Betriebswirt (VWA)',
+                '• Transaktionsanalyse, Gruppendynamik'
             ]
         },
         14: {
             name: 'Jürgen Reus',
             role: 'Trainer & Coach',
             photo: 'assets/team/Reus-Juergen-Team-Portrait-500x500-1.jpg',
-            categories: ['communication', 'management'],
-            quickInfo: [
-                'Training',
-                'Expertise',
-                'Coaching'
+            categories: ['management', 'communication', 'change'],
+            motto: 'Wichtig ist mir, die Mitarbeiter und Kunden dort abzuholen, wo sie gerade stehen.',
+            shortDescription: [
+                'Schwerpunkt: Menschen bei Prozessgestaltung und Projekten unterstützen',
+                'Kommunikativ, freundlich, optimistisch und wortgewandt',
+                'Trainer seit 1989, Organisationsberater seit 1991',
+                'Erfahrung in Großkonzernen, mittelständischer Wirtschaft und sozialen Einrichtungen'
             ],
-            bio: [
-                'Jürgen Reus ist Trainer und Coach bei WTM Management Consulting.',
-                'Er bringt langjährige Expertise in Training und Coaching ein, um Potenziale zu entfalten.'
-            ],
-            qualifications: [
-                'Zertifizierter Trainer',
-                'Business Coach',
-                'Experte für Kommunikation'
+            extendedBio: [
+                'Aktuelle Schwerpunkte:',
+                '• Projekt- und Prozessmanagement',
+                '• Konzeption und Moderation von Tagungen (auch Großgruppe)',
+                '• Selbst- und Zeitmanagement',
+                '• Präsentationstechnik, Kreativitätstechniken',
+                '• Professionalisierung von Vertriebsprozessen',
+                '• Impulsvorträge',
+                '',
+                'Stationen im Beruf:',
+                '• Seit 1989 Trainer',
+                '• Seit 1989 Dozent an den Dualen Hochschulen in Karlsruhe und Mannheim',
+                '• Seit 1991 Organisationsberater/Projektleiter',
+                '• Seit 1995 Prokurist: Leitung größerer Vertriebseinheiten',
+                '• Seit 2006 Moderationen aller Art',
+                '',
+                'Branchenerfahrung:',
+                'Großkonzerne, mittelständische Wirtschaft, soziale Einrichtungen, Beratungs- und Softwareunternehmen'
             ]
         },
         15: {
             name: 'Maik Rieß',
             role: 'Trainer & Coach',
             photo: 'assets/team/Team-Maik-Riess-500x500-1.jpg',
-            categories: ['leadership', 'change'],
-            quickInfo: [
-                'Training',
-                'Coaching',
-                'Teamentwicklung'
+            categories: ['leadership', 'management', 'communication'],
+            motto: 'Leistung und Mensch gehören zusammen – nur so entsteht echter Erfolg.',
+            shortDescription: [
+                'Langjährige Erfahrung im Technologie- und Industrieumfeld',
+                'Die Fähigkeit komplizierte Zusammenhänge verständlich und hoch strukturiert darzustellen',
+                '"Dolmetscher" zwischen verschiedenen Bereichen zu sein (die Klassiker: "IT und Anwender", "Technik und Produktion", usw.)',
+                'Gewinner mehrerer Preise vom BaTB und dvct'
             ],
-            bio: [
-                'Maik Rieß ist Trainer und Coach bei WTM Management Consulting.',
-                'Er begleitet Teams und Einzelpersonen in ihrer Entwicklung.'
-            ],
-            qualifications: [
-                'Trainer',
-                'Coach',
-                'Teamentwickler'
+            extendedBio: [
+                'Expertise:',
+                'Team- und Businesscoach aus Leidenschaft. Begleitet Teams und Arbeitsgruppen auf dem Weg zu mehr Effektivität und Effizienz. Nutzt die Fähigkeit zur Visualisierung für gemeinsame Bilder und einheitliches Verständnis.',
+                '',
+                'Stationen im Beruf:',
+                '• 13 Jahre Erfahrung als Fach- und Führungskraft in der Informationstechnologie',
+                '• 8 Jahre interne Unternehmensberatung, Schwerpunkt Organisationsentwicklung / Lean Management',
+                '• Personalentwickler und Trainer in einem weltweit tätigen Industrieunternehmen',
+                '• Dozent an der Dualen Hochschule im Studiengang Change Management',
+                '• Gewinner des BaTB Trainerpreises 2010',
+                '• Gewinner des dvct Coach- und Trainer-Awards 2011',
+                '',
+                'Ausbildungen und Werdegang:',
+                '• Studium Betriebswirtschaft mit Schwerpunkt Personalwesen & Produktion',
+                '• Verbandszertifizierter Business-Trainer (dvct e.V.)',
+                '• Systemischer Business-Coach (Steinbeis Hochschule Berlin)',
+                '• Klärungshelfer in Konflikten (Dr. Christoph Thomann)',
+                '• Visual Facilitator (Kommunikationslotsen)',
+                '• Teamcoach (LNLPT)'
             ]
         },
         16: {
             name: 'Dr. Sarolf Sauer',
             role: 'Trainer & Coach',
             photo: 'assets/team/Sarolf_Sauer_Team_500x500.jpg',
-            categories: ['leadership', 'health'],
-            quickInfo: [
-                'Führung',
-                'Kommunikation',
-                'Persönlichkeit'
+            categories: ['leadership', 'health', 'communication'],
+            motto: 'Haltung und Persönlichkeit sind der Schlüssel.',
+            shortDescription: [
+                'Befähigt Coachees durch Persönlichkeitsentwicklung ihren eigenen Weg zu erkennen',
+                'Vielfältige persönliche und berufliche Erfahrungen als Grundlage',
+                'Begleitung durch die Höhen und Tiefen des eigenen Lebens- und Berufswegs',
+                'Schwerpunkt auf Haltung und innerer Kraft'
             ],
-            bio: [
-                'Dr. Sarolf Sauer ist Trainer und Coach bei WTM Management Consulting.',
-                'Er unterstützt Führungskräfte bei ihrer persönlichen Entwicklung.'
-            ],
-            qualifications: [
-                'Promotion',
-                'Trainer',
-                'Coach'
+            extendedBio: [
+                'Aktuelle Schwerpunkte:',
+                '• Coaching von Führungskräften',
+                '• Persönlichkeitsentwicklung',
+                '• Führungskräftetrainings',
+                '• Kommunikationstrainings',
+                '',
+                'Stationen im Beruf:',
+                '• Bundeswehr bis 2008 (Oberst d.R.)',
+                '• Führungsakademie der Bundeswehr, Dozent für Auftragstaktik und Mentale Fitness',
+                '• Selbstständig seit 2015, Trainer, Berater, Coach',
+                '• Geschäftsführer einer größeren Einrichtung im Gesundheitswesen',
+                '',
+                'Aus- und Weiterbildung:',
+                '• Diplom-Pädagoge an der Bundeswehruniversität München',
+                '• Promotion Psychologie – Arbeit und Gesundheit PsyGA – baua',
+                '• Coachingausbildung (Dr. Björn Migge)',
+                '• Klärungshelfer in Konflikten (Dr. Christoph Thomann)'
             ]
         },
         17: {
             name: 'Marcus Schmidt',
             role: 'Trainer & Berater',
             photo: 'assets/team/Team-Marcus-Schmidt-6-23.jpg',
-            categories: ['leadership', 'change'],
-            quickInfo: [
-                'Führung',
-                'Haltung',
-                'Organisation'
+            categories: ['leadership', 'change', 'management'],
+            motto: 'Kooperation gelingt immer dann, wenn ich mir des Unterschieds von Absicht und Wirkung bewusst bin.',
+            shortDescription: [
+                'Über 20 Jahre Erfahrung als Führungskraft',
+                'Erfahrung in Matrixorganisationen, Change Management und Vertrieb',
+                'Begleitung der regionalen und kulturübergreifenden Zusammenarbeit',
+                'Systemisch-konstruktivistische Arbeit hin zur Selbstbemächtigung'
             ],
-            bio: [
-                'Marcus Schmidt ist Trainer und Berater bei WTM Management Consulting.',
-                'Er beschäftigt sich intensiv mit dem Thema Haltung und Führung in turbulenten Zeiten.'
-            ],
-            qualifications: [
-                'Trainer',
-                'Berater',
-                'Führungsexperte'
+            extendedBio: [
+                'Schwerpunkte:',
+                '• Entwicklung von Führungspersönlichkeit',
+                '• Laterale und virtuelle Führung',
+                '• Implementierung von Führungsleitlinien',
+                '• Kulturentwicklung und Kultur als Managementaufgabe',
+                '• Reflexion über Haltung, Rolle, Verhalten',
+                '• Coaching von Einzelnen, Teams und Gruppen',
+                '',
+                'Erfahrung im Beruf:',
+                '• Über 20 Jahre in Führungsrollen und als Projekt- und Programmleiter',
+                '• Erfahrung in veränderungs- und vertriebsorientierten Linienorganisationen',
+                '• Matrixorganisationen und Regionen übergreifende Zusammenarbeit',
+                '',
+                'Ausbildungen:',
+                '• Zertifizierter Coach (Dr. Migge Seminare)',
+                '• Berater und Trainer (WTM)',
+                '• Lehrbeauftragter Hochschule Pforzheim (Projekt- und Change Management, Führungskräfteentwicklung)'
             ]
         },
         18: {
             name: 'Kirsten Schmiegelt',
             role: 'Trainerin & Coach',
             photo: 'assets/team/Kirsten_Schmiegelt_3-1.jpg',
-            categories: ['communication', 'health'],
-            quickInfo: [
-                'Training',
-                'Coaching',
-                'Kommunikation'
+            categories: ['communication', 'health', 'leadership'],
+            motto: 'Wertschätzung und die Arbeit auf Augenhöhe sind die fruchtbarste Grundlage für nachhaltige Veränderungen.',
+            shortDescription: [
+                'Mentorin für Stimmbildung, Bühnenpräsenz und authentisches Auftreten',
+                'Expertise in Führungskräfteentwicklung und Teambuilding',
+                '12-jährige Karriere als Bühnendarstellerin in Theater und Film',
+                'Über 20 Jahre Trainerin und Coach im Bereich Business und Gesundheit'
             ],
-            bio: [
-                'Kirsten Schmiegelt ist Trainerin und Coach bei WTM Management Consulting.',
-                'Sie unterstützt Menschen in ihrer Kommunikation und Entwicklung.'
-            ],
-            qualifications: [
-                'Trainerin',
-                'Coach',
-                'Kommunikationsexpertin'
+            extendedBio: [
+                'Aktuelle Schwerpunkte:',
+                '• Führungskräfteentwicklung',
+                '• Stimmbildung, Bühnenpräsenz und authentisches Auftreten',
+                '• Resilienz und Selbstfürsorge gegen Stress und Burnout',
+                '• Women Leadership',
+                '• Keynote Speaking',
+                '',
+                'Stationen im Beruf:',
+                '• Über 20 Jahre selbständige Trainerin/Coach',
+                '• 12 Jahre Bühnendarstellerin in Theater, Film, TV, Musical',
+                '• Lehraufträge an Pflegeschulen und Fachhochschulen',
+                '',
+                'Aus- und Weiterbildungen:',
+                '• Diplom Sozialpädagogin (HAW Hamburg)',
+                '• Ausbildung zur Schauspielerin (Schauspielschule Hamburg)',
+                '• Ausbildung zur Musicaldarstellerin (Joop van den Ende Academy)',
+                '• Zertifizierte Yoga-Lehrerin (BYV und YA certified)',
+                '• Betriebliche Gesundheitsberaterin (Fernuniversität Hagen)'
             ]
         },
         19: {
             name: 'Markus Schramm',
             role: 'Trainer & Coach',
             photo: 'assets/team/Markus-Schramm-Portrait-Team-500-x-500.jpg',
-            categories: ['leadership', 'change'],
-            quickInfo: [
-                'Training',
-                'Coaching',
-                'Teamentwicklung'
+            categories: ['leadership', 'change', 'communication'],
+            motto: 'Ich brenne dafür, Menschen in ihrer Entwicklung zu begleiten.',
+            shortDescription: [
+                'Expertise in Teamcoaching sowie 1:1 Coaching für Fach- und Führungskräfte',
+                'Spezialist für Teamentwicklung und Veränderungsprozesse',
+                'Über 20 Jahre Erfahrung in Energiewirtschaft und Beratung',
+                'Fokus auf prozessorientierte Begleitung'
             ],
-            bio: [
-                'Markus Schramm ist Trainer und Coach bei WTM Management Consulting.',
-                'Er begleitet Teams und Führungskräfte bei ihrer Entwicklung.'
-            ],
-            qualifications: [
-                'Trainer',
-                'Coach',
-                'Teamentwickler'
+            extendedBio: [
+                'Aktuelle Schwerpunkte:',
+                '• Teamcoaching',
+                '• 1:1 Coaching für Fach- und Führungskräfte',
+                '• Teamentwicklung',
+                '• Prozessorientierte Begleitung von Veränderungsprozessen',
+                '• Moderation',
+                '',
+                'Stationen im Beruf:',
+                '• 20+ Jahre in Energiewirtschaft und Beratung',
+                '• Personalentwicklung, Organisationsberatung, Planung und Controlling',
+                '• Seit 2021 freiberuflicher Trainer und Coach',
+                '',
+                'Aus- und Weiterbildungen:',
+                '• Diplom Betriebswirt (DH)',
+                '• Systemischer Teamentwickler (Coach Competence Center)',
+                '• Zertifizierter Coach nach ICF/IOBC (WTM/ifsm)'
             ]
         },
         20: {
             name: 'Heike Stalling',
             role: 'Trainerin & Coach',
             photo: 'assets/team/Stalling-Heike-Team-Portrait-500x500-6-23.jpg',
-            categories: ['communication', 'management'],
-            quickInfo: [
-                'Training',
-                'Coaching',
-                'Kommunikation'
+            categories: ['communication', 'management', 'leadership'],
+            motto: 'Mit Erfolgserlebnissen und dem "Getting Things Done"-Prinzip im Arbeitsalltag wieder durchatmen.',
+            shortDescription: [
+                'Vielseitige Trainerin: vom Impulsworkshop bis zum komplexen Seminarprogramm',
+                'Strukturiertes Arbeiten und Flexibilität: angewandte Zeitmanagement-Methoden',
+                'Erfahrung als Rechtsanwältin/Notarssubstitutin bringt praxisorientierte Herangehensweise',
+                'Expertise von persönlichem Auftreten und Rhetorik bis zu digitaler Korrespondenz'
             ],
-            bio: [
-                'Heike Stalling ist Trainerin und Coach bei WTM Management Consulting.',
-                'Sie begleitet Menschen in ihrer beruflichen Entwicklung.'
-            ],
-            qualifications: [
-                'Trainerin',
-                'Coach',
-                'Kommunikationsexpertin'
+            extendedBio: [
+                'Aktuelle Schwerpunkte:',
+                '• Zeit- und Selbstmanagement, Selbstorganisation (klassisch und agil)',
+                '• Persönliches Auftreten und Wirkung',
+                '• Rhetorik und Präsentation',
+                '• Digitale Korrespondenz, E-Mail-Kultur',
+                '',
+                'Stationen im Beruf:',
+                '• Rechtsanwältin und Notarssubstitutin',
+                '• Kauffrau, Trainerin und Coach',
+                '• Autorin und Fachjournalistin',
+                '',
+                'Aus- und Weiterbildung:',
+                '• Trainerausbildung (WTM)',
+                '• Ausbildung Zeit- und Selbstmanagement (Tempus)',
+                '• ADG-Trainerfortbildung',
+                '• Wertorientierte Imaginative Traumatherapie (WIIT)'
             ]
         },
         21: {
             name: 'Dr. Tamara Thomsen',
             role: 'Trainerin & Coach',
             photo: 'assets/team/Tamara-Thomsen-Team_500x500.jpg',
-            categories: ['leadership', 'health'],
-            quickInfo: [
-                'Training',
-                'Coaching',
-                'Entwicklung'
+            categories: ['leadership', 'health', 'communication'],
+            motto: 'Die Selbstwirksamkeitserfahrung der Klientinnen und Klienten ist mir wichtig.',
+            shortDescription: [
+                'Spezialistin für Kompetenz- und Persönlichkeitsentwicklung',
+                'Fundierte therapeutische Weiterbildungen ergänzen Trainings- und Coaching-Know-how',
+                'Leitet die Coachingausbildung bei WTM Management Consulting',
+                'Vielseitige Kompetenz in Führung, Persönlichkeit und Gesundheitsmanagement'
             ],
-            bio: [
-                'Dr. Tamara Thomsen ist Trainerin und Coach bei WTM Management Consulting.',
-                'Sie begleitet Menschen in ihrer beruflichen und persönlichen Entwicklung.'
-            ],
-            qualifications: [
-                'Promotion',
-                'Trainerin',
-                'Coach'
+            extendedBio: [
+                'Aktuelle Schwerpunkte:',
+                '• Persönlichkeits- und Führungskräfteentwicklung – Onboarding im Job',
+                '• Kompetenz- und Persönlichkeitsdiagnostik',
+                '• Kommunikations- und Konfliktmanagement',
+                '• Stressmanagement, Burnout',
+                '• Leitung der Coachingausbildung WTM',
+                '',
+                'Stationen im Beruf:',
+                '• Promotion und Studium an der Universität des Saarlandes',
+                '• Seit 2003 selbständige Tätigkeit u.a. als Systemische Beraterin',
+                '• Konsiliarpsychologin in Krankenhäusern',
+                '',
+                'Aus- und Weiterbildungen:',
+                '• Studium der Psychologie mit Schwerpunkt Arbeits- & Organisationspsychologie',
+                '• Systemische Beraterin & Therapeutin (DGSF)',
+                '• NLP Master (Gesellschaft für NLP)',
+                '• Lehr-Coach WTM'
             ]
         },
         22: {
             name: 'Uta-Barbara Vogel',
             role: 'Trainerin & Coach',
             photo: 'assets/team/Team-Vogel-Barbara-500x500-1.jpg',
-            categories: ['health', 'communication'],
-            quickInfo: [
-                'Training',
-                'Coaching',
-                'Persönlichkeit'
+            categories: ['health', 'communication', 'leadership'],
+            motto: 'Konsequent und mit dem Blick für Zusammenhänge, verbinde ich Direktheit mit Wertschätzung.',
+            shortDescription: [
+                'Inhaberin, Coach und Trainerin bei Menschen & Wandel',
+                'Begleitung von Menschen in beruflichen Veränderungsprozessen',
+                'Schwerpunkte: Potentialentwicklung, Führung, Gesundheit und Kommunikation',
+                'Breite Erfahrung in der betrieblichen Gesundheitsförderung'
             ],
-            bio: [
-                'Uta-Barbara Vogel ist Trainerin und Coach bei WTM Management Consulting.',
-                'Sie begleitet Menschen bei ihrer persönlichen Entwicklung.'
-            ],
-            qualifications: [
-                'Trainerin',
-                'Coach',
-                'Persönlichkeitsentwicklerin'
+            extendedBio: [
+                'Aktuelle Schwerpunkte:',
+                '• Potentialentwicklung und Führungstrainings',
+                '• Gesundheitsförderung und Resilienz',
+                '• Kommunikationstrainings',
+                '• Veränderungsprozesse begleiten',
+                '',
+                'Stationen im Beruf:',
+                '• Inhaberin, Coach und Trainerin bei Menschen & Wandel',
+                '• Langjährige Erfahrung in der betrieblichen Gesundheitsförderung',
+                '• Begleitung von beruflichen Veränderungsprozessen',
+                '',
+                'Arbeitsweise:',
+                'Verbindet Direktheit mit Wertschätzung und hat einen klaren Blick für Zusammenhänge.'
             ]
         },
         23: {
             name: 'Frank Titzer',
             role: 'Coach & Supervisor',
             photo: '',
-            categories: ['communication', 'health'],
-            quickInfo: [
-                'Klärungshilfe',
-                'Coaching',
-                'Supervision'
+            categories: ['communication', 'health', 'leadership'],
+            motto: 'Klärung schafft Klarheit – auch in schwierigen Situationen.',
+            shortDescription: [
+                'Experte für Klärungshilfe und Konfliktlösung',
+                'Coach und Supervisor mit systemischem Hintergrund',
+                'Begleitung von Einzelpersonen und Teams in komplexen Situationen',
+                'Fokus auf nachhaltige Kommunikation und Verständigung'
             ],
-            bio: [
-                'Frank Titzer ist Coach, Supervisor und Experte für Klärungshilfe bei WTM Management Consulting.',
-                'Er unterstützt Menschen und Organisationen in den Bereichen Kommunikation und Führung.'
-            ],
-            qualifications: [
-                'Klärungshelfer',
-                'Coach',
-                'Supervisor'
+            extendedBio: [
+                'Aktuelle Schwerpunkte:',
+                '• Klärungshilfe bei Konflikten',
+                '• Coaching und Supervision',
+                '• Kommunikation in schwierigen Situationen',
+                '• Teambegleitung',
+                '',
+                'Arbeitsweise:',
+                'Systemischer Ansatz mit Fokus auf Klärung und nachhaltige Verständigung zwischen allen Beteiligten.'
             ]
         }
     };
@@ -1149,28 +1425,43 @@ document.addEventListener('DOMContentLoaded', () => {
             }).join('');
         }
 
-        // Update quick info
-        if (modalQuickInfo && member.quickInfo) {
-            modalQuickInfo.innerHTML = member.quickInfo.map(info => `
-                <li>
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <polyline points="20 6 9 17 4 12"></polyline>
-                    </svg>
-                    ${info}
-                </li>
-            `).join('');
+        // Update quick info / shortDescription with motto
+        if (modalQuickInfo) {
+            let quickInfoHtml = '';
+
+            // Add motto if available
+            if (member.motto) {
+                quickInfoHtml += `<li class="motto-item"><em>"${member.motto}"</em></li>`;
+            }
+
+            // Add shortDescription items
+            if (member.shortDescription) {
+                quickInfoHtml += member.shortDescription.map(info => `
+                    <li>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg>
+                        ${info}
+                    </li>
+                `).join('');
+            }
+
+            modalQuickInfo.innerHTML = quickInfoHtml;
         }
 
-        // Update bio
-        if (modalBio && member.bio) {
-            modalBio.innerHTML = member.bio.map(p => `<p>${p}</p>`).join('');
+        // Update bio with extendedBio
+        if (modalBio && member.extendedBio) {
+            modalBio.innerHTML = member.extendedBio.map(p => {
+                if (p === '') return '<br>';
+                if (p.startsWith('•')) return `<p class="bullet-point">${p}</p>`;
+                if (p.endsWith(':')) return `<p class="section-header"><strong>${p}</strong></p>`;
+                return `<p>${p}</p>`;
+            }).join('');
         }
 
-        // Update qualifications
-        if (modalQualifications && member.qualifications) {
-            modalQualifications.innerHTML = member.qualifications.map(q =>
-                `<li>${q}</li>`
-            ).join('');
+        // Hide qualifications section (now included in extendedBio)
+        if (modalQualifications) {
+            modalQualifications.style.display = 'none';
         }
 
         // Show modal with animation
@@ -1698,7 +1989,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     }
                 });
             });
-            initStickyHeader();
         }
 
         // 2. CHATBOT AND HELPER BUTTON
