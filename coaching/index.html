@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="../assets/favicon.png">
+    <title>Online Coaching – WTM Management Consulting</title>
+    <meta name="description"
+        content="Professionelles Online-Coaching von erfahrenen WTM-Coaches. Individuelle Begleitung für Führungskräfte, Karriereentwicklung, Stressbewältigung und persönliches Wachstum.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Sans+Pro:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="../styles/index.css">
+    <link rel="stylesheet" href="../styles/coaching.css">
+</head>
+
+<body>
+    <!-- Shared Navigation -->
+    <div id="nav-placeholder"></div>
+
+    <!-- Hero Section -->
+    <section id="coaching-hero" class="coaching-hero">
+        <div class="coaching-hero-bg">
+            <div class="hero-gradient"></div>
+            <div class="hero-pattern"></div>
+        </div>
+        <div class="container">
+            <div class="coaching-hero-content reveal">
+                <span class="label">Online Coaching</span>
+                <h1>Ihr persönlicher <span class="accent">Entwicklungsraum</span></h1>
+                <p class="hero-subtitle">
+                    Unsere erfahrenen Coaches begleiten Sie individuell bei beruflichen Herausforderungen,
+                    Veränderungsprozessen und persönlichem Wachstum – flexibel und ortsunabhängig.
+                </p>
+                <div class="hero-stats">
+                    <div class="hero-stat">
+                        <span class="stat-value">15+</span>
+                        <span class="stat-label">Erfahrene Coaches</span>
+                    </div>
+                    <div class="hero-stat">
+                        <span class="stat-value">100%</span>
+                        <span class="stat-label">Online & Flexibel</span>
+                    </div>
+                    <div class="hero-stat">
+                        <span class="stat-value">14</span>
+                        <span class="stat-label">Themenbereiche</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Filter Section -->
+    <section id="coaching-filter" class="section bg-cream">
+        <div class="container">
+            <div class="filter-header reveal">
+                <h2>Finden Sie Ihren Coach</h2>
+                <div class="accent-line"></div>
+                <p>Filtern Sie nach Themenbereich und finden Sie den passenden Coach für Ihre Bedürfnisse.</p>
+            </div>
+
+            <!-- Theme Filter Tags -->
+            <div class="theme-filter-container reveal">
+                <div class="theme-filter-scroll">
+                    <div class="theme-filter-tags" id="theme-filter-tags">
+                        <!-- Tags werden dynamisch generiert -->
+                    </div>
+                </div>
+                <div class="filter-fade-left"></div>
+                <div class="filter-fade-right"></div>
+            </div>
+
+            <!-- Active Filter Indicator -->
+            <div class="active-filter-indicator reveal" id="active-filter-indicator">
+                <span class="filter-label">Aktueller Filter:</span>
+                <span class="filter-value" id="current-filter-value">Alle Coaches</span>
+                <button class="clear-filter-btn" id="clear-filter-btn" style="display: none;">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                    Filter zurücksetzen
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Coaches Grid Section -->
+    <section id="coaching-grid-section" class="section bg-white">
+        <div class="container">
+            <div class="coaches-count reveal">
+                <span id="coaches-count-value">15</span> Coaches verfügbar
+            </div>
+
+            <div class="coaching-grid" id="coaching-grid">
+                <!-- Coach cards werden dynamisch generiert -->
+            </div>
+
+            <!-- Empty State -->
+            <div class="empty-state" id="empty-state" style="display: none;">
+                <div class="empty-state-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="M21 21l-4.35-4.35"></path>
+                    </svg>
+                </div>
+                <h3>Keine Coaches gefunden</h3>
+                <p>Für diesen Filter sind keine Coaches verfügbar. Probieren Sie einen anderen Themenbereich.</p>
+                <button class="btn btn-secondary" id="reset-filter-btn">Alle anzeigen</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section id="coaching-cta" class="section coaching-cta-section">
+        <div class="container">
+            <div class="cta-content reveal">
+                <h2>Bereit für den nächsten Schritt?</h2>
+                <p>Vereinbaren Sie ein unverbindliches Erstgespräch und finden Sie heraus, welcher Coach am besten zu
+                    Ihnen passt.</p>
+                <a href="../index.html#kontakt" class="btn btn-primary btn-large">
+                    Kontakt aufnehmen
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7"></path>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Shared Footer -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Scripts -->
+    <script src="../js/coaching-data.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/coaching.js"></script>
+</body>
+
+</html>

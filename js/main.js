@@ -650,7 +650,7 @@ document.addEventListener('DOMContentLoaded', () => {
         3: {
             name: 'Dr. Olaf Werner',
             role: 'Geschäftsführer',
-            photo: '',
+            photo: 'assets/team/olaf_werner.jpg',
             categories: ['leadership', 'communication', 'management'],
             motto: 'Das Zusammenspiel von Mensch und Organisation fasziniert mich.',
             shortDescription: [
@@ -1297,7 +1297,7 @@ document.addEventListener('DOMContentLoaded', () => {
         23: {
             name: 'Frank Titzer',
             role: 'Coach & Supervisor',
-            photo: '',
+            photo: 'assets/team/frank_titzer.jpg',
             categories: ['communication', 'health', 'leadership'],
             motto: 'Klärung schafft Klarheit – auch in schwierigen Situationen.',
             shortDescription: [
@@ -1919,6 +1919,7 @@ document.addEventListener('DOMContentLoaded', () => {
                                 <div class="nav-dropdown-menu">
                                     <a href="../index.html#angebote">Leistungen</a>
                                     <a href="../index.html#trainings">Trainings</a>
+                                    <a href="../coaching/">Online Coaching</a>
                                     <a href="../index.html#fuehrungskraefte">FK-Programm</a>
                                 </div>
                             </li>
@@ -2040,7 +2041,7 @@ document.addEventListener('DOMContentLoaded', () => {
                             <h4>Links</h4>
                             <ul class="footer-links">
                                 <li><a href="../index.html#trainings">Trainings</a></li>
-                                <li><a href="../index.html#angebote">Coaching</a></li>
+                                <li><a href="../coaching/">Online Coaching</a></li>
                                 <li><a href="../index.html#kontakt">Kontakt</a></li>
                                 <li><a href="../impressum.html">Impressum</a></li>
                                 <li><a href="../datenschutz.html">Datenschutz</a></li>
