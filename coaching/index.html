@@ -138,6 +138,69 @@
     <!-- Shared Footer -->
     <div id="footer-placeholder"></div>
 
+    <!-- Coach Modal -->
+    <div class="team-modal" id="coach-modal">
+        <div class="modal-backdrop"></div>
+        <button class="modal-close">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+        </button>
+        <div class="modal-content">
+            <div class="modal-grid">
+                <!-- Left Column: Photo -->
+                <div class="modal-photo" id="modal-photo-container">
+                    <!-- Image injected via JS -->
+                </div>
+
+                <!-- Right Column: Details -->
+                <div class="modal-details">
+                    <!-- Mobile Header (Avatar + Name) -->
+                    <div class="modal-header-row">
+                        <div class="modal-avatar" id="modal-avatar">
+                            <!-- Avatar injected via JS -->
+                        </div>
+                        <div class="modal-header-text">
+                            <span class="modal-label">Coach Profil</span>
+                            <h2 class="modal-name"></h2>
+                            <p class="modal-role"></p>
+                        </div>
+                    </div>
+
+                    <div class="modal-tags" id="modal-categories">
+                        <!-- Categories injected via JS -->
+                    </div>
+
+                    <div class="detail-expand-container">
+                        <ul class="modal-quick-info" id="modal-quick-info">
+                            <!-- Quick info list items injected via JS -->
+                        </ul>
+                        <button class="detail-expand-toggle" id="detail-expand-toggle">
+                            <span class="toggle-text">Mehr Details anzeigen</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </button>
+                    </div>
+
+                    <div class="modal-bio" id="modal-bio">
+                        <!-- Bio paragraphs injected via JS -->
+                    </div>
+
+                    <div class="modal-cta">
+                        <a href="../index.html#kontakt" class="btn btn-primary">
+                            Termin anfragen
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M5 12h14M12 5l7 7-7 7"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Scripts -->
     <script src="../js/coaching-data.js"></script>
     <script src="../js/main.js"></script>
