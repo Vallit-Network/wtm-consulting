@@ -1239,38 +1239,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 '• Wertorientierte Imaginative Traumatherapie (WIIT)'
             ]
         },
-        21: {
-            name: 'Dr. Tamara Thomsen',
-            role: 'Trainerin & Coach',
-            photo: 'assets/team/Tamara-Thomsen-Team_500x500.jpg',
-            categories: ['leadership', 'health', 'communication'],
-            motto: 'Die Selbstwirksamkeitserfahrung der Klientinnen und Klienten ist mir wichtig.',
-            shortDescription: [
-                'Spezialistin für Kompetenz- und Persönlichkeitsentwicklung',
-                'Fundierte therapeutische Weiterbildungen ergänzen Trainings- und Coaching-Know-how',
-                'Leitet die Coachingausbildung bei WTM Management Consulting',
-                'Vielseitige Kompetenz in Führung, Persönlichkeit und Gesundheitsmanagement'
-            ],
-            extendedBio: [
-                'Aktuelle Schwerpunkte:',
-                '• Persönlichkeits- und Führungskräfteentwicklung – Onboarding im Job',
-                '• Kompetenz- und Persönlichkeitsdiagnostik',
-                '• Kommunikations- und Konfliktmanagement',
-                '• Stressmanagement, Burnout',
-                '• Leitung der Coachingausbildung WTM',
-                '',
-                'Stationen im Beruf:',
-                '• Promotion und Studium an der Universität des Saarlandes',
-                '• Seit 2003 selbständige Tätigkeit u.a. als Systemische Beraterin',
-                '• Konsiliarpsychologin in Krankenhäusern',
-                '',
-                'Aus- und Weiterbildungen:',
-                '• Studium der Psychologie mit Schwerpunkt Arbeits- & Organisationspsychologie',
-                '• Systemische Beraterin & Therapeutin (DGSF)',
-                '• NLP Master (Gesellschaft für NLP)',
-                '• Lehr-Coach WTM'
-            ]
-        },
+
         22: {
             name: 'Uta-Barbara Vogel',
             role: 'Trainerin & Coach',
