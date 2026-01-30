@@ -443,6 +443,12 @@
     font-weight: 600;
     color: var(--color-accent);
     transition: all var(--transition-fast);
+    /* Remove button default styles */
+    background: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    outline: none;
 }
 
 .coach-profile-link:hover {
@@ -560,33 +566,6 @@
 }
 
 /* ============================================
-   MODAL SPECIFIC STYLES
-   ============================================ */
-.modal-quick-info {
-    list-style: none;
-    padding: 0;
-    margin: 0 0 1.5rem 0;
-}
-
-.modal-quick-info li {
-    display: flex;
-    align-items: flex-start;
-    gap: 0.75rem;
-    margin-bottom: 0.5rem;
-    font-size: 0.95rem;
-    color: var(--color-text);
-    line-height: 1.5;
-}
-
-.modal-quick-info li svg {
-    width: 20px;
-    height: 20px;
-    flex-shrink: 0;
-    color: var(--color-accent);
-    margin-top: 2px;
-}
-
-/* ============================================
    RESPONSIVE DESIGN
    ============================================ */
 @media (max-width: 1200px) {
@@ -691,4 +670,42 @@
     .coach-card-footer {
         padding: 0.75rem 1rem 1rem;
     }
+}
+
+/* ============================================
+   COACH MODAL OVERRIDES
+   ============================================ */
+
+/* Add more padding to Schwerpunkte section */
+#coach-modal .modal-quick-info {
+    padding: 1.5rem 2rem;
+    margin-bottom: 1rem;
+}
+
+#coach-modal .modal-quick-info h4 {
+    font-size: 0.75rem;
+    margin-bottom: 1rem;
+}
+
+#coach-modal .quick-info-list {
+    gap: 0.75rem;
+}
+
+#coach-modal .quick-info-list li {
+    font-size: 0.9rem;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--color-border);
+    opacity: 1;
+    animation: none;
+}
+
+#coach-modal .quick-info-list li:last-child {
+    border-bottom: none;
+}
+
+#coach-modal .quick-info-list li::before {
+    content: '✓';
+    color: var(--color-accent);
+    margin-right: 0.5rem;
+    font-weight: 600;
 }

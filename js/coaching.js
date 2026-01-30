@@ -287,16 +287,14 @@ document.addEventListener('DOMContentLoaded', () => {
         if (modalQuickInfo) {
             if (coach.shortDescription && coach.shortDescription.length > 0) {
                 modalQuickInfo.innerHTML = coach.shortDescription.map(item =>
-                    `<li>
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <polyline points="20 6 9 17 4 12"></polyline>
-                        </svg>
-                        <span>${item}</span>
-                    </li>`
+                    `<li>${item}</li>`
                 ).join('');
-                modalQuickInfo.style.display = 'block';
+                // Show the parent container
+                modalQuickInfo.closest('.modal-quick-info')?.style.setProperty('display', 'block');
             } else {
-                modalQuickInfo.style.display = 'none';
+                modalQuickInfo.innerHTML = '';
+                // Hide parent container if no content
+                modalQuickInfo.closest('.modal-quick-info')?.style.setProperty('display', 'none');
             }
         }
 
