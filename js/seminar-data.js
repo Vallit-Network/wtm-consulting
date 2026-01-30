@@ -8,7 +8,7 @@ const seminarsData = {
     "lebensphasen-berufliche-orientierung": {
         id: "lebensphasen-berufliche-orientierung",
         title: "Lebensphasen & Berufliche Orientierung",
-        url: "seminare/lebensphasen",
+        url: "seminare/lebensphasen.html",
         category: "leadership",
         badge: "Führung",
         shortDescription: "Karriereplanung im Wandel der Lebensphasen – Orientierung finden und bewusste Entscheidungen treffen.",
@@ -30,7 +30,7 @@ const seminarsData = {
     "selbstsicherheit-und-durchsetzungsvermoegen": {
         id: "selbstsicherheit-und-durchsetzungsvermoegen",
         title: "Selbstsicherheit & Durchsetzungsvermögen",
-        url: "seminare/selbstsicherheit-und-durchsetzungsvermoegen",
+        url: "seminare/selbstsicherheit-und-durchsetzungsvermoegen.html",
         category: "health",
         badge: "Gesundheit",
         shortDescription: "Souverän auftreten und die eigene Position vertreten – ohne andere zu überfahren oder sich selbst zu verlieren.",
@@ -119,7 +119,7 @@ const seminarsData = {
     "delegation-das-handwerk-der-fuehrung": {
         id: "delegation-das-handwerk-der-fuehrung",
         title: "Delegation: Das Handwerk der Führung",
-        url: "seminare/delegation-das-handwerk-der-fuehrung",
+        url: "seminare/delegation-das-handwerk-der-fuehrung.html",
         category: "leadership",
         badge: "Führung",
         shortDescription: "Richtig delegieren – Aufgaben übertragen, Mitarbeiter fördern und Zeit gewinnen für Wesentliches.",
@@ -141,7 +141,7 @@ const seminarsData = {
     "fuehren-durch-persoenlichkeit": {
         id: "fuehren-durch-persoenlichkeit",
         title: "Führen durch Persönlichkeit",
-        url: "seminare/fuehren-durch-persoenlichkeit",
+        url: "seminare/fuehren-durch-persoenlichkeit.html",
         category: "leadership",
         badge: "Führung",
         shortDescription: "Führungskompetenz durch Persönlichkeit stärken – Haltung, Selbstreflexion und wirksamer Umgang mit Macht.",
@@ -189,7 +189,7 @@ const seminarsData = {
     "gesunde-selbstfuehrung": {
         id: "gesunde-selbstfuehrung",
         title: "Gesunde Selbstführung",
-        url: "seminare/gesunde-selbstfuehrung",
+        url: "seminare/gesunde-selbstfuehrung.html",
         category: "health",
         badge: "🌱 Gesundheit",
         shortDescription: "Bei stürmischer See in sich Ruhe bewahren – das innere Gleichgewicht aufrechterhalten auch in dynamischen Zeiten mit Veränderungsprozessen und Belastungen.",
@@ -214,7 +214,7 @@ const seminarsData = {
     "gesundheitsorientiertes-fuehren": {
         id: "gesundheitsorientiertes-fuehren",
         title: "Gesundheitsorientiertes Führen",
-        url: "seminare/gesundheitsorientiertes-fuehren",
+        url: "seminare/gesundheitsorientiertes-fuehren.html",
         category: "health",
         badge: "🌱 Gesundheit",
         shortDescription: "Führungskräfte beeinflussen die Gesundheit ihrer Teams. Lernen Sie, wie Sie Belastungen erkennen, Ressourcen fördern und gesundheitsorientiert führen.",
@@ -237,7 +237,7 @@ const seminarsData = {
     "gruppendynamik-in-teams": {
         id: "gruppendynamik-in-teams",
         title: "Gruppendynamik in Teams",
-        url: "seminare/gruppendynamik-in-teams",
+        url: "seminare/gruppendynamik-in-teams.html",
         category: "change",
         badge: "Change",
         shortDescription: "Teamdynamiken verstehen und nutzen – Rollen, Phasen und Prozesse in der Teamarbeit steuern.",
@@ -261,7 +261,7 @@ const seminarsData = {
     "intuition-ist-doch-logisch": {
         id: "intuition-ist-doch-logisch",
         title: "Intuition: ist doch logisch",
-        url: "seminare/intuition",
+        url: "seminare/intuition.html",
         category: "health",
         badge: "🌱 Gesundheit",
         shortDescription: "Neuere Forschungsergebnisse zeigen, dass Intuition keineswegs nur emotionales ‚Bauchgefühl' ist, sondern auch rationale Instrumente nutzt wie Logik, Mathematik. Der Unterschied ist: sie nutzt sie unbewusst.",
@@ -285,7 +285,7 @@ const seminarsData = {
     "kommunikation-im-zielgruppenspezifischen-design": {
         id: "kommunikation-im-zielgruppenspezifischen-design",
         title: "Zielgruppenspezifische Kommunikation",
-        url: "seminare/kommunikation-im-zielgruppenspezifischen-design",
+        url: "seminare/kommunikation-im-zielgruppenspezifischen-design.html",
         category: "communication",
         badge: "Kommunikation",
         shortDescription: "Botschaften passgenau gestalten – unterschiedliche Zielgruppen überzeugend ansprechen.",
@@ -307,7 +307,7 @@ const seminarsData = {
     "konflikterkennung-behandlung-praevention": {
         id: "konflikterkennung-behandlung-praevention",
         title: "Konflikterkennung & Prävention",
-        url: "seminare/konflikterkennung-behandlung-praevention",
+        url: "seminare/konflikterkennung-behandlung-praevention.html",
         category: "change",
         badge: "Change",
         shortDescription: "Konflikte sind in Unternehmen Alltag. Lernen Sie, diese frühzeitig zu erkennen, professionell zu behandeln und präventiv zu wirken.",
@@ -332,7 +332,7 @@ const seminarsData = {
     "projekte-aus-der-krise-retten": {
         id: "projekte-aus-der-krise-retten",
         title: "Projekte aus der Krise retten",
-        url: "seminare/projekte-aus-der-krise-retten",
+        url: "seminare/projekte-aus-der-krise-retten.html",
         category: "change",
         badge: "Change",
         shortDescription: "Strategisches Krisenmanagement für Projektleiter: Probleme erkennen, Stellschrauben nutzen, Projekte retten.",
@@ -354,7 +354,7 @@ const seminarsData = {
     "krisenmanagement-fuer-projektmanager": {
         id: "krisenmanagement-fuer-projektmanager",
         title: "Krisenmanagement für Projektmanager",
-        url: "seminare/krisenmanagement-fuer-projektmanager",
+        url: "seminare/krisenmanagement-fuer-projektmanager.html",
         category: "change",
         badge: "Change",
         shortDescription: "Projekte in Schwierigkeiten retten – Krisen erkennen, bewältigen und daraus lernen.",
@@ -371,7 +371,7 @@ const seminarsData = {
     "laterales-fuehren": {
         id: "laterales-fuehren",
         title: "Laterales Führen wirksam gestalten",
-        url: "seminare/laterales-fuehren",
+        url: "seminare/laterales-fuehren.html",
         category: "leadership",
         badge: "Führung",
         shortDescription: "Führung ohne formale Hierarchie klar gestalten – mit Verständnis für Entscheidungsprozesse und Teamdynamiken.",
@@ -396,7 +396,7 @@ const seminarsData = {
     "leadership-basics": {
         id: "leadership-basics",
         title: "Leadership Basics",
-        url: "seminare/leadership-basics",
+        url: "seminare/leadership-basics.html",
         category: "leadership",
         badge: "Führung",
         shortDescription: "Die Grundlagen wirksamer Führung: Führungsverständnis, Selbstmanagement, Kommunikation, Delegation und konstruktiver Umgang mit Konflikten.",
@@ -441,7 +441,7 @@ const seminarsData = {
     "moderation": {
         id: "moderation",
         title: "Moderation",
-        url: "seminare/moderation",
+        url: "seminare/moderation.html",
         category: "communication",
         badge: "Kommunikation",
         shortDescription: "Gruppenprozesse effektiv steuern und Ergebnisse sichern.",
@@ -458,7 +458,7 @@ const seminarsData = {
     "praesentieren-verstaendlich-erklaeren": {
         id: "praesentieren-verstaendlich-erklaeren",
         title: "Präsentieren - verständlich erklären & mehr",
-        url: "seminare/praesentieren-verstaendlich-erklaeren",
+        url: "seminare/praesentieren-verstaendlich-erklaeren.html",
         category: "communication",
         badge: "💬 Kommunikation",
         shortDescription: "„Es genügt nicht, keine Gedanken zu haben, man muss auch unfähig sein, sie auszudrücken.“ (Karl Kraus) – Fachleute überzeugen mit klaren Präsentationen.",
@@ -509,7 +509,7 @@ const seminarsData = {
     "selbsterkenntnis-und-selbstfuehrung": {
         id: "selbsterkenntnis-und-selbstfuehrung",
         title: "Selbsterkenntnis & Selbstführung",
-        url: "seminare/selbsterkenntnis-und-selbstfuehrung",
+        url: "seminare/selbsterkenntnis-und-selbstfuehrung.html",
         category: "leadership",
         badge: "Führung",
         shortDescription: "Sich selbst verstehen und führen – die Basis für wirksame Führung anderer.",
@@ -531,7 +531,7 @@ const seminarsData = {
     "change-kompetenz": {
         id: "change-kompetenz",
         title: "Change-Kompetenz",
-        url: "seminare/change-kompetenz",
+        url: "seminare/change-kompetenz.html",
         category: "change",
         badge: "Change",
         shortDescription: "Den Wandel verstehen und gestalten. Mentale Stärke und konstruktiver Umgang mit Veränderungen.",
@@ -577,7 +577,7 @@ const seminarsData = {
     "selbstmitgefuehl": {
         id: "selbstmitgefuehl",
         title: "Selbstmitgefühl",
-        url: "seminare/selbstmitgefuehl",
+        url: "seminare/selbstmitgefuehl.html",
         category: "health",
         badge: "🌱 Gesundheit",
         shortDescription: "Sich selbst freundlich und vergebend begegnen – Selbstmitgefühl als Ressource für konstruktive Lebensgestaltung und Persönlichkeitsentfaltung.",
@@ -622,7 +622,7 @@ const seminarsData = {
     "vom-mitarbeiter-zur-fuehrungskraft": {
         id: "vom-mitarbeiter-zur-fuehrungskraft",
         title: "Vom Mitarbeiter zur Führungskraft",
-        url: "seminare/vom-mitarbeiter-zur-fuehrungskraft",
+        url: "seminare/vom-mitarbeiter-zur-fuehrungskraft.html",
         category: "leadership",
         badge: "Führung",
         shortDescription: "Der erfolgreiche Rollenwechsel – von der Fachkraft zur Führungspersönlichkeit. Den Einstieg in die Führung souverän meistern.",
@@ -647,7 +647,7 @@ const seminarsData = {
     "widerstandsfaehigkeit-staerken": {
         id: "widerstandsfaehigkeit-staerken",
         title: "Widerstandsfähigkeit stärken",
-        url: "seminare/widerstandsfaehigkeit-staerken",
+        url: "seminare/widerstandsfaehigkeit-staerken.html",
         category: "health",
         badge: "🌱 Gesundheit",
         shortDescription: "Was macht mich eigentlich widerstandsfähig? Erkennen Sie Denkfallen, stärken Sie die Perspektivübernahme und entwickeln Sie Ihr Growth-Mindset.",
@@ -692,7 +692,7 @@ const seminarsData = {
     "zusammenarbeit-von-generationen": {
         id: "zusammenarbeit-von-generationen",
         title: "Zusammenarbeit der Generationen",
-        url: "seminare/zusammenarbeit-von-generationen",
+        url: "seminare/zusammenarbeit-von-generationen.html",
         category: "leadership",
         badge: "Führung",
         shortDescription: "Generationen verbinden – als Führungskraft das Beste aus verschiedenen Altersgruppen herausholen.",
@@ -712,7 +712,7 @@ const seminarsData = {
     "resilienz": {
         id: "resilienz",
         title: "Resilienz",
-        url: "seminare/resilienz",
+        url: "seminare/resilienz.html",
         category: "health",
         badge: "🌱 Gesundheit",
         shortDescription: "Die innere Widerstandskraft stärken. Gestärkt aus Krisen hervorgehen und an Herausforderungen wachsen.",
@@ -729,7 +729,7 @@ const seminarsData = {
     "change-kompetenz": {
         id: "change-kompetenz",
         title: "Change Kompetenz",
-        url: "seminare/change-kompetenz",
+        url: "seminare/change-kompetenz.html",
         category: "change",
         badge: "Change",
         shortDescription: "In Zeiten schnellen Wandels mental stark bleiben. Veränderungen konstruktiv begegnen und beeinflussbare von nicht beeinflussbaren Bereichen unterscheiden.",
@@ -746,7 +746,7 @@ const seminarsData = {
     "storytelling": {
         id: "storytelling",
         title: "Story telling",
-        url: "seminare/storytelling",
+        url: "seminare/storytelling.html",
         category: "communication",
         badge: "📖 Kommunikation",
         shortDescription: "Geschichten sind die älteste Form der Kommunikation. Lernen Sie, mit Narrativen zu führen, zu überzeugen und zu inspirieren.",
@@ -763,7 +763,7 @@ const seminarsData = {
     "fuehrungssimulation": {
         id: "fuehrungssimulation",
         title: "Führungssimulation ‚Am offenen Herzen‘",
-        url: "seminare/fuehrungssimulation",
+        url: "seminare/fuehrungssimulation.html",
         category: "leadership",
         badge: "Führung",
         shortDescription: "Realistische Führungsszenarien im Musterkrankenhaus. Faires Feedback. Echte Erkenntnisse. 16 Teilnehmende, unzählige Lernmomente.",
@@ -784,7 +784,7 @@ const seminarsData = {
     "resilienz-staerke-ausdauer": {
         id: "resilienz-staerke-ausdauer",
         title: "Resilienz – Stärke und Ausdauer im Berufsalltag",
-        url: "seminare/resilienz-staerke-ausdauer",
+        url: "seminare/resilienz-staerke-ausdauer.html",
         category: "health",
         badge: "🌱 Gesundheit",
         shortDescription: "Verstehen, wie Resilienz entsteht, Strategien zur Stressbewältigung entwickeln und langfristig leistungsfähig sowie gesund bleiben.",
