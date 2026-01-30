@@ -3,7 +3,7 @@ import re
 from bs4 import BeautifulSoup
 
 # CSP Configuration
-CSP_CONTENT = "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.vallit.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://www.vallit.net;"
+CSP_CONTENT = "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.vallit.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://www.vallit.net; font-src 'self' https://fonts.gstatic.com https://www.vallit.net; img-src 'self' data: https://www.vallit.net; connect-src 'self' https://www.vallit.net; frame-src 'self' https://www.vallit.net;"
 
 def apply_security_headers(file_path):
     with open(file_path, 'r', encoding='utf-8') as f:
