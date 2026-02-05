@@ -1788,7 +1788,7 @@ footer::before {
     cursor: pointer;
     scroll-snap-align: start;
     flex-shrink: 0;
-    overflow: hidden;
+    /* overflow: hidden; Removed to allow ::after hit area extension */
 }
 
 /* Category Color Accent Bar */
@@ -1798,6 +1798,9 @@ footer::before {
     left: 0;
     top: 0;
     bottom: 0;
+    /* Match card border radius since overflow is visible */
+    border-top-left-radius: var(--radius-md);
+    border-bottom-left-radius: var(--radius-md);
     width: 4px;
     background: var(--card-category-color, var(--color-primary));
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
