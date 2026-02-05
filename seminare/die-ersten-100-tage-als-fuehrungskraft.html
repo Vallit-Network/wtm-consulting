@@ -9,9 +9,9 @@
         content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.vallit.net https://vercel.live; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://www.vallit.net https://vercel.live; font-src 'self' https://fonts.gstatic.com https://www.vallit.net; img-src 'self' data: https://www.vallit.net https://vercel.live; connect-src 'self' https://www.vallit.net https://vercel.live; frame-src 'self' https://www.vallit.net https://vercel.live;"
         http-equiv="Content-Security-Policy" />
     <link href="../assets/favicon.png" rel="icon" type="image/png" />
-    <title>Resilienz – WTM Management Consulting</title>
+    <title>Die ersten 100 Tage als Führungskraft – WTM Management Consulting</title>
     <meta
-        content="Die innere Widerstandskraft stärken. Gestärkt aus Krisen hervorgehen und an Herausforderungen wachsen."
+        content="Der sichere Start in die neue Rolle: Strategie, Quick Wins und Beziehungsaufbau für einen erfolgreichen Einstieg."
         name="description" />
     <link href="https://fonts.googleapis.com" rel="preconnect" />
     <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
@@ -21,16 +21,14 @@
     <link href="../styles/index.css" rel="stylesheet" />
     <style>
         :root {
-            /* Anthracite Theme */
+            /* Anthracite Theme (Leadership) */
             --seminar-accent: #2c2c2e;
-            /* Dark Anthracite */
             --seminar-accent-light: rgba(44, 44, 46, 0.1);
             --seminar-accent-glow: rgba(44, 44, 46, 0.3);
             --color-text: #3A3A38;
             --color-cream: #F5F5F3;
             --color-border: #E5E5E0;
             --accent-highlight: #a0a0a5;
-            /* Silver/Grey highlight */
         }
 
         .scroll-progress {
@@ -65,7 +63,6 @@
             width: 400px;
             height: 400px;
             background: #9ca3af;
-            /* Silver */
             top: -100px;
             right: -100px;
         }
@@ -385,42 +382,13 @@
             position: relative;
         }
 
-        /* ============================================
-           CONTENT TIMELINE - PREMIUM DESIGN (Reference)
-           ============================================ */
-        .content-section {
-            padding: 6rem 0;
-            background: linear-gradient(180deg, #f8faf9 0%, #fff 100%);
-            position: relative;
-        }
-
-        .content-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 1px;
-            height: 80px;
-            background: var(--seminar-accent);
-        }
-
-        .journey-container {
-            max-width: 900px;
-            margin: 0 auto;
-            position: relative;
-        }
-
         .journey-line {
             position: absolute;
             left: 50%;
             top: 0;
             bottom: 0;
             width: 4px;
-            background: linear-gradient(180deg,
-                    var(--seminar-accent) 0%,
-                    rgba(44, 44, 46, 0.6) 50%,
-                    rgba(44, 44, 46, 0.2) 100%);
+            background: linear-gradient(180deg, var(--seminar-accent) 0%, rgba(44, 44, 46, 0.6) 50%, rgba(44, 44, 46, 0.2) 100%);
             transform: translateX(-50%);
             border-radius: 4px;
         }
@@ -431,17 +399,10 @@
             top: 0;
             left: 0;
             right: 0;
-            height: 0%;
-            background: linear-gradient(180deg,
-                    var(--accent-highlight) 0%,
-                    var(--seminar-accent) 100%);
-            border-radius: 4px;
-            transition: height 1.5s cubic-bezier(0.4, 0, 0.2, 1);
-            box-shadow: 0 0 20px rgba(44, 44, 46, 0.4);
-        }
-
-        .journey-line.animated::after {
             height: 100%;
+            background: linear-gradient(180deg, var(--accent-highlight) 0%, var(--seminar-accent) 100%);
+            border-radius: 4px;
+            opacity: 0.8;
         }
 
         .journey-item {
@@ -449,21 +410,14 @@
             align-items: flex-start;
             position: relative;
             margin-bottom: 2rem;
-            opacity: 1;
-            /* Keeping it visible by default to avoid JS dependency for now, or match reference animation later */
-            /* transform: translateY(40px); */
-            /* transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1); */
         }
 
-        /* Note: first-child is journey-line. So Item 1 is nth-child(2) -> Even. */
         .journey-item:nth-child(odd) {
             flex-direction: row;
-            /* Content Left */
         }
 
         .journey-item:nth-child(even) {
             flex-direction: row-reverse;
-            /* Content Right */
         }
 
         .journey-content {
@@ -488,11 +442,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow:
-                0 0 0 4px #fff,
-                0 0 0 6px var(--seminar-accent),
-                0 0 30px rgba(44, 44, 46, 0.4);
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 0 0 4px #fff, 0 0 0 6px var(--seminar-accent);
         }
 
         .node-dot::before {
@@ -501,7 +451,6 @@
             height: 8px;
             background: #fff;
             border-radius: 50%;
-            transition: transform 0.3s ease, opacity 0.3s ease;
         }
 
         .journey-item:hover .node-dot::before {
@@ -522,37 +471,10 @@
             }
         }
 
-        .node-ring {
-            position: absolute;
-            inset: -8px;
-            border: 2px solid var(--seminar-accent);
-            border-radius: 50%;
-            opacity: 0;
-            transform: scale(0.8);
-            transition: opacity 0.3s ease, transform 0.3s ease;
-        }
-
-        .journey-item:hover .node-ring {
-            animation: ring-expand 1.5s infinite ease-out;
-        }
-
-        @keyframes ring-expand {
-            0% {
-                transform: scale(0.8);
-                opacity: 0.8;
-            }
-
-            100% {
-                transform: scale(1.8);
-                opacity: 0;
-            }
-        }
-
         .node-connector {
             position: absolute;
             top: 50%;
             width: 42px;
-            /* Increased slightly from 26px to ensure connection based on math (38px gap) + overlap */
             height: 2px;
             background: var(--seminar-accent);
             transform: translateY(-50%);
@@ -572,44 +494,19 @@
             background: #fff;
             border-radius: 16px;
             padding: 1.75rem 2rem;
-            position: relative;
             border: 1px solid rgba(44, 44, 46, 0.15);
-            box-shadow:
-                0 4px 20px rgba(0, 0, 0, 0.04),
-                0 1px 3px rgba(0, 0, 0, 0.02);
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            overflow: hidden;
-        }
-
-        .journey-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 3px;
-            background: var(--seminar-accent);
-            transform: scaleX(0);
-            transform-origin: left;
-            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+            transition: all 0.4s;
         }
 
         .journey-item:hover .journey-card {
             transform: translateY(-5px);
             border-color: var(--seminar-accent);
-            box-shadow:
-                0 20px 50px rgba(44, 44, 46, 0.12),
-                0 8px 20px rgba(0, 0, 0, 0.06);
-        }
-
-        .journey-item:hover .journey-card::before {
-            transform: scaleX(1);
         }
 
         .module-badge {
             display: inline-flex;
             align-items: center;
-            gap: 0.5rem;
             padding: 0.4rem 0.8rem;
             background: var(--seminar-accent-light);
             border-radius: 20px;
@@ -637,88 +534,104 @@
 <body>
     <div class="scroll-progress" id="scrollProgress"></div>
     <div id="nav-placeholder"></div>
+
     <section class="seminar-hero">
         <div class="hero-gradient-orb orb-1"></div>
         <div class="hero-gradient-orb orb-2"></div>
         <div class="container">
             <div class="hero-content-wrapper">
                 <div class="hero-text">
-                    <div class="breadcrumb"><a href="../index">Startseite</a><span class="breadcrumb-sep">→</span><a
-                            href="../index#trainings">Seminare</a><span
-                            class="breadcrumb-sep">→</span><span>Resilienz</span></div>
-                    <div class="category-badge">Gesundheit</div>
-                    <h1 class="hero-title">Resilienz</h1>
-                    <p class="hero-subtitle">Die innere Widerstandskraft stärken. Gestärkt aus Krisen hervorgehen und an
-                        Herausforderungen wachsen.</p>
-                    <div class="hero-meta"><span class="meta-tag"><svg fill="none" stroke="currentColor"
-                                stroke-width="2" viewbox="0 0 24 24">
+                    <div class="breadcrumb">
+                        <a href="../index">Startseite</a>
+                        <span class="breadcrumb-sep">→</span>
+                        <a href="../index#trainings">Seminare</a>
+                        <span class="breadcrumb-sep">→</span>
+                        <span>Die ersten 100 Tage</span>
+                    </div>
+                    <div class="category-badge">Führung & Entwicklung</div>
+                    <h1 class="hero-title">Die ersten 100 Tage als Führungskraft</h1>
+                    <p class="hero-subtitle">Der sichere Start in die neue Rolle: Strategie, Quick Wins und
+                        Beziehungsaufbau für einen erfolgreichen Einstieg und langfristige Akzeptanz.</p>
+                    <div class="hero-meta">
+                        <span class="meta-tag"><svg fill="none" stroke="currentColor" stroke-width="2"
+                                viewbox="0 0 24 24">
                                 <rect height="18" rx="2" ry="2" width="18" x="3" y="4"></rect>
-                            </svg>2 Tage</span><span class="meta-tag"><svg fill="none" stroke="currentColor"
-                                stroke-width="2" viewbox="0 0 24 24">
+                            </svg>2 Tage</span>
+                        <span class="meta-tag"><svg fill="none" stroke="currentColor" stroke-width="2"
+                                viewbox="0 0 24 24">
                                 <circle cx="12" cy="12" r="10"></circle>
-                            </svg>Praxis</span><span class="meta-tag"><svg fill="none" stroke="currentColor"
-                                stroke-width="2" viewbox="0 0 24 24">
+                            </svg>Praxis &amp; Reflexion</span>
+                        <span class="meta-tag"><svg fill="none" stroke="currentColor" stroke-width="2"
+                                viewbox="0 0 24 24">
                                 <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
                                 <circle cx="9" cy="7" r="4"></circle>
-                            </svg>Transfer</span></div>
+                            </svg>Führung</span>
+                    </div>
                     <div class="hero-cta">
                         <a class="btn-glow" href="../index#kontakt">Unverbindlich anfragen →</a>
-                        <a class="btn-outline-light" href="#konzept">Konzept erhalten</a>
-                    </div>
+                        </div>
                 </div>
             </div>
         </div>
     </section>
+
     <section class="goals-section" id="nutzen">
         <div class="container">
-            <div class="section-header"><span class="section-label">Ihr Vorteil</span>
+            <div class="section-header">
+                <span class="section-label">Ihr Vorteil</span>
                 <h2>Nutzen &amp; Wirkung</h2>
                 <div class="accent-line"></div>
             </div>
             <div class="goals-grid">
                 <div class="goal-card">
                     <div class="goal-number">1</div>
-                    <p class="goal-text">Trainings &amp; Seminare</p>
+                    <p class="goal-text">Klarheit über die eigene Führungsrolle gewinnen und Erwartungen aktiv managen.
+                    </p>
                 </div>
                 <div class="goal-card">
                     <div class="goal-number">2</div>
-                    <p class="goal-text">Coaching &amp; Beratung</p>
+                    <p class="goal-text">Vertrauen im Team aufbauen und Beziehungen zu wichtigen Stakeholdern stärken.
+                    </p>
                 </div>
                 <div class="goal-card">
                     <div class="goal-number">3</div>
-                    <p class="goal-text">Neuer Graben 61</p>
+                    <p class="goal-text">Strategische Schwerpunkte setzen und sichtbare "Quick Wins" erzielen.</p>
                 </div>
                 <div class="goal-card">
                     <div class="goal-number">4</div>
-                    <p class="goal-text">44139 Dortmund</p>
-                </div>
-                <div class="goal-card">
-                    <div class="goal-number">5</div>
-                    <p class="goal-text">Tel: 0231 / 137 22 666</p>
+                    <p class="goal-text">Die Balance zwischen operativem Geschäft und strategischer Führung finden.</p>
                 </div>
             </div>
         </div>
     </section>
+
     <section class="intro-section" style="background-color: #f8f9fa;">
         <div class="container">
             <div class="intro-content">
-                <span class="section-label">Transfer</span>
-                <h2>Über das Training</h2>
-                <div style="text-align: left; max-width: 600px; margin: 2rem auto;">
-                </div>
-                <p class="intro-text" style="margin-top: 1.5rem;">Resilienz ist die Fähigkeit, trotz widriger Umstände
-                    nicht zu zerbrechen, sondern flexibel zu bleiben und gestärkt zurückzukommen – wie eine Feder.</p>
+                <span class="section-label">Der Start</span>
+                <h2>Worum geht es?</h2>
+                <p class="intro-text" style="margin-top: 1.5rem;">
+                    Die ersten 100 Tage in einer neuen Führungsposition sind entscheidend. Sie werden beobachtet,
+                    bewertet und getestet – von Mitarbeitenden, Vorgesetzten und Kollegen. In dieser "Schonfrist" werden
+                    die Weichen gestellt: Werden Sie als kompetent und vertrauenswürdig wahrgenommen? Verstehen Sie die
+                    Kultur und die Machtstrukturen? Dieses Seminar bietet Ihnen einen strategischen Fahrplan, um die
+                    typischen Fallstricke zu umgehen und souverän in Ihrer neuen Verantwortung anzukommen.
+                </p>
             </div>
         </div>
     </section>
+
     <section class="content-section">
         <div class="container">
-            <div class="section-header"><span class="section-label">Der Inhalt</span>
+            <div class="section-header">
+                <span class="section-label">Der Inhalt</span>
                 <h2>Themenübersicht</h2>
                 <div class="accent-line"></div>
             </div>
             <div class="journey-container">
-                <div class="journey-line" id="journeyLine"></div>
+                <div class="journey-line"></div>
+
+                <!-- Phase 1 -->
                 <div class="journey-item">
                     <div class="journey-node">
                         <div class="node-dot">
@@ -728,78 +641,124 @@
                     </div>
                     <div class="journey-content">
                         <div class="journey-card">
-                            <div class="module-badge"><span class="module-number">Thema 01</span></div>
-                            <h3 class="journey-title">Seminarinhalte</h3>
-                            <p>Detaillierte Seminarinhalte und Praxisübungen.</p>
+                            <div class="module-badge"><span class="module-number">Phase 1</span></div>
+                            <h3 class="journey-title">Ankommen &amp; Verstehen (Tag 1-30)</h3>
+                            <p>Zuhören und Lernen statt Aktionismus. Analyse der Ausgangslage, Kennenlernen des Teams
+                                und der Kultur. Antrittsrede und erste Signale.</p>
                         </div>
                     </div>
                 </div>
+
+                <!-- Phase 2 -->
+                <div class="journey-item">
+                    <div class="journey-node">
+                        <div class="node-dot">
+                            <div class="node-ring"></div>
+                        </div>
+                        <div class="node-connector"></div>
+                    </div>
+                    <div class="journey-content">
+                        <div class="journey-card">
+                            <div class="module-badge"><span class="module-number">Phase 2</span></div>
+                            <h3 class="journey-title">Fokus &amp; Strategie (Tag 31-60)</h3>
+                            <p>Erste Hypothesen bilden und überprüfen. Identifikation von "Low Hanging Fruits" (Quick
+                                Wins). Aufbau von Allianzen und Stakeholder-Management.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Phase 3 -->
+                <div class="journey-item">
+                    <div class="journey-node">
+                        <div class="node-dot">
+                            <div class="node-ring"></div>
+                        </div>
+                        <div class="node-connector"></div>
+                    </div>
+                    <div class="journey-content">
+                        <div class="journey-card">
+                            <div class="module-badge"><span class="module-number">Phase 3</span></div>
+                            <h3 class="journey-title">Umsetzen &amp; Etablieren (Tag 61-100)</h3>
+                            <p>Übergang in den Gestaltungsmodus. Entscheidungen treffen und kommunizieren. Strukturen
+                                schaffen und das Team auf gemeinsame Ziele ausrichten.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Communication -->
+                <div class="journey-item">
+                    <div class="journey-node">
+                        <div class="node-dot">
+                            <div class="node-ring"></div>
+                        </div>
+                        <div class="node-connector"></div>
+                    </div>
+                    <div class="journey-content">
+                        <div class="journey-card">
+                            <div class="module-badge"><span class="module-number">Schwerpunkt</span></div>
+                            <h3 class="journey-title">Kommunikation in der neuen Rolle</h3>
+                            <p>Wie positioniere ich mich? Umgang mit Skepsis und Widerstand. Erwartungsmanagement
+                                gegenüber Vorgesetzten und dem Team.</p>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
+
     <section class="intro-section">
         <div class="container">
             <div class="intro-content">
                 <span class="section-label">Praxis</span>
                 <h2>Praxis &amp; Transfer</h2>
-                <p class="intro-text">Wir legen großen Wert auf den Transfer in den eigenen Arbeitskontext. Durch
-                    konkrete Fallbeispiele, Simulationen und die Entwicklung individueller Handlungsoptionen stellen wir
-                    sicher, dass Sie das Gelernte direkt anwenden können.</p>
+                <p class="intro-text">
+                    Wir arbeiten mit Ihren konkreten Situationen. Sie erstellen Ihren persönlichen "100-Tage-Plan" mit
+                    Meilensteinen und Maßnahmen. Durch Simulationen von Antrittsreden und kritischen Gesprächen gewinnen
+                    Sie Sicherheit für den Ernstfall.
+                </p>
             </div>
         </div>
     </section>
-    <section class="goals-section" style="background-color: #f8f9fa;">
-        <div class="container">
-            <div class="section-header"><span class="section-label">Kontext</span>
-                <h2>Typische Anlässe</h2>
-                <div class="accent-line"></div>
-            </div>
-            <div class="goals-grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));">
-                <div class="goal-card">
-                    <p class="goal-text">Projektleiter, die ohne Disziplinarverantwortung Teams steuern.</p>
-                </div>
-                <div class="goal-card">
-                    <p class="goal-text">Experten, die fachlich führen, aber nicht disziplinarisch.</p>
-                </div>
-                <div class="goal-card">
-                    <p class="goal-text">Einführung von agilen Arbeitsweisen oder Matrix-Strukturen.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+
+    
+
     <section class="intro-section">
         <div class="container">
             <div class="intro-content">
                 <span class="section-label">Nachhaltigkeit</span>
                 <h2>Wirkung nach 4 Wochen</h2>
-                <div style="text-align: left; max-width: 600px; margin: 2rem auto;">
-                </div>
-                <p class="intro-text">Sie erweitern ihre Kompetenzen in Resilienz.</p>
+                <p class="intro-text">
+                    Sie haben die kritische Anfangsphase souverän gemeistert und erste Erfolge vorzuweisen. Ihr Team
+                    vertraut Ihnen, und Sie haben eine klare strategische Ausrichtung für die kommenden Monate
+                    etabliert. Sie fühlen sich sicher und angekommen in Ihrer neuen Rolle.
+                </p>
             </div>
         </div>
     </section>
+
     <section class="cta-section">
         <div class="container">
             <div class="cta-grid">
-                <div class="target-card"><span class="section-label">Maßgeschneidert</span>
-                    <h3>Inhouse-Lösung?</h3>
-                    <p>Führungskräfte, Mitarbeiter:innen in belastenden Situationen, alle, die ihre Widerstandskraft
-                        stärken wollen.</p>
+                <div class="target-card">
+                    <span class="section-label">Zielgruppe</span>
+                    <h3>Für wen ist das Seminar?</h3>
+                    <p>Neu ernannte Führungskräfte, Teamleiter, Abteilungsleiter und Projektleiter, die vor kurzem eine
+                        Führungsrolle übernommen haben oder kurz davor stehen.</p>
                 </div>
                 <div class="cta-card">
                     <h3>Kontakt aufnehmen</h3>
-                    <p>Lassen Sie uns über Ihren Bedarf sprechen.</p><a class="btn btn-white"
-                        href="../index#kontakt">Unverbindlich anfragen →</a>
+                    <p>Sichern Sie sich Ihren erfolgreichen Start.</p>
+                    <a class="btn btn-white" href="../index#kontakt">Unverbindlich anfragen →</a>
                 </div>
             </div>
         </div>
     </section>
+
     <div id="footer-placeholder"></div>
     <script src="../js/main.js"></script>
     <script>window.addEventListener('scroll', () => { document.getElementById('scrollProgress').style.width = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100 + '%'; });</script>
-    <script data-api-url="https://www.vallit.net" data-color="#6366f1"
-        data-company-id="e46176c5-0f35-43b8-8e8c-c72f534519e1" data-language="de"
-        data-metadata='{"page_title": "Laterales Führen"}' data-theme="minimal" data-title="Kian"
+    <script data-company-id="5f929157-5f9e-48e3-b7f7-a6dcd0e24142" data-theme="glassmorphism" defer=""
         src="https://www.vallit.net/widget/embed.js"></script>
 </body>
 

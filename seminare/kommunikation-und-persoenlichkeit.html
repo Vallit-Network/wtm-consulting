@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="de">
 
 <head>
@@ -9,9 +8,9 @@
         content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.vallit.net https://vercel.live; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://www.vallit.net https://vercel.live; font-src 'self' https://fonts.gstatic.com https://www.vallit.net; img-src 'self' data: https://www.vallit.net https://vercel.live; connect-src 'self' https://www.vallit.net https://vercel.live; frame-src 'self' https://www.vallit.net https://vercel.live;"
         http-equiv="Content-Security-Policy" />
     <link href="../assets/favicon.png" rel="icon" type="image/png" />
-    <title>Selbstsicherheit &amp; Durchsetzungsvermögen – WTM Management Consulting</title>
+    <title>Kommunikation & Persönlichkeit – WTM Management Consulting</title>
     <meta
-        content="Souverän auftreten und die eigene Position vertreten – ohne andere zu überfahren oder sich selbst zu verlieren."
+        content="Authentisch kommunizieren und die eigene Persönlichkeit stärken – für mehr Wirkung und Klarheit im Gespräch."
         name="description" />
     <link href="https://fonts.googleapis.com" rel="preconnect" />
     <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
@@ -21,15 +20,18 @@
     <link href="../styles/index.css" rel="stylesheet" />
     <style>
         :root {
-            /* Health Theme - Emerald Green */
-            --seminar-accent: #107e5e;
-            --seminar-secondary: #34d399;
-            --seminar-accent-light: rgba(16, 126, 94, 0.1);
-            --seminar-accent-glow: rgba(16, 126, 94, 0.3);
+            /* Communication Gold Theme */
+            --seminar-accent: #d6ac58;
+            /* Warm Gold */
+            --seminar-accent-light: rgba(214, 172, 88, 0.1);
+            --seminar-accent-glow: rgba(214, 172, 88, 0.3);
+            --seminar-secondary: #fef3c7;
+            /* Pale Gold/Cream */
             --color-text: #3A3A38;
             --color-cream: #F5F5F3;
             --color-border: #E5E5E0;
-            --accent-highlight: #34d399;
+            --accent-highlight: #d6ac58;
+            /* Gold highlight */
         }
 
         .scroll-progress {
@@ -63,7 +65,8 @@
         .orb-1 {
             width: 400px;
             height: 400px;
-            background: #34d399;
+            background: #9ca3af;
+            /* Silver */
             top: -100px;
             right: -100px;
         }
@@ -118,10 +121,10 @@
         .category-badge {
             display: inline-flex;
             padding: 0.5rem 1rem;
-            background: rgba(52, 211, 153, 0.2);
-            border: 1px solid rgba(52, 211, 153, 0.4);
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
             border-radius: 50px;
-            color: #34d399;
+            color: #fff;
             font-size: 0.85rem;
             font-weight: 600;
             margin-bottom: 1.5rem;
@@ -139,12 +142,12 @@
         }
 
         .hero-title span {
-            color: #34d399;
+            color: #9ca3af;
         }
 
         .hero-subtitle {
             font-size: 1.2rem;
-            color: rgba(255, 255, 255, 0.8);
+            color: rgba(255, 255, 255, 0.7);
             line-height: 1.8;
             max-width: 600px;
             margin-bottom: 2rem;
@@ -176,7 +179,7 @@
         .meta-tag svg {
             width: 16px;
             height: 16px;
-            stroke: #34d399;
+            stroke: #9ca3af;
         }
 
         .hero-cta {
@@ -197,7 +200,7 @@
 
         .btn-glow:hover {
             transform: translateY(-3px);
-            box-shadow: 0 10px 40px rgba(52, 211, 153, 0.3);
+            box-shadow: 0 10px 40px rgba(255, 255, 255, 0.2);
         }
 
         .btn-outline-light {
@@ -207,11 +210,6 @@
             color: #fff;
             font-weight: 600;
             transition: all 0.3s;
-        }
-
-        .btn-outline-light:hover {
-            background: rgba(255, 255, 255, 0.1);
-            border-color: rgba(255, 255, 255, 0.5);
         }
 
         @keyframes fadeSlideUp {
@@ -289,7 +287,7 @@
 
         .goal-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(16, 126, 94, 0.15);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
             border-color: var(--seminar-accent);
         }
 
@@ -348,21 +346,6 @@
             margin-bottom: 2rem;
         }
 
-        .btn-white {
-            background: #fff;
-            color: var(--seminar-accent);
-            padding: 1rem 2rem;
-            border-radius: 8px;
-            font-weight: 600;
-            display: inline-block;
-            transition: all 0.3s;
-        }
-
-        .btn-white:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-        }
-
         @media (max-width: 968px) {
             .hero-content-wrapper {
                 text-align: center;
@@ -382,7 +365,7 @@
         /* PREMIUM TIMELINE STYLES */
         .content-section {
             padding: 6rem 0;
-            background: linear-gradient(180deg, #f0fdf4 0%, #fff 100%);
+            background: linear-gradient(180deg, #f8faf9 0%, #fff 100%);
             position: relative;
         }
 
@@ -409,10 +392,7 @@
             top: 0;
             bottom: 0;
             width: 4px;
-            background: linear-gradient(180deg,
-                    var(--seminar-accent) 0%,
-                    rgba(16, 126, 94, 0.6) 50%,
-                    rgba(16, 126, 94, 0.2) 100%);
+            background: linear-gradient(180deg, var(--seminar-accent) 0%, rgba(44, 44, 46, 0.6) 50%, rgba(44, 44, 46, 0.2) 100%);
             transform: translateX(-50%);
             border-radius: 4px;
         }
@@ -424,12 +404,10 @@
             left: 0;
             right: 0;
             height: 0%;
-            background: linear-gradient(180deg,
-                    var(--accent-highlight) 0%,
-                    var(--seminar-accent) 100%);
+            background: linear-gradient(180deg, var(--accent-highlight) 0%, var(--seminar-accent) 100%);
             border-radius: 4px;
             transition: height 1.5s cubic-bezier(0.4, 0, 0.2, 1);
-            box-shadow: 0 0 20px rgba(16, 126, 94, 0.4);
+            box-shadow: 0 0 20px rgba(44, 44, 46, 0.4);
         }
 
         .journey-line.animated::after {
@@ -474,10 +452,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow:
-                0 0 0 4px #fff,
-                0 0 0 6px var(--seminar-accent),
-                0 0 30px rgba(16, 126, 94, 0.4);
+            box-shadow: 0 0 0 4px #fff, 0 0 0 6px var(--seminar-accent), 0 0 30px rgba(44, 44, 46, 0.4);
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
@@ -558,10 +533,8 @@
             border-radius: 16px;
             padding: 1.75rem 2rem;
             position: relative;
-            border: 1px solid rgba(16, 126, 94, 0.15);
-            box-shadow:
-                0 4px 20px rgba(0, 0, 0, 0.04),
-                0 1px 3px rgba(0, 0, 0, 0.02);
+            border: 1px solid rgba(44, 44, 46, 0.15);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04), 0 1px 3px rgba(0, 0, 0, 0.02);
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             overflow: hidden;
         }
@@ -582,9 +555,7 @@
         .journey-item:hover .journey-card {
             transform: translateY(-5px);
             border-color: var(--seminar-accent);
-            box-shadow:
-                0 20px 50px rgba(16, 126, 94, 0.12),
-                0 8px 20px rgba(0, 0, 0, 0.06);
+            box-shadow: 0 20px 50px rgba(44, 44, 46, 0.12), 0 8px 20px rgba(0, 0, 0, 0.06);
         }
 
         .journey-item:hover .journey-card::before {
@@ -613,15 +584,8 @@
             font-size: 1.15rem;
             font-weight: 600;
             color: var(--color-text);
-            margin: 0 0 0.5rem 0;
-            line-height: 1.4;
-        }
-
-        .journey-card p {
-            color: #666;
-            font-size: 0.95rem;
-            line-height: 1.6;
             margin: 0;
+            line-height: 1.4;
         }
     </style>
 </head>
@@ -629,7 +593,8 @@
 <body>
     <div class="scroll-progress" id="scrollProgress"></div>
     <div id="nav-placeholder"></div>
-    <!-- Hero Section -->
+
+    <!-- Phase 1: Hero -->
     <section class="seminar-hero">
         <div class="hero-gradient-orb orb-1"></div>
         <div class="hero-gradient-orb orb-2"></div>
@@ -641,99 +606,101 @@
                         <span class="breadcrumb-sep">→</span>
                         <a href="../index#trainings">Seminare</a>
                         <span class="breadcrumb-sep">→</span>
-                        <span>Selbstsicherheit &amp; Durchsetzungsvermögen</span>
+                        <span>Kommunikation</span>
                     </div>
-                    <div class="category-badge">Gesundheit</div>
-                    <h1 class="hero-title">Selbstsicherheit &amp; <span>Durchsetzungsvermögen</span></h1>
-                    <p class="hero-subtitle">Was macht uns stark im Umgang mit anderen – vor allem in
-                        Konfliktsituationen? Wie kann ich bei mir selbst bleiben und meine Interessen wahren, ohne mich
-                        in nutzlosen Grabenkämpfen zu verausgaben?</p>
+                    <div class="category-badge">💬 Kommunikation</div>
+                    <h1 class="hero-title">Kommunikation & Persönlichkeit</h1>
+                    <p class="hero-subtitle">Authentisch kommunizieren und die eigene Persönlichkeit stärken – für mehr
+                        Wirkung und Klarheit im Gespräch.</p>
                     <div class="hero-meta">
                         <span class="meta-tag">
                             <svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
                                 <rect height="18" rx="2" ry="2" width="18" x="3" y="4"></rect>
-                            </svg>
-                            2 Tage Präsenz
+                            </svg>2 Tage
                         </span>
                         <span class="meta-tag">
                             <svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
                                 <circle cx="12" cy="12" r="10"></circle>
-                            </svg>
-                            Übungen &amp; Feedback
+                            </svg>Persönlichkeitsmodelle
                         </span>
                         <span class="meta-tag">
                             <svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
                                 <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
                                 <circle cx="9" cy="7" r="4"></circle>
-                            </svg>
-                            Persönlichkeitsentwicklung
+                            </svg>Praxisnah
                         </span>
                     </div>
                     <div class="hero-cta">
                         <a class="btn-glow" href="../index#kontakt">Unverbindlich anfragen →</a>
-                        <a class="btn-outline-light" href="#inhalte">Inhalte entdecken</a>
-                    </div>
+                        </div>
                 </div>
             </div>
         </div>
     </section>
-    <!-- Intro Section -->
+
+    <!-- Phase 2: Nutzen & Wirkung (Intro) -->
     <section class="intro-section">
         <div class="container">
             <div class="intro-content">
-                <span class="section-label">Darum geht's</span>
-                <h2>Das Seminar</h2>
-                <p class="intro-text">Was macht uns stark im Umgang mit anderen – vor allem in Konfliktsituationen?
-                    Wie kann ich bei mir selbst bleiben und meine Interessen wahren, ohne mich in einem nutzlosen
-                    Grabenkrieg
-                    mit dem Anderen zu verausgaben? In welchen Situationen neige ich dazu, unfruchtbare Handlungsmuster
-                    zu aktivieren –
-                    und warum? Und wie kann ich sie durch selbstbewusstes und sicheres Handeln ersetzen?</p>
+                <span class="section-label">Warum dieses Seminar?</span>
+                <h2>Nutzen & Wirkung</h2>
+                <div class="accent-line"></div>
+                <p class="intro-text" style="margin-top: 2rem;">
+                    Warum verstehen wir uns manchmal blind – und reden ein andermal völlig aneinander vorbei? Unsere
+                    Kommunikation ist untrennbar mit unserer Persönlichkeit verbunden. Wer seine eigenen Muster kennt
+                    und die der anderen versteht, kann Missverständnisse vermeiden und Beziehungen aktiv gestalten. In
+                    diesem Seminar verbinden wir Kommunikationspsychologie mit Persönlichkeitsentwicklung, damit Sie in
+                    Zukunft nicht nur gehört, sondern auch wirklich verstanden werden.
+                </p>
             </div>
         </div>
     </section>
-    <!-- Nutzen & Wirkung -->
-    <section class="goals-section" id="nutzen">
+
+    <!-- Phase 3: Nach dem Training (Ziele) -->
+    <section class="goals-section" style="background-color: #f8f9fa;">
         <div class="container">
             <div class="section-header">
-                <span class="section-label">Ihr Vorteil</span>
-                <h2>Ziele – das nehmen Sie mit</h2>
+                <span class="section-label">Ihre Entwicklung</span>
+                <h2>Nach dem Training</h2>
                 <div class="accent-line"></div>
+                <p class="section-subtitle">In diesem Seminar lernen Sie, wie Sie...</p>
             </div>
             <div class="goals-grid">
                 <div class="goal-card">
                     <div class="goal-number">1</div>
-                    <p class="goal-text">Sie kennen Ihre persönlichen Kommunikations- und Kontaktmuster – besonders in
-                        schwierigen Gesprächssituationen</p>
+                    <p class="goal-text">Eigene Kommunikationsmuster und Persönlichkeitsstile erkennen</p>
                 </div>
                 <div class="goal-card">
                     <div class="goal-number">2</div>
-                    <p class="goal-text">Sie treten "selbst-bewusst" auf und können mit persönlichen Unsicherheiten
-                        umgehen</p>
+                    <p class="goal-text">Andere Menschen besser einschätzen und typgerecht ansprechen</p>
                 </div>
                 <div class="goal-card">
                     <div class="goal-number">3</div>
-                    <p class="goal-text">Sie kennen und nutzen Möglichkeiten, Ihr Ausdrucks- und Wirkungspotenzial zu
-                        entfalten und weiterzuentwickeln</p>
+                    <p class="goal-text">Die eigene Wirkung auf andere verstehen und steuern</p>
                 </div>
                 <div class="goal-card">
                     <div class="goal-number">4</div>
-                    <p class="goal-text">Sie bleiben in Konfliktsituationen innerlich stabil und stärken Ihr
-                        persönliches Durchsetzungsvermögen</p>
+                    <p class="goal-text">Konfliktpotenziale in der Persönlichkeitsstruktur erkennen und entschärfen</p>
+                </div>
+                <div class="goal-card">
+                    <div class="goal-number">5</div>
+                    <p class="goal-text">Authentizität und Überzeugungskraft steigern</p>
                 </div>
             </div>
         </div>
     </section>
-    <!-- Inhalte -->
-    <section class="content-section" id="inhalte">
+
+    <!-- Phase 4: Inhalte -->
+    <section class="content-section">
         <div class="container">
             <div class="section-header">
-                <span class="section-label">Curriculum</span>
-                <h2>Inhalte</h2>
+                <span class="section-label">Der Inhalt</span>
+                <h2>Themenübersicht</h2>
                 <div class="accent-line"></div>
             </div>
             <div class="journey-container">
                 <div class="journey-line" id="journeyLine"></div>
+
                 <div class="journey-item">
                     <div class="journey-node">
                         <div class="node-dot">
@@ -743,15 +710,14 @@
                     </div>
                     <div class="journey-content">
                         <div class="journey-card">
-                            <div class="module-badge">
-                                <span class="module-number">Thema 01</span>
-                            </div>
-                            <h3 class="journey-title">Verhaltensmuster</h3>
-                            <p>Auseinandersetzung mit automatisierten Verhaltensmustern – erkennen und verstehen, wie
-                                sie wirken.</p>
+                            <div class="module-badge"><span class="module-number">Modul 01</span></div>
+                            <h3 class="journey-title">Ich und meine Wirkung</h3>
+                            <p>Selbstbild vs. Fremdbild: Wie wirke ich auf andere? Persönlichkeitsmodelle (z.B. DISG,
+                                Riemann-Thomann) zur Einordnung des eigenen Stils.</p>
                         </div>
                     </div>
                 </div>
+
                 <div class="journey-item">
                     <div class="journey-node">
                         <div class="node-dot">
@@ -761,15 +727,14 @@
                     </div>
                     <div class="journey-content">
                         <div class="journey-card">
-                            <div class="module-badge">
-                                <span class="module-number">Thema 02</span>
-                            </div>
-                            <h3 class="journey-title">Unsicherheiten &amp; Selbstblockaden</h3>
-                            <p>Umgang mit Unsicherheiten und Selbstblockaden – innere Hürden erkennen und überwinden.
-                            </p>
+                            <div class="module-badge"><span class="module-number">Modul 02</span></div>
+                            <h3 class="journey-title">Die anderen verstehen</h3>
+                            <p>Menschenkenntnis schärfen: Motive und Bedürfnisse des Gegenübers erkennen. Empathie und
+                                Perspektivübernahme als Schlüssel zum Dialog.</p>
                         </div>
                     </div>
                 </div>
+
                 <div class="journey-item">
                     <div class="journey-node">
                         <div class="node-dot">
@@ -779,14 +744,14 @@
                     </div>
                     <div class="journey-content">
                         <div class="journey-card">
-                            <div class="module-badge">
-                                <span class="module-number">Thema 03</span>
-                            </div>
-                            <h3 class="journey-title">Selbststärkung</h3>
-                            <p>Möglichkeiten und Techniken der Selbststärkung – praktische Werkzeuge für den Alltag.</p>
+                            <div class="module-badge"><span class="module-number">Modul 03</span></div>
+                            <h3 class="journey-title">Typgerechte Kommunikation</h3>
+                            <p>Den richtigen "Draht" finden: Sprache und Argumentation an den Gesprächspartner anpassen.
+                                Umgang mit "schwierigen" Charakteren.</p>
                         </div>
                     </div>
                 </div>
+
                 <div class="journey-item">
                     <div class="journey-node">
                         <div class="node-dot">
@@ -796,170 +761,113 @@
                     </div>
                     <div class="journey-content">
                         <div class="journey-card">
-                            <div class="module-badge">
-                                <span class="module-number">Thema 04</span>
-                            </div>
-                            <h3 class="journey-title">Konfliktgestaltung</h3>
-                            <p>Innere Klarheit und Stabilität in der konstruktiven Konfliktgestaltung entwickeln.</p>
+                            <div class="module-badge"><span class="module-number">Modul 04</span></div>
+                            <h3 class="journey-title">Authentizität & Überzeugung</h3>
+                            <p>Echt sein statt Rollen spielen. Die Psychologie des Überzeugens nutzen, ohne sich zu
+                                verstellen. Kongruenz von Haltung und Verhalten.</p>
                         </div>
                     </div>
                 </div>
-                <div class="journey-item">
-                    <div class="journey-node">
-                        <div class="node-dot">
-                            <div class="node-ring"></div>
-                        </div>
-                        <div class="node-connector"></div>
-                    </div>
-                    <div class="journey-content">
-                        <div class="journey-card">
-                            <div class="module-badge">
-                                <span class="module-number">Thema 05</span>
-                            </div>
-                            <h3 class="journey-title">Grenzen setzen</h3>
-                            <p>Grenzen setzen und wahren: Wie sage ich "Nein"? Klare Kommunikation ohne Schuldgefühle.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="journey-item">
-                    <div class="journey-node">
-                        <div class="node-dot">
-                            <div class="node-ring"></div>
-                        </div>
-                        <div class="node-connector"></div>
-                    </div>
-                    <div class="journey-content">
-                        <div class="journey-card">
-                            <div class="module-badge">
-                                <span class="module-number">Thema 06</span>
-                            </div>
-                            <h3 class="journey-title">Agieren statt reagieren</h3>
-                            <p>Vom reaktiven zum aktiven Handeln – proaktiv die Initiative ergreifen.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="journey-item">
-                    <div class="journey-node">
-                        <div class="node-dot">
-                            <div class="node-ring"></div>
-                        </div>
-                        <div class="node-connector"></div>
-                    </div>
-                    <div class="journey-content">
-                        <div class="journey-card">
-                            <div class="module-badge">
-                                <span class="module-number">Thema 07</span>
-                            </div>
-                            <h3 class="journey-title">Durchsetzungskraft</h3>
-                            <p>Entfaltung der persönlichen Durchsetzungskraft – authentisch und wirkungsvoll auftreten.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="journey-item">
-                    <div class="journey-node">
-                        <div class="node-dot">
-                            <div class="node-ring"></div>
-                        </div>
-                        <div class="node-connector"></div>
-                    </div>
-                    <div class="journey-content">
-                        <div class="journey-card">
-                            <div class="module-badge">
-                                <span class="module-number">Thema 08</span>
-                            </div>
-                            <h3 class="journey-title">Schwierige Gesprächspartner</h3>
-                            <p>Handlungsmöglichkeiten im Kontakt mit schwierigen Gesprächspartnern – souverän bleiben.
-                            </p>
-                        </div>
-                    </div>
-                </div>
+
             </div>
         </div>
     </section>
-    <!-- Nutzen -->
-    <section class="intro-section" style="background-color: #f8f9fa;">
-        <div class="container">
-            <div class="intro-content">
-                <span class="section-label">Ihr Gewinn</span>
-                <h2>Nutzen</h2>
-                <p class="intro-text">Sie treten souveräner auf, vertreten Ihre Interessen klarer und gewinnen
-                    an Ausstrahlung und Durchsetzungskraft. Sie erkennen Ihre eigenen Stärken und Unsicherheiten,
-                    können selbstbewusst kommunizieren, Grenzen setzen und konstruktiv mit Kritik umgehen.</p>
-            </div>
-        </div>
-    </section>
-    <!-- Praxis & Transfer -->
+
+    <!-- Phase 5: Praxis & Transfer -->
     <section class="intro-section">
         <div class="container">
             <div class="intro-content">
-                <span class="section-label">Methodik</span>
-                <h2>Praxis &amp; Transfer</h2>
-                <p class="intro-text">Wir legen großen Wert auf den Transfer in den eigenen Arbeitskontext. Durch
-                    praktische Übungen, persönliches Feedback und die Arbeit an konkreten Situationen aus Ihrem Alltag
-                    stellen wir sicher, dass Sie das Gelernte direkt anwenden können. Preis, Methode und Dauer werden
-                    gemeinsam mit Ihnen in der Auftrags- und Zielklärung festgelegt.</p>
+                <span class="section-label">Praxis</span>
+                <h2>Praxis & Transfer</h2>
+                <p class="intro-text">
+                    Wir legen großen Wert auf den Transfer in den eigenen Arbeitskontext. Durch konkrete Fallbeispiele,
+                    Simulationen und die Entwicklung individueller Handlungsoptionen stellen wir sicher, dass Sie das
+                    Gelernte direkt anwenden können. Sie haben die Möglichkeit, eigene schwierige Gesprächssituationen
+                    einzubringen und konkrete Lösungen zu erarbeiten.
+                </p>
             </div>
         </div>
     </section>
+
     
-    <!-- Wirkung nach 4 Wochen -->
+
+    <!-- Phase 7: Wirkung nach 4 Wochen -->
     <section class="intro-section">
         <div class="container">
             <div class="intro-content">
                 <span class="section-label">Nachhaltigkeit</span>
                 <h2>Wirkung nach 4 Wochen</h2>
-                <div style="text-align: left; max-width: 700px; margin: 2rem auto;">
-                    <ul style="list-style: none; padding: 0;">
-                        <li
-                            style="padding: 0.75rem 0; border-bottom: 1px solid #e5e5e0; display: flex; align-items: flex-start; gap: 1rem;">
-                            <span style="color: var(--seminar-accent); font-weight: bold;">✓</span>
-                            <span>Sie gehen gelassener und selbstbewusster in Konfliktsituationen</span>
-                        </li>
-                        <li
-                            style="padding: 0.75rem 0; border-bottom: 1px solid #e5e5e0; display: flex; align-items: flex-start; gap: 1rem;">
-                            <span style="color: var(--seminar-accent); font-weight: bold;">✓</span>
-                            <span>Sie setzen klare Grenzen ohne schlechtes Gewissen</span>
-                        </li>
-                        <li
-                            style="padding: 0.75rem 0; border-bottom: 1px solid #e5e5e0; display: flex; align-items: flex-start; gap: 1rem;">
-                            <span style="color: var(--seminar-accent); font-weight: bold;">✓</span>
-                            <span>Ihre Ausstrahlung und Wirkung auf andere hat sich verbessert</span>
-                        </li>
-                        <li style="padding: 0.75rem 0; display: flex; align-items: flex-start; gap: 1rem;">
-                            <span style="color: var(--seminar-accent); font-weight: bold;">✓</span>
-                            <span>Sie agieren proaktiv statt reaktiv – auch bei schwierigen Gesprächspartnern</span>
-                        </li>
+                <div style="text-align: left; max-width: 600px; margin: 2rem auto;">
+                    <ul class="intro-text" style="list-style-position: inside;">
+                        <li>Sie gehen entspannter in schwierige Gespräche.</li>
+                        <li>Sie nehmen unterschiedliche Verhaltensweisen weniger persönlich.</li>
+                        <li>Ihre Botschaften kommen klarer an und Missverständnisse nehmen ab.</li>
+                        <li>Sie fühlen sich sicherer in Ihrer eigenen Haut und Rolle.</li>
                     </ul>
                 </div>
             </div>
         </div>
     </section>
-    <!-- Footer CTA -->
+
+    <!-- Phase 8: Footer CTA -->
     <section class="cta-section">
         <div class="container">
             <div class="cta-grid">
                 <div class="target-card">
-                    <span class="section-label">Zielgruppe</span>
-                    <h3>Für wen?</h3>
-                    <p>Coaches, Berater, Personaler, Führungskräfte, Trainer und alle neugierigen Menschen,
-                        die eine hohe Bereitschaft zur Auseinandersetzung mit der eigenen Persönlichkeit mitbringen.</p>
+                    <span class="section-label">Maßgeschneidert</span>
+                    <h3>Inhouse-Lösung?</h3>
+                    <p>Wir führen dieses Training auch gerne direkt in Ihrem Unternehmen durch – angepasst auf Ihre
+                        spezifischen Teamstrukturen und Herausforderungen.</p>
                 </div>
                 <div class="cta-card">
-                    <h3>Kontakt aufnehmen</h3>
-                    <p>Selbstverständlich ist dies nur ein Vorschlag. Gerne können wir dieses Menü nach Ihren
-                        Vorschlägen abändern! Preis, Methode und Dauer werden gemeinsam mit Ihnen in der
-                        Auftrags- und Zielklärung festgelegt.</p>
-                    <a class="btn btn-white" href="../index#kontakt">Unverbindlich anfragen →</a>
+                    <h3>Interesse geweckt?</h3>
+                    <p>Unverbindlich abstimmen – Schwerpunkte, Beispiele und Umfang passend zum Kontext.</p>
+                    <a class="btn btn-outline-light" href="../index#kontakt"
+                        style="margin-top: 1rem; display: inline-block;">Kontakt aufnehmen</a>
                 </div>
             </div>
         </div>
     </section>
-    <!-- Footer -->
+
     <div id="footer-placeholder"></div>
-    <script src="../js/seminar-data.js"></script>
+
+    <!-- Scripts -->
+    <script>
+        // Load Navigation and Footer
+        fetch('../components/nav.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('nav-placeholder').innerHTML = data;
+                // Re-initialize mobile menu script if needed
+            });
+
+        fetch('../components/footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer-placeholder').innerHTML = data;
+            });
+
+        // Scroll Progress Bar
+        window.onscroll = function () {
+            let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            let scrolled = (winScroll / height) * 100;
+            document.getElementById("scrollProgress").style.width = scrolled + "%";
+
+            // Journey Line Animation
+            const journeyLine = document.getElementById('journeyLine');
+            if (journeyLine) {
+                const rect = journeyLine.getBoundingClientRect();
+                if (rect.top < window.innerHeight && rect.bottom > 0) {
+                    journeyLine.classList.add('animated');
+                }
+            }
+        };
+    </script>
     <script src="../js/main.js"></script>
+    <!-- Chatbot Widget -->
+    <script data-company-id="5f929157-5f9e-48e3-b7f7-a6dcd0e24142" data-theme="glassmorphism" defer=""
+        src="https://www.vallit.net/widget/embed.js"></script>
 </body>
 
 </html>

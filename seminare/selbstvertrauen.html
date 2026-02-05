@@ -1,17 +1,12 @@
 <!DOCTYPE html>
-
 <html lang="de">
 
 <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Selbstvertrauen – WTM Management Consulting</title>
     <meta
-        content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.vallit.net https://vercel.live; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://www.vallit.net https://vercel.live; font-src 'self' https://fonts.gstatic.com https://www.vallit.net; img-src 'self' data: https://www.vallit.net https://vercel.live; connect-src 'self' https://www.vallit.net https://vercel.live; frame-src 'self' https://www.vallit.net https://vercel.live;"
-        http-equiv="Content-Security-Policy" />
-    <link href="../assets/favicon.png" rel="icon" type="image/png" />
-    <title>Konflikterkennung, -behandlung &amp; -prävention – WTM Management Consulting</title>
-    <meta
-        content="Konflikte in Unternehmen erkennen, behandeln und vorbeugen. Stärken Sie Ihre Konfliktkompetenz für eine produktive Zusammenarbeit."
+        content="Selbstvertrauen: das Fundament für Leistungsfähigkeit. Stärken Sie Ihre Selbstwirksamkeit und gestalten Sie vertrauensvolle Beziehungen."
         name="description" />
     <link href="https://fonts.googleapis.com" rel="preconnect" />
     <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
@@ -21,16 +16,18 @@
     <link href="../styles/index.css" rel="stylesheet" />
     <style>
         :root {
-            /* Change Management Theme (Red Accent, Blue Hero) */
+            /* Change Theme - Red Accent, Blue Hero */
             --seminar-accent: #c24c4c;
+            /* Red Accent */
+            --seminar-secondary: #2C3E50;
+            /* Deep Blue */
+            --seminar-primary-blue: #9DD4D0;
+            /* Corporate Teal */
             --seminar-accent-light: rgba(194, 76, 76, 0.1);
             --seminar-accent-glow: rgba(194, 76, 76, 0.3);
-            --seminar-secondary: #2C3E50;
-            --seminar-primary-blue: #9DD4D0;
             --color-text: #3A3A38;
             --color-cream: #F5F5F3;
             --color-border: #E5E5E0;
-            --accent-highlight: #e57373;
         }
 
         .scroll-progress {
@@ -43,7 +40,6 @@
             width: 0%;
         }
 
-        /* Hero - Corporate Blue gradient for Change theme */
         .seminar-hero {
             min-height: 100vh;
             display: flex;
@@ -65,8 +61,7 @@
         .orb-1 {
             width: 400px;
             height: 400px;
-            background: #527a90;
-            /* Soft Teal */
+            background: #9DD4D0;
             top: -100px;
             right: -100px;
         }
@@ -121,10 +116,10 @@
         .category-badge {
             display: inline-flex;
             padding: 0.5rem 1rem;
-            background: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            background: rgba(194, 76, 76, 0.2);
+            border: 1px solid rgba(194, 76, 76, 0.4);
             border-radius: 50px;
-            color: #fff;
+            color: #ff8a8a;
             font-size: 0.85rem;
             font-weight: 600;
             margin-bottom: 1.5rem;
@@ -142,12 +137,12 @@
         }
 
         .hero-title span {
-            color: #e57373;
+            color: #9DD4D0;
         }
 
         .hero-subtitle {
             font-size: 1.2rem;
-            color: rgba(255, 255, 255, 0.7);
+            color: rgba(255, 255, 255, 0.8);
             line-height: 1.8;
             max-width: 600px;
             margin-bottom: 2rem;
@@ -179,7 +174,7 @@
         .meta-tag svg {
             width: 16px;
             height: 16px;
-            stroke: #e57373;
+            stroke: #9DD4D0;
         }
 
         .hero-cta {
@@ -191,7 +186,7 @@
 
         .btn-glow {
             background: #fff;
-            color: var(--seminar-accent);
+            color: var(--seminar-secondary);
             padding: 1rem 2rem;
             border-radius: 8px;
             font-weight: 600;
@@ -200,7 +195,7 @@
 
         .btn-glow:hover {
             transform: translateY(-3px);
-            box-shadow: 0 10px 40px rgba(255, 255, 255, 0.2);
+            box-shadow: 0 10px 40px rgba(157, 212, 208, 0.3);
         }
 
         .btn-outline-light {
@@ -210,6 +205,11 @@
             color: #fff;
             font-weight: 600;
             transition: all 0.3s;
+        }
+
+        .btn-outline-light:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.5);
         }
 
         @keyframes fadeSlideUp {
@@ -287,7 +287,7 @@
 
         .goal-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 20px 40px rgba(194, 76, 76, 0.1);
             border-color: var(--seminar-accent);
         }
 
@@ -311,66 +311,10 @@
             margin: 0;
         }
 
-        /* Thomas-Kilmann Model SVG */
-        .model-container {
-            max-width: 800px;
-            margin: 4rem auto 0;
-            position: relative;
-        }
-
-        .tki-svg {
-            width: 100%;
-            height: auto;
-            overflow: visible;
-        }
-
-        .tki-axis {
-            stroke: var(--color-text);
-            stroke-width: 2;
-            marker-end: url(#arrowhead);
-        }
-
-        .tki-label {
-            font-size: 14px;
-            font-weight: 600;
-            fill: var(--color-text);
-            text-transform: uppercase;
-        }
-
-        .tki-mode {
-            cursor: pointer;
-            transition: all 0.4s ease;
-        }
-
-        .tki-mode circle {
-            fill: var(--seminar-accent-light);
-            stroke: var(--seminar-accent);
-            stroke-width: 2;
-            transition: all 0.3s ease;
-        }
-
-        .tki-mode:hover circle {
-            fill: var(--seminar-accent);
-            r: 55;
-        }
-
-        .tki-mode-text {
-            fill: var(--color-text);
-            font-weight: 600;
-            font-size: 14px;
-            text-anchor: middle;
-            transition: all 0.3s ease;
-            pointer-events: none;
-        }
-
-        .tki-mode:hover .tki-mode-text {
-            fill: #fff;
-        }
-
-        /* Timeline / Journey */
+        /* Content Timeline */
         .content-section {
             padding: 6rem 0;
-            background: linear-gradient(180deg, #f8faf9 0%, #fff 100%);
+            background: linear-gradient(180deg, #fafafa 0%, #fff 100%);
             position: relative;
         }
 
@@ -383,6 +327,7 @@
             width: 1px;
             height: 80px;
             background: var(--seminar-accent);
+            opacity: 0.3;
         }
 
         .journey-container {
@@ -397,7 +342,9 @@
             top: 0;
             bottom: 0;
             width: 4px;
-            background: linear-gradient(180deg, var(--seminar-accent) 0%, rgba(74, 74, 78, 0.6) 50%, rgba(74, 74, 78, 0.2) 100%);
+            background: linear-gradient(180deg,
+                    var(--seminar-accent) 0%,
+                    rgba(194, 76, 76, 0.4) 100%);
             transform: translateX(-50%);
             border-radius: 4px;
         }
@@ -407,6 +354,7 @@
             align-items: flex-start;
             position: relative;
             margin-bottom: 2rem;
+            opacity: 1;
         }
 
         .journey-item:nth-child(odd) {
@@ -439,59 +387,34 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 0 0 4px #fff, 0 0 0 6px var(--seminar-accent);
+            box-shadow:
+                0 0 0 4px #fff,
+                0 0 0 6px var(--seminar-accent),
+                0 0 30px rgba(194, 76, 76, 0.4);
         }
 
-        .node-connector {
-            position: absolute;
-            top: 50%;
-            width: 42px;
-            height: 2px;
-            background: var(--seminar-accent);
-            transform: translateY(-50%);
-        }
-
-        .journey-item:nth-child(odd) .node-connector {
-            right: 100%;
-            margin-right: 3px;
-        }
-
-        .journey-item:nth-child(even) .node-connector {
-            left: 100%;
-            margin-left: 3px;
+        .node-dot::before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            background: #fff;
+            border-radius: 50%;
         }
 
         .journey-card {
             background: #fff;
             border-radius: 16px;
             padding: 1.75rem 2rem;
-            border: 1px solid rgba(74, 74, 78, 0.15);
+            position: relative;
+            border: 1px solid rgba(194, 76, 76, 0.15);
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
             transition: all 0.4s;
         }
 
-        .journey-item:hover .journey-card {
+        .journey-card:hover {
             transform: translateY(-5px);
             border-color: var(--seminar-accent);
-            box-shadow: 0 20px 50px rgba(74, 74, 78, 0.12);
-        }
-
-        .module-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.4rem 0.8rem;
-            background: var(--seminar-accent-light);
-            border-radius: 20px;
-            margin-bottom: 0.75rem;
-        }
-
-        .module-number {
-            font-size: 0.7rem;
-            font-weight: 700;
-            color: var(--seminar-accent);
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
+            box-shadow: 0 20px 50px rgba(194, 76, 76, 0.12);
         }
 
         .journey-title {
@@ -499,10 +422,8 @@
             font-weight: 600;
             color: var(--color-text);
             margin: 0;
-            line-height: 1.4;
         }
 
-        /* CTA */
         .cta-section {
             padding: 6rem 0 4rem;
             background: var(--color-cream);
@@ -538,19 +459,52 @@
             margin-bottom: 2rem;
         }
 
-        @media (max-width: 968px) {
-            .hero-content-wrapper {
-                text-align: center;
-            }
+        .btn-white {
+            background: #fff;
+            color: var(--seminar-accent);
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            font-weight: 600;
+            display: inline-block;
+            transition: all 0.3s;
+        }
 
-            .hero-meta,
-            .hero-cta {
-                justify-content: center;
-            }
+        .btn-white:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        @media (max-width: 968px) {
 
             .goals-grid,
             .cta-grid {
                 grid-template-columns: 1fr;
+            }
+
+            .journey-line {
+                left: 20px;
+                transform: none;
+            }
+
+            .journey-item,
+            .journey-item:nth-child(even) {
+                flex-direction: row;
+                margin-left: 0;
+            }
+
+            .journey-node {
+                left: 20px;
+                transform: translateX(-50%);
+            }
+
+            .journey-content {
+                width: 100%;
+                padding-left: 50px;
+                padding-right: 0;
+            }
+
+            .journey-item:nth-child(even) .journey-content {
+                padding-left: 50px;
             }
         }
     </style>
@@ -559,194 +513,329 @@
 <body>
     <div class="scroll-progress" id="scrollProgress"></div>
     <div id="nav-placeholder"></div>
+    <!-- Hero Section -->
     <section class="seminar-hero">
         <div class="hero-gradient-orb orb-1"></div>
         <div class="hero-gradient-orb orb-2"></div>
         <div class="container">
             <div class="hero-content-wrapper">
                 <div class="hero-text">
-                    <div class="breadcrumb"><a href="../index">Startseite</a><span class="breadcrumb-sep">→</span><a
-                            href="../index#trainings">Seminare</a><span
-                            class="breadcrumb-sep">→</span><span>Konflikte</span></div>
-                    <div class="category-badge">Change Management</div>
-                    <h1 class="hero-title">Konflikte erkennen &amp; <span>lösen</span></h1>
-                    <p class="hero-subtitle">Konflikte sind in Unternehmen Alltag. Sie kosten Energie und senken die
-                        Produktivität. Lernen Sie, Konflikte frühzeitig zu erkennen, professionell zu behandeln und
-                        nachhaltig vorzubeugen.</p>
+                    <div class="breadcrumb">
+                        <a href="../index">Startseite</a>
+                        <span class="breadcrumb-sep">→</span>
+                        <a href="../index#trainings">Seminare</a>
+                        <span class="breadcrumb-sep">→</span>
+                        <span>Selbstvertrauen</span>
+                    </div>
+                    <div class="category-badge">Change</div>
+                    <h1 class="hero-title">Selbstvertrauen: <span>das Fundament für Leistungsfähigkeit</span></h1>
+                    <p class="hero-subtitle">Ohne Selbstvertrauen wären wir handlungsunfähig, wären wir nicht in der
+                        Lage, überhaupt etwas zu tun. Entfalten Sie Ihre volle Selbstwirksamkeit.</p>
                     <div class="hero-meta">
-                        <span class="meta-tag"><svg fill="none" stroke="currentColor" stroke-width="2"
-                                viewbox="0 0 24 24">
+                        <span class="meta-tag">
+                            <svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
                                 <rect height="18" rx="2" ry="2" width="18" x="3" y="4"></rect>
-                            </svg>2 Tage</span>
-                        <span class="meta-tag"><svg fill="none" stroke="currentColor" stroke-width="2"
-                                viewbox="0 0 24 24">
+                            </svg>
+                            1-2 Tage
+                        </span>
+                        <span class="meta-tag">
+                            <svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
                                 <circle cx="12" cy="12" r="10"></circle>
-                            </svg>Praxis &amp; Reflexion</span>
-                        <span class="meta-tag"><svg fill="none" stroke="currentColor" stroke-width="2"
-                                viewbox="0 0 24 24">
+                            </svg>
+                            Reflexion &amp; Übungen
+                        </span>
+                        <span class="meta-tag">
+                            <svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
                                 <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
                                 <circle cx="9" cy="7" r="4"></circle>
-                            </svg>Führungskräfte &amp; PL</span>
+                            </svg>
+                            Alle Mitarbeiter:innen
+                        </span>
                     </div>
                     <div class="hero-cta">
                         <a class="btn-glow" href="../index#kontakt">Unverbindlich anfragen →</a>
-                        </div>
+                        <a class="btn-outline-light" href="#inhalte">Inhalte entdecken</a>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- Intro Text -->
     <section class="intro-section">
         <div class="container">
             <div class="intro-content">
-                <span class="section-label">Herausforderung</span>
-                <h2>Warum Konflikte teuer sind</h2>
+                <span class="section-label">Hintergrund</span>
+                <h2>Warum dieses Seminar?</h2>
+                <div class="accent-line"></div>
+                <p class="intro-text" style="margin-top: 2rem;">
+                    Die Frage ist, wie viel Selbstvertrauen sinnvoll ist, um die eigene Selbstwirksamkeit voll zu
+                    entfalten. Und: was ist angemessenes Selbstvertrauen – jenseits von „Tschaka“. Was brauche ich, um
+                    mich auf mich und meine Leistungsfähigkeit verlassen zu können? Wo neige ich zu Übertreibungen, wo
+                    zu Untertreibungen? Wie viel Selbstvertrauen darf ich in meinem persönlichen Umfeld überhaupt haben?
+                </p>
                 <p class="intro-text">
-                    Konflikte zwischen Führungskräften oder Mitarbeitern sind häufig und belasten alle Beteiligten
-                    stark.
-                    Sie mindern die Bindung zum Unternehmen und senken die Arbeitsproduktivität.
-                    Ob zwischen Standorten, mit Kunden oder Zulieferern – ungelöste Konflikte binden wertvolle Energie.
-                    Durch ineffiziente Prozesse, schlechtere Qualität und Fluktuation entstehen vermeidbare Kosten.
-                    Ein Konflikt, der nicht dauerhaft befriedet wird, schwelt im Untergrund weiter.
+                    Passt das für mich? Übertriebenes oder untertriebenes Selbstbewusstsein hemmt die Nutzung der
+                    eigenen Fähigkeiten. Aber nicht zwangsweise: Denn das eigene Selbstvertrauen kann gelernt werden.
                 </p>
             </div>
         </div>
     </section>
-    <section class="goals-section" id="nutzen">
+
+    <!-- Nutzen & Wirkung (Ziele) -->
+    <section class="goals-section" id="ziele">
         <div class="container">
-            <div class="section-header"><span class="section-label">Ihr Vorteil</span>
-                <h2>Ziele &amp; Nutzen</h2>
+            <div class="section-header">
+                <span class="section-label">Ihre Ziele</span>
+                <h2>Das nehmen Sie mit</h2>
                 <div class="accent-line"></div>
             </div>
             <div class="goals-grid">
                 <div class="goal-card">
                     <div class="goal-number">1</div>
-                    <p class="goal-text">Sie reflektieren Ihre bisherigen Lösungsstrategien und erkennen deren Stärken
-                        und Schwächen.</p>
+                    <p class="goal-text">Sie kennen Ihre persönliche Bereitschaft aus Fehlern zu lernen</p>
                 </div>
                 <div class="goal-card">
                     <div class="goal-number">2</div>
-                    <p class="goal-text">Sie verstärken, ergänzen oder verändern Ihr Verhaltensrepertoire im
-                        Konfliktfall.</p>
+                    <p class="goal-text">Sie wissen, wie Selbstvertrauen vertrauensvolle Beziehungen zu anderen
+                        ermöglicht</p>
                 </div>
                 <div class="goal-card">
                     <div class="goal-number">3</div>
-                    <p class="goal-text">Sie lernen, Konflikte frühzeitig zu erkennen und klar zu benennen.</p>
+                    <p class="goal-text">Sie wissen, wie Sie Selbstüberschätzung vermeiden können</p>
                 </div>
                 <div class="goal-card">
                     <div class="goal-number">4</div>
-                    <p class="goal-text">Sie kommunizieren klar und eindeutig, ohne andere persönlich zu verletzen.</p>
+                    <p class="goal-text">Sie können Ihr Selbstvertrauen stärken und Anerkennung annehmen</p>
                 </div>
                 <div class="goal-card">
                     <div class="goal-number">5</div>
-                    <p class="goal-text">Sie bringen die Organisation durch nachhaltige Klärung strittiger Themen voran.
-                    </p>
+                    <p class="goal-text">Sie kennen den Einfluss Ihres Wertesystems auf Ihre Bereitschaft, sich selbst
+                        zu vertrauen</p>
+                </div>
+                <div class="goal-card">
+                    <div class="goal-number">6</div>
+                    <p class="goal-text">Sie wissen, wie und warum Sie Selbstvertrauen leistungsfähiger macht</p>
                 </div>
             </div>
         </div>
     </section>
-    <section class="content-section">
+
+    <!-- Inhalte (Timeline) -->
+    <section class="content-section" id="inhalte">
         <div class="container">
-            <div class="section-header"><span class="section-label">Der Inhalt</span>
-                <h2>Themenübersicht</h2>
+            <div class="section-header">
+                <span class="section-label">Curriculum</span>
+                <h2>Seminarinhalte</h2>
                 <div class="accent-line"></div>
             </div>
             <div class="journey-container">
                 <div class="journey-line"></div>
+
+                <!-- Item 1 -->
                 <div class="journey-item">
                     <div class="journey-node">
                         <div class="node-dot"></div>
-                        <div class="node-connector"></div>
                     </div>
                     <div class="journey-content">
                         <div class="journey-card">
-                            <div class="module-badge"><span class="module-number">Thema 01</span></div>
-                            <h3 class="journey-title">Grundlagen &amp; Dynamik</h3>
-                            <p>Wodurch entstehen Konflikte? Materielle Kosten und die Dynamik der Eskalation. Woran
-                                erkenne ich Konflikte frühzeitig?</p>
+                            <h3 class="journey-title">Die drei Säulen des Selbstvertrauens</h3>
+                            <p>Integrität im sozialen Umfeld, Wohlwollen gegenüber sich selbst, bewusste Kompetenz.</p>
                         </div>
                     </div>
                 </div>
+
+                <!-- Item 2 -->
                 <div class="journey-item">
                     <div class="journey-node">
                         <div class="node-dot"></div>
-                        <div class="node-connector"></div>
                     </div>
                     <div class="journey-content">
                         <div class="journey-card">
-                            <div class="module-badge"><span class="module-number">Thema 02</span></div>
-                            <h3 class="journey-title">Selbstreflexion</h3>
-                            <p>Umgang mit bisherigen Verhaltensmustern im Streitfall. Die Rolle der inneren Antreiber
-                                und der eigenen (Führungs-)Rolle.</p>
+                            <h3 class="journey-title">Selbstvertrauen stärken</h3>
+                            <p>Wie? Methoden und Strategien für den Alltag.</p>
                         </div>
                     </div>
                 </div>
+
+                <!-- Item 3 -->
                 <div class="journey-item">
                     <div class="journey-node">
                         <div class="node-dot"></div>
-                        <div class="node-connector"></div>
                     </div>
                     <div class="journey-content">
                         <div class="journey-card">
-                            <div class="module-badge"><span class="module-number">Thema 03</span></div>
-                            <h3 class="journey-title">Tools &amp; Modelle</h3>
-                            <p>Arbeit mit dem Thomas-Kilmann-Conflict-Mode Instrument. Die Rolle der Emotionen verstehen
-                                und steuern.</p>
+                            <h3 class="journey-title">Kontexte des Selbstvertrauens</h3>
+                            <p>Selbstvertrauen in unterschiedlichen Lebensbereichen und Arbeitskontexten.</p>
                         </div>
                     </div>
                 </div>
+
+                <!-- Item 4 -->
                 <div class="journey-item">
                     <div class="journey-node">
                         <div class="node-dot"></div>
-                        <div class="node-connector"></div>
                     </div>
                     <div class="journey-content">
                         <div class="journey-card">
-                            <div class="module-badge"><span class="module-number">Thema 04</span></div>
-                            <h3 class="journey-title">Lössungskompetenz</h3>
-                            <p>Persönliches Wachstum auf diesem Gebiet. Klar kommunizieren, ohne zu verletzen.
-                                Nachhaltige Klärung herbeiführen.</p>
+                            <h3 class="journey-title">Vom Selbstbewusstsein zum Selbstvertrauen</h3>
+                            <p>Die Entwicklungsschritte verstehen und gehen.</p>
                         </div>
                     </div>
+                </div>
+
+                <!-- Item 5 -->
+                <div class="journey-item">
+                    <div class="journey-node">
+                        <div class="node-dot"></div>
+                    </div>
+                    <div class="journey-content">
+                        <div class="journey-card">
+                            <h3 class="journey-title">Vertrauen in das eigene Wertesystem</h3>
+                            <p>Die innere Basis für Entscheidungen und Haltung.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 6 -->
+                <div class="journey-item">
+                    <div class="journey-node">
+                        <div class="node-dot"></div>
+                    </div>
+                    <div class="journey-content">
+                        <div class="journey-card">
+                            <h3 class="journey-title">Lebensphasen &amp; Selbstpositionierung</h3>
+                            <p>Selbstvertrauen in unterschiedlichen Phasen. Positionierung zwischen Arroganz und
+                                Minderwertigkeitsgefühl.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 7 -->
+                <div class="journey-item">
+                    <div class="journey-node">
+                        <div class="node-dot"></div>
+                    </div>
+                    <div class="journey-content">
+                        <div class="journey-card">
+                            <h3 class="journey-title">Rationale Strategie</h3>
+                            <p>Selbstvertrauen als bewusste Strategie zur Effizienzsteigerung nutzen.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Nach dem Training / Nutzen -->
+    <section class="intro-section" style="background-color: #f8f9fa;">
+        <div class="container">
+            <div class="intro-content">
+                <span class="section-label">Transfer</span>
+                <h2>Wirkung nach dem Seminar</h2>
+                <div style="text-align: left; max-width: 700px; margin: 2rem auto;">
+                    <ul style="list-style: none; padding: 0;">
+                        <li
+                            style="padding: 0.75rem 0; border-bottom: 1px solid #e5e5e0; display: flex; align-items: flex-start; gap: 1rem;">
+                            <span style="color: var(--seminar-accent); font-weight: bold;">✓</span>
+                            <span>Sie werden sicherer und leistungsfähiger in Ihrem Arbeitsumfeld unterwegs sein</span>
+                        </li>
+                        <li
+                            style="padding: 0.75rem 0; border-bottom: 1px solid #e5e5e0; display: flex; align-items: flex-start; gap: 1rem;">
+                            <span style="color: var(--seminar-accent); font-weight: bold;">✓</span>
+                            <span>Sie können Ihre Kompetenzen angemessen nutzen</span>
+                        </li>
+                        <li
+                            style="padding: 0.75rem 0; border-bottom: 1px solid #e5e5e0; display: flex; align-items: flex-start; gap: 1rem;">
+                            <span style="color: var(--seminar-accent); font-weight: bold;">✓</span>
+                            <span>Sie können das Miteinander und die Kommunikation vertrauensvoller gestalten</span>
+                        </li>
+                        <li
+                            style="padding: 0.75rem 0; border-bottom: 1px solid #e5e5e0; display: flex; align-items: flex-start; gap: 1rem;">
+                            <span style="color: var(--seminar-accent); font-weight: bold;">✓</span>
+                            <span>Sie erleben Innovationskraft und Engagement effektiver</span>
+                        </li>
+                        <li style="padding: 0.75rem 0; display: flex; align-items: flex-start; gap: 1rem;">
+                            <span style="color: var(--seminar-accent); font-weight: bold;">✓</span>
+                            <span>Sie erfahren mehr Freude am Gestalten des eigenen Arbeitsgebietes</span>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
     </section>
+
+    
+
+    <!-- CTA Footer -->
     <section class="cta-section">
         <div class="container">
             <div class="cta-grid">
                 <div class="target-card">
-                    <span class="section-label">Zielgruppe</span>
                     <h3>Für wen ist das?</h3>
-                    <p style="color: var(--color-text); margin-bottom: 2rem;">
-                        Führungskräfte, Projektleiter und alle, die Konflikte souverän meistern möchten. Werden Sie zum
-                        geschätzten Ansprechpartner in kritischen Situationen.
+                    <p style="margin-top: 1rem; color: #666; line-height: 1.6;">
+                        Alle, die ihre Selbstwirksamkeit und Leistungsfähigkeit durch gesundes Selbstvertrauen steigern
+                        möchten. Fach- und Führungskräfte, die souveräner agieren wollen.
                     </p>
-                    <ul style="list-style: none; padding: 0; color: var(--color-text);">
-                        <li style="margin-bottom: 0.5rem">✓ Führungskräfte aller Ebenen</li>
-                        <li style="margin-bottom: 0.5rem">✓ Projektleiter &amp; Teamleads</li>
-                        <li style="margin-bottom: 0.5rem">✓ HR-Verantwortliche</li>
-                    </ul>
                 </div>
                 <div class="cta-card">
-                    <h3>Kontakt aufnehmen</h3>
-                    <p>Haben Sie Fragen zum Seminar oder wünschen Sie ein individuelles Inhouse-Angebot?</p>
-                    <a class="btn-glow" href="../index#kontakt" style="color: var(--seminar-accent);">Unverbindlich
-                        anfragen →</a>
+                    <h3>Interesse geweckt?</h3>
+                    <p>Selbstverständlich ist dies nur ein Vorschlag. Gerne können wir dieses Menü nach Ihren
+                        Vorschlägen abändern! Preis, Methode und Dauer werden gemeinsam festgelegt.</p>
+                    <a class="btn-white" href="../index#kontakt">Jetzt anfragen</a>
                 </div>
             </div>
         </div>
     </section>
+
     <div id="footer-placeholder"></div>
+
+    <script src="../js/seminar-data.js"></script>
     <script src="../js/main.js"></script>
     <script>
+        // Load Header & Footer
+        fetch('../components/header.html')
+            .then(response => response.text())
+            .then(data => {
+                // Adjust paths in header
+                const fixedData = data.replace(/href="index"/g, 'href="../index"')
+                    .replace(/href="seminare\//g, 'href="')
+                    .replace(/src="assets\//g, 'src="../assets/');
+                document.getElementById('nav-placeholder').innerHTML = fixedData;
+
+                // Re-init mobile menu if needed
+                const mobileMenuBtn = document.getElementById('mobile-menu');
+                const navLinks = document.querySelector('.nav-links');
+                if (mobileMenuBtn && navLinks) {
+                    mobileMenuBtn.addEventListener('click', () => {
+                        mobileMenuBtn.classList.toggle('active');
+                        navLinks.classList.toggle('active');
+                    });
+                }
+            })
+            .catch(err => console.log('Header load error:', err));
+
+        fetch('../components/footer.html')
+            .then(response => response.text())
+            .then(data => {
+                const fixedData = data.replace(/href="index"/g, 'href="../index"')
+                    .replace(/src="assets\//g, 'src="../assets/');
+                document.getElementById('footer-placeholder').innerHTML = fixedData;
+            })
+            .catch(err => console.log('Footer load error:', err));
+
         // Scroll Progress
         window.addEventListener('scroll', () => {
             const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
             const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
             const scrolled = (winScroll / height) * 100;
-            document.getElementById("scrollProgress").style.width = scrolled + "%";
+            document.getElementById('scrollProgress').style.width = scrolled + '%';
         });
     </script>
+    <!-- Chatbot Widget -->
+    <script data-company-id="5f929157-5f9e-48e3-b7f7-a6dcd0e24142" data-theme="glassmorphism" defer=""
+        src="https://www.vallit.net/widget/embed.js"></script>
 </body>
 
 </html>

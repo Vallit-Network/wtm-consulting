@@ -1,28 +1,35 @@
 <!DOCTYPE html>
 
 <html lang="de">
+
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.vallit.net https://vercel.live; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://www.vallit.net https://vercel.live; font-src 'self' https://fonts.gstatic.com https://www.vallit.net; img-src 'self' data: https://www.vallit.net https://vercel.live; connect-src 'self' https://www.vallit.net https://vercel.live; frame-src 'self' https://www.vallit.net https://vercel.live;" http-equiv="Content-Security-Policy"/>
-<link href="../assets/favicon.png" rel="icon" type="image/png"/>
-<title>Zusammenarbeit der Generationen – WTM Management Consulting</title>
-<meta content="Generationen verbinden – als Führungskraft das Beste aus verschiedenen Altersgruppen herausholen." name="description"/>
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&amp;family=Source+Sans+Pro:wght@300;400;600;700&amp;display=swap" rel="stylesheet"/>
-<link href="../styles/index.css" rel="stylesheet"/>
-<style>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta
+        content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.vallit.net https://vercel.live; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://www.vallit.net https://vercel.live; font-src 'self' https://fonts.gstatic.com https://www.vallit.net; img-src 'self' data: https://www.vallit.net https://vercel.live; connect-src 'self' https://www.vallit.net https://vercel.live; frame-src 'self' https://www.vallit.net https://vercel.live;"
+        http-equiv="Content-Security-Policy" />
+    <link href="../assets/favicon.png" rel="icon" type="image/png" />
+    <title>Zusammenarbeit der Generationen – WTM Management Consulting</title>
+    <meta content="Generationen verbinden – als Führungskraft das Beste aus verschiedenen Altersgruppen herausholen."
+        name="description" />
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&amp;family=Source+Sans+Pro:wght@300;400;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <link href="../styles/index.css" rel="stylesheet" />
+    <style>
         :root {
-            /* Anthracite Theme */
-            --seminar-accent: #2c2c2e;
-            /* Dark Anthracite */
-            --seminar-accent-light: rgba(44, 44, 46, 0.1);
-            --seminar-accent-glow: rgba(44, 44, 46, 0.3);
+            /* Change Management Theme (Red Accent, Blue Hero) */
+            --seminar-accent: #c24c4c;
+            --seminar-accent-light: rgba(194, 76, 76, 0.1);
+            --seminar-accent-glow: rgba(194, 76, 76, 0.3);
+            --seminar-secondary: #2C3E50;
+            --seminar-primary-blue: #9DD4D0;
             --color-text: #3A3A38;
             --color-cream: #F5F5F3;
             --color-border: #E5E5E0;
-            --accent-highlight: #a0a0a5;
-            /* Silver/Grey highlight */
+            --accent-highlight: #e57373;
         }
 
         .scroll-progress {
@@ -39,7 +46,7 @@
             min-height: 100vh;
             display: flex;
             align-items: center;
-            background: linear-gradient(145deg, #0f172a 0%, #1a2a3a 100%);
+            background: linear-gradient(135deg, #2C3E50 0%, #527a90 100%);
             position: relative;
             overflow: hidden;
             padding: 120px 0 80px;
@@ -56,8 +63,8 @@
         .orb-1 {
             width: 400px;
             height: 400px;
-            background: #9ca3af;
-            /* Silver */
+            background: #527a90;
+            /* Soft Teal */
             top: -100px;
             right: -100px;
         }
@@ -133,7 +140,7 @@
         }
 
         .hero-title span {
-            color: #9ca3af;
+            color: #c24c4c;
         }
 
         .hero-subtitle {
@@ -170,7 +177,7 @@
         .meta-tag svg {
             width: 16px;
             height: 16px;
-            stroke: #9ca3af;
+            stroke: #c24c4c;
         }
 
         .hero-cta {
@@ -625,130 +632,202 @@
         }
     </style>
 </head>
+
 <body>
-<div class="scroll-progress" id="scrollProgress"></div>
-<div id="nav-placeholder"></div>
-<section class="seminar-hero">
-<div class="hero-gradient-orb orb-1"></div>
-<div class="hero-gradient-orb orb-2"></div>
-<div class="container">
-<div class="hero-content-wrapper">
-<div class="hero-text">
-<div class="breadcrumb"><a href="../index">Startseite</a><span class="breadcrumb-sep">→</span><a href="../index#trainings">Seminare</a><span class="breadcrumb-sep">→</span><span>Zusammenarbeit der Generationen</span></div>
-<div class="category-badge">Seminar</div>
-<h1 class="hero-title">Zusammenarbeit der Generationen</h1>
-<p class="hero-subtitle">Generationen verbinden – als Führungskraft das Beste aus verschiedenen Altersgruppen herausholen.</p>
-<div class="hero-meta"><span class="meta-tag"><svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="18" rx="2" ry="2" width="18" x="3" y="4"></rect></svg>1-2 Tage</span><span class="meta-tag"><svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle></svg>Reflexion</span><span class="meta-tag"><svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle></svg>Praxisübungen</span></div>
-<div class="hero-cta">
-<a class="btn-glow" href="../index#kontakt">Unverbindlich anfragen →</a>
-<a class="btn-outline-light" href="#konzept">Konzept erhalten</a>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section class="goals-section" id="nutzen">
-<div class="container">
-<div class="section-header"><span class="section-label">Ihr Vorteil</span>
-<h2>Nutzen &amp; Wirkung</h2>
-<div class="accent-line"></div>
-</div>
-<div class="goals-grid"><div class="goal-card"><div class="goal-number">1</div><p class="goal-text">Baustein 1: Wer bin ich?</p></div><div class="goal-card"><div class="goal-number">2</div><p class="goal-text">bauen tragfähige (Arbeits-)Beziehungen mit anderen auf</p></div><div class="goal-card"><div class="goal-number">3</div><p class="goal-text">können eigene Wünsche angemessen artikulieren</p></div><div class="goal-card"><div class="goal-number">4</div><p class="goal-text">können anderen ein klares Bild liefern</p></div><div class="goal-card"><div class="goal-number">5</div><p class="goal-text">Baustein 2: Was kann ich?</p></div><div class="goal-card"><div class="goal-number">6</div><p class="goal-text">vermeiden von „Irrwege“</p></div><div class="goal-card"><div class="goal-number">7</div><p class="goal-text">schaffen eine bewusste Haltung am Arbeitsplatz</p></div><div class="goal-card"><div class="goal-number">8</div><p class="goal-text">haben Klarheit in ihren Aussagen</p></div><div class="goal-card"><div class="goal-number">9</div><p class="goal-text">üben neuer Verhaltensweisen schneller ein</p></div><div class="goal-card"><div class="goal-number">10</div><p class="goal-text">Baustein 3: Was schaffen wir gemeinsam?</p></div><div class="goal-card"><div class="goal-number">11</div><p class="goal-text">gestalten Kulturwandel aktiv mit</p></div><div class="goal-card"><div class="goal-number">12</div><p class="goal-text">helfen, sichern gutes Betriebsklima</p></div><div class="goal-card"><div class="goal-number">13</div><p class="goal-text">schaffen attraktive Betriebskultur</p></div></div>
-</div>
-</section>
-<section class="intro-section" style="background-color: #f8f9fa;">
-<div class="container">
-<div class="intro-content">
-<span class="section-label">Transfer</span>
-<h2>Über das Training</h2>
-<div style="text-align: left; max-width: 600px; margin: 2rem auto;">
-</div>
-<p class="intro-text" style="margin-top: 1.5rem;">Young and Old
-Die Vorstellung von Arbeit und Führung ist im Wandel. Zugleich macht sich eine zuneh-
-mende Knappheit an leistungsfähigen Mitarbeitern bemerkbar. Wie kann sich unser Unter-
-nehmen vor diesem Hintergrund abheben? Was ist unser Profil als attraktiver Arbeitgeber?
-Wie gelingt es, mit neuen Mitarbeitern eine Unternehmenskultur zu schaffen und zu erhal-
-ten, damit eine (weitgehend) reibungslose Zusammenarbeit im Unternehmen gewährleistet
-ist? Was müsste ein Programm für neue Mitarbeiter leisten?
-Hier geht es um eine Kombination aus Einsteiger- und altersübergreifenden Workshops
-3 Bausteine:
-•  Wer bin ich?
-•  Was kann ich?
-•  Was schaffen wir gemeinsam?
-Eingebettet in eine Mentoring-Programm</p></div>
-</div>
-</section>
-<section class="content-section">
-<div class="container">
-<div class="section-header"><span class="section-label">Der Inhalt</span>
-<h2>Themenübersicht</h2>
-<div class="accent-line"></div>
-</div>
-<div class="journey-container"><div class="journey-line" id="journeyLine"></div><div class="journey-item"><div class="journey-node"><div class="node-dot"><div class="node-ring"></div></div><div class="node-connector"></div></div><div class="journey-content"><div class="journey-card"><div class="module-badge"><span class="module-number">Thema 01</span></div><h3 class="journey-title">Seminarinhalte</h3><p>•  Systematisches Entdecken eigener Potenziale
-•  Reflexion des Erlebten und Ausprobieren alternativer Wege
-•  Wie vereinbaren wir unterschiedliche Werte?</p></div></div></div></div>
-</div>
-</section>
-<section class="intro-section">
-<div class="container">
-<div class="intro-content">
-<span class="section-label">Praxis</span>
-<h2>Praxis &amp; Transfer</h2>
-<p class="intro-text">Wir legen großen Wert auf den Transfer in den eigenen Arbeitskontext. Durch
+    <div class="scroll-progress" id="scrollProgress"></div>
+    <div id="nav-placeholder"></div>
+    <section class="seminar-hero">
+        <div class="hero-gradient-orb orb-1"></div>
+        <div class="hero-gradient-orb orb-2"></div>
+        <div class="container">
+            <div class="hero-content-wrapper">
+                <div class="hero-text">
+                    <div class="breadcrumb"><a href="../index">Startseite</a><span class="breadcrumb-sep">→</span><a
+                            href="../index#trainings">Seminare</a><span
+                            class="breadcrumb-sep">→</span><span>Zusammenarbeit der Generationen</span></div>
+                    <div class="category-badge">Change Management</div>
+                    <h1 class="hero-title">Zusammenarbeit der Generationen</h1>
+                    <p class="hero-subtitle">Generationen verbinden – als Führungskraft das Beste aus verschiedenen
+                        Altersgruppen herausholen.</p>
+                    <div class="hero-meta"><span class="meta-tag"><svg fill="none" stroke="currentColor"
+                                stroke-width="2" viewbox="0 0 24 24">
+                                <rect height="18" rx="2" ry="2" width="18" x="3" y="4"></rect>
+                            </svg>1-2 Tage</span><span class="meta-tag"><svg fill="none" stroke="currentColor"
+                                stroke-width="2" viewbox="0 0 24 24">
+                                <circle cx="12" cy="12" r="10"></circle>
+                            </svg>Reflexion</span><span class="meta-tag"><svg fill="none" stroke="currentColor"
+                                stroke-width="2" viewbox="0 0 24 24">
+                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="9" cy="7" r="4"></circle>
+                            </svg>Praxisübungen</span></div>
+                    <div class="hero-cta">
+                        <a class="btn-glow" href="../index#kontakt">Unverbindlich anfragen →</a>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="goals-section" id="nutzen">
+        <div class="container">
+            <div class="section-header"><span class="section-label">Ihr Vorteil</span>
+                <h2>Nutzen &amp; Wirkung</h2>
+                <div class="accent-line"></div>
+            </div>
+            <div class="goals-grid">
+                <div class="goal-card">
+                    <div class="goal-number">1</div>
+                    <p class="goal-text">Baustein 1: Wer bin ich?</p>
+                </div>
+                <div class="goal-card">
+                    <div class="goal-number">2</div>
+                    <p class="goal-text">bauen tragfähige (Arbeits-)Beziehungen mit anderen auf</p>
+                </div>
+                <div class="goal-card">
+                    <div class="goal-number">3</div>
+                    <p class="goal-text">können eigene Wünsche angemessen artikulieren</p>
+                </div>
+                <div class="goal-card">
+                    <div class="goal-number">4</div>
+                    <p class="goal-text">können anderen ein klares Bild liefern</p>
+                </div>
+                <div class="goal-card">
+                    <div class="goal-number">5</div>
+                    <p class="goal-text">Baustein 2: Was kann ich?</p>
+                </div>
+                <div class="goal-card">
+                    <div class="goal-number">6</div>
+                    <p class="goal-text">vermeiden von „Irrwege“</p>
+                </div>
+                <div class="goal-card">
+                    <div class="goal-number">7</div>
+                    <p class="goal-text">schaffen eine bewusste Haltung am Arbeitsplatz</p>
+                </div>
+                <div class="goal-card">
+                    <div class="goal-number">8</div>
+                    <p class="goal-text">haben Klarheit in ihren Aussagen</p>
+                </div>
+                <div class="goal-card">
+                    <div class="goal-number">9</div>
+                    <p class="goal-text">üben neuer Verhaltensweisen schneller ein</p>
+                </div>
+                <div class="goal-card">
+                    <div class="goal-number">10</div>
+                    <p class="goal-text">Baustein 3: Was schaffen wir gemeinsam?</p>
+                </div>
+                <div class="goal-card">
+                    <div class="goal-number">11</div>
+                    <p class="goal-text">gestalten Kulturwandel aktiv mit</p>
+                </div>
+                <div class="goal-card">
+                    <div class="goal-number">12</div>
+                    <p class="goal-text">helfen, sichern gutes Betriebsklima</p>
+                </div>
+                <div class="goal-card">
+                    <div class="goal-number">13</div>
+                    <p class="goal-text">schaffen attraktive Betriebskultur</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="intro-section" style="background-color: #f8f9fa;">
+        <div class="container">
+            <div class="intro-content">
+                <span class="section-label">Transfer</span>
+                <h2>Über das Training</h2>
+                <div style="text-align: left; max-width: 600px; margin: 2rem auto;">
+                </div>
+                <p class="intro-text" style="margin-top: 1.5rem;">Young and Old
+                    Die Vorstellung von Arbeit und Führung ist im Wandel. Zugleich macht sich eine zuneh-
+                    mende Knappheit an leistungsfähigen Mitarbeitern bemerkbar. Wie kann sich unser Unter-
+                    nehmen vor diesem Hintergrund abheben? Was ist unser Profil als attraktiver Arbeitgeber?
+                    Wie gelingt es, mit neuen Mitarbeitern eine Unternehmenskultur zu schaffen und zu erhal-
+                    ten, damit eine (weitgehend) reibungslose Zusammenarbeit im Unternehmen gewährleistet
+                    ist? Was müsste ein Programm für neue Mitarbeiter leisten?
+                    Hier geht es um eine Kombination aus Einsteiger- und altersübergreifenden Workshops
+                    3 Bausteine:
+                    • Wer bin ich?
+                    • Was kann ich?
+                    • Was schaffen wir gemeinsam?
+                    Eingebettet in eine Mentoring-Programm</p>
+            </div>
+        </div>
+    </section>
+    <section class="content-section">
+        <div class="container">
+            <div class="section-header"><span class="section-label">Der Inhalt</span>
+                <h2>Themenübersicht</h2>
+                <div class="accent-line"></div>
+            </div>
+            <div class="journey-container">
+                <div class="journey-line" id="journeyLine"></div>
+                <div class="journey-item">
+                    <div class="journey-node">
+                        <div class="node-dot">
+                            <div class="node-ring"></div>
+                        </div>
+                        <div class="node-connector"></div>
+                    </div>
+                    <div class="journey-content">
+                        <div class="journey-card">
+                            <div class="module-badge"><span class="module-number">Thema 01</span></div>
+                            <h3 class="journey-title">Seminarinhalte</h3>
+                            <p>• Systematisches Entdecken eigener Potenziale
+                                • Reflexion des Erlebten und Ausprobieren alternativer Wege
+                                • Wie vereinbaren wir unterschiedliche Werte?</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="intro-section">
+        <div class="container">
+            <div class="intro-content">
+                <span class="section-label">Praxis</span>
+                <h2>Praxis &amp; Transfer</h2>
+                <p class="intro-text">Wir legen großen Wert auf den Transfer in den eigenen Arbeitskontext. Durch
                     konkrete Fallbeispiele, Simulationen und die Entwicklung individueller Handlungsoptionen stellen wir
                     sicher, dass Sie das Gelernte direkt anwenden können.</p>
-</div>
-</div>
-</section>
-<section class="goals-section" style="background-color: #f8f9fa;">
-<div class="container">
-<div class="section-header"><span class="section-label">Kontext</span>
-<h2>Typische Anlässe</h2>
-<div class="accent-line"></div>
-</div>
-<div class="goals-grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));">
-<div class="goal-card">
-<p class="goal-text">Projektleiter, die ohne Disziplinarverantwortung Teams steuern.</p>
-</div>
-<div class="goal-card">
-<p class="goal-text">Experten, die fachlich führen, aber nicht disziplinarisch.</p>
-</div>
-<div class="goal-card">
-<p class="goal-text">Einführung von agilen Arbeitsweisen oder Matrix-Strukturen.</p>
-</div>
-</div>
-</div>
-</section>
-<section class="intro-section">
-<div class="container">
-<div class="intro-content">
-<span class="section-label">Nachhaltigkeit</span>
-<h2>Wirkung nach 4 Wochen</h2>
-<div style="text-align: left; max-width: 600px; margin: 2rem auto;">
-</div>
-<p class="intro-text">•  Die Mitarbeiter verkürzen ihre Orientierungs- und Suchphase im Unternehmen. Sie
-können sich schneller auf ihre Aufgaben konzentrieren und verbinden sicheres Auf-
-treten mit angemessener Klarheit und Stimmigkeit, ohne auf Verbindlichkeit zu ver-
-zichten. Damit erhöht sich die gesamte Mitarbeiterbindung.</p></div>
-</div>
-</section>
-<section class="cta-section">
-<div class="container">
-<div class="cta-grid">
-<div class="target-card"><span class="section-label">Maßgeschneidert</span>
-<h3>Inhouse-Lösung?</h3>
-<p>Trainees, junge Quereinsteiger, Azubis, Mitarbeiter mit erster Berufserfahrung</p>
-</div>
-<div class="cta-card">
-<h3>Kontakt aufnehmen</h3>
-<p>Lassen Sie uns über Ihren Bedarf sprechen.</p><a class="btn btn-white" href="../index#kontakt">Unverbindlich anfragen →</a>
-</div>
-</div>
-</div>
-</section>
-<div id="footer-placeholder"></div>
-<script src="../js/main.js"></script>
-<script>window.addEventListener('scroll', () => { document.getElementById('scrollProgress').style.width = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100 + '%'; });</script>
-<script data-api-url="https://www.vallit.net" data-color="#6366f1" data-company-id="e46176c5-0f35-43b8-8e8c-c72f534519e1" data-language="de" data-metadata='{"page_title": "Laterales Führen"}' data-theme="minimal" data-title="Kian" src="https://www.vallit.net/widget/embed.js"></script>
+            </div>
+        </div>
+    </section>
+    
+    <section class="intro-section">
+        <div class="container">
+            <div class="intro-content">
+                <span class="section-label">Nachhaltigkeit</span>
+                <h2>Wirkung nach 4 Wochen</h2>
+                <div style="text-align: left; max-width: 600px; margin: 2rem auto;">
+                </div>
+                <p class="intro-text">• Die Mitarbeiter verkürzen ihre Orientierungs- und Suchphase im Unternehmen. Sie
+                    können sich schneller auf ihre Aufgaben konzentrieren und verbinden sicheres Auf-
+                    treten mit angemessener Klarheit und Stimmigkeit, ohne auf Verbindlichkeit zu ver-
+                    zichten. Damit erhöht sich die gesamte Mitarbeiterbindung.</p>
+            </div>
+        </div>
+    </section>
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-grid">
+                <div class="target-card"><span class="section-label">Maßgeschneidert</span>
+                    <h3>Inhouse-Lösung?</h3>
+                    <p>Trainees, junge Quereinsteiger, Azubis, Mitarbeiter mit erster Berufserfahrung</p>
+                </div>
+                <div class="cta-card">
+                    <h3>Kontakt aufnehmen</h3>
+                    <p>Lassen Sie uns über Ihren Bedarf sprechen.</p><a class="btn btn-white"
+                        href="../index#kontakt">Unverbindlich anfragen →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div id="footer-placeholder"></div>
+    <script src="../js/main.js"></script>
+    <script>window.addEventListener('scroll', () => { document.getElementById('scrollProgress').style.width = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100 + '%'; });</script>
+    <script data-api-url="https://www.vallit.net" data-color="#6366f1"
+        data-company-id="e46176c5-0f35-43b8-8e8c-c72f534519e1" data-language="de"
+        data-metadata='{"page_title": "Laterales Führen"}' data-theme="minimal" data-title="Kian"
+        src="https://www.vallit.net/widget/embed.js"></script>
 </body>
+
 </html>

@@ -1041,31 +1041,6 @@
     }
   },
   {
-    "id": "krisenmanagement",
-    "title": "Krisenmanagement",
-    "category": "management",
-    "intro": "Krisenmanagement für Projektmanager  Selbst mit einem erfahrenen Projektmanager können Projekte ins Schleudern  geraten, dies liegt in der Natur der Sache. Denn Projekte sind per definitionem  Vorstöße in Neuland und sollen Lösungen herbeiführen, die es so (im  Unternehmen) noch nicht gibt. Das A und O des professionellen Krisen- managements ist es, Probleme und Krisen anhand typischer Merkmale frühzeitig  zu erkennen und strategisch lösen zu können. Kurzum die Beantwortung der  Frage: Welche Maßnahmen sind an welcher Stellschraube wann sinnvoll?",
-    "content": {
-      "ziele": [
-        "Sie erkennen Probleme und Krisen im Projekt anhand typischer Merkmale \n\nfrühzeitig",
-        "Sie sind sich der Stellschrauben des Krisenmanagements bewusst",
-        "Sie wissen um die Werkzeuge der Projektkrisenphasen und setzen diese \n\ngezielt ein",
-        "Sie agieren auch in kritischen Situationen souverän"
-      ],
-      "inhalte": [
-        "Dynamik und Phasen von Krisenprojekten",
-        "Ursachen und Frühwarnindikatoren für Krisen",
-        "Kommunikation – präventiv und in der Krise",
-        "Werkzeuge für einzelne Phasen",
-        "Situatives Führen in Krisen",
-        "Krisencoaching",
-        "Fallarbeit – Reflektion der eigenen beruflichen Praxis"
-      ],
-      "nutzen": "",
-      "zielgruppe": "Projektmanager und alle, die mit schwierigen Projekten zu tun haben."
-    }
-  },
-  {
     "id": "laterales-fu-hren",
     "title": "Laterales Führen",
     "category": "management",

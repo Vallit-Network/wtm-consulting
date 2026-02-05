@@ -9,8 +9,8 @@ const seminarsData = {
         id: "lebensphasen-berufliche-orientierung",
         title: "Lebensphasen & Berufliche Orientierung",
         url: "seminare/lebensphasen.html",
-        category: "leadership",
-        badge: "Führung",
+        category: "change",
+        badge: "Change",
         shortDescription: "Karriereplanung im Wandel der Lebensphasen – Orientierung finden und bewusste Entscheidungen treffen.",
         details: ["1-2 Tage", "Reflexion", "Coaching"],
         heroImage: "assets/hero-meeting.jpg",
@@ -47,6 +47,29 @@ const seminarsData = {
             inhalte: "Selbstbild und Fremdbild. Körpersprache und Stimme. Assertives Verhalten. Umgang mit Manipulation. Grenzen setzen. Konfliktsituationen meistern.",
             nutzen: "Sie treten souveräner auf, vertreten Ihre Interessen klarer und gewinnen an Ausstrahlung und Durchsetzungskraft.",
             zielgruppe: "Alle, die ihr Selbstbewusstsein stärken und ihre Wirkung verbessern möchten."
+        }
+    },
+    "kommunikation-und-persoenlichkeit": {
+        id: "kommunikation-und-persoenlichkeit",
+        title: "Kommunikation & Persönlichkeit",
+        url: "seminare/kommunikation-und-persoenlichkeit.html",
+        category: "communication",
+        badge: "Kommunikation",
+        shortDescription: "Authentisch kommunizieren und die eigene Persönlichkeit stärken – für mehr Wirkung und Klarheit im Gespräch.",
+        details: ["2 Tage", "Persönlichkeitsmodelle", "Praxisnah"],
+        heroImage: "assets/hero-meeting.jpg",
+        content: {
+            intro: "Warum verstehen wir uns manchmal blind – und reden ein andermal völlig aneinander vorbei? Unsere Kommunikation ist untrennbar mit unserer Persönlichkeit verbunden. Wer seine eigenen Muster kennt und die der anderen versteht, kann Missverständnisse vermeiden und Beziehungen aktiv gestalten. In diesem Seminar verbinden wir Kommunikationspsychologie mit Persönlichkeitsentwicklung.",
+            ziele: [
+                "Eigene Kommunikationsmuster und Persönlichkeitsstile erkennen",
+                "Andere Menschen besser einschätzen und typgerecht ansprechen",
+                "Die eigene Wirkung auf andere verstehen und steuern",
+                "Konfliktpotenziale in der Persönlichkeitsstruktur erkennen und entschärfen",
+                "Authentizität und Überzeugungskraft steigern"
+            ],
+            inhalte: "Persönlichkeitsmodelle in der Kommunikation (z.B. DISG, Riemann-Thomann). Selbstbild vs. Fremdbild. Der Zusammenhang von Charakter und Sprachstil. Umgang mit 'schwierigen' Gesprächspartnern. Empathie und Perspektivübernahme. Die Psychologie des Überzeugens. Authentisches Auftreten.",
+            nutzen: "Sie entwickeln ein tieferes Verständnis für sich und andere. Dadurch kommunizieren Sie nicht nur klarer, sondern auch wertschätzender und zielführender – privat wie beruflich.",
+            zielgruppe: "Alle, die ihre Kommunikationskompetenz durch ein besseres Verständnis von Persönlichkeiten vertiefen möchten."
         }
     },
     "betriebsorganisation": {
@@ -99,7 +122,7 @@ const seminarsData = {
         url: "seminare/change-kommunikation.html",
         category: "change",
         badge: "Change",
-        shortDescription: "Professionell kommunizieren im Veränderungsprozess – Botschaften klar formulieren und Mitarbeiter mitnehmen.",
+        shortDescription: "Professionell kommunizieren im Veränderungsprozess – Botschaften klar formulieren und Mitarbeitende mitnehmen.",
         details: ["1-2 Tage", "Praxisübungen", "Fallbeispiele"],
         heroImage: "assets/hero-meeting.jpg",
         content: {
@@ -233,6 +256,59 @@ const seminarsData = {
             zielgruppe: "Geschäftsführer*innen, Führungskräfte, Projektleiter*innen"
         }
     },
+    "selbstvertrauen": {
+        id: "selbstvertrauen",
+        title: "Selbstvertrauen: das Fundament für Leistungsfähigkeit",
+        url: "seminare/selbstvertrauen.html",
+        category: "change",
+        badge: "Change",
+        shortDescription: "Ohne Selbstvertrauen wären wir handlungsunfähig. Lernen Sie angemessenes Selbstvertrauen, um Ihre Selbstwirksamkeit voll zu entfalten.",
+        details: ["1-2 Tage", "Reflexion", "Praxistransfer"],
+        heroImage: "assets/hero-meeting.jpg",
+        content: {
+            intro: "Ohne Selbstvertrauen wären wir handlungsunfähig, wären wir nicht in der Lage, überhaupt etwas zu tun. Die Frage ist, wie viel Selbstvertrauen sinnvoll ist, um die eigene Selbstwirksamkeit voll zu entfalten. Und: was ist angemessenes Selbstvertrauen – jenseits von „Tschaka“. Was brauche ich, um mich auf mich und meine Leistungsfähigkeit verlassen zu können?",
+            ziele: [
+                "Sie kennen Ihre persönliche Bereitschaft aus Fehlern zu lernen",
+                "Sie wissen, wie Selbstvertrauen vertrauensvolle Beziehungen zu anderen ermöglicht",
+                "Sie wissen, wie Sie Selbstüberschätzung vermeiden können",
+                "Sie können Ihr Selbstvertrauen stärken",
+                "Sie können Anerkennung von sich selbst, aber auch von anderen annehmen",
+                "Sie kennen den Einfluss Ihres Wertesystems auf Ihre Bereitschaft, sich selbst zu vertrauen",
+                "Sie wissen, wie und warum Sie Selbstvertrauen leistungsfähiger macht"
+            ],
+            inhalte: "Die drei Säulen des Selbstvertrauens: Integrität im sozialen Umfeld, Wohlwollen gegenüber sich selbst, bewusste Kompetenz. Selbstvertrauen stärken: Wie? Selbstvertrauen in unterschiedlichen Lebensbereichen und Arbeitskontexten. Vom Selbstbewusstsein zum Selbstvertrauen. Vertrauen in das eigene Wertesystem. Selbstpositionierung zwischen Arroganz und Minderwertigkeitsgefühl. Selbstvertrauen als rationale Strategie zur Effizienzsteigerung.",
+            nutzen: "Sie werden sicherer und leistungsfähiger in Ihrem Arbeitsumfeld unterwegs sein, da Sie Ihre Kompetenzen angemessen nutzen können. Außerdem können Sie das Miteinander und die Kommunikation vertrauensvoller gestalten.",
+            zielgruppe: "Alle, die ihre Selbstwirksamkeit und Leistungsfähigkeit durch gesundes Selbstvertrauen steigern möchten."
+        }
+    },
+
+
+    "selbstverantwortung-und-kritikkompetenz": {
+        id: "selbstverantwortung-und-kritikkompetenz",
+        title: "Selbstverantwortung und Kritikkompetenz",
+        url: "seminare/selbstverantwortung-und-kritikkompetenz.html",
+        category: "health",
+        badge: "Gesundheit",
+        shortDescription: "Lernen Sie einen offenen und selbstverantwortlichen Umgang mit Kritik. Entwickeln Sie Kritikkompetenz und stärken Sie Ihre Beziehungen.",
+        details: ["1-2 Tage", "Reflexion", "Transfer"],
+        heroImage: "assets/hero-meeting.jpg",
+        content: {
+            intro: "Statt uns selbst oder den Gesprächspartner und das Gesagte abzulehnen, zurückzuweisen, dicht zu machen und nichts – und schon gar keine Kritik - mehr an sich ranzulassen, braucht es ein offenes und verständnisvolles Verhältnis zu uns. Erst daraus kann sich dann ein offenes und verstehendes Verhältnis zu unserem Gegenüber entwickeln.",
+            ziele: [
+                "Sie lernen die emotionale Erlebniswelt Ihrer Persönlichkeit kennen und werden sich Ihrer Fähigkeit bewusst, Kritik konstruktiv zu verarbeiten",
+                "Sie erkennen Ihre emotionalen Reaktionen auf Kritik und lernen den selbstverantwortlichen Umgang damit",
+                "Sie lernen Ihre Kernüberzeugungen und Wunde Punkte kennen",
+                "Sie wissen, wann und wie Sie in Gesprächen in die „Opferrolle“ rutschen und was sie dagegen unternehmen können",
+                "Sie entwickeln Einfühlungsvermögen und Empathie für sich und andere",
+                "Sie lernen im Gespräch zu bleiben und können die Interaktion selbstverantwortlich gestalten",
+                "Sie finden gemeinsam mit dem Gesprächspartner konstruktive Lösungen"
+            ],
+            inhalte: "Selbstwahrnehmung, Selbsterkenntnis, Selbstregulierung und Selbstführung. Übungen, die Zugang zu den eigenen Persönlichkeitsanteilen ermöglichen. Bedeutung von Verletzung und Kränkung in Gesprächen – Abschied von der „Opferrolle“. Erkennen eigener innerer Konflikte und wie sie sich in Gesprächen manifestieren. Konstruktiver und selbstverantwortlicher Umgang mit Kritik. Neue Handlungsmöglichkeiten im Kontakt mit schwierigen Gesprächspartnern.",
+            nutzen: "Wenn wir lernen, uns statt mit Ablehnung und Kritik, mit Verständnis, Mitgefühl und Trost auf uns zu schauen, wenn wir lernen, uns auch mit unseren menschlichen, allzu menschlichen Fehlbarkeiten und Unzulänglichkeiten anzunehmen und zu respektieren, können wir Kritik mit Ruhe und Selbstakzeptanz entgegennehmen.",
+            zielgruppe: "Alle, die ihren Umgang mit Kritik verbessern und ihre Beziehungen stärken wollen."
+        }
+    },
+
 
     "gruppendynamik-in-teams": {
         id: "gruppendynamik-in-teams",
@@ -262,9 +338,9 @@ const seminarsData = {
         id: "intuition-ist-doch-logisch",
         title: "Intuition: ist doch logisch",
         url: "seminare/intuition.html",
-        category: "health",
-        badge: "Gesundheit",
-        shortDescription: "Neuere Forschungsergebnisse zeigen, dass Intuition keineswegs nur emotionales ‚Bauchgefühl' ist, sondern auch rationale Instrumente nutzt wie Logik, Mathematik. Der Unterschied ist: sie nutzt sie unbewusst.",
+        category: "management",
+        badge: "Management",
+        shortDescription: "Nutzt die Kraft der Intuition für fundierte Entscheidungen und innovatives Problemlösen im beruflichen Kontext.",
         details: ["1-2 Tage Präsenz", "Reflexion & Übungen", "Praxistransfer"],
         heroImage: "assets/hero-meeting.jpg",
         content: {
@@ -306,7 +382,7 @@ const seminarsData = {
     },
     "konflikterkennung-behandlung-praevention": {
         id: "konflikterkennung-behandlung-praevention",
-        title: "Konflikterkennung & Prävention",
+        title: "Konflikterkennung, -behandlung & -prävention",
         url: "seminare/konflikterkennung-behandlung-praevention.html",
         category: "change",
         badge: "Change",
@@ -351,23 +427,7 @@ const seminarsData = {
             zielgruppe: "Projektmanager und alle, die mit schwierigen Projekten zu tun haben."
         }
     },
-    "krisenmanagement-fuer-projektmanager": {
-        id: "krisenmanagement-fuer-projektmanager",
-        title: "Krisenmanagement für Projektmanager",
-        url: "seminare/krisenmanagement-fuer-projektmanager.html",
-        category: "change",
-        badge: "Change",
-        shortDescription: "Projekte in Schwierigkeiten retten – Krisen erkennen, bewältigen und daraus lernen.",
-        details: ["1-2 Tage", "Fallstudien", "Praxisübungen"],
-        heroImage: "assets/hero-meeting.jpg",
-        content: {
-            intro: "Krisenmanagement f\u00fcr Projektmanager\nSelbst mit einem erfahrenen Projektmanager k\u00f6nnen Projekte ins Schleudern\ngeraten, dies liegt in der Natur der Sache. Denn Projekte sind per definitionem\nVorst\u00f6\u00dfe in Neuland und sollen L\u00f6sungen herbeif\u00fchren, die es so (im\nUnternehmen) noch nicht gibt. Das A und O des professionellen Krisen-\nmanagements ist es, Probleme und Krisen anhand typischer Merkmale fr\u00fchzeitig\nzu erkennen und strategisch l\u00f6sen zu k\u00f6nnen. Kurzum die Beantwortung der\nFrage: Welche Ma\u00dfnahmen sind an welcher Stellschraube wann sinnvoll?",
-            ziele: ["Sie erkennen Probleme und Krisen im Projekt anhand typischer Merkmale", "fr\u00fchzeitig", "Sie sind sich der Stellschrauben des Krisenmanagements bewusst", "Sie wissen um die Werkzeuge der Projektkrisenphasen und setzen diese", "gezielt ein", "Sie agieren auch in kritischen Situationen souver\u00e4n"],
-            inhalte: "\u2022  Dynamik und Phasen von Krisenprojekten\n\u2022  Ursachen und Fr\u00fchwarnindikatoren f\u00fcr Krisen\n\u2022  Kommunikation \u2013 pr\u00e4ventiv und in der Krise\n\u2022  Werkzeuge f\u00fcr einzelne Phasen\n\u2022  Situatives F\u00fchren in Krisen\n\u2022  Krisencoaching\n\u2022  Fallarbeit \u2013 Reflektion der eigenen beruflichen Praxis",
-            nutzen: "",
-            zielgruppe: "Projektmanager und alle, die mit schwierigen Projekten zu tun haben."
-        }
-    },
+
     "laterales-fuehren": {
         id: "laterales-fuehren",
         title: "Laterales Führen wirksam gestalten",
@@ -534,7 +594,7 @@ const seminarsData = {
         url: "seminare/change-kompetenz.html",
         category: "change",
         badge: "Change",
-        shortDescription: "Den Wandel verstehen und gestalten. Mentale Stärke und konstruktiver Umgang mit Veränderungen.",
+        shortDescription: "Stärkt die Fähigkeit, Veränderungen aktiv zu gestalten, mit Unsicherheit umzugehen und Wandel konstruktiv zu begleiten.",
         details: ["2 Tage", "Change-Modelle", "Resilienz"],
         heroImage: "assets/hero-meeting.jpg",
         content: {
@@ -547,7 +607,7 @@ const seminarsData = {
                 "wie sie einen konstruktiv mit auftauchenden Hindernissen umgehen können",
                 "welchen Bereichen (emotional, familiär, beruflich...) sie verstärkt Aufmerksamkeit widmen sollten"
             ],
-            inhalte: "House of Change. Die Changekurve. Risiken: bedeuten sie Gefahr oder Chance für mich? Folge ich unbewussten Leitsätzen und Verhaltensgewohnheiten? Wie kann ich sie in Stärken umsetzen? Wie erhöhe ich meine Standhaftigkeit und Ausdauer gegenüber Unsicherheiten und Widerständen? Wie setze ich motivierende Ziele?",
+            inhalte: "Die Changekurve. Risiken: bedeuten sie Gefahr oder Chance für mich? Folge ich unbewussten Leitsätzen und Verhaltensgewohnheiten? Wie kann ich sie in Stärken umsetzen? Wie erhöhe ich meine Standhaftigkeit und Ausdauer gegenüber Unsicherheiten und Widerständen? Wie setze ich motivierende Ziele?",
             nutzen: "Sie lernen, die Situation erst einmal als solche zu verstehen, die Gesamtheit der Fakten in ihrer Komplexität zu erfassen und nicht der Versuchung der Simplifizierung zu erliegen. Über diesen Blick auf die Vernetztheit der Fakten finden Sie neue Handlungsspielräume.",
             zielgruppe: "Alle Menschen, die ihre Change-Kompetenz stärken wollen."
         }
@@ -602,7 +662,7 @@ const seminarsData = {
         url: "seminare/soft-skills-fuer-controller.html",
         category: "management",
         badge: "Management",
-        shortDescription: "Sie als Zahlenprofi 'ticken anders'. Lernen Sie, Ergebnisse prägnant aufzubereiten und komplexe Sachverhalte selbstbewusst zu präsentieren.",
+        shortDescription: "Stärkt kommunikative und soziale Kompetenzen für Fachkräfte mit zahlen- oder faktenorientiertem Schwerpunkt.",
         details: ["Individuell", "Praxisnah", "Kommunikation"],
         heroImage: "assets/hero-meeting.jpg",
         content: {
@@ -693,9 +753,9 @@ const seminarsData = {
         id: "zusammenarbeit-von-generationen",
         title: "Zusammenarbeit der Generationen",
         url: "seminare/zusammenarbeit-von-generationen.html",
-        category: "leadership",
-        badge: "Führung",
-        shortDescription: "Generationen verbinden – als Führungskraft das Beste aus verschiedenen Altersgruppen herausholen.",
+        category: "change",
+        badge: "Change",
+        shortDescription: "Fördert das Verständnis für unterschiedliche Werte, Arbeitsweisen und Erwartungen verschiedener Generationen im Arbeitsalltag.",
         details: ["1-2 Tage", "Reflexion", "Praxisübungen"],
         heroImage: "assets/hero-meeting.jpg",
         content: {
@@ -709,23 +769,7 @@ const seminarsData = {
 
 
 
-    "resilienz": {
-        id: "resilienz",
-        title: "Resilienz",
-        url: "seminare/resilienz.html",
-        category: "health",
-        badge: "Gesundheit",
-        shortDescription: "Die innere Widerstandskraft stärken. Gestärkt aus Krisen hervorgehen und an Herausforderungen wachsen.",
-        details: ["2 Tage", "Praxis", "Transfer"],
-        heroImage: "assets/hero-meeting.jpg",
-        content: {
-            intro: "Resilienz ist die Fähigkeit, trotz widriger Umstände nicht zu zerbrechen, sondern flexibel zu bleiben und gestärkt zurückzukommen – wie eine Feder.",
-            ziele: ['Trainings & Seminare', 'Coaching & Beratung', 'Neuer Graben 61', '44139 Dortmund', 'Tel: 0231 / 137 22 666'],
-            inhalte: "Detaillierte Seminarinhalte und Praxisübungen.",
-            nutzen: "Sie erweitern ihre Kompetenzen in Resilienz.",
-            zielgruppe: "Führungskräfte, Mitarbeiter:innen in belastenden Situationen, alle, die ihre Widerstandskraft stärken wollen."
-        }
-    },
+
     "change-kompetenz": {
         id: "change-kompetenz",
         title: "Change Kompetenz",
@@ -745,7 +789,7 @@ const seminarsData = {
     },
     "storytelling": {
         id: "storytelling",
-        title: "Story telling",
+        title: "Storytelling",
         url: "seminare/storytelling.html",
         category: "communication",
         badge: "Kommunikation",
@@ -781,29 +825,29 @@ const seminarsData = {
             zielgruppe: "Potentielle, junge und erfahrene Führungskräfte aller Berufsgruppen im Gesundheitswesen, Berater*innen."
         }
     },
-    "resilienz-staerke-ausdauer": {
-        id: "resilienz-staerke-ausdauer",
-        title: "Resilienz – Stärke und Ausdauer im Berufsalltag",
-        url: "seminare/resilienz-staerke-ausdauer.html",
-        category: "health",
-        badge: "Gesundheit",
-        shortDescription: "Verstehen, wie Resilienz entsteht, Strategien zur Stressbewältigung entwickeln und langfristig leistungsfähig sowie gesund bleiben.",
-        details: ["14 Schulungsstunden", "2 Tage", "Praxisübungen"],
+    "die-ersten-100-tage-als-fuehrungskraft": {
+        id: "die-ersten-100-tage-als-fuehrungskraft",
+        title: "Die ersten 100 Tage als Führungskraft",
+        url: "seminare/die-ersten-100-tage-als-fuehrungskraft.html",
+        category: "leadership",
+        badge: "Führung",
+        shortDescription: "Der sichere Start in die neue Rolle: Strategie, Quick Wins und Beziehungsaufbau für einen erfolgreichen Einstieg.",
+        details: ["2 Tage", "Praxis & Reflexion", "Führung"],
         heroImage: "assets/hero-meeting.jpg",
         content: {
-            intro: "Verstehen, wie Resilienz entsteht und welche Faktoren sie beeinflussen. Strategien zur Stressbewältigung entwickeln und langfristig leistungsfähig sowie gesund bleiben.",
+            intro: "Die ersten 100 Tage in einer neuen Führungsposition sind entscheidend. Sie werden beobachtet, bewertet und getestet. In dieser 'Schonfrist' werden die Weichen gestellt. Dieses Seminar bietet Ihnen einen strategischen Fahrplan, um die typischen Fallstricke zu umgehen und souverän in Ihrer neuen Verantwortung anzukommen.",
             ziele: [
-                "Verstehen, wie Resilienz entsteht und welche Faktoren sie beeinflussen",
-                "Strategien zur Stressbewältigung entwickeln und anwenden",
-                "Langfristig leistungsfähig und gesund bleiben",
-                "Individuelle Stressmuster erkennen und reflektieren",
-                "Resilient kommunizieren – achtsam, klar und konstruktiv"
+                "Klarheit über die eigene Führungsrolle gewinnen",
+                "Vertrauen im Team aufbauen",
+                "Strategische Schwerpunkte setzen und 'Quick Wins' erzielen",
+                "Die Balance zwischen Operativem und Strategie finden"
             ],
-            inhalte: "Was ist Resilienz? – Grundlagen und die 7 Säulen der Resilienz. Stress verstehen – Ursachen und Auswirkungen analysieren. Individuelle Stressmuster erkennen und reflektieren. Resiliente Kommunikation – achtsam, klar und konstruktiv. Praktische Techniken zur Verbesserung der Kommunikation. Persönliche Ressourcen aktivieren – innere Stärke nutzen. Tools wie Visualisierung, Achtsamkeit und Priorisierung. Vom Wissen zum Handeln – Resilienz im Alltag integrieren. Konkrete Pläne für den persönlichen und beruflichen Kontext.",
-            nutzen: "Sie verstehen, wie Resilienz entsteht und entwickeln wirksame Strategien zur Stressbewältigung. Nach dem Training kommunizieren Sie resilienter und bleiben langfristig leistungsfähig sowie gesund.",
-            zielgruppe: "Mitarbeiter:innen, die erstmalig mit dem Thema in Berührung kommen, als auch Mitarbeiter:innen, welche ihre Kenntnisse vertiefen möchten."
+            inhalte: "Phase 1: Ankommen & Verstehen (Analyse, Kultur, Antrittsrede). Phase 2: Fokus & Strategie (Hypothesen, Quick Wins, Allianzen). Phase 3: Umsetzen & Etablieren (Gestaltung, Entscheidungen). Kommunikation in der neuen Rolle. Umgang mit Skepsis.",
+            nutzen: "Sie haben die kritische Anfangsphase souverän gemeistert, erste Erfolge vorzuweisen und eine klare strategische Ausrichtung etabliert.",
+            zielgruppe: "Neu ernannte Führungskräfte, Teamleiter und Projektleiter beim Rollenwechsel."
         }
     },
+
     "argumentieren-verhandeln": {
         id: "argumentieren-verhandeln",
         title: "Argumentieren & Verhandeln",
