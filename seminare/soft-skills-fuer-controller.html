@@ -1,261 +1,816 @@
 <!DOCTYPE html>
-
 <html lang="de">
 
 <head>
-    <meta charset="utf-8" />
-    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta
         content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.vallit.net https://vercel.live; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://www.vallit.net https://vercel.live; font-src 'self' https://fonts.gstatic.com https://www.vallit.net; img-src 'self' data: https://www.vallit.net https://vercel.live; connect-src 'self' https://www.vallit.net https://vercel.live; frame-src 'self' https://www.vallit.net https://vercel.live;"
-        http-equiv="Content-Security-Policy" />
-    <link href="../assets/favicon.png" rel="icon" type="image/png" />
+        http-equiv="Content-Security-Policy">
+    <link href="../assets/favicon.png" rel="icon" type="image/png">
     <title>Soft Skills für Zahlenprofis – WTM Management Consulting</title>
     <meta
-        content="Seminar für Controller &amp; Zahlenprofis: Lernen Sie, Ergebnisse prägnant aufzubereiten und komplexe Sachverhalte selbstbewusst zu präsentieren."
-        name="description" />
-    <link href="https://fonts.googleapis.com" rel="preconnect" />
-    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+        content="Seminar für Controller & Zahlenprofis: Lernen Sie, Ergebnisse prägnant aufzubereiten und komplexe Sachverhalte selbstbewusst zu präsentieren."
+        name="description">
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
     <link
-        href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&amp;family=Source+Sans+Pro:wght@300;400;600;700&amp;display=swap"
-        rel="stylesheet" />
-    <link href="../styles/index.css" rel="stylesheet" />
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+        href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Sans+Pro:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
+    <link href="../styles/index.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
-        /* MANAGEMENT THEME (Strict Adherence) */
         :root {
+            /* Management Theme */
             --seminar-accent: #5D8AA8;
             /* Management Blue */
-            --seminar-secondary: #e0f2fe;
-            /* Light Blue */
-            --seminar-text: #1f2937;
+            --seminar-accent-light: rgba(93, 138, 168, 0.1);
+            --seminar-accent-glow: rgba(93, 138, 168, 0.3);
+            --color-text: #3A3A38;
+            --color-cream: #F5F5F3;
+            --color-border: #E5E5E0;
+            --accent-highlight: #a0c4de;
+            /* Lighter blue highlight */
+        }
+
+        .scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 3px;
+            background: var(--seminar-accent);
+            z-index: 9999;
+            width: 0%;
         }
 
         .seminar-hero {
-            background: linear-gradient(135deg, var(--seminar-accent) 0%, #2c5282 100%);
-            color: white;
-            padding: 8rem 0 4rem;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(145deg, #1a3c5a 0%, #0f2438 100%);
             position: relative;
             overflow: hidden;
+            padding: 120px 0 80px;
         }
 
-        .seminar-hero::before {
-            content: '';
+        .hero-gradient-orb {
             position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('../assets/pattern.svg');
-            opacity: 0.1;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.3;
+            animation: pulse-orb 8s infinite ease-in-out;
         }
 
-        .phase-section {
-            padding: 6rem 0;
+        .orb-1 {
+            width: 400px;
+            height: 400px;
+            background: #89CFF0;
+            /* Light Baby Blue */
+            top: -100px;
+            right: -100px;
         }
 
-        .phase-section:nth-child(even) {
-            background: #f8fafc;
+        .orb-2 {
+            width: 300px;
+            height: 300px;
+            background: var(--seminar-accent);
+            bottom: -50px;
+            left: -50px;
+            animation-delay: 4s;
         }
 
-        .phase-title {
-            color: var(--seminar-accent);
-            font-size: 1.5rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: 2rem;
-            font-weight: 700;
+        @keyframes pulse-orb {
+
+            0%,
+            100% {
+                transform: scale(1);
+                opacity: 0.2;
+            }
+
+            50% {
+                transform: scale(1.2);
+                opacity: 0.4;
+            }
         }
 
-        .content-card {
-            background: white;
-            border-radius: 12px;
-            padding: 2rem;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-            border-left: 4px solid var(--seminar-accent);
-        }
-
-        .check-list li {
+        .hero-content-wrapper {
             position: relative;
-            padding-left: 1.5rem;
+            z-index: 2;
+            max-width: 800px;
+        }
+
+        .hero-text {
+            color: #fff;
+        }
+
+        .breadcrumb {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+            opacity: 0;
+            animation: fadeSlideUp 0.6s ease forwards;
+        }
+
+        .breadcrumb a {
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .category-badge {
+            display: inline-flex;
+            padding: 0.5rem 1rem;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 50px;
+            color: #fff;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            opacity: 0;
+            animation: fadeSlideUp 0.6s ease 0.1s forwards;
+        }
+
+        .hero-title {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            color: #fff;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            opacity: 0;
+            animation: fadeSlideUp 0.8s ease 0.2s forwards;
+        }
+
+        .hero-title span {
+            color: #89CFF0;
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.8;
+            max-width: 600px;
+            margin-bottom: 2rem;
+            opacity: 0;
+            animation: fadeSlideUp 0.8s ease 0.3s forwards;
+        }
+
+        .hero-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            opacity: 0;
+            animation: fadeSlideUp 0.8s ease 0.4s forwards;
+        }
+
+        .meta-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.6rem 1rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.9rem;
+        }
+
+        .meta-tag svg {
+            width: 16px;
+            height: 16px;
+            stroke: #89CFF0;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 1rem;
+            opacity: 0;
+            animation: fadeSlideUp 0.8s ease 0.5s forwards;
+        }
+
+        .btn-glow {
+            background: #fff;
+            color: var(--seminar-accent);
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .btn-glow:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 40px rgba(93, 138, 168, 0.3);
+        }
+
+        @keyframes fadeSlideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Sections */
+        .intro-section {
+            padding: 6rem 0;
+            background: #fff;
+        }
+
+        .intro-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .section-label {
+            color: var(--seminar-accent);
+            font-weight: 600;
+            font-size: 0.85rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+            display: inline-block;
+        }
+
+        .intro-text {
+            font-size: 1.15rem;
+            line-height: 1.9;
+            color: var(--color-text);
+        }
+
+        .goals-section {
+            padding: 6rem 0;
+            background: #fff;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .accent-line {
+            width: 60px;
+            height: 3px;
+            background: var(--seminar-accent);
+            margin: 1.5rem auto 0;
+        }
+
+        .goals-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .goal-card {
+            background: #fff;
+            border: 1px solid var(--color-border);
+            border-radius: 16px;
+            padding: 2rem;
+            transition: all 0.4s;
+        }
+
+        .goal-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(93, 138, 168, 0.15);
+            border-color: var(--seminar-accent);
+        }
+
+        .goal-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: var(--seminar-accent-light);
+            color: var(--seminar-accent);
+            border-radius: 10px;
+            font-weight: 700;
             margin-bottom: 1rem;
         }
 
-        .check-list li::before {
-            content: '✓';
+        .goal-text {
+            font-size: 1.05rem;
+            color: var(--color-text);
+            line-height: 1.7;
+            margin: 0;
+        }
+
+        /* Timeline Styles */
+        .content-section {
+            padding: 6rem 0;
+            background: linear-gradient(180deg, #f0fdfa 0%, #fff 100%);
+            position: relative;
+        }
+
+        .content-section::before {
+            content: '';
             position: absolute;
-            left: 0;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 1px;
+            height: 80px;
+            background: var(--seminar-accent);
+        }
+
+        .journey-container {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .journey-line {
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: linear-gradient(180deg, var(--seminar-accent) 0%, rgba(93, 138, 168, 0.6) 50%, rgba(93, 138, 168, 0.2) 100%);
+            transform: translateX(-50%);
+            border-radius: 4px;
+        }
+
+        .journey-item {
+            display: flex;
+            align-items: flex-start;
+            position: relative;
+            margin-bottom: 2rem;
+        }
+
+        .journey-item:nth-child(odd) {
+            flex-direction: row;
+        }
+
+        .journey-item:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .journey-content {
+            width: calc(50% - 50px);
+            padding: 0 1.5rem;
+        }
+
+        .journey-node {
+            position: absolute;
+            left: 50%;
+            top: 20px;
+            transform: translateX(-50%);
+            z-index: 10;
+        }
+
+        .node-dot {
+            width: 24px;
+            height: 24px;
+            background: var(--seminar-accent);
+            border-radius: 50%;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 0 0 4px #fff, 0 0 0 6px var(--seminar-accent);
+        }
+
+        .node-dot::before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            background: #fff;
+            border-radius: 50%;
+        }
+
+        .node-connector {
+            position: absolute;
+            top: 50%;
+            width: 42px;
+            height: 2px;
+            background: var(--seminar-accent);
+            transform: translateY(-50%);
+        }
+
+        .journey-item:nth-child(odd) .node-connector {
+            right: 100%;
+            margin-right: 3px;
+        }
+
+        .journey-item:nth-child(even) .node-connector {
+            left: 100%;
+            margin-left: 3px;
+        }
+
+        .journey-card {
+            background: #fff;
+            border-radius: 16px;
+            padding: 1.75rem 2rem;
+            position: relative;
+            border: 1px solid rgba(93, 138, 168, 0.15);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+            transition: all 0.4s;
+        }
+
+        .journey-item:hover .journey-card {
+            transform: translateY(-5px);
+            border-color: var(--seminar-accent);
+        }
+
+        .module-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.4rem 0.8rem;
+            background: var(--seminar-accent-light);
+            border-radius: 20px;
+            margin-bottom: 0.75rem;
+        }
+
+        .module-number {
+            font-size: 0.7rem;
+            font-weight: 700;
             color: var(--seminar-accent);
-            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        .journey-title {
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: var(--color-text);
+            margin: 0;
+            line-height: 1.4;
+        }
+
+        .journey-card p {
+            margin-top: 0.5rem;
+            font-size: 0.95rem;
+            color: #666;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 6rem 0 4rem;
+            background: var(--color-cream);
+        }
+
+        .cta-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        .target-card {
+            background: #fff;
+            border-radius: 20px;
+            padding: 3rem;
+        }
+
+        .cta-card {
+            background: var(--seminar-accent);
+            border-radius: 20px;
+            padding: 3rem;
+            color: #fff;
+        }
+
+        .cta-card h3 {
+            color: #fff;
+            font-size: 1.75rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-card p {
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 2rem;
+        }
+
+        .btn-white {
+            background: #fff;
+            color: var(--seminar-accent);
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            font-weight: 600;
+            display: inline-block;
+            transition: all 0.3s;
+        }
+
+        .btn-white:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        @media (max-width: 968px) {
+            .hero-content-wrapper {
+                text-align: center;
+            }
+
+            .hero-meta,
+            .hero-cta {
+                justify-content: center;
+            }
+
+            .goals-grid,
+            .cta-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .journey-item,
+            .journey-item:nth-child(even) {
+                flex-direction: row;
+                padding-left: 0;
+            }
+
+            .journey-line {
+                left: 20px;
+            }
+
+            .journey-node {
+                left: 20px;
+                transform: translateX(-50%);
+            }
+
+            .journey-content {
+                width: 100%;
+                padding-left: 45px;
+            }
+
+            .node-connector {
+                display: none;
+            }
         }
     </style>
 </head>
 
 <body>
+    <div class="scroll-progress" id="scrollProgress"></div>
     <div id="nav-placeholder"></div>
-    <!-- Header will be loaded by main.js -->
-    <div id="header-placeholder"></div>
+
     <!-- 1. HERO SECTION -->
     <section class="seminar-hero">
+        <div class="hero-gradient-orb orb-1"></div>
+        <div class="hero-gradient-orb orb-2"></div>
         <div class="container">
-            <span class="badge bg-white/20 text-white mb-4 backdrop-blur-sm">📊 Management</span>
-            <h1 class="text-4xl md:text-6xl font-bold mb-6">Soft Skills für Zahlenprofis</h1>
-            <p class="text-xl md:text-2xl opacity-90 mb-8 max-w-3xl">
-                Ist es Ihnen bewusst? Sie als Zahlenprofi „ticken anders“. Lernen Sie, Ergebnisse prägnant aufzubereiten
-                und komplexe Sachverhalte selbstbewusst zu präsentieren, um Kollegen und Kunden dort abzuholen, wo sie
-                stehen.
-            </p>
-            <div class="flex flex-wrap gap-4 mb-8">
-                <span class="flex items-center gap-2"><i class="far fa-clock"></i> Individuell</span>
-                <span class="flex items-center gap-2"><i class="fas fa-graduation-cap"></i> Praxisnah</span>
-                <span class="flex items-center gap-2"><i class="fas fa-users"></i> Controller &amp;
-                    Finanzexperten</span>
-            </div>
-            <div class="flex gap-4">
-                <a class="btn btn-white" href="#kontakt">Konzept anfordern</a>
-            </div>
-        </div>
-    </section>
-    <!-- 2. NUTZEN & WIRKUNG -->
-    <section class="phase-section">
-        <div class="container">
-            <div class="grid md:grid-cols-2 gap-12 items-center">
-                <div>
-                    <h2 class="phase-title">01 | Nutzen &amp; Wirkung</h2>
-                    <h3 class="text-3xl font-bold mb-6">Ergebnisse wirksam präsentieren</h3>
-                    <p class="text-gray-600 mb-6">
-                        Zahlen und Tabellen sind Ihr Metier – doch oft kommen die Botschaften beim Gegenüber nicht an.
-                        Dieses Seminar schließt die Lücke zwischen Zahlenlogik und zwischenmenschlicher Kommunikation.
+            <div class="hero-content-wrapper">
+                <div class="hero-text">
+                    <div class="breadcrumb">
+                        <a href="../index.html">Startseite</a>
+                        <span class="breadcrumb-sep">→</span>
+                        <a href="../index.html#trainings">Seminare</a>
+                        <span class="breadcrumb-sep">→</span>
+                        <span>Soft Skills für Zahlenprofis</span>
+                    </div>
+                    <div class="category-badge">📊 Management</div>
+                    <h1 class="hero-title">Soft Skills für <span>Zahlenprofis</span></h1>
+                    <p class="hero-subtitle">
+                        Ist es Ihnen bewusst? Sie als Zahlenprofi „ticken anders“. Lernen Sie, Ergebnisse prägnant
+                        aufzubereiten
+                        und komplexe Sachverhalte selbstbewusst zu präsentieren, um Kollegen und Kunden dort abzuholen,
+                        wo sie
+                        stehen.
                     </p>
-                    <ul class="check-list space-y-3">
-                        <li>Sie sind sich Ihres besonderen Mindsets als Zahlenprofi bewusst und kennen die Welt des
-                            anderen.</li>
-                        <li>Sie können die Ergebnisse Ihrer Arbeit prägnant aufbereiten und zielgruppengerecht
-                            darstellen.</li>
-                        <li>Sie kommunizieren auch komplexe und kritische Sachverhalte selbstbewusst.</li>
-                        <li>Sie sorgen für eine nachhaltig angenehmere und effektivere Zusammenarbeit in Projekten.</li>
-                    </ul>
-                </div>
-                <div class="content-card">
-                    <h4 class="font-bold mb-4 text-xl">Das Problem:</h4>
-                    <p class="italic text-gray-600 mb-6">"Vielleicht kennen Sie die Situation: Jemand beschreibt Ihnen
-                        begeistert ein Produkt, und Sie denken nur: 'Und was kostet das jetzt?'. Umgekehrt verstehen
-                        andere Ihre Zahlen, aber das 'Aber...' bleibt."</p>
-                    <h4 class="font-bold mb-4 text-xl">Die Lösung:</h4>
-                    <p class="text-gray-600">Soft Skills: Haltung, gute Vorbereitung, Werkzeuge, Tipps &amp; Tricks, um
-                        andere dort abzuholen, wo sie stehen.</p>
+                    <div class="hero-meta">
+                        <span class="meta-tag">
+                            <i class="far fa-clock" style="margin-right: 8px;"></i> Individuell
+                        </span>
+                        <span class="meta-tag">
+                            <i class="fas fa-graduation-cap" style="margin-right: 8px;"></i> Praxisnah
+                        </span>
+                        <span class="meta-tag">
+                            <i class="fas fa-users" style="margin-right: 8px;"></i> Controller &amp; Finanzexperten
+                        </span>
+                    </div>
+                    <div class="hero-cta">
+                        <a class="btn-glow" href="../index#kontakt">Unverbindlich anfragen →</a>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
-    <!-- 3. NACH DEM TRAINING (TRANSFORMATION) -->
-    <section class="phase-section">
+
+    <!-- 2. NUTZEN & WIRKUNG -->
+    <section class="goals-section">
         <div class="container">
-            <h2 class="phase-title">02 | Nach dem Training</h2>
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="content-card">
-                    <i class="fas fa-brain text-4xl mb-4" style="color: var(--seminar-accent)"></i>
-                    <h3 class="font-bold text-lg mb-2">Verständnis</h3>
+            <div class="section-header">
+                <span class="section-label">01 | Nutzen & Wirkung</span>
+                <h2>Ergebnisse wirksam präsentieren</h2>
+                <div class="accent-line"></div>
+                <p class="intro-text">
+                    Zahlen und Tabellen sind Ihr Metier – doch oft kommen die Botschaften beim Gegenüber nicht an.
+                    Dieses Seminar schließt die Lücke zwischen Zahlenlogik und zwischenmenschlicher Kommunikation.
+                </p>
+            </div>
+
+            <div class="goals-grid">
+                <div class="goal-card">
+                    <div class="goal-number">1</div>
+                    <p class="goal-text">Sie sind sich Ihres besonderen Mindsets als Zahlenprofi bewusst und kennen die
+                        Welt des anderen.</p>
+                </div>
+                <div class="goal-card">
+                    <div class="goal-number">2</div>
+                    <p class="goal-text">Sie können die Ergebnisse Ihrer Arbeit prägnant aufbereiten und
+                        zielgruppengerecht darstellen.</p>
+                </div>
+                <div class="goal-card">
+                    <div class="goal-number">3</div>
+                    <p class="goal-text">Sie kommunizieren auch komplexe und kritische Sachverhalte selbstbewusst.</p>
+                </div>
+                <div class="goal-card">
+                    <div class="goal-number">4</div>
+                    <p class="goal-text">Sie sorgen für eine nachhaltig angenehmere und effektivere Zusammenarbeit in
+                        Projekten.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. NACH DEM TRAINING (TRANSFORMATION) -->
+    <section class="intro-section" style="background-color: #f8fafc;">
+        <div class="container">
+            <div class="intro-content">
+                <span class="section-label">02 | Nach dem Training</span>
+                <h2>Transformation</h2>
+                <p class="intro-text" style="max-width: 800px; margin: 0 auto 3rem;">
+                    Vielleicht kennen Sie die Situation: Jemand beschreibt Ihnen begeistert ein Produkt, und Sie denken
+                    nur: 'Und was kostet das jetzt?'. Umgekehrt verstehen andere Ihre Zahlen, aber das 'Aber...' bleibt.
+                    Wir geben Ihnen die passenden Werkzeuge.
+                </p>
+            </div>
+            <div class="goals-grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));">
+                <div class="goal-card" style="text-align: center;">
+                    <i class="fas fa-brain"
+                        style="font-size: 2.5rem; color: var(--seminar-accent); margin-bottom: 1rem;"></i>
+                    <h3 style="margin-bottom: 1rem;">Verständnis</h3>
                     <p>Sie verstehen, warum Nicht-Zahlenmenschen anders "ticken" und können Ihre Kommunikation darauf
                         einstellen.</p>
                 </div>
-                <div class="content-card">
-                    <i class="fas fa-tools text-4xl mb-4" style="color: var(--seminar-accent)"></i>
-                    <h3 class="font-bold text-lg mb-2">Werkzeugkoffer</h3>
+                <div class="goal-card" style="text-align: center;">
+                    <i class="fas fa-tools"
+                        style="font-size: 2.5rem; color: var(--seminar-accent); margin-bottom: 1rem;"></i>
+                    <h3 style="margin-bottom: 1rem;">Werkzeugkoffer</h3>
                     <p>Sie verfügen über flexibel einsetzbare Soft-Skill-Werkzeuge für Präsentationen, Meetings und
                         Kritikgespräche.</p>
                 </div>
-                <div class="content-card">
-                    <i class="fas fa-handshake text-4xl mb-4" style="color: var(--seminar-accent)"></i>
-                    <h3 class="font-bold text-lg mb-2">Zusammenarbeit</h3>
+                <div class="goal-card" style="text-align: center;">
+                    <i class="fas fa-handshake"
+                        style="font-size: 2.5rem; color: var(--seminar-accent); margin-bottom: 1rem;"></i>
+                    <h3 style="margin-bottom: 1rem;">Zusammenarbeit</h3>
                     <p>Sie bauen Brücken zu den Fachbereichen und werden als kompetenter Business Partner wahrgenommen.
                     </p>
                 </div>
             </div>
         </div>
     </section>
+
     <!-- 4. INHALTE -->
-    <section class="phase-section">
+    <section class="content-section">
         <div class="container">
-            <h2 class="phase-title">03 | Inhalte</h2>
-            <div class="md:w-3/4 mx-auto grid gap-6">
-                <div class="bg-white p-6 rounded-lg shadow-sm border-l-4" style="border-color: var(--seminar-accent)">
-                    <h3 class="font-bold text-xl mb-3">Grundlagen &amp; Mindset</h3>
-                    <p>Warum helfen Soft Skills? Zahlen und Psychologie verstehen. Das 5P-Prinzip: Proper Preparation
-                        Prevents Poor Performance.</p>
+            <div class="section-header">
+                <span class="section-label">03 | Inhalte</span>
+                <h2>Curriculum</h2>
+                <div class="accent-line"></div>
+            </div>
+
+            <div class="journey-container">
+                <div class="journey-line"></div>
+
+                <div class="journey-item">
+                    <div class="journey-node">
+                        <div class="node-dot">
+                            <div class="node-ring"></div>
+                        </div>
+                        <div class="node-connector"></div>
+                    </div>
+                    <div class="journey-content">
+                        <div class="journey-card">
+                            <div class="module-badge"><span class="module-number">Modul 01</span></div>
+                            <h3 class="journey-title">Grundlagen & Mindset</h3>
+                            <p>Warum helfen Soft Skills? Zahlen und Psychologie verstehen. Das 5P-Prinzip: Proper
+                                Preparation Prevents Poor Performance.</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="bg-white p-6 rounded-lg shadow-sm border-l-4" style="border-color: var(--seminar-accent)">
-                    <h3 class="font-bold text-xl mb-3">Kommunikation &amp; Darstellung</h3>
-                    <p>Ergebnisse prägnant aufbereiten und darstellen. Kommunizieren, kooperieren und überzeugen.
-                        Smalltalk als Türöffner.</p>
+
+                <div class="journey-item">
+                    <div class="journey-node">
+                        <div class="node-dot">
+                            <div class="node-ring"></div>
+                        </div>
+                        <div class="node-connector"></div>
+                    </div>
+                    <div class="journey-content">
+                        <div class="journey-card">
+                            <div class="module-badge"><span class="module-number">Modul 02</span></div>
+                            <h3 class="journey-title">Kommunikation & Darstellung</h3>
+                            <p>Ergebnisse prägnant aufbereiten und darstellen. Kommunizieren, kooperieren und
+                                überzeugen. Smalltalk als Türöffner.</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="bg-white p-6 rounded-lg shadow-sm border-l-4" style="border-color: var(--seminar-accent)">
-                    <h3 class="font-bold text-xl mb-3">Souveränität in der Praxis</h3>
-                    <p>Überzeugungstechniken anwenden. Werkzeuge für Krisensituationen. Umgang mit kritischen Fragen zu
-                        Zahlenwerken.</p>
+
+                <div class="journey-item">
+                    <div class="journey-node">
+                        <div class="node-dot">
+                            <div class="node-ring"></div>
+                        </div>
+                        <div class="node-connector"></div>
+                    </div>
+                    <div class="journey-content">
+                        <div class="journey-card">
+                            <div class="module-badge"><span class="module-number">Modul 03</span></div>
+                            <h3 class="journey-title">Souveränität in der Praxis</h3>
+                            <p>Überzeugungstechniken anwenden. Werkzeuge für Krisensituationen. Umgang mit kritischen
+                                Fragen zu Zahlenwerken.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
+
     <!-- 5. PRAXIS & TRANSFER -->
-    <section class="phase-section bg-gray-50">
+    <section class="intro-section">
         <div class="container">
-            <h2 class="phase-title">04 | Praxis &amp; Transfer</h2>
-            <div class="flex flex-col md:flex-row gap-12 items-center">
-                <div class="md:w-1/2">
-                    <img alt="Praxistransfer im Seminar" class="rounded-lg shadow-xl"
-                        src="../assets/workshop-interaction.jpg" />
+            <div class="intro-content">
+                <span class="section-label">04 | Praxis & Transfer</span>
+                <h2>Aus der Praxis für die Praxis</h2>
+                <p class="intro-text">
+                    Dieses Seminar lebt von einem hohen Praxisanteil. Wir arbeiten nicht mit abstrakten Theorien,
+                    sondern mit Ihren konkreten Herausforderungen aus dem Controlling-Alltag. Fragen und Antworten zu
+                    Ihren Fällen, Simulation von Gesprächssituationen und direktes Feedback zu Präsentationsmethoden
+                    stehen im Mittelpunkt.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. WIRKUNG NACH 4 WOCHEN (Feedback Style) -->
+    <section class="goals-section" style="background-color: #f8fafc;">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">06 | Wirkung</span>
+                <h2>Nach 4 Wochen</h2>
+                <div class="accent-line"></div>
+            </div>
+            <div class="goals-grid"
+                style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); text-align: center;">
+                <div>
+                    <div
+                        style="font-size: 3rem; font-weight: 700; color: var(--seminar-accent); margin-bottom: 0.5rem;">
+                        01</div>
+                    <p style="color: var(--color-text);">Berichte werden schneller verstanden und akzeptiert.</p>
                 </div>
-                <div class="md:w-1/2">
-                    <h3 class="text-2xl font-bold mb-4">Aus der Praxis für die Praxis</h3>
-                    <p class="mb-4">
-                        Dieses Seminar lebt von einem <strong>hohen Praxisanteil</strong>. Wir arbeiten nicht mit
-                        abstrakten Theorien, sondern mit Ihren konkreten Herausforderungen aus dem Controlling-Alltag.
-                    </p>
-                    <ul class="space-y-2">
-                        <li><i class="fas fa-check mr-2 text-green-500"></i> Fragen und Antworten zu Ihren Fällen</li>
-                        <li><i class="fas fa-check mr-2 text-green-500"></i> Simulation von Gesprächssituationen</li>
-                        <li><i class="fas fa-check mr-2 text-green-500"></i> Direktes Feedback zu Präsentationsmethoden
-                        </li>
-                    </ul>
+                <div>
+                    <div
+                        style="font-size: 3rem; font-weight: 700; color: var(--seminar-accent); margin-bottom: 0.5rem;">
+                        02</div>
+                    <p style="color: var(--color-text);">Sie fühlen sich in Meetings und Präsentationen sicherer.</p>
+                </div>
+                <div>
+                    <div
+                        style="font-size: 3rem; font-weight: 700; color: var(--seminar-accent); margin-bottom: 0.5rem;">
+                        03</div>
+                    <p style="color: var(--color-text);">Die Zusammenarbeit mit den Fachbereichen verläuft
+                        reibungsloser.</p>
                 </div>
             </div>
         </div>
     </section>
-    
-    <!-- 7. WIRKUNG NACH 4 WOCHEN -->
-    <section class="phase-section">
-        <div class="container">
-            <h2 class="phase-title">06 | Wirkung nach 4 Wochen</h2>
-            <div class="flex flex-col md:flex-row gap-8">
-                <div class="flex-1 text-center">
-                    <div class="text-4xl font-bold mb-2" style="color: var(--seminar-accent)">01</div>
-                    <p>Berichte werden schneller verstanden und akzeptiert.</p>
-                </div>
-                <div class="flex-1 text-center">
-                    <div class="text-4xl font-bold mb-2" style="color: var(--seminar-accent)">02</div>
-                    <p>Sie fühlen sich in Meetings und Präsentationen sicherer.</p>
-                </div>
-                <div class="flex-1 text-center">
-                    <div class="text-4xl font-bold mb-2" style="color: var(--seminar-accent)">03</div>
-                    <p>Die Zusammenarbeit mit den Fachbereichen verläuft reibungsloser.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+
     <!-- 8. FOOTER CTA -->
-    <section class="phase-section bg-gray-900 text-white" id="kontakt">
-        <div class="container text-center">
-            <h2 class="text-3xl font-bold mb-6">Starten Sie jetzt</h2>
-            <p class="text-xl mb-8 max-w-2xl mx-auto">
-                Preis, Methode und Dauer legen wir gemeinsam in der Auftrags- und Zielklärung fest. Lassen Sie uns
-                darüber sprechen.
-            </p>
-            <a class="btn btn-primary text-lg px-8 py-4" href="../kontakt.html">Unverbindlich anfragen</a>
+    <section class="cta-section" id="kontakt">
+        <div class="container">
+            <div class="cta-grid">
+                <div class="target-card">
+                    <span class="section-label">Zielgruppe</span>
+                    <h3>Für wen?</h3>
+                    <p>Controller, Finanzexperten und Zahlenprofis, die ihre kommunikative Wirkung stärken wollen.</p>
+                </div>
+                <div class="cta-card">
+                    <h3>Kontakt aufnehmen</h3>
+                    <p>Preis, Methode und Dauer legen wir gemeinsam in der Auftrags- und Zielklärung fest. Lassen Sie
+                        uns darüber sprechen.</p>
+                    <a class="btn-white" href="../kontakt.html">Unverbindlich anfragen →</a>
+                </div>
+            </div>
         </div>
     </section>
-    <!-- Footer Script -->
+
     <div id="footer-placeholder"></div>
+
+    <script src="../js/seminar-data.js"></script>
     <script src="../js/main.js"></script>
+    <script>
+        // Scroll Progress
+        window.addEventListener('scroll', () => {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById("scrollProgress").style.width = scrolled + "%";
+        });
+    </script>
 </body>
 
 </html>
