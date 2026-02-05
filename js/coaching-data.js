@@ -6,20 +6,20 @@
 const coachingData = {
     // Available filter themes
     themes: [
-        { id: 'all', label: 'Alle', icon: '✨' },
-        { id: 'fuehrung', label: 'Führung', icon: '👔' },
-        { id: 'kommunikation', label: 'Kommunikation', icon: '💬' },
-        { id: 'konflikt', label: 'Konfliktbewältigung', icon: '🤝' },
-        { id: 'stress', label: 'Stressbewältigung / Resilienz', icon: '🧘' },
-        { id: 'persoenlich', label: 'Persönliche Entwicklung', icon: '🌱' },
-        { id: 'karriere', label: 'Karriereentwicklung', icon: '📈' },
-        { id: 'team', label: 'Teamdynamiken', icon: '👥' },
-        { id: 'worklife', label: 'Work-Life-Balance', icon: '⚖️' },
-        { id: 'krise', label: 'Krisenbewältigung', icon: '🛡️' },
-        { id: 'entscheidung', label: 'Entscheidungsfindung', icon: '🎯' },
-        { id: 'agil', label: 'Agiles Arbeiten', icon: '🔄' },
-        { id: 'zeit', label: 'Zeitmanagement', icon: '⏰' },
-        { id: 'rolle', label: 'Professionalität & Rollenbewusstsein', icon: '🎭' }
+        { id: 'all', label: 'Alle' },
+        { id: 'fuehrung', label: 'Führung' },
+        { id: 'kommunikation', label: 'Kommunikation' },
+        { id: 'konflikt', label: 'Konfliktbewältigung' },
+        { id: 'stress', label: 'Stressbewältigung / Resilienz' },
+        { id: 'persoenlich', label: 'Persönliche Entwicklung' },
+        { id: 'karriere', label: 'Karriereentwicklung' },
+        { id: 'team', label: 'Teamdynamiken' },
+        { id: 'worklife', label: 'Work-Life-Balance' },
+        { id: 'krise', label: 'Krisenbewältigung' },
+        { id: 'entscheidung', label: 'Entscheidungsfindung' },
+        { id: 'agil', label: 'Agiles Arbeiten' },
+        { id: 'zeit', label: 'Zeitmanagement' },
+        { id: 'rolle', label: 'Professionalität & Rollenbewusstsein' }
     ],
 
     // Coach profiles

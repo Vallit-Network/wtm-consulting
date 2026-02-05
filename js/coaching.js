@@ -173,7 +173,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const buttonsHtml = coachingData.themes.map(theme => `
             <button class="theme-filter-btn ${theme.id === 'all' ? 'active' : ''}" 
                     data-theme="${theme.id}">
-                <span class="filter-icon">${theme.icon}</span>
+
                 ${theme.label}
             </button>
         `).join('');

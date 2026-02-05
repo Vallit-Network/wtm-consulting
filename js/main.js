@@ -6,6 +6,104 @@
 document.addEventListener('DOMContentLoaded', () => {
 
     // =========================================
+    // UNIVERSAL NAVIGATION INJECTION
+    // =========================================
+    const injectNavigation = () => {
+        const placeholder = document.getElementById('nav-placeholder');
+        if (!placeholder) return;
+
+        // specific check for the script to determine offset
+        const script = document.querySelector('script[src*="js/main.js"]');
+        let prefix = '';
+        if (script) {
+            const src = script.getAttribute('src');
+            if (src.includes('../')) {
+                prefix = '../';
+            }
+        }
+
+        const isHome = prefix === '';
+
+        // Helper for anchor links
+        // If on home: #section
+        // If on sub: ../index.html#section
+        const getLink = (target) => {
+            if (target.startsWith('#')) {
+                return isHome ? target : `${prefix}index.html${target}`;
+            }
+            // External or absolute
+            if (target.startsWith('http') || target.startsWith('mailto:')) return target;
+
+            // Relative pages (e.g., "coaching/")
+            return `${prefix}${target}`;
+        };
+
+        const html = `
+    <header id="header">
+        <div class="container">
+            <nav>
+                <a href="${isHome ? '#' : prefix + 'index.html'}" class="logo">
+                    <img src="${prefix}assets/wtm_logo_gross.png" alt="WTM Management Consulting">
+                </a>
+                <div class="menu-toggle" id="mobile-menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="${getLink('#haltung')}" class="nav-link">Haltung</a></li>
+                    <li class="nav-dropdown">
+                        <a href="${getLink('#angebote')}" class="nav-link nav-dropdown-toggle">
+                            Angebote
+                            <svg class="dropdown-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </a>
+                        <div class="nav-dropdown-menu">
+                            <a href="${getLink('#angebote')}">Leistungen</a>
+                            <a href="${getLink('#trainings')}">Trainings</a>
+                            <a href="${getLink('coaching/')}">Online Coaching</a>
+                            <a href="${getLink('#fuehrungskraefte')}">FK-Programm</a>
+                        </div>
+                    </li>
+                    <li class="nav-dropdown">
+                        <a href="${getLink('#success-stories')}" class="nav-link nav-dropdown-toggle">
+                            Referenzen
+                            <svg class="dropdown-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </a>
+                        <div class="nav-dropdown-menu">
+                            <a href="${getLink('#success-stories')}">Success Stories</a>
+                            <a href="${getLink('#testimonials')}">Stimmen</a>
+                        </div>
+                    </li>
+                    <li class="nav-dropdown">
+                        <a href="${getLink('#team')}" class="nav-link nav-dropdown-toggle">
+                            Wir
+                            <svg class="dropdown-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </a>
+                        <div class="nav-dropdown-menu">
+                            <a href="${getLink('#team')}">Team</a>
+                            <a href="${getLink('#zertifikate')}">Qualifikationen</a>
+                        </div>
+                    </li>
+                    <li><a href="${getLink('#kontakt')}" class="nav-link">Kontakt</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+        `;
+
+        placeholder.innerHTML = html;
+    };
+
+    // Inject immediately
+    injectNavigation();
+
+    // =========================================
     // MOBILE NAVIGATION
     // =========================================
     const mobileMenuBtn = document.getElementById('mobile-menu');
