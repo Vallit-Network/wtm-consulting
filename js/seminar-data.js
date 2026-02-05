@@ -12,7 +12,7 @@ const seminarsData = {
         category: "change",
         badge: "Change",
         shortDescription: "Karriereplanung im Wandel der Lebensphasen – Orientierung finden und bewusste Entscheidungen treffen.",
-        details: ["1-2 Tage", "Reflexion", "Coaching"],
+        details: ["2 Tage", "Reflexion", "Umsetzungsplan"],
         heroImage: "assets/hero-meeting.jpg",
         content: {
             intro: "Jede Lebensphase bringt neue Herausforderungen und Chancen für die berufliche Entwicklung. In diesem Seminar reflektieren Sie Ihre aktuelle Situation und entwickeln klare Perspektiven.",
@@ -34,7 +34,7 @@ const seminarsData = {
         category: "health",
         badge: "Gesundheit",
         shortDescription: "Souverän auftreten und die eigene Position vertreten – ohne andere zu überfahren oder sich selbst zu verlieren.",
-        details: ["2 Tage Präsenz", "Übungen", "Feedback"],
+        details: ["3 Tage", "Reflexion", "Persönlichkeitsentwicklung"],
         heroImage: "assets/hero-meeting.jpg",
         content: {
             intro: "Selbstsicherheit ist die Basis für beruflichen Erfolg. Wie gelingt es, die eigene Meinung zu vertreten, ohne aggressiv zu wirken? Wie setzen Sie sich durch, ohne Beziehungen zu beschädigen?",
@@ -123,7 +123,7 @@ const seminarsData = {
         category: "change",
         badge: "Change",
         shortDescription: "Professionell kommunizieren im Veränderungsprozess – Botschaften klar formulieren und Mitarbeitende mitnehmen.",
-        details: ["1-2 Tage", "Praxisübungen", "Fallbeispiele"],
+        details: ["2 Tage", "Feedback", "Praxistransfer"],
         heroImage: "assets/hero-meeting.jpg",
         content: {
             intro: "Change-Kommunikation – professionelle Kommunikation im Veränderungsprozess. Erfolgreiche Change-Prozesse brauchen Führungskräfte und Mitarbeitende, die den Change verstehen und unterstützen. Dabei gilt: Machen Sie Mitarbeitende zu Beteiligten und nicht zu Betroffenen! Eine klare Change-Kommunikation vermindert den Flurfunk und das Brodeln in der Gerüchteküche und trägt dazu bei, Unsicherheiten zu verringern und Zuversicht zu vermitteln.",
@@ -146,7 +146,7 @@ const seminarsData = {
         category: "leadership",
         badge: "Führung",
         shortDescription: "Richtig delegieren – Aufgaben übertragen, Mitarbeiter fördern und Zeit gewinnen für Wesentliches.",
-        details: ["1-2 Tage", "Praxisübungen", "Fallarbeit"],
+        details: ["2 Tage", "Fallarbeit", "Praxistransfer"],
         heroImage: "assets/hero-meeting.jpg",
         content: {
             intro: "Ja, Haltung kommt vor Technik. Ganz ohne Technik wird es aber auch schwierig. Wie können Sie sicherstellen, dass das, was Sie wollen, auch umgesetzt wird? Wie viel Einfluss sollte ein Mitarbeiter auf die Ziele und Aufgaben haben? Wie kann ich motivieren? Wie kontrollieren?",
@@ -168,7 +168,7 @@ const seminarsData = {
         category: "leadership",
         badge: "Führung",
         shortDescription: "Führungskompetenz durch Persönlichkeit stärken – Haltung, Selbstreflexion und wirksamer Umgang mit Macht.",
-        details: ["2 Tage", "Intensiv", "Reflexion"],
+        details: ["2 Tage", "Reflexion", "Praxistransfer"],
         heroImage: "assets/hero-meeting.jpg",
         content: {
             intro: "Wie funktioniert „Führung“, wenn vertraute Organisationsformen wegfallen, wenn Abläufe immer komplexer und unsicherer werden? Worauf kann Führung dann noch bauen? Was hilft mir, diese Unsicherheit auszuhalten? Wie gehe ich mit der Gefahr des Scheiterns um? Welchen Belastungen kann ich leicht standhalten, welchen nur schwer? Wie bekomme ich den Zugang zu einem ressourcenorientierten und wirksamen Führungsverhalten?",
@@ -192,7 +192,7 @@ const seminarsData = {
         category: "communication",
         badge: "Kommunikation",
         shortDescription: "Faszinieren Sie Ihr Publikum mit gut gestalteten Flipcharts – vermitteln Sie Fachwissen auf einfache, mitreißende Art und Weise ohne ablenkende Elektronik.",
-        details: ["1-2 Tage", "Praxis-Workshop", "Kein Zeichentalent nötig"],
+        details: ["2 Tage", "Praxis-Workshop", "Grundlagen"],
         heroImage: "assets/hero-meeting.jpg",
         content: {
             intro: "Kennen und fürchten Sie Präsentationen mit dreistelliger Folienzahl? Kennen und fürchten Sie Präsentatoren, die genau das ablesen, was Sie auf der Folie sowieso schon sehen? Machen Sie es besser und ziehen Sie die Konzentration Ihrer Zuhörer auf das Wichtigste, das es gerade gibt: auf Sie! Faszinieren Sie mit gut gestalteten Flipcharts Ihr Publikum oder vermitteln Sie Ihr Fachwissen auf einfache, mitreißende Art und Weise ohne ablenkende Elektronik.",
@@ -216,7 +216,7 @@ const seminarsData = {
         category: "health",
         badge: "Gesundheit",
         shortDescription: "Bei stürmischer See in sich Ruhe bewahren – das innere Gleichgewicht aufrechterhalten auch in dynamischen Zeiten mit Veränderungsprozessen und Belastungen.",
-        details: ["2 Tage Präsenz", "Reflexion & Übungen", "Maßnahmenplan"],
+        details: ["2 Tage", "Reflexion", "Praxistransfer"],
         heroImage: "assets/hero-meeting.jpg",
         content: {
             intro: "Gerade in dynamischen Zeiten – charakterisiert durch Veränderungsprozesse, belastende Arbeitsbedingungen, Rollenunklarheit, Überstunden und Unsicherheit – fällt es oftmals schwer, das innere Gleichgewicht aufrechtzuerhalten. Daher werden eigene Bewältigungskompetenzen (Ressourcen) benötigt, um negative Stressoren und Belastungen auszugleichen. Ziel einer gesunden Selbstführung ist es, bei stürmischer See in sich Ruhe zu bewahren und mit festem Stand jede Welle zu reiten.",
@@ -241,7 +241,7 @@ const seminarsData = {
         category: "health",
         badge: "Gesundheit",
         shortDescription: "Führungskräfte beeinflussen die Gesundheit ihrer Teams. Lernen Sie, wie Sie Belastungen erkennen, Ressourcen fördern und gesundheitsorientiert führen.",
-        details: ["1-2 Tage Präsenz", "Prävention & Reflexion", "Führungskräfte"],
+        details: ["2 Tage", "Praxisfälle", "Grundlagen"],
         heroImage: "assets/hero-meeting.jpg",
         content: {
             intro: "Die Arbeits- und Lebenswelt hat sich verändert: zunehmend prägen Globalisierung, Vernetzung sowie die Always-On-Kultur unseren Alltag. Rasches Reagieren und höchste Flexibilität werden gefordert. Die evolutionäre Entwicklung des Menschen ist jedoch langsamer als die Anforderungen der Arbeitswelt! Mitarbeiter*innen sowie Führungskräfte geraten in eine Überforderungsspirale. Stressreaktionen, psychische Erkrankungen, Präsentismus und Absentismus können die Folge sein. Innovative, lernende Organisationen brauchen jedoch gesunde und motivierte Mitarbeiter.",
@@ -263,7 +263,7 @@ const seminarsData = {
         category: "change",
         badge: "Change",
         shortDescription: "Ohne Selbstvertrauen wären wir handlungsunfähig. Lernen Sie angemessenes Selbstvertrauen, um Ihre Selbstwirksamkeit voll zu entfalten.",
-        details: ["1-2 Tage", "Reflexion", "Praxistransfer"],
+        details: ["3 Tage", "Reflexion", "Praxis"],
         heroImage: "assets/hero-meeting.jpg",
         content: {
             intro: "Ohne Selbstvertrauen wären wir handlungsunfähig, wären wir nicht in der Lage, überhaupt etwas zu tun. Die Frage ist, wie viel Selbstvertrauen sinnvoll ist, um die eigene Selbstwirksamkeit voll zu entfalten. Und: was ist angemessenes Selbstvertrauen – jenseits von „Tschaka“. Was brauche ich, um mich auf mich und meine Leistungsfähigkeit verlassen zu können?",
@@ -290,7 +290,7 @@ const seminarsData = {
         category: "health",
         badge: "Gesundheit",
         shortDescription: "Lernen Sie einen offenen und selbstverantwortlichen Umgang mit Kritik. Entwickeln Sie Kritikkompetenz und stärken Sie Ihre Beziehungen.",
-        details: ["1-2 Tage", "Reflexion", "Transfer"],
+        details: ["3 Tage", "Reflexion", "Persönlichkeitsentwicklung"],
         heroImage: "assets/hero-meeting.jpg",
         content: {
             intro: "Statt uns selbst oder den Gesprächspartner und das Gesagte abzulehnen, zurückzuweisen, dicht zu machen und nichts – und schon gar keine Kritik - mehr an sich ranzulassen, braucht es ein offenes und verständnisvolles Verhältnis zu uns. Erst daraus kann sich dann ein offenes und verstehendes Verhältnis zu unserem Gegenüber entwickeln.",
@@ -317,7 +317,7 @@ const seminarsData = {
         category: "change",
         badge: "Change",
         shortDescription: "Teamdynamiken verstehen und nutzen – Rollen, Phasen und Prozesse in der Teamarbeit steuern.",
-        details: ["2 Tage", "Praxis", "Teamentwicklung"],
+        details: ["2 Tage", "Selbsterfahrung", "Praxistransfer"],
         heroImage: "assets/hero-meeting.jpg",
         content: {
             intro: "Was ist eigentlich Gruppendynamik? Was ist der Unterschied zwischen Gruppe und Team? Lässt sich Gruppendynamik steuern? Welche Rollen und Funktionen sind wichtig? Welche Phasen in der Zusammenarbeit gibt es? Welche Aufgaben hat die Teamleitung dabei? Und wie ist das in virtuellen Teams? Und in agilen?",
@@ -387,7 +387,7 @@ const seminarsData = {
         category: "change",
         badge: "Change",
         shortDescription: "Konflikte sind in Unternehmen Alltag. Lernen Sie, diese frühzeitig zu erkennen, professionell zu behandeln und präventiv zu wirken.",
-        details: ["2 Tage Präsenz", "Fallarbeit", "Praxistransfer"],
+        details: ["3 Tage", "Praxisfälle", "Reflexion"],
         heroImage: "assets/hero-meeting.jpg",
         content: {
             intro: "Konflikte sind in Unternehmen Alltag. Innerbetriebliche Auseinandersetzungen zwischen Führungskräften oder zwischen Führungskräften und Mitarbeiter/innen sind häufig. Letztere belasten Mitarbeiter/innen stark, mindern ihre Bindung zum Unternehmen und senken ihre Arbeitsproduktivität. Vielleicht treten auch Konflikte zwischen den Standorten, zwischen Unternehmen und Zentrale auf. Konflikte mit Kunden können entstehen zu Art und Umfang der erbrachten Leistungen, zur Geschwindigkeit der Bearbeitung von Anfragen oder zum Kommunikationsverhalten der Beschäftigten. Aber auch mit Zulieferern können Konflikte zu Preisen, Terminen oder der Qualität der erbrachten Leistung auftreten. Nicht selten kann ein Konflikt zu keinem für alle Seiten befriedigenden und dauerhaft stabilen Ergebnis gebracht werden. Er schwelt im Untergrund weiter. Konflikte kosten allen Beteiligten viel Energie, die dringend für die eigentlichen Aufgaben benötigt wird. Durch ineffiziente Prozesse, schlechtere Qualität, Krankheitsausfälle und Fluktuation entstehen vermeidbare Kosten, die Produktivität und Wirtschaftlichkeit sinkt.",
@@ -412,7 +412,7 @@ const seminarsData = {
         category: "change",
         badge: "Change",
         shortDescription: "Strategisches Krisenmanagement für Projektleiter: Probleme erkennen, Stellschrauben nutzen, Projekte retten.",
-        details: ["1-2 Tage", "Praxisübungen", "Fallstudien"],
+        details: ["2 Tage", "Praxisnah", "Fallstudien"],
         heroImage: "assets/hero-meeting.jpg",
         content: {
             intro: "Selbst mit einem erfahrenen Projektmanager können Projekte ins Schleudern geraten. Das A und O des professionellen Krisenmanagements ist es, Probleme und Krisen anhand typischer Merkmale frühzeitig zu erkennen und strategisch lösen zu können.",
@@ -435,11 +435,7 @@ const seminarsData = {
         category: "leadership",
         badge: "Führung",
         shortDescription: "Führung ohne formale Hierarchie klar gestalten – mit Verständnis für Entscheidungsprozesse und Teamdynamiken.",
-        details: [
-            "Wirksame Führung ohne Hierarchie entwickeln",
-            "Entscheidungsprozesse und Gruppendynamik besser handhaben",
-            "Selbstorganisation gezielt unterstützen"
-        ],
+        details: ["2 Tage", "Grundlagen", "Praxisnah"],
         heroImage: "assets/hero-meeting.jpg",
         content: {
             intro: "Führung ohne formale Hierarchie wird wirksam, wenn Entscheidungsprozesse und Teamdynamiken klar erkennbar sind und Führungshandeln passend zum System entwickelt wird.",
@@ -460,7 +456,7 @@ const seminarsData = {
         category: "leadership",
         badge: "Führung",
         shortDescription: "Die Grundlagen wirksamer Führung: Führungsverständnis, Selbstmanagement, Kommunikation, Delegation und konstruktiver Umgang mit Konflikten.",
-        details: ["3 Tage Präsenz", "Max. 12 Teilnehmer", "Zertifikat"],
+        details: ["3 Tage", "Grundlagen", "Praxisnah"],
         heroImage: "assets/hero-meeting.jpg",
         content: {
             intro: "Frisch gebackene Führungskräfte erfahren in diesem Seminar das Wichtigste zum Thema Führung mit den Kernfeldern Kommunikation, Selbstmanagement und Konfliktlösung. Unser Ziel ist es, gemeinsam ein Grundgerüst zu bauen, das auf kommende Führungsaufgaben vorbereitet. Im Zentrum stehen dabei nicht nur Führungswerkzeuge, sondern auch die Stärkung der eigenen Haltung in der Führung von Mitarbeiter:innen.",
@@ -483,7 +479,7 @@ const seminarsData = {
         category: "communication",
         badge: "Kommunikation",
         shortDescription: "Überzeugend vor der Kamera – Interviews und Videoaufnahmen professionell meistern.",
-        details: ["1 Tag", "Praxis", "Videofeedback"],
+        details: ["2 Tage", "Feedback", "Praxis"],
         heroImage: "assets/hero-meeting.jpg",
         content: {
             intro: "Ob Interview, Webinar oder Video-Statement – der Auftritt vor der Kamera erfordert besondere Fähigkeiten. Nur wer mit Spaß, selbstsicher und authentisch das Thema Kommunikation angeht, wirkt sympathisch und glaubwürdig.",
@@ -573,7 +569,7 @@ const seminarsData = {
         category: "leadership",
         badge: "Führung",
         shortDescription: "Sich selbst verstehen und führen – die Basis für wirksame Führung anderer.",
-        details: ["2 Tage", "Reflexion", "Coaching"],
+        details: ["2 Tage", "Reflexion", "Feedback"],
         heroImage: "assets/hero-meeting.jpg",
         content: {
             intro: "Die Idee der positiven Psychologie ist es nicht, in allem was wir tun, nur das Positive zu sehen oder die Dinge schön zu reden. Es geht vielmehr darum, uns auf den Einsatz unserer Stärken, unter Berücksichtigung unserer Ressourcen und Potentiale, zu fokussieren. Basis für ein positives Selbstkonzept ist das Wissen um unsere Stärken, Werte und Motive.",
@@ -595,7 +591,7 @@ const seminarsData = {
         category: "change",
         badge: "Change",
         shortDescription: "Stärkt die Fähigkeit, Veränderungen aktiv zu gestalten, mit Unsicherheit umzugehen und Wandel konstruktiv zu begleiten.",
-        details: ["2 Tage", "Change-Modelle", "Resilienz"],
+        details: ["2 Tage", "Praxisnah", "Reflexion"],
         heroImage: "assets/hero-meeting.jpg",
         content: {
             intro: "Nicht nur Organisationen, wir alle stehen in einer Zeit immer schnelleren technologischen und gesellschaftlichen Wandels vor immensen Herausforderungen: Immer neuere und schnellere Abläufe führen zu immer kürzeren Entwicklungszyklen, sich ändernden Arbeitsfeldern und häufigen Umstrukturierungen. Der härter werdende Wettbewerb gibt dem Kunden einen bisher nicht gekannten Einfluss auf die interne Organisation. Viele Menschen empfinden dies zunächst als Schock, als großen Unterschied zwischen den meist hohen Erwartungen und der eingetroffenen Realität: als zunehmenden Stress, schnellere Abläufe, weniger Zeit für langfristige, konzeptuelle Arbeit – kurz: mehr Firefighting, weniger Strategie. Daraus resultieren oft Demotivation, Lähmung, übertriebenes Sicherheitsdenken oder Dienst nach Vorschrift.",
@@ -641,7 +637,7 @@ const seminarsData = {
         category: "health",
         badge: "Gesundheit",
         shortDescription: "Sich selbst freundlich und vergebend begegnen – Selbstmitgefühl als Ressource für konstruktive Lebensgestaltung und Persönlichkeitsentfaltung.",
-        details: ["1-2 Tage", "Reflexion & Übungen", "Achtsamkeit"],
+        details: ["3 Tage", "Reflexion", "Persönlichkeitsentwicklung"],
         heroImage: "assets/hero-meeting.jpg",
         content: {
             intro: "Selbstmitgefühl ist nicht misszuverstehen als Egozentrismus, Egoismus, oder gar als Selbstmitleid. Vielmehr ist es die Fähigkeit, sich selber gegenüber freundlich und vergebend zu begegnen. In einer Welt der Selbstkritik und Leistungsorientierung wird dies zu einer Herausforderung, deren Bewältigung über eine konstruktive Lebensgestaltung und Persönlichkeitsentfaltung entscheiden kann.",
@@ -686,7 +682,7 @@ const seminarsData = {
         category: "leadership",
         badge: "Führung",
         shortDescription: "Der erfolgreiche Rollenwechsel – von der Fachkraft zur Führungspersönlichkeit. Den Einstieg in die Führung souverän meistern.",
-        details: ["2-3 Tage Präsenz", "Rollenarbeit", "Coaching"],
+        details: ["2 Tage", "Reflexion", "Praxistransfer"],
         heroImage: "assets/hero-meeting.jpg",
         content: {
             intro: "Die vielleicht schwierigste Veränderung auf dem Karriereweg ist der Schritt vom Mitarbeiter zur Führungskraft. Das Aufgabengebiet ändert sich von der Ausführung zur Organisation, wird zudem größer, die Verantwortung wächst. Und vor allem: das Verhältnis zu den ehemaligen Kollegen verändert sich völlig. Welches sind die wichtigsten Fallen auf diesem Weg? Was hilft, sie zu umgehen? Worauf sollte ich mein Augenmerk richten?",
@@ -711,7 +707,7 @@ const seminarsData = {
         category: "health",
         badge: "Gesundheit",
         shortDescription: "Was macht mich eigentlich widerstandsfähig? Erkennen Sie Denkfallen, stärken Sie die Perspektivübernahme und entwickeln Sie Ihr Growth-Mindset.",
-        details: ["Resilienz", "Denkfallen erkennen", "Growth-Mindset"],
+        details: ["2 Tage", "Reflexion", "Praxistransfer"],
         heroImage: "assets/hero-meeting.jpg",
         content: {
             intro: "Die wichtige Frage lautet „Was macht mich eigentlich widerstandsfähig?“ Eine wichtige Erkenntnis für viele „gestresste Menschen“ ist: „Mein Stress ist hausgemacht“. Wie sehr beeinflusst uns unser Mindset? Wie sehr beeinflussen uns Glaubenssätze, Denk- und Verhaltensmuster und daraus resultierende Reaktionen bzw. Handlungen? Warum sind manche Menschen widerstandsfähiger als andere? Was kann ich von diesen Menschen lernen? ",
@@ -756,7 +752,7 @@ const seminarsData = {
         category: "change",
         badge: "Change",
         shortDescription: "Fördert das Verständnis für unterschiedliche Werte, Arbeitsweisen und Erwartungen verschiedener Generationen im Arbeitsalltag.",
-        details: ["1-2 Tage", "Reflexion", "Praxisübungen"],
+        details: ["2 Tage", "Reflexion", "Praxistransfer"],
         heroImage: "assets/hero-meeting.jpg",
         content: {
             intro: "Young and Old\nDie Vorstellung von Arbeit und F\u00fchrung ist im Wandel. Zugleich macht sich eine zuneh-\nmende Knappheit an leistungsf\u00e4higen Mitarbeitern bemerkbar. Wie kann sich unser Unter-\nnehmen vor diesem Hintergrund abheben? Was ist unser Profil als attraktiver Arbeitgeber?\nWie gelingt es, mit neuen Mitarbeitern eine Unternehmenskultur zu schaffen und zu erhal-\nten, damit eine (weitgehend) reibungslose Zusammenarbeit im Unternehmen gew\u00e4hrleistet\nist? Was m\u00fcsste ein Programm f\u00fcr neue Mitarbeiter leisten?\nHier geht es um eine Kombination aus Einsteiger- und alters\u00fcbergreifenden Workshops\n3 Bausteine:\n\u2022  Wer bin ich?\n\u2022  Was kann ich?\n\u2022  Was schaffen wir gemeinsam?\nEingebettet in eine Mentoring-Programm",
@@ -770,23 +766,7 @@ const seminarsData = {
 
 
 
-    "change-kompetenz": {
-        id: "change-kompetenz",
-        title: "Change Kompetenz",
-        url: "seminare/change-kompetenz.html",
-        category: "change",
-        badge: "Change",
-        shortDescription: "In Zeiten schnellen Wandels mental stark bleiben. Veränderungen konstruktiv begegnen und beeinflussbare von nicht beeinflussbaren Bereichen unterscheiden.",
-        details: ["2 Tage", "Praxis", "Transfer"],
-        heroImage: "assets/hero-meeting.jpg",
-        content: {
-            intro: "Wir alle stehen in einer Zeit immer schnelleren technologischen und gesellschaftlichen Wandels vor immensen Herausforderungen: kürzere Entwicklungszyklen, häufige Umstrukturierungen, härterer Wettbewerb. Viele empfinden dies als Stress, mehr Firefighting, weniger Strategie. Dieses Seminar hilft Ihnen, konstruktiv mit diesen Veränderungen umzugehen.",
-            ziele: ['Mentale Klarheit und Stärke erreichen – konstruktiven, aktiven Umgang mit\n                        Veränderungen entwickeln', 'Beeinflussbare von nicht beeinflussbaren Lebensbereichen unterscheiden können', 'Behindernde Suggestionen loslassen und Mut zu neuen Verhaltensmustern fassen', 'Standhaftigkeit und Ausdauer gegenüber Unsicherheiten und Widerständen erhöhen'],
-            inhalte: "Detaillierte Seminarinhalte und Praxisübungen.",
-            nutzen: "Sie erweitern ihre Kompetenzen in Change Kompetenz.",
-            zielgruppe: "Alle Menschen, die kompetenter mit Veränderungen umgehen möchten – Fach- und Führungskräfte in dynamischen Arbeitsumgebungen."
-        }
-    },
+
     "storytelling": {
         id: "storytelling",
         title: "Storytelling",
@@ -811,7 +791,7 @@ const seminarsData = {
         category: "leadership",
         badge: "Führung",
         shortDescription: "Realistische Führungsszenarien im Musterkrankenhaus. Faires Feedback. Echte Erkenntnisse. 16 Teilnehmende, unzählige Lernmomente.",
-        details: ["2 Tage", "Praxis", "Transfer"],
+        details: ["2 Tage", "Praxistransfer", "Feedback"],
         heroImage: "assets/hero-meeting.jpg",
         content: {
             intro: "Möchten Sie sich in einem Übungsumfeld auf schwierige Situationen vorbereiten, denen Sie in Ihrer neuen Führungsaufgabe begegnen könnten? Haben Sie schon manchmal nach einem Personalgespräch gedacht, dass Sie nicht den richtigen Ton getroffen haben? Kennen Sie Führungssituationen, in denen Sie aufgrund der Vielzahl der Aufgaben Ihren Prioritäten nicht gerecht werden konnten? Finden Sie es sinnvoll, bei einem Seminar realistische Übungen mit theoretischem Hintergrund zu verbinden? Fanden Sie, dass bisherige Seminare und Übungen nicht wirklich Ihren Führungsalltag widerspiegeln? Ist es Ihnen wichtig, faires und konkretes Feedback auf Ihr Führungsverhalten im Einzelfall zu erhalten?",
@@ -832,7 +812,7 @@ const seminarsData = {
         category: "leadership",
         badge: "Führung",
         shortDescription: "Der sichere Start in die neue Rolle: Strategie, Quick Wins und Beziehungsaufbau für einen erfolgreichen Einstieg.",
-        details: ["2 Tage", "Praxis & Reflexion", "Führung"],
+        details: ["2 Tage", "Grundlagen", "Praxistransfer"],
         heroImage: "assets/hero-meeting.jpg",
         content: {
             intro: "Die ersten 100 Tage in einer neuen Führungsposition sind entscheidend. Sie werden beobachtet, bewertet und getestet. In dieser 'Schonfrist' werden die Weichen gestellt. Dieses Seminar bietet Ihnen einen strategischen Fahrplan, um die typischen Fallstricke zu umgehen und souverän in Ihrer neuen Verantwortung anzukommen.",
@@ -855,7 +835,7 @@ const seminarsData = {
         category: "communication",
         badge: "Kommunikation",
         shortDescription: "Gute Kommunikation erfordert eine doppelte Stimmigkeit - nach außen situationsgerecht, nach innen authentisch. So sprechen, dass man dazu stehen kann.",
-        details: ["2 Tage", "Praxisintensiv", "Selbstreflexion"],
+        details: ["2 Tage", "Praxisfälle", "Selbstreflexion"],
         heroImage: "assets/hero-meeting.jpg",
         content: {
             intro: "Gute Kommunikation erfordert eine doppelte Stimmigkeit - nach außen und nach innen. Was wir sagen, muss einerseits situationsgerecht sein. Andererseits sollten wir so sprechen, dass wir authentisch sind - d. h. in Übereinstimmung mit uns selbst - sind und dazu stehen können.",
