@@ -1545,12 +1545,29 @@ footer::before {
     border-radius: var(--radius-md);
     border: 1px solid var(--color-border);
     transition: all var(--transition-normal);
+    position: relative;
+    z-index: 1;
+}
+
+.offering-card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 1;
 }
 
 .offering-card:hover {
     border-color: var(--color-primary);
     box-shadow: var(--shadow-md);
     transform: translateY(-3px);
+    z-index: 2;
+}
+
+.offering-card:hover::after {
+    bottom: -15px;
+    left: -5px;
+    right: -5px;
+    top: -5px;
 }
 
 .offering-icon {
@@ -1819,6 +1836,13 @@ footer::before {
 }
 
 /* Hover Effects */
+.training-card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+}
+
 .training-card:hover {
     transform: translateY(-8px) scale(1.01);
     box-shadow:
@@ -1826,6 +1850,18 @@ footer::before {
         -4px 0 20px color-mix(in srgb, var(--card-category-color, var(--color-primary)) 15%, transparent);
     border-color: color-mix(in srgb, var(--card-category-color, var(--color-primary)) 40%, var(--color-border));
     z-index: 2;
+}
+
+.training-card:hover::after {
+    /* Extend hit area to cover the movement gap to prevent flickering */
+    bottom: -20px;
+    left: -10px;
+    right: -10px;
+    top: -10px;
+    width: auto;
+    /* Reset width from specific rule below if needed, though inset handles it */
+    box-shadow: none;
+    /* We don't want the hit area to have a shadow */
 }
 
 .training-card:hover::before {
@@ -1962,6 +1998,7 @@ footer::before {
     margin-bottom: 0;
     display: -webkit-box;
     -webkit-line-clamp: 3;
+    line-clamp: 3;
     -webkit-box-orient: vertical;
     overflow: hidden;
 }

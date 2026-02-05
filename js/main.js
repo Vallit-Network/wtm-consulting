@@ -248,14 +248,17 @@ document.addEventListener('DOMContentLoaded', () => {
     // Function to create seminar card HTML
     function createSeminarCard(seminar) {
         // Generate list items for details with icons
-        const detailsHtml = seminar.details.map(detail => `
+        const detailsHtml = seminar.details.map((detail, index) => {
+            const iconSvg = index === 0
+                ? `<svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" class="detail-icon"><rect height="18" rx="2" ry="2" width="18" x="3" y="4"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>`
+                : `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="detail-icon"><polyline points="20 6 9 17 4 12"></polyline></svg>`;
+
+            return `
             <li>
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="detail-icon">
-                    <polyline points="20 6 9 17 4 12"></polyline>
-                </svg>
+                ${iconSvg}
                 ${detail}
             </li>
-        `).join('');
+        `}).join('');
 
         const categoryIcon = categoryIcons[seminar.category] || categoryIcons.leadership;
         const seminarUrl = seminar.url || `seminar?id=${seminar.id}`;
@@ -351,46 +354,54 @@ document.addEventListener('DOMContentLoaded', () => {
             return card.offsetWidth + gap;
         };
 
-        const isScrollAtEnd = () => {
-            // Use a small tolerance for distinct browser sub-pixel rendering
-            return seminarGrid.scrollLeft + seminarGrid.clientWidth >= seminarGrid.scrollWidth - 10;
-        };
+        const updateArrows = () => {
+            // Check if we can scroll left
+            if (seminarGrid.scrollLeft <= 5) {
+                carouselPrev.style.opacity = '0';
+                carouselPrev.style.pointerEvents = 'none';
+            } else {
+                carouselPrev.style.opacity = '1';
+                carouselPrev.style.pointerEvents = 'all';
+            }
 
-        const isScrollAtStart = () => {
-            return seminarGrid.scrollLeft <= 10;
+            // Check if we can scroll right
+            // scrollWidth - clientWidth is the max scroll position
+            // Use a small tolerance
+            if (Math.ceil(seminarGrid.scrollLeft + seminarGrid.clientWidth) >= seminarGrid.scrollWidth - 5) {
+                carouselNext.style.opacity = '0';
+                carouselNext.style.pointerEvents = 'none';
+            } else {
+                carouselNext.style.opacity = '1';
+                carouselNext.style.pointerEvents = 'all';
+            }
         };
 
         carouselNext.addEventListener('click', () => {
             const cardWidth = getCardWidth();
-
-            // If we are at the end, move the first item to the back to create an infinite loop
-            if (isScrollAtEnd()) {
-                const firstCard = seminarGrid.firstElementChild;
-                if (firstCard) {
-                    seminarGrid.appendChild(firstCard);
-                    // Adjust scroll position to prevent visual jump
-                    seminarGrid.scrollLeft -= cardWidth;
-                }
-            }
-
             seminarGrid.scrollBy({ left: cardWidth, behavior: 'smooth' });
         });
 
         carouselPrev.addEventListener('click', () => {
             const cardWidth = getCardWidth();
-
-            // If we are at the start, move the last item to the front
-            if (isScrollAtStart()) {
-                const lastCard = seminarGrid.lastElementChild;
-                if (lastCard) {
-                    seminarGrid.prepend(lastCard);
-                    // Adjust scroll position to prevent visual jump
-                    seminarGrid.scrollLeft += cardWidth;
-                }
-            }
-
             seminarGrid.scrollBy({ left: -cardWidth, behavior: 'smooth' });
         });
+
+        // Update arrows on scroll
+        seminarGrid.addEventListener('scroll', updateArrows);
+
+        // Update arrows on resize
+        window.addEventListener('resize', updateArrows);
+
+        // Initial check
+        // Wait for images/layout
+        setTimeout(updateArrows, 100);
+
+        // Also hook into renderSeminars to update arrows when content changes
+        // Use a MutationObserver to detect when children change
+        const observer = new MutationObserver(() => {
+            setTimeout(updateArrows, 100);
+        });
+        observer.observe(seminarGrid, { childList: true });
     }
 
     // =========================================
