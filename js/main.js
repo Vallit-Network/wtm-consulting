@@ -74,7 +74,6 @@ document.addEventListener('DOMContentLoaded', () => {
                             </svg>
                         </a>
                         <div class="nav-dropdown-menu">
-                            <a href="${getLink('#success-stories')}">Success Stories</a>
                             <a href="${getLink('#testimonials')}">Stimmen</a>
                         </div>
                     </li>
