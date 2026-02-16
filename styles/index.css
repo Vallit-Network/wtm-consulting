@@ -4593,7 +4593,8 @@ header.header-scrolled .logo img {
     background: var(--color-white);
     border-radius: var(--radius-lg);
     overflow: hidden;
-    box-shadow: var(--shadow-lg);
+    box-shadow: none;
+    /* Removed as per user feedback ("stupid shadow") */
     border: 1px solid var(--color-border);
     height: 100%;
     /* Ensure it fills parent height */
@@ -4630,8 +4631,7 @@ header.header-scrolled .logo img {
 
 .case-study-content {
     padding: 2rem;
-    flex-grow: 1;
-    /* Push footer down */
+    /* Removed flex-grow to prevent white gap */
     display: flex;
     flex-direction: column;
 }
@@ -4696,6 +4696,12 @@ header.header-scrolled .logo img {
     background: linear-gradient(135deg, var(--color-deep-blue) 0%, #1a2a3a 100%);
     position: relative;
     margin: 0;
+    flex-grow: 1;
+    /* Footer fills the remaining height (Dark Blue Area) */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* Opt: Center quote vertically if huge space */
 }
 
 .case-study-quote .quote-icon {
