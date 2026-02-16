@@ -4573,7 +4573,7 @@ header.header-scrolled .logo img {
     width: 100%;
     /* Premium easing: Fast start, slow end */
     transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
-    align-items: stretch;
+    align-items: flex-start;
     /* Ensure all cards have same height */
 }
 
@@ -4585,8 +4585,7 @@ header.header-scrolled .logo img {
     box-sizing: border-box;
     height: auto;
     /* Allow height to stretch */
-    display: flex;
-    flex-direction: column;
+    display: block;
 }
 
 .case-study-card {
@@ -4596,7 +4595,6 @@ header.header-scrolled .logo img {
     box-shadow: none;
     /* Removed as per user feedback ("stupid shadow") */
     border: 1px solid var(--color-border);
-    height: 100%;
     /* Ensure it fills parent height */
 }
 
@@ -4696,11 +4694,6 @@ header.header-scrolled .logo img {
     background: linear-gradient(135deg, var(--color-deep-blue) 0%, #1a2a3a 100%);
     position: relative;
     margin: 0;
-    flex-grow: 1;
-    /* Footer fills the remaining height (Dark Blue Area) */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
     /* Opt: Center quote vertically if huge space */
 }
 
