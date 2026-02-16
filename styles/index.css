@@ -4541,6 +4541,7 @@ header.header-scrolled .logo img {
 
 .success-stories-grid .case-study-card {
     scroll-snap-align: start;
+    scroll-snap-stop: always;
     flex-shrink: 0;
     min-width: 100%;
     box-sizing: border-box;

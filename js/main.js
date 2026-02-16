@@ -504,45 +504,65 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // =========================================
     // SUCCESS STORIES CAROUSEL LOGIC
+    // Ein Klick = ein Panel, immer ein Panel voll sichtbar
     // =========================================
     const successGrid = document.getElementById('success-stories-grid');
     const successPrev = document.querySelector('#success-stories .carousel-btn.prev');
     const successNext = document.querySelector('#success-stories .carousel-btn.next');
 
     if (successGrid && successPrev && successNext) {
-        const getSuccessCardWidth = () => {
+        const cards = successGrid.querySelectorAll('.case-study-card');
+        const totalSlides = cards.length;
+        let currentIndex = 0;
+        let isScrolling = false;
+
+        const getSlideWidth = () => {
             const style = window.getComputedStyle(successGrid);
             const gap = parseFloat(style.gap) || 32;
             return successGrid.clientWidth + gap;
         };
 
+        const scrollToSlide = (index) => {
+            if (isScrolling || index < 0 || index >= totalSlides) return;
+            isScrolling = true;
+            currentIndex = index;
+            const targetLeft = index * getSlideWidth();
+            successGrid.scrollTo({ left: targetLeft, behavior: 'smooth' });
+            updateSuccessArrows();
+            setTimeout(() => { isScrolling = false; }, 450);
+        };
+
         const updateSuccessArrows = () => {
-            if (successGrid.scrollLeft <= 5) {
-                successPrev.style.opacity = '0';
-                successPrev.style.pointerEvents = 'none';
-            } else {
-                successPrev.style.opacity = '1';
-                successPrev.style.pointerEvents = 'all';
-            }
-            if (Math.ceil(successGrid.scrollLeft + successGrid.clientWidth) >= successGrid.scrollWidth - 5) {
-                successNext.style.opacity = '0';
-                successNext.style.pointerEvents = 'none';
-            } else {
-                successNext.style.opacity = '1';
-                successNext.style.pointerEvents = 'all';
+            successPrev.style.opacity = currentIndex <= 0 ? '0' : '1';
+            successPrev.style.pointerEvents = currentIndex <= 0 ? 'none' : 'all';
+            successNext.style.opacity = currentIndex >= totalSlides - 1 ? '0' : '1';
+            successNext.style.pointerEvents = currentIndex >= totalSlides - 1 ? 'none' : 'all';
+        };
+
+        const syncIndexFromScroll = () => {
+            if (isScrolling) return;
+            const slideWidth = getSlideWidth();
+            const index = Math.round(successGrid.scrollLeft / slideWidth);
+            const clamped = Math.max(0, Math.min(index, totalSlides - 1));
+            if (clamped !== currentIndex) {
+                currentIndex = clamped;
+                updateSuccessArrows();
             }
         };
 
         successNext.addEventListener('click', () => {
-            successGrid.scrollBy({ left: getSuccessCardWidth(), behavior: 'smooth' });
+            if (currentIndex < totalSlides - 1) scrollToSlide(currentIndex + 1);
         });
         successPrev.addEventListener('click', () => {
-            successGrid.scrollBy({ left: -getSuccessCardWidth(), behavior: 'smooth' });
+            if (currentIndex > 0) scrollToSlide(currentIndex - 1);
         });
 
-        successGrid.addEventListener('scroll', updateSuccessArrows);
-        window.addEventListener('resize', updateSuccessArrows);
-        setTimeout(updateSuccessArrows, 100);
+        successGrid.addEventListener('scroll', syncIndexFromScroll);
+        window.addEventListener('resize', () => {
+            successGrid.scrollTo({ left: currentIndex * getSlideWidth(), behavior: 'auto' });
+            updateSuccessArrows();
+        });
+        updateSuccessArrows();
     }
 
     // =========================================
@@ -641,22 +661,17 @@ document.addEventListener('DOMContentLoaded', () => {
                         btn.setAttribute('aria-expanded', 'true');
                         card.classList.add('expanded');
 
-                        // Höhe zuverlässig messen (Layout einmal mit offenem Wrapper)
+                        // Höhe messen ohne sichtbare 9999→0-Animation: Transition erst wieder im 2. Frame
                         wrapper.style.transition = 'none';
                         wrapper.style.maxHeight = '9999px';
                         requestAnimationFrame(() => {
                             const height = wrapper.scrollHeight;
                             wrapper.style.maxHeight = '0';
-                            wrapper.style.transition = '';
+                            // Transition erst im nächsten Frame, damit 9999→0 nicht animiert wird
                             requestAnimationFrame(() => {
+                                wrapper.style.transition = '';
                                 wrapper.style.maxHeight = height + 'px';
                             });
-                            wrapper.addEventListener('transitionend', function onEnd() {
-                                if (card.classList.contains('expanded')) {
-                                    wrapper.style.maxHeight = '';
-                                }
-                                wrapper.removeEventListener('transitionend', onEnd);
-                            }, { once: true });
                         });
                     }
                 });
