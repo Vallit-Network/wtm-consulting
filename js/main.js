@@ -617,10 +617,10 @@ document.addEventListener('DOMContentLoaded', () => {
             if (isLong) {
                 const btn = card.querySelector('.read-more-btn');
                 const textBlock = card.querySelector('.testimonial-text');
-                const shortSpan = card.querySelector('.text-short');
                 const wrapper = card.querySelector('.testimonial-expand-wrapper');
                 const fullSpan = card.querySelector('.text-full');
 
+                if (btn && textBlock && wrapper && fullSpan) {
                 btn.addEventListener('click', (e) => {
                     e.stopPropagation();
                     const isExpanded = card.classList.contains('expanded');
@@ -636,21 +636,31 @@ document.addEventListener('DOMContentLoaded', () => {
                             wrapper.style.maxHeight = '0';
                         });
                     } else {
-                        const height = fullSpan.scrollHeight;
-                        wrapper.style.maxHeight = height + 'px';
                         textBlock.classList.add('expanded');
                         btn.textContent = 'Zeige weniger';
                         btn.setAttribute('aria-expanded', 'true');
                         card.classList.add('expanded');
-                        wrapper.addEventListener('transitionend', function onEnd() {
-                            if (card.classList.contains('expanded')) {
-                                wrapper.style.maxHeight = '';
-                            }
-                            wrapper.removeEventListener('transitionend', onEnd);
-                        }, { once: true });
+
+                        // Höhe zuverlässig messen (Layout einmal mit offenem Wrapper)
+                        wrapper.style.transition = 'none';
+                        wrapper.style.maxHeight = '9999px';
+                        requestAnimationFrame(() => {
+                            const height = wrapper.scrollHeight;
+                            wrapper.style.maxHeight = '0';
+                            wrapper.style.transition = '';
+                            requestAnimationFrame(() => {
+                                wrapper.style.maxHeight = height + 'px';
+                            });
+                            wrapper.addEventListener('transitionend', function onEnd() {
+                                if (card.classList.contains('expanded')) {
+                                    wrapper.style.maxHeight = '';
+                                }
+                                wrapper.removeEventListener('transitionend', onEnd);
+                            }, { once: true });
+                        });
                     }
                 });
-            }
+                }
 
             testimonialTrack.appendChild(card);
         });
