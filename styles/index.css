@@ -5061,7 +5061,6 @@ header.header-scrolled .logo img {
     font-size: 3rem;
     line-height: 1;
     font-family: monospace;
-    transform: rotate(90deg) scaleY(1.5);
     opacity: 0.5;
 }
 
@@ -5330,10 +5329,6 @@ header.header-scrolled .logo img {
         flex-direction: column;
     }
 
-    .arrow-visual {
-        transform: rotate(90deg);
-    }
-
     .modular-program-modules {
         flex-direction: column;
         align-items: center;
@@ -5356,12 +5351,12 @@ header.header-scrolled .logo img {
 
         0%,
         100% {
-            transform: rotate(90deg) translateY(0);
+            transform: translateY(0);
             opacity: 0.5;
         }
 
         50% {
-            transform: rotate(90deg) translateY(10px);
+            transform: translateY(10px);
             opacity: 1;
         }
     }
@@ -5548,7 +5543,6 @@ header.header-scrolled .logo img {
     }
 
     .arrow-visual {
-        transform: rotate(90deg);
         font-size: 2rem;
         color: var(--color-primary);
         opacity: 0.6;
