@@ -532,12 +532,22 @@ document.addEventListener('DOMContentLoaded', () => {
             // Apply transform
             successTrack.style.transform = `translateX(${currentTranslate}%)`;
 
-            // Update buttons
-            successPrev.style.opacity = currentIndex <= 0 ? '0' : '1';
-            successPrev.style.pointerEvents = currentIndex <= 0 ? 'none' : 'all';
+            // Update container height to match current slide
+            if (cards[currentIndex]) {
+                const height = cards[currentIndex].offsetHeight;
+                successTrack.parentElement.style.height = `${height}px`;
+            }
 
-            successNext.style.opacity = currentIndex >= totalSlides - 1 ? '0' : '1';
-            successNext.style.pointerEvents = currentIndex >= totalSlides - 1 ? 'none' : 'all';
+            // Update buttons
+            if (successPrev) {
+                successPrev.style.opacity = currentIndex <= 0 ? '0' : '1';
+                successPrev.style.pointerEvents = currentIndex <= 0 ? 'none' : 'all';
+            }
+
+            if (successNext) {
+                successNext.style.opacity = currentIndex >= totalSlides - 1 ? '0' : '1';
+                successNext.style.pointerEvents = currentIndex >= totalSlides - 1 ? 'none' : 'all';
+            }
         };
 
         // Navigation Clicks
@@ -624,6 +634,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Initial setup
         updateSlidePosition();
+        // Ensure height is correct after images load
+        window.addEventListener('load', updateSlidePosition);
     }
 
     // =========================================
