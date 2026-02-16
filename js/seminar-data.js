@@ -341,7 +341,7 @@ const seminarsData = {
         category: "management",
         badge: "Management",
         shortDescription: "Nutzt die Kraft der Intuition für fundierte Entscheidungen und innovatives Problemlösen im beruflichen Kontext.",
-        details: ["1-2 Tage Präsenz", "Reflexion & Übungen", "Praxistransfer"],
+        details: ["1-2 Tage", "Reflexion", "Praxistransfer"],
         heroImage: "assets/hero-meeting.jpg",
         content: {
             intro: "Ein Widerspruch? Das hat man lange gedacht. Neuere Forschungsergebnisse zeigen allerdings, dass Intuition keineswegs nur emotionales „Bauchgefühl“ ist, sondern auch rationale Instrumente nutzt wie Logik, Mathematik, usw.Der Unterschied ist: sie nutzt sie unbewusst.Und das ist auch gut so.Denn wenn wir alle etwa 80.000 Entscheidungen des Tages bewusst treffen müssten, wären wir völlig überfordert.Aber auch die berufliche Problemlösung nutzt großenteils unbewusste Kreativität.So zeigen wissenschaftliche Untersuchungen, dass nicht nur im Top- Management die meisten Entscheidungen intuitiv getroffen werden.",
@@ -365,7 +365,7 @@ const seminarsData = {
         category: "communication",
         badge: "Kommunikation",
         shortDescription: "Botschaften passgenau gestalten – unterschiedliche Zielgruppen überzeugend ansprechen.",
-        details: ["1-2 Tage", "Praxis", "Fallarbeit"],
+        details: ["2 Tage", "Praxis", "Fallarbeit"],
         heroImage: "assets/hero-meeting.jpg",
         content: {
             intro: "Nicht jede Botschaft passt für jeden. Wie passen Sie Ihre Kommunikation an unterschiedliche Zielgruppen an?",
@@ -518,7 +518,7 @@ const seminarsData = {
         category: "communication",
         badge: "Kommunikation",
         shortDescription: "„Es genügt nicht, keine Gedanken zu haben, man muss auch unfähig sein, sie auszudrücken.“ (Karl Kraus) – Fachleute überzeugen mit klaren Präsentationen.",
-        details: ["1-2 Tage", "Praxisübungen", "Medieneinsatz"],
+        details: ["2 Tage", "Praxis", "Feedback"],
         heroImage: "assets/hero-meeting.jpg",
         content: {
             intro: "„Es genügt nicht, keine Gedanken zu haben, man muss auch unfähig sein, sie auszudrücken.“ (Karl Kraus) Gerade Fachleuten passiert das oft am Anfang einer Präsentation. Sie haben lange gut gearbeitet und nun finden sie keine passenden Worte, um ihr Ergebnis vorzustellen. Dabei ist eine überzeugende und verständliche Darstellung gerade vor Kunden oder Vorgesetzten besonders wichtig, damit Sie auch die Früchte Ihrer Arbeit ernten können. Aber gerade Fachleute haben eine Scheu davor, Ihre Erfolge zu „verkaufen“, weil sie ja sowieso kein Talent zum Präsentieren hätten...",
@@ -541,12 +541,7 @@ const seminarsData = {
         category: "management",
         badge: "Management",
         shortDescription: "Projekte sicher aufsetzen, professionell überwachen und erfolgreich abschließen – Grundlagen für den Projekterfolg.",
-        details: [
-            "Auftragsklärung & Ziele",
-            "Planung & Steuerung",
-            "Risiko & Stakeholder",
-            "Fallstudienarbeit"
-        ],
+        details: ["2 Tage", "Grundlagen", "Praxisnah"],
         heroImage: "assets/hero-meeting.jpg",
         content: {
             intro: "Manche Projekte scheitern, viele dauern länger oder werden teurer als geplant. Ein wirkungsvolles, systematisches Projektmanagement unterstützt Sie dabei, Projekte sicher aufzusetzen, die Durchführung professionell zu überwachen und erfolgreich abzuschließen.",
@@ -659,7 +654,7 @@ const seminarsData = {
         category: "management",
         badge: "Management",
         shortDescription: "Stärkt kommunikative und soziale Kompetenzen für Fachkräfte mit zahlen- oder faktenorientiertem Schwerpunkt.",
-        details: ["Individuell", "Praxisnah", "Kommunikation"],
+        details: ["2 Tage", "Praxisnah", "Kommunikation"],
         heroImage: "assets/hero-meeting.jpg",
         content: {
             intro: "Ist es Ihnen bewusst? Sie als Zahlenprofi „ticken anders“ als andere Menschen. Vielleicht kennen Sie die Situation, dass Ihnen jemand einen Sachverhalt, ein Produkt, einen Prozess begeistert beschreibt, und Sie nur denken: „Und was kostet das jetzt?“. Umgekehrt gibt es Menschen, die denken: „Zahlen und Tabellen sind ja nett und grundsätzlich verstanden habe ich das auch, ABER…“. Es ist wichtig, andere da abzuholen, wo sie stehen. Hier helfen Soft Skills: Haltung, gute Vorbereitung, Werkzeuge, Tipps & Tricks.",

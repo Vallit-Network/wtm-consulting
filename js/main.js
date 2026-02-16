@@ -2093,7 +2093,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         </div>
                         <!-- Offerings Column -->
                         <div class="footer-col">
-                            <h4>Angebote</h4>
+                            <h4>Angebot</h4>
                             <ul class="footer-links">
                                 <li><a href="../index.html#trainings">Trainings &amp; Seminare</a></li>
                                 <li><a href="../coaching/">Online Coaching</a></li>
