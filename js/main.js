@@ -503,33 +503,44 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // =========================================
-    // SUCCESS STORIES CAROUSEL LOGIC
-    // Ein Klick = ein Panel, immer ein Panel voll sichtbar
+    // SUCCESS STORIES CAROUSEL
+    // Ein Klick = ein Panel. Scroll-Ziel = echte Kartenposition (offsetLeft).
     // =========================================
     const successGrid = document.getElementById('success-stories-grid');
     const successPrev = document.querySelector('#success-stories .carousel-btn.prev');
     const successNext = document.querySelector('#success-stories .carousel-btn.next');
 
     if (successGrid && successPrev && successNext) {
-        const cards = successGrid.querySelectorAll('.case-study-card');
+        const cards = Array.from(successGrid.querySelectorAll('.case-study-card'));
         const totalSlides = cards.length;
         let currentIndex = 0;
         let isScrolling = false;
 
-        const getSlideWidth = () => {
-            const style = window.getComputedStyle(successGrid);
-            const gap = parseFloat(style.gap) || 32;
-            return successGrid.clientWidth + gap;
-        };
+        // #region agent log
+        (function logInit() {
+            const cardPos = cards.map((c, i) => ({ i, offsetLeft: c.offsetLeft, offsetWidth: c.offsetWidth }));
+            fetch('http://127.0.0.1:7242/ingest/a97a0e80-3a7d-4915-87e5-a0860b84d4b1', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ location: 'main.js:success-stories-init', message: 'carousel init', data: { totalSlides, gridClientWidth: successGrid.clientWidth, gridScrollWidth: successGrid.scrollWidth, cardPos }, hypothesisId: 'D,B', timestamp: Date.now() }) }).catch(() => {});
+        })();
+        // #endregion
 
         const scrollToSlide = (index) => {
             if (isScrolling || index < 0 || index >= totalSlides) return;
+            const card = cards[index];
+            if (!card) return;
             isScrolling = true;
             currentIndex = index;
-            const targetLeft = index * getSlideWidth();
+            const targetLeft = card.offsetLeft;
+            // #region agent log
+            fetch('http://127.0.0.1:7242/ingest/a97a0e80-3a7d-4915-87e5-a0860b84d4b1', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ location: 'main.js:scrollToSlide', message: 'scrollToSlide called', data: { index, targetLeft, cardOffsetLeft: card.offsetLeft, cardOffsetWidth: card.offsetWidth }, hypothesisId: 'A,E', timestamp: Date.now() }) }).catch(() => {});
+            // #endregion
             successGrid.scrollTo({ left: targetLeft, behavior: 'smooth' });
             updateSuccessArrows();
-            setTimeout(() => { isScrolling = false; }, 450);
+            setTimeout(() => {
+                isScrolling = false;
+                // #region agent log
+                fetch('http://127.0.0.1:7242/ingest/a97a0e80-3a7d-4915-87e5-a0860b84d4b1', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ location: 'main.js:afterScroll', message: 'after smooth scroll', data: { scrollLeft: successGrid.scrollLeft, targetLeft, currentIndex }, hypothesisId: 'E', timestamp: Date.now() }) }).catch(() => {});
+                // #endregion
+            }, 400);
         };
 
         const updateSuccessArrows = () => {
@@ -539,27 +550,50 @@ document.addEventListener('DOMContentLoaded', () => {
             successNext.style.pointerEvents = currentIndex >= totalSlides - 1 ? 'none' : 'all';
         };
 
+        const indexFromScrollLeft = () => {
+            const scrollLeft = successGrid.scrollLeft;
+            const viewportCenter = scrollLeft + successGrid.clientWidth / 2;
+            for (let i = 0; i < cards.length; i++) {
+                const start = cards[i].offsetLeft;
+                const end = start + cards[i].offsetWidth;
+                if (viewportCenter >= start && viewportCenter < end) return i;
+            }
+            return scrollLeft < successGrid.clientWidth / 2 ? 0 : totalSlides - 1;
+        };
+
         const syncIndexFromScroll = () => {
             if (isScrolling) return;
-            const slideWidth = getSlideWidth();
-            const index = Math.round(successGrid.scrollLeft / slideWidth);
-            const clamped = Math.max(0, Math.min(index, totalSlides - 1));
-            if (clamped !== currentIndex) {
-                currentIndex = clamped;
+            const idx = indexFromScrollLeft();
+            // #region agent log
+            if (idx !== currentIndex) {
+                fetch('http://127.0.0.1:7242/ingest/a97a0e80-3a7d-4915-87e5-a0860b84d4b1', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ location: 'main.js:syncIndexFromScroll', message: 'sync changed index', data: { scrollLeft: successGrid.scrollLeft, viewportCenter: successGrid.scrollLeft + successGrid.clientWidth / 2, oldIndex: currentIndex, newIndex: idx }, hypothesisId: 'C', timestamp: Date.now() }) }).catch(() => {});
+            }
+            // #endregion
+            if (idx !== currentIndex) {
+                currentIndex = idx;
                 updateSuccessArrows();
             }
         };
 
         successNext.addEventListener('click', () => {
+            // #region agent log
+            fetch('http://127.0.0.1:7242/ingest/a97a0e80-3a7d-4915-87e5-a0860b84d4b1', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ location: 'main.js:nextClick', message: 'next clicked', data: { currentIndex, totalSlides }, hypothesisId: 'C,E', timestamp: Date.now() }) }).catch(() => {});
+            // #endregion
             if (currentIndex < totalSlides - 1) scrollToSlide(currentIndex + 1);
         });
         successPrev.addEventListener('click', () => {
+            // #region agent log
+            fetch('http://127.0.0.1:7242/ingest/a97a0e80-3a7d-4915-87e5-a0860b84d4b1', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ location: 'main.js:prevClick', message: 'prev clicked', data: { currentIndex, totalSlides }, hypothesisId: 'C,E', timestamp: Date.now() }) }).catch(() => {});
+            // #endregion
             if (currentIndex > 0) scrollToSlide(currentIndex - 1);
         });
 
         successGrid.addEventListener('scroll', syncIndexFromScroll);
         window.addEventListener('resize', () => {
-            successGrid.scrollTo({ left: currentIndex * getSlideWidth(), behavior: 'auto' });
+            const idx = Math.min(currentIndex, totalSlides - 1);
+            const target = cards[idx] ? cards[idx].offsetLeft : 0;
+            successGrid.scrollTo({ left: target, behavior: 'auto' });
+            currentIndex = idx;
             updateSuccessArrows();
         });
         updateSuccessArrows();
@@ -644,6 +678,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 btn.addEventListener('click', (e) => {
                     e.stopPropagation();
                     const isExpanded = card.classList.contains('expanded');
+                    // #region agent log
+                    fetch('http://127.0.0.1:7242/ingest/a97a0e80-3a7d-4915-87e5-a0860b84d4b1',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'main.js:testimonial-click',message:'Zeige mehr/weniger click',data:{isExpanded,wrapperScrollHeight:wrapper.scrollHeight,maxHeight:wrapper.style.maxHeight},hypothesisId:'H1',timestamp:Date.now()})}).catch(()=>{});
+                    // #endregion
 
                     if (isExpanded) {
                         const currentHeight = wrapper.scrollHeight;
@@ -661,17 +698,18 @@ document.addEventListener('DOMContentLoaded', () => {
                         btn.setAttribute('aria-expanded', 'true');
                         card.classList.add('expanded');
 
-                        // Höhe messen ohne sichtbare 9999→0-Animation: Transition erst wieder im 2. Frame
+                        // Öffnen: Höhe einmal messen, dann sofort setzen (keine max-height-Animation) – nur Text-Crossfade
                         wrapper.style.transition = 'none';
                         wrapper.style.maxHeight = '9999px';
                         requestAnimationFrame(() => {
                             const height = wrapper.scrollHeight;
-                            wrapper.style.maxHeight = '0';
-                            // Transition erst im nächsten Frame, damit 9999→0 nicht animiert wird
-                            requestAnimationFrame(() => {
-                                wrapper.style.transition = '';
-                                wrapper.style.maxHeight = height + 'px';
-                            });
+                            const fullSpanHeight = fullSpan ? fullSpan.scrollHeight : 0;
+                            var heightToUse = height > 0 ? height : (fullSpanHeight > 0 ? fullSpanHeight : 800);
+                            // #region agent log
+                            (function(d){fetch('http://127.0.0.1:7242/ingest/a97a0e80-3a7d-4915-87e5-a0860b84d4b1',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'main.js:rAF-expand',message:'Expand measured height',data:d,hypothesisId:'H1',timestamp:Date.now()})}).catch(()=>{});console.log('[DEBUG testimonial] rAF-expand',d);})({height,heightToUse,fullSpanHeight});
+                            // #endregion
+                            wrapper.style.maxHeight = heightToUse + 'px';
+                            wrapper.style.transition = '';
                         });
                     }
                 });

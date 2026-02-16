@@ -1084,10 +1084,19 @@ header.scrolled .bar {
     color: rgba(255, 255, 255, 0.92);
 }
 
-.testimonial-text .text-full,
 .testimonial-text .text-short {
     color: inherit;
-    transition: opacity 0.35s ease;
+    transition: opacity 0.25s ease;
+}
+
+.testimonial-text .text-full {
+    color: inherit;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.testimonial-card.expanded .testimonial-text .text-full {
+    opacity: 1;
 }
 
 .testimonial-text.expanded .text-short {
@@ -1100,7 +1109,7 @@ header.scrolled .bar {
 .testimonial-expand-wrapper {
     overflow: hidden;
     max-height: 0;
-    transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: max-height 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
 }
 
 .testimonial-expand-wrapper .text-full {
@@ -4527,22 +4536,26 @@ header.header-scrolled .logo img {
     display: flex;
     flex-direction: row;
     overflow-x: auto;
+    overflow-y: hidden;
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
     gap: 2rem;
-    padding: 1rem 0 2rem;
+    padding: 1rem 0 0;
     scrollbar-width: none;
     -ms-overflow-style: none;
+    width: 100%;
 }
 
 .success-stories-grid::-webkit-scrollbar {
     display: none;
 }
 
+/* Eine Karte = ein Panel (volle sichtbare Breite; gap zwischen Panels) */
 .success-stories-grid .case-study-card {
     scroll-snap-align: start;
     scroll-snap-stop: always;
-    flex-shrink: 0;
+    flex: 0 0 100%;
+    width: 100%;
     min-width: 100%;
     box-sizing: border-box;
 }
@@ -4693,7 +4706,7 @@ header.header-scrolled .logo img {
 
 .success-stories-cta {
     text-align: center;
-    margin-top: 3rem;
+    margin-top: 1.5rem;
     padding: 2rem;
     background: var(--color-white);
     border-radius: var(--radius-md);
