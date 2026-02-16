@@ -5061,8 +5061,7 @@ header.header-scrolled .logo img {
     font-size: 3rem;
     line-height: 1;
     font-family: monospace;
-    /* Or use an icon */
-    transform: scaleX(1.5);
+    transform: rotate(90deg) scaleY(1.5);
     opacity: 0.5;
 }
 
