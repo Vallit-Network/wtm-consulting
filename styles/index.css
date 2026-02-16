@@ -5104,14 +5104,14 @@ header.header-scrolled .logo img {
     display: flex;
     align-items: stretch;
     justify-content: center;
-    flex-wrap: wrap;
-    gap: 0.75rem;
+    flex-wrap: nowrap;
+    gap: 0.5rem;
 }
 
 .modular-module {
-    flex: 1 1 200px;
-    min-width: 180px;
-    max-width: 260px;
+    flex: 1 1 0;
+    min-width: 0;
+    max-width: 240px;
     background: var(--color-white);
     border-radius: var(--radius-md);
     box-shadow: var(--shadow-sm);
@@ -5160,26 +5160,27 @@ header.header-scrolled .logo img {
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
-    gap: 0.35rem;
+    gap: 0.25rem;
+    min-width: 2.5rem;
 }
 
 .modular-arrow {
     display: flex;
     align-items: center;
     color: var(--color-primary);
-    font-size: 1.5rem;
-    opacity: 0.6;
+    font-size: 1.25rem;
+    opacity: 0.7;
 }
 
 .modular-transfer {
     display: inline-block;
-    font-size: 0.7rem;
+    font-size: 0.6rem;
     font-weight: 600;
     text-transform: uppercase;
-    letter-spacing: 0.06em;
+    letter-spacing: 0.05em;
     color: var(--color-text-light);
     background: color-mix(in srgb, var(--color-primary) 12%, var(--color-white));
-    padding: 0.25rem 0.6rem;
+    padding: 0.2rem 0.45rem;
     border-radius: 999px;
     white-space: nowrap;
 }
