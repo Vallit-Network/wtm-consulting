@@ -995,104 +995,137 @@ header.scrolled .bar {
    TESTIMONIALS SECTION
    ============================================ */
 #testimonials {
-    background: linear-gradient(145deg, var(--color-deep-blue) 0%, #1a2a3a 100%);
-    color: var(--color-white);
-}
-
-#testimonials h2 {
-    color: var(--color-white);
+    background: var(--color-cream);
+    color: var(--color-text);
 }
 
 .carousel-container {
+    position: relative;
     max-width: 800px;
     margin: 0 auto;
-    position: relative;
     overflow: hidden;
+    padding: 0 0 2rem 0;
 }
 
 .carousel-track {
     display: flex;
-    transition: transform 0.5s ease;
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .testimonial-card {
     min-width: 100%;
-    padding: 0 var(--spacing-md);
+    /* Dark Blue Card Style */
+    background: var(--color-deep-blue);
+    color: var(--color-white);
+
+    padding: 3rem 2.5rem;
+    border-radius: var(--radius-lg);
+    position: relative;
+    /* Center alignment for standard look */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-align: center;
+    box-shadow: var(--shadow-lg);
+
+    /* Ensure height fits content */
+    min-height: 350px;
+    justify-content: center;
 }
 
 .testimonial-quote {
-    font-size: 4rem;
+    font-family: var(--font-heading);
+    font-size: 5rem;
     line-height: 1;
     color: var(--color-primary);
-    margin-bottom: 1rem;
-    font-family: var(--font-heading);
+    opacity: 0.3;
+    position: absolute;
+    top: 1rem;
+    left: 2rem;
 }
 
 .testimonial-text {
-    font-size: 1.35rem;
-    font-style: italic;
+    font-size: 1.25rem;
+    line-height: 1.8;
     margin-bottom: 2rem;
-    color: rgba(255, 255, 255, 0.9);
-    line-height: 1.6;
-    font-family: var(--font-heading);
-    font-weight: 400;
+    font-style: italic;
+    position: relative;
+    z-index: 1;
+    max-width: 90%;
+}
+
+.read-more-btn {
+    background: none;
+    border: none;
+    color: var(--color-primary);
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 0.95rem;
+    margin-top: -1rem;
+    margin-bottom: 1.5rem;
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 4px;
+    transition: color 0.2s;
+}
+
+.read-more-btn:hover {
+    color: var(--color-primary-light);
 }
 
 .author-info {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
     gap: 1rem;
-}
-
-.author-avatar {
-    width: 55px;
-    height: 55px;
-    border-radius: 50%;
-    background: var(--color-secondary-light);
-    background-size: cover;
-    background-position: center;
-    border: 2px solid var(--color-primary);
+    margin-top: auto;
 }
 
 .author-details {
-    text-align: left;
+    display: flex;
+    flex-direction: column;
 }
 
 .author-name {
-    font-weight: 600;
+    font-weight: 700;
+    font-size: 1.1rem;
     color: var(--color-white);
-    display: block;
 }
 
 .author-role {
-    color: rgba(255, 255, 255, 0.6);
     font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.7);
+    margin-top: 0.25rem;
 }
 
+/* Navigation Dots */
 .carousel-nav {
     display: flex;
     justify-content: center;
-    gap: 0.5rem;
-    margin-top: 2rem;
+    gap: 0.75rem;
+    margin-top: 1.5rem;
 }
 
 .dot {
     width: 10px;
     height: 10px;
     border-radius: 50%;
-    background-color: rgba(255, 255, 255, 0.3);
+    background: rgba(0, 0, 0, 0.2);
     cursor: pointer;
-    transition: all var(--transition-fast);
-}
-
-.dot:hover {
-    background-color: rgba(255, 255, 255, 0.5);
+    transition: all 0.3s ease;
 }
 
 .dot.active {
-    background-color: var(--color-primary);
+    background: var(--color-accent);
+    transform: scale(1.3);
+}
+
+.bg-dark .dot {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.bg-dark .dot.active {
+    background: var(--color-primary);
 }
 
 /* ============================================
@@ -2748,6 +2781,32 @@ footer::before {
 
 .morph-image:nth-child(4).active {
     animation: kb-zoom-down 12s ease-in-out forwards;
+}
+
+.morph-image:nth-child(5).active {
+    animation: kb-zoom-left 12s ease-in-out forwards;
+}
+
+.morph-image:nth-child(6).active {
+    animation: kb-zoom-right 12s ease-in-out forwards;
+}
+
+.morph-image:nth-child(7).active {
+    animation: kb-zoom-up 12s ease-in-out forwards;
+}
+
+.morph-image:nth-child(8).active {
+    animation: kb-zoom-down 12s ease-in-out forwards;
+}
+
+/* Hero gallery: clickable, no visible buttons */
+.hero-gallery-clickable {
+    cursor: pointer;
+}
+
+.hero-gallery-clickable:focus {
+    outline: 2px solid rgba(255, 255, 255, 0.4);
+    outline-offset: 4px;
 }
 
 /* Keyframes: Slow, subtle pan/zoom */

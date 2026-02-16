@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <li><a href="${getLink('#haltung')}" class="nav-link">Haltung</a></li>
                     <li class="nav-dropdown">
                         <a href="${getLink('#angebote')}" class="nav-link nav-dropdown-toggle">
-                            Angebote
+                            Angebot
                             <svg class="dropdown-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <polyline points="6 9 12 15 18 9"></polyline>
                             </svg>
@@ -74,6 +74,7 @@ document.addEventListener('DOMContentLoaded', () => {
                             </svg>
                         </a>
                         <div class="nav-dropdown-menu">
+                            <a href="${getLink('#success-stories')}">Success Stories</a>
                             <a href="${getLink('#testimonials')}">Stimmen</a>
                         </div>
                     </li>
@@ -526,53 +527,117 @@ document.addEventListener('DOMContentLoaded', () => {
     // =========================================
     // TESTIMONIAL CAROUSEL
     // =========================================
-    const track = document.getElementById('testimonial-track');
-    const cards = document.querySelectorAll('.testimonial-card');
-    const navContainer = document.getElementById('testimonial-nav');
+    const testimonialTrack = document.getElementById('testimonial-track');
+    const testimonialNav = document.getElementById('testimonial-nav');
 
-    if (track && cards.length > 0 && navContainer) {
-        let currentIndex = 0;
-        let autoplayInterval;
+    if (testimonialTrack && testimonialNav && window.testimonialsData) {
+        // Render Testimonials
+        window.testimonialsData.forEach((t, index) => {
+            // Logic for "Read More"
+            const maxChars = 180;
+            const isLong = t.text.length > maxChars;
+            const shortText = isLong ? t.text.substring(0, maxChars) + '...' : t.text;
 
-        // Create navigation dots
-        cards.forEach((_, index) => {
-            const dot = document.createElement('div');
-            dot.classList.add('dot');
-            if (index === 0) dot.classList.add('active');
+            const card = document.createElement('div');
+            card.classList.add('testimonial-card');
 
-            dot.addEventListener('click', () => {
-                goToSlide(index);
-                resetAutoplay();
-            });
+            // Create HTML structure
+            let textHtml = `
+                <p class="testimonial-text">
+                    <span class="text-short">${shortText}</span>
+                    ${isLong ? `<span class="text-full" style="display:none;">${t.text}</span>` : ''}
+                </p>
+                ${isLong ? `<button class="read-more-btn">Weiterlesen</button>` : ''}
+            `;
 
-            navContainer.appendChild(dot);
+            card.innerHTML = `
+                <div class="testimonial-quote">"</div>
+                ${textHtml}
+                <div class="author-info">
+                    <div class="author-details">
+                        <span class="author-name">${t.name}</span>
+                        ${t.role ? `<span class="author-role">${t.role}</span>` : ''}
+                        ${t.title ? `<span class="author-title" style="display:block; font-size: 0.85rem; margin-top: 4px; opacity: 0.8;">${t.title}</span>` : ''}
+                    </div>
+                </div>
+            `;
+
+            // Read More Event Listener
+            if (isLong) {
+                const btn = card.querySelector('.read-more-btn');
+                const shortSpan = card.querySelector('.text-short');
+                const fullSpan = card.querySelector('.text-full');
+
+                btn.addEventListener('click', (e) => {
+                    e.stopPropagation(); // Prevent carousel navigation if needed
+                    if (fullSpan.style.display === 'none') {
+                        fullSpan.style.display = 'inline';
+                        shortSpan.style.display = 'none';
+                        btn.textContent = 'Weniger anzeigen';
+                        card.classList.add('expanded');
+                    } else {
+                        fullSpan.style.display = 'none';
+                        shortSpan.style.display = 'inline';
+                        btn.textContent = 'Weiterlesen';
+                        card.classList.remove('expanded');
+                    }
+                });
+            }
+
+            testimonialTrack.appendChild(card);
         });
 
-        const dots = document.querySelectorAll('.dot');
+        // Initialize Carousel Logic
+        const cards = testimonialTrack.querySelectorAll('.testimonial-card');
 
-        function goToSlide(index) {
-            currentIndex = index;
-            track.style.transform = `translateX(-${index * 100}%)`;
+        if (cards.length > 0) {
+            let currentIndex = 0;
+            let autoplayInterval;
 
-            dots.forEach(d => d.classList.remove('active'));
-            dots[currentIndex].classList.add('active');
-        }
+            // Create navigation dots
+            cards.forEach((_, index) => {
+                const dot = document.createElement('div');
+                dot.classList.add('dot');
+                if (index === 0) dot.classList.add('active');
 
-        function nextSlide() {
-            const nextIndex = (currentIndex + 1) % cards.length;
-            goToSlide(nextIndex);
-        }
+                dot.addEventListener('click', () => {
+                    goToSlide(index);
+                    resetAutoplay();
+                });
 
-        function startAutoplay() {
-            autoplayInterval = setInterval(nextSlide, 5000);
-        }
+                testimonialNav.appendChild(dot);
+            });
 
-        function resetAutoplay() {
-            clearInterval(autoplayInterval);
+            const dots = document.querySelectorAll('.dot');
+
+            function goToSlide(index) {
+                currentIndex = index;
+                testimonialTrack.style.transform = `translateX(-${index * 100}%)`;
+
+                dots.forEach(d => d.classList.remove('active'));
+                dots[currentIndex].classList.add('active');
+            }
+
+            function nextSlide() {
+                const nextIndex = (currentIndex + 1) % cards.length;
+                goToSlide(nextIndex);
+            }
+
+            function startAutoplay() {
+                autoplayInterval = setInterval(nextSlide, 8000); // 8 seconds for reading
+            }
+
+            function resetAutoplay() {
+                clearInterval(autoplayInterval);
+                startAutoplay();
+            }
+
+            // Pause on hover
+            testimonialTrack.addEventListener('mouseenter', () => clearInterval(autoplayInterval));
+            testimonialTrack.addEventListener('mouseleave', startAutoplay);
+
             startAutoplay();
         }
-
-        startAutoplay();
     }
 
     // =========================================
@@ -647,46 +712,42 @@ document.addEventListener('DOMContentLoaded', () => {
     const modalBackdrop = document.querySelector('.modal-backdrop');
 
     // =========================================
-    // HERO MORPHING GALLERY
+    // HERO GALLERY – CLICK TO NEXT (no buttons, clean)
     // =========================================
-    function initMorphingGallery() {
+    function initHeroGallery() {
+        const container = document.getElementById('hero-gallery');
         const morphImages = document.querySelectorAll('.morph-image');
-        if (morphImages.length === 0) return;
+        if (!container || morphImages.length === 0) return;
 
         let currentIndex = 0;
         let zIndex = 1;
-        const displayTime = 8000; // Time each image is displayed
-        const fadeTime = 2000;    // Crossfade duration (matches CSS)
+        const fadeTime = 1200;
 
-        // Initial setup: first image is active
-        morphImages.forEach((img, idx) => {
-            img.style.zIndex = idx === 0 ? zIndex : 0;
-            if (idx === 0) img.classList.add('active');
-        });
-
-        setInterval(() => {
+        function goToNext() {
             const nextIndex = (currentIndex + 1) % morphImages.length;
             const currentImg = morphImages[currentIndex];
             const nextImg = morphImages[nextIndex];
 
-            // Increase z-index so next image is on top
             zIndex++;
             nextImg.style.zIndex = zIndex;
-
-            // Start crossfade: Add active to next (triggers fade in + Ken Burns)
             nextImg.classList.add('active');
 
-            // After fade completes, remove active from current
-            // Note: We don't reset z-index immediately to prevent flickering
             setTimeout(() => {
                 currentImg.classList.remove('active');
                 currentIndex = nextIndex;
             }, fadeTime);
+        }
 
-        }, displayTime);
+        container.addEventListener('click', goToNext);
+        container.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                goToNext();
+            }
+        });
     }
 
-    initMorphingGallery();
+    initHeroGallery();
 
     // Category configuration - Colors match mindmap section
     const categoryConfig = {
