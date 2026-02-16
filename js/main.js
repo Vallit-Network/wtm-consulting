@@ -661,6 +661,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     }
                 });
                 }
+            }
 
             testimonialTrack.appendChild(card);
         });
