@@ -440,8 +440,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // =========================================
     // TRAINING CAROUSEL LOGIC
     // =========================================
-    const carouselPrev = document.querySelector('.carousel-btn.prev');
-    const carouselNext = document.querySelector('.carousel-btn.next');
+    const carouselPrev = document.querySelector('#trainings-container .carousel-btn.prev');
+    const carouselNext = document.querySelector('#trainings-container .carousel-btn.next');
 
     if (carouselPrev && carouselNext && seminarGrid) {
         const getCardWidth = () => {
@@ -500,6 +500,49 @@ document.addEventListener('DOMContentLoaded', () => {
             setTimeout(updateArrows, 100);
         });
         observer.observe(seminarGrid, { childList: true });
+    }
+
+    // =========================================
+    // SUCCESS STORIES CAROUSEL LOGIC
+    // =========================================
+    const successGrid = document.getElementById('success-stories-grid');
+    const successPrev = document.querySelector('#success-stories .carousel-btn.prev');
+    const successNext = document.querySelector('#success-stories .carousel-btn.next');
+
+    if (successGrid && successPrev && successNext) {
+        const getSuccessCardWidth = () => {
+            const style = window.getComputedStyle(successGrid);
+            const gap = parseFloat(style.gap) || 32;
+            return successGrid.clientWidth + gap;
+        };
+
+        const updateSuccessArrows = () => {
+            if (successGrid.scrollLeft <= 5) {
+                successPrev.style.opacity = '0';
+                successPrev.style.pointerEvents = 'none';
+            } else {
+                successPrev.style.opacity = '1';
+                successPrev.style.pointerEvents = 'all';
+            }
+            if (Math.ceil(successGrid.scrollLeft + successGrid.clientWidth) >= successGrid.scrollWidth - 5) {
+                successNext.style.opacity = '0';
+                successNext.style.pointerEvents = 'none';
+            } else {
+                successNext.style.opacity = '1';
+                successNext.style.pointerEvents = 'all';
+            }
+        };
+
+        successNext.addEventListener('click', () => {
+            successGrid.scrollBy({ left: getSuccessCardWidth(), behavior: 'smooth' });
+        });
+        successPrev.addEventListener('click', () => {
+            successGrid.scrollBy({ left: -getSuccessCardWidth(), behavior: 'smooth' });
+        });
+
+        successGrid.addEventListener('scroll', updateSuccessArrows);
+        window.addEventListener('resize', updateSuccessArrows);
+        setTimeout(updateSuccessArrows, 100);
     }
 
     // =========================================

@@ -4508,12 +4508,42 @@ header.header-scrolled .logo img {
 /* ============================================
    SUCCESS STORIES SECTION
    ============================================ */
-.success-stories-grid {
+.success-stories-carousel-wrapper {
+    position: relative;
     max-width: 900px;
     margin: 0 auto;
+    padding: 0 3rem;
+}
+
+#success-stories .success-stories-carousel-wrapper .carousel-btn.prev {
+    left: 0.5rem;
+}
+
+#success-stories .success-stories-carousel-wrapper .carousel-btn.next {
+    right: 0.5rem;
+}
+
+.success-stories-grid {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
     gap: 2rem;
+    padding: 1rem 0 2rem;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.success-stories-grid::-webkit-scrollbar {
+    display: none;
+}
+
+.success-stories-grid .case-study-card {
+    scroll-snap-align: start;
+    flex-shrink: 0;
+    min-width: 100%;
+    box-sizing: border-box;
 }
 
 .case-study-card {
