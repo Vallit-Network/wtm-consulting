@@ -741,43 +741,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
                     } else {
                         // COLLAPSE
-                        // 1. Measure current full height
-                        conststartHeight = container.offsetHeight;
+                        const startHeight = container.offsetHeight;
 
-                        // 2. Set explicit height to animate FROM
+                        // Set explicit height to animate FROM
                         container.style.height = `${startHeight}px`;
 
                         // Force reflow
                         container.offsetHeight;
 
-                        // 3. Add class to define target state (needed for CSS variables if used, or next step)
-                        container.classList.add('collapsed');
-
-                        // 4. Animate to collapsed height (defined in CSS, e.g. 120px)
-                        // We need to clear the inline style to let CSS take over OR animate to specific pixel value
-                        // Inspecting CSS, we will set specific height there. 
-                        // To allow smooth transition, we often need to set the target height explicitly in JS if it's not a fixed value,
-                        // but 'collapsed' class usually has a max-height or height. 
-                        // Let's assume CSS has a specific height for .collapsed.
-                        // Ideally: remove inline height style? No, that jumps.
-                        // We need to animate TO the collapsed height.
-                        container.style.height = ''; // This might jump if we rely solely on class. 
-                        // BETTER APPROACH for smoothness:
-                        // Animate to explicitly known collapsed height (e.g. 110px defined in CSS)
-                        // Let's rely on the CSS transition by removing the inline height? 
-                        // If we remove inline height, it snaps to CSS height. If CSS has transition, it *should* work 
-                        // IF we are transitioning from explicit to explicit (or explicit to nothing if CSS has it).
-                        // However, 'height: auto' to 'height: 100px' doesn't transition.
-                        // So we went 'auto' -> 'fixed' (start) -> remove inline?
-                        // If we verify the CSS handles .collapsed { height: 110px }, then:
-
-                        // Re-apply explicit height of current (full)
-                        container.style.height = `${container.scrollHeight}px`;
-                        container.offsetHeight; // Reflow
-
                         // Set target height (collapsed size)
-                        // We can hardcode or read from a computed style. Let's aim for 110px as per likely CSS
-                        container.style.height = '110px';
+                        // MATCH CSS: .testimonial-text-container.collapsed { height: 110px; }
+                        const collapsedHeight = 110;
+
+                        // Animate to collapsed height
+                        container.style.height = `${collapsedHeight}px`;
+
+                        // Add class immediately so fade overlay appears (it has opacity transition)
+                        container.classList.add('collapsed');
 
                         // Update button
                         card.classList.remove('expanded');
@@ -785,9 +765,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         btnText.textContent = 'Mehr anzeigen';
 
                         container.addEventListener('transitionend', function onEnd() {
-                            // Optionally clear height if CSS handles .collapsed height perfectly
-                            // But keeping it inline is fine if consistent.
-                            // Actually, best to clear it so CSS controls the "110px" allowing responsive changes if needed.
+                            // After transition, clear inline height so CSS class controls it
                             container.style.height = '';
                             container.removeEventListener('transitionend', onEnd);
                         }, { once: true });

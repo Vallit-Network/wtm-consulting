@@ -1041,7 +1041,7 @@ header.scrolled .bar {
     box-shadow: var(--shadow-md);
     overflow: hidden;
 
-    min-height: 350px;
+    min-height: auto;
     justify-content: center;
     transition: box-shadow var(--transition-normal);
 }
@@ -1124,21 +1124,11 @@ header.scrolled .bar {
     left: 0;
     right: 0;
     height: 80px;
-    background: linear-gradient(to bottom, rgba(30, 30, 30, 0), rgba(30, 30, 30, 1));
+    background: linear-gradient(to bottom, rgba(44, 62, 80, 0), var(--color-deep-blue));
     pointer-events: none;
     opacity: 0;
     transition: opacity 0.3s ease;
 }
-
-/* Adjust background color to match card background if needed, 
-   assuming card is dark or has specific bg. 
-   The previous card bg was rgba(255, 255, 255, 0.04) on dark bg?
-   Let's check card background. It is rgba(255, 255, 255, 0.04).
-   So the fade needs to match the SECTION background, likely dark.
-   If section is bg-cream, we need cream fade.
-   But Wait, the design seems to be dark mode or similar? 
-   Let's check the section background color.
-*/
 
 .testimonial-text-container.collapsed .testimonial-fade-overlay {
     opacity: 1;
@@ -1159,6 +1149,8 @@ header.scrolled .bar {
     border-radius: 50px;
     transition: all 0.3s ease;
     background: rgba(255, 255, 255, 0.05);
+    position: relative;
+    z-index: 10;
 }
 
 .read-more-btn:hover {
@@ -4581,6 +4573,8 @@ header.header-scrolled .logo img {
     width: 100%;
     /* Premium easing: Fast start, slow end */
     transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+    align-items: stretch;
+    /* Ensure all cards have same height */
 }
 
 /* Eine Karte = ein Panel (volle sichtbare Breite) */
@@ -4589,11 +4583,10 @@ header.header-scrolled .logo img {
     width: 100%;
     min-width: 100%;
     box-sizing: border-box;
-    /* Optional: Add some margin if you want spacing between slides, 
-       but for a 100% width carousel, usually padding on container 
-       or internal margin on card content is better. 
-       Here we'll use a small gap logic if needed, but flex gap works best in track.
-    */
+    height: auto;
+    /* Allow height to stretch */
+    display: flex;
+    flex-direction: column;
 }
 
 .case-study-card {
@@ -4602,6 +4595,8 @@ header.header-scrolled .logo img {
     overflow: hidden;
     box-shadow: var(--shadow-lg);
     border: 1px solid var(--color-border);
+    height: 100%;
+    /* Ensure it fills parent height */
 }
 
 .case-study-card.featured {
@@ -4612,6 +4607,7 @@ header.header-scrolled .logo img {
     padding: 1.5rem 2rem;
     background: linear-gradient(135deg, var(--color-cream) 0%, var(--color-off-white) 100%);
     border-bottom: 1px solid var(--color-border);
+    flex-shrink: 0;
 }
 
 .client-badge {
@@ -4634,6 +4630,10 @@ header.header-scrolled .logo img {
 
 .case-study-content {
     padding: 2rem;
+    flex-grow: 1;
+    /* Push footer down */
+    display: flex;
+    flex-direction: column;
 }
 
 .case-study-content h3 {
