@@ -546,11 +546,14 @@ document.addEventListener('DOMContentLoaded', () => {
             const card = document.createElement('div');
             card.classList.add('testimonial-card');
 
-            // Create HTML structure
+            // Wrapper für smooth Aufklapp-Animation (max-height transition)
+            const expandWrapper = isLong
+                ? `<div class="testimonial-expand-wrapper" aria-hidden="true"><span class="text-full">${t.text}</span></div>`
+                : '';
             let textHtml = `
                 <p class="testimonial-text">
                     <span class="text-short">${shortText}</span>
-                    ${isLong ? `<span class="text-full" style="display:none;">${t.text}</span>` : ''}
+                    ${expandWrapper}
                 </p>
                 ${isLong ? `<button type="button" class="read-more-btn" aria-expanded="false">Zeige mehr</button>` : ''}
             `;
@@ -567,26 +570,41 @@ document.addEventListener('DOMContentLoaded', () => {
                 </div>
             `;
 
-            // Read More Event Listener
+            // Read More – smooth Aufklapp-Animation (Premium)
             if (isLong) {
                 const btn = card.querySelector('.read-more-btn');
+                const textBlock = card.querySelector('.testimonial-text');
                 const shortSpan = card.querySelector('.text-short');
+                const wrapper = card.querySelector('.testimonial-expand-wrapper');
                 const fullSpan = card.querySelector('.text-full');
 
                 btn.addEventListener('click', (e) => {
-                    e.stopPropagation(); // Prevent carousel navigation if needed
-                    if (fullSpan.style.display === 'none') {
-                        fullSpan.style.display = 'inline';
-                        shortSpan.style.display = 'none';
-                        btn.textContent = 'Zeige weniger';
-                        btn.setAttribute('aria-expanded', 'true');
-                        card.classList.add('expanded');
-                    } else {
-                        fullSpan.style.display = 'none';
-                        shortSpan.style.display = 'inline';
+                    e.stopPropagation();
+                    const isExpanded = card.classList.contains('expanded');
+
+                    if (isExpanded) {
+                        const currentHeight = wrapper.scrollHeight;
+                        wrapper.style.maxHeight = currentHeight + 'px';
+                        textBlock.classList.remove('expanded');
                         btn.textContent = 'Zeige mehr';
                         btn.setAttribute('aria-expanded', 'false');
                         card.classList.remove('expanded');
+                        requestAnimationFrame(() => {
+                            wrapper.style.maxHeight = '0';
+                        });
+                    } else {
+                        const height = fullSpan.scrollHeight;
+                        wrapper.style.maxHeight = height + 'px';
+                        textBlock.classList.add('expanded');
+                        btn.textContent = 'Zeige weniger';
+                        btn.setAttribute('aria-expanded', 'true');
+                        card.classList.add('expanded');
+                        wrapper.addEventListener('transitionend', function onEnd() {
+                            if (card.classList.contains('expanded')) {
+                                wrapper.style.maxHeight = '';
+                            }
+                            wrapper.removeEventListener('transitionend', onEnd);
+                        }, { once: true });
                     }
                 });
             }
