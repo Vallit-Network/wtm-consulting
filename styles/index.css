@@ -1033,6 +1033,11 @@ header.scrolled .bar {
     justify-content: center;
 }
 
+.testimonial-card.expanded {
+    min-height: auto;
+    padding-bottom: 3rem;
+}
+
 .testimonial-quote {
     font-family: var(--font-heading);
     font-size: 5rem;
@@ -1073,6 +1078,11 @@ header.scrolled .bar {
     color: var(--color-primary-light);
 }
 
+.read-more-btn:focus {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+}
+
 .author-info {
     display: flex;
     flex-direction: column;
@@ -1106,13 +1116,16 @@ header.scrolled .bar {
     margin-top: 1.5rem;
 }
 
-.dot {
+.carousel-nav .dot {
     width: 10px;
     height: 10px;
     border-radius: 50%;
     background: rgba(0, 0, 0, 0.2);
     cursor: pointer;
     transition: all 0.3s ease;
+    border: 0;
+    padding: 0;
+    font: inherit;
 }
 
 .dot.active {
@@ -5065,7 +5078,26 @@ header.header-scrolled .logo img {
     font-weight: 700;
     color: var(--color-deep-blue);
     text-align: center;
-    margin-bottom: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.modular-program-example-strap {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    text-align: center;
+    margin: 0 0 0.25rem;
+    letter-spacing: 0.02em;
+}
+
+.modular-program-example-desc {
+    font-size: 0.9rem;
+    color: var(--color-text-light);
+    text-align: center;
+    margin: 0 0 1.5rem;
+    max-width: 36em;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .modular-program-modules {
@@ -5122,13 +5154,34 @@ header.header-scrolled .logo img {
     color: var(--color-text-light);
 }
 
+.modular-transfer-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    gap: 0.35rem;
+}
+
 .modular-arrow {
     display: flex;
     align-items: center;
     color: var(--color-primary);
     font-size: 1.5rem;
     opacity: 0.6;
-    flex-shrink: 0;
+}
+
+.modular-transfer {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--color-text-light);
+    background: color-mix(in srgb, var(--color-primary) 12%, var(--color-white));
+    padding: 0.25rem 0.6rem;
+    border-radius: 999px;
+    white-space: nowrap;
 }
 
 /* --- Right: The Stack (Target) --- */
@@ -5305,6 +5358,10 @@ header.header-scrolled .logo img {
     .modular-module {
         max-width: 100%;
         width: 100%;
+    }
+
+    .modular-transfer-wrap {
+        padding: 0.5rem 0;
     }
 
     .modular-arrow {

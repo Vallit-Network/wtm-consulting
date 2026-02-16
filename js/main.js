@@ -531,12 +531,17 @@ document.addEventListener('DOMContentLoaded', () => {
     const testimonialNav = document.getElementById('testimonial-nav');
 
     if (testimonialTrack && testimonialNav && window.testimonialsData) {
+        // Truncate to first 1-2 sentences for "Zeige mehr" / "Zeige weniger"
+        function getShortText(text, maxSentences = 2) {
+            const sentences = text.match(/[^.!?]+[.!?]+/g) || [text];
+            if (sentences.length <= maxSentences) return { short: text, isLong: false };
+            const short = sentences.slice(0, maxSentences).join(' ').trim();
+            return { short: short + '...', isLong: true };
+        }
+
         // Render Testimonials
         window.testimonialsData.forEach((t, index) => {
-            // Logic for "Read More"
-            const maxChars = 180;
-            const isLong = t.text.length > maxChars;
-            const shortText = isLong ? t.text.substring(0, maxChars) + '...' : t.text;
+            const { short: shortText, isLong } = getShortText(t.text);
 
             const card = document.createElement('div');
             card.classList.add('testimonial-card');
@@ -547,7 +552,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <span class="text-short">${shortText}</span>
                     ${isLong ? `<span class="text-full" style="display:none;">${t.text}</span>` : ''}
                 </p>
-                ${isLong ? `<button class="read-more-btn">Weiterlesen</button>` : ''}
+                ${isLong ? `<button type="button" class="read-more-btn" aria-expanded="false">Zeige mehr</button>` : ''}
             `;
 
             card.innerHTML = `
@@ -573,12 +578,14 @@ document.addEventListener('DOMContentLoaded', () => {
                     if (fullSpan.style.display === 'none') {
                         fullSpan.style.display = 'inline';
                         shortSpan.style.display = 'none';
-                        btn.textContent = 'Weniger anzeigen';
+                        btn.textContent = 'Zeige weniger';
+                        btn.setAttribute('aria-expanded', 'true');
                         card.classList.add('expanded');
                     } else {
                         fullSpan.style.display = 'none';
                         shortSpan.style.display = 'inline';
-                        btn.textContent = 'Weiterlesen';
+                        btn.textContent = 'Zeige mehr';
+                        btn.setAttribute('aria-expanded', 'false');
                         card.classList.remove('expanded');
                     }
                 });
@@ -596,8 +603,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Create navigation dots
             cards.forEach((_, index) => {
-                const dot = document.createElement('div');
+                const dot = document.createElement('button');
+                dot.type = 'button';
                 dot.classList.add('dot');
+                dot.setAttribute('aria-label', `Testimonial ${index + 1} anzeigen`);
                 if (index === 0) dot.classList.add('active');
 
                 dot.addEventListener('click', () => {
@@ -608,7 +617,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 testimonialNav.appendChild(dot);
             });
 
-            const dots = document.querySelectorAll('.dot');
+            const dots = testimonialNav.querySelectorAll('.dot');
 
             function goToSlide(index) {
                 currentIndex = index;
