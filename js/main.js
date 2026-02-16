@@ -506,97 +506,124 @@ document.addEventListener('DOMContentLoaded', () => {
     // SUCCESS STORIES CAROUSEL
     // Ein Klick = ein Panel. Scroll-Ziel = echte Kartenposition (offsetLeft).
     // =========================================
-    const successGrid = document.getElementById('success-stories-grid');
+    // =========================================
+    // SUCCESS STORIES CAROUSEL (Transform-Based)
+    // =========================================
+    const successTrack = document.getElementById('success-stories-track');
     const successPrev = document.querySelector('#success-stories .carousel-btn.prev');
     const successNext = document.querySelector('#success-stories .carousel-btn.next');
 
-    if (successGrid && successPrev && successNext) {
-        const cards = Array.from(successGrid.querySelectorAll('.case-study-card'));
+    if (successTrack && successPrev && successNext) {
+        const cards = Array.from(successTrack.querySelectorAll('.case-study-card'));
         const totalSlides = cards.length;
         let currentIndex = 0;
-        let isScrolling = false;
 
-        // #region agent log
-        (function logInit() {
-            const cardPos = cards.map((c, i) => ({ i, offsetLeft: c.offsetLeft, offsetWidth: c.offsetWidth }));
-            fetch('http://127.0.0.1:7242/ingest/a97a0e80-3a7d-4915-87e5-a0860b84d4b1', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ location: 'main.js:success-stories-init', message: 'carousel init', data: { totalSlides, gridClientWidth: successGrid.clientWidth, gridScrollWidth: successGrid.scrollWidth, cardPos }, hypothesisId: 'D,B', timestamp: Date.now() }) }).catch(() => {});
-        })();
-        // #endregion
+        // Touch state
+        let startX = 0;
+        let currentX = 0;
+        let isDragging = false;
+        let startTranslate = 0;
+        let animationID;
 
-        const scrollToSlide = (index) => {
-            if (isScrolling || index < 0 || index >= totalSlides) return;
-            const card = cards[index];
-            if (!card) return;
-            isScrolling = true;
-            currentIndex = index;
-            const targetLeft = card.offsetLeft;
-            // #region agent log
-            fetch('http://127.0.0.1:7242/ingest/a97a0e80-3a7d-4915-87e5-a0860b84d4b1', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ location: 'main.js:scrollToSlide', message: 'scrollToSlide called', data: { index, targetLeft, cardOffsetLeft: card.offsetLeft, cardOffsetWidth: card.offsetWidth }, hypothesisId: 'A,E', timestamp: Date.now() }) }).catch(() => {});
-            // #endregion
-            successGrid.scrollTo({ left: targetLeft, behavior: 'smooth' });
-            updateSuccessArrows();
-            setTimeout(() => {
-                isScrolling = false;
-                // #region agent log
-                fetch('http://127.0.0.1:7242/ingest/a97a0e80-3a7d-4915-87e5-a0860b84d4b1', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ location: 'main.js:afterScroll', message: 'after smooth scroll', data: { scrollLeft: successGrid.scrollLeft, targetLeft, currentIndex }, hypothesisId: 'E', timestamp: Date.now() }) }).catch(() => {});
-                // #endregion
-            }, 400);
-        };
+        // Initialize positions
+        const updateSlidePosition = () => {
+            // Use percentage for responsive scaling (100% per slide)
+            const currentTranslate = currentIndex * -100;
+            // Apply transform
+            successTrack.style.transform = `translateX(${currentTranslate}%)`;
 
-        const updateSuccessArrows = () => {
+            // Update buttons
             successPrev.style.opacity = currentIndex <= 0 ? '0' : '1';
             successPrev.style.pointerEvents = currentIndex <= 0 ? 'none' : 'all';
+
             successNext.style.opacity = currentIndex >= totalSlides - 1 ? '0' : '1';
             successNext.style.pointerEvents = currentIndex >= totalSlides - 1 ? 'none' : 'all';
         };
 
-        const indexFromScrollLeft = () => {
-            const scrollLeft = successGrid.scrollLeft;
-            const viewportCenter = scrollLeft + successGrid.clientWidth / 2;
-            for (let i = 0; i < cards.length; i++) {
-                const start = cards[i].offsetLeft;
-                const end = start + cards[i].offsetWidth;
-                if (viewportCenter >= start && viewportCenter < end) return i;
+        // Navigation Clicks
+        successPrev.addEventListener('click', () => {
+            if (currentIndex > 0) {
+                currentIndex--;
+                updateSlidePosition();
             }
-            return scrollLeft < successGrid.clientWidth / 2 ? 0 : totalSlides - 1;
-        };
-
-        const syncIndexFromScroll = () => {
-            if (isScrolling) return;
-            const idx = indexFromScrollLeft();
-            // #region agent log
-            if (idx !== currentIndex) {
-                fetch('http://127.0.0.1:7242/ingest/a97a0e80-3a7d-4915-87e5-a0860b84d4b1', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ location: 'main.js:syncIndexFromScroll', message: 'sync changed index', data: { scrollLeft: successGrid.scrollLeft, viewportCenter: successGrid.scrollLeft + successGrid.clientWidth / 2, oldIndex: currentIndex, newIndex: idx }, hypothesisId: 'C', timestamp: Date.now() }) }).catch(() => {});
-            }
-            // #endregion
-            if (idx !== currentIndex) {
-                currentIndex = idx;
-                updateSuccessArrows();
-            }
-        };
+        });
 
         successNext.addEventListener('click', () => {
-            // #region agent log
-            fetch('http://127.0.0.1:7242/ingest/a97a0e80-3a7d-4915-87e5-a0860b84d4b1', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ location: 'main.js:nextClick', message: 'next clicked', data: { currentIndex, totalSlides }, hypothesisId: 'C,E', timestamp: Date.now() }) }).catch(() => {});
-            // #endregion
-            if (currentIndex < totalSlides - 1) scrollToSlide(currentIndex + 1);
-        });
-        successPrev.addEventListener('click', () => {
-            // #region agent log
-            fetch('http://127.0.0.1:7242/ingest/a97a0e80-3a7d-4915-87e5-a0860b84d4b1', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ location: 'main.js:prevClick', message: 'prev clicked', data: { currentIndex, totalSlides }, hypothesisId: 'C,E', timestamp: Date.now() }) }).catch(() => {});
-            // #endregion
-            if (currentIndex > 0) scrollToSlide(currentIndex - 1);
+            if (currentIndex < totalSlides - 1) {
+                currentIndex++;
+                updateSlidePosition();
+            }
         });
 
-        successGrid.addEventListener('scroll', syncIndexFromScroll);
-        window.addEventListener('resize', () => {
-            const idx = Math.min(currentIndex, totalSlides - 1);
-            const target = cards[idx] ? cards[idx].offsetLeft : 0;
-            successGrid.scrollTo({ left: target, behavior: 'auto' });
-            currentIndex = idx;
-            updateSuccessArrows();
+        // Touch Events (Mobile Swipe)
+        successTrack.addEventListener('touchstart', (e) => {
+            startX = e.touches[0].clientX;
+            isDragging = true;
+
+            // Disable transition for instant drag response
+            successTrack.style.transition = 'none';
+
+            // Cancel any momentum animation
+            cancelAnimationFrame(animationID);
+        }, { passive: true });
+
+        successTrack.addEventListener('touchmove', (e) => {
+            if (!isDragging) return;
+
+            const currentX = e.touches[0].clientX;
+            const diff = currentX - startX;
+
+            // Calculate percentage drag (approximate based on width)
+            // We use clientWidth to convert pixels to percentage
+            const containerWidth = successTrack.parentElement.clientWidth;
+            const percentDiff = (diff / containerWidth) * 100;
+
+            const currentTranslate = (currentIndex * -100) + percentDiff;
+
+            // Add resistance at edges
+            if ((currentIndex === 0 && percentDiff > 0) ||
+                (currentIndex === totalSlides - 1 && percentDiff < 0)) {
+                successTrack.style.transform = `translateX(${currentTranslate * 0.4}%)`; // Resistance
+            } else {
+                successTrack.style.transform = `translateX(${currentTranslate}%)`;
+            }
+        }, { passive: true });
+
+        successTrack.addEventListener('touchend', (e) => {
+            isDragging = false;
+            const movedBy = e.changedTouches[0].clientX - startX;
+            const containerWidth = successTrack.parentElement.clientWidth;
+
+            // Restore transition
+            successTrack.style.transition = 'transform 0.5s cubic-bezier(0.2, 1, 0.3, 1)'; // Smooth snap
+
+            // Threshold to change slide (15% of width or quick swipe)
+            if (movedBy < -50 || movedBy < -containerWidth * 0.15) {
+                if (currentIndex < totalSlides - 1) currentIndex++;
+            } else if (movedBy > 50 || movedBy > containerWidth * 0.15) {
+                if (currentIndex > 0) currentIndex--;
+            }
+
+            updateSlidePosition();
         });
-        updateSuccessArrows();
+
+        // Window resize handling
+        let resizeTimer;
+        window.addEventListener('resize', () => {
+            clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(() => {
+                // Ensure correct alignment on resize
+                successTrack.style.transition = 'none'; // Instant snap
+                updateSlidePosition();
+                // Restore transition after small delay
+                setTimeout(() => {
+                    successTrack.style.transition = 'transform 0.6s cubic-bezier(0.25, 1, 0.5, 1)';
+                }, 50);
+            }, 100);
+        });
+
+        // Initial setup
+        updateSlidePosition();
     }
 
     // =========================================
@@ -637,22 +664,28 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         // Render Testimonials
+        // Render Testimonials
         window.testimonialsData.forEach((t, index) => {
-            const { short: shortText, isLong } = getShortText(t.text);
-
             const card = document.createElement('div');
             card.classList.add('testimonial-card');
 
-            // Wrapper für smooth Aufklapp-Animation (max-height transition)
-            const expandWrapper = isLong
-                ? `<div class="testimonial-expand-wrapper" aria-hidden="true"><span class="text-full">${t.text}</span></div>`
-                : '';
+            // Determine if text is long enough to collapse
+            // Using a rough character count or sentence count
+            const isLong = t.text.length > 180;
+
+            // Inner content structure
+            // We use a single container for text to allow smooth height transition of ONE element
             let textHtml = `
-                <p class="testimonial-text">
-                    <span class="text-short">${shortText}</span>
-                    ${expandWrapper}
-                </p>
-                ${isLong ? `<button type="button" class="read-more-btn" aria-expanded="false">Zeige mehr</button>` : ''}
+                <div class="testimonial-text-container ${isLong ? 'collapsed' : ''}">
+                    <p class="testimonial-text">${t.text}</p>
+                    ${isLong ? '<div class="testimonial-fade-overlay"></div>' : ''}
+                </div>
+                ${isLong ? `<button type="button" class="read-more-btn" aria-expanded="false">
+                    <span class="btn-text">Mehr anzeigen</span>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="btn-icon">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                </button>` : ''}
             `;
 
             card.innerHTML = `
@@ -667,53 +700,99 @@ document.addEventListener('DOMContentLoaded', () => {
                 </div>
             `;
 
-            // Read More – smooth Aufklapp-Animation (Premium)
+            // Premium Expand Animation Logic
             if (isLong) {
                 const btn = card.querySelector('.read-more-btn');
-                const textBlock = card.querySelector('.testimonial-text');
-                const wrapper = card.querySelector('.testimonial-expand-wrapper');
-                const fullSpan = card.querySelector('.text-full');
+                const btnText = btn.querySelector('.btn-text');
+                const container = card.querySelector('.testimonial-text-container');
 
-                if (btn && textBlock && wrapper && fullSpan) {
                 btn.addEventListener('click', (e) => {
                     e.stopPropagation();
-                    const isExpanded = card.classList.contains('expanded');
-                    // #region agent log
-                    fetch('http://127.0.0.1:7242/ingest/a97a0e80-3a7d-4915-87e5-a0860b84d4b1',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'main.js:testimonial-click',message:'Zeige mehr/weniger click',data:{isExpanded,wrapperScrollHeight:wrapper.scrollHeight,maxHeight:wrapper.style.maxHeight},hypothesisId:'H1',timestamp:Date.now()})}).catch(()=>{});
-                    // #endregion
+                    const isCollapsed = container.classList.contains('collapsed');
 
-                    if (isExpanded) {
-                        const currentHeight = wrapper.scrollHeight;
-                        wrapper.style.maxHeight = currentHeight + 'px';
-                        textBlock.classList.remove('expanded');
-                        btn.textContent = 'Zeige mehr';
-                        btn.setAttribute('aria-expanded', 'false');
-                        card.classList.remove('expanded');
-                        requestAnimationFrame(() => {
-                            wrapper.style.maxHeight = '0';
-                        });
-                    } else {
-                        textBlock.classList.add('expanded');
-                        btn.textContent = 'Zeige weniger';
-                        btn.setAttribute('aria-expanded', 'true');
+                    if (isCollapsed) {
+                        // EXPAND
+                        // 1. Measure current height (collapsed)
+                        const startHeight = container.offsetHeight;
+
+                        // 2. Remove class to get full height, but keep overflow hidden for now to measure
+                        container.classList.remove('collapsed');
+                        const endHeight = container.scrollHeight;
+
+                        // 3. Set explicit height to start for animation
+                        container.style.height = `${startHeight}px`;
+
+                        // Force reflow
+                        container.offsetHeight;
+
+                        // 4. Animate to end height
+                        container.style.height = `${endHeight}px`;
+
+                        // Update button
                         card.classList.add('expanded');
+                        btn.setAttribute('aria-expanded', 'true');
+                        btnText.textContent = 'Weniger anzeigen';
 
-                        // Öffnen: Höhe einmal messen, dann sofort setzen (keine max-height-Animation) – nur Text-Crossfade
-                        wrapper.style.transition = 'none';
-                        wrapper.style.maxHeight = '9999px';
-                        requestAnimationFrame(() => {
-                            const height = wrapper.scrollHeight;
-                            const fullSpanHeight = fullSpan ? fullSpan.scrollHeight : 0;
-                            var heightToUse = height > 0 ? height : (fullSpanHeight > 0 ? fullSpanHeight : 800);
-                            // #region agent log
-                            (function(d){fetch('http://127.0.0.1:7242/ingest/a97a0e80-3a7d-4915-87e5-a0860b84d4b1',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'main.js:rAF-expand',message:'Expand measured height',data:d,hypothesisId:'H1',timestamp:Date.now()})}).catch(()=>{});console.log('[DEBUG testimonial] rAF-expand',d);})({height,heightToUse,fullSpanHeight});
-                            // #endregion
-                            wrapper.style.maxHeight = heightToUse + 'px';
-                            wrapper.style.transition = '';
-                        });
+                        // 5. Cleanup after transition
+                        container.addEventListener('transitionend', function onEnd() {
+                            container.style.height = 'auto'; // Release height for responsiveness
+                            container.removeEventListener('transitionend', onEnd);
+                        }, { once: true });
+
+                    } else {
+                        // COLLAPSE
+                        // 1. Measure current full height
+                        conststartHeight = container.offsetHeight;
+
+                        // 2. Set explicit height to animate FROM
+                        container.style.height = `${startHeight}px`;
+
+                        // Force reflow
+                        container.offsetHeight;
+
+                        // 3. Add class to define target state (needed for CSS variables if used, or next step)
+                        container.classList.add('collapsed');
+
+                        // 4. Animate to collapsed height (defined in CSS, e.g. 120px)
+                        // We need to clear the inline style to let CSS take over OR animate to specific pixel value
+                        // Inspecting CSS, we will set specific height there. 
+                        // To allow smooth transition, we often need to set the target height explicitly in JS if it's not a fixed value,
+                        // but 'collapsed' class usually has a max-height or height. 
+                        // Let's assume CSS has a specific height for .collapsed.
+                        // Ideally: remove inline height style? No, that jumps.
+                        // We need to animate TO the collapsed height.
+                        container.style.height = ''; // This might jump if we rely solely on class. 
+                        // BETTER APPROACH for smoothness:
+                        // Animate to explicitly known collapsed height (e.g. 110px defined in CSS)
+                        // Let's rely on the CSS transition by removing the inline height? 
+                        // If we remove inline height, it snaps to CSS height. If CSS has transition, it *should* work 
+                        // IF we are transitioning from explicit to explicit (or explicit to nothing if CSS has it).
+                        // However, 'height: auto' to 'height: 100px' doesn't transition.
+                        // So we went 'auto' -> 'fixed' (start) -> remove inline?
+                        // If we verify the CSS handles .collapsed { height: 110px }, then:
+
+                        // Re-apply explicit height of current (full)
+                        container.style.height = `${container.scrollHeight}px`;
+                        container.offsetHeight; // Reflow
+
+                        // Set target height (collapsed size)
+                        // We can hardcode or read from a computed style. Let's aim for 110px as per likely CSS
+                        container.style.height = '110px';
+
+                        // Update button
+                        card.classList.remove('expanded');
+                        btn.setAttribute('aria-expanded', 'false');
+                        btnText.textContent = 'Mehr anzeigen';
+
+                        container.addEventListener('transitionend', function onEnd() {
+                            // Optionally clear height if CSS handles .collapsed height perfectly
+                            // But keeping it inline is fine if consistent.
+                            // Actually, best to clear it so CSS controls the "110px" allowing responsive changes if needed.
+                            container.style.height = '';
+                            container.removeEventListener('transitionend', onEnd);
+                        }, { once: true });
                     }
                 });
-                }
             }
 
             testimonialTrack.appendChild(card);
