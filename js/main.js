@@ -915,7 +915,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const modalBackdrop = document.querySelector('.modal-backdrop');
 
     // =========================================
-    // HERO GALLERY – CLICK TO NEXT (no buttons, clean)
+    // HERO GALLERY – AUTO ROTATE & CLICK TO NEXT
     // =========================================
     function initHeroGallery() {
         const container = document.getElementById('hero-gallery');
@@ -925,6 +925,18 @@ document.addEventListener('DOMContentLoaded', () => {
         let currentIndex = 0;
         let zIndex = 1;
         const fadeTime = 1200;
+        let autoRotateInterval;
+
+        function startAutoRotate() {
+            clearInterval(autoRotateInterval);
+            autoRotateInterval = setInterval(() => {
+                goToNext();
+            }, 5000); // 5 seconds
+        }
+
+        function stopAutoRotate() {
+            clearInterval(autoRotateInterval);
+        }
 
         function goToNext() {
             const nextIndex = (currentIndex + 1) % morphImages.length;
@@ -941,13 +953,25 @@ document.addEventListener('DOMContentLoaded', () => {
             }, fadeTime);
         }
 
-        container.addEventListener('click', goToNext);
+        container.addEventListener('click', () => {
+            goToNext();
+            startAutoRotate(); // Reset timer
+        });
+
         container.addEventListener('keydown', (e) => {
             if (e.key === 'Enter' || e.key === ' ') {
                 e.preventDefault();
                 goToNext();
+                startAutoRotate(); // Reset timer
             }
         });
+
+        // Initialize auto-rotation
+        startAutoRotate();
+
+        // Optional: Pause on hover if desired, but for now kept simple as requested
+        // container.addEventListener('mouseenter', stopAutoRotate);
+        // container.addEventListener('mouseleave', startAutoRotate);
     }
 
     initHeroGallery();

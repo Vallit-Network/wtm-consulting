@@ -76,28 +76,49 @@
                     Tschakka, keine Einheitslösungen – sondern echte Arbeit an dem, was trägt.
                 </p>
 
-                <h3 style="margin-top: 2rem;">Unser Selbstverständnis:</h3>
-                <p class="intro-text">
-                    Selbstkompetenz erzeugt Haltung. Wir schauen mit Respekt und Neugier auf die Lebensentwürfe und die
-                    Selbstorganisation unserer Kundinnen und Kunden. Wir arbeiten verantwortungsvoll, mit fachlicher
-                    Kompetenz, Wohlwollen und Humor.
-                </p>
-                <p class="intro-text">
-                    Das ist unsere Philosophie – und davon sind wir überzeugt. Unser Angebot reicht vom individuellen
-                    Coaching über Trainings und Workshops bis hin zur Ausbildung zum Trainer. Darüber hinaus bieten wir
-                    klassische Beratung zu unterschiedlichsten Themenfeldern und Problemstellungen an. Insgesamt bringen
-                    wir viele Jahrzehnte Erfahrung in der Personalentwicklung ein.
-                </p>
-                <p class="intro-text">
-                    Im Mittelpunkt steht dabei stets Ihre individuelle Persönlichkeit. Mit Empathie und Wertschätzung
-                    laden wir Sie ein, neue Sichtweisen und Haltungen zu entwickeln, die Ihre Professionalität
-                    nachhaltig bereichern.
-                </p>
-                <p class="intro-text">
-                    Diese Haltung spiegelt sich auch in der Vielfalt unseres Angebots wider: Mit unserem
-                    zukunftsweisenden Konzept der Kombination aus bewährten und innovativen Methoden finden wir auch für
-                    Ihr Anliegen den passenden Spezialisten.
-                </p>
+                <div class="expandable-text-wrapper">
+                    <div class="expandable-text-content collapsed" id="haltung-text">
+                        <h3 style="margin-top: 2rem;">Unser Selbstverständnis:</h3>
+                        <p class="intro-text">
+                            Selbstkompetenz erzeugt Haltung. Wir schauen mit Respekt und Neugier auf die Lebensentwürfe
+                            und die
+                            Selbstorganisation unserer Kundinnen und Kunden. Wir arbeiten verantwortungsvoll, mit
+                            fachlicher
+                            Kompetenz, Wohlwollen und Humor.
+                        </p>
+                        <p class="intro-text">
+                            Das ist unsere Philosophie – und davon sind wir überzeugt. Unser Angebot reicht vom
+                            individuellen
+                            Coaching über Trainings und Workshops bis hin zur Ausbildung zum Trainer. Darüber hinaus
+                            bieten wir
+                            klassische Beratung zu unterschiedlichsten Themenfeldern und Problemstellungen an. Insgesamt
+                            bringen
+                            wir viele Jahrzehnte Erfahrung in der Personalentwicklung ein.
+                        </p>
+                        <p class="intro-text">
+                            Im Mittelpunkt steht dabei stets Ihre individuelle Persönlichkeit. Mit Empathie und
+                            Wertschätzung
+                            laden wir Sie ein, neue Sichtweisen und Haltungen zu entwickeln, die Ihre Professionalität
+                            nachhaltig bereichern.
+                        </p>
+                        <p class="intro-text">
+                            Diese Haltung spiegelt sich auch in der Vielfalt unseres Angebots wider: Mit unserem
+                            zukunftsweisenden Konzept der Kombination aus bewährten und innovativen Methoden finden wir
+                            auch für
+                            Ihr Anliegen den passenden Spezialisten.
+                        </p>
+                        <div class="expand-fade-overlay"></div>
+                    </div>
+                    <button class="btn-text-expand" id="haltung-toggle" aria-expanded="false"
+                        aria-controls="haltung-text">
+                        <span class="btn-text">Mehr lesen</span>
+                        <svg class="chevron-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" width="20"
+                            height="20">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
+                            </path>
+                        </svg>
+                    </button>
+                </div>
             </div>
         </div>
     </section>
@@ -1615,6 +1636,7 @@
     </div>
     <script src="js/seminar-data.js"></script>
     <script src="js/testimonials-data.js"></script>
+    <script src="js/expandable-section.js"></script>
     <script src="js/main.js"></script>
     <!-- UPDATED WTM Consulting Chatbot Snippet -->
     <script data-company-id="5f929157-5f9e-48e3-b7f7-a6dcd0e24142" data-theme="glassmorphism" defer=""
