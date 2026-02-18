@@ -7390,15 +7390,17 @@ header.header-scrolled .logo img {
         transform: rotate(360deg);
     }
 }
+
 /* ============================================
-   EXPANDABLE TEXT SECTION (Haltung)
+   EXPANDABLE TEXT SECTION (Haltung & Success Stories)
    ============================================ */
 .expandable-text-wrapper {
     position: relative;
     margin-top: 2rem;
     display: flex;
     flex-direction: column;
-    align-items: center; /* Center the button */
+    align-items: center;
+    /* Center the button */
 }
 
 .expandable-text-content {
@@ -7408,11 +7410,37 @@ header.header-scrolled .logo img {
 }
 
 .expandable-text-content.collapsed {
-    max-height: 200px; /* Adjust based on preferred initial visible height */
+    max-height: 200px;
+    /* Adjust based on preferred initial visible height */
 }
 
 .expandable-text-content.expanded {
-    max-height: 2000px; /* Large enough to fit content */
+    max-height: 2000px;
+    /* Large enough to fit content */
+}
+
+/* Success Story Specific Expandable */
+.expandable-story-content {
+    position: relative;
+    overflow: hidden;
+    transition: max-height 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    /* Ensure the button is centered relative to this if needed, 
+       but currently the button is a sibling in flex column .case-study-content */
+}
+
+.expandable-story-content.collapsed {
+    max-height: 180px;
+    /* Shorter than Haltung text to look good in card */
+}
+
+.expandable-story-content.expanded {
+    max-height: 2000px;
+}
+
+/* Ensure button is centered in case study card */
+.case-study-content .btn-text-expand {
+    align-self: center;
+    margin-top: 1rem;
 }
 
 .expand-fade-overlay {
@@ -7420,14 +7448,15 @@ header.header-scrolled .logo img {
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 120px;
+    height: 100px;
     background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1) 80%);
     pointer-events: none;
     opacity: 1;
     transition: opacity 0.5s ease;
 }
 
-.expandable-text-content.expanded .expand-fade-overlay {
+.expandable-text-content.expanded .expand-fade-overlay,
+.expandable-story-content.expanded .expand-fade-overlay {
     opacity: 0;
 }
 
@@ -7439,7 +7468,8 @@ header.header-scrolled .logo img {
     align-items: center;
     gap: 0.25rem;
     cursor: pointer;
-    color: var(--color-primary); /* Uses existing primary teal */
+    color: var(--color-primary);
+    /* Uses existing primary teal */
     font-family: var(--font-body);
     font-weight: 600;
     font-size: 0.9rem;
@@ -7463,7 +7493,8 @@ header.header-scrolled .logo img {
 }
 
 .expandable-text-content p {
-    margin-bottom: 1.5rem; /* Additional spacing for clearer reading when expanded */
+    margin-bottom: 1.5rem;
+    /* Additional spacing for clearer reading when expanded */
 }
 
 .expandable-text-content p:last-child {

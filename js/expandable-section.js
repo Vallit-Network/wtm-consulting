@@ -4,34 +4,37 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
-    const toggleButton = document.getElementById('haltung-toggle');
-    const content = document.getElementById('haltung-text');
-    const buttonText = toggleButton.querySelector('.btn-text');
+    const toggleButtons = document.querySelectorAll('.btn-text-expand');
 
-    if (!toggleButton || !content) return;
+    toggleButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const targetId = button.getAttribute('aria-controls');
+            const content = document.getElementById(targetId);
+            const buttonText = button.querySelector('.btn-text');
 
-    toggleButton.addEventListener('click', () => {
-        const isExpanded = toggleButton.getAttribute('aria-expanded') === 'true';
+            if (!content) return;
 
-        if (isExpanded) {
-            // Collapse
-            content.classList.remove('expanded');
-            content.classList.add('collapsed');
-            toggleButton.setAttribute('aria-expanded', 'false');
-            buttonText.textContent = 'Mehr lesen';
-            toggleButton.classList.remove('active');
+            const isExpanded = button.getAttribute('aria-expanded') === 'true';
 
-            // Scroll back slightly if user is deep down? 
-            // Optional: smooth scroll back to top of container if needed
-            content.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            if (isExpanded) {
+                // Collapse
+                content.classList.remove('expanded');
+                content.classList.add('collapsed');
+                button.setAttribute('aria-expanded', 'false');
+                buttonText.textContent = 'Mehr lesen';
+                button.classList.remove('active');
 
-        } else {
-            // Expand
-            content.classList.remove('collapsed');
-            content.classList.add('expanded');
-            toggleButton.setAttribute('aria-expanded', 'true');
-            buttonText.textContent = 'Weniger anzeigen';
-            toggleButton.classList.add('active');
-        }
+                // Optional: Scroll back to ensure context isn't lost if very long
+                // content.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+
+            } else {
+                // Expand
+                content.classList.remove('collapsed');
+                content.classList.add('expanded');
+                button.setAttribute('aria-expanded', 'true');
+                buttonText.textContent = 'Weniger anzeigen';
+                button.classList.add('active');
+            }
+        });
     });
 });

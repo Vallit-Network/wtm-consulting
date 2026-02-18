@@ -667,13 +667,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const testimonialNav = document.getElementById('testimonial-nav');
 
     if (testimonialTrack && testimonialNav && window.testimonialsData) {
-        // Truncate to first 1-2 sentences for "Zeige mehr" / "Zeige weniger"
-        function getShortText(text, maxSentences = 2) {
-            const sentences = text.match(/[^.!?]+[.!?]+/g) || [text];
-            if (sentences.length <= maxSentences) return { short: text, isLong: false };
-            const short = sentences.slice(0, maxSentences).join(' ').trim();
-            return { short: short + '...', isLong: true };
-        }
+        // Truncate function removed - always showing full text
 
         // Render Testimonials
         // Render Testimonials
@@ -681,23 +675,11 @@ document.addEventListener('DOMContentLoaded', () => {
             const card = document.createElement('div');
             card.classList.add('testimonial-card');
 
-            // Determine if text is long enough to collapse
-            // Using a rough character count or sentence count
-            const isLong = t.text.length > 180;
-
-            // Inner content structure
-            // We use a single container for text to allow smooth height transition of ONE element
+            // Inner content structure - always full text
             let textHtml = `
-                <div class="testimonial-text-container ${isLong ? 'collapsed' : ''}">
+                <div class="testimonial-text-container expanded">
                     <p class="testimonial-text">${t.text}</p>
-                    ${isLong ? '<div class="testimonial-fade-overlay"></div>' : ''}
                 </div>
-                ${isLong ? `<button type="button" class="read-more-btn" aria-expanded="false">
-                    <span class="btn-text">Mehr anzeigen</span>
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="btn-icon">
-                        <polyline points="6 9 12 15 18 9"></polyline>
-                    </svg>
-                </button>` : ''}
             `;
 
             card.innerHTML = `
@@ -712,78 +694,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 </div>
             `;
 
-            // Premium Expand Animation Logic
-            if (isLong) {
-                const btn = card.querySelector('.read-more-btn');
-                const btnText = btn.querySelector('.btn-text');
-                const container = card.querySelector('.testimonial-text-container');
 
-                btn.addEventListener('click', (e) => {
-                    e.stopPropagation();
-                    const isCollapsed = container.classList.contains('collapsed');
-
-                    if (isCollapsed) {
-                        // EXPAND
-                        // 1. Measure current height (collapsed)
-                        const startHeight = container.offsetHeight;
-
-                        // 2. Remove class to get full height, but keep overflow hidden for now to measure
-                        container.classList.remove('collapsed');
-                        const endHeight = container.scrollHeight;
-
-                        // 3. Set explicit height to start for animation
-                        container.style.height = `${startHeight}px`;
-
-                        // Force reflow
-                        container.offsetHeight;
-
-                        // 4. Animate to end height
-                        container.style.height = `${endHeight}px`;
-
-                        // Update button
-                        card.classList.add('expanded');
-                        btn.setAttribute('aria-expanded', 'true');
-                        btnText.textContent = 'Weniger anzeigen';
-
-                        // 5. Cleanup after transition
-                        container.addEventListener('transitionend', function onEnd() {
-                            container.style.height = 'auto'; // Release height for responsiveness
-                            container.removeEventListener('transitionend', onEnd);
-                        }, { once: true });
-
-                    } else {
-                        // COLLAPSE
-                        const startHeight = container.offsetHeight;
-
-                        // Set explicit height to animate FROM
-                        container.style.height = `${startHeight}px`;
-
-                        // Force reflow
-                        container.offsetHeight;
-
-                        // Set target height (collapsed size)
-                        // MATCH CSS: .testimonial-text-container.collapsed { height: 110px; }
-                        const collapsedHeight = 110;
-
-                        // Animate to collapsed height
-                        container.style.height = `${collapsedHeight}px`;
-
-                        // Add class immediately so fade overlay appears (it has opacity transition)
-                        container.classList.add('collapsed');
-
-                        // Update button
-                        card.classList.remove('expanded');
-                        btn.setAttribute('aria-expanded', 'false');
-                        btnText.textContent = 'Mehr anzeigen';
-
-                        container.addEventListener('transitionend', function onEnd() {
-                            // After transition, clear inline height so CSS class controls it
-                            container.style.height = '';
-                            container.removeEventListener('transitionend', onEnd);
-                        }, { once: true });
-                    }
-                });
-            }
 
             testimonialTrack.appendChild(card);
         });
