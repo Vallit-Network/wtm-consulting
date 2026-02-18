@@ -27,7 +27,7 @@ const coachingData = {
         {
             id: 'frank-titzer',
             name: 'Frank Titzer',
-            photo: 'assets/team/frank_titzer.jpg',
+            photo: 'assets/team/frank_titzer.png',
             role: 'Coach & Supervisor',
             motto: 'Klärung schafft Klarheit – auch in schwierigen Situationen.',
             description: 'Brückenbauend, bodenständig, zugewandt konfrontierend, klar in Benennung und Hinweisen. Dies geerdet im Respekt für die Einzigartigkeit individuellen Erlebens und individueller Rollenentwürfe. Im Beratungsprozess achtsam für die Balance von Geschwindigkeit und notwendiger Verlangsamung.',
@@ -162,7 +162,7 @@ const coachingData = {
         {
             id: 'uta-barbara-vogel',
             name: 'Uta-Barbara Vogel',
-            photo: 'assets/team/Team-Vogel-Barbara-500x500-1.jpg',
+            photo: 'assets/team/Team-Vogel-Barbara-500x500-1.png',
             role: 'Trainerin & Coach',
             motto: 'Konsequent und mit dem Blick für Zusammenhänge, verbinde ich Direktheit mit Wertschätzung.',
             description: 'Menschen und Organisationen verfügen über zahlreiche Potenziale. Die Kunst besteht darin, verborgene Ressourcen zugänglich zu machen, Handlungsspielräume zu nutzen und Fähigkeiten zu erweitern.',

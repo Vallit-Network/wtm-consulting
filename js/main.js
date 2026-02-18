@@ -675,10 +675,16 @@ document.addEventListener('DOMContentLoaded', () => {
             const card = document.createElement('div');
             card.classList.add('testimonial-card');
 
+            // Determine text length class
+            const length = t.text.length;
+            let lengthClass = 'text-medium';
+            if (length < 200) lengthClass = 'text-short';
+            if (length > 400) lengthClass = 'text-long';
+
             // Inner content structure - always full text
             let textHtml = `
                 <div class="testimonial-text-container expanded">
-                    <p class="testimonial-text">${t.text}</p>
+                    <p class="testimonial-text ${lengthClass}">${t.text}</p>
                 </div>
             `;
 
@@ -1550,7 +1556,7 @@ document.addEventListener('DOMContentLoaded', () => {
         22: {
             name: 'Uta-Barbara Vogel',
             role: 'Trainerin & Coach',
-            photo: 'assets/team/Team-Vogel-Barbara-500x500-1.jpg',
+            photo: 'assets/team/Team-Vogel-Barbara-500x500-1.png',
             categories: ['health', 'communication', 'leadership'],
             motto: 'Konsequent und mit dem Blick für Zusammenhänge, verbinde ich Direktheit mit Wertschätzung.',
             shortDescription: [
@@ -1578,7 +1584,7 @@ document.addEventListener('DOMContentLoaded', () => {
         23: {
             name: 'Frank Titzer',
             role: 'Coach & Supervisor',
-            photo: 'assets/team/frank_titzer.jpg',
+            photo: 'assets/team/frank_titzer.png',
             categories: ['communication', 'health', 'leadership'],
             motto: 'Klärung schafft Klarheit – auch in schwierigen Situationen.',
             shortDescription: [
