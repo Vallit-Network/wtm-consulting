@@ -895,11 +895,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Category configuration - Colors match mindmap section
     const categoryConfig = {
-        leadership: { label: 'Führung', color: '#4A4A4A' },         // Anthrazit
-        change: { label: 'Change', color: '#C08585' },              // Rot (item-red)
-        health: { label: 'Gesundheit', color: '#2D5F5C' },          // Grün (primary-dark)
-        communication: { label: 'Kommunikation', color: '#CABBA0' }, // Gelb (item-yellow)
-        management: { label: 'Management', color: '#5D8AA8' }       // Blau (item-blue)
+        leadership: { label: 'Führung', color: 'var(--color-cat-leadership)' },         // Anthrazit
+        change: { label: 'Change', color: 'var(--color-cat-change)' },              // Rot (item-red)
+        health: { label: 'Gesundheit', color: 'var(--color-cat-health)' },          // Grün (primary-dark)
+        communication: { label: 'Kommunikation', color: 'var(--color-cat-communication)' }, // Gelb (item-yellow)
+        management: { label: 'Management', color: 'var(--color-cat-management)' }       // Blau (item-blue)
     };
 
     // Team Member Data - Enhanced with Categories & Quick Info

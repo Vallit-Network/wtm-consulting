@@ -55,8 +55,8 @@ const seminarsData = {
         url: "seminare/kommunikation-und-persoenlichkeit.html",
         category: "communication",
         badge: "Kommunikation",
-        shortDescription: "Authentisch kommunizieren und die eigene Persönlichkeit stärken – für mehr Wirkung und Klarheit im Gespräch.",
-        details: ["2 Tage", "Persönlichkeitsmodelle", "Praxisnah"],
+        shortDescription: "Zeigt den Zusammenhang zwischen Persönlichkeit, Kommunikationsstil und Wirkung auf andere.",
+        details: ["3 Tage", "Reflexion", "Feedback"],
         heroImage: "assets/hero-meeting.jpg",
         content: {
             intro: "Warum verstehen wir uns manchmal blind – und reden ein andermal völlig aneinander vorbei? Unsere Kommunikation ist untrennbar mit unserer Persönlichkeit verbunden. Wer seine eigenen Muster kennt und die der anderen versteht, kann Missverständnisse vermeiden und Beziehungen aktiv gestalten. In diesem Seminar verbinden wir Kommunikationspsychologie mit Persönlichkeitsentwicklung.",
@@ -79,7 +79,7 @@ const seminarsData = {
         category: "management",
         badge: "Management",
         shortDescription: "Strukturen und Prozesse optimieren – Abläufe effizienter gestalten und Schnittstellen verbessern.",
-        details: ["1-2 Tage", "Analyse", "Optimierung"],
+        details: ["2 Tage", "Grundlagen", "Praxisnah"],
         heroImage: "assets/hero-meeting.jpg",
         content: {
             intro: "Eine durchdachte Organisation des Unternehmens ist wichtig, um effektive und effiziente Prozesse zu leben und das Zusammenspiel der elementaren Produktionsfaktoren (Arbeit, Werkstoffe und Betriebsmittel) sicherzustellen. Dieses Seminar vermittelt die notwendigen Grundlagen und Werkzeuge.",
@@ -215,7 +215,7 @@ const seminarsData = {
         url: "seminare/gesunde-selbstfuehrung.html",
         category: "health",
         badge: "Gesundheit",
-        shortDescription: "Bei stürmischer See in sich Ruhe bewahren – das innere Gleichgewicht aufrechterhalten auch in dynamischen Zeiten mit Veränderungsprozessen und Belastungen.",
+        shortDescription: "Vermittelt Strategien, um Leistungsfähigkeit, Balance und Gesundheit im Arbeitsalltag zu erhalten.",
         details: ["2 Tage", "Reflexion", "Praxistransfer"],
         heroImage: "assets/hero-meeting.jpg",
         content: {
@@ -263,7 +263,7 @@ const seminarsData = {
         category: "change",
         badge: "Change",
         shortDescription: "Ohne Selbstvertrauen wären wir handlungsunfähig. Lernen Sie angemessenes Selbstvertrauen, um Ihre Selbstwirksamkeit voll zu entfalten.",
-        details: ["3 Tage", "Reflexion", "Praxis"],
+        details: ["3 Tage", "Reflexion", "Persönlichkeitsentwicklung"],
         heroImage: "assets/hero-meeting.jpg",
         content: {
             intro: "Ohne Selbstvertrauen wären wir handlungsunfähig, wären wir nicht in der Lage, überhaupt etwas zu tun. Die Frage ist, wie viel Selbstvertrauen sinnvoll ist, um die eigene Selbstwirksamkeit voll zu entfalten. Und: was ist angemessenes Selbstvertrauen – jenseits von „Tschaka“. Was brauche ich, um mich auf mich und meine Leistungsfähigkeit verlassen zu können?",
@@ -341,7 +341,7 @@ const seminarsData = {
         category: "management",
         badge: "Management",
         shortDescription: "Nutzt die Kraft der Intuition für fundierte Entscheidungen und innovatives Problemlösen im beruflichen Kontext.",
-        details: ["1-2 Tage", "Reflexion", "Praxistransfer"],
+        details: ["2 Tage", "Reflexion", "Selbsterfahrung"],
         heroImage: "assets/hero-meeting.jpg",
         content: {
             intro: "Ein Widerspruch? Das hat man lange gedacht. Neuere Forschungsergebnisse zeigen allerdings, dass Intuition keineswegs nur emotionales „Bauchgefühl“ ist, sondern auch rationale Instrumente nutzt wie Logik, Mathematik, usw.Der Unterschied ist: sie nutzt sie unbewusst.Und das ist auch gut so.Denn wenn wir alle etwa 80.000 Entscheidungen des Tages bewusst treffen müssten, wären wir völlig überfordert.Aber auch die berufliche Problemlösung nutzt großenteils unbewusste Kreativität.So zeigen wissenschaftliche Untersuchungen, dass nicht nur im Top- Management die meisten Entscheidungen intuitiv getroffen werden.",
@@ -365,7 +365,7 @@ const seminarsData = {
         category: "communication",
         badge: "Kommunikation",
         shortDescription: "Botschaften passgenau gestalten – unterschiedliche Zielgruppen überzeugend ansprechen.",
-        details: ["2 Tage", "Praxis", "Fallarbeit"],
+        details: ["2 Tage", "Fallarbeit", "Feedback"],
         heroImage: "assets/hero-meeting.jpg",
         content: {
             intro: "Nicht jede Botschaft passt für jeden. Wie passen Sie Ihre Kommunikation an unterschiedliche Zielgruppen an?",
@@ -455,7 +455,7 @@ const seminarsData = {
         url: "seminare/leadership-basics.html",
         category: "leadership",
         badge: "Führung",
-        shortDescription: "Die Grundlagen wirksamer Führung: Führungsverständnis, Selbstmanagement, Kommunikation, Delegation und konstruktiver Umgang mit Konflikten.",
+        shortDescription: "Vermittelt grundlegende Führungsprinzipien, Rollenverständnis und zentrale Führungsaufgaben.",
         details: ["3 Tage", "Grundlagen", "Praxisnah"],
         heroImage: "assets/hero-meeting.jpg",
         content: {
@@ -517,8 +517,8 @@ const seminarsData = {
         url: "seminare/praesentieren-verstaendlich-erklaeren.html",
         category: "communication",
         badge: "Kommunikation",
-        shortDescription: "„Es genügt nicht, keine Gedanken zu haben, man muss auch unfähig sein, sie auszudrücken.“ (Karl Kraus) – Fachleute überzeugen mit klaren Präsentationen.",
-        details: ["2 Tage", "Praxis", "Feedback"],
+        shortDescription: "Stärkt Präsentationskompetenz und vermittelt, wie Inhalte klar, lebendig und adressatengerecht vermittelt werden.",
+        details: ["2 Tage", "Medieneinsatz", "Praxistransfer"],
         heroImage: "assets/hero-meeting.jpg",
         content: {
             intro: "„Es genügt nicht, keine Gedanken zu haben, man muss auch unfähig sein, sie auszudrücken.“ (Karl Kraus) Gerade Fachleuten passiert das oft am Anfang einer Präsentation. Sie haben lange gut gearbeitet und nun finden sie keine passenden Worte, um ihr Ergebnis vorzustellen. Dabei ist eine überzeugende und verständliche Darstellung gerade vor Kunden oder Vorgesetzten besonders wichtig, damit Sie auch die Früchte Ihrer Arbeit ernten können. Aber gerade Fachleute haben eine Scheu davor, Ihre Erfolge zu „verkaufen“, weil sie ja sowieso kein Talent zum Präsentieren hätten...",
@@ -541,7 +541,7 @@ const seminarsData = {
         category: "management",
         badge: "Management",
         shortDescription: "Projekte sicher aufsetzen, professionell überwachen und erfolgreich abschließen – Grundlagen für den Projekterfolg.",
-        details: ["2 Tage", "Grundlagen", "Praxisnah"],
+        details: ["2 Tage", "Erfahrungsaustausch", "Praxisnah"],
         heroImage: "assets/hero-meeting.jpg",
         content: {
             intro: "Manche Projekte scheitern, viele dauern länger oder werden teurer als geplant. Ein wirkungsvolles, systematisches Projektmanagement unterstützt Sie dabei, Projekte sicher aufzusetzen, die Durchführung professionell zu überwachen und erfolgreich abzuschließen.",
@@ -563,7 +563,7 @@ const seminarsData = {
         url: "seminare/selbsterkenntnis-und-selbstfuehrung.html",
         category: "leadership",
         badge: "Führung",
-        shortDescription: "Sich selbst verstehen und führen – die Basis für wirksame Führung anderer.",
+        shortDescription: "Fördert die Reflexion eigener Muster und zeigt, wie Selbstführung als Basis wirksamer Führung gelingt.",
         details: ["2 Tage", "Reflexion", "Feedback"],
         heroImage: "assets/hero-meeting.jpg",
         content: {
@@ -610,7 +610,7 @@ const seminarsData = {
         category: "management",
         badge: "Management",
         shortDescription: "Sich selbst besser steuern, Ressourcen aktivieren und sinnvolle Ziele setzen.",
-        details: ["1-2 Tage", "Reflexion", "Methoden"],
+        details: ["2 Tage", "Reflexion", "Praxistransfer"],
         heroImage: "assets/hero-meeting.jpg",
         content: {
             intro: "Was macht mich aus? Was sind meine Rollen, meine Werte, meine Ziele? Passen sie zusammen? Was motiviert mich? Wie aktiviere ich meine Ressourcen? Gibt es hemmende unbewusste Verhaltensmuster? Wie passe ich in meine Arbeitswelt? Was sollte ich jetzt tun?",
@@ -654,7 +654,7 @@ const seminarsData = {
         category: "management",
         badge: "Management",
         shortDescription: "Stärkt kommunikative und soziale Kompetenzen für Fachkräfte mit zahlen- oder faktenorientiertem Schwerpunkt.",
-        details: ["2 Tage", "Praxisnah", "Kommunikation"],
+        details: ["2 Tage", "Feedback", "Praxisübungen"],
         heroImage: "assets/hero-meeting.jpg",
         content: {
             intro: "Ist es Ihnen bewusst? Sie als Zahlenprofi „ticken anders“ als andere Menschen. Vielleicht kennen Sie die Situation, dass Ihnen jemand einen Sachverhalt, ein Produkt, einen Prozess begeistert beschreibt, und Sie nur denken: „Und was kostet das jetzt?“. Umgekehrt gibt es Menschen, die denken: „Zahlen und Tabellen sind ja nett und grundsätzlich verstanden habe ich das auch, ABER…“. Es ist wichtig, andere da abzuholen, wo sie stehen. Hier helfen Soft Skills: Haltung, gute Vorbereitung, Werkzeuge, Tipps & Tricks.",
@@ -701,7 +701,7 @@ const seminarsData = {
         url: "seminare/widerstandsfaehigkeit-staerken.html",
         category: "health",
         badge: "Gesundheit",
-        shortDescription: "Was macht mich eigentlich widerstandsfähig? Erkennen Sie Denkfallen, stärken Sie die Perspektivübernahme und entwickeln Sie Ihr Growth-Mindset.",
+        shortDescription: "Vermittelt praktische Ansätze, um Stress besser zu bewältigen und langfristig stabil zu bleiben.",
         details: ["2 Tage", "Reflexion", "Praxistransfer"],
         heroImage: "assets/hero-meeting.jpg",
         content: {
@@ -724,7 +724,7 @@ const seminarsData = {
         category: "management",
         badge: "Management",
         shortDescription: "Prioritäten setzen, Zeitfresser eliminieren und die Informationsflut beherrschen. Effizienz durch Planung und Arbeitsplatzgestaltung.",
-        details: ["1-2 Tage", "Prio-Tools", "Praxistransfer"],
+        details: ["2 Tage", "Praxistransfer", "Methoden"],
         heroImage: "assets/hero-meeting.jpg",
         content: {
             intro: "Was sind funktionale Methoden der Planung und Prioritätensetzung? Wie können Sie Ihr Schreibtischmanagement an Ihre Arbeitsweise anpassen? Welche Zeitfresser können Sie minimieren? Wie beherrschen Sie die Informationsflut? Haben Sie Stress? Zu viel, zu wenig oder gerade richtig? Wie können Sie sich für ungeliebte Aufgaben motivieren?",
@@ -769,7 +769,7 @@ const seminarsData = {
         category: "communication",
         badge: "Kommunikation",
         shortDescription: "Geschichten sind die älteste Form der Kommunikation. Lernen Sie, mit Narrativen zu führen, zu überzeugen und zu inspirieren.",
-        details: ["2 Tage", "Praxis", "Transfer"],
+        details: ["2 Tage", "Praxis", "Fallarbeit"],
         heroImage: "assets/hero-meeting.jpg",
         content: {
             intro: "Fakten informieren, Geschichten transformieren. Daten werden vergessen, Geschichten bleiben. Nutzen Sie diese Kraft für Ihre Führung und Kommunikation.",
@@ -829,7 +829,7 @@ const seminarsData = {
         url: "seminare/argumentieren-verhandeln.html",
         category: "communication",
         badge: "Kommunikation",
-        shortDescription: "Gute Kommunikation erfordert eine doppelte Stimmigkeit - nach außen situationsgerecht, nach innen authentisch. So sprechen, dass man dazu stehen kann.",
+        shortDescription: "Vermittelt Techniken, um überzeugend zu argumentieren und Verhandlungen souverän zu führen.",
         details: ["2 Tage", "Praxisfälle", "Selbstreflexion"],
         heroImage: "assets/hero-meeting.jpg",
         content: {
@@ -855,7 +855,7 @@ const seminarsData = {
         category: "management",
         badge: "Management",
         shortDescription: "Vertiefen Sie Ihre Projektmanagement-Kompetenz: Rolle, Konflikte, Stakeholder und Praxisreflexion.",
-        details: ["2 Tage", "Praxiswerkstatt", "Erfahrungsaustausch"],
+        details: ["2 Tage", "Workshop", "Erfahrungsaustausch"],
         heroImage: "assets/hero-meeting.jpg",
         content: {
             intro: "In dieser Praxiswerkstatt vertiefst du dein Projektmanagement-Wissen anhand eigener Beispiele. Du reflektierst dein Führungsverhalten, bearbeitest typische Herausforderungen und stärkst deine Kompetenz im Umgang mit Teams, Konflikten und Dynamiken im Projektalltag.",
