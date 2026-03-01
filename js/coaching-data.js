@@ -162,7 +162,7 @@ const coachingData = {
         {
             id: 'uta-barbara-vogel',
             name: 'Uta-Barbara Vogel',
-            photo: 'assets/team/Team-Vogel-Barbara-500x500-1.png',
+            photo: 'assets/team/Barbara_AI.png',
             role: 'Trainerin & Coach',
             motto: 'Konsequent und mit dem Blick für Zusammenhänge, verbinde ich Direktheit mit Wertschätzung.',
             description: 'Menschen und Organisationen verfügen über zahlreiche Potenziale. Die Kunst besteht darin, verborgene Ressourcen zugänglich zu machen, Handlungsspielräume zu nutzen und Fähigkeiten zu erweitern.',

@@ -1331,7 +1331,7 @@ document.addEventListener('DOMContentLoaded', () => {
         14: {
             name: 'Jürgen Reus',
             role: 'Trainer & Coach',
-            photo: 'assets/team/Reus-Juergen-Team-Portrait-500x500-1-AI-v3.jpg',
+            photo: 'assets/team/Jürger_Reus_AI.png',
             categories: ['management', 'communication', 'change'],
             motto: 'Wichtig ist mir, die Mitarbeiter und Kunden dort abzuholen, wo sie gerade stehen.',
             shortDescription: [
@@ -1493,7 +1493,7 @@ document.addEventListener('DOMContentLoaded', () => {
         19: {
             name: 'Markus Schramm',
             role: 'Trainer & Coach',
-            photo: 'assets/team/Markus-Schramm-Portrait-Team-500-x-500-AI-v3.jpg',
+            photo: 'assets/team/Markus_Schramm_AI.png',
             categories: ['leadership', 'change', 'communication'],
             motto: 'Ich brenne dafür, Menschen in ihrer Entwicklung zu begleiten.',
             shortDescription: [
@@ -1556,7 +1556,7 @@ document.addEventListener('DOMContentLoaded', () => {
         22: {
             name: 'Uta-Barbara Vogel',
             role: 'Trainerin & Coach',
-            photo: 'assets/team/Team-Vogel-Barbara-500x500-1-AI-v3.jpg',
+            photo: 'assets/team/Barbara_AI.png',
             categories: ['Training', 'Persönlichkeit'],
             motto: 'Konsequent und mit dem Blick für Zusammenhänge, verbinde ich Direktheit mit Wertschätzung.',
             shortDescription: [
@@ -1584,7 +1584,7 @@ document.addEventListener('DOMContentLoaded', () => {
         23: {
             name: 'Frank Titzer',
             role: 'Coach & Supervisor',
-            photo: 'assets/team/frank_titzer-AI-v3.jpg',
+            photo: 'assets/team/frank_titzer-AI-v2.jpg',
             categories: ['communication', 'health', 'leadership'],
             motto: 'Klärung schafft Klarheit – auch in schwierigen Situationen.',
             shortDescription: [
