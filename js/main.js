@@ -1331,7 +1331,7 @@ document.addEventListener('DOMContentLoaded', () => {
         14: {
             name: 'Jürgen Reus',
             role: 'Trainer & Coach',
-            photo: 'assets/team/Jürger_Reus_AI.png',
+            photo: 'assets/team/Juergen_Reus_AI.png',
             categories: ['management', 'communication', 'change'],
             motto: 'Wichtig ist mir, die Mitarbeiter und Kunden dort abzuholen, wo sie gerade stehen.',
             shortDescription: [
