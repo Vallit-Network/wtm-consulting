@@ -908,7 +908,7 @@ document.addEventListener('DOMContentLoaded', () => {
         1: {
             name: 'Dr. Till Reichert',
             role: 'Geschäftsführer',
-            photo: 'assets/team/till-reichert.jpg',
+            photo: 'assets/team/till-reichert-square.jpg',
             categories: ['leadership', 'communication', 'management'],
             motto: '20% Theorie und 80% Praxis.',
             shortDescription: [
@@ -944,7 +944,7 @@ document.addEventListener('DOMContentLoaded', () => {
         2: {
             name: 'Malte Werner',
             role: 'Geschäftsführer',
-            photo: 'assets/team/malte-werner.jpg',
+            photo: 'assets/team/malte-werner-square.jpg',
             categories: ['leadership', 'change', 'management'],
             motto: 'Balance zwischen humorvollem Elan und der nötigen Seriosität.',
             shortDescription: [
@@ -968,7 +968,7 @@ document.addEventListener('DOMContentLoaded', () => {
         3: {
             name: 'Dr. Olaf Werner',
             role: 'Geschäftsführer',
-            photo: 'assets/team/olaf_werner.jpg',
+            photo: 'assets/team/olaf_werner-square.jpg',
             categories: ['leadership', 'communication', 'management'],
             motto: 'Das Zusammenspiel von Mensch und Organisation fasziniert mich.',
             shortDescription: [
@@ -1038,7 +1038,7 @@ document.addEventListener('DOMContentLoaded', () => {
         5: {
             name: 'Philipp Besch',
             role: 'Trainer & Coach',
-            photo: 'assets/team/Team-Phillip_Besch-500x500-1.jpg',
+            photo: 'assets/team/Team-Phillip_Besch-500x500-1-AI-v2.jpg',
             categories: ['leadership', 'change', 'health'],
             motto: 'Authentizität, ein unerschütterliches Vertrauen in die Entfaltungsmöglichkeiten von Menschen und Humor zeichnen meine Arbeitsweise aus.',
             shortDescription: [
@@ -1161,7 +1161,7 @@ document.addEventListener('DOMContentLoaded', () => {
         9: {
             name: 'Wolfgang Hoffmann',
             role: 'Trainer & Coach',
-            photo: 'assets/team/Team-Foto-Wolfgang-Hoffmann.jpg',
+            photo: 'assets/team/Team-Foto-Wolfgang-Hoffmann-AI-v2.jpg',
             categories: ['leadership', 'communication', 'change'],
             motto: 'Führung bedeutet nicht nur, Verantwortung zu tragen, sondern auch Vertrauen zu schaffen und zu erhalten.',
             shortDescription: [
@@ -1196,7 +1196,7 @@ document.addEventListener('DOMContentLoaded', () => {
         10: {
             name: 'Melanie Kubala',
             role: 'Trainerin & Coach',
-            photo: 'assets/team/Team-Melanie-Kubala-500x500-1.jpg',
+            photo: 'assets/team/Team-Melanie-Kubala-500x500-1-AI-v2.jpg',
             categories: ['leadership', 'change', 'communication'],
             motto: 'Mutig sein und Verantwortung übernehmen ist mein Kredo.',
             shortDescription: [
@@ -1229,7 +1229,7 @@ document.addEventListener('DOMContentLoaded', () => {
         11: {
             name: 'Hermann Josef Leiders',
             role: 'Trainer & Coach',
-            photo: 'assets/team/Harry_Leiders_team_500x500.jpg',
+            photo: 'assets/team/Harry_Leiders_team_500x500-AI-v2.jpg',
             categories: ['leadership', 'communication', 'health'],
             motto: 'Schwerpunkte der heutigen Arbeit sind Führung, Kommunikation und Umgang mit Stress und Belastung.',
             shortDescription: [
@@ -1331,7 +1331,7 @@ document.addEventListener('DOMContentLoaded', () => {
         14: {
             name: 'Jürgen Reus',
             role: 'Trainer & Coach',
-            photo: 'assets/team/Reus-Juergen-Team-Portrait-500x500-1.jpg',
+            photo: 'assets/team/Reus-Juergen-Team-Portrait-500x500-1-AI-v2.jpg',
             categories: ['management', 'communication', 'change'],
             motto: 'Wichtig ist mir, die Mitarbeiter und Kunden dort abzuholen, wo sie gerade stehen.',
             shortDescription: [
@@ -1396,7 +1396,7 @@ document.addEventListener('DOMContentLoaded', () => {
         16: {
             name: 'Dr. Sarolf Sauer',
             role: 'Trainer & Coach',
-            photo: 'assets/team/Sarolf_Sauer_Team_500x500.jpg',
+            photo: 'assets/team/Sarolf_Sauer_Team_500x500-AI-v2.jpg',
             categories: ['leadership', 'health', 'communication'],
             motto: 'Haltung und Persönlichkeit sind der Schlüssel.',
             shortDescription: [
@@ -1493,7 +1493,7 @@ document.addEventListener('DOMContentLoaded', () => {
         19: {
             name: 'Markus Schramm',
             role: 'Trainer & Coach',
-            photo: 'assets/team/Markus-Schramm-Portrait-Team-500-x-500.jpg',
+            photo: 'assets/team/Markus-Schramm-Portrait-Team-500-x-500-AI-v2.jpg',
             categories: ['leadership', 'change', 'communication'],
             motto: 'Ich brenne dafür, Menschen in ihrer Entwicklung zu begleiten.',
             shortDescription: [
@@ -1556,7 +1556,7 @@ document.addEventListener('DOMContentLoaded', () => {
         22: {
             name: 'Uta-Barbara Vogel',
             role: 'Trainerin & Coach',
-            photo: 'assets/team/Team-Vogel-Barbara-500x500-1.png',
+            photo: 'assets/team/Team-Vogel-Barbara-500x500-1-AI-v2.jpg',
             categories: ['health', 'communication', 'leadership'],
             motto: 'Konsequent und mit dem Blick für Zusammenhänge, verbinde ich Direktheit mit Wertschätzung.',
             shortDescription: [
@@ -1584,7 +1584,7 @@ document.addEventListener('DOMContentLoaded', () => {
         23: {
             name: 'Frank Titzer',
             role: 'Coach & Supervisor',
-            photo: 'assets/team/frank_titzer.png',
+            photo: 'assets/team/frank_titzer-AI-v2.jpg',
             categories: ['communication', 'health', 'leadership'],
             motto: 'Klärung schafft Klarheit – auch in schwierigen Situationen.',
             shortDescription: [
