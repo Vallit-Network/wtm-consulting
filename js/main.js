@@ -395,6 +395,25 @@ document.addEventListener('DOMContentLoaded', () => {
         `;
     }
 
+    // First 3 visible "Startseminare" order per category (IDs in desired order; rest keep relative order)
+    const SEMINAR_FIRST_ORDER = {
+        change: [
+            'projekte-aus-der-krise-retten',
+            'zusammenarbeit-von-generationen',
+            'konflikterkennung-behandlung-praevention'
+        ],
+        health: [
+            'gesundheitsorientiertes-fuehren',
+            'widerstandsfaehigkeit-staerken',
+            'selbstmitgefuehl'
+        ],
+        management: [
+            'bwl-fuer-nicht-bwler',
+            'projektmanagement-basistraining',
+            'selbstmanagement'
+        ]
+    };
+
     // Function to render seminars by category
     function renderSeminars(category) {
         if (!seminarGrid || typeof window.seminarsData === 'undefined') return;
@@ -403,7 +422,19 @@ document.addEventListener('DOMContentLoaded', () => {
         seminarGrid.innerHTML = '';
 
         // Filter data
-        const filteredSeminars = Object.values(window.seminarsData).filter(s => s.category === category);
+        let filteredSeminars = Object.values(window.seminarsData).filter(s => s.category === category);
+
+        // Sort so first 3 visible match SEMINAR_FIRST_ORDER for this category
+        const order = SEMINAR_FIRST_ORDER[category];
+        if (order && order.length > 0) {
+            filteredSeminars = [...filteredSeminars].sort((a, b) => {
+                const idxA = order.indexOf(a.id);
+                const idxB = order.indexOf(b.id);
+                const posA = idxA >= 0 ? idxA : Infinity;
+                const posB = idxB >= 0 ? idxB : Infinity;
+                return posA - posB;
+            });
+        }
 
         // Generate HTML
         if (filteredSeminars.length > 0) {

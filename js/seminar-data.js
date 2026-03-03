@@ -430,7 +430,7 @@ const seminarsData = {
 
     "laterales-fuehren": {
         id: "laterales-fuehren",
-        title: "Laterales Führen wirksam gestalten",
+        title: "Laterales Führen",
         url: "seminare/laterales-fuehren.html",
         category: "leadership",
         badge: "Führung",
