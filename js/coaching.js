@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // =========================================
     function createCoachCard(coach, index) {
         const photoHtml = coach.photo
-            ? `<img src="../${coach.photo}" alt="${coach.name}" loading="lazy">`
+            ? `<img src="../${coach.photo}" alt="${coach.name}" width="80" height="80" loading="lazy" decoding="async">`
             : `<div class="coach-photo-placeholder">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
                     <circle cx="12" cy="8" r="4" />
@@ -263,7 +263,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Populate Photo (Main & Avatar)
         const photoHtml = coach.photo
-            ? `<img src="../${coach.photo}" alt="${coach.name}" class="modal-main-photo">`
+            ? `<img src="../${coach.photo}" alt="${coach.name}" class="modal-main-photo" width="500" height="500" decoding="async">`
             : `<div class="coach-photo-placeholder large">
                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
                     <circle cx="12" cy="8" r="4" />
@@ -274,7 +274,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (modalPhotoContainer) modalPhotoContainer.innerHTML = photoHtml;
         if (modalAvatar) {
             modalAvatar.innerHTML = coach.photo
-                ? `<img src="../${coach.photo}" alt="${coach.name}">`
+                ? `<img src="../${coach.photo}" alt="${coach.name}" width="80" height="80" decoding="async">`
                 : `<div class="coach-photo-placeholder small">
                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
                         <circle cx="12" cy="8" r="4" />

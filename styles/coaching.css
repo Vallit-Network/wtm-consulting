@@ -332,8 +332,11 @@
 }
 
 .coach-photo img {
+    display: block;
     width: 100%;
     height: 100%;
+    max-width: 80px;
+    max-height: 80px;
     object-fit: cover;
     object-position: center top;
 }
@@ -676,6 +679,21 @@
 /* ============================================
    COACH MODAL OVERRIDES
    ============================================ */
+
+/* Constrain modal images to source size so browser doesn't upscale (avoids blur/pixelation) */
+#coach-modal .modal-photo img {
+    max-width: 500px;
+    max-height: 500px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+}
+
+#coach-modal .modal-avatar img {
+    max-width: 80px;
+    max-height: 80px;
+}
 
 /* Add more padding to Schwerpunkte section */
 #coach-modal .modal-quick-info {
