@@ -2048,6 +2048,13 @@ footer::before {
     right: -25px;
 }
 
+/* Hide carousel arrow when there is nothing to scroll in that direction */
+#trainings-container .carousel-btn.carousel-btn-hidden {
+    display: none !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+}
+
 .carousel-btn:hover {
     background: var(--color-primary);
     color: var(--color-white);

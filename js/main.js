@@ -502,25 +502,25 @@ document.addEventListener('DOMContentLoaded', () => {
         };
 
         const updateArrows = () => {
-            const atLeftEdge = seminarGrid.scrollLeft <= 5;
-            const atRightEdge = Math.ceil(seminarGrid.scrollLeft + seminarGrid.clientWidth) >= seminarGrid.scrollWidth - 5;
+            const scrollLeft = seminarGrid.scrollLeft;
+            const scrollWidth = seminarGrid.scrollWidth;
+            const clientWidth = seminarGrid.clientWidth;
+            const atLeftEdge = scrollLeft <= 5;
+            const notScrollable = scrollWidth <= clientWidth + 2;
+            const atRightEdge = Math.ceil(scrollLeft + clientWidth) >= scrollWidth - 5;
 
-            // Left arrow: completely hide when at left edge (nothing to scroll left)
-            if (atLeftEdge) {
-                carouselPrev.style.display = 'none';
-                carouselPrev.style.pointerEvents = 'none';
+            // Left arrow: hide when at left edge or when grid is not scrollable
+            if (atLeftEdge || notScrollable) {
+                carouselPrev.classList.add('carousel-btn-hidden');
             } else {
-                carouselPrev.style.display = '';
-                carouselPrev.style.pointerEvents = 'all';
+                carouselPrev.classList.remove('carousel-btn-hidden');
             }
 
-            // Right arrow: completely hide when at right edge
-            if (atRightEdge) {
-                carouselNext.style.display = 'none';
-                carouselNext.style.pointerEvents = 'none';
+            // Right arrow: hide when at right edge or when grid is not scrollable
+            if (atRightEdge || notScrollable) {
+                carouselNext.classList.add('carousel-btn-hidden');
             } else {
-                carouselNext.style.display = '';
-                carouselNext.style.pointerEvents = 'all';
+                carouselNext.classList.remove('carousel-btn-hidden');
             }
         };
 
@@ -540,17 +540,25 @@ document.addEventListener('DOMContentLoaded', () => {
         // Update arrows on resize
         window.addEventListener('resize', updateArrows);
 
-        // Initial check – run once layout is ready and again after a short delay for late layout
+        // Initial state: hide left arrow until we know scroll position (avoids flash)
+        carouselPrev.classList.add('carousel-btn-hidden');
+
+        // Update arrows when layout is ready and on any change
+        const scheduleUpdate = () => {
+            updateArrows();
+            requestAnimationFrame(updateArrows);
+            setTimeout(updateArrows, 100);
+        };
         updateArrows();
-        setTimeout(updateArrows, 100);
-        setTimeout(updateArrows, 400);
+        scheduleUpdate();
 
         // When content changes (tab switch), update arrow visibility
-        const observer = new MutationObserver(() => {
-            updateArrows();
-            setTimeout(updateArrows, 50);
-        });
+        const observer = new MutationObserver(scheduleUpdate);
         observer.observe(seminarGrid, { childList: true });
+
+        // When grid size changes (e.g. after images load), re-check
+        const resizeObserver = new ResizeObserver(scheduleUpdate);
+        resizeObserver.observe(seminarGrid);
     }
 
     // =========================================
