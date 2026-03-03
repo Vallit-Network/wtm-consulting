@@ -321,12 +321,12 @@
     gap: 1rem;
 }
 
-/* Same structure as Team section: container + aspect-ratio photo + img */
+/* Same structure as Team section; smaller size (64px) so high-res sources scale cleanly */
 .coach-photo-container {
     position: relative;
     overflow: hidden;
-    width: 80px;
-    height: 80px;
+    width: 64px;
+    height: 64px;
     border-radius: 50%;
     flex-shrink: 0;
     border: 3px solid var(--color-primary-light);
@@ -672,8 +672,8 @@
     }
 
     .coach-photo-container {
-        width: 70px;
-        height: 70px;
+        width: 56px;
+        height: 56px;
     }
 
     .coach-card-body {
