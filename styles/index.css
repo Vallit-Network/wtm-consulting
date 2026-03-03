@@ -111,12 +111,12 @@ body {
     overflow-x: hidden;
 }
 
-#main-content {
-    transition: filter 0.6s ease-out;
+/* Hero entrance: only hero content fades in (opacity, no blur) */
+.hero-fade {
+    transition: opacity 0.6s ease-out;
 }
-
-#main-content.entrance-blur {
-    filter: blur(10px);
+.hero-fade.hero-entrance {
+    opacity: 0;
 }
 
 /* Typography */
@@ -7432,15 +7432,15 @@ header.header-scrolled .logo img {
 }
 
 .expandable-story-content.collapsed {
-    min-height: 300px;
-    /* Enforce height for alignment even if content is short */
-    max-height: 300px;
-    /* Shorter than Haltung text to look good in card */
+    height: 160px;
+    min-height: 160px;
+    max-height: 160px;
+    /* Fixed height so all Success Story cards look the same length; "Mehr lesen" reveals the rest */
 }
 
 .expandable-story-content.expanded {
-    min-height: 300px;
-    /* Prevent collapse when expanding short content */
+    height: auto;
+    min-height: 0;
     max-height: 2000px;
 }
 

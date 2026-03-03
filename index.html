@@ -26,12 +26,11 @@
 <body>
     <!-- Header injected by main.js in #nav-placeholder -->
     <div id="nav-placeholder"></div>
-    <div id="main-content" class="entrance-blur">
     <!-- Hero Section -->
     <section id="hero">
         <div class="hero-accent"></div>
         <div class="container">
-            <div class="hero-grid">
+            <div class="hero-fade hero-entrance hero-grid">
                 <div class="hero-content">
                     <p class="hero-tagline reveal">Training · Coaching · Beratung</p>
                     <h1 class="reveal stagger-1">Raum für <span>Haltung</span> und lebendige Professionalität</h1>
@@ -58,6 +57,7 @@
                     </div>
                 </div>
             </div>
+            <!-- /hero-entrance: class removed by JS for fade-in -->
         </div>
     </section>
     <!-- Intro / Haltung Section -->
@@ -1632,15 +1632,11 @@
             </div>
         </div>
     </div>
-    </div>
     <script src="js/seminar-data.js"></script>
     <script src="js/testimonials-data.js"></script>
     <script src="js/expandable-section.js"></script>
     <script src="js/main.js?v=6"></script>
-    <!-- UPDATED WTM Consulting Chatbot Snippet -->
-    <script data-company-id="5f929157-5f9e-48e3-b7f7-a6dcd0e24142" data-theme="glassmorphism" defer=""
-        src="https://www.vallit.net/widget/embed.js">
-        </script>
+    <!-- Chatbot loaded by main.js after entrance animation to avoid visible rebuild -->
 </body>
 
 </html>

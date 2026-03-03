@@ -5,13 +5,23 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
-    // Entrance blur: fade in main content only (nav stays sharp)
+    // Hero entrance: fade in hero content only (opacity, no blur)
     requestAnimationFrame(() => {
         requestAnimationFrame(() => {
-            const mainContent = document.getElementById('main-content');
-            if (mainContent) mainContent.classList.remove('entrance-blur');
+            const heroEntrance = document.querySelector('.hero-entrance');
+            if (heroEntrance) heroEntrance.classList.remove('hero-entrance');
         });
     });
+
+    // Load chatbot after entrance so widget does not visibly rebuild on load
+    setTimeout(() => {
+        const script = document.createElement('script');
+        script.src = 'https://www.vallit.net/widget/embed.js';
+        script.defer = true;
+        script.setAttribute('data-company-id', '5f929157-5f9e-48e3-b7f7-a6dcd0e24142');
+        script.setAttribute('data-theme', 'glassmorphism');
+        document.body.appendChild(script);
+    }, 2000);
 
     // =========================================
     // UNIVERSAL NAVIGATION INJECTION
