@@ -329,16 +329,23 @@
     flex-shrink: 0;
     border: 3px solid var(--color-primary-light);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    position: relative;
 }
 
+/* Render at 2x (160px) then scale to 80px so high-res sources scale cleanly without pixelation */
 .coach-photo img {
     display: block;
-    width: 100%;
-    height: 100%;
-    max-width: 80px;
-    max-height: 80px;
+    width: 160px;
+    height: 160px;
     object-fit: cover;
     object-position: center top;
+    transform: scale(0.5);
+    transform-origin: center center;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -80px;
+    margin-top: -80px;
 }
 
 .coach-photo-placeholder {
