@@ -1025,8 +1025,31 @@ document.addEventListener('DOMContentLoaded', () => {
             ]
         },
         3: {
+            name: 'Frank Titzer',
+            role: 'Gründer',
+            photo: 'assets/team/frank_titzer-AI-v2.jpg',
+            categories: ['communication', 'health', 'leadership'],
+            motto: 'Klärung schafft Klarheit – auch in schwierigen Situationen.',
+            shortDescription: [
+                'Experte für Klärungshilfe und Konfliktlösung',
+                'Coach und Supervisor mit systemischem Hintergrund',
+                'Begleitung von Einzelpersonen und Teams in komplexen Situationen',
+                'Fokus auf nachhaltige Kommunikation und Verständigung'
+            ],
+            extendedBio: [
+                'Aktuelle Schwerpunkte:',
+                '• Klärungshilfe bei Konflikten',
+                '• Coaching und Supervision',
+                '• Kommunikation in schwierigen Situationen',
+                '• Teambegleitung',
+                '',
+                'Arbeitsweise:',
+                'Systemischer Ansatz mit Fokus auf Klärung und nachhaltige Verständigung zwischen allen Beteiligten.'
+            ]
+        },
+        4: {
             name: 'Dr. Olaf Werner',
-            role: 'Geschäftsführer',
+            role: 'Gründer',
             photo: 'assets/team/olaf_werner-square.jpg',
             categories: ['leadership', 'communication', 'management'],
             motto: 'Das Zusammenspiel von Mensch und Organisation fasziniert mich.',
@@ -1059,7 +1082,37 @@ document.addEventListener('DOMContentLoaded', () => {
                 '• Gruppendynamik, Psychodrama, Trainer und Berater seit 1990'
             ]
         },
-        4: {
+        5: {
+            name: 'Andreas Cludius',
+            role: 'Trainer & Coach',
+            photo: 'assets/team/Cludius-Andreas-Team-500x500-1.jpg',
+            categories: ['leadership', 'management', 'change'],
+            motto: 'Menschen erkennen oft selbst den Bedarf einer Veränderung. Dabei ist die Umsetzung die eigentliche Herausforderung.',
+            shortDescription: [
+                'Business-Coach seit 2003, hauptberuflich seit 2011',
+                'Schwerpunkt Personal- und Betriebsführung für Inhaber, Gesellschafter oder Geschäftsführer von KMU',
+                'Seit 2015 zusätzliche Tätigkeit als Wirtschafts-Mediator',
+                '3 Jahrzehnte Berufstätigkeit im Bankgeschäft, überwiegend in leitender Funktion'
+            ],
+            extendedBio: [
+                'Erfahrung:',
+                '• Business-Coach seit 2003 (nebenberuflich), seit 2011 hauptberuflich',
+                '• Schwerpunkt: Personal- und Betriebsführung für KMU-Inhaber und Führungskräfte',
+                '• Wirtschafts-Mediator seit 2015, Schwerpunkt innerbetriebliche Konfliktsituationen',
+                '',
+                'Berufserfahrung im Bankgeschäft:',
+                '• 3 Jahrzehnte Berufstätigkeit, überwiegend in leitender Funktion',
+                '• Kundenbetreuung von Groß- und Mittelstandskunden',
+                '• Vertriebsorganisation, Strategieentwicklung und -umsetzung',
+                '• Projektarbeit und -leitung',
+                '• Führung und Führungskräfteentwicklung',
+                '• Zuletzt in direkter Zusammenarbeit mit dem Vorstand',
+                '',
+                'Arbeitsweise:',
+                'Kontinuierliche Begleitung in schwierigen Situationen bis zur Lösung des Problems.'
+            ]
+        },
+        6: {
             name: 'Carmen Werner',
             role: 'Trainerin & Coach',
             photo: 'assets/team/Carmen-Werner-Team_500x500.jpg',
@@ -1094,8 +1147,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 '• Heilpraktikerin für Psychotherapie'
             ]
         },
-        5: {
-            name: 'Philipp Besch',
+        7: {
+            name: 'Dr. Bettina Brendel',
             role: 'Trainer & Coach',
             photo: 'assets/team/Team-Phillip_Besch-500x500-1-AI-v2.jpg',
             categories: ['leadership', 'change', 'health'],
@@ -1217,7 +1270,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 'Veränderungsprozesse so steuern und strukturieren, dass ein für das individuelle Unternehmen passendes Ergebnis erzielt werden kann.'
             ]
         },
-        9: {
+        22: {
             name: 'Wolfgang Hoffmann',
             role: 'Trainer & Coach',
             photo: 'assets/team/Team-Foto-Wolfgang-Hoffmann-AI-v2.jpg',
@@ -1252,7 +1305,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 'Sprachen: Deutsch (Muttersprache), Englisch, Spanisch, Französisch'
             ]
         },
-        10: {
+        19: {
             name: 'Melanie Kubala',
             role: 'Trainerin & Coach',
             photo: 'assets/team/Team-Melanie-Kubala-500x500-1-AI-v2.jpg',
@@ -1285,7 +1338,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 '• Staatlich geprüfte Betriebswirtin'
             ]
         },
-        11: {
+        13: {
             name: 'Hermann Josef Leiders',
             role: 'Trainer & Coach',
             photo: 'assets/team/Harry_Leiders_team_500x500-AI-v2.jpg',
@@ -1318,7 +1371,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 '• Qualifizierung zum Coach (Hephaistos, München)'
             ]
         },
-        12: {
+        11: {
             name: 'Heike Neidhart',
             role: 'Trainerin & Coach',
             photo: 'assets/team/Profilbild_Heike_Neidhart_Team_500x500.jpg',
@@ -1352,7 +1405,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 'Sprachen: Deutsch (Muttersprache), Englisch'
             ]
         },
-        13: {
+        10: {
             name: 'Gerold Pohl',
             role: 'Trainer & Coach',
             photo: 'assets/team/Gerold-Pohl-Team-500-x-500.jpg',
@@ -1419,7 +1472,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 'Großkonzerne, mittelständische Wirtschaft, soziale Einrichtungen, Beratungs- und Softwareunternehmen'
             ]
         },
-        15: {
+        16: {
             name: 'Maik Rieß',
             role: 'Trainer & Coach',
             photo: 'assets/team/Team-Maik-Riess-500x500-1.jpg',
@@ -1452,7 +1505,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 '• Teamcoach (LNLPT)'
             ]
         },
-        16: {
+        9: {
             name: 'Dr. Sarolf Sauer',
             role: 'Trainer & Coach',
             photo: 'assets/team/Sarolf_Sauer_Team_500x500-AI-v2.jpg',
@@ -1486,7 +1539,7 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         17: {
             name: 'Marcus Schmidt',
-            role: 'Trainer & Berater',
+            role: 'Trainer & Coach',
             photo: 'assets/team/Team-Marcus-Schmidt-6-23.jpg',
             categories: ['leadership', 'change', 'management'],
             motto: 'Kooperation gelingt immer dann, wenn ich mir des Unterschieds von Absicht und Wirkung bewusst bin.',
@@ -1516,7 +1569,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 '• Lehrbeauftragter Hochschule Pforzheim (Projekt- und Change Management, Führungskräfteentwicklung)'
             ]
         },
-        18: {
+        15: {
             name: 'Kirsten Schmiegelt',
             role: 'Trainerin & Coach',
             photo: 'assets/team/Kirsten_Schmiegelt_3-1.jpg',
@@ -1549,7 +1602,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 '• Betriebliche Gesundheitsberaterin (Fernuniversität Hagen)'
             ]
         },
-        19: {
+        18: {
             name: 'Markus Schramm',
             role: 'Trainer & Coach',
             photo: 'assets/team/Markus_Schramm_AI.png',
@@ -1580,7 +1633,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 '• Zertifizierter Coach nach ICF/IOBC (WTM/ifsm)'
             ]
         },
-        20: {
+        12: {
             name: 'Heike Stalling',
             role: 'Trainerin & Coach',
             photo: 'assets/team/Stalling-Heike-Team-Portrait-500x500-6-23.jpg',
@@ -1611,8 +1664,40 @@ document.addEventListener('DOMContentLoaded', () => {
                 '• Wertorientierte Imaginative Traumatherapie (WIIT)'
             ]
         },
-
-        22: {
+        20: {
+            name: 'Philipp Besch',
+            role: 'Trainer & Coach',
+            photo: 'assets/team/Team-Phillip_Besch-500x500-1-AI-v2.jpg',
+            categories: ['leadership', 'change', 'health'],
+            motto: 'Authentizität, ein unerschütterliches Vertrauen in die Entfaltungsmöglichkeiten von Menschen und Humor zeichnen meine Arbeitsweise aus.',
+            shortDescription: [
+                'Expertise auf dem Gebiet Persönlichkeitsentwicklung',
+                'Langjährige Arbeit in der Drogen- und Jugendhilfe sowie Führungskraft in der Sozialwirtschaft',
+                'Stärken stärken und Aufbau von Resilienz als Schwerpunkt',
+                'Systemischer Organisationsentwicklungsberater'
+            ],
+            extendedBio: [
+                'Aktuelle Schwerpunkte:',
+                '• Team- und Organisationsentwicklung',
+                '• Workshops zu Kommunikation und Persönlichkeit, (laterale) Führung, Resilienz',
+                '• Coaching',
+                '• Supervision',
+                '',
+                'Stationen im Beruf:',
+                '• Seit 2015 Supervision in der Sozialwirtschaft',
+                '• Seit 2004 Trainer, Berater und Coach',
+                '• Mehr als 15 Jahre Mitarbeiter und Führungskraft in Sozialwirtschaft und Bildungswesen',
+                '',
+                'Aus- und Weiterbildungen:',
+                '• Systemischer Organisationsentwicklungsberater (Alwart & Team, Hamburg)',
+                '• NLP-Resonanz-Master (Institut Kutschera, DVNLP)',
+                '• LINC Personality Profiler Coach (LINC-Institut)',
+                '• Trainingsdesigner (Anna Langheiter)',
+                '• Systemischer Businesscoach (Alwart & Team, Hamburg)',
+                '• Diplompädagoge (Universität Hamburg)'
+            ]
+        },
+        21: {
             name: 'Uta-Barbara Vogel',
             role: 'Trainerin & Coach',
             photo: 'assets/team/Barbara_AI.png',
@@ -1638,29 +1723,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 '',
                 'Arbeitsweise:',
                 'Verbindet Direktheit mit Wertschätzung und hat einen klaren Blick für Zusammenhänge.'
-            ]
-        },
-        23: {
-            name: 'Frank Titzer',
-            role: 'Coach & Supervisor',
-            photo: 'assets/team/frank_titzer-AI-v2.jpg',
-            categories: ['communication', 'health', 'leadership'],
-            motto: 'Klärung schafft Klarheit – auch in schwierigen Situationen.',
-            shortDescription: [
-                'Experte für Klärungshilfe und Konfliktlösung',
-                'Coach und Supervisor mit systemischem Hintergrund',
-                'Begleitung von Einzelpersonen und Teams in komplexen Situationen',
-                'Fokus auf nachhaltige Kommunikation und Verständigung'
-            ],
-            extendedBio: [
-                'Aktuelle Schwerpunkte:',
-                '• Klärungshilfe bei Konflikten',
-                '• Coaching und Supervision',
-                '• Kommunikation in schwierigen Situationen',
-                '• Teambegleitung',
-                '',
-                'Arbeitsweise:',
-                'Systemischer Ansatz mit Fokus auf Klärung und nachhaltige Verständigung zwischen allen Beteiligten.'
             ]
         }
     };
