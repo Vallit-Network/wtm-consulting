@@ -109,10 +109,13 @@ body {
     background-color: var(--color-white);
     line-height: 1.7;
     overflow-x: hidden;
+}
+
+#main-content {
     transition: filter 0.6s ease-out;
 }
 
-body.entrance-blur {
+#main-content.entrance-blur {
     filter: blur(10px);
 }
 

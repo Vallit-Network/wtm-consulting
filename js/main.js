@@ -5,10 +5,11 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
-    // Entrance blur: remove after short delay so transition runs
+    // Entrance blur: fade in main content only (nav stays sharp)
     requestAnimationFrame(() => {
         requestAnimationFrame(() => {
-            document.body.classList.remove('entrance-blur');
+            const mainContent = document.getElementById('main-content');
+            if (mainContent) mainContent.classList.remove('entrance-blur');
         });
     });
 
@@ -460,13 +461,15 @@ document.addEventListener('DOMContentLoaded', () => {
         };
 
         const updateArrows = () => {
-            // Check if we can scroll left
+            // Check if we can scroll left – hide left arrow when at left edge (like right arrow at right edge)
             if (seminarGrid.scrollLeft <= 5) {
                 carouselPrev.style.opacity = '0';
                 carouselPrev.style.pointerEvents = 'none';
+                carouselPrev.style.visibility = 'hidden';
             } else {
                 carouselPrev.style.opacity = '1';
                 carouselPrev.style.pointerEvents = 'all';
+                carouselPrev.style.visibility = 'visible';
             }
 
             // Check if we can scroll right
@@ -475,9 +478,11 @@ document.addEventListener('DOMContentLoaded', () => {
             if (Math.ceil(seminarGrid.scrollLeft + seminarGrid.clientWidth) >= seminarGrid.scrollWidth - 5) {
                 carouselNext.style.opacity = '0';
                 carouselNext.style.pointerEvents = 'none';
+                carouselNext.style.visibility = 'hidden';
             } else {
                 carouselNext.style.opacity = '1';
                 carouselNext.style.pointerEvents = 'all';
+                carouselNext.style.visibility = 'visible';
             }
         };
 
