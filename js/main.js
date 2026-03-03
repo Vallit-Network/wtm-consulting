@@ -502,28 +502,25 @@ document.addEventListener('DOMContentLoaded', () => {
         };
 
         const updateArrows = () => {
-            // Check if we can scroll left – hide left arrow when at left edge (like right arrow at right edge)
-            if (seminarGrid.scrollLeft <= 5) {
-                carouselPrev.style.opacity = '0';
+            const atLeftEdge = seminarGrid.scrollLeft <= 5;
+            const atRightEdge = Math.ceil(seminarGrid.scrollLeft + seminarGrid.clientWidth) >= seminarGrid.scrollWidth - 5;
+
+            // Left arrow: completely hide when at left edge (nothing to scroll left)
+            if (atLeftEdge) {
+                carouselPrev.style.display = 'none';
                 carouselPrev.style.pointerEvents = 'none';
-                carouselPrev.style.visibility = 'hidden';
             } else {
-                carouselPrev.style.opacity = '1';
+                carouselPrev.style.display = '';
                 carouselPrev.style.pointerEvents = 'all';
-                carouselPrev.style.visibility = 'visible';
             }
 
-            // Check if we can scroll right
-            // scrollWidth - clientWidth is the max scroll position
-            // Use a small tolerance
-            if (Math.ceil(seminarGrid.scrollLeft + seminarGrid.clientWidth) >= seminarGrid.scrollWidth - 5) {
-                carouselNext.style.opacity = '0';
+            // Right arrow: completely hide when at right edge
+            if (atRightEdge) {
+                carouselNext.style.display = 'none';
                 carouselNext.style.pointerEvents = 'none';
-                carouselNext.style.visibility = 'hidden';
             } else {
-                carouselNext.style.opacity = '1';
+                carouselNext.style.display = '';
                 carouselNext.style.pointerEvents = 'all';
-                carouselNext.style.visibility = 'visible';
             }
         };
 
@@ -543,14 +540,15 @@ document.addEventListener('DOMContentLoaded', () => {
         // Update arrows on resize
         window.addEventListener('resize', updateArrows);
 
-        // Initial check
-        // Wait for images/layout
+        // Initial check – run once layout is ready and again after a short delay for late layout
+        updateArrows();
         setTimeout(updateArrows, 100);
+        setTimeout(updateArrows, 400);
 
-        // Also hook into renderSeminars to update arrows when content changes
-        // Use a MutationObserver to detect when children change
+        // When content changes (tab switch), update arrow visibility
         const observer = new MutationObserver(() => {
-            setTimeout(updateArrows, 100);
+            updateArrows();
+            setTimeout(updateArrows, 50);
         });
         observer.observe(seminarGrid, { childList: true });
     }

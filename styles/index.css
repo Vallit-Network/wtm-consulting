@@ -7426,9 +7426,7 @@ header.header-scrolled .logo img {
 .expandable-story-content {
     position: relative;
     overflow: hidden;
-    transition: max-height 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-    /* Ensure the button is centered relative to this if needed, 
-       but currently the button is a sibling in flex column .case-study-content */
+    transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .expandable-story-content.collapsed {
@@ -7439,9 +7437,24 @@ header.header-scrolled .logo img {
 }
 
 .expandable-story-content.expanded {
-    height: auto;
-    min-height: 0;
     max-height: 2000px;
+}
+
+/* Same visible length for all Success Story cards: title + story area + quote */
+#success-stories .case-study-content h3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    min-height: 3.2em;
+    line-height: 1.5;
+}
+
+#success-stories .case-study-quote {
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 /* Ensure button is centered in case study card */
