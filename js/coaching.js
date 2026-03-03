@@ -1,5 +1,5 @@
 /**
- * WTM Online Coaching - Dynamic Functionality
+ * WTM Business-Coaching - Dynamic Functionality
  * Handles coach filtering, rendering, and animations
  */
 

@@ -7,13 +7,6 @@
 
 window.testimonialsData = [
     {
-        id: "angela-thoele",
-        name: "Angela Thöle",
-        role: "FoamPartner Delmenhorst GmbH",
-        title: "Dank an einen vertrauensvollen Partner",
-        text: "Moin, Moin liebes WTM Team, seit Anfang 2019 seid ihr vertrauensvoller Partner für die FoamPartner Group. Die Workshops, die wir an unserem Standort Delmenhorst durchführen, sind sehr individuell, flexibel und intensiv. Keine standardisierten PowerPoint Vorlagen und kein starres Programm. Ihr schafft es, die Teilnehmer auf die besondere Reise, mit Herzblut, Leidenschaft, Professionalität und großer Kompetenz, mitzunehmen, auch dann, wenn es für den einen oder anderen unbequem wird. Aufgrund meiner Erfahrungen und mein Vertrauen in Euch habe ich mich für ein Persönlichkeitsworkshop angemeldet. Die drei Tage waren sehr intensiv und ich kann mich nicht erinnern, mich in den Jahren zuvor so intensiv mit mir selbst beschäftigt zu haben. Herzlichen Dank an Euch und allen Coaches. Ich freue mich auf eine lange und erfolgreiche weitere Zusammenarbeit."
-    },
-    {
         id: "michael-buerck",
         name: "Michael Bürck",
         role: "Kunde",
@@ -46,6 +39,6 @@ window.testimonialsData = [
         name: "M. B.",
         role: "Teamleader Marketing, BASF SE",
         title: "Excellent Business Coaching / Management Consulting at BASF via WTM",
-        text: "I had the \"unique\" opportunity to participate at a personal coaching provided by WTM Management Consulting (Mr. Titzer). In a very professional and at the same time comfortable atmosphere, I was able to improve skills within the targets set at the beginning of the coaching. I very much appreciated the reflection of improvements over time and also challenging question sessions to identify \"hidden\" aspects. That was the basis and trigger of further self reflections after the sessions and lead to pro-active personal change patterns. Finally I would say it gave my whole private and business live a new drive! Many thanks ... The coaching took place in a function as a Teamleader Marketing in one of BASF SE devisions / Germany Headquarter."
+        text: "I had the \"unique\" opportunity to participate at a personal coaching provided by WTM Management Consulting (Mr. Titzer). In a very professional and at the same time comfortable atmosphere, I was able to improve skills within the targets set at the beginning of the coaching. I very much appreciated the reflection of improvements over time and also challenging question sessions to identify \"hidden\" aspects."
     }
 ];

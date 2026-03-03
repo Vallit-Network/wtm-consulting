@@ -1,6 +1,6 @@
 /**
- * WTM Online Coaching Data
- * Contains all coach profiles for the online coaching section
+ * WTM Business-Coaching Data
+ * Contains all coach profiles for the business coaching section
  */
 
 const coachingData = {
@@ -27,7 +27,7 @@ const coachingData = {
         {
             id: 'frank-titzer',
             name: 'Frank Titzer',
-            photo: 'assets/team/frank_titzer.png',
+            photo: 'assets/team/frank_titzer-AI-v2.jpg',
             role: 'Coach & Supervisor',
             motto: 'Klärung schafft Klarheit – auch in schwierigen Situationen.',
             description: 'Brückenbauend, bodenständig, zugewandt konfrontierend, klar in Benennung und Hinweisen. Dies geerdet im Respekt für die Einzigartigkeit individuellen Erlebens und individueller Rollenentwürfe. Im Beratungsprozess achtsam für die Balance von Geschwindigkeit und notwendiger Verlangsamung.',
@@ -125,7 +125,7 @@ const coachingData = {
         {
             id: 'hermann-josef-leiders',
             name: 'Hermann Josef Leiders',
-            photo: 'assets/team/Harry_Leiders_team_500x500.jpg',
+            photo: 'assets/team/Harry_Leiders_team_500x500-AI-v2.jpg',
             role: 'Trainer & Coach',
             motto: 'Schwerpunkte der heutigen Arbeit sind Führung, Kommunikation und Umgang mit Stress und Belastung.',
             description: 'Coachees sind grundsätzlich ideenreich, kreativ und in der Lage im Gespräch eigene Ideen zum Umgang mit ihren Problemstellungen zu entwickeln.',
@@ -267,7 +267,7 @@ const coachingData = {
         {
             id: 'dr-till-reichert',
             name: 'Dr. Till Reichert',
-            photo: 'assets/team/till-reichert.jpg',
+            photo: 'assets/team/till-reichert-square.jpg',
             role: 'Geschäftsführer',
             motto: '20% Theorie und 80% Praxis.',
             description: 'Als erfahrener Executive Coach (Unternehmensberater, Hochschuldozent, Coach-Ausbilder) unterstütze ich (Führungs-) Persönlichkeiten in ihren Wachstumsprozessen.',
@@ -307,7 +307,7 @@ const coachingData = {
         {
             id: 'melanie-kubala',
             name: 'Melanie Kubala',
-            photo: 'assets/team/Team-Melanie-Kubala-500x500-1.jpg',
+            photo: 'assets/team/Team-Melanie-Kubala-500x500-1-AI-v2.jpg',
             role: 'Trainerin & Coach',
             motto: 'Leading with Trust*Ship: Entfalte dein Führungspotenzial durch Selbstvertrauen und Kommunikation',
             description: 'Als ehemalige HR-Managerin kenne ich die Herausforderungen der Fach- und Führungskräfte und weiß genau wo der Schuh drückt. Sich selbst zu vertrauen und zu erkennen, was wirklich in mir steckt sind der Schlüssel für eine gute Führungskraft.',
@@ -381,7 +381,7 @@ const coachingData = {
         {
             id: 'wolfgang-hoffmann',
             name: 'Wolfgang Hoffmann',
-            photo: 'assets/team/Team-Foto-Wolfgang-Hoffmann.jpg',
+            photo: 'assets/team/Team-Foto-Wolfgang-Hoffmann-AI-v2.jpg',
             role: 'Trainer & Coach',
             motto: 'Führung bedeutet nicht nur, Verantwortung zu tragen, sondern auch Vertrauen zu schaffen und zu erhalten.',
             description: 'Mit langjähriger Erfahrung im Management von Logistikunternehmen verstehe ich die Herausforderungen von Organisationen und Führungskräften. Entdecken Sie mit mir IHREN Weg als Führungskraft, Ihre Einzigartigkeit, Ihre Stärken.',
@@ -490,7 +490,7 @@ const coachingData = {
         {
             id: 'malte-werner',
             name: 'Malte Werner',
-            photo: 'assets/team/malte-werner.jpg',
+            photo: 'assets/team/malte-werner-square.jpg',
             role: 'Geschäftsführer',
             motto: 'Balance zwischen humorvollem Elan und der nötigen Seriosität.',
             description: 'Um die eigene Leistungsfähigkeit zu erhalten, müssen wir klare Prioritäten setzen. Dabei ist der eigene Anspruch oft Fluch und Segen zugleich: eine gute Balance zu finden ist zentral!',

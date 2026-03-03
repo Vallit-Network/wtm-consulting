@@ -5,6 +5,13 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
+    // Entrance blur: remove after short delay so transition runs
+    requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+            document.body.classList.remove('entrance-blur');
+        });
+    });
+
     // =========================================
     // UNIVERSAL NAVIGATION INJECTION
     // =========================================
@@ -60,10 +67,10 @@ document.addEventListener('DOMContentLoaded', () => {
                             </svg>
                         </a>
                         <div class="nav-dropdown-menu">
-                            <a href="${getLink('#angebote')}">Leistungen</a>
-                            <a href="${getLink('#trainings')}">Trainings</a>
-                            <a href="${getLink('coaching/')}">Online Coaching</a>
-                            <a href="${getLink('#fuehrungskraefte')}">FK-Programm</a>
+                            <a href="${getLink('#angebote')}">Leistungsbereiche</a>
+                            <a href="${getLink('#trainings')}">Trainings & Seminare</a>
+                            <a href="${getLink('coaching/')}">Business-Coaching</a>
+                            <a href="${getLink('#fuehrungskraefte')}">Führungskräfte-Curriculum</a>
                         </div>
                     </li>
                     <li class="nav-dropdown">
@@ -2230,10 +2237,10 @@ document.addEventListener('DOMContentLoaded', () => {
                         <div class="footer-col">
                             <h4>Angebot</h4>
                             <ul class="footer-links">
-                                <li><a href="../index.html#angebote">Leistungen</a></li>
-                                <li><a href="../index.html#trainings">Trainings</a></li>
-                                <li><a href="../coaching/">Online Coaching</a></li>
-                                <li><a href="../index.html#fuehrungskraefte">FK-Programm</a></li>
+                                <li><a href="../index.html#angebote">Leistungsbereiche</a></li>
+                                <li><a href="../index.html#trainings">Trainings & Seminare</a></li>
+                                <li><a href="../coaching/">Business-Coaching</a></li>
+                                <li><a href="../index.html#fuehrungskraefte">Führungskräfte-Curriculum</a></li>
                             </ul>
                         </div>
                         <!-- Contact Column -->
@@ -2262,7 +2269,7 @@ document.addEventListener('DOMContentLoaded', () => {
                             <p>&copy; 2026 WTM Management Consulting GmbH. Alle Rechte vorbehalten.</p>
                         </div>
                         <div class="footer-version">
-                            <span>v0.4.21</span>
+                            <span>v0.8.2</span>
                         </div>
                     </div>
                 </div>
