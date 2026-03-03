@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // =========================================
     function createCoachCard(coach, index) {
         const photoHtml = coach.photo
-            ? `<img src="../${coach.photo}" alt="${coach.name}" width="80" height="80" loading="lazy" decoding="async">`
+            ? `<img src="../${coach.photo}" alt="${coach.name}" loading="lazy">`
             : `<div class="coach-photo-placeholder">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
                     <circle cx="12" cy="8" r="4" />
@@ -69,8 +69,10 @@ document.addEventListener('DOMContentLoaded', () => {
                      data-coach-id="${coach.id}" 
                      data-themes="${coach.themes.join(',')}">
                 <div class="coach-card-header">
-                    <div class="coach-photo">
-                        ${photoHtml}
+                    <div class="coach-photo-container">
+                        <div class="coach-photo">
+                            ${photoHtml}
+                        </div>
                     </div>
                     <div class="coach-header-info">
                         <h3 class="coach-name">${coach.name}</h3>
