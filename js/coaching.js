@@ -47,9 +47,14 @@ document.addEventListener('DOMContentLoaded', () => {
     // =========================================
     // CREATE COACH CARD HTML
     // =========================================
+    function getThumbnailUrl(photoPath) {
+        return photoPath.replace('assets/team/', 'assets/team/thumbnails/');
+    }
+
     function createCoachCard(coach, index) {
+        const cardPhotoUrl = coach.photo ? getThumbnailUrl(coach.photo) : null;
         const photoHtml = coach.photo
-            ? `<img src="../${coach.photo}" alt="${coach.name}" width="64" height="64" loading="lazy" decoding="async">`
+            ? `<img src="../${cardPhotoUrl}" alt="${coach.name}" width="64" height="64" loading="lazy" decoding="async">`
             : `<div class="coach-photo-placeholder">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
                     <circle cx="12" cy="8" r="4" />
