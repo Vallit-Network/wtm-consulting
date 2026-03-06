@@ -421,5 +421,4 @@ document.addEventListener('DOMContentLoaded', () => {
         revealObserver.observe(el);
     });
 
-    console.log('WTM Coaching Page Initialized');
 });

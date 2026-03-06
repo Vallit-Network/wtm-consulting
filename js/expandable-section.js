@@ -1,5 +1,5 @@
 /**
- * Expandable Section Logic for "Haltung"
+ * Expandable Section Logic for "Haltung" & Success Stories
  * Handles the "Mehr lesen" / "Weniger anzeigen" toggle.
  */
 
@@ -23,10 +23,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 button.setAttribute('aria-expanded', 'false');
                 buttonText.textContent = 'Mehr lesen';
                 button.classList.remove('active');
-
-                // Optional: Scroll back to ensure context isn't lost if very long
-                // content.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-
             } else {
                 // Expand
                 content.classList.remove('collapsed');
@@ -35,6 +31,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 buttonText.textContent = 'Weniger anzeigen';
                 button.classList.add('active');
             }
+
+            // Notify carousel to recalculate height
+            document.dispatchEvent(new CustomEvent('story-expand-toggle'));
         });
     });
 });

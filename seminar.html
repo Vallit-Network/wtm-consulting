@@ -1,19 +1,28 @@
 <!DOCTYPE html>
 
 <html lang="de">
+
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.vallit.net https://vercel.live; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://www.vallit.net https://vercel.live; font-src 'self' https://fonts.gstatic.com https://www.vallit.net; img-src 'self' data: https://www.vallit.net https://vercel.live; connect-src 'self' https://www.vallit.net https://vercel.live; frame-src 'self' https://www.vallit.net https://vercel.live;" http-equiv="Content-Security-Policy"/>
-<link href="assets/favicon.png" rel="icon" type="image/png"/>
-<title>Seminar Details – WTM Management Consulting</title>
-<meta content="Seminar Details WTM Management Consulting" name="description"/>
-<!-- Fonts -->
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&amp;family=Source+Sans+Pro:wght@300;400;600;700&amp;display=swap" rel="stylesheet"/>
-<!-- Styles -->
-<link href="styles/index.css" rel="stylesheet"/>
-<style>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta
+        content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.vallit.net https://vercel.live; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://www.vallit.net https://vercel.live; font-src 'self' https://fonts.gstatic.com https://www.vallit.net; img-src 'self' data: https://www.vallit.net https://vercel.live; connect-src 'self' https://www.vallit.net https://vercel.live; frame-src 'self' https://www.vallit.net https://vercel.live;"
+        http-equiv="Content-Security-Policy" />
+    <link href="assets/favicon.png" rel="icon" type="image/png" />
+    <title>Seminar Details – WTM Management Consulting</title>
+    <meta content="Seminar Details WTM Management Consulting" name="description" />
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link rel="preload"
+        href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&amp;family=Source+Sans+Pro:wght@300;400;600;700&amp;display=swap"
+        as="style" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&amp;family=Source+Sans+Pro:wght@300;400;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <!-- Styles -->
+    <link href="styles/index.css?v=0.9.0" rel="stylesheet" />
+    <style>
         .val-toast {
             position: fixed;
             bottom: 20px;
@@ -52,110 +61,115 @@
         }
     </style>
 </head>
+
 <body>
-<!-- Scroll Progress Indicator -->
-<div class="scroll-progress" id="scrollProgress"></div>
-<!-- Header -->
-<header class="header-dark" id="header">
-<div class="container">
-<nav>
-<a class="logo" href="index">
-<img alt="WTM Management Consulting" src="assets/wtm_logo_gross.png"/>
-</a>
-<div class="menu-toggle" id="mobile-menu">
-<span class="bar"></span>
-<span class="bar"></span>
-<span class="bar"></span>
-</div>
-<ul class="nav-links">
-<li><a class="nav-link" href="index#haltung">Haltung</a></li>
-<li><a class="nav-link" href="index#angebote">Angebote</a></li>
-<li><a class="nav-link" href="index#trainings">Trainings &amp; Seminare</a></li>
-<li><a class="nav-link" href="index#team">Team</a></li>
-<li><a class="nav-link" href="index#kontakt">Kontakt</a></li>
-</ul>
-</nav>
-</div>
-</header>
-<!-- Main Content - will be injected dynamically -->
-<main id="main-content">
-<!-- Loading state -->
-<div class="seminar-loading">
-<div class="loading-spinner"></div>
-</div>
-</main>
-<!-- Chatbot Helper Panel -->
-<!-- Chatbot Helper Panel (Redesigned) -->
-<div class="chatbot-helper" id="chatbotHelper">
-<button class="chatbot-helper-btn" id="openChatbot">
-<div class="btn-icon-wrapper">
-<svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
-<path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
-</svg>
-</div>
-<div class="btn-text-content">
-<span class="btn-title">Fragen?</span>
-<span class="btn-subtitle">Ich helfe gerne</span>
-</div>
-</button>
-</div>
-<!-- Footer (Same as Main Page) -->
-<footer>
-<div class="container">
-<div class="footer-grid">
-<div class="footer-brand reveal stagger-1">
-<a class="logo" href="index">
-<img alt="WTM Management Consulting" src="assets/logo.png"/>
-</a>
-<p>Training · Coaching · Beratung<br/>Seit über 25 Jahren.</p>
-<div class="footer-social">
-<a aria-label="LinkedIn" href="https://www.linkedin.com/company/wtm-management-consulting" rel="noopener noreferrer" target="_blank">
-<svg fill="currentColor" viewbox="0 0 24 24">
-<path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"></path>
-</svg>
-</a>
-</div>
-</div>
-<div class="footer-col reveal stagger-2">
-<h4>Angebot</h4>
-<ul class="footer-links">
-<li><a href="index#angebote">Leistungsbereiche</a></li>
-<li><a href="index#trainings">Trainings &amp; Seminare</a></li>
-<li><a href="coaching/">Business-Coaching</a></li>
-<li><a href="index#fuehrungskraefte">Führungskräfte-Curriculum</a></li>
-</ul>
-</div>
-<div class="footer-col reveal stagger-3">
-<h4>Kontakt</h4>
-<ul class="footer-links footer-contact">
-<li>Neuer Graben 61</li>
-<li>44139 Dortmund</li>
-<li><a href="tel:+4923113722666">0231 137 22 666</a></li>
-<li><a href="mailto:info@wtm-consulting.de">info@wtm-consulting.de</a></li>
-</ul>
-</div>
-<div class="footer-col reveal stagger-4">
-<h4>Rechtliches</h4>
-<ul class="footer-links">
-<li><a href="impressum">Impressum</a></li>
-<li><a href="datenschutz">Datenschutz</a></li>
-</ul>
-</div>
-</div>
-<div class="footer-bottom">
-<div class="copyright">
-<p>© 2026 WTM Management Consulting GmbH. Alle Rechte vorbehalten.</p>
-</div>
-<div class="footer-version">
-<span>v0.8.2</span>
-</div>
-</div>
-</div>
-</footer>
-<!-- Scripts -->
-<script src="js/seminar-data.js"></script>
-<script src="js/main.js"></script>
-<script>
+    <a href="#main-content" class="skip-to-content">Zum Hauptinhalt springen</a>
+    <!-- Scroll Progress Indicator -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+    <!-- Header -->
+    <header class="header-dark" id="header">
+        <div class="container">
+            <nav>
+                <a class="logo" href="index">
+                    <img alt="WTM Management Consulting" src="assets/wtm_logo_gross.png" />
+                </a>
+                <div class="menu-toggle" id="mobile-menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+                <ul class="nav-links">
+                    <li><a class="nav-link" href="index#haltung">Haltung</a></li>
+                    <li><a class="nav-link" href="index#angebote">Angebote</a></li>
+                    <li><a class="nav-link" href="index#trainings">Trainings &amp; Seminare</a></li>
+                    <li><a class="nav-link" href="index#team">Team</a></li>
+                    <li><a class="nav-link" href="index#kontakt">Kontakt</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <!-- Main Content - will be injected dynamically -->
+    <main id="main-content">
+        <!-- Loading state -->
+        <div class="seminar-loading">
+            <div class="loading-spinner"></div>
+        </div>
+    </main>
+    <!-- Chatbot Helper Panel -->
+    <!-- Chatbot Helper Panel (Redesigned) -->
+    <div class="chatbot-helper" id="chatbotHelper">
+        <button class="chatbot-helper-btn" id="openChatbot">
+            <div class="btn-icon-wrapper">
+                <svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                </svg>
+            </div>
+            <div class="btn-text-content">
+                <span class="btn-title">Fragen?</span>
+                <span class="btn-subtitle">Ich helfe gerne</span>
+            </div>
+        </button>
+    </div>
+    <!-- Footer (Same as Main Page) -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand reveal stagger-1">
+                    <a class="logo" href="index">
+                        <img alt="WTM Management Consulting" src="assets/logo.png" />
+                    </a>
+                    <p>Training · Coaching · Beratung<br />Seit über 25 Jahren.</p>
+                    <div class="footer-social">
+                        <a aria-label="LinkedIn" href="https://www.linkedin.com/company/wtm-management-consulting"
+                            rel="noopener noreferrer" target="_blank">
+                            <svg fill="currentColor" viewbox="0 0 24 24" aria-hidden="true">
+                                <path
+                                    d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1. seventy-seven 1C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z">
+                                </path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-col reveal stagger-2">
+                    <h4>Angebot</h4>
+                    <ul class="footer-links">
+                        <li><a href="index#angebote">Leistungsbereiche</a></li>
+                        <li><a href="index#trainings">Trainings &amp; Seminare</a></li>
+                        <li><a href="coaching/">Business-Coaching</a></li>
+                        <li><a href="index#fuehrungskraefte">Führungskräfte-Curriculum</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col reveal stagger-3">
+                    <h4>Kontakt</h4>
+                    <ul class="footer-links footer-contact">
+                        <li>Neuer Graben 61</li>
+                        <li>44139 Dortmund</li>
+                        <li><a href="tel:+4923113722666">0231 137 22 666</a></li>
+                        <li><a href="mailto:info@wtm-consulting.de">info@wtm-consulting.de</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col reveal stagger-4">
+                    <h4>Rechtliches</h4>
+                    <ul class="footer-links">
+                        <li><a href="impressum">Impressum</a></li>
+                        <li><a href="datenschutz">Datenschutz</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="copyright">
+                    <p>© 2026 WTM Management Consulting GmbH. Alle Rechte vorbehalten.</p>
+                </div>
+                <div class="footer-version">
+                    <span>v0.9.0</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Scripts -->
+    <script src="js/seminar-data.js"></script>
+    <script src="js/main.js"></script>
+    <script>
         document.addEventListener('DOMContentLoaded', () => {
             const params = new URLSearchParams(window.location.search);
             const seminarId = params.get('id');
@@ -376,6 +390,8 @@
                         </div>
                     </div>
                 </section>
+                <!-- Form honeypot and contact section integration would go here if there was a full form injected. Seminar pages redirect to index#kontakt. -->
+            </main>
             `;
 
             // Setup scroll progress
@@ -772,8 +788,7 @@
             reveals.forEach(el => observer.observe(el));
         }
     </script>
-<!-- Vallit AI Chat Widget -->
-<script data-api-url="https://www.vallit.net" data-color="#6366f1" data-company-id="e46176c5-0f35-43b8-8e8c-c72f534519e1" data-language="de" data-position="" data-theme="minimal" data-title="Kian" src="https://www.vallit.net/widget/embed.js">
-</script>
+    <!-- Vallit AI Chat Widget handled by main.js -->
 </body>
+
 </html>

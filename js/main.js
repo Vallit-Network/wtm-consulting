@@ -12,16 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (heroEntrance) heroEntrance.classList.remove('hero-entrance');
         });
     });
-
-    // Load chatbot after entrance so widget does not visibly rebuild on load
-    setTimeout(() => {
-        const script = document.createElement('script');
-        script.src = 'https://www.vallit.net/widget/embed.js';
-        script.defer = true;
-        script.setAttribute('data-company-id', '5f929157-5f9e-48e3-b7f7-a6dcd0e24142');
-        script.setAttribute('data-theme', 'glassmorphism');
-        document.body.appendChild(script);
-    }, 2000);
+    // (Chatbot loading moved entirely to injectSharedComponents for unification)
 
     // =========================================
     // UNIVERSAL NAVIGATION INJECTION
@@ -130,19 +121,77 @@ document.addEventListener('DOMContentLoaded', () => {
     const header = document.querySelector('header');
 
     if (mobileMenuBtn) {
-        mobileMenuBtn.addEventListener('click', () => {
-            mobileMenuBtn.classList.toggle('active');
+        // Toggle menu
+        mobileMenuBtn.addEventListener('click', function () {
+            this.classList.toggle('active');
             navLinks.classList.toggle('active');
-            document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
+
+            // Prevent body scroll when menu is open
+            if (this.classList.contains('active')) {
+                document.body.style.overflow = 'hidden';
+            } else {
+                document.body.style.overflow = '';
+            }
         });
     }
 
-    navLinksItems.forEach(link => {
-        link.addEventListener('click', () => {
+    // Close menu when clicking a link and handle smooth scroll with offset
+    navLinksItems.forEach(item => {
+        item.addEventListener('click', (e) => {
+            if (mobileMenuBtn && navLinks) { // Ensure elements exist before trying to remove classes
+                mobileMenuBtn.classList.remove('active');
+                navLinks.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+
+            // Smooth scroll with offset for anchor links
+            const href = item.getAttribute('href');
+            if (href && href.startsWith('#') && href !== '#') {
+                e.preventDefault();
+                const targetId = href.substring(1);
+                const targetElement = document.getElementById(targetId);
+
+                if (targetElement) {
+                    const headerOffset = 100; // Offset for sticky header
+                    const elementPosition = targetElement.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            } else if (href && href.includes('#')) {
+                // Handle links like index.html#section from subpages
+                const [page, id] = href.split('#');
+                // If we are already on the target page, prevent default and smooth scroll
+                if (window.location.pathname.endsWith(page) || (page === 'index.html' && (window.location.pathname.endsWith('/') || window.location.pathname.includes('index.html')))) {
+                    e.preventDefault();
+                    history.pushState(null, null, '#' + id);
+                    const targetElement = document.getElementById(id);
+                    if (targetElement) {
+                        const headerOffset = 100;
+                        const elementPosition = targetElement.getBoundingClientRect().top;
+                        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                        window.scrollTo({
+                            top: offsetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                }
+            }
+        });
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+        if (mobileMenuBtn && navLinks && navLinks.classList.contains('active') &&
+            !mobileMenuBtn.contains(e.target) && !navLinks.contains(e.target)) {
             mobileMenuBtn.classList.remove('active');
             navLinks.classList.remove('active');
             document.body.style.overflow = '';
-        });
+        }
     });
 
     // =========================================
@@ -193,13 +242,10 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // =========================================
-    // STICKY HEADER
+    // STICKY HEADER & SCROLL TO TOP
     // =========================================
-    // =========================================
-    // STICKY HEADER
-    // =========================================
-    // Robust approach: Check for header dynamically on every scroll
-    // This ensures it works for both static (index.html) and injected (seminar pages) headers
+    const scrollToTopBtn = document.getElementById('scroll-to-top');
+
     window.addEventListener('scroll', () => {
         const header = document.getElementById('header') || document.querySelector('header');
         if (header) {
@@ -209,7 +255,23 @@ document.addEventListener('DOMContentLoaded', () => {
                 header.classList.remove('scrolled');
             }
         }
+
+        // Show/hide scroll-to-top button
+        if (scrollToTopBtn) {
+            if (window.scrollY > 500) {
+                scrollToTopBtn.classList.add('visible');
+            } else {
+                scrollToTopBtn.classList.remove('visible');
+            }
+        }
     });
+
+    // Scroll to top click handler
+    if (scrollToTopBtn) {
+        scrollToTopBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    }
 
     // Check immediately on load (wait a tick for injection)
     setTimeout(() => {
@@ -495,7 +557,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (carouselPrev && carouselNext && seminarGrid) {
         const getCardWidth = () => {
             const card = seminarGrid.querySelector('.training-card');
-            if (!card) return 372; // Fallback: 340px width + 32px gap
+            if (!card) return 372;
             const style = window.getComputedStyle(seminarGrid);
             const gap = parseFloat(style.gap) || 32;
             return card.offsetWidth + gap;
@@ -505,7 +567,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const scrollLeft = seminarGrid.scrollLeft;
             const scrollWidth = seminarGrid.scrollWidth;
             const clientWidth = seminarGrid.clientWidth;
-            const atLeftEdge = scrollLeft <= 5;
+            const atLeftEdge = scrollLeft <= 10;
             const notScrollable = scrollWidth <= clientWidth + 2;
             const atRightEdge = Math.ceil(scrollLeft + clientWidth) >= scrollWidth - 5;
 
@@ -540,20 +602,31 @@ document.addEventListener('DOMContentLoaded', () => {
         // Update arrows on resize
         window.addEventListener('resize', updateArrows);
 
-        // Initial state: hide left arrow until we know scroll position (avoids flash)
+        // Initial state: hide left arrow immediately (always start at scroll 0)
         carouselPrev.classList.add('carousel-btn-hidden');
 
-        // Update arrows when layout is ready and on any change
+        // Aggressive schedule for arrow updates
         const scheduleUpdate = () => {
+            // Reset scroll to start on content change
+            seminarGrid.scrollLeft = 0;
+            // Immediately hide left arrow on reset
+            carouselPrev.classList.add('carousel-btn-hidden');
+            // Then compute properly
             updateArrows();
             requestAnimationFrame(updateArrows);
             setTimeout(updateArrows, 100);
+            setTimeout(updateArrows, 300);
         };
+
         updateArrows();
         scheduleUpdate();
 
-        // When content changes (tab switch), update arrow visibility
-        const observer = new MutationObserver(scheduleUpdate);
+        // When content changes (tab switch), reset and update
+        const observer = new MutationObserver(() => {
+            seminarGrid.scrollLeft = 0;
+            carouselPrev.classList.add('carousel-btn-hidden');
+            scheduleUpdate();
+        });
         observer.observe(seminarGrid, { childList: true });
 
         // When grid size changes (e.g. after images load), re-check
@@ -562,50 +635,92 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // =========================================
-    // SUCCESS STORIES CAROUSEL
-    // Ein Klick = ein Panel. Scroll-Ziel = echte Kartenposition (offsetLeft).
-    // =========================================
-    // =========================================
-    // SUCCESS STORIES CAROUSEL (Transform-Based)
+    // SUCCESS STORIES CAROUSEL (Enhanced)
+    // Pagination dots, desktop drag, keyboard nav
     // =========================================
     const successTrack = document.getElementById('success-stories-track');
     const successPrev = document.querySelector('#success-stories .carousel-btn.prev');
     const successNext = document.querySelector('#success-stories .carousel-btn.next');
+    const successDotsContainer = document.getElementById('success-stories-dots');
+    const successCounter = document.getElementById('success-stories-counter');
 
     if (successTrack && successPrev && successNext) {
         const cards = Array.from(successTrack.querySelectorAll('.case-study-card'));
         const totalSlides = cards.length;
         let currentIndex = 0;
 
-        // Touch state
-        let startX = 0;
-        let currentX = 0;
+        // Drag state (shared for touch and pointer)
         let isDragging = false;
-        let startTranslate = 0;
-        let animationID;
+        let startX = 0;
+        let startTime = 0;
 
-        // Initialize positions
+        // Build pagination dots
+        if (successDotsContainer) {
+            cards.forEach((_, i) => {
+                const dot = document.createElement('button');
+                dot.type = 'button';
+                dot.classList.add('dot');
+                dot.setAttribute('aria-label', `Story ${i + 1} anzeigen`);
+                if (i === 0) dot.classList.add('active');
+                dot.addEventListener('click', () => {
+                    currentIndex = i;
+                    updateSlidePosition();
+                });
+                successDotsContainer.appendChild(dot);
+            });
+        }
+
         const updateSlidePosition = () => {
-            // Use percentage for responsive scaling (100% per slide)
             const currentTranslate = currentIndex * -100;
-            // Apply transform
             successTrack.style.transform = `translateX(${currentTranslate}%)`;
 
             // Update container height to match current slide
-            if (cards[currentIndex]) {
-                const height = cards[currentIndex].offsetHeight;
-                successTrack.parentElement.style.height = `${height}px`;
-            }
+            requestAnimationFrame(() => {
+                const currentCard = cards[currentIndex];
+                if (!currentCard) return;
 
-            // Update buttons
+                // If current card has expanded content, use its actual height
+                const hasExpanded = currentCard.querySelector('.expandable-story-content.expanded');
+                if (hasExpanded) {
+                    successTrack.parentElement.style.height = `${currentCard.offsetHeight}px`;
+                } else {
+                    // Use tallest card height for uniform appearance in collapsed state
+                    let maxHeight = 0;
+                    cards.forEach(card => {
+                        maxHeight = Math.max(maxHeight, card.offsetHeight);
+                    });
+                    successTrack.parentElement.style.height = `${maxHeight}px`;
+                }
+            });
+
+            // Update arrow buttons
             if (successPrev) {
-                successPrev.style.opacity = currentIndex <= 0 ? '0' : '1';
-                successPrev.style.pointerEvents = currentIndex <= 0 ? 'none' : 'all';
+                if (currentIndex <= 0) {
+                    successPrev.classList.remove('visible');
+                } else {
+                    successPrev.classList.add('visible');
+                }
             }
 
             if (successNext) {
-                successNext.style.opacity = currentIndex >= totalSlides - 1 ? '0' : '1';
-                successNext.style.pointerEvents = currentIndex >= totalSlides - 1 ? 'none' : 'all';
+                if (currentIndex >= totalSlides - 1) {
+                    successNext.classList.remove('visible');
+                } else {
+                    successNext.classList.add('visible');
+                }
+            }
+
+            // Update dots
+            if (successDotsContainer) {
+                const dots = successDotsContainer.querySelectorAll('.dot');
+                dots.forEach((d, i) => {
+                    d.classList.toggle('active', i === currentIndex);
+                });
+            }
+
+            // Update counter
+            if (successCounter) {
+                successCounter.textContent = `${currentIndex + 1} / ${totalSlides}`;
             }
         };
 
@@ -624,76 +739,134 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
 
-        // Touch Events (Mobile Swipe)
-        successTrack.addEventListener('touchstart', (e) => {
-            startX = e.touches[0].clientX;
+        // ---- Pointer Events (Desktop drag + Touch) ----
+        const onDragStart = (clientX) => {
             isDragging = true;
+            startX = clientX;
+            startTime = Date.now();
+            successTrack.classList.add('is-dragging');
+        };
 
-            // Disable transition for instant drag response
-            successTrack.style.transition = 'none';
-
-            // Cancel any momentum animation
-            cancelAnimationFrame(animationID);
-        }, { passive: true });
-
-        successTrack.addEventListener('touchmove', (e) => {
+        const onDragMove = (clientX) => {
             if (!isDragging) return;
-
-            const currentX = e.touches[0].clientX;
-            const diff = currentX - startX;
-
-            // Calculate percentage drag (approximate based on width)
-            // We use clientWidth to convert pixels to percentage
+            const diff = clientX - startX;
             const containerWidth = successTrack.parentElement.clientWidth;
             const percentDiff = (diff / containerWidth) * 100;
-
-            const currentTranslate = (currentIndex * -100) + percentDiff;
+            let currentTranslate = (currentIndex * -100) + percentDiff;
 
             // Add resistance at edges
             if ((currentIndex === 0 && percentDiff > 0) ||
                 (currentIndex === totalSlides - 1 && percentDiff < 0)) {
-                successTrack.style.transform = `translateX(${currentTranslate * 0.4}%)`; // Resistance
-            } else {
-                successTrack.style.transform = `translateX(${currentTranslate}%)`;
+                currentTranslate = (currentIndex * -100) + (percentDiff * 0.3);
             }
+
+            successTrack.style.transform = `translateX(${currentTranslate}%)`;
+        };
+
+        const onDragEnd = (clientX) => {
+            if (!isDragging) return;
+            isDragging = false;
+            successTrack.classList.remove('is-dragging');
+
+            const movedBy = clientX - startX;
+            const elapsed = Date.now() - startTime;
+            const velocity = Math.abs(movedBy) / elapsed; // px/ms
+            const containerWidth = successTrack.parentElement.clientWidth;
+
+            // Quick swipe (high velocity) or >15% drag
+            const threshold = velocity > 0.5 ? 30 : containerWidth * 0.15;
+
+            if (movedBy < -threshold && currentIndex < totalSlides - 1) {
+                currentIndex++;
+            } else if (movedBy > threshold && currentIndex > 0) {
+                currentIndex--;
+            }
+
+            // Restore transition for snap
+            successTrack.style.transition = 'transform 0.5s cubic-bezier(0.2, 1, 0.3, 1)';
+            updateSlidePosition();
+        };
+
+        // Touch Events
+        successTrack.addEventListener('touchstart', (e) => {
+            successTrack.style.transition = 'none';
+            onDragStart(e.touches[0].clientX);
+        }, { passive: true });
+
+        successTrack.addEventListener('touchmove', (e) => {
+            onDragMove(e.touches[0].clientX);
         }, { passive: true });
 
         successTrack.addEventListener('touchend', (e) => {
-            isDragging = false;
-            const movedBy = e.changedTouches[0].clientX - startX;
-            const containerWidth = successTrack.parentElement.clientWidth;
-
-            // Restore transition
-            successTrack.style.transition = 'transform 0.5s cubic-bezier(0.2, 1, 0.3, 1)'; // Smooth snap
-
-            // Threshold to change slide (15% of width or quick swipe)
-            if (movedBy < -50 || movedBy < -containerWidth * 0.15) {
-                if (currentIndex < totalSlides - 1) currentIndex++;
-            } else if (movedBy > 50 || movedBy > containerWidth * 0.15) {
-                if (currentIndex > 0) currentIndex--;
-            }
-
-            updateSlidePosition();
+            onDragEnd(e.changedTouches[0].clientX);
         });
+
+        // Mouse Events (Desktop drag)
+        successTrack.addEventListener('mousedown', (e) => {
+            e.preventDefault();
+            successTrack.style.transition = 'none';
+            onDragStart(e.clientX);
+        });
+
+        window.addEventListener('mousemove', (e) => {
+            if (!isDragging) return;
+            onDragMove(e.clientX);
+        });
+
+        window.addEventListener('mouseup', (e) => {
+            if (!isDragging) return;
+            onDragEnd(e.clientX);
+        });
+
+        // Keyboard Navigation
+        const successSection = document.getElementById('success-stories');
+        if (successSection) {
+            successSection.setAttribute('tabindex', '0');
+            successSection.addEventListener('keydown', (e) => {
+                if (e.key === 'ArrowRight' && currentIndex < totalSlides - 1) {
+                    e.preventDefault();
+                    currentIndex++;
+                    updateSlidePosition();
+                } else if (e.key === 'ArrowLeft' && currentIndex > 0) {
+                    e.preventDefault();
+                    currentIndex--;
+                    updateSlidePosition();
+                }
+            });
+        }
 
         // Window resize handling
         let resizeTimer;
         window.addEventListener('resize', () => {
             clearTimeout(resizeTimer);
             resizeTimer = setTimeout(() => {
-                // Ensure correct alignment on resize
-                successTrack.style.transition = 'none'; // Instant snap
+                successTrack.style.transition = 'none';
                 updateSlidePosition();
-                // Restore transition after small delay
                 setTimeout(() => {
                     successTrack.style.transition = 'transform 0.6s cubic-bezier(0.25, 1, 0.5, 1)';
                 }, 50);
             }, 100);
         });
 
+        // Listen for expand/collapse to recalculate height
+        document.addEventListener('story-expand-toggle', () => {
+            setTimeout(() => {
+                if (cards[currentIndex]) {
+                    const h = cards[currentIndex].offsetHeight;
+                    successTrack.parentElement.style.height = `${h}px`;
+                }
+            }, 50);
+            // Also update after animation finishes
+            setTimeout(() => {
+                if (cards[currentIndex]) {
+                    const h = cards[currentIndex].offsetHeight;
+                    successTrack.parentElement.style.height = `${h}px`;
+                }
+            }, 550);
+        });
+
         // Initial setup
         updateSlidePosition();
-        // Ensure height is correct after images load
         window.addEventListener('load', updateSlidePosition);
     }
 
@@ -2067,7 +2240,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Function to open Vallit chat widget with smooth animation and feedback
     function openVallitChat() {
-        console.log('Attempting to open Vallit Chat...');
 
         const btn = document.getElementById('openChatbot');
         if (!btn) return;
@@ -2099,7 +2271,6 @@ document.addEventListener('DOMContentLoaded', () => {
         };
 
         const openChatViaBtn = (toggleBtn) => {
-            console.log('Found toggle button, clicking:', toggleBtn);
             toggleBtn.click();
 
             onChatOpened();
@@ -2111,7 +2282,6 @@ document.addEventListener('DOMContentLoaded', () => {
         if (toggleBtn) {
             openChatViaBtn(toggleBtn);
         } else {
-            console.log('Toggle button not found immediately, polling...');
 
             // 3. Polling / API Fallback
             let attempts = 0;
@@ -2130,7 +2300,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 // Strategy B: Check for global API (Vallit / Syntra)
                 if (window.Vallit && typeof window.Vallit.open === 'function') {
-                    console.log('Opening via window.Vallit API');
                     clearInterval(pollInterval);
                     window.Vallit.open();
                     onChatOpened();
@@ -2138,7 +2307,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
 
                 if (window.Syntra && typeof window.Syntra.open === 'function') {
-                    console.log('Opening via window.Syntra API');
                     clearInterval(pollInterval);
                     window.Syntra.open();
                     onChatOpened();
@@ -2306,10 +2474,38 @@ document.addEventListener('DOMContentLoaded', () => {
             // Inject Script
             const script = document.createElement('script');
             script.src = "https://www.vallit.net/widget/embed.js";
-            script.dataset.companyId = "5f929157-5f9e-48e3-b7f7-a6dcd0e24142";
+            script.dataset.companyId = "e46176c5-23bd-4770-aeac-dca77464010a";
             script.dataset.theme = "glassmorphism";
             script.defer = true;
             document.body.appendChild(script);
+
+            // Chatbot state persistence
+            script.onload = () => {
+                if (sessionStorage.getItem('chatOpen') === 'true') {
+                    setTimeout(() => {
+                        if (window.VallitWidget) window.VallitWidget.open();
+                        else if (window.Vallit) window.Vallit.open();
+                        else if (window.Syntra) window.Syntra.open();
+                    }, 500);
+                }
+            };
+
+            // Listen for clicks on the chat container to track state
+            document.addEventListener('click', (e) => {
+                // Track opening
+                if (e.target.closest('.chatbot-helper-btn') ||
+                    e.target.closest('.vallit-launcher') ||
+                    e.target.closest('.syntra-launcher')) {
+                    sessionStorage.setItem('chatOpen', 'true');
+                }
+                // Track closing
+                if (e.target.closest('.syntra-close-btn') ||
+                    e.target.closest('.close-btn') ||
+                    e.target.closest('[data-close]') ||
+                    e.target.closest('.vallit-close')) {
+                    sessionStorage.setItem('chatOpen', 'false');
+                }
+            });
 
             // Inject Helper Button
             const helperBtnHTML = `
@@ -2383,7 +2579,7 @@ document.addEventListener('DOMContentLoaded', () => {
                             <p>&copy; 2026 WTM Management Consulting GmbH. Alle Rechte vorbehalten.</p>
                         </div>
                         <div class="footer-version">
-                            <span>v0.8.2</span>
+                            <span>v0.9.0</span>
                         </div>
                     </div>
                 </div>
@@ -2394,5 +2590,129 @@ document.addEventListener('DOMContentLoaded', () => {
     // Call injection on load
     injectSharedComponents();
 
-    console.log('WTM Corporate Website Loaded');
+    // =========================================
+    // QOL: AUTO-UPDATE COPYRIGHT YEAR (#33)
+    // =========================================
+    function updateCopyrightYear() {
+        const copyrightEls = document.querySelectorAll('.copyright p');
+        const currentYear = new Date().getFullYear();
+        copyrightEls.forEach(el => {
+            el.innerHTML = el.innerHTML.replace(/(20\d{2})/, currentYear);
+        });
+    }
+    updateCopyrightYear();
+
+    // =========================================
+    // QOL: ESC TO CLOSE MODALS/EXPANDABLES (#9)
+    // =========================================
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            // Close mobile menu
+            const mobileMenuBtn = document.getElementById('mobile-menu');
+            const navLinks = document.querySelector('.nav-links');
+            if (navLinks && navLinks.classList.contains('active')) {
+                mobileMenuBtn.classList.remove('active');
+                navLinks.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+            // Close any expanded success stories
+            document.querySelectorAll('.expand-btn.expanded').forEach(btn => btn.click());
+
+            // Close any active dropdowns
+            document.querySelectorAll('.nav-dropdown').forEach(d => d.classList.remove('active'));
+        }
+    });
+
+    // =========================================
+    // QOL: FORM VALIDATION & HONEYPOT (#35, #50)
+    // =========================================
+    const contactFormEl = document.getElementById('contactForm');
+    if (contactFormEl) {
+        contactFormEl.setAttribute('novalidate', true); // Stop native tooltips
+
+        contactFormEl.addEventListener('submit', (e) => {
+            e.preventDefault();
+            let isValid = true;
+
+            // Check honeypot
+            const honeypot = document.getElementById('fax_number');
+            if (honeypot && honeypot.value) {
+                console.warn('Bot detected by honeypot.');
+                return; // Silently fail for bots
+            }
+
+            const inputs = contactFormEl.querySelectorAll('.form-input[required]');
+
+            inputs.forEach(input => {
+                // Strip HTML tags for basic sanitization
+                input.value = input.value.replace(/<[^>]*>?/gm, '').trim();
+
+                // Remove existing states
+                input.classList.remove('is-valid', 'is-invalid');
+                const existingFeedback = input.parentNode.querySelector('.invalid-feedback');
+                if (existingFeedback) existingFeedback.remove();
+
+                if (!input.value) {
+                    isValid = false;
+                    input.classList.add('is-invalid');
+                    input.insertAdjacentHTML('afterend', '<div class="invalid-feedback">Bitte füllen Sie dieses Feld aus.</div>');
+                } else if (input.type === 'email' && !/^[^@\\s]+@[^@\\s]+\\.[^@\\s]+$/.test(input.value)) {
+                    isValid = false;
+                    input.classList.add('is-invalid');
+                    input.insertAdjacentHTML('afterend', '<div class="invalid-feedback">Bitte geben Sie eine gültige E-Mail-Adresse ein.</div>');
+                } else {
+                    input.classList.add('is-valid');
+                }
+            });
+
+            // Remove animation class after it finishes so it can trigger again
+            inputs.forEach(input => {
+                input.addEventListener('animationend', () => {
+                    input.classList.remove('is-invalid');
+                    // Add a tiny delay before re-adding so the shake triggers on next submit if still invalid
+                }, { once: true });
+            });
+
+            if (isValid) {
+                // Here you would normally send the data
+                // For now, simulate success:
+                const btn = contactFormEl.querySelector('button[type="submit"]');
+                const originalText = btn.innerText;
+                btn.innerText = 'Nachricht gesendet!';
+                btn.classList.add('btn-success');
+                btn.style.backgroundColor = '#10b981';
+                btn.style.borderColor = '#10b981';
+
+                setTimeout(() => {
+                    contactFormEl.reset();
+                    inputs.forEach(i => i.classList.remove('is-valid'));
+                    btn.innerText = originalText;
+                    btn.style.backgroundColor = '';
+                    btn.style.borderColor = '';
+                }, 3000);
+            }
+        });
+
+        // Real-time validation on blur
+        contactFormEl.querySelectorAll('.form-input').forEach(input => {
+            input.addEventListener('blur', () => {
+                // Strip HTML tags for basic sanitization
+                input.value = input.value.replace(/<[^>]*>?/gm, '').trim();
+
+                if (input.hasAttribute('required')) {
+                    if (input.value) {
+                        if (input.type === 'email' && !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(input.value)) {
+                            input.classList.add('is-invalid');
+                            input.classList.remove('is-valid');
+                        } else {
+                            input.classList.remove('is-invalid');
+                            input.classList.add('is-valid');
+                            const feedback = input.parentNode.querySelector('.invalid-feedback');
+                            if (feedback) feedback.remove();
+                        }
+                    }
+                }
+            });
+        });
+    }
 });
