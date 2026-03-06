@@ -2476,6 +2476,7 @@ document.addEventListener('DOMContentLoaded', () => {
             script.src = "https://www.vallit.net/widget/embed.js";
             script.dataset.companyId = "e46176c5-23bd-4770-aeac-dca77464010a";
             script.dataset.theme = "glassmorphism";
+            script.dataset.greeting = "Hallo! Ich bin Kian, dein KI-Assistent. Wie kann ich dir heute helfen?"; // Attempting to set greeting here
             script.defer = true;
             document.body.appendChild(script);
 
