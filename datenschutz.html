@@ -93,7 +93,8 @@
 <p>
                         Ein Teil der Daten wird erhoben, um eine fehlerfreie Bereitstellung der Website zu
                         gewährleisten. Kontaktdaten aus dem Formular und dem Chat dienen der Bearbeitung Ihrer Anfragen.
-                        Derzeit setzen wir keine Analyse-Tools zur Auswertung des Nutzerverhaltens ein.
+                        Beim KI-Chatbot erfassen wir zudem technische Interaktionsdaten in anonymisierter bzw.
+                        pseudonymisierter Form, um den Chat technisch bereitzustellen und unser Webangebot zu optimieren.
                     </p>
 <h4>Welche Rechte haben Sie bezüglich Ihrer Daten?</h4>
 <p>
@@ -209,9 +210,9 @@
 </tr>
 <tr>
 <td>KI-Chat Kian (Vallit)</td>
-<td>Kundenkommunikation, Anfragenbeantwortung, Terminbuchung, Session-Zuordnung</td>
-<td>Art. 6 Abs. 1 lit. f und lit. b DSGVO (berechtigtes Interesse; Vertrag/vorvertragliche Maßnahmen)</td>
-<td>Chat max. 12 Monate; Buchungen ggf. 6/10 Jahre; Kontaktanfragen bis 6 Monate; Local Storage bis Löschung/Sitzungsende (siehe Abschnitt 9)</td>
+<td>Kundenkommunikation, Anfragenbeantwortung, Terminbuchung, Einwilligungsverwaltung, technische Bereitstellung und anonymisierte Nutzungsanalyse</td>
+<td>Art. 6 Abs. 1 lit. a DSGVO (Einwilligung), lit. b DSGVO (Termin-/Anfragebearbeitung) sowie lit. f DSGVO (technische Bereitstellung und Optimierung)</td>
+<td>Chat max. 12 Monate; Buchungsdaten ggf. 6/10 Jahre; Kontaktanfragen bis 6 Monate; Local Storage bis zur Löschung im Browser (siehe Abschnitt 9)</td>
 </tr>
 <tr>
 <td>Google Fonts</td>
@@ -240,10 +241,10 @@
                             Die technische Abwicklung des Kontaktformulars (API) läuft auf der Infrastruktur von Vercel;
                             inhaltlich werden die Formulardaten zur E-Mail-Erstellung genutzt und über Strato versendet.
                         </li>
-<li><strong>KI-Chat „Kian":</strong> <strong>Vallit</strong> (vallit.net) – technischer Betrieb als Auftragsverarbeiter.
-                            <strong>OpenAI, L.L.C.</strong> (USA) – Generierung der Chat-Antworten (Drittland mit geeigneten
-                            Garantien); <strong>Supabase/AWS</strong> – Datenbank-Hosting in EU West (Frankfurt). Details
-                            siehe Abschnitt 9 (KI-Chat-Assistent Kian).
+<li><strong>KI-Chat „Kian":</strong> <strong>Vallit Network</strong> – technischer Betrieb des Chatbots als Auftragsverarbeiter;
+                            <strong>OpenAI, Inc.</strong> (San Francisco, USA) – Generierung der Chat-Antworten mit geeigneten
+                            Garantien für Drittlandübermittlungen; <strong>Supabase / AWS</strong> – Speicherung in der Region
+                            eu-central-1 (Frankfurt am Main). Details siehe Abschnitt 9 (KI-Chat-Assistent Kian).
                         </li>
 <li><strong>Schriftarten:</strong> Google Fonts (Google LLC) – zur Darstellung der Schriftarten; dabei kann Ihr Browser
                             Verbindung zu Servern von Google aufnehmen (Auftragsverarbeiter/Diensteanbieter).
@@ -331,10 +332,10 @@
                         Plausible, Matomo, Meta Pixel) verwendet.
                     </p>
 <p>
-                        Soweit technisch notwendige oder funktionale Cookies verwendet werden (z. B. durch das eingebundene
-                        Chat-Widget von Vallit für die Funktion des Assistenten), erfolgt die Speicherung auf Grundlage
-                        von Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an der technisch fehlerfreien Bereitstellung
-                        der Dienste). Details zum Chat-Assistenten finden Sie im Abschnitt 9 (KI-Chat-Assistent Kian).
+                        Der eingebundene KI-Chatbot von Vallit setzt selbst <strong>keine Cookies</strong>. Für die technische
+                        Funktion des Widgets werden ausschließlich Einträge im <strong>localStorage</strong> des Browsers verwendet.
+                        Details zu Art und Zweck dieser lokalen Speicherung finden Sie in Abschnitt 9
+                        (KI-Chat-Assistent Kian).
                     </p>
 <h3>Cookie-Einstellungen (localStorage)</h3>
 <p>
@@ -395,91 +396,107 @@
 <section class="legal-section" id="vallit-chat">
 <h2>9. KI-Chat-Assistent „Kian" (Vallit)</h2>
 <p>
-                        Der technische Betrieb des Chatbots erfolgt über unseren Dienstleister Vallit
-                        (<a href="https://www.vallit.net/" rel="noopener noreferrer" target="_blank">https://www.vallit.net/</a>).
-                        Wir haben mit dem Dienstleister eine Vereinbarung zur Auftragsverarbeitung gemäß Art. 28 DSGVO
+                        Auf unserer Website setzen wir einen KI-gestützten Chatbot der Firma Vallit Network
+                        (nachfolgend „Vallit") ein. Der technische Betrieb erfolgt über
+                        <a href="https://www.vallit.net/" rel="noopener noreferrer" target="_blank">https://www.vallit.net/</a>.
+                        Wir haben mit Vallit eine Vereinbarung zur Auftragsverarbeitung gemäß Art. 28 DSGVO
                         abgeschlossen. Die datenschutzrechtliche Verantwortung für die Zwecke der Verarbeitung verbleibt
                         bei uns als Websitebetreiber.
                     </p>
-<h3>Was ist Kian?</h3>
+<h3>Beschreibung und Umfang der Datenverarbeitung</h3>
 <p>
-                        „Kian" ist ein KI-gestützter Chat-Assistent, der auf unserer Website als Widget eingebunden ist.
-                        Er beantwortet Nutzeranfragen, gibt Auskünfte zu unseren Leistungen und ermöglicht unter anderem
-                        Terminbuchungen (z. B. Beratungstermine). Die Antwortgenerierung erfolgt über OpenAI, L.L.C. (USA);
-                        Nutzereingaben werden dafür an OpenAI übermittelt.
-                    </p>
-<h3>Verarbeitete personenbezogene Daten</h3>
-<p>
-                        Im Rahmen der Nutzung des Chats können folgende Kategorien personenbezogener Daten verarbeitet werden:
+                        Bei der Nutzung des Chatbots können insbesondere folgende Daten verarbeitet werden:
                     </p>
 <ul>
-<li><strong>Chat-Inhalte:</strong> Von Ihnen eingegebene Texte und Fragen sowie die generierten Antworten</li>
-<li><strong>Sitzungsdaten:</strong> Technische Sitzungs-ID (Speicherung im Local Storage Ihres Browsers zur Zuordnung der Nachrichten)</li>
-<li><strong>Metadaten:</strong> Zeitstempel, Zuordnung der Nachrichten (Nutzer/Assistent)</li>
-<li><strong>Kontaktdaten im Chat:</strong> Name, E-Mail, sofern Sie diese im Chat oder in Buchungsformularen angeben</li>
-<li><strong>Buchungsdaten:</strong> Bei Terminbuchung über den Chat – Name, E-Mail, Datum/Uhrzeit, Thema, ggf. Firma</li>
-<li><strong>DSGVO-Anfragen:</strong> Falls Sie ein Auskunfts- oder Löschformular nutzen – E-Mail und Art der Anfrage</li>
+<li><strong>Chatnachrichten:</strong> Ihre Texteingaben und die Antworten des KI-Assistenten</li>
+<li><strong>Geräteinformationen:</strong> Gerätetyp (Desktop/Mobil/Tablet), Browser, Betriebssystem,
+                            Bildschirmauflösung, Browsersprache und Zeitzone</li>
+<li><strong>Seitenkontext:</strong> aktuelle Seiten-URL, Seitentitel, Überschriften, Scrollposition,
+                            Verweildauer auf der Seite und Referrer-Quelle</li>
+<li><strong>Buchungsdaten:</strong> Sofern Sie über den Chatbot einen Termin vereinbaren: gewähltes Datum,
+                            Uhrzeit, Name, E-Mail-Adresse, Telefonnummer (optional) und Thema</li>
+<li><strong>Interaktionsdaten:</strong> Widget-Öffnungen/-Schließungen, Nachrichtenanzahl,
+                            Quellenklicks, Feedback (Daumen hoch/runter) und Einwilligungsstatus</li>
 </ul>
 <p>
-                        Es werden <strong>keine</strong> Analyse-, Marketing- oder Tracking-Cookies gesetzt. Lediglich der
-                        Local Storage wird für die technisch notwendige Sitzungs-ID verwendet (für die Chat-Funktion).
+                        Der Chatbot verwendet ausschließlich <strong>localStorage</strong>; es werden durch das Widget
+                        <strong>keine Cookies</strong> gesetzt. Vor dem Absenden der ersten Nachricht wird eine
+                        Einwilligungsanzeige eingeblendet. Der Einwilligungsstatus wird im localStorage unter
+                        <strong>„syntra_consent"</strong>, die Sitzungs-ID unter <strong>„vallit_chat_session"</strong>
+                        und der Öffnungszustand des Widgets unter <strong>„syntra_widget_open"</strong> gespeichert.
                     </p>
-<h3>Zweck der Verarbeitung</h3>
+<h3>Speicherort und Auftragsverarbeitung</h3>
 <p>
-                        Betrieb des Chat-Assistenten, Zuordnung der Nachrichten zu einer Sitzung, Beantwortung von Anfragen,
-                        Kundensupport, Terminvereinbarung, Speicherung von Chat-Verläufen zur Qualitätssicherung und
-                        Fortführung von Gesprächen, Bearbeitung von Buchungs- und Kontaktanfragen sowie von Auskunfts-
-                        und Löschanfragen nach der DSGVO.
+                        Die Daten werden auf Servern von <strong>Supabase</strong> in der AWS-Region
+                        <strong>eu-central-1 (Frankfurt am Main, Deutschland)</strong> gespeichert. Supabase ist
+                        als Auftragsverarbeiter gemäß Art. 28 DSGVO vertraglich gebunden.
                     </p>
-<h3>Rechtsgrundlagen (Art. 6 DSGVO)</h3>
+<h3>KI-Verarbeitung durch OpenAI</h3>
+<p>
+                        Zur Generierung der Chatbot-Antworten werden Ihre Nachrichten an die API von
+                        <strong>OpenAI, Inc.</strong> (San Francisco, USA) übermittelt. Dabei gelten folgende
+                        Schutzmaßnahmen:
+                    </p>
 <ul>
-<li><strong>Art. 6 Abs. 1 lit. f DSGVO</strong> (berechtigtes Interesse): Betrieb des Chats, KI-Antwortgenerierung,
-                            Speicherung von Chat-Verläufen zur Qualitätssicherung und Nutzererfahrung.</li>
-<li><strong>Art. 6 Abs. 1 lit. b DSGVO</strong> (Vertrag bzw. vorvertragliche Maßnahmen): Terminbuchungen,
-                            Kontaktanfragen und Leistungsanfragen über den Chat.</li>
+<li>API-Aufrufe erfolgen mit dem Parameter <strong><code>store: true</code></strong>, wodurch OpenAI die Daten
+                            nicht zum Training seiner Modelle verwendet.</li>
+<li>Die Übermittlung in die USA erfolgt auf Grundlage der EU-Standardvertragsklauseln
+                            (Art. 46 Abs. 2 lit. c DSGVO) sowie des EU-U.S. Data Privacy Frameworks.</li>
+<li>Es werden keine direkt identifizierenden Pflichtangaben wie Name oder E-Mail-Adresse an OpenAI übermittelt,
+                            sondern nur der Nachrichteninhalt und anonymisierter Seitenkontext. Sofern Sie freiwillig
+                            personenbezogene Angaben in Ihre Nachricht schreiben, liegen diese naturgemäß im
+                            Nachrichteninhalt selbst vor.</li>
 </ul>
-<h3>Empfänger und Speicherort</h3>
+<h3>Rechtsgrundlage</h3>
 <ul>
-<li><strong>Vallit</strong> – technischer Betrieb und Backend im Auftrag (Auftragsverarbeiter gemäß Art. 28 DSGVO).</li>
-<li><strong>OpenAI, L.L.C.</strong> (3180 18th St, San Francisco, CA 94110, USA) – Generierung der Chat-Antworten;
-                            Nutzereingaben werden dorthin übermittelt. Übermittlung in ein Drittland (USA); es werden
-                            geeignete Garantien (z. B. EU-US Data Privacy Framework bzw. Standardvertragsklauseln) eingesetzt.</li>
-<li><strong>Supabase / AWS</strong> – Hosting der Datenbank; Speicherort: <strong>EU West (Frankfurt)</strong>;
-                            die Daten liegen damit in der Europäischen Union (Deutschland).</li>
-<li><strong>E-Mail-Dienstleister</strong> – Versand von Buchungsbestätigungen, Kontakt-Benachrichtigungen und
-                            Bestätigungen zu DSGVO-Anfragen (bei uns: Strato, siehe Abschnitt Kontaktformular).</li>
+<li><strong>Art. 6 Abs. 1 lit. a DSGVO (Einwilligung):</strong> Die Nutzung des Chatbots ist freiwillig.
+                            Vor der ersten Nachricht wird eine Einwilligungsanzeige eingeblendet.</li>
+<li><strong>Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse):</strong> Die technische Bereitstellung des
+                            Chat-Widgets und die Erfassung anonymisierter Analysedaten (Gerätetyp, Seitenkontext)
+                            erfolgt auf Grundlage unseres berechtigten Interesses an der Optimierung unseres Webangebots.</li>
+<li><strong>Art. 6 Abs. 1 lit. b DSGVO (Vertrag bzw. vorvertragliche Maßnahmen):</strong> Sofern Sie über den
+                            Chat einen Termin vereinbaren oder eine konkrete Leistungsanfrage stellen, verarbeiten wir
+                            die dafür erforderlichen Angaben zur Durchführung vorvertraglicher Maßnahmen.</li>
 </ul>
-<h3>Speicherdauer / Löschkriterien</h3>
+<h3>Speicherdauer</h3>
 <ul>
-<li><strong>Chat-Sitzungen und -nachrichten:</strong> maximal 12 Monate; danach Löschung oder Anonymisierung,
-                            sofern keine gesetzliche Aufbewahrung entgegensteht.</li>
-<li><strong>Buchungsdaten (Termine):</strong> Sofern handels- oder steuerrechtliche Aufbewahrungspflichten greifen,
-                            in der Regel 6 bzw. 10 Jahre nach Ende des Kalenderjahres.</li>
-<li><strong>Kontaktanfragen über den Chat:</strong> Bis zu 6 Monate nach Abschluss der Anfrage, sofern keine
-                            Aufbewahrungspflichten bestehen.</li>
-<li><strong>DSGVO-Anfragen (Auskunft/Löschung):</strong> Nach Bearbeitung und ggf. gesetzlichen Aufbewahrungsfristen.</li>
-<li><strong>Local Storage (Sitzungs-ID):</strong> Verbleibt in Ihrem Browser, bis Sie die Website-Daten bzw. den
-                            Local Storage löschen oder die Sitzung endet.</li>
+<li><strong>Chatverläufe und Analysedaten:</strong> automatisch nach maximal 12 Monaten</li>
+<li><strong>Buchungs- und Kontaktanfragen:</strong> grundsätzlich bis zu 6 Monate nach Abschluss, sofern keine
+                            gesetzlichen Aufbewahrungspflichten entgegenstehen</li>
+<li><strong>Buchungsdaten mit handels- oder steuerrechtlicher Relevanz:</strong> in der Regel 6 bzw. 10 Jahre</li>
+<li><strong>localStorage-Daten:</strong> verbleiben in Ihrem Browser, bis Sie diese über die Browsereinstellungen
+                            löschen</li>
 </ul>
 <p>
-                        Ihre Rechte (Auskunft, Berichtigung, Löschung, Einschränkung, Widerspruch, Datenübertragbarkeit,
-                        Beschwerde bei einer Aufsichtsbehörde) entnehmen Sie Abschnitt 6 (Ihre Rechte). Für die Ausübung
-                        Ihrer Rechte in Bezug auf die über den Chat verarbeiteten Daten können Sie sich an uns wenden.
+                        Ihre Rechte auf Auskunft (Art. 15 DSGVO), Berichtigung (Art. 16 DSGVO), Löschung
+                        (Art. 17 DSGVO), Einschränkung der Verarbeitung (Art. 18 DSGVO), Datenübertragbarkeit
+                        (Art. 20 DSGVO) und Widerspruch (Art. 21 DSGVO) entnehmen Sie im Übrigen Abschnitt 6.
+                        Ihre Einwilligung können Sie jederzeit mit Wirkung für die Zukunft widerrufen.
+                    </p>
+<p>
+                        Verantwortlicher Anbieter des Chatbots: <strong>Vallit Network</strong> –
+                        <a href="mailto:info@vallit.net">info@vallit.net</a>
                     </p>
 </section>
 <section class="legal-section" id="analyse">
 <h2>10. Analyse-Tools und Werbung</h2>
 <p>
-                        Diese Website setzt <strong>derzeit keine</strong> Analyse- oder Marketing-Tools ein (kein Google
-                        Analytics, Plausible, Matomo, Meta Pixel o. Ä.). Es findet keine statistische Auswertung der
-                        Besucherzugriffe oder werbliche Ausspielung über solche Tools statt.
+                        Diese Website setzt <strong>keine</strong> separaten Marketing- oder Werbetracking-Tools ein
+                        (kein Meta Pixel, keine Conversion-Ads-Tags o. Ä.). Ebenso verwenden wir kein allgemeines
+                        Webanalyse-Tool wie Google Analytics, Plausible oder Matomo.
                     </p>
 <p>
-                        Der auf dieser Website angezeigte Cookie-Hinweis dient der Speicherung Ihrer Präferenz (siehe
-                        Abschnitt „Cookies") und ist für den Fall vorbereitet, dass wir künftig Analyse- oder
-                        Marketing-Tools nur nach Ihrer Einwilligung (Art. 6 Abs. 1 lit. a DSGVO) einsetzen. Eine
-                        solche Einwilligung wäre freiwillig und könnte jederzeit in den Cookie-Einstellungen widerrufen
-                        werden.
+                        Davon unberührt bleiben die im Zusammenhang mit dem KI-Chatbot anfallenden
+                        Interaktionsdaten (z. B. Widget-Öffnungen, Nachrichtenanzahl, Feedback oder Seitenkontext),
+                        die ausschließlich zur Bereitstellung, Qualitätssicherung und Optimierung des Chat-Angebots
+                        verarbeitet werden. Diese Verarbeitung ist in Abschnitt 9 beschrieben.
+                    </p>
+<p>
+                        Der auf dieser Website angezeigte Cookie-Hinweis dient der Speicherung Ihrer Präferenz
+                        (siehe Abschnitt „Cookies") und ist für den Fall vorbereitet, dass wir künftig zusätzliche
+                        Analyse- oder Marketing-Tools nur nach Ihrer Einwilligung (Art. 6 Abs. 1 lit. a DSGVO)
+                        einsetzen. Eine solche Einwilligung wäre freiwillig und könnte jederzeit in den
+                        Cookie-Einstellungen widerrufen werden.
                     </p>
 </section>
 <section class="legal-section" id="speicherdauer">
@@ -496,7 +513,7 @@
                             Aufbewahrungspfristen (z. B. 6 bzw. 10 Jahre handels- oder steuerrechtlich) entgegenstehen;</li>
 <li><strong>Cookie-Einstellungen (localStorage):</strong> bis Sie die Speicherung im Browser löschen oder Ihre
                             Präferenz über „Cookie-Einstellungen" widerrufen;</li>
-<li><strong>KI-Chat Kian (Vallit):</strong> Chat-Sitzungen und -nachrichten maximal 12 Monate; Buchungsdaten ggf. 6/10 Jahre; Kontaktanfragen über Chat bis 6 Monate; Local Storage (Sitzungs-ID) bis Löschung durch Sie oder Sitzungsende (siehe Abschnitt 9);</li>
+<li><strong>KI-Chat Kian (Vallit):</strong> Chat-Sitzungen und -nachrichten sowie Analysedaten maximal 12 Monate; Buchungs- und Kontaktanfragen grundsätzlich bis zu 6 Monate; buchungsrelevante Daten ggf. 6/10 Jahre; localStorage bis zur Löschung durch Sie im Browser (siehe Abschnitt 9);</li>
 <li><strong>Vertragsdaten:</strong> sofern wir im Rahmen von Verträgen personenbezogene Daten verarbeiten, gelten die
                             gesetzlichen Aufbewahrungsfristen (in der Regel 6 bzw. 10 Jahre nach Ende des Kalenderjahres).</li>
 </ul>

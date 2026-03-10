@@ -828,20 +828,6 @@
 
     <!-- Scripts -->
     <script>
-        // Load Navigation and Footer
-        fetch('../components/nav.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('nav-placeholder').innerHTML = data;
-                // Re-initialize mobile menu script if needed
-            });
-
-        fetch('../components/footer.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('footer-placeholder').innerHTML = data;
-            });
-
         // Scroll Progress Bar
         window.onscroll = function () {
             let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
@@ -860,9 +846,6 @@
         };
     </script>
     <script src="../js/main.js"></script>
-    <!-- Chatbot Widget -->
-    <script data-company-id="5f929157-5f9e-48e3-b7f7-a6dcd0e24142" data-theme="glassmorphism" defer=""
-        src="https://www.vallit.net/widget/embed.js"></script>
 </body>
 
 </html>

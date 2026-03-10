@@ -786,37 +786,6 @@
     <script src="../js/seminar-data.js"></script>
     <script src="../js/main.js"></script>
     <script>
-        // Load Header & Footer
-        fetch('../components/header.html')
-            .then(response => response.text())
-            .then(data => {
-                // Adjust paths in header
-                const fixedData = data.replace(/href="index"/g, 'href="../index"')
-                    .replace(/href="seminare\//g, 'href="')
-                    .replace(/src="assets\//g, 'src="../assets/');
-                document.getElementById('nav-placeholder').innerHTML = fixedData;
-
-                // Re-init mobile menu if needed
-                const mobileMenuBtn = document.getElementById('mobile-menu');
-                const navLinks = document.querySelector('.nav-links');
-                if (mobileMenuBtn && navLinks) {
-                    mobileMenuBtn.addEventListener('click', () => {
-                        mobileMenuBtn.classList.toggle('active');
-                        navLinks.classList.toggle('active');
-                    });
-                }
-            })
-            .catch(err => console.log('Header load error:', err));
-
-        fetch('../components/footer.html')
-            .then(response => response.text())
-            .then(data => {
-                const fixedData = data.replace(/href="index"/g, 'href="../index"')
-                    .replace(/src="assets\//g, 'src="../assets/');
-                document.getElementById('footer-placeholder').innerHTML = fixedData;
-            })
-            .catch(err => console.log('Footer load error:', err));
-
         // Scroll Progress
         window.addEventListener('scroll', () => {
             const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
@@ -825,9 +794,6 @@
             document.getElementById('scrollProgress').style.width = scrolled + '%';
         });
     </script>
-    <!-- Chatbot Widget -->
-    <script data-company-id="5f929157-5f9e-48e3-b7f7-a6dcd0e24142" data-theme="glassmorphism" defer=""
-        src="https://www.vallit.net/widget/embed.js"></script>
 </body>
 
 </html>

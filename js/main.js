@@ -2465,65 +2465,112 @@ document.addEventListener('DOMContentLoaded', () => {
     // JOINT HEADER / FOOTER / CHATBOT INJECTION
     // =========================================
     function injectSharedComponents() {
+        const VALLIT_BASE_URL = 'https://www.vallit.net';
+        const VALLIT_COMPANY_SLUG = 'wtm-consulting';
+
+        const getPageType = () => {
+            const path = window.location.pathname.toLowerCase();
+
+            if (
+                path === '/' ||
+                path.endsWith('/index.html') ||
+                path.endsWith('/index')
+            ) {
+                return 'home';
+            }
+
+            if (path.includes('/coaching')) {
+                return 'coaching';
+            }
+
+            if (path.includes('/seminare/') || path.endsWith('/seminar.html')) {
+                return 'seminar';
+            }
+
+            if (path.includes('datenschutz') || path.includes('impressum')) {
+                return 'legal';
+            }
+
+            return 'default';
+        };
+
+        const getWidgetWelcomeMessage = (pageType) => {
+            const h1Text = document.querySelector('h1')?.textContent?.trim();
+
+            switch (pageType) {
+                case 'home':
+                    return 'Willkommen! Ich bin Ihr KI-Assistent. Wie kann ich Ihnen weiterhelfen?';
+                case 'coaching':
+                    return 'Ich sehe, Sie interessieren sich für unser Business-Coaching. Haben Sie Fragen zu Themen, Coaches oder dem Erstgespräch?';
+                case 'seminar':
+                    return h1Text
+                        ? `Ich sehe, Sie interessieren sich für „${h1Text}“. Haben Sie Fragen dazu?`
+                        : 'Ich sehe, Sie interessieren sich für eines unserer Seminare. Haben Sie Fragen dazu?';
+                case 'legal':
+                    return 'Haben Sie Fragen zu unseren Leistungen oder zur Kontaktaufnahme? Ich helfe Ihnen gern weiter.';
+                default:
+                    return 'Hallo! Ich bin Kian. Wie kann ich Ihnen weiterhelfen?';
+            }
+        };
+
+        const getWidgetConfig = () => {
+            const pageType = getPageType();
+
+            return {
+                apiUrl: VALLIT_BASE_URL,
+                widgetId: VALLIT_COMPANY_SLUG,
+                companyId: VALLIT_COMPANY_SLUG,
+                title: 'Kian',
+                welcomeMessage: getWidgetWelcomeMessage(pageType),
+                position: 'bottom-right',
+                theme: 'glassmorphism',
+                color: '#3D7A77',
+                placeholder: 'Nachricht eingeben...',
+                streaming: 'true',
+                voice: 'true',
+                proactive: pageType === 'legal' ? 'false' : 'true',
+                sound: 'false',
+                fileUpload: 'false',
+                branding: 'true',
+                privacyUrl: '/datenschutz.html',
+                logoUrl: '/assets/logo.png',
+                themeAccent: '#3D7A77',
+                themeBg: '#ffffff',
+                themeRadius: '16px'
+            };
+        };
+
         // Only run if placeholders exist
         const footerPlaceholder = document.getElementById('footer-placeholder');
 
         // 2. CHATBOT AND HELPER BUTTON
-        const existingChatbot = document.querySelector('script[src*="vallit.net"]');
+        const existingChatbot = document.querySelector('script[src*="/widget/embed.js"]');
         if (!existingChatbot) {
-            // Inject Script
+            const widgetConfig = getWidgetConfig();
             const script = document.createElement('script');
-            script.src = "https://www.vallit.net/widget/embed.js";
-            script.dataset.companyId = "e46176c5-23bd-4770-aeac-dca77464010a";
-            script.dataset.theme = "glassmorphism";
-            script.dataset.greeting = "Hallo! Ich bin Kian, dein KI-Assistent. Wie kann ich dir heute helfen?"; // Attempting to set greeting here
+            script.src = `${widgetConfig.apiUrl}/widget/embed.js`;
             script.defer = true;
+            script.dataset.widgetId = widgetConfig.widgetId;
+            script.dataset.companyId = widgetConfig.companyId;
+            script.dataset.apiUrl = widgetConfig.apiUrl;
+            script.dataset.title = widgetConfig.title;
+            script.dataset.welcomeMessage = widgetConfig.welcomeMessage;
+            script.dataset.position = widgetConfig.position;
+            script.dataset.theme = widgetConfig.theme;
+            script.dataset.color = widgetConfig.color;
+            script.dataset.placeholder = widgetConfig.placeholder;
+            script.dataset.streaming = widgetConfig.streaming;
+            script.dataset.voice = widgetConfig.voice;
+            script.dataset.proactive = widgetConfig.proactive;
+            script.dataset.sound = widgetConfig.sound;
+            script.dataset.fileUpload = widgetConfig.fileUpload;
+            script.dataset.branding = widgetConfig.branding;
+            script.dataset.privacyUrl = widgetConfig.privacyUrl;
+            script.dataset.logoUrl = widgetConfig.logoUrl;
+            script.dataset.themeAccent = widgetConfig.themeAccent;
+            script.dataset.themeBg = widgetConfig.themeBg;
+            script.dataset.themeRadius = widgetConfig.themeRadius;
             document.body.appendChild(script);
-
-            // Chatbot state persistence
-            script.onload = () => {
-                if (sessionStorage.getItem('chatOpen') === 'true') {
-                    setTimeout(() => {
-                        if (window.VallitWidget) window.VallitWidget.open();
-                        else if (window.Vallit) window.Vallit.open();
-                        else if (window.Syntra) window.Syntra.open();
-                    }, 500);
-                }
-            };
-
-            // Listen for clicks on the chat container to track state
-            document.addEventListener('click', (e) => {
-                // Track opening
-                if (e.target.closest('.chatbot-helper-btn') ||
-                    e.target.closest('.vallit-launcher') ||
-                    e.target.closest('.syntra-launcher')) {
-                    sessionStorage.setItem('chatOpen', 'true');
-                }
-                // Track closing
-                if (e.target.closest('.syntra-close-btn') ||
-                    e.target.closest('.close-btn') ||
-                    e.target.closest('[data-close]') ||
-                    e.target.closest('.vallit-close')) {
-                    sessionStorage.setItem('chatOpen', 'false');
-                }
-            });
-
-            // Inject Helper Button
-            const helperBtnHTML = `
-            <div class="chatbot-helper" id="chatbotHelper">
-                <button class="chatbot-helper-btn" id="openChatbot" onclick="if(window.VallitWidget) window.VallitWidget.open();">
-                    <div class="btn-icon-wrapper">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
-                        </svg>
-                    </div>
-                    <div class="btn-text-content">
-                        <span class="btn-title">Fragen?</span>
-                        <span class="btn-subtitle">Ich helfe gerne</span>
-                    </div>
-                </button>
-            </div>`;
-            document.body.insertAdjacentHTML('beforeend', helperBtnHTML);
         }
 
         // 3. FOOTER

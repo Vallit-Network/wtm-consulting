@@ -7125,6 +7125,7 @@ header.header-scrolled .logo img {
     right: 24px;
     bottom: 24px;
     z-index: 999;
+    display: none !important;
     opacity: 0;
     transform: translateY(30px) scale(0.9);
     transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
@@ -7460,19 +7461,40 @@ header.header-scrolled .logo img {
 }
 
 /* ============================================
-   HIDE DEFAULT VALLIT WIDGET TOGGLE
-   When using custom chatbot helper button
+   FORCE VALLIT WIDGET LAUNCHER VISIBILITY
+   Keep the official launcher visible and pinned bottom-right
    ============================================ */
 .syntra-toggle-btn,
 [data-vallit-toggle],
-.vallit-widget-toggle {
-    position: absolute !important;
-    opacity: 0 !important;
-    pointer-events: none !important;
-    z-index: -1 !important;
-    width: 0 !important;
-    height: 0 !important;
-    overflow: hidden !important;
+.vallit-widget-toggle,
+#vallit-launcher {
+    position: fixed !important;
+    right: 24px !important;
+    bottom: 24px !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+    z-index: 1000 !important;
+    width: auto !important;
+    height: auto !important;
+    overflow: visible !important;
+}
+
+.syntra-chat-container,
+.vallit-widget-container,
+[data-vallit-container],
+.syntra-widget {
+    z-index: 1001 !important;
+}
+
+@media (max-width: 767px) {
+
+    .syntra-toggle-btn,
+    [data-vallit-toggle],
+    .vallit-widget-toggle,
+    #vallit-launcher {
+        right: 16px !important;
+        bottom: 16px !important;
+    }
 }
 
 /* ============================================

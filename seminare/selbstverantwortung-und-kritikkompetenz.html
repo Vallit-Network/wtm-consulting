@@ -879,18 +879,6 @@
     <!-- Footer wird dynamisch geladen -->
     <div id="footer-placeholder"></div>
     <script>
-        // Load Navigation and Footer
-        fetch('../components/nav.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('nav-placeholder').innerHTML = data;
-            });
-        fetch('../components/footer.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('footer-placeholder').innerHTML = data;
-            });
-
         // Scroll Progress
         window.addEventListener('scroll', () => {
             const scrolled = window.scrollY;
@@ -909,6 +897,7 @@
             }
         });
     </script>
+    <script src="../js/main.js"></script>
 </body>
 
 </html>
