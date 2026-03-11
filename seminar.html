@@ -97,19 +97,6 @@
     </main>
     <!-- Chatbot Helper Panel -->
     <!-- Chatbot Helper Panel (Redesigned) -->
-    <div class="chatbot-helper" id="chatbotHelper">
-        <button class="chatbot-helper-btn" id="openChatbot">
-            <div class="btn-icon-wrapper">
-                <svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
-                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
-                </svg>
-            </div>
-            <div class="btn-text-content">
-                <span class="btn-title">Fragen?</span>
-                <span class="btn-subtitle">Ich helfe gerne</span>
-            </div>
-        </button>
-    </div>
     <!-- Footer (Same as Main Page) -->
     <footer>
         <div class="container">
@@ -423,7 +410,7 @@
             const chatbotHelper = document.getElementById('chatbotHelper');
             const heroSection = document.querySelector('.seminar-hero');
 
-            if (!heroSection) return;
+            if (!chatbotHelper || !heroSection) return;
 
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
@@ -452,6 +439,7 @@
             console.log('Attempting to open Vallit Chat...');
 
             const btn = document.getElementById('openChatbot');
+            if (!btn) return;
             const originalContent = btn.innerHTML;
 
             // Set loading state

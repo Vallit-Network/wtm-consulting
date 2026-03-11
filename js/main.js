@@ -2466,7 +2466,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // =========================================
     function injectSharedComponents() {
         const VALLIT_BASE_URL = 'https://www.vallit.net';
-        const VALLIT_COMPANY_SLUG = 'wtm-consulting';
+        const VALLIT_WIDGET_ID = 'wtm-web';
+        const VALLIT_COMPANY_ID = 'wtm';
 
         const getPageType = () => {
             const path = window.location.pathname.toLowerCase();
@@ -2499,7 +2500,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             switch (pageType) {
                 case 'home':
-                    return 'Willkommen! Ich bin Ihr KI-Assistent. Wie kann ich Ihnen weiterhelfen?';
+                    return 'Hallo! Wie kann ich Ihnen weiterhelfen?';
                 case 'coaching':
                     return 'Ich sehe, Sie interessieren sich für unser Business-Coaching. Haben Sie Fragen zu Themen, Coaches oder dem Erstgespräch?';
                 case 'seminar':
@@ -2518,8 +2519,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
             return {
                 apiUrl: VALLIT_BASE_URL,
-                widgetId: VALLIT_COMPANY_SLUG,
-                companyId: VALLIT_COMPANY_SLUG,
+                widgetId: VALLIT_WIDGET_ID,
+                companyId: VALLIT_COMPANY_ID,
                 title: 'Kian',
                 welcomeMessage: getWidgetWelcomeMessage(pageType),
                 position: 'bottom-right',
@@ -2532,8 +2533,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 sound: 'false',
                 fileUpload: 'false',
                 branding: 'true',
-                privacyUrl: '/datenschutz.html',
-                logoUrl: '/assets/logo.png',
+                privacyUrl: 'https://www.wtm-consulting.de/datenschutz',
+                logoUrl: 'https://www.vallit.net/images/wtm-logo.png',
                 themeAccent: '#3D7A77',
                 themeBg: '#ffffff',
                 themeRadius: '16px'
