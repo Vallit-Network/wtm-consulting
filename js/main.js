@@ -1243,7 +1243,7 @@ const teamMembersData = {
     3: {
         name: 'Frank Titzer',
         role: 'Gründer',
-        photo: 'assets/team/frank_titzer-AI-v2.jpg',
+        photo: 'assets/team/frank_titzer-v3.jpg',
         categories: ['leadership', 'change', 'communication'],
         motto: 'Stimmige Entwicklung und Klärung brauchen Zeit! Diesen Prozess präsent und mit Achtung zu begleiten, ist mein professioneller Anspruch.',
         shortDescription: [
@@ -1395,7 +1395,7 @@ const teamMembersData = {
     9: {
         name: 'Dr. Sarolf Sauer',
         role: 'Trainer & Coach',
-        photo: 'assets/team/Sarolf_Sauer_Team_500x500-AI-v2.jpg',
+        photo: 'assets/team/Sarolf_Sauer_Team_500x500-v3.jpg',
         categories: ['leadership', 'health', 'communication'],
         motto: 'Haltung und Persönlichkeit sind der Schlüssel.',
         shortDescription: [
@@ -1503,7 +1503,7 @@ const teamMembersData = {
     13: {
         name: 'Hermann Josef Leiders',
         role: 'Trainer & Coach',
-        photo: 'assets/team/Harry_Leiders_team_500x500-AI-v2.jpg',
+        photo: 'assets/team/Harry_Leiders_team_500x500-v3.jpg',
         categories: ['leadership', 'communication', 'management'],
         motto: 'Lern- und Entwicklungsräume schaffen, in denen Menschen wachsen können.',
         shortDescription: [
@@ -1529,7 +1529,7 @@ const teamMembersData = {
     14: {
         name: 'Jürgen Reus',
         role: 'Trainer & Coach',
-        photo: 'assets/team/Juergen_Reus_AI.png',
+        photo: 'assets/team/Juergen_Reus-v3.png',
         categories: ['communication', 'management'],
         motto: 'Klar strukturieren. Wirksam umsetzen.',
         shortDescription: [
@@ -1640,7 +1640,7 @@ const teamMembersData = {
     18: {
         name: 'Markus Schramm',
         role: 'Trainer & Coach',
-        photo: 'assets/team/Markus_Schramm_AI.png',
+        photo: 'assets/team/Markus_Schramm-v3.png',
         categories: ['leadership', 'change', 'communication'],
         motto: 'Kommunikation aus Leidenschaft lebhaft gestalten.',
         shortDescription: [
@@ -1665,7 +1665,7 @@ const teamMembersData = {
     19: {
         name: 'Melanie Kubala',
         role: 'Trainerin & Coach',
-        photo: 'assets/team/Team-Melanie-Kubala-500x500-1-AI-v2.jpg',
+        photo: 'assets/team/Team-Melanie-Kubala-500x500-1-v3.jpg',
         categories: ['leadership', 'change', 'communication'],
         motto: 'Wer alles tut, was er schon kann, bleibt immer das, was er schon ist.',
         shortDescription: [
@@ -1692,7 +1692,7 @@ const teamMembersData = {
     20: {
         name: 'Philipp Besch',
         role: 'Trainer & Coach',
-        photo: 'assets/team/Team-Phillip_Besch-500x500-1-AI-v2.jpg',
+        photo: 'assets/team/Team-Phillip_Besch-500x500-1-v3.jpg',
         categories: ['leadership', 'change', 'communication'],
         motto: 'Menschen in ihrer persönlichen Entfaltung zu fördern, zu fordern und im Prozess zu begleiten, ist meine Leidenschaft. Klar, wertschätzend, provokativ und lösungsorientiert.',
         shortDescription: [
@@ -1719,7 +1719,7 @@ const teamMembersData = {
     21: {
         name: 'Uta-Barbara Vogel',
         role: 'Trainerin & Coach',
-        photo: 'assets/team/Barbara_AI.png',
+        photo: 'assets/team/Barbara-v3.png',
         categories: ['leadership', 'change', 'communication'],
         motto: 'Lebensfreude, Begeisterungsfähigkeit und Neugier sind Eigenschaften, die mich auszeichnen und die mir im Beruf helfen, gemeinsam mit meinen Kunden tragfähige Lösungen zu entwickeln.',
         shortDescription: [
@@ -1747,7 +1747,7 @@ const teamMembersData = {
     22: {
         name: 'Wolfgang Hoffmann',
         role: 'Trainer & Coach',
-        photo: 'assets/team/Team-Foto-Wolfgang-Hoffmann-AI-v2.jpg',
+        photo: 'assets/team/Team-Foto-Wolfgang-Hoffmann-v3.jpg',
         categories: ['change', 'leadership'],
         motto: 'Kompetente Begleitung, klare Worte. Wirksamkeit im Fokus.',
         shortDescription: [
