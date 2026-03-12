@@ -599,6 +599,7 @@
             position: relative;
         }
     </style>
+    <link href="../styles/mobile-overrides.css" rel="stylesheet" />
 </head>
 <body>
 <div class="scroll-progress" id="scrollProgress"></div>
@@ -811,14 +812,6 @@
             if (rect.top < window.innerHeight && rect.bottom > 0) {
                 line.classList.add('animated');
             }
-        });
-
-        // Mobile Menu
-        const mobileMenu = document.getElementById('mobile-menu');
-        const navLinks = document.querySelector('.nav-links');
-
-        mobileMenu.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
         });
     </script>
 <script src="../js/main.js"></script>

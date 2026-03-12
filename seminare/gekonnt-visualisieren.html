@@ -499,9 +499,10 @@
             }
         }
     </style>
+    <link href="../styles/mobile-overrides.css" rel="stylesheet" />
 </head>
 
-<body>
+<body class="visualisieren-page">
     <div class="scroll-progress" id="scrollProgress"></div>
     <!-- Navigation -->
     <div id="nav-placeholder"></div>
@@ -754,14 +755,6 @@
             });
         };
 
-        // Mobile Menu
-        const mobileMenuBtn = document.getElementById('mobile-menu');
-        const navLinks = document.querySelector('.nav-links');
-
-        mobileMenuBtn.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-            mobileMenuBtn.classList.toggle('active');
-        });
     </script>
     <script src="../js/main.js"></script>
 </body>

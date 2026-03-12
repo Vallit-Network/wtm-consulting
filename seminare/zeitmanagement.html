@@ -577,6 +577,7 @@
             line-height: 1.4;
         }
     </style>
+    <link href="../styles/mobile-overrides.css" rel="stylesheet" />
 </head>
 
 <body>
@@ -803,17 +804,6 @@
             el.classList.add('reveal');
             observer.observe(el);
         });
-
-        // Mobile Menu
-        const mobileMenuBtn = document.getElementById('mobile-menu');
-        const navLinks = document.querySelector('.nav-links');
-
-        if (mobileMenuBtn) {
-            mobileMenuBtn.addEventListener('click', () => {
-                navLinks.classList.toggle('active');
-                mobileMenuBtn.classList.toggle('active');
-            });
-        }
     </script>
 </body>
 

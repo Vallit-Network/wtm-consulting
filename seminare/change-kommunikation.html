@@ -364,6 +364,7 @@
 
         }
     </style>
+    <link href="../styles/mobile-overrides.css" rel="stylesheet" />
 </head>
 
 <body>
@@ -607,16 +608,6 @@
                 document.getElementById('header').classList.remove('scrolled');
             }
         };
-
-        // Mobile menu
-        const mobileMenu = document.getElementById('mobile-menu');
-        const navLinks = document.querySelector('.nav-links');
-        if (mobileMenu) {
-            mobileMenu.addEventListener('click', function () {
-                navLinks.classList.toggle('active');
-                mobileMenu.classList.toggle('active');
-            });
-        }
     </script>
     <script src="../js/main.js"></script>
 </body>

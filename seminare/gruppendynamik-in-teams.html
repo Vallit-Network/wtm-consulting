@@ -560,6 +560,7 @@
             }
         }
     </style>
+    <link href="../styles/mobile-overrides.css" rel="stylesheet" />
 </head>
 <body>
 <div class="scroll-progress" id="scrollProgress"></div>
@@ -853,11 +854,6 @@
                 document.getElementById('header').classList.remove('scrolled');
             }
         };
-
-        // Mobile menu toggle
-        document.getElementById('mobile-menu').addEventListener('click', function () {
-            document.querySelector('.nav-links').classList.toggle('active');
-        });
     </script>
 <script src="../js/main.js"></script>
 </body>

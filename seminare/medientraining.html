@@ -546,6 +546,7 @@
             }
         }
     </style>
+    <link href="../styles/mobile-overrides.css" rel="stylesheet" />
 </head>
 <body>
 <div class="scroll-progress" id="scrollProgress"></div>
@@ -785,11 +786,6 @@
             const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
             const scrolled = (winScroll / height) * 100;
             document.getElementById("scrollProgress").style.width = scrolled + "%";
-        });
-
-        // Mobile Menu
-        document.getElementById('mobile-menu').addEventListener('click', function () {
-            document.querySelector('.nav-links').classList.toggle('active');
         });
     </script>
 <script src="../js/main.js"></script>

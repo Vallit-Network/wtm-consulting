@@ -495,9 +495,10 @@
             }
         }
     </style>
+    <link href="../styles/mobile-overrides.css" rel="stylesheet" />
 </head>
 
-<body>
+<body class="change-kompetenz-page">
     <div class="scroll-progress" id="scrollProgress"></div>
     <div id="nav-placeholder"></div>
     <section class="seminar-hero">
@@ -558,6 +559,90 @@
                         Simplifizierung zu erliegen.
                     </p>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="intro-section change-models-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Orientierung im Wandel</span>
+                <h2>Veränderung sichtbar und bearbeitbar machen</h2>
+                <div class="accent-line"></div>
+                <p>Im Seminar betrachten wir Wandel auf zwei Ebenen: emotional als Bewegung durch typische Phasen und
+                    organisatorisch als Zusammenspiel mehrerer Hebel, die Veränderung tragfähig machen.</p>
+            </div>
+            <div class="change-models-grid">
+                <article class="change-model-card">
+                    <h3>Change-Kurve</h3>
+                    <p>Wir besprechen die typische Dynamik von der ersten Irritation bis zur aktiven Übernahme von
+                        Verantwortung. So wird sichtbar, an welcher Stelle Menschen gerade stehen und was sie als
+                        Nächstes brauchen.</p>
+                    <div class="change-curve-visual" aria-hidden="true">
+                        <div class="change-curve-track">
+                            <svg viewBox="0 0 520 220" xmlns="http://www.w3.org/2000/svg">
+                                <path class="change-curve-stroke"
+                                    d="M18 72 C 70 28, 125 16, 170 74 S 270 214, 330 150 S 422 92, 500 36" />
+                            </svg>
+                            <span class="change-curve-point phase-shock"></span>
+                            <span class="change-curve-point phase-uncertainty"></span>
+                            <span class="change-curve-point phase-alignment"></span>
+                            <span class="change-curve-point phase-ownership"></span>
+                        </div>
+                        <div class="change-curve-caption">
+                            <span>Schock</span>
+                            <span>Unsicherheit</span>
+                            <span>Ausrichtung</span>
+                            <span>Übernahme</span>
+                        </div>
+                    </div>
+                    <div class="change-phase-list">
+                        <div class="change-phase-item">
+                            <strong>01 | Schock</strong>
+                            <p>Die erste Reaktion ist oft emotional. Wir erkennen, was die Situation auslöst und wie
+                                Stabilität zurückgewonnen werden kann.</p>
+                        </div>
+                        <div class="change-phase-item">
+                            <strong>02 | Unsicherheit</strong>
+                            <p>Offene Fragen, Gerüchte und Widerstände nehmen zu. Hier braucht es Einordnung statt
+                                vorschneller Vereinfachung.</p>
+                        </div>
+                        <div class="change-phase-item">
+                            <strong>03 | Ausrichtung</strong>
+                            <p>Menschen beginnen, Muster zu verstehen. Wir schaffen Orientierung, Sprache und realistische
+                                Handlungsoptionen.</p>
+                        </div>
+                        <div class="change-phase-item">
+                            <strong>04 | Übernahme</strong>
+                            <p>Veränderung wird nicht mehr nur ertragen, sondern aktiv mitgestaltet. Genau diesen Schritt
+                                trainieren wir im Seminar.</p>
+                        </div>
+                    </div>
+                </article>
+                <article class="change-model-card">
+                    <h3>House of Change</h3>
+                    <p>Veränderung wird stabil, wenn mehrere Räume gleichzeitig gepflegt werden. Wir arbeiten daran, wie
+                        Sinn, Beteiligung, Befähigung und konkrete Umsetzung ineinandergreifen.</p>
+                    <div class="change-house-grid">
+                        <div class="change-house-room">
+                            <strong>Sinn & Richtung</strong>
+                            <span>Warum ist die Veränderung notwendig und welches Bild trägt sie?</span>
+                        </div>
+                        <div class="change-house-room">
+                            <strong>Beteiligung</strong>
+                            <span>Wie werden Betroffene zu Mitgestaltenden und wie entsteht Akzeptanz?</span>
+                        </div>
+                        <div class="change-house-room">
+                            <strong>Kompetenz</strong>
+                            <span>Welche Fähigkeiten, Routinen und Werkzeuge werden für den Wandel gebraucht?</span>
+                        </div>
+                        <div class="change-house-room">
+                            <strong>Umsetzung</strong>
+                            <span>Welche nächsten Schritte, Verantwortungen und Rituale halten die Veränderung im Alltag
+                                lebendig?</span>
+                        </div>
+                    </div>
+                </article>
             </div>
         </div>
     </section>
@@ -718,12 +803,6 @@
             }
         };
 
-        const mobileMenu = document.getElementById('mobile-menu');
-        const navLinks = document.querySelector('.nav-links');
-        mobileMenu.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-            mobileMenu.classList.toggle('active');
-        });
     </script>
     <script src="../js/main.js"></script>
 </body>

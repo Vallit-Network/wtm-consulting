@@ -1,0 +1,732 @@
+[
+  {
+    "key": "home-390",
+    "screenshot": "/Users/theoreichert/Documents/Projects/wtm-consulting/output/playwright/home-390.png",
+    "metrics": {
+      "path": "/index.html",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "docScrollWidth": 390,
+      "clientWidth": 390,
+      "bodyScrollWidth": 390,
+      "hasHorizontalOverflow": false,
+      "nav": {
+        "active": false,
+        "visibility": "hidden",
+        "opacity": "0",
+        "pointerEvents": "none",
+        "left": 437,
+        "right": 827,
+        "width": 390
+      },
+      "cookie": {
+        "visible": true,
+        "height": 272,
+        "bottom": "12px"
+      },
+      "launcher": null,
+      "helper": null
+    }
+  },
+  {
+    "key": "coaching-390",
+    "screenshot": "/Users/theoreichert/Documents/Projects/wtm-consulting/output/playwright/coaching-390.png",
+    "metrics": {
+      "path": "/coaching/",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "docScrollWidth": 390,
+      "clientWidth": 390,
+      "bodyScrollWidth": 390,
+      "hasHorizontalOverflow": false,
+      "nav": {
+        "active": false,
+        "visibility": "hidden",
+        "opacity": "0",
+        "pointerEvents": "none",
+        "left": 437,
+        "right": 827,
+        "width": 390
+      },
+      "cookie": null,
+      "launcher": null,
+      "helper": null
+    }
+  },
+  {
+    "key": "seminar-hub-390",
+    "screenshot": "/Users/theoreichert/Documents/Projects/wtm-consulting/output/playwright/seminar-hub-390.png",
+    "metrics": {
+      "path": "/seminar.html?id=leadership-basics",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "docScrollWidth": 390,
+      "clientWidth": 390,
+      "bodyScrollWidth": 390,
+      "hasHorizontalOverflow": false,
+      "nav": {
+        "active": false,
+        "visibility": "hidden",
+        "opacity": "0",
+        "pointerEvents": "none",
+        "left": 437,
+        "right": 827,
+        "width": 390
+      },
+      "cookie": null,
+      "launcher": null,
+      "helper": null
+    }
+  },
+  {
+    "key": "impressum-390",
+    "screenshot": "/Users/theoreichert/Documents/Projects/wtm-consulting/output/playwright/impressum-390.png",
+    "metrics": {
+      "path": "/impressum.html",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "docScrollWidth": 390,
+      "clientWidth": 390,
+      "bodyScrollWidth": 390,
+      "hasHorizontalOverflow": false,
+      "nav": {
+        "active": false,
+        "visibility": "hidden",
+        "opacity": "0",
+        "pointerEvents": "none",
+        "left": 437,
+        "right": 827,
+        "width": 390
+      },
+      "cookie": null,
+      "launcher": null,
+      "helper": null
+    }
+  },
+  {
+    "key": "datenschutz-390",
+    "screenshot": "/Users/theoreichert/Documents/Projects/wtm-consulting/output/playwright/datenschutz-390.png",
+    "metrics": {
+      "path": "/datenschutz.html",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "docScrollWidth": 390,
+      "clientWidth": 390,
+      "bodyScrollWidth": 426,
+      "hasHorizontalOverflow": false,
+      "nav": {
+        "active": false,
+        "visibility": "hidden",
+        "opacity": "0",
+        "pointerEvents": "none",
+        "left": 437,
+        "right": 827,
+        "width": 390
+      },
+      "cookie": null,
+      "launcher": null,
+      "helper": null
+    }
+  },
+  {
+    "key": "seminar-standard-390",
+    "screenshot": "/Users/theoreichert/Documents/Projects/wtm-consulting/output/playwright/seminar-standard-390.png",
+    "metrics": {
+      "path": "/seminare/leadership-basics.html",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "docScrollWidth": 390,
+      "clientWidth": 390,
+      "bodyScrollWidth": 390,
+      "hasHorizontalOverflow": false,
+      "nav": {
+        "active": false,
+        "visibility": "hidden",
+        "opacity": "0",
+        "pointerEvents": "none",
+        "left": 437,
+        "right": 827,
+        "width": 390
+      },
+      "cookie": null,
+      "launcher": null,
+      "helper": null
+    }
+  },
+  {
+    "key": "seminar-change-390",
+    "screenshot": "/Users/theoreichert/Documents/Projects/wtm-consulting/output/playwright/seminar-change-390.png",
+    "metrics": {
+      "path": "/seminare/change-kompetenz.html",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "docScrollWidth": 390,
+      "clientWidth": 390,
+      "bodyScrollWidth": 425,
+      "hasHorizontalOverflow": false,
+      "nav": {
+        "active": false,
+        "visibility": "hidden",
+        "opacity": "0",
+        "pointerEvents": "none",
+        "left": 437,
+        "right": 827,
+        "width": 390
+      },
+      "cookie": null,
+      "launcher": null,
+      "helper": null
+    }
+  },
+  {
+    "key": "seminar-visual-390",
+    "screenshot": "/Users/theoreichert/Documents/Projects/wtm-consulting/output/playwright/seminar-visual-390.png",
+    "metrics": {
+      "path": "/seminare/gekonnt-visualisieren.html",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "docScrollWidth": 390,
+      "clientWidth": 390,
+      "bodyScrollWidth": 390,
+      "hasHorizontalOverflow": false,
+      "nav": {
+        "active": false,
+        "visibility": "hidden",
+        "opacity": "0",
+        "pointerEvents": "none",
+        "left": 437,
+        "right": 827,
+        "width": 390
+      },
+      "cookie": null,
+      "launcher": null,
+      "helper": null
+    }
+  },
+  {
+    "key": "home-768",
+    "screenshot": "/Users/theoreichert/Documents/Projects/wtm-consulting/output/playwright/home-768.png",
+    "metrics": {
+      "path": "/index.html",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "docScrollWidth": 768,
+      "clientWidth": 768,
+      "bodyScrollWidth": 768,
+      "hasHorizontalOverflow": false,
+      "nav": {
+        "active": false,
+        "visibility": "hidden",
+        "opacity": "0",
+        "pointerEvents": "none",
+        "left": 818,
+        "right": 1238,
+        "width": 420
+      },
+      "cookie": {
+        "visible": true,
+        "height": 203,
+        "bottom": "12px"
+      },
+      "launcher": null,
+      "helper": null
+    }
+  },
+  {
+    "key": "coaching-768",
+    "screenshot": "/Users/theoreichert/Documents/Projects/wtm-consulting/output/playwright/coaching-768.png",
+    "metrics": {
+      "path": "/coaching/",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "docScrollWidth": 768,
+      "clientWidth": 768,
+      "bodyScrollWidth": 768,
+      "hasHorizontalOverflow": false,
+      "nav": {
+        "active": false,
+        "visibility": "hidden",
+        "opacity": "0",
+        "pointerEvents": "none",
+        "left": 818,
+        "right": 1238,
+        "width": 420
+      },
+      "cookie": null,
+      "launcher": null,
+      "helper": null
+    }
+  },
+  {
+    "key": "seminar-hub-768",
+    "screenshot": "/Users/theoreichert/Documents/Projects/wtm-consulting/output/playwright/seminar-hub-768.png",
+    "metrics": {
+      "path": "/seminar.html?id=leadership-basics",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "docScrollWidth": 768,
+      "clientWidth": 768,
+      "bodyScrollWidth": 768,
+      "hasHorizontalOverflow": false,
+      "nav": {
+        "active": false,
+        "visibility": "hidden",
+        "opacity": "0",
+        "pointerEvents": "none",
+        "left": 818,
+        "right": 1238,
+        "width": 420
+      },
+      "cookie": null,
+      "launcher": null,
+      "helper": null
+    }
+  },
+  {
+    "key": "impressum-768",
+    "screenshot": "/Users/theoreichert/Documents/Projects/wtm-consulting/output/playwright/impressum-768.png",
+    "metrics": {
+      "path": "/impressum.html",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "docScrollWidth": 768,
+      "clientWidth": 768,
+      "bodyScrollWidth": 768,
+      "hasHorizontalOverflow": false,
+      "nav": {
+        "active": false,
+        "visibility": "hidden",
+        "opacity": "0",
+        "pointerEvents": "none",
+        "left": 818,
+        "right": 1238,
+        "width": 420
+      },
+      "cookie": null,
+      "launcher": null,
+      "helper": null
+    }
+  },
+  {
+    "key": "datenschutz-768",
+    "screenshot": "/Users/theoreichert/Documents/Projects/wtm-consulting/output/playwright/datenschutz-768.png",
+    "metrics": {
+      "path": "/datenschutz.html",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "docScrollWidth": 768,
+      "clientWidth": 768,
+      "bodyScrollWidth": 768,
+      "hasHorizontalOverflow": false,
+      "nav": {
+        "active": false,
+        "visibility": "hidden",
+        "opacity": "0",
+        "pointerEvents": "none",
+        "left": 818,
+        "right": 1238,
+        "width": 420
+      },
+      "cookie": null,
+      "launcher": null,
+      "helper": null
+    }
+  },
+  {
+    "key": "seminar-standard-768",
+    "screenshot": "/Users/theoreichert/Documents/Projects/wtm-consulting/output/playwright/seminar-standard-768.png",
+    "metrics": {
+      "path": "/seminare/leadership-basics.html",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "docScrollWidth": 768,
+      "clientWidth": 768,
+      "bodyScrollWidth": 768,
+      "hasHorizontalOverflow": false,
+      "nav": {
+        "active": false,
+        "visibility": "hidden",
+        "opacity": "0",
+        "pointerEvents": "none",
+        "left": 818,
+        "right": 1238,
+        "width": 420
+      },
+      "cookie": null,
+      "launcher": null,
+      "helper": null
+    }
+  },
+  {
+    "key": "seminar-change-768",
+    "screenshot": "/Users/theoreichert/Documents/Projects/wtm-consulting/output/playwright/seminar-change-768.png",
+    "metrics": {
+      "path": "/seminare/change-kompetenz.html",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "docScrollWidth": 768,
+      "clientWidth": 768,
+      "bodyScrollWidth": 768,
+      "hasHorizontalOverflow": false,
+      "nav": {
+        "active": false,
+        "visibility": "hidden",
+        "opacity": "0",
+        "pointerEvents": "none",
+        "left": 818,
+        "right": 1238,
+        "width": 420
+      },
+      "cookie": null,
+      "launcher": null,
+      "helper": null
+    }
+  },
+  {
+    "key": "seminar-visual-768",
+    "screenshot": "/Users/theoreichert/Documents/Projects/wtm-consulting/output/playwright/seminar-visual-768.png",
+    "metrics": {
+      "path": "/seminare/gekonnt-visualisieren.html",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "docScrollWidth": 768,
+      "clientWidth": 768,
+      "bodyScrollWidth": 768,
+      "hasHorizontalOverflow": false,
+      "nav": {
+        "active": false,
+        "visibility": "hidden",
+        "opacity": "0",
+        "pointerEvents": "none",
+        "left": 818,
+        "right": 1238,
+        "width": 420
+      },
+      "cookie": null,
+      "launcher": null,
+      "helper": null
+    }
+  },
+  {
+    "key": "home-fk-390",
+    "screenshot": "/Users/theoreichert/Documents/Projects/wtm-consulting/output/playwright/home-fk-390.png",
+    "metrics": {
+      "path": "/index.html",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "docScrollWidth": 390,
+      "clientWidth": 390,
+      "bodyScrollWidth": 390,
+      "hasHorizontalOverflow": false,
+      "nav": {
+        "active": false,
+        "visibility": "hidden",
+        "opacity": "0",
+        "pointerEvents": "none",
+        "left": 437,
+        "right": 827,
+        "width": 390
+      },
+      "cookie": {
+        "visible": true,
+        "height": 272,
+        "bottom": "12px"
+      },
+      "launcher": null,
+      "helper": null
+    }
+  },
+  {
+    "key": "home-success-390",
+    "screenshot": "/Users/theoreichert/Documents/Projects/wtm-consulting/output/playwright/home-success-390.png",
+    "metrics": {
+      "path": "/index.html",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "docScrollWidth": 390,
+      "clientWidth": 390,
+      "bodyScrollWidth": 390,
+      "hasHorizontalOverflow": false,
+      "nav": {
+        "active": false,
+        "visibility": "hidden",
+        "opacity": "0",
+        "pointerEvents": "none",
+        "left": 437,
+        "right": 827,
+        "width": 390
+      },
+      "cookie": {
+        "visible": true,
+        "height": 272,
+        "bottom": "12px"
+      },
+      "launcher": null,
+      "helper": null
+    }
+  },
+  {
+    "key": "home-team-390",
+    "screenshot": "/Users/theoreichert/Documents/Projects/wtm-consulting/output/playwright/home-team-390.png",
+    "metrics": {
+      "path": "/index.html",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "docScrollWidth": 390,
+      "clientWidth": 390,
+      "bodyScrollWidth": 390,
+      "hasHorizontalOverflow": false,
+      "nav": {
+        "active": false,
+        "visibility": "hidden",
+        "opacity": "0",
+        "pointerEvents": "none",
+        "left": 437,
+        "right": 827,
+        "width": 390
+      },
+      "cookie": {
+        "visible": true,
+        "height": 272,
+        "bottom": "12px"
+      },
+      "launcher": null,
+      "helper": null
+    }
+  },
+  {
+    "key": "home-team-modal-390",
+    "screenshot": "/Users/theoreichert/Documents/Projects/wtm-consulting/output/playwright/home-team-modal-390.png",
+    "metrics": {
+      "path": "/index.html",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "docScrollWidth": 390,
+      "clientWidth": 390,
+      "bodyScrollWidth": 390,
+      "hasHorizontalOverflow": false,
+      "nav": {
+        "active": false,
+        "visibility": "hidden",
+        "opacity": "0",
+        "pointerEvents": "none",
+        "left": 437,
+        "right": 827,
+        "width": 390
+      },
+      "cookie": {
+        "visible": true,
+        "height": 272,
+        "bottom": "12px"
+      },
+      "launcher": null,
+      "helper": null
+    }
+  },
+  {
+    "key": "coaching-grid-390",
+    "screenshot": "/Users/theoreichert/Documents/Projects/wtm-consulting/output/playwright/coaching-grid-390.png",
+    "metrics": {
+      "path": "/coaching/",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "docScrollWidth": 390,
+      "clientWidth": 390,
+      "bodyScrollWidth": 390,
+      "hasHorizontalOverflow": false,
+      "nav": {
+        "active": false,
+        "visibility": "hidden",
+        "opacity": "0",
+        "pointerEvents": "none",
+        "left": 437,
+        "right": 827,
+        "width": 390
+      },
+      "cookie": null,
+      "launcher": null,
+      "helper": null
+    }
+  },
+  {
+    "key": "coach-modal-390",
+    "screenshot": "/Users/theoreichert/Documents/Projects/wtm-consulting/output/playwright/coach-modal-390.png",
+    "metrics": {
+      "path": "/coaching/",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "docScrollWidth": 390,
+      "clientWidth": 390,
+      "bodyScrollWidth": 390,
+      "hasHorizontalOverflow": false,
+      "nav": {
+        "active": false,
+        "visibility": "hidden",
+        "opacity": "0",
+        "pointerEvents": "none",
+        "left": 437,
+        "right": 827,
+        "width": 390
+      },
+      "cookie": null,
+      "launcher": null,
+      "helper": null
+    }
+  },
+  {
+    "key": "change-models-390",
+    "screenshot": "/Users/theoreichert/Documents/Projects/wtm-consulting/output/playwright/change-models-390.png",
+    "metrics": {
+      "path": "/seminare/change-kompetenz.html",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "docScrollWidth": 390,
+      "clientWidth": 390,
+      "bodyScrollWidth": 425,
+      "hasHorizontalOverflow": false,
+      "nav": {
+        "active": false,
+        "visibility": "hidden",
+        "opacity": "0",
+        "pointerEvents": "none",
+        "left": 437,
+        "right": 827,
+        "width": 390
+      },
+      "cookie": null,
+      "launcher": null,
+      "helper": null
+    }
+  },
+  {
+    "key": "visual-content-390",
+    "screenshot": "/Users/theoreichert/Documents/Projects/wtm-consulting/output/playwright/visual-content-390.png",
+    "metrics": {
+      "path": "/seminare/gekonnt-visualisieren.html",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "docScrollWidth": 390,
+      "clientWidth": 390,
+      "bodyScrollWidth": 390,
+      "hasHorizontalOverflow": false,
+      "nav": {
+        "active": false,
+        "visibility": "hidden",
+        "opacity": "0",
+        "pointerEvents": "none",
+        "left": 437,
+        "right": 827,
+        "width": 390
+      },
+      "cookie": null,
+      "launcher": null,
+      "helper": null
+    }
+  },
+  {
+    "key": "home-menu-390",
+    "screenshot": "/Users/theoreichert/Documents/Projects/wtm-consulting/output/playwright/home-menu-390.png",
+    "metrics": {
+      "path": "/index.html",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "docScrollWidth": 390,
+      "clientWidth": 390,
+      "bodyScrollWidth": 390,
+      "hasHorizontalOverflow": false,
+      "nav": {
+        "active": true,
+        "visibility": "visible",
+        "opacity": "1",
+        "pointerEvents": "auto",
+        "left": 0,
+        "right": 390,
+        "width": 390
+      },
+      "cookie": {
+        "visible": true,
+        "height": 272,
+        "bottom": "12px"
+      },
+      "launcher": null,
+      "helper": null
+    }
+  },
+  {
+    "key": "seminar-menu-390",
+    "screenshot": "/Users/theoreichert/Documents/Projects/wtm-consulting/output/playwright/seminar-menu-390.png",
+    "metrics": {
+      "path": "/seminare/leadership-basics.html",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "docScrollWidth": 390,
+      "clientWidth": 390,
+      "bodyScrollWidth": 390,
+      "hasHorizontalOverflow": false,
+      "nav": {
+        "active": true,
+        "visibility": "visible",
+        "opacity": "1",
+        "pointerEvents": "auto",
+        "left": 0,
+        "right": 390,
+        "width": 390
+      },
+      "cookie": null,
+      "launcher": null,
+      "helper": null
+    }
+  }
+]

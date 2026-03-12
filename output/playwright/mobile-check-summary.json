@@ -1,0 +1,395 @@
+[
+  {
+    "key": "home-start",
+    "metrics": {
+      "href": "http://127.0.0.1:4173/index.html",
+      "docScrollWidth": 390,
+      "clientWidth": 390,
+      "hasHorizontalOverflow": false,
+      "nav": {
+        "active": false,
+        "visibility": "hidden",
+        "opacity": "0",
+        "pointerEvents": "none",
+        "left": 437,
+        "right": 827,
+        "width": 390
+      },
+      "cookie": {
+        "visible": true,
+        "opacity": "1",
+        "pointerEvents": "auto",
+        "height": 210
+      },
+      "widgetHost": {
+        "display": "none",
+        "visibility": "hidden",
+        "opacity": "0"
+      },
+      "activeModal": false
+    }
+  },
+  {
+    "key": "home-menu",
+    "metrics": {
+      "href": "http://127.0.0.1:4173/index.html",
+      "docScrollWidth": 390,
+      "clientWidth": 390,
+      "hasHorizontalOverflow": false,
+      "nav": {
+        "active": true,
+        "visibility": "visible",
+        "opacity": "1",
+        "pointerEvents": "auto",
+        "left": 0,
+        "right": 390,
+        "width": 390
+      },
+      "cookie": {
+        "visible": true,
+        "opacity": "1",
+        "pointerEvents": "auto",
+        "height": 210
+      },
+      "widgetHost": {
+        "display": "none",
+        "visibility": "hidden",
+        "opacity": "0"
+      },
+      "activeModal": false
+    }
+  },
+  {
+    "key": "home-fk",
+    "metrics": {
+      "href": "http://127.0.0.1:4173/index.html",
+      "docScrollWidth": 390,
+      "clientWidth": 390,
+      "hasHorizontalOverflow": false,
+      "nav": {
+        "active": false,
+        "visibility": "hidden",
+        "opacity": "0",
+        "pointerEvents": "none",
+        "left": 437,
+        "right": 827,
+        "width": 390
+      },
+      "cookie": {
+        "visible": true,
+        "opacity": "1",
+        "pointerEvents": "auto",
+        "height": 210
+      },
+      "widgetHost": {
+        "display": "none",
+        "visibility": "hidden",
+        "opacity": "0"
+      },
+      "activeModal": false
+    }
+  },
+  {
+    "key": "home-success",
+    "metrics": {
+      "href": "http://127.0.0.1:4173/index.html",
+      "docScrollWidth": 390,
+      "clientWidth": 390,
+      "hasHorizontalOverflow": false,
+      "nav": {
+        "active": false,
+        "visibility": "hidden",
+        "opacity": "0",
+        "pointerEvents": "none",
+        "left": 437,
+        "right": 827,
+        "width": 390
+      },
+      "cookie": {
+        "visible": true,
+        "opacity": "1",
+        "pointerEvents": "auto",
+        "height": 210
+      },
+      "widgetHost": {
+        "display": "none",
+        "visibility": "hidden",
+        "opacity": "0"
+      },
+      "activeModal": false
+    }
+  },
+  {
+    "key": "home-team-modal",
+    "metrics": {
+      "href": "http://127.0.0.1:4173/index.html",
+      "docScrollWidth": 390,
+      "clientWidth": 390,
+      "hasHorizontalOverflow": false,
+      "nav": {
+        "active": false,
+        "visibility": "hidden",
+        "opacity": "0",
+        "pointerEvents": "none",
+        "left": 437,
+        "right": 827,
+        "width": 390
+      },
+      "cookie": {
+        "visible": true,
+        "opacity": "0",
+        "pointerEvents": "none",
+        "height": 210
+      },
+      "widgetHost": {
+        "display": "none",
+        "visibility": "hidden",
+        "opacity": "0"
+      },
+      "activeModal": true
+    }
+  },
+  {
+    "key": "coaching-grid",
+    "metrics": {
+      "href": "http://127.0.0.1:4173/coaching/",
+      "docScrollWidth": 390,
+      "clientWidth": 390,
+      "hasHorizontalOverflow": false,
+      "nav": {
+        "active": false,
+        "visibility": "hidden",
+        "opacity": "0",
+        "pointerEvents": "none",
+        "left": 437,
+        "right": 827,
+        "width": 390
+      },
+      "cookie": null,
+      "widgetHost": {
+        "display": "none",
+        "visibility": "visible",
+        "opacity": "1"
+      },
+      "activeModal": false
+    }
+  },
+  {
+    "key": "coach-modal",
+    "metrics": {
+      "href": "http://127.0.0.1:4173/coaching/",
+      "docScrollWidth": 390,
+      "clientWidth": 390,
+      "hasHorizontalOverflow": false,
+      "nav": {
+        "active": false,
+        "visibility": "hidden",
+        "opacity": "0",
+        "pointerEvents": "none",
+        "left": 437,
+        "right": 827,
+        "width": 390
+      },
+      "cookie": null,
+      "widgetHost": {
+        "display": "none",
+        "visibility": "visible",
+        "opacity": "1"
+      },
+      "activeModal": true
+    }
+  },
+  {
+    "key": "seminar-hub",
+    "metrics": {
+      "href": "http://127.0.0.1:4173/seminar.html?id=leadership-basics",
+      "docScrollWidth": 390,
+      "clientWidth": 390,
+      "hasHorizontalOverflow": false,
+      "nav": {
+        "active": false,
+        "visibility": "hidden",
+        "opacity": "0",
+        "pointerEvents": "none",
+        "left": 437,
+        "right": 827,
+        "width": 390
+      },
+      "cookie": null,
+      "widgetHost": {
+        "display": "none",
+        "visibility": "visible",
+        "opacity": "1"
+      },
+      "activeModal": false
+    }
+  },
+  {
+    "key": "impressum",
+    "metrics": {
+      "href": "http://127.0.0.1:4173/impressum.html",
+      "docScrollWidth": 390,
+      "clientWidth": 390,
+      "hasHorizontalOverflow": false,
+      "nav": {
+        "active": false,
+        "visibility": "hidden",
+        "opacity": "0",
+        "pointerEvents": "none",
+        "left": 437,
+        "right": 827,
+        "width": 390
+      },
+      "cookie": null,
+      "widgetHost": {
+        "display": "none",
+        "visibility": "visible",
+        "opacity": "1"
+      },
+      "activeModal": false
+    }
+  },
+  {
+    "key": "datenschutz",
+    "metrics": {
+      "href": "http://127.0.0.1:4173/datenschutz.html",
+      "docScrollWidth": 390,
+      "clientWidth": 390,
+      "hasHorizontalOverflow": false,
+      "nav": {
+        "active": false,
+        "visibility": "hidden",
+        "opacity": "0",
+        "pointerEvents": "none",
+        "left": 437,
+        "right": 827,
+        "width": 390
+      },
+      "cookie": null,
+      "widgetHost": {
+        "display": "none",
+        "visibility": "visible",
+        "opacity": "1"
+      },
+      "activeModal": false
+    }
+  },
+  {
+    "key": "seminar-standard",
+    "metrics": {
+      "href": "http://127.0.0.1:4173/seminare/leadership-basics.html",
+      "docScrollWidth": 390,
+      "clientWidth": 390,
+      "hasHorizontalOverflow": false,
+      "nav": {
+        "active": false,
+        "visibility": "hidden",
+        "opacity": "0",
+        "pointerEvents": "none",
+        "left": 437,
+        "right": 827,
+        "width": 390
+      },
+      "cookie": null,
+      "widgetHost": {
+        "display": "none",
+        "visibility": "visible",
+        "opacity": "1"
+      },
+      "activeModal": false
+    }
+  },
+  {
+    "key": "seminar-standard-menu",
+    "metrics": {
+      "href": "http://127.0.0.1:4173/seminare/leadership-basics.html",
+      "docScrollWidth": 390,
+      "clientWidth": 390,
+      "hasHorizontalOverflow": false,
+      "nav": {
+        "active": true,
+        "visibility": "visible",
+        "opacity": "1",
+        "pointerEvents": "auto",
+        "left": 0,
+        "right": 390,
+        "width": 390
+      },
+      "cookie": null,
+      "widgetHost": {
+        "display": "none",
+        "visibility": "hidden",
+        "opacity": "0"
+      },
+      "activeModal": false
+    }
+  },
+  {
+    "key": "change-models",
+    "metrics": {
+      "href": "http://127.0.0.1:4173/seminare/change-kompetenz.html",
+      "docScrollWidth": 390,
+      "clientWidth": 390,
+      "hasHorizontalOverflow": false,
+      "nav": {
+        "active": false,
+        "visibility": "hidden",
+        "opacity": "0",
+        "pointerEvents": "none",
+        "left": 437,
+        "right": 827,
+        "width": 390
+      },
+      "cookie": null,
+      "widgetHost": {
+        "display": "none",
+        "visibility": "visible",
+        "opacity": "1"
+      },
+      "activeModal": false
+    }
+  },
+  {
+    "key": "visual-content",
+    "metrics": {
+      "href": "http://127.0.0.1:4173/seminare/gekonnt-visualisieren.html",
+      "docScrollWidth": 390,
+      "clientWidth": 390,
+      "hasHorizontalOverflow": false,
+      "nav": {
+        "active": false,
+        "visibility": "hidden",
+        "opacity": "0",
+        "pointerEvents": "none",
+        "left": 437,
+        "right": 827,
+        "width": 390
+      },
+      "cookie": null,
+      "widgetHost": {
+        "display": "none",
+        "visibility": "visible",
+        "opacity": "1"
+      },
+      "activeModal": false
+    }
+  },
+  {
+    "key": "home-768",
+    "metrics": {
+      "href": "http://127.0.0.1:4173/index.html",
+      "docScrollWidth": 768,
+      "clientWidth": 768,
+      "hasHorizontalOverflow": false
+    }
+  },
+  {
+    "key": "seminar-standard-768",
+    "metrics": {
+      "href": "http://127.0.0.1:4173/seminare/leadership-basics.html",
+      "docScrollWidth": 768,
+      "clientWidth": 768,
+      "hasHorizontalOverflow": false
+    }
+  }
+]

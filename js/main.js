@@ -119,29 +119,91 @@ document.addEventListener('DOMContentLoaded', () => {
     const navLinks = document.querySelector('.nav-links');
     const navLinksItems = document.querySelectorAll('.nav-link');
     const header = document.querySelector('header');
+    const navDropdownToggles = document.querySelectorAll('.nav-dropdown-toggle');
+    const navDropdowns = document.querySelectorAll('.nav-dropdown');
+    const root = document.documentElement;
 
-    if (mobileMenuBtn) {
-        // Toggle menu
-        mobileMenuBtn.addEventListener('click', function () {
-            this.classList.toggle('active');
-            navLinks.classList.toggle('active');
+    const syncHeaderOffset = () => {
+        const activeHeader = document.getElementById('header') || document.querySelector('header');
+        if (!activeHeader) return;
 
-            // Prevent body scroll when menu is open
-            if (this.classList.contains('active')) {
-                document.body.style.overflow = 'hidden';
-            } else {
-                document.body.style.overflow = '';
-            }
+        const headerOffset = Math.ceil(activeHeader.getBoundingClientRect().height) + 24;
+        root.style.setProperty('--wtm-header-offset', `${headerOffset}px`);
+    };
+
+    const getHeaderOffset = () => {
+        syncHeaderOffset();
+
+        const cssOffset = parseInt(
+            getComputedStyle(root).getPropertyValue('--wtm-header-offset'),
+            10
+        );
+
+        if (!Number.isNaN(cssOffset)) {
+            return cssOffset;
+        }
+
+        const activeHeader = document.getElementById('header') || document.querySelector('header');
+        return Math.ceil(activeHeader?.getBoundingClientRect().height || 0) + 24;
+    };
+
+    const closeMobileMenu = () => {
+        if (!mobileMenuBtn || !navLinks) return;
+
+        mobileMenuBtn.classList.remove('active');
+        navLinks.classList.remove('active');
+        navDropdowns.forEach(dropdown => dropdown.classList.remove('active'));
+        document.body.style.overflow = '';
+        document.body.classList.remove('mobile-menu-open');
+    };
+
+    const openMobileMenu = () => {
+        if (!mobileMenuBtn || !navLinks) return;
+
+        mobileMenuBtn.classList.add('active');
+        navLinks.classList.add('active');
+        document.body.style.overflow = 'hidden';
+        document.body.classList.add('mobile-menu-open');
+    };
+
+    const toggleMobileMenu = () => {
+        if (!mobileMenuBtn || !navLinks) return;
+
+        if (navLinks.classList.contains('active')) {
+            closeMobileMenu();
+        } else {
+            openMobileMenu();
+        }
+    };
+
+    const scrollToElementWithOffset = (targetElement) => {
+        if (!targetElement) return;
+
+        const elementPosition = targetElement.getBoundingClientRect().top;
+        const offsetPosition = Math.max(
+            0,
+            elementPosition + window.pageYOffset - getHeaderOffset()
+        );
+
+        window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+        });
+    };
+
+    syncHeaderOffset();
+
+    if (mobileMenuBtn && navLinks) {
+        mobileMenuBtn.addEventListener('click', () => {
+            toggleMobileMenu();
         });
     }
 
     // Close menu when clicking a link and handle smooth scroll with offset
     navLinksItems.forEach(item => {
         item.addEventListener('click', (e) => {
-            if (mobileMenuBtn && navLinks) { // Ensure elements exist before trying to remove classes
-                mobileMenuBtn.classList.remove('active');
-                navLinks.classList.remove('active');
-                document.body.style.overflow = '';
+            if (mobileMenuBtn && navLinks) {
+                closeMobileMenu();
             }
 
             // Smooth scroll with offset for anchor links
@@ -152,14 +214,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const targetElement = document.getElementById(targetId);
 
                 if (targetElement) {
-                    const headerOffset = 100; // Offset for sticky header
-                    const elementPosition = targetElement.getBoundingClientRect().top;
-                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-
-                    window.scrollTo({
-                        top: offsetPosition,
-                        behavior: 'smooth'
-                    });
+                    scrollToElementWithOffset(targetElement);
                 }
             } else if (href && href.includes('#')) {
                 // Handle links like index.html#section from subpages
@@ -170,14 +225,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     history.pushState(null, null, '#' + id);
                     const targetElement = document.getElementById(id);
                     if (targetElement) {
-                        const headerOffset = 100;
-                        const elementPosition = targetElement.getBoundingClientRect().top;
-                        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-
-                        window.scrollTo({
-                            top: offsetPosition,
-                            behavior: 'smooth'
-                        });
+                        scrollToElementWithOffset(targetElement);
                     }
                 }
             }
@@ -188,18 +236,13 @@ document.addEventListener('DOMContentLoaded', () => {
     document.addEventListener('click', (e) => {
         if (mobileMenuBtn && navLinks && navLinks.classList.contains('active') &&
             !mobileMenuBtn.contains(e.target) && !navLinks.contains(e.target)) {
-            mobileMenuBtn.classList.remove('active');
-            navLinks.classList.remove('active');
-            document.body.style.overflow = '';
+            closeMobileMenu();
         }
     });
 
     // =========================================
     // DROPDOWN NAVIGATION
     // =========================================
-    const navDropdownToggles = document.querySelectorAll('.nav-dropdown-toggle');
-    const navDropdowns = document.querySelectorAll('.nav-dropdown');
-
     // Toggle dropdown on click (for mobile - touch devices)
     navDropdownToggles.forEach(toggle => {
         toggle.addEventListener('click', (e) => {
@@ -233,10 +276,8 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.nav-dropdown-menu a').forEach(link => {
         link.addEventListener('click', () => {
             navDropdowns.forEach(d => d.classList.remove('active'));
-            if (mobileMenuBtn) {
-                mobileMenuBtn.classList.remove('active');
-                navLinks.classList.remove('active');
-                document.body.style.overflow = '';
+            if (mobileMenuBtn && navLinks) {
+                closeMobileMenu();
             }
         });
     });
@@ -255,6 +296,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 header.classList.remove('scrolled');
             }
         }
+
+        syncHeaderOffset();
 
         // Show/hide scroll-to-top button
         if (scrollToTopBtn) {
@@ -279,7 +322,16 @@ document.addEventListener('DOMContentLoaded', () => {
         if (header && window.scrollY > 80) {
             header.classList.add('scrolled');
         }
+        syncHeaderOffset();
     }, 100);
+
+    window.addEventListener('resize', () => {
+        syncHeaderOffset();
+
+        if (window.innerWidth > 968) {
+            closeMobileMenu();
+        }
+    });
 
     // =========================================
     // SMOOTH SCROLL FOR ANCHOR LINKS
@@ -293,14 +345,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const targetElement = document.querySelector(targetId);
 
             if (targetElement) {
-                const headerHeight = header.offsetHeight;
-                const elementPosition = targetElement.getBoundingClientRect().top;
-                const offsetPosition = elementPosition + window.pageYOffset - headerHeight;
-
-                window.scrollTo({
-                    top: offsetPosition,
-                    behavior: "smooth"
-                });
+                scrollToElementWithOffset(targetElement);
             }
         });
     });
@@ -2163,6 +2208,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function showCookieBanner() {
         if (cookieBanner) {
+            document.body.classList.add('cookie-banner-visible');
             // Small delay for animation
             setTimeout(() => {
                 cookieBanner.classList.add('visible');
@@ -2173,6 +2219,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function hideCookieBanner() {
         if (cookieBanner) {
             cookieBanner.classList.remove('visible');
+            document.body.classList.remove('cookie-banner-visible');
         }
     }
 
@@ -2182,6 +2229,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (!existingConsent) {
             showCookieBanner();
+        } else {
+            document.body.classList.remove('cookie-banner-visible');
         }
 
         // Accept all cookies
@@ -2260,7 +2309,10 @@ document.addEventListener('DOMContentLoaded', () => {
         const helper = document.getElementById('chatbotHelper');
 
         const onChatOpened = () => {
-            if (helper) helper.classList.add('opened');
+            if (helper) {
+                helper.classList.add('opened');
+            }
+            document.body.classList.add('chatbot-opened');
 
             // Reset button state
             btn.innerHTML = originalContent;
@@ -2382,6 +2434,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 containerObserver.disconnect();
                 if (helper.classList.contains('opened')) {
                     helper.classList.remove('opened');
+                    document.body.classList.remove('chatbot-opened');
                 }
             }, 30000);
         } else {
@@ -2400,6 +2453,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     for (const node of mutation.removedNodes) {
                         if (node === container || node.contains(container)) {
                             helper.classList.remove('opened');
+                            document.body.classList.remove('chatbot-opened');
                             observer.disconnect();
                             return;
                         }
@@ -2416,6 +2470,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         // Check if it was previously open
                         if (helper.classList.contains('opened')) {
                             helper.classList.remove('opened');
+                            document.body.classList.remove('chatbot-opened');
                             observer.disconnect();
                             return;
                         }
@@ -2437,6 +2492,7 @@ document.addEventListener('DOMContentLoaded', () => {
             closeBtn.addEventListener('click', () => {
                 setTimeout(() => {
                     helper.classList.remove('opened');
+                    document.body.classList.remove('chatbot-opened');
                     observer.disconnect();
                 }, 300);
             }, { once: true });
@@ -2449,6 +2505,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 container.style.visibility === 'hidden' ||
                 container.offsetParent === null) {
                 helper.classList.remove('opened');
+                document.body.classList.remove('chatbot-opened');
                 observer.disconnect();
                 clearInterval(visibilityPoll);
             }
