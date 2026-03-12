@@ -19,7 +19,7 @@ COACH_PHOTOS = [
     "assets/team/Barbara_AI.png",
     "assets/team/Cludius-Andreas-Team-500x500-1.jpg",
     "assets/team/Carmen-Werner-Team_500x500.jpg",
-    "assets/team/till-reichert-square.jpg",
+    "assets/team/Till-Reichert.jpg",
     "assets/team/Team-Melanie-Kubala-500x500-1-AI-v2.jpg",
     "assets/team/Team-Maik-Riess-500x500-1.jpg",
     "assets/team/Team-Foto-Wolfgang-Hoffmann-AI-v2.jpg",
