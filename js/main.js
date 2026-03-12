@@ -1181,596 +1181,570 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     // Team Member Data - Enhanced with PDF profiles (2026-02)
-const teamMembersData = {
-    1: {
-        name: 'Dr. Till Reichert',
-        role: 'Geschäftsführer',
-        photo: 'assets/team/Till-Reichert.jpg',
-        categories: ['leadership', 'change', 'health', 'communication', 'management'],
-        motto: 'Menschen und Organisationen unterstützen. Mit Haltung auf Augenhöhe – klar, wertschätzend und mit professioneller Gelassenheit.',
-        shortDescription: [
-            'Die Fähigkeit, komplexe Themen verständlich und humorvoll auf den Punkt zu bringen',
-            'Fundierte betriebswirtschaftliche Klarheit, kombiniert mit wirksamer Begleitung von Führungskräften und Organisationen',
-            'Langjährige Beratungs-, Führungs- und Lehrerfahrung in Konzernen, Mittelstand und Hochschule',
-            'Praxisnahe Konzepte, die im Alltag von Führung und HR funktionieren',
-            'Struktur, Verlässlichkeit und Umsetzungsorientierung'
-        ],
-        extendedBio: [
-            'Berufs- und Führungserfahrung:',
-            '• Seit 2025 Geschäftsführender Gesellschafter bei WTM Management Consulting GmbH',
-            '• 15 Jahre freiberuflicher Business Coach & Trainer',
-            '• 12 Jahre Lehr-Coach für Dr. Migge-Seminare',
-            '• 10 Jahre Hochschuldozent für Management & Marketing',
-            '• 10 Jahre Unternehmensberater, zuletzt Partner und Projektleiter',
-            '• 4 Jahre Wissenschaftlicher Mitarbeiter, Ruhr-Universität Bochum',
-            '',
-            'Ausbildung und wesentliche Weiterbildungen:',
-            '• Dr. rer. oec., Dipl.-Ökonom',
-            '• Zertifizierter Lehr-Coach – Trainer für Coaching-Seminare',
-            '• Geprüfter Business-Trainer BDVT (Michl Group)',
-            '• Akkreditierter Lehrtrainer Mindful Coaching (Dr. Migge-Seminare)',
-            '• Zertifizierter Coach (Dr. Björn Migge)',
-            '• LINC Personality Profiler Trainer/ Coach (LINC-Institut)'
-        ]
-    },
-    2: {
-        name: 'Malte Werner',
-        role: 'Geschäftsführer',
-        photo: 'assets/team/malte-werner-square.jpg',
-        categories: ['leadership', 'change', 'communication', 'management'],
-        motto: 'Menschen und Unternehmen entwickeln. Mit Verstand und Herz!',
-        shortDescription: [
-            'Erfahrung damit, sehr jung Führungsverantwortung zu übernehmen',
-            'Verbindet Generationen mit Empathie und Humor',
-            'Hohe Begeisterung für Theorie, wenn sie in der Praxis wirklich taugt',
-            'Überzeugung, dass Haltung entscheidend ist für den Erfolg'
-        ],
-        extendedBio: [
-            'Berufs- und Führungserfahrung:',
-            '• 2015-2019: 4,5 Jahre studentischer Unternehmensberater, davon 2,5 Jahre als Geschäftsführer der GmbH',
-            '• Seit 2019 Berater und Coach bei WTM Management Consulting GmbH, seit 2024 geschäftsführender Gesellschafter',
-            '• 2016-2020 Kuratoriumsmitglied in der Stiftung Private Universität Witten/Herdecke',
-            '• 2021 bis heute Vorstand der Stiftung Private Universität Witten/Herdecke',
-            '',
-            'Ausbildung und wesentliche Weiterbildungen:',
-            '• B.A. Philosophie, Politik und Ökonomik an der Uni Witten/ Herdecke',
-            '• M.A. Ethik & Organisation an der Uni Witten/ Herdecke',
-            '• LINC Personality Profiler Coach (LINC-Institut)',
-            '• Coachausbildung nach ICF Standards bei WTM Management Consulting GmbH',
-            '• Weiterbildungen in den Bereichen Konfliktmediation, Agile Methoden, Design Thinking, Artificial Intelligence, Projektmanagement'
-        ]
-    },
-    3: {
-        name: 'Frank Titzer',
-        role: 'Gründer',
-        photo: 'assets/team/frank_titzer-v3.jpg',
-        categories: ['leadership', 'change', 'communication'],
-        motto: 'Stimmige Entwicklung und Klärung brauchen Zeit! Diesen Prozess präsent und mit Achtung zu begleiten, ist mein professioneller Anspruch.',
-        shortDescription: [
-            'Über 35 Jahre Erfahrung in Führung, Beratung und Begleitung von Veränderungsprozessen',
-            'Einen klaren Blick für Rolle, Haltung und authentische persönliche Wirkung',
-            'Die Fähigkeit, Entwicklung mit der richtigen Balance aus Tempo und Verlangsamung zu gestalten',
-            'Präsenz, Klarheit und Wertschätzung – auch in herausfordernden Situationen'
-        ],
-        extendedBio: [
-            'Berufs- und Führungserfahrung:',
-            '• Nach dem Abitur: Tätigkeit als Maschinenführer in der Papierindustrie und als Disponent',
-            '• 1988–1995: Freiberufler Trainer und Berater am Institut für Creatives Lernen (G. Beyer)',
-            '• Seit 1996: Gründer und Mitinhaber von ipso plus – Training plus Beratung',
-            '• 2014: Gründer und bis 2024 Geschäftsführer der WTM Management Consulting GmbH',
-            '',
-            'Ausbildung und wesentliche Weiterbildungen:',
-            '• Studium der Sprach- und Literaturwissenschaft sowie Pädagogik (M.A., Universität Düsseldorf), Schwerpunkt Kommunikationspsychologie',
-            '• Grundlagenstudium Betriebswirtschaftslehre (Universität Köln)',
-            '• Aufbaustudium Personalentwicklung (Universität Kaiserslautern, mit Auszeichnung)'
-        ]
-    },
-    4: {
-        name: 'Dr. Olaf Werner',
-        role: 'Gründer',
-        photo: 'assets/team/olaf_werner-square.jpg',
-        categories: ['leadership', 'health', 'management'],
-        motto: 'Das Zusammenspiel von Mensch und Organisation fasziniert mich.',
-        shortDescription: [
-            'Erkennt, wie verschiedene Arbeitsumgebungen Einfluss auf das Verhalten der Einzelnen ausüben',
-            'Kreativ, zugewandt und feinfühlig',
-            'Breites Wissen um Fragestellungen von Organisationen und Hierarchien',
-            'Lösungsfokussierte und ökonomische Beratung'
-        ],
-        extendedBio: [
-            'Berufs- und Führungserfahrung:',
-            '• 1989 Tätigkeit in der Weiterbildungsabteilung der Robert Bosch GmbH',
-            '• Seit 1990 selbständiger Trainer und Berater',
-            '• 2014 Gründer und bis 2024 Geschäftsführer der WTM Management Consulting GmbH',
-            '',
-            'Ausbildung und wesentliche Weiterbildungen:',
-            '• Magisterexamen in Germanistik, Geschichte und Philosophie, Universität Freiburg',
-            '• Promotion in Psychologie und Ethnologie, Universität Freiburg und LMU',
-            '• Systemischer Berater (ISBW, Wiesloch)',
-            '• Weiterbildungen in Gruppendynamik, Psychodrama, Organisationsaufstellung, Transaktionsanalyse'
-        ]
-    },
-    5: {
-        name: 'Andreas Stahl',
-        role: 'Trainer & Coach',
-        photo: '',
-        categories: ['change', 'leadership'],
-        motto: 'Menschen begleiten, unterstützen und wenn sie wollen auch herausfordern.',
-        shortDescription: [
-            'Langjährige Erfahrung in der Begleitung von Veränderungsprojekten und Kulturentwicklung',
-            'Die Fähigkeit, auch in schwierigen Situationen Ruhe und Orientierung zu geben',
-            'Einen ressourcenorientierten Blick auf Menschen und Organisationen',
-            'Die Passion, Menschen in ihre Kraft und Verantwortung zu bringen'
-        ],
-        extendedBio: [
-            'Berufs- und Führungserfahrung:',
-            '• Seit 2003 im Bereich der Personal- und Organisationsentwicklung und des Coachings tätig',
-            '• Seit 2011 Inhaber von „Stahl-Beratung-Coaching"',
-            '• Langjährige Erfahrung als Coach, Berater und Trainer in Profit- und Non-Profit-Organisationen',
-            '',
-            'Ausbildung und wesentliche Weiterbildungen:',
-            '• Ausbildung zum systemischen Coach (isb Wiesloch)',
-            '• Ausbildung zum systemischen Berater (isb Wiesloch)',
-            '• Weiterbildung als Teamentwickler und Organisationsberatung (isb Wiesloch)',
-            '• Zertifizierter LINC Personality Profiler Coach (LINC-Institut)',
-            '• Studium der Sozialpädagogik (Dipl. Sozialpädagoge FH)'
-        ]
-    },
-    6: {
-        name: 'Carmen Werner',
-        role: 'Trainerin & Coach',
-        photo: 'assets/team/Carmen-Werner-Team_500x500.jpg',
-        categories: ['leadership', 'change', 'health'],
-        motto: 'Den Menschen im Ganzen sehen, ihn wertschätzen und ihn dabei zu unterstützen, seine innere Vielfalt in Verbindung zu bringen.',
-        shortDescription: [
-            'Einen ganzheitlichen Blick auf Menschen, Rollen und Systeme',
-            'Die Fähigkeit, auch schwierige Themen wertschätzend und klar auf den Tisch zu bringen',
-            'Langjährige Erfahrung in Führungskräfteentwicklung, Kommunikation und Konfliktklärung',
-            'Eine zugewandte, humorvolle Haltung, die Vertrauen schafft und Entwicklung ermöglicht'
-        ],
-        extendedBio: [
-            'Berufs- und Führungserfahrung:',
-            '• Selbständige Trainerin und Beraterin seit 1999',
-            '• Vertrieb im Finanzdienstsektor',
-            '• Immobilienfinanzierung bei der LBS',
-            '',
-            'Ausbildung und wesentliche Weiterbildungen:',
-            '• Zertifizierte Kommunikationsberaterin, Prof. Dr. Friedemann Schulz von Thun',
-            '• Zertifizierte Konfliktklärungshelferin, Dr. Christoph Thomann',
-            '• Ausbildung zum Coach, Dr. Andreas Knierim Kassel',
-            '• Ausbildung in Gruppendynamik, Team Dr. Rosenkranz und Eberhard Stahl',
-            '• Heilpraktikerin für Psychotherapie'
-        ]
-    },
-    7: {
-        name: 'Dr. Bettina Brendel',
-        role: 'Trainerin & Coach',
-        photo: 'assets/team/Team-Dr.-Bettina-Brendel-500x500-1.jpg',
-        categories: ['leadership', 'change', 'communication'],
-        motto: 'Kommunikation bewusst gestalten – Konflikte klären, Kooperation ermöglichen.',
-        shortDescription: [
-            'Tiefe Expertise in Kommunikation, Konfliktklärung und schwierigen Führungssituationen',
-            'Langjährige Erfahrung in Beratung, Mediation und Moderation komplexer Gruppenprozesse',
-            'Die Fähigkeit, Spannungen klar, strukturiert und menschlich bearbeitbar zu machen',
-            'Einen geschulten Blick für Sprache, Rollen und Dynamiken als Schlüssel wirksamer Führung'
-        ],
-        extendedBio: [
-            'Berufs- und Führungserfahrung:',
-            '• Seit 2005 freiberufliche Kommunikationsberaterin und Mediatorin',
-            '• 1994-2004 Berufserfahrung in einer Agentur, zuletzt als Stellvertretende Geschäftsführerin',
-            '',
-            'Ausbildung und wesentliche Weiterbildungen:',
-            '• Studium der Germanistik und Philosophie mit Promotion in Würzburg und Berlin',
-            '• Zertifizierte Kommunikationsberaterin, Prof. Friedemann Schulz von Thun',
-            '• Zertifizierte Mediatorin / Klärungshilfe, Dr. Christoph Thomann',
-            '• Weiterbildung Strategische Planung / Markenkommunikation, GWA e.V.'
-        ]
-    },
-    8: {
-        name: 'Dr. Bettina Hailer',
-        role: 'Trainerin & Coach',
-        photo: 'assets/team/Team-Dr.-Bettina-Hailer-500x500-1.jpg',
-        categories: ['leadership', 'change', 'communication'],
-        motto: 'Veränderung wirksam gestalten – klar, wertschätzend und praxisnah.',
-        shortDescription: [
-            'Über 20 Jahre Führungserfahrung in Endverantwortung in komplexen Organisationen',
-            'Die Fähigkeit, Veränderung strukturiert, verständlich und motivierend zu begleiten',
-            'Klare, authentische Kommunikation gepaart mit hoher Wertschätzung für Menschen',
-            'Fundierte Expertise in Führungskräfteentwicklung, Konfliktklärung und Selbstmanagement'
-        ],
-        extendedBio: [
-            'Berufs- und Führungserfahrung:',
-            '• 20 Jahre Führungserfahrung im Gesundheitswesen, zuletzt Vorständin eines Universitätsklinikums',
-            '• Langjährige Dozentin an der Hochschule Neu-Ulm',
-            '• Seit 2014 freiberufliche Beraterin, Trainerin und Mediatorin',
-            '',
-            'Ausbildung und wesentliche Weiterbildungen:',
-            '• Studium der Betriebswirtschaftslehre (Diplom-Kauffrau) sowie Promotion an der Universität Mannheim',
-            '• Coaching-Ausbildung WTM Management Consulting GmbH',
-            '• Trainer-/ Business-Trainer-Ausbildung, Competence on Top, dvct zertifiziert',
-            '• Mediations-/ Klärungshilfeausbildung, Wirtschaftsmediatorin (IHK), BM lizenziert',
-            '• LINC Personality Profiler Coach (LINC-Institut)'
-        ]
-    },
-    9: {
-        name: 'Dr. Sarolf Sauer',
-        role: 'Trainer & Coach',
-        photo: 'assets/team/Sarolf_Sauer_Team_500x500-v3.jpg',
-        categories: ['leadership', 'health', 'communication'],
-        motto: 'Haltung und Persönlichkeit sind der Schlüssel.',
-        shortDescription: [
-            'Befähigt Coachees durch Persönlichkeitsentwicklung ihren eigenen Weg zu erkennen',
-            'Vielfältige persönliche und berufliche Erfahrungen als Grundlage',
-            'Begleitung durch die Höhen und Tiefen des eigenen Lebens- und Berufswegs',
-            'Schwerpunkt auf Haltung und innerer Kraft'
-        ],
-        extendedBio: [
-            'Berufs- und Führungserfahrung:',
-            '• Bundeswehr bis 2008 (Oberst d.R.)',
-            '• Führungsakademie der Bundeswehr, Dozent für Auftragstaktik und Mentale Fitness',
-            '• Selbstständig seit 2015, Trainer, Berater, Coach',
-            '• Geschäftsführer einer größeren Einrichtung im Gesundheitswesen',
-            '',
-            'Ausbildung und wesentliche Weiterbildungen:',
-            '• Diplom-Pädagoge an der Bundeswehruniversität München',
-            '• Promotion Psychologie – Arbeit und Gesundheit PsyGA – baua',
-            '• Coachingausbildung (Dr. Björn Migge)',
-            '• Klärungshelfer in Konflikten (Dr. Christoph Thomann)'
-        ]
-    },
-    10: {
-        name: 'Gerold Pohl',
-        role: 'Trainer & Coach',
-        photo: 'assets/team/Gerold-Pohl-Team-500-x-500.jpg',
-        categories: ['leadership', 'change', 'management'],
-        motto: 'Moderne Führung heißt: Vertrauen schaffen und Verantwortung ermöglichen.',
-        shortDescription: [
-            'Über 25 Jahre Führungserfahrung in der Software- und IT-Organisation',
-            'Ein tiefes Verständnis für moderne, agile Führung und Selbstorganisation',
-            'Die Fähigkeit, Veränderungsprozesse systemisch, schrittweise und menschenzentriert zu gestalten',
-            'Eine klare Haltung zu Vertrauen, Offenheit und gemeinsamer Verantwortung'
-        ],
-        extendedBio: [
-            'Berufs- und Führungserfahrung:',
-            '• Seit 1990 in verschiedenen Führungsrollen',
-            '• Von lateraler Führung als Projektleiter zum Bereichsleiter mit über 100 Mitarbeitern',
-            '• Seit 2022 freiberuflicher Berater und Coach',
-            '',
-            'Ausbildung und wesentliche Weiterbildungen:',
-            '• Betriebswirt (VWA)',
-            '• DV Organisationsfachwirt',
-            '• Bankkaufmann',
-            '• Ausbildung zum Coach, WTM Management Consulting',
-            '• Facilitator Ausbildung "Liberating Structures", Holisticon AG HH',
-            '• LINC Personality Profiler, Senior Coach, LINC Institute',
-            '• Gruppendynamik, Team Dr. Rosenkranz'
-        ]
-    },
-    11: {
-        name: 'Heike Neidhart',
-        role: 'Trainerin & Coach',
-        photo: 'assets/team/Profilbild_Heike_Neidhart_Team_500x500.jpg',
-        categories: ['health', 'communication'],
-        motto: 'Gemeinsam finden wir den Weg zu Ihrem Ziel.',
-        shortDescription: [
-            'Eine starke Fähigkeit, Menschen bei Orientierung, Entscheidungen und persönlicher Entwicklung zu begleiten',
-            'Einen breiten, praxisnahen Methodenkoffer für Coaching, Training und Teamentwicklung',
-            'Die Verbindung von Klarheit, Empathie und Struktur in Veränderungsprozessen',
-            'Vielfältige Berufs- und Lebenserfahrung, die Vertrauen schafft und Entwicklung ermöglicht'
-        ],
-        extendedBio: [
-            'Berufs- und Führungserfahrung:',
-            '• Seit 07/2023 Freiberufliche Partnerin bei WTM Management Consulting GmbH',
-            '• Seit 2022 Trainerin, Coach (selbständig nebenberuflich)',
-            '• 2014-2025 IT-Compliance, Informationssicherheit',
-            '• 2001-2014 Entwicklung und Produktmanagerin Kredit-/Debitkarten',
-            '',
-            'Ausbildung und wesentliche Weiterbildungen:',
-            '• 1998-2001 Studium Dipl. Wirtschaftsinformatikerin',
-            '• LINC Personality Profiler (LINC Institute)',
-            '• Coach- und Beraterausbildung, ICF zertifiziert (WTM Management Consulting)',
-            '• ProfilPASS® Beraterin',
-            '• Stress- und Burnoutpräventions Coach, Academy of Sports'
-        ]
-    },
-    12: {
-        name: 'Heike Stalling',
-        role: 'Trainerin & Coach',
-        photo: 'assets/team/Stalling-Heike-Team-Portrait-500x500-6-23.jpg',
-        categories: ['leadership', 'health', 'communication'],
-        motto: 'Du kannst einen Menschen nichts lehren, du kannst ihm nur helfen, es in sich selbst zu finden.',
-        shortDescription: [
-            'Langjährige Führungserfahrung in internationalen Konzernstrukturen',
-            'Eine ressourcenorientierte, wertschätzende und zugleich klare Begleitung von Menschen',
-            'Die Fähigkeit, neue Perspektiven zu eröffnen und Handlungsspielräume nachhaltig zu erweitern',
-            'Hohe Empathie, schnelle Auffassungsgabe und eine bildhafte, klare Kommunikation'
-        ],
-        extendedBio: [
-            'Berufs- und Führungserfahrung:',
-            '• Seit 2022 hauptberufliche Selbständigkeit als Beraterin, Trainerin und Coach',
-            '• 2015–2021 nebenberufliche Selbständigkeit als Beraterin, Trainerin und Coach',
-            '• 1993–2021 verschiedene Management Funktionen im internationalen Kontext bei Mercedes-Benz / Daimler AG',
-            '',
-            'Ausbildung und wesentliche Weiterbildungen:',
-            '• Diplom-Wirtschaftsingenieurin (FH)',
-            '• Ausbildung zur Industriekauffrau',
-            '• Ausbildung zum Coach (WTM Management Consulting)',
-            '• Systemische Coachingausbildung (Wulf-Peter Paetzold)',
-            '• LINC Personality Profiler Zertifizierung',
-            '• Wildnispädagogik-Ausbildung (Corvus)'
-        ]
-    },
-    13: {
-        name: 'Hermann Josef Leiders',
-        role: 'Trainer & Coach',
-        photo: 'assets/team/Harry_Leiders_team_500x500-v3.jpg',
-        categories: ['leadership', 'communication', 'management'],
-        motto: 'Lern- und Entwicklungsräume schaffen, in denen Menschen wachsen können.',
-        shortDescription: [
-            'Über drei Jahrzehnte Erfahrung in der Begleitung von Lern-, Entwicklungs- und Veränderungsprozessen',
-            'Die Fähigkeit, auch in komplexen Situationen Vertrauen, Klarheit und Lernräume zu schaffen',
-            'Eine hohe Präsenz, wertschätzende Haltung und den Mut, die richtigen Fragen zu stellen',
-            'Methodische Vielfalt, kombiniert mit konsequenter Ausrichtung an den aktuellen Anliegen der Beteiligten'
-        ],
-        extendedBio: [
-            'Berufs- und Führungserfahrung:',
-            '• Führungsaufgaben innerhalb der Polizei NRW',
-            '• Ab 1985 Verhaltenstrainer, dann Lehrtrainer',
-            '• Bis 2000 Vermittlung eines Stressbewältigungsprogramms an Polizeibeamte',
-            '• Seit 2000 selbständiger Trainer und Berater',
-            '',
-            'Ausbildung und wesentliche Weiterbildungen:',
-            '• Supervisor (DGSv)',
-            '• Personalentwicklung im lernenden Unternehmen (Universität Kaiserslautern)',
-            '• NLP-Master (DGLNP)',
-            '• Qualifizierung zum Coach (Hephaistos, München)'
-        ]
-    },
-    14: {
-        name: 'Jürgen Reus',
-        role: 'Trainer & Coach',
-        photo: 'assets/team/Juergen_Reus-v3.png',
-        categories: ['communication', 'management'],
-        motto: 'Klar strukturieren. Wirksam umsetzen.',
-        shortDescription: [
-            'Langjährige Erfahrung in Projekt-, Prozess- und Organisationsarbeit in unterschiedlichen Branchen',
-            'Die Fähigkeit, Menschen durch klare Auftragsklärung, Struktur und Kommunikation mitzunehmen',
-            'Hohe Moderations- und Präsentationskompetenz – auch in großen Gruppen',
-            'Eine kommunikative, optimistische und lösungsorientierte Arbeitsweise'
-        ],
-        extendedBio: [
-            'Berufs- und Führungserfahrung:',
-            '• 1987-2008 Berater und später Regionalmanager in einer Beratungsagentur',
-            '• 2013-2019 Senior Account Executive',
-            '• Seit 2008 Trainer und Berater, seit 2019 freiberuflich',
-            '• Seit 1989 Dozent an den Dualen Hochschulen in Karlsruhe und Mannheim',
-            '',
-            'Ausbildung und wesentliche Weiterbildungen:',
-            '• Ausbildung zum Versicherungsfachangestellten',
-            '• Betriebswirtschaftliches Studium',
-            '• Systemische Lösungskonzepte und Interventionsstrategien (Heidelberger Institut für systemische Forschung)',
-            '• Diverse Weiterbildungen u. a. zu Führung, Six Sigma, Projektmanagement und systemischem Denken'
-        ]
-    },
-    15: {
-        name: 'Kirsten Schmiegelt',
-        role: 'Trainerin & Coach',
-        photo: 'assets/team/Kirsten_Schmiegelt_3-1.jpg',
-        categories: ['leadership', 'health', 'communication'],
-        motto: 'Meine Lieblings-„Technik": Offenheit zur Veränderung auf respektvoller Augenhöhe schaffen und sinnvolle kreative Lösungen entwickeln.',
-        shortDescription: [
-            'Die Verbindung von klarem analytischem Denken, Empathie und kreativer Lösungsfindung',
-            'Langjährige Erfahrung in Führungskräfteentwicklung, Teamentwicklung und Kommunikation',
-            'Einen interdisziplinären Hintergrund, der neue Perspektiven und schnellen Rapport ermöglicht',
-            'Eine wertschätzende Haltung mit Fokus auf nachhaltige, individuell passende Lösungen'
-        ],
-        extendedBio: [
-            'Berufs- und Führungserfahrung:',
-            '• Seit 2016 Coach-Ausbilder/ Dozentin',
-            '• Seit 2014 freiberufliche Business Coach & Trainerin, HP (Psych.)',
-            '• 10 Jahre zert. Personal- und Businesscoach, systemischer Coach und Teamentwicklerin',
-            '• 5 Jahre Erfahrung als Beraterin/ Personaltrainerin im Versicherungsbereich',
-            '• 3 Jahre Projektmanagerin im Kulturbereich',
-            '',
-            'Ausbildung und wesentliche Weiterbildungen:',
-            '• Diplom-Juristin (Universität Passau, Paris-Sorbonne, Köln)',
-            '• Diplom-Kultur- und Medienmanagerin (Freie Universität Berlin)',
-            '• Zertifizierter Coach (Dr. Björn Migge)',
-            '• Heilpraktikerin (Psych.)',
-            '• Zertifizierter LINC Personality Profiler Coach'
-        ]
-    },
-    16: {
-        name: 'Maik Rieß',
-        role: 'Trainer & Coach',
-        photo: 'assets/team/Team-Maik-Riess-500x500-1.jpg',
-        categories: ['leadership', 'communication', 'management'],
-        motto: 'Leistung und Mensch gehören zusammen – nur so entsteht echter Erfolg.',
-        shortDescription: [
-            'Langjährige Erfahrung im Technologie- und Industrieumfeld',
-            'Die Fähigkeit, komplizierte Zusammenhänge verständlich und hoch strukturiert darzustellen',
-            '„Dolmetscher" zwischen verschiedenen Bereichen (IT und Anwender, Technik und Produktion)',
-            'Gewinner mehrerer Preise vom BaTB und dvct'
-        ],
-        extendedBio: [
-            'Berufs- und Führungserfahrung:',
-            '• 13 Jahre Erfahrung als Fach- und Führungskraft in der Informationstechnologie',
-            '• 8 Jahre interne Unternehmensberatung, Schwerpunkt Organisationsentwicklung / Lean Management',
-            '• Personalentwickler und Trainer in einem weltweit tätigen Industrieunternehmen',
-            '• Dozent an der Dualen Hochschule im Studiengang Change Management',
-            '',
-            'Ausbildung und wesentliche Weiterbildungen:',
-            '• Studium Betriebswirtschaft mit Schwerpunkt Personalwesen & Produktion',
-            '• Verbandszertifizierter Business-Trainer (dvct e.V.)',
-            '• Systemischer Business-Coach (Steinbeis Hochschule Berlin)',
-            '• Visual Facilitator (Kommunikationslotsen)',
-            '• NLP-Practitioner (DVNLP)',
-            '• LPP (LINC Personality Profiler), LPP Senior Coach'
-        ]
-    },
-    17: {
-        name: 'Marcus Schmidt',
-        role: 'Trainer & Coach',
-        photo: 'assets/team/Team-Marcus-Schmidt-6-23.jpg',
-        categories: ['leadership', 'change', 'management'],
-        motto: 'Ich bin überzeugt, jeder von uns kann sich weiterentwickeln und meine Leidenschaft ist es, Sie dabei zu unterstützen.',
-        shortDescription: [
-            'Langjährige Erfahrung in Führungskräfteentwicklung, Selbstführung und Organisation',
-            'Die Verbindung von betriebswirtschaftlicher Klarheit mit wirksamer Persönlichkeitsentwicklung',
-            'Hohe Kompetenz in Kommunikation, Präsentation und Trainingsgestaltung – auch online',
-            'Eine strukturierte, wertschätzende und entwicklungsorientierte Haltung'
-        ],
-        extendedBio: [
-            'Berufs- und Führungserfahrung:',
-            '• Seit 2012 freiberuflicher Trainer und Berater',
-            '• Über 10 Jahre: Dozent an privaten Business Schools für BWL und Soft Skills',
-            '• 8 Jahre: Kaufmännische Führungskraft, zuletzt Bereichsleiter bei der HOCHTIEF AG, Essen',
-            '• 5 Jahre: Wirtschaftsprüfung bei Arthur Andersen, Reading (Großbritannien)',
-            '• 3 Jahre: Bankkaufmann bei der Sparkasse Hagen',
-            '',
-            'Ausbildung und wesentliche Weiterbildungen:',
-            '• Bankkaufmann, Sparkasse Hagen',
-            '• Europäisches Studium der Betriebswirtschaft (Diplom-Betriebswirt ESB/BA, Reutlingen/London)',
-            '• Systemischer Coach, M. Schmidt-Tanger',
-            '• Coachausbildung, WTM Management Consulting',
-            '• NLP-Practitioner',
-            '• FranklinCovey Trainer, München'
-        ]
-    },
-    18: {
-        name: 'Markus Schramm',
-        role: 'Trainer & Coach',
-        photo: 'assets/team/Markus_Schramm-v3.png',
-        categories: ['leadership', 'change', 'communication'],
-        motto: 'Kommunikation aus Leidenschaft lebhaft gestalten.',
-        shortDescription: [
-            'Langjährige Erfahrung in Kommunikation, Vertrieb und Führungskräfteentwicklung',
-            'Die Fähigkeit, Marken, Menschen und Strategien überzeugend in Verbindung zu bringen',
-            'Hohe Präsenz und Souveränität in Moderation, Präsentation und Großgruppenformaten',
-            'Praxisnahe, begeisternde Trainings- und Coachingarbeit mit klarer Umsetzungsorientierung'
-        ],
-        extendedBio: [
-            'Berufs- und Führungserfahrung:',
-            '• Seit 2006 Inhaber einer eigenen Agentur',
-            '• 14 Jahre Erfahrung als Leiter Kommunikation / Knappschaftsklinikum Saar',
-            '• 2 Jahre Erfahrung als Pressesprecher / Energie SaarLorLux AG',
-            '• 2 Jahre Erfahrung als Vertriebsleiter / Argus-net',
-            '',
-            'Ausbildung und wesentliche Weiterbildungen:',
-            '• BWL-Studium / Diplom-Betriebswirt HTW Saar – ASW',
-            '• Zertifizierter Trainer Neuland & Partner',
-            '• Ausbildung zum Coach nach ICF-Standards, WTM Management Consulting'
-        ]
-    },
-    19: {
-        name: 'Melanie Kubala',
-        role: 'Trainerin & Coach',
-        photo: 'assets/team/Team-Melanie-Kubala-500x500-1-v3.jpg',
-        categories: ['leadership', 'change', 'communication'],
-        motto: 'Wer alles tut, was er schon kann, bleibt immer das, was er schon ist.',
-        shortDescription: [
-            'Fundierte Erfahrung in Kommunikation, Persönlichkeitsentwicklung und Veränderungsprozessen',
-            'Die Fähigkeit, Menschen durch erlebnisorientierte und praxisnahe Methoden wirksam in Entwicklung zu bringen',
-            'Einen starken HR- und Personalentwicklungs-Hintergrund, kombiniert mit Coaching-Kompetenz',
-            'Eine klare, wertschätzende Haltung, die Lernen, Intuition und Selbstreflexion fördert'
-        ],
-        extendedBio: [
-            'Berufs- und Führungserfahrung:',
-            '• Seit 2015 freiberufliche Coach/ Trainerin für Persönlichkeitsentwicklung',
-            '• 2010-2014 HR-Managerin',
-            '• 2008-2010 Personalreferentin',
-            '• 2006-2007 Personaldisponentin/ Projektleiterin',
-            '',
-            'Ausbildung und wesentliche Weiterbildungen:',
-            '• Betriebswirtin mit Schwerpunkt Kommunikation und Präsentation',
-            '• Personalfachkauffrau',
-            '• Heilpraktikerin für Psychotherapie',
-            '• Zertifizierte Coach- und Beraterausbildung (WTM Management Consulting GmbH)',
-            '• Personality Profiler LINC Coach'
-        ]
-    },
-    20: {
-        name: 'Philipp Besch',
-        role: 'Trainer & Coach',
-        photo: 'assets/team/Team-Phillip_Besch-500x500-1-v3.jpg',
-        categories: ['leadership', 'change', 'communication'],
-        motto: 'Menschen in ihrer persönlichen Entfaltung zu fördern, zu fordern und im Prozess zu begleiten, ist meine Leidenschaft. Klar, wertschätzend, provokativ und lösungsorientiert.',
-        shortDescription: [
-            'Ein unerschütterliches Vertrauen in die Entwicklungsfähigkeit von Menschen',
-            'Langjährige Erfahrung in Persönlichkeitsentfaltung, Führung und Organisationsentwicklung',
-            'Die Fähigkeit, klar, wertschätzend und auch provokativ Entwicklung anzustoßen',
-            'Humor, Authentizität und eine konsequent lösungsorientierte Arbeitsweise'
-        ],
-        extendedBio: [
-            'Berufs- und Führungserfahrung:',
-            '• Seit 2015 Supervision in der Sozialwirtschaft',
-            '• Seit 2004 freiberuflicher Trainer, Berater und Coach',
-            '• Mehr als 15 Jahre Mitarbeiter und Führungskraft in Sozialwirtschaft und Bildungswesen',
-            '',
-            'Ausbildung und wesentliche Weiterbildungen:',
-            '• Systemischer Organisationsentwicklungsberater (Alwart & Team, Hamburg)',
-            '• NLP-Resonanz-Master (Institut Kutschera, DVNLP)',
-            '• LINC Personality Profiler Coach (LINC-Institut)',
-            '• Trainingsdesigner (Anna Langheiter)',
-            '• Systemischer Businesscoach (Alwart & Team, Hamburg)',
-            '• Diplompädagoge (Universität Hamburg)'
-        ]
-    },
-    21: {
-        name: 'Uta-Barbara Vogel',
-        role: 'Trainerin & Coach',
-        photo: 'assets/team/Barbara-v3.png',
-        categories: ['leadership', 'change', 'communication'],
-        motto: 'Lebensfreude, Begeisterungsfähigkeit und Neugier sind Eigenschaften, die mich auszeichnen und die mir im Beruf helfen, gemeinsam mit meinen Kunden tragfähige Lösungen zu entwickeln.',
-        shortDescription: [
-            'Tiefes psychologisches Verständnis für Menschen und Organisationen',
-            'Die Fähigkeit, persönliche Konflikte klar von strukturellen Dynamiken zu unterscheiden',
-            'Langjährige Erfahrung in Führung, Supervision und Organisationsentwicklung',
-            'Lebensfreude, Neugier und eine ressourcenorientierte Haltung, die Entwicklung erleichtert'
-        ],
-        extendedBio: [
-            'Berufs- und Führungserfahrung:',
-            '• Seit 1990 Selbstständige Trainerin und Beraterin',
-            '• Seit 2007 Supervisorin und Coach (DGSv)',
-            '• Seit 2008 Organisationsberatung und Begleitung bei Veränderungsprozessen',
-            '• Seit 2020 Lehrauftrag TH Köln',
-            '',
-            'Ausbildung und wesentliche Weiterbildungen:',
-            '• Diplom-Psychologin',
-            '• M.A. Supervision | Coaching | Organisationsberatung',
-            '• Transaktionsanalyse',
-            '• Gruppendynamik',
-            '• Mediation von Arbeitskonflikten',
-            '• BELBIN®-Teamrollenanalyse'
-        ]
-    },
-    22: {
-        name: 'Wolfgang Hoffmann',
-        role: 'Trainer & Coach',
-        photo: 'assets/team/Team-Foto-Wolfgang-Hoffmann-v3.jpg',
-        categories: ['change', 'leadership'],
-        motto: 'Kompetente Begleitung, klare Worte. Wirksamkeit im Fokus.',
-        shortDescription: [
-            '20 Jahre Beratungs- und Führungserfahrung in Konzernen und mittelständischen Unternehmen',
-            'Die Leidenschaft, für Klarheit in der Zusammenarbeit zu sorgen und Projekte zum Erfolg zu führen',
-            'Eine konsequent lösungsorientierte und praxisnahe Herangehensweise',
-            'Professionellen Humor in herausfordernden Situationen'
-        ],
-        extendedBio: [
-            'Berufs- und Führungserfahrung:',
-            '• Seit 2004 freiberuflicher Berater und Coach',
-            '• 15 Jahre Erfahrung in unterschiedlichen Fach- und Führungspositionen im Personalwesen',
-            '• Mehrjährige Erfahrung als Projektleiter in Veränderungsprozessen',
-            '',
-            'Ausbildung und wesentliche Weiterbildungen:',
-            '• Diplom-Kaufmann, Universität Köln',
-            '• Ausbildung zum systemischen Coach (isb Wiesloch)',
-            '• Weiterbildung zum Organisationsberater (isb Wiesloch)',
-            '• Zertifizierter LINC Personality Profiler Coach (LINC-Institut)',
-            '• Zertifizierter Mediator (Fernuniversität Hagen)'
-        ]
-    }
-};
+    const teamMembersData = {
+        1: {
+            name: 'Dr. Till Reichert',
+            role: 'Geschäftsführer',
+            photo: 'assets/team/till-reichert-square.jpg',
+            categories: ['leadership', 'change', 'health', 'communication', 'management'],
+            motto: 'Menschen und Organisationen unterstützen. Mit Haltung auf Augenhöhe – klar, wertschätzend und mit professioneller Gelassenheit.',
+            shortDescription: [
+                'Die Fähigkeit, komplexe Themen verständlich und humorvoll auf den Punkt zu bringen',
+                'Fundierte betriebswirtschaftliche Klarheit, kombiniert mit wirksamer Begleitung von Führungskräften und Organisationen',
+                'Langjährige Beratungs-, Führungs- und Lehrerfahrung in Konzernen, Mittelstand und Hochschule',
+                'Praxisnahe Konzepte, die im Alltag von Führung und HR funktionieren',
+                'Struktur, Verlässlichkeit und Umsetzungsorientierung'
+            ],
+            extendedBio: [
+                'Berufs- und Führungserfahrung:',
+                '• Seit 2025 Geschäftsführender Gesellschafter bei WTM Management Consulting GmbH',
+                '• 15 Jahre freiberuflicher Business Coach & Trainer',
+                '• 12 Jahre Lehr-Coach für Dr. Migge-Seminare',
+                '• 10 Jahre Hochschuldozent für Management & Marketing',
+                '• 10 Jahre Unternehmensberater, zuletzt Partner und Projektleiter',
+                '• 4 Jahre Wissenschaftlicher Mitarbeiter, Ruhr-Universität Bochum',
+                '',
+                'Ausbildung und wesentliche Weiterbildungen:',
+                '• Dr. rer. oec., Dipl.-Ökonom',
+                '• Zertifizierter Lehr-Coach – Trainer für Coaching-Seminare',
+                '• Geprüfter Business-Trainer BDVT (Michl Group)',
+                '• Akkreditierter Lehrtrainer Mindful Coaching (Dr. Migge-Seminare)',
+                '• Zertifizierter Coach (Dr. Björn Migge)',
+                '• LINC Personality Profiler Trainer/ Coach (LINC-Institut)'
+            ]
+        },
+        2: {
+            name: 'Malte Werner',
+            role: 'Geschäftsführer',
+            photo: 'assets/team/malte-werner-square.jpg',
+            categories: ['leadership', 'change', 'communication', 'management'],
+            motto: 'Menschen und Unternehmen entwickeln. Mit Verstand und Herz!',
+            shortDescription: [
+                'Erfahrung damit, sehr jung Führungsverantwortung zu übernehmen',
+                'Verbindet Generationen mit Empathie und Humor',
+                'Hohe Begeisterung für Theorie, wenn sie in der Praxis wirklich taugt',
+                'Überzeugung, dass Haltung entscheidend ist für den Erfolg'
+            ],
+            extendedBio: [
+                'Berufs- und Führungserfahrung:',
+                '• 2015-2019: 4,5 Jahre studentischer Unternehmensberater, davon 2,5 Jahre als Geschäftsführer der GmbH',
+                '• Seit 2019 Berater und Coach bei WTM Management Consulting GmbH, seit 2024 geschäftsführender Gesellschafter',
+                '• 2016-2020 Kuratoriumsmitglied in der Stiftung Private Universität Witten/Herdecke',
+                '• 2021 bis heute Vorstand der Stiftung Private Universität Witten/Herdecke',
+                '',
+                'Ausbildung und wesentliche Weiterbildungen:',
+                '• B.A. Philosophie, Politik und Ökonomik an der Uni Witten/ Herdecke',
+                '• M.A. Ethik & Organisation an der Uni Witten/ Herdecke',
+                '• LINC Personality Profiler Coach (LINC-Institut)',
+                '• Coachausbildung nach ICF Standards bei WTM Management Consulting GmbH',
+                '• Weiterbildungen in den Bereichen Konfliktmediation, Agile Methoden, Design Thinking, Artificial Intelligence, Projektmanagement'
+            ]
+        },
+        3: {
+            name: 'Frank Titzer',
+            role: 'Gründer',
+            photo: 'assets/team/frank_titzer-v4.jpg',
+            categories: ['leadership', 'change', 'communication'],
+            motto: 'Stimmige Entwicklung und Klärung brauchen Zeit! Diesen Prozess präsent und mit Achtung zu begleiten, ist mein professioneller Anspruch.',
+            shortDescription: [
+                'Über 35 Jahre Erfahrung in Führung, Beratung und Begleitung von Veränderungsprozessen',
+                'Einen klaren Blick für Rolle, Haltung und authentische persönliche Wirkung',
+                'Die Fähigkeit, Entwicklung mit der richtigen Balance aus Tempo und Verlangsamung zu gestalten',
+                'Präsenz, Klarheit und Wertschätzung – auch in herausfordernden Situationen'
+            ],
+            extendedBio: [
+                'Berufs- und Führungserfahrung:',
+                '• Nach dem Abitur: Tätigkeit als Maschinenführer in der Papierindustrie und als Disponent',
+                '• 1988–1995: Freiberufler Trainer und Berater am Institut für Creatives Lernen (G. Beyer)',
+                '• Seit 1996: Gründer und Mitinhaber von ipso plus – Training plus Beratung',
+                '• 2014: Gründer und bis 2024 Geschäftsführer der WTM Management Consulting GmbH',
+                '',
+                'Ausbildung und wesentliche Weiterbildungen:',
+                '• Studium der Sprach- und Literaturwissenschaft sowie Pädagogik (M.A., Universität Düsseldorf), Schwerpunkt Kommunikationspsychologie',
+                '• Grundlagenstudium Betriebswirtschaftslehre (Universität Köln)',
+                '• Aufbaustudium Personalentwicklung (Universität Kaiserslautern, mit Auszeichnung)'
+            ]
+        },
+        4: {
+            name: 'Dr. Olaf Werner',
+            role: 'Gründer',
+            photo: 'assets/team/olaf_werner-square.jpg',
+            categories: ['leadership', 'health', 'management'],
+            motto: 'Das Zusammenspiel von Mensch und Organisation fasziniert mich.',
+            shortDescription: [
+                'Erkennt, wie verschiedene Arbeitsumgebungen Einfluss auf das Verhalten der Einzelnen ausüben',
+                'Kreativ, zugewandt und feinfühlig',
+                'Breites Wissen um Fragestellungen von Organisationen und Hierarchien',
+                'Lösungsfokussierte und ökonomische Beratung'
+            ],
+            extendedBio: [
+                'Berufs- und Führungserfahrung:',
+                '• 1989 Tätigkeit in der Weiterbildungsabteilung der Robert Bosch GmbH',
+                '• Seit 1990 selbständiger Trainer und Berater',
+                '• 2014 Gründer und bis 2024 Geschäftsführer der WTM Management Consulting GmbH',
+                '',
+                'Ausbildung und wesentliche Weiterbildungen:',
+                '• Magisterexamen in Germanistik, Geschichte und Philosophie, Universität Freiburg',
+                '• Promotion in Psychologie und Ethnologie, Universität Freiburg und LMU',
+                '• Systemischer Berater (ISBW, Wiesloch)',
+                '• Weiterbildungen in Gruppendynamik, Psychodrama, Organisationsaufstellung, Transaktionsanalyse'
+            ]
+        },
+        6: {
+            name: 'Carmen Werner',
+            role: 'Trainerin & Coach',
+            photo: 'assets/team/Carmen-Werner-Team_500x500.jpg',
+            categories: ['leadership', 'change', 'health'],
+            motto: 'Den Menschen im Ganzen sehen, ihn wertschätzen und ihn dabei zu unterstützen, seine innere Vielfalt in Verbindung zu bringen.',
+            shortDescription: [
+                'Einen ganzheitlichen Blick auf Menschen, Rollen und Systeme',
+                'Die Fähigkeit, auch schwierige Themen wertschätzend und klar auf den Tisch zu bringen',
+                'Langjährige Erfahrung in Führungskräfteentwicklung, Kommunikation und Konfliktklärung',
+                'Eine zugewandte, humorvolle Haltung, die Vertrauen schafft und Entwicklung ermöglicht'
+            ],
+            extendedBio: [
+                'Berufs- und Führungserfahrung:',
+                '• Selbständige Trainerin und Beraterin seit 1999',
+                '• Vertrieb im Finanzdienstsektor',
+                '• Immobilienfinanzierung bei der LBS',
+                '',
+                'Ausbildung und wesentliche Weiterbildungen:',
+                '• Zertifizierte Kommunikationsberaterin, Prof. Dr. Friedemann Schulz von Thun',
+                '• Zertifizierte Konfliktklärungshelferin, Dr. Christoph Thomann',
+                '• Ausbildung zum Coach, Dr. Andreas Knierim Kassel',
+                '• Ausbildung in Gruppendynamik, Team Dr. Rosenkranz und Eberhard Stahl',
+                '• Heilpraktikerin für Psychotherapie'
+            ]
+        },
+        7: {
+            name: 'Dr. Bettina Brendel',
+            role: 'Trainerin & Coach',
+            photo: 'assets/team/Team-Dr.-Bettina-Brendel-500x500-1.jpg',
+            categories: ['leadership', 'change', 'communication'],
+            motto: 'Kommunikation bewusst gestalten – Konflikte klären, Kooperation ermöglichen.',
+            shortDescription: [
+                'Tiefe Expertise in Kommunikation, Konfliktklärung und schwierigen Führungssituationen',
+                'Langjährige Erfahrung in Beratung, Mediation und Moderation komplexer Gruppenprozesse',
+                'Die Fähigkeit, Spannungen klar, strukturiert und menschlich bearbeitbar zu machen',
+                'Einen geschulten Blick für Sprache, Rollen und Dynamiken als Schlüssel wirksamer Führung'
+            ],
+            extendedBio: [
+                'Berufs- und Führungserfahrung:',
+                '• Seit 2005 freiberufliche Kommunikationsberaterin und Mediatorin',
+                '• 1994-2004 Berufserfahrung in einer Agentur, zuletzt als Stellvertretende Geschäftsführerin',
+                '',
+                'Ausbildung und wesentliche Weiterbildungen:',
+                '• Studium der Germanistik und Philosophie mit Promotion in Würzburg und Berlin',
+                '• Zertifizierte Kommunikationsberaterin, Prof. Friedemann Schulz von Thun',
+                '• Zertifizierte Mediatorin / Klärungshilfe, Dr. Christoph Thomann',
+                '• Weiterbildung Strategische Planung / Markenkommunikation, GWA e.V.'
+            ]
+        },
+        8: {
+            name: 'Dr. Bettina Hailer',
+            role: 'Trainerin & Coach',
+            photo: 'assets/team/Team-Dr.-Bettina-Hailer-500x500-1.jpg',
+            categories: ['leadership', 'change', 'communication'],
+            motto: 'Veränderung wirksam gestalten – klar, wertschätzend und praxisnah.',
+            shortDescription: [
+                'Über 20 Jahre Führungserfahrung in Endverantwortung in komplexen Organisationen',
+                'Die Fähigkeit, Veränderung strukturiert, verständlich und motivierend zu begleiten',
+                'Klare, authentische Kommunikation gepaart mit hoher Wertschätzung für Menschen',
+                'Fundierte Expertise in Führungskräfteentwicklung, Konfliktklärung und Selbstmanagement'
+            ],
+            extendedBio: [
+                'Berufs- und Führungserfahrung:',
+                '• 20 Jahre Führungserfahrung im Gesundheitswesen, zuletzt Vorständin eines Universitätsklinikums',
+                '• Langjährige Dozentin an der Hochschule Neu-Ulm',
+                '• Seit 2014 freiberufliche Beraterin, Trainerin und Mediatorin',
+                '',
+                'Ausbildung und wesentliche Weiterbildungen:',
+                '• Studium der Betriebswirtschaftslehre (Diplom-Kauffrau) sowie Promotion an der Universität Mannheim',
+                '• Coaching-Ausbildung WTM Management Consulting GmbH',
+                '• Trainer-/ Business-Trainer-Ausbildung, Competence on Top, dvct zertifiziert',
+                '• Mediations-/ Klärungshilfeausbildung, Wirtschaftsmediatorin (IHK), BM lizenziert',
+                '• LINC Personality Profiler Coach (LINC-Institut)'
+            ]
+        },
+        9: {
+            name: 'Dr. Sarolf Sauer',
+            role: 'Trainer & Coach',
+            photo: 'assets/team/Sarolf_Sauer_Team_500x500-v4.jpg',
+            categories: ['leadership', 'health', 'communication'],
+            motto: 'Haltung und Persönlichkeit sind der Schlüssel.',
+            shortDescription: [
+                'Befähigt Coachees durch Persönlichkeitsentwicklung ihren eigenen Weg zu erkennen',
+                'Vielfältige persönliche und berufliche Erfahrungen als Grundlage',
+                'Begleitung durch die Höhen und Tiefen des eigenen Lebens- und Berufswegs',
+                'Schwerpunkt auf Haltung und innerer Kraft'
+            ],
+            extendedBio: [
+                'Berufs- und Führungserfahrung:',
+                '• Bundeswehr bis 2008 (Oberst d.R.)',
+                '• Führungsakademie der Bundeswehr, Dozent für Auftragstaktik und Mentale Fitness',
+                '• Selbstständig seit 2015, Trainer, Berater, Coach',
+                '• Geschäftsführer einer größeren Einrichtung im Gesundheitswesen',
+                '',
+                'Ausbildung und wesentliche Weiterbildungen:',
+                '• Diplom-Pädagoge an der Bundeswehruniversität München',
+                '• Promotion Psychologie – Arbeit und Gesundheit PsyGA – baua',
+                '• Coachingausbildung (Dr. Björn Migge)',
+                '• Klärungshelfer in Konflikten (Dr. Christoph Thomann)'
+            ]
+        },
+        10: {
+            name: 'Gerold Pohl',
+            role: 'Trainer & Coach',
+            photo: 'assets/team/Gerold-Pohl-Team-500-x-500.jpg',
+            categories: ['leadership', 'change', 'management'],
+            motto: 'Moderne Führung heißt: Vertrauen schaffen und Verantwortung ermöglichen.',
+            shortDescription: [
+                'Über 25 Jahre Führungserfahrung in der Software- und IT-Organisation',
+                'Ein tiefes Verständnis für moderne, agile Führung und Selbstorganisation',
+                'Die Fähigkeit, Veränderungsprozesse systemisch, schrittweise und menschenzentriert zu gestalten',
+                'Eine klare Haltung zu Vertrauen, Offenheit und gemeinsamer Verantwortung'
+            ],
+            extendedBio: [
+                'Berufs- und Führungserfahrung:',
+                '• Seit 1990 in verschiedenen Führungsrollen',
+                '• Von lateraler Führung als Projektleiter zum Bereichsleiter mit über 100 Mitarbeitern',
+                '• Seit 2022 freiberuflicher Berater und Coach',
+                '',
+                'Ausbildung und wesentliche Weiterbildungen:',
+                '• Betriebswirt (VWA)',
+                '• DV Organisationsfachwirt',
+                '• Bankkaufmann',
+                '• Ausbildung zum Coach, WTM Management Consulting',
+                '• Facilitator Ausbildung "Liberating Structures", Holisticon AG HH',
+                '• LINC Personality Profiler, Senior Coach, LINC Institute',
+                '• Gruppendynamik, Team Dr. Rosenkranz'
+            ]
+        },
+        11: {
+            name: 'Heike Neidhart',
+            role: 'Trainerin & Coach',
+            photo: 'assets/team/Profilbild_Heike_Neidhart_Team_500x500.jpg',
+            categories: ['health', 'communication'],
+            motto: 'Gemeinsam finden wir den Weg zu Ihrem Ziel.',
+            shortDescription: [
+                'Eine starke Fähigkeit, Menschen bei Orientierung, Entscheidungen und persönlicher Entwicklung zu begleiten',
+                'Einen breiten, praxisnahen Methodenkoffer für Coaching, Training und Teamentwicklung',
+                'Die Verbindung von Klarheit, Empathie und Struktur in Veränderungsprozessen',
+                'Vielfältige Berufs- und Lebenserfahrung, die Vertrauen schafft und Entwicklung ermöglicht'
+            ],
+            extendedBio: [
+                'Berufs- und Führungserfahrung:',
+                '• Seit 07/2023 Freiberufliche Partnerin bei WTM Management Consulting GmbH',
+                '• Seit 2022 Trainerin, Coach (selbständig nebenberuflich)',
+                '• 2014-2025 IT-Compliance, Informationssicherheit',
+                '• 2001-2014 Entwicklung und Produktmanagerin Kredit-/Debitkarten',
+                '',
+                'Ausbildung und wesentliche Weiterbildungen:',
+                '• 1998-2001 Studium Dipl. Wirtschaftsinformatikerin',
+                '• LINC Personality Profiler (LINC Institute)',
+                '• Coach- und Beraterausbildung, ICF zertifiziert (WTM Management Consulting)',
+                '• ProfilPASS® Beraterin',
+                '• Stress- und Burnoutpräventions Coach, Academy of Sports'
+            ]
+        },
+        12: {
+            name: 'Heike Stalling',
+            role: 'Trainerin & Coach',
+            photo: 'assets/team/Stalling-Heike-Team-Portrait-500x500-6-23.jpg',
+            categories: ['leadership', 'health', 'communication'],
+            motto: 'Du kannst einen Menschen nichts lehren, du kannst ihm nur helfen, es in sich selbst zu finden.',
+            shortDescription: [
+                'Langjährige Führungserfahrung in internationalen Konzernstrukturen',
+                'Eine ressourcenorientierte, wertschätzende und zugleich klare Begleitung von Menschen',
+                'Die Fähigkeit, neue Perspektiven zu eröffnen und Handlungsspielräume nachhaltig zu erweitern',
+                'Hohe Empathie, schnelle Auffassungsgabe und eine bildhafte, klare Kommunikation'
+            ],
+            extendedBio: [
+                'Berufs- und Führungserfahrung:',
+                '• Seit 2022 hauptberufliche Selbständigkeit als Beraterin, Trainerin und Coach',
+                '• 2015–2021 nebenberufliche Selbständigkeit als Beraterin, Trainerin und Coach',
+                '• 1993–2021 verschiedene Management Funktionen im internationalen Kontext bei Mercedes-Benz / Daimler AG',
+                '',
+                'Ausbildung und wesentliche Weiterbildungen:',
+                '• Diplom-Wirtschaftsingenieurin (FH)',
+                '• Ausbildung zur Industriekauffrau',
+                '• Ausbildung zum Coach (WTM Management Consulting)',
+                '• Systemische Coachingausbildung (Wulf-Peter Paetzold)',
+                '• LINC Personality Profiler Zertifizierung',
+                '• Wildnispädagogik-Ausbildung (Corvus)'
+            ]
+        },
+        13: {
+            name: 'Hermann Josef Leiders',
+            role: 'Trainer & Coach',
+            photo: 'assets/team/Harry_Leiders_team_500x500-v4.jpg',
+            categories: ['leadership', 'communication', 'management'],
+            motto: 'Lern- und Entwicklungsräume schaffen, in denen Menschen wachsen können.',
+            shortDescription: [
+                'Über drei Jahrzehnte Erfahrung in der Begleitung von Lern-, Entwicklungs- und Veränderungsprozessen',
+                'Die Fähigkeit, auch in komplexen Situationen Vertrauen, Klarheit und Lernräume zu schaffen',
+                'Eine hohe Präsenz, wertschätzende Haltung und den Mut, die richtigen Fragen zu stellen',
+                'Methodische Vielfalt, kombiniert mit konsequenter Ausrichtung an den aktuellen Anliegen der Beteiligten'
+            ],
+            extendedBio: [
+                'Berufs- und Führungserfahrung:',
+                '• Führungsaufgaben innerhalb der Polizei NRW',
+                '• Ab 1985 Verhaltenstrainer, dann Lehrtrainer',
+                '• Bis 2000 Vermittlung eines Stressbewältigungsprogramms an Polizeibeamte',
+                '• Seit 2000 selbständiger Trainer und Berater',
+                '',
+                'Ausbildung und wesentliche Weiterbildungen:',
+                '• Supervisor (DGSv)',
+                '• Personalentwicklung im lernenden Unternehmen (Universität Kaiserslautern)',
+                '• NLP-Master (DGLNP)',
+                '• Qualifizierung zum Coach (Hephaistos, München)'
+            ]
+        },
+        14: {
+            name: 'Jürgen Reus',
+            role: 'Trainer & Coach',
+            photo: 'assets/team/Juergen_Reus-v4.png',
+            categories: ['communication', 'management'],
+            motto: 'Klar strukturieren. Wirksam umsetzen.',
+            shortDescription: [
+                'Langjährige Erfahrung in Projekt-, Prozess- und Organisationsarbeit in unterschiedlichen Branchen',
+                'Die Fähigkeit, Menschen durch klare Auftragsklärung, Struktur und Kommunikation mitzunehmen',
+                'Hohe Moderations- und Präsentationskompetenz – auch in großen Gruppen',
+                'Eine kommunikative, optimistische und lösungsorientierte Arbeitsweise'
+            ],
+            extendedBio: [
+                'Berufs- und Führungserfahrung:',
+                '• 1987-2008 Berater und später Regionalmanager in einer Beratungsagentur',
+                '• 2013-2019 Senior Account Executive',
+                '• Seit 2008 Trainer und Berater, seit 2019 freiberuflich',
+                '• Seit 1989 Dozent an den Dualen Hochschulen in Karlsruhe und Mannheim',
+                '',
+                'Ausbildung und wesentliche Weiterbildungen:',
+                '• Ausbildung zum Versicherungsfachangestellten',
+                '• Betriebswirtschaftliches Studium',
+                '• Systemische Lösungskonzepte und Interventionsstrategien (Heidelberger Institut für systemische Forschung)',
+                '• Diverse Weiterbildungen u. a. zu Führung, Six Sigma, Projektmanagement und systemischem Denken'
+            ]
+        },
+        15: {
+            name: 'Kirsten Schmiegelt',
+            role: 'Trainerin & Coach',
+            photo: 'assets/team/Kirsten_Schmiegelt_3-1.jpg',
+            categories: ['leadership', 'health', 'communication'],
+            motto: 'Meine Lieblings-„Technik": Offenheit zur Veränderung auf respektvoller Augenhöhe schaffen und sinnvolle kreative Lösungen entwickeln.',
+            shortDescription: [
+                'Die Verbindung von klarem analytischem Denken, Empathie und kreativer Lösungsfindung',
+                'Langjährige Erfahrung in Führungskräfteentwicklung, Teamentwicklung und Kommunikation',
+                'Einen interdisziplinären Hintergrund, der neue Perspektiven und schnellen Rapport ermöglicht',
+                'Eine wertschätzende Haltung mit Fokus auf nachhaltige, individuell passende Lösungen'
+            ],
+            extendedBio: [
+                'Berufs- und Führungserfahrung:',
+                '• Seit 2016 Coach-Ausbilder/ Dozentin',
+                '• Seit 2014 freiberufliche Business Coach & Trainerin, HP (Psych.)',
+                '• 10 Jahre zert. Personal- und Businesscoach, systemischer Coach und Teamentwicklerin',
+                '• 5 Jahre Erfahrung als Beraterin/ Personaltrainerin im Versicherungsbereich',
+                '• 3 Jahre Projektmanagerin im Kulturbereich',
+                '',
+                'Ausbildung und wesentliche Weiterbildungen:',
+                '• Diplom-Juristin (Universität Passau, Paris-Sorbonne, Köln)',
+                '• Diplom-Kultur- und Medienmanagerin (Freie Universität Berlin)',
+                '• Zertifizierter Coach (Dr. Björn Migge)',
+                '• Heilpraktikerin (Psych.)',
+                '• Zertifizierter LINC Personality Profiler Coach'
+            ]
+        },
+        16: {
+            name: 'Maik Rieß',
+            role: 'Trainer & Coach',
+            photo: 'assets/team/Team-Maik-Riess-500x500-1.jpg',
+            categories: ['leadership', 'communication', 'management'],
+            motto: 'Leistung und Mensch gehören zusammen – nur so entsteht echter Erfolg.',
+            shortDescription: [
+                'Langjährige Erfahrung im Technologie- und Industrieumfeld',
+                'Die Fähigkeit, komplizierte Zusammenhänge verständlich und hoch strukturiert darzustellen',
+                '„Dolmetscher" zwischen verschiedenen Bereichen (IT und Anwender, Technik und Produktion)',
+                'Gewinner mehrerer Preise vom BaTB und dvct'
+            ],
+            extendedBio: [
+                'Berufs- und Führungserfahrung:',
+                '• 13 Jahre Erfahrung als Fach- und Führungskraft in der Informationstechnologie',
+                '• 8 Jahre interne Unternehmensberatung, Schwerpunkt Organisationsentwicklung / Lean Management',
+                '• Personalentwickler und Trainer in einem weltweit tätigen Industrieunternehmen',
+                '• Dozent an der Dualen Hochschule im Studiengang Change Management',
+                '',
+                'Ausbildung und wesentliche Weiterbildungen:',
+                '• Studium Betriebswirtschaft mit Schwerpunkt Personalwesen & Produktion',
+                '• Verbandszertifizierter Business-Trainer (dvct e.V.)',
+                '• Systemischer Business-Coach (Steinbeis Hochschule Berlin)',
+                '• Visual Facilitator (Kommunikationslotsen)',
+                '• NLP-Practitioner (DVNLP)',
+                '• LPP (LINC Personality Profiler), LPP Senior Coach'
+            ]
+        },
+        17: {
+            name: 'Marcus Schmidt',
+            role: 'Trainer & Coach',
+            photo: 'assets/team/Team-Marcus-Schmidt-6-23.jpg',
+            categories: ['leadership', 'change', 'management'],
+            motto: 'Ich bin überzeugt, jeder von uns kann sich weiterentwickeln und meine Leidenschaft ist es, Sie dabei zu unterstützen.',
+            shortDescription: [
+                'Langjährige Erfahrung in Führungskräfteentwicklung, Selbstführung und Organisation',
+                'Die Verbindung von betriebswirtschaftlicher Klarheit mit wirksamer Persönlichkeitsentwicklung',
+                'Hohe Kompetenz in Kommunikation, Präsentation und Trainingsgestaltung – auch online',
+                'Eine strukturierte, wertschätzende und entwicklungsorientierte Haltung'
+            ],
+            extendedBio: [
+                'Berufs- und Führungserfahrung:',
+                '• Seit 2012 freiberuflicher Trainer und Berater',
+                '• Über 10 Jahre: Dozent an privaten Business Schools für BWL und Soft Skills',
+                '• 8 Jahre: Kaufmännische Führungskraft, zuletzt Bereichsleiter bei der HOCHTIEF AG, Essen',
+                '• 5 Jahre: Wirtschaftsprüfung bei Arthur Andersen, Reading (Großbritannien)',
+                '• 3 Jahre: Bankkaufmann bei der Sparkasse Hagen',
+                '',
+                'Ausbildung und wesentliche Weiterbildungen:',
+                '• Bankkaufmann, Sparkasse Hagen',
+                '• Europäisches Studium der Betriebswirtschaft (Diplom-Betriebswirt ESB/BA, Reutlingen/London)',
+                '• Systemischer Coach, M. Schmidt-Tanger',
+                '• Coachausbildung, WTM Management Consulting',
+                '• NLP-Practitioner',
+                '• FranklinCovey Trainer, München'
+            ]
+        },
+        18: {
+            name: 'Markus Schramm',
+            role: 'Trainer & Coach',
+            photo: 'assets/team/Markus_Schramm-v4.png',
+            categories: ['leadership', 'change', 'communication'],
+            motto: 'Kommunikation aus Leidenschaft lebhaft gestalten.',
+            shortDescription: [
+                'Langjährige Erfahrung in Kommunikation, Vertrieb und Führungskräfteentwicklung',
+                'Die Fähigkeit, Marken, Menschen und Strategien überzeugend in Verbindung zu bringen',
+                'Hohe Präsenz und Souveränität in Moderation, Präsentation und Großgruppenformaten',
+                'Praxisnahe, begeisternde Trainings- und Coachingarbeit mit klarer Umsetzungsorientierung'
+            ],
+            extendedBio: [
+                'Berufs- und Führungserfahrung:',
+                '• Seit 2006 Inhaber einer eigenen Agentur',
+                '• 14 Jahre Erfahrung als Leiter Kommunikation / Knappschaftsklinikum Saar',
+                '• 2 Jahre Erfahrung als Pressesprecher / Energie SaarLorLux AG',
+                '• 2 Jahre Erfahrung als Vertriebsleiter / Argus-net',
+                '',
+                'Ausbildung und wesentliche Weiterbildungen:',
+                '• BWL-Studium / Diplom-Betriebswirt HTW Saar – ASW',
+                '• Zertifizierter Trainer Neuland & Partner',
+                '• Ausbildung zum Coach nach ICF-Standards, WTM Management Consulting'
+            ]
+        },
+        19: {
+            name: 'Melanie Kubala',
+            role: 'Trainerin & Coach',
+            photo: 'assets/team/Team-Melanie-Kubala-500x500-1-v4.jpg',
+            categories: ['leadership', 'change', 'communication'],
+            motto: 'Wer alles tut, was er schon kann, bleibt immer das, was er schon ist.',
+            shortDescription: [
+                'Fundierte Erfahrung in Kommunikation, Persönlichkeitsentwicklung und Veränderungsprozessen',
+                'Die Fähigkeit, Menschen durch erlebnisorientierte und praxisnahe Methoden wirksam in Entwicklung zu bringen',
+                'Einen starken HR- und Personalentwicklungs-Hintergrund, kombiniert mit Coaching-Kompetenz',
+                'Eine klare, wertschätzende Haltung, die Lernen, Intuition und Selbstreflexion fördert'
+            ],
+            extendedBio: [
+                'Berufs- und Führungserfahrung:',
+                '• Seit 2015 freiberufliche Coach/ Trainerin für Persönlichkeitsentwicklung',
+                '• 2010-2014 HR-Managerin',
+                '• 2008-2010 Personalreferentin',
+                '• 2006-2007 Personaldisponentin/ Projektleiterin',
+                '',
+                'Ausbildung und wesentliche Weiterbildungen:',
+                '• Betriebswirtin mit Schwerpunkt Kommunikation und Präsentation',
+                '• Personalfachkauffrau',
+                '• Heilpraktikerin für Psychotherapie',
+                '• Zertifizierte Coach- und Beraterausbildung (WTM Management Consulting GmbH)',
+                '• Personality Profiler LINC Coach'
+            ]
+        },
+        20: {
+            name: 'Philipp Besch',
+            role: 'Trainer & Coach',
+            photo: 'assets/team/Team-Phillip_Besch-500x500-1-v4.jpg',
+            categories: ['leadership', 'change', 'communication'],
+            motto: 'Menschen in ihrer persönlichen Entfaltung zu fördern, zu fordern und im Prozess zu begleiten, ist meine Leidenschaft. Klar, wertschätzend, provokativ und lösungsorientiert.',
+            shortDescription: [
+                'Ein unerschütterliches Vertrauen in die Entwicklungsfähigkeit von Menschen',
+                'Langjährige Erfahrung in Persönlichkeitsentfaltung, Führung und Organisationsentwicklung',
+                'Die Fähigkeit, klar, wertschätzend und auch provokativ Entwicklung anzustoßen',
+                'Humor, Authentizität und eine konsequent lösungsorientierte Arbeitsweise'
+            ],
+            extendedBio: [
+                'Berufs- und Führungserfahrung:',
+                '• Seit 2015 Supervision in der Sozialwirtschaft',
+                '• Seit 2004 freiberuflicher Trainer, Berater und Coach',
+                '• Mehr als 15 Jahre Mitarbeiter und Führungskraft in Sozialwirtschaft und Bildungswesen',
+                '',
+                'Ausbildung und wesentliche Weiterbildungen:',
+                '• Systemischer Organisationsentwicklungsberater (Alwart & Team, Hamburg)',
+                '• NLP-Resonanz-Master (Institut Kutschera, DVNLP)',
+                '• LINC Personality Profiler Coach (LINC-Institut)',
+                '• Trainingsdesigner (Anna Langheiter)',
+                '• Systemischer Businesscoach (Alwart & Team, Hamburg)',
+                '• Diplompädagoge (Universität Hamburg)'
+            ]
+        },
+        21: {
+            name: 'Uta-Barbara Vogel',
+            role: 'Trainerin & Coach',
+            photo: 'assets/team/Barbara-v4.png',
+            categories: ['leadership', 'change', 'communication'],
+            motto: 'Lebensfreude, Begeisterungsfähigkeit und Neugier sind Eigenschaften, die mich auszeichnen und die mir im Beruf helfen, gemeinsam mit meinen Kunden tragfähige Lösungen zu entwickeln.',
+            shortDescription: [
+                'Tiefes psychologisches Verständnis für Menschen und Organisationen',
+                'Die Fähigkeit, persönliche Konflikte klar von strukturellen Dynamiken zu unterscheiden',
+                'Langjährige Erfahrung in Führung, Supervision und Organisationsentwicklung',
+                'Lebensfreude, Neugier und eine ressourcenorientierte Haltung, die Entwicklung erleichtert'
+            ],
+            extendedBio: [
+                'Berufs- und Führungserfahrung:',
+                '• Seit 1990 Selbstständige Trainerin und Beraterin',
+                '• Seit 2007 Supervisorin und Coach (DGSv)',
+                '• Seit 2008 Organisationsberatung und Begleitung bei Veränderungsprozessen',
+                '• Seit 2020 Lehrauftrag TH Köln',
+                '',
+                'Ausbildung und wesentliche Weiterbildungen:',
+                '• Diplom-Psychologin',
+                '• M.A. Supervision | Coaching | Organisationsberatung',
+                '• Transaktionsanalyse',
+                '• Gruppendynamik',
+                '• Mediation von Arbeitskonflikten',
+                '• BELBIN®-Teamrollenanalyse'
+            ]
+        },
+        22: {
+            name: 'Wolfgang Hoffmann',
+            role: 'Trainer & Coach',
+            photo: 'assets/team/Team-Foto-Wolfgang-Hoffmann-v4.jpg',
+            categories: ['change', 'leadership'],
+            motto: 'Kompetente Begleitung, klare Worte. Wirksamkeit im Fokus.',
+            shortDescription: [
+                '20 Jahre Beratungs- und Führungserfahrung in Konzernen und mittelständischen Unternehmen',
+                'Die Leidenschaft, für Klarheit in der Zusammenarbeit zu sorgen und Projekte zum Erfolg zu führen',
+                'Eine konsequent lösungsorientierte und praxisnahe Herangehensweise',
+                'Professionellen Humor in herausfordernden Situationen'
+            ],
+            extendedBio: [
+                'Berufs- und Führungserfahrung:',
+                '• Seit 2004 freiberuflicher Berater und Coach',
+                '• 15 Jahre Erfahrung in unterschiedlichen Fach- und Führungspositionen im Personalwesen',
+                '• Mehrjährige Erfahrung als Projektleiter in Veränderungsprozessen',
+                '',
+                'Ausbildung und wesentliche Weiterbildungen:',
+                '• Diplom-Kaufmann, Universität Köln',
+                '• Ausbildung zum systemischen Coach (isb Wiesloch)',
+                '• Weiterbildung zum Organisationsberater (isb Wiesloch)',
+                '• Zertifizierter LINC Personality Profiler Coach (LINC-Institut)',
+                '• Zertifizierter Mediator (Fernuniversität Hagen)'
+            ]
+        }
+    };
 
 
     // =========================================
