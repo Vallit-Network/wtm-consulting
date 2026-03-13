@@ -1804,6 +1804,9 @@ document.addEventListener('DOMContentLoaded', () => {
         const member = teamMembersData[memberId];
         if (!member || !teamModal) return;
 
+        // Set data-member attribute to apply specific CSS scaling per member
+        teamModal.setAttribute('data-member', memberId);
+
         // Get modal elements
         const modalName = teamModal.querySelector('.modal-name');
         const modalRole = teamModal.querySelector('.modal-role');
