@@ -38,8 +38,8 @@
     /* Muted text */
     --color-border: #E5E5E0;
     /* Subtle borders */
-    --color-team-photo-bg: #4A4A4E;
-    /* Neutral dark gray matching portrait backgrounds */
+    --color-team-photo-bg: #505356;
+    /* Neutral dark gray matching portrait/photo backgrounds */
 
     /* Corporate Blues (complementary) */
     --color-deep-blue: #2C3E50;
@@ -2772,31 +2772,15 @@ footer::before {
     object-position: center top;
 }
 
-/* Kopfposition: einfache Gruppenregeln, ausgerichtet an Malte (2) und Frank (3) */
+/* Kopfposition: einfache Regeln, ausgerichtet an Malte (2) und Frank (3) */
 
-/* Referenz Frank Titzer (3) – beibehalten, da vom Nutzer als perfekt bewertet */
+/* Frank Titzer (3) – vom Nutzer als perfekt bewertet, daher eigener Wert */
 .team-member-card[data-member="3"] .member-photo img {
     transform-origin: center top;
     transform: scale(1.35) translateY(-2%);
 }
 
-/* Reale Fotos (ohne Malte 2, der als Referenz unverändert bleibt) */
-.team-member-card[data-member="1"] .member-photo img,
-.team-member-card[data-member="4"] .member-photo img,
-.team-member-card[data-member="6"] .member-photo img,
-.team-member-card[data-member="7"] .member-photo img,
-.team-member-card[data-member="8"] .member-photo img,
-.team-member-card[data-member="10"] .member-photo img,
-.team-member-card[data-member="11"] .member-photo img,
-.team-member-card[data-member="12"] .member-photo img,
-.team-member-card[data-member="15"] .member-photo img,
-.team-member-card[data-member="16"] .member-photo img,
-.team-member-card[data-member="17"] .member-photo img {
-    transform-origin: center top;
-    transform: scale(1.08) translateY(3%);
-}
-
-/* KI-Fotos (ohne Frank 3) */
+/* KI-Fotos (ohne Frank 3): leichter Zoom, Kopf etwas nach unten */
 .team-member-card[data-member="9"] .member-photo img,
 .team-member-card[data-member="13"] .member-photo img,
 .team-member-card[data-member="14"] .member-photo img,
@@ -2806,48 +2790,22 @@ footer::before {
 .team-member-card[data-member="21"] .member-photo img,
 .team-member-card[data-member="22"] .member-photo img {
     transform-origin: center top;
-    transform: scale(1.25) translateY(5%);
+    transform: scale(1.20) translateY(3%);
 }
 
-/* ---- Modal: einfache Gruppenregeln ---- */
+/* Reale Fotos: keine transform-Regel → nutzen den Originalausschnitt,
+   damit oben nichts abgeschnitten wird (Malte 2 als Referenz). */
 
-/* Referenz Frank Titzer (3) im Modal */
+/* ---- Modal: dezente Regeln nur dort, wo nötig ---- */
+
+/* Frank Titzer (3) im Modal – Referenz beibehalten */
 .team-modal[data-member="3"] .modal-photo img,
 .team-modal[data-member="3"] .modal-avatar img {
     transform-origin: center top;
     transform: scale(1.12) translateY(-1%);
 }
 
-/* Reale Fotos im Modal (inkl. Malte 2) */
-.team-modal[data-member="1"] .modal-photo img,
-.team-modal[data-member="2"] .modal-photo img,
-.team-modal[data-member="4"] .modal-photo img,
-.team-modal[data-member="6"] .modal-photo img,
-.team-modal[data-member="7"] .modal-photo img,
-.team-modal[data-member="8"] .modal-photo img,
-.team-modal[data-member="10"] .modal-photo img,
-.team-modal[data-member="11"] .modal-photo img,
-.team-modal[data-member="12"] .modal-photo img,
-.team-modal[data-member="15"] .modal-photo img,
-.team-modal[data-member="16"] .modal-photo img,
-.team-modal[data-member="17"] .modal-photo img,
-.team-modal[data-member="1"] .modal-avatar img,
-.team-modal[data-member="2"] .modal-avatar img,
-.team-modal[data-member="4"] .modal-avatar img,
-.team-modal[data-member="6"] .modal-avatar img,
-.team-modal[data-member="7"] .modal-avatar img,
-.team-modal[data-member="8"] .modal-avatar img,
-.team-modal[data-member="10"] .modal-avatar img,
-.team-modal[data-member="11"] .modal-avatar img,
-.team-modal[data-member="12"] .modal-avatar img,
-.team-modal[data-member="15"] .modal-avatar img,
-.team-modal[data-member="16"] .modal-avatar img,
-.team-modal[data-member="17"] .modal-avatar img {
-    transform-origin: center top;
-    transform: scale(1.03) translateY(2%);
-}
-
-/* KI-Fotos im Modal (ohne Frank 3) */
+/* KI-Fotos im Modal (ohne Frank 3): leicht hineinzoomen */
 .team-modal[data-member="9"] .modal-photo img,
 .team-modal[data-member="13"] .modal-photo img,
 .team-modal[data-member="14"] .modal-photo img,
@@ -2865,7 +2823,7 @@ footer::before {
 .team-modal[data-member="21"] .modal-avatar img,
 .team-modal[data-member="22"] .modal-avatar img {
     transform-origin: center top;
-    transform: scale(1.10) translateY(3%);
+    transform: scale(1.08) translateY(2%);
 }
 
 .team-member-card:hover .member-photo {
