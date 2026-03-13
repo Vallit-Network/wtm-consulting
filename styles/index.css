@@ -2771,129 +2771,186 @@ footer::before {
     object-position: center top;
 }
 
-/* Original (non-AI) photos: lower the head so it's not cropped at the ceiling */
-.team-member-card:not([data-member="3"]):not([data-member="9"]):not([data-member="13"]):not([data-member="14"]):not([data-member="18"]):not([data-member="19"]):not([data-member="20"]):not([data-member="21"]):not([data-member="22"]) .member-photo img {
+/* Per-person head position (reference: Malte Werner = 2, center 20%) */
+
+/* 1: Dr. Till Reichert – head slightly high */
+.team-member-card[data-member="1"] .member-photo img {
+    object-position: center 24%;
+}
+
+/* 2: Malte Werner – reference */
+.team-member-card[data-member="2"] .member-photo img {
     object-position: center 20%;
 }
 
-/* Frank Titzer (data-member 3) - AI: head slightly lower */
+/* 3: Frank Titzer – AI, head too low */
 .team-member-card[data-member="3"] .member-photo img {
     transform-origin: center top;
-    transform: scale(1.4) translateY(3%);
+    transform: scale(1.4) translateY(0%);
 }
 
-/* Dr. Sarolf Sauer (data-member 9) - AI: head slightly lower */
+/* 4: Dr. Olaf Werner – head too low */
+.team-member-card[data-member="4"] .member-photo img {
+    object-position: center 15%;
+}
+
+/* 6: Carmen Werner – head too low */
+.team-member-card[data-member="6"] .member-photo img {
+    object-position: center 12%;
+}
+
+/* 7: Dr. Bettina Brendel – head too low */
+.team-member-card[data-member="7"] .member-photo img {
+    object-position: center 12%;
+}
+
+/* 8: Dr. Bettina Hailer – head too low */
+.team-member-card[data-member="8"] .member-photo img {
+    object-position: center 12%;
+}
+
+/* 9: Dr. Sarolf Sauer – AI, head slightly too low */
 .team-member-card[data-member="9"] .member-photo img {
     transform-origin: center top;
-    transform: scale(1.45) translateY(3%);
+    transform: scale(1.45) translateY(1%);
 }
 
-/* Hermann Josef Leiders (data-member 13) - AI: head slightly lower */
+/* 10: Gerold Pohl – head too high */
+.team-member-card[data-member="10"] .member-photo img {
+    object-position: center 25%;
+}
+
+/* 11: Heike Neidhart – head too high */
+.team-member-card[data-member="11"] .member-photo img {
+    object-position: center 25%;
+}
+
+/* 12: Heike Stalling – near optimum */
+.team-member-card[data-member="12"] .member-photo img {
+    object-position: center 20%;
+}
+
+/* 13: Hermann Josef Leiders – AI, head too high */
 .team-member-card[data-member="13"] .member-photo img {
+    transform-origin: center top;
+    transform: scale(1.4) translateY(7%);
+}
+
+/* 14: Jürgen Reus – AI, head too high */
+.team-member-card[data-member="14"] .member-photo img {
+    transform-origin: center top;
+    transform: scale(1.4) translateY(6%);
+}
+
+/* 15: Kirsten Schmiegelt – head too high */
+.team-member-card[data-member="15"] .member-photo img {
+    object-position: center 24%;
+}
+
+/* 16: Maik Rieß – near optimum */
+.team-member-card[data-member="16"] .member-photo img {
+    object-position: center 20%;
+}
+
+/* 17: Marcus Schmidt – near optimum */
+.team-member-card[data-member="17"] .member-photo img {
+    object-position: center 20%;
+}
+
+/* 18: Markus Schramm – AI, head too high */
+.team-member-card[data-member="18"] .member-photo img {
+    transform-origin: center top;
+    transform: scale(1.4) translateY(6%);
+}
+
+/* 19: Melanie Kubala – AI, head too high */
+.team-member-card[data-member="19"] .member-photo img {
+    transform-origin: center top;
+    transform: scale(1.3) translateY(5%);
+}
+
+/* 20: Philipp Besch – AI, head too high */
+.team-member-card[data-member="20"] .member-photo img {
     transform-origin: center top;
     transform: scale(1.4) translateY(5%);
 }
 
-/* Jürgen Reus (data-member 14) - AI: head slightly lower */
-.team-member-card[data-member="14"] .member-photo img {
-    transform-origin: center top;
-    transform: scale(1.4) translateY(4%);
-}
-
-/* Markus Schramm (data-member 18) - AI: head slightly lower */
-.team-member-card[data-member="18"] .member-photo img {
-    transform-origin: center top;
-    transform: scale(1.4) translateY(4%);
-}
-
-/* Melanie Kubala (data-member 19) - AI: head slightly lower */
-.team-member-card[data-member="19"] .member-photo img {
-    transform-origin: center top;
-    transform: scale(1.3) translateY(3%);
-}
-
-/* Philipp Besch (data-member 20) - AI: head slightly lower */
-.team-member-card[data-member="20"] .member-photo img {
-    transform-origin: center top;
-    transform: scale(1.4) translateY(4%);
-}
-
-/* Uta-Barbara Vogel (data-member 21) - AI: head slightly lower */
+/* 21: Uta-Barbara Vogel – AI, head too low */
 .team-member-card[data-member="21"] .member-photo img {
     transform-origin: center top;
-    transform: scale(1.35) translateY(3%);
+    transform: scale(1.35) translateY(1%);
 }
 
-/* Wolfgang Hoffmann (data-member 22) - AI: head slightly lower */
+/* 22: Wolfgang Hoffmann – AI, head too low */
 .team-member-card[data-member="22"] .member-photo img {
     transform-origin: center top;
-    transform: scale(1.45) translateY(5%);
+    transform: scale(1.45) translateY(2%);
 }
 
 /* ---- AI-generated photo framing adjustments (MODAL) ---- */
 /* Modals pre-scale square images heavily due to object-fit: cover over a tall container. */
 
-/* Frank Titzer - AI: head slightly lower in modal */
+/* 3: Frank Titzer – AI, head too low in modal */
 .team-modal[data-member="3"] .modal-photo img,
 .team-modal[data-member="3"] .modal-avatar img {
+    transform-origin: center top;
+    transform: scale(1.15) translateY(0%);
+}
+
+/* 9: Dr. Sarolf Sauer – AI, head slightly too low in modal */
+.team-modal[data-member="9"] .modal-photo img,
+.team-modal[data-member="9"] .modal-avatar img {
+    transform-origin: center top;
+    transform: scale(1.15) translateY(0%);
+}
+
+/* 13: Hermann Josef Leiders – AI, head too high in modal */
+.team-modal[data-member="13"] .modal-photo img,
+.team-modal[data-member="13"] .modal-avatar img {
+    transform-origin: center top;
+    transform: scale(1.15) translateY(4%);
+}
+
+/* 14: Jürgen Reus – AI, head too high in modal */
+.team-modal[data-member="14"] .modal-photo img,
+.team-modal[data-member="14"] .modal-avatar img {
     transform-origin: center top;
     transform: scale(1.15) translateY(3%);
 }
 
-/* Dr. Sarolf Sauer - AI: head slightly lower in modal */
-.team-modal[data-member="9"] .modal-photo img,
-.team-modal[data-member="9"] .modal-avatar img {
-    transform-origin: center top;
-    transform: scale(1.15) translateY(2%);
-}
-
-/* Hermann Josef Leiders - AI: head slightly lower in modal */
-.team-modal[data-member="13"] .modal-photo img,
-.team-modal[data-member="13"] .modal-avatar img {
-    transform-origin: center top;
-    transform: scale(1.15) translateY(2%);
-}
-
-/* Jürgen Reus - AI: head slightly lower in modal */
-.team-modal[data-member="14"] .modal-photo img,
-.team-modal[data-member="14"] .modal-avatar img {
-    transform-origin: center top;
-    transform: scale(1.15) translateY(2%);
-}
-
-/* Markus Schramm - AI: head slightly lower in modal */
+/* 18: Markus Schramm – AI, head too high in modal */
 .team-modal[data-member="18"] .modal-photo img,
 .team-modal[data-member="18"] .modal-avatar img {
     transform-origin: center top;
-    transform: scale(1.15) translateY(2%);
+    transform: scale(1.15) translateY(3%);
 }
 
-/* Melanie Kubala - AI: head slightly lower in modal */
+/* 19: Melanie Kubala – AI, head too high in modal */
 .team-modal[data-member="19"] .modal-photo img,
 .team-modal[data-member="19"] .modal-avatar img {
     transform-origin: center top;
-    transform: scale(1.1) translateY(3%);
+    transform: scale(1.1) translateY(4%);
 }
 
-/* Philipp Besch - AI: head slightly lower in modal */
+/* 20: Philipp Besch – AI, head too high in modal */
 .team-modal[data-member="20"] .modal-photo img,
 .team-modal[data-member="20"] .modal-avatar img {
     transform-origin: center top;
-    transform: scale(1.15) translateY(2%);
+    transform: scale(1.15) translateY(3%);
 }
 
-/* Uta-Barbara Vogel - AI: head slightly lower in modal */
+/* 21: Uta-Barbara Vogel – AI, head too low in modal */
 .team-modal[data-member="21"] .modal-photo img,
 .team-modal[data-member="21"] .modal-avatar img {
     transform-origin: center top;
-    transform: scale(1.1) translateY(3%);
+    transform: scale(1.1) translateY(0%);
 }
 
-/* Wolfgang Hoffmann - AI: head slightly lower in modal */
+/* 22: Wolfgang Hoffmann – AI, head too low in modal */
 .team-modal[data-member="22"] .modal-photo img,
 .team-modal[data-member="22"] .modal-avatar img {
     transform-origin: center top;
-    transform: scale(1.4) translateY(4%);
+    transform: scale(1.4) translateY(1%);
 }
 
 .team-member-card:hover .member-photo {
@@ -3248,9 +3305,33 @@ div[class*="syntra-widget"].mobile-menu-active {
     transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Original (non-AI) photos in modal: lower the head */
-.team-modal:not([data-member="3"]):not([data-member="9"]):not([data-member="13"]):not([data-member="14"]):not([data-member="18"]):not([data-member="19"]):not([data-member="20"]):not([data-member="21"]):not([data-member="22"]) .modal-photo img {
+/* Per-person modal head position (match grid) */
+
+.team-modal[data-member="1"] .modal-photo img {
+    object-position: center 24%;
+}
+.team-modal[data-member="2"] .modal-photo img {
     object-position: center 20%;
+}
+.team-modal[data-member="4"] .modal-photo img {
+    object-position: center 15%;
+}
+.team-modal[data-member="6"] .modal-photo img,
+.team-modal[data-member="7"] .modal-photo img,
+.team-modal[data-member="8"] .modal-photo img {
+    object-position: center 12%;
+}
+.team-modal[data-member="10"] .modal-photo img,
+.team-modal[data-member="11"] .modal-photo img {
+    object-position: center 25%;
+}
+.team-modal[data-member="12"] .modal-photo img,
+.team-modal[data-member="16"] .modal-photo img,
+.team-modal[data-member="17"] .modal-photo img {
+    object-position: center 20%;
+}
+.team-modal[data-member="15"] .modal-photo img {
+    object-position: center 24%;
 }
 
 /* ============================================
