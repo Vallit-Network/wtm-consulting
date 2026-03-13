@@ -2769,6 +2769,66 @@ footer::before {
     object-position: center top;
 }
 
+/* ---- AI-generated photo framing adjustments ----
+   These CSS-only rules zoom in on AI photos to match the
+   head-and-shoulders framing of professional portrait photos.
+   transform-origin controls which part of the image stays
+   visible when scaled up inside the overflow:hidden container. */
+
+/* Frank Titzer (data-member 3) — slight zoom, head positioned upper-center */
+.team-member-card[data-member="3"] .member-photo img {
+    transform: scale(1.2);
+    transform-origin: center 25%;
+}
+
+/* Dr. Sarolf Sauer (data-member 9) — zoom face area */
+.team-member-card[data-member="9"] .member-photo img {
+    transform: scale(1.25);
+    transform-origin: center 20%;
+}
+
+/* Hermann Josef Leiders (data-member 13) — zoom in, head near top */
+.team-member-card[data-member="13"] .member-photo img {
+    transform: scale(1.25);
+    transform-origin: center 22%;
+}
+
+/* Jürgen Reus (data-member 14) — large source, zoom in more */
+.team-member-card[data-member="14"] .member-photo img {
+    transform: scale(1.2);
+    transform-origin: center 25%;
+}
+
+/* Markus Schramm (data-member 18) — large source, zoom in */
+.team-member-card[data-member="18"] .member-photo img {
+    transform: scale(1.3);
+    transform-origin: center 20%;
+}
+
+/* Melanie Kubala (data-member 19) — moderate zoom */
+.team-member-card[data-member="19"] .member-photo img {
+    transform: scale(1.2);
+    transform-origin: center 22%;
+}
+
+/* Philipp Besch (data-member 20) — head positioned high, zoom in */
+.team-member-card[data-member="20"] .member-photo img {
+    transform: scale(1.3);
+    transform-origin: center 18%;
+}
+
+/* Uta-Barbara Vogel (data-member 21) — zoom in on face */
+.team-member-card[data-member="21"] .member-photo img {
+    transform: scale(1.2);
+    transform-origin: center 22%;
+}
+
+/* Wolfgang Hoffmann (data-member 22) — zoom face area */
+.team-member-card[data-member="22"] .member-photo img {
+    transform: scale(1.25);
+    transform-origin: center 20%;
+}
+
 .team-member-card:hover .member-photo {
     transform: scale(1.05);
 }
