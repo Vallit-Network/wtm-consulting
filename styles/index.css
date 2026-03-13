@@ -2772,22 +2772,6 @@ footer::before {
     object-position: center top;
 }
 
-/* Original-Fotos (keine KI): ganze Person zeigen, nicht enger beschneiden */
-.team-member-card[data-member="1"] .member-photo img,
-.team-member-card[data-member="2"] .member-photo img,
-.team-member-card[data-member="4"] .member-photo img,
-.team-member-card[data-member="6"] .member-photo img,
-.team-member-card[data-member="7"] .member-photo img,
-.team-member-card[data-member="8"] .member-photo img,
-.team-member-card[data-member="10"] .member-photo img,
-.team-member-card[data-member="11"] .member-photo img,
-.team-member-card[data-member="12"] .member-photo img,
-.team-member-card[data-member="15"] .member-photo img,
-.team-member-card[data-member="16"] .member-photo img,
-.team-member-card[data-member="17"] .member-photo img {
-    object-fit: contain;
-}
-
 /* Kopfposition: einfache Regeln, ausgerichtet an Malte (2) und Frank (3) */
 
 /* Frank Titzer (3) – vom Nutzer als perfekt bewertet, daher eigener Wert */
@@ -2809,8 +2793,64 @@ footer::before {
     transform: scale(1.20) translateY(3%);
 }
 
-/* Reale Fotos: keine transform-Regel → nutzen den Originalausschnitt,
-   damit oben nichts abgeschnitten wird (Malte 2 als Referenz). */
+/* Reale Fotos: nur leichte vertikale Korrektur der Kopfposition,
+   Malte (2) bleibt unverändert als Referenz. */
+
+/* 1: Till – Kopf etwas nach unten */
+.team-member-card[data-member="1"] .member-photo img {
+    transform-origin: center top;
+    transform: translateY(4%);
+}
+
+/* 4: Olaf – Kopf minimal nach oben */
+.team-member-card[data-member="4"] .member-photo img {
+    transform-origin: center top;
+    transform: translateY(-2%);
+}
+
+/* 6: Carmen – Kopf nach oben (mehr Abstand unten) */
+.team-member-card[data-member="6"] .member-photo img {
+    transform-origin: center top;
+    transform: translateY(-4%);
+}
+
+/* 7: Bettina Brendel – Kopf nach oben */
+.team-member-card[data-member="7"] .member-photo img {
+    transform-origin: center top;
+    transform: translateY(-4%);
+}
+
+/* 8: Bettina Hailer – leicht nach oben */
+.team-member-card[data-member="8"] .member-photo img {
+    transform-origin: center top;
+    transform: translateY(-2%);
+}
+
+/* 10: Gerold – Kopf etwas nach unten */
+.team-member-card[data-member="10"] .member-photo img {
+    transform-origin: center top;
+    transform: translateY(4%);
+}
+
+/* 11: Heike Neidhart – Kopf etwas nach unten */
+.team-member-card[data-member="11"] .member-photo img {
+    transform-origin: center top;
+    transform: translateY(4%);
+}
+
+/* 12: Heike Stalling – fast optimal, nur minimal nach unten */
+.team-member-card[data-member="12"] .member-photo img {
+    transform-origin: center top;
+    transform: translateY(2%);
+}
+
+/* 15: Kirsten – leicht nach unten */
+.team-member-card[data-member="15"] .member-photo img {
+    transform-origin: center top;
+    transform: translateY(3%);
+}
+
+/* 16, 17: Maik & Marcus – Referenznah, keine Regel nötig */
 
 /* ---- Modal: dezente Regeln nur dort, wo nötig ---- */
 
