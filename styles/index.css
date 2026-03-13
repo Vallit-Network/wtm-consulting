@@ -38,6 +38,8 @@
     /* Muted text */
     --color-border: #E5E5E0;
     /* Subtle borders */
+    --color-team-photo-bg: #4A4A4E;
+    /* Neutral dark gray matching portrait backgrounds */
 
     /* Corporate Blues (complementary) */
     --color-deep-blue: #2C3E50;
@@ -2755,7 +2757,7 @@ footer::before {
 
 .member-photo {
     aspect-ratio: 1;
-    background: linear-gradient(135deg, var(--color-primary-light) 0%, var(--color-primary) 100%);
+    background: var(--color-team-photo-bg);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -2769,6 +2771,10 @@ footer::before {
     object-position: center top;
 }
 
+/* Original (non-AI) photos: lower the head so it's not cropped at the ceiling */
+.team-member-card:not([data-member="3"]):not([data-member="9"]):not([data-member="13"]):not([data-member="14"]):not([data-member="18"]):not([data-member="19"]):not([data-member="20"]):not([data-member="21"]):not([data-member="22"]) .member-photo img {
+    object-position: center 20%;
+}
 
 /* Frank Titzer (data-member 3) - AI: head slightly lower */
 .team-member-card[data-member="3"] .member-photo img {
@@ -3218,7 +3224,7 @@ div[class*="syntra-widget"].mobile-menu-active {
 }
 
 .modal-photo {
-    background: linear-gradient(135deg, var(--color-primary-light) 0%, var(--color-primary) 100%);
+    background: var(--color-team-photo-bg);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -3240,6 +3246,11 @@ div[class*="syntra-widget"].mobile-menu-active {
     object-fit: cover;
     object-position: center top;
     transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Original (non-AI) photos in modal: lower the head */
+.team-modal:not([data-member="3"]):not([data-member="9"]):not([data-member="13"]):not([data-member="14"]):not([data-member="18"]):not([data-member="19"]):not([data-member="20"]):not([data-member="21"]):not([data-member="22"]) .modal-photo img {
+    object-position: center 20%;
 }
 
 /* ============================================
