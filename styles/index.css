@@ -2793,64 +2793,8 @@ footer::before {
     transform: scale(1.20) translateY(3%);
 }
 
-/* Reale Fotos: nur leichte vertikale Korrektur der Kopfposition,
-   Malte (2) bleibt unverändert als Referenz. */
-
-/* 1: Till – Kopf etwas nach unten */
-.team-member-card[data-member="1"] .member-photo img {
-    transform-origin: center top;
-    transform: translateY(4%);
-}
-
-/* 4: Olaf – Kopf minimal nach oben */
-.team-member-card[data-member="4"] .member-photo img {
-    transform-origin: center top;
-    transform: translateY(-2%);
-}
-
-/* 6: Carmen – Kopf nach oben (mehr Abstand unten) */
-.team-member-card[data-member="6"] .member-photo img {
-    transform-origin: center top;
-    transform: translateY(-4%);
-}
-
-/* 7: Bettina Brendel – Kopf nach oben */
-.team-member-card[data-member="7"] .member-photo img {
-    transform-origin: center top;
-    transform: translateY(-4%);
-}
-
-/* 8: Bettina Hailer – leicht nach oben */
-.team-member-card[data-member="8"] .member-photo img {
-    transform-origin: center top;
-    transform: translateY(-2%);
-}
-
-/* 10: Gerold – Kopf etwas nach unten */
-.team-member-card[data-member="10"] .member-photo img {
-    transform-origin: center top;
-    transform: translateY(4%);
-}
-
-/* 11: Heike Neidhart – Kopf etwas nach unten */
-.team-member-card[data-member="11"] .member-photo img {
-    transform-origin: center top;
-    transform: translateY(4%);
-}
-
-/* 12: Heike Stalling – fast optimal, nur minimal nach unten */
-.team-member-card[data-member="12"] .member-photo img {
-    transform-origin: center top;
-    transform: translateY(2%);
-}
-
-/* 15: Kirsten – leicht nach unten */
-.team-member-card[data-member="15"] .member-photo img {
-    transform-origin: center top;
-    transform: translateY(3%);
-}
-
-/* 16, 17: Maik & Marcus – Referenznah, keine Regel nötig */
+/* Reale Fotos: keine transform-Regel → nutzen den Originalausschnitt,
+   damit oben nichts abgeschnitten wird (Malte 2 als Referenz). */
 
 /* ---- Modal: dezente Regeln nur dort, wo nötig ---- */
 
@@ -3234,33 +3178,8 @@ div[class*="syntra-widget"].mobile-menu-active {
     transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Original-Fotos im Modal: komplette Bildkomposition anzeigen */
-.team-modal[data-member="1"] .modal-photo img,
-.team-modal[data-member="2"] .modal-photo img,
-.team-modal[data-member="4"] .modal-photo img,
-.team-modal[data-member="6"] .modal-photo img,
-.team-modal[data-member="7"] .modal-photo img,
-.team-modal[data-member="8"] .modal-photo img,
-.team-modal[data-member="10"] .modal-photo img,
-.team-modal[data-member="11"] .modal-photo img,
-.team-modal[data-member="12"] .modal-photo img,
-.team-modal[data-member="15"] .modal-photo img,
-.team-modal[data-member="16"] .modal-photo img,
-.team-modal[data-member="17"] .modal-photo img,
-.team-modal[data-member="1"] .modal-avatar img,
-.team-modal[data-member="2"] .modal-avatar img,
-.team-modal[data-member="4"] .modal-avatar img,
-.team-modal[data-member="6"] .modal-avatar img,
-.team-modal[data-member="7"] .modal-avatar img,
-.team-modal[data-member="8"] .modal-avatar img,
-.team-modal[data-member="10"] .modal-avatar img,
-.team-modal[data-member="11"] .modal-avatar img,
-.team-modal[data-member="12"] .modal-avatar img,
-.team-modal[data-member="15"] .modal-avatar img,
-.team-modal[data-member="16"] .modal-avatar img,
-.team-modal[data-member="17"] .modal-avatar img {
-    object-fit: contain;
-}
+/* (Reale Fotos nutzen wieder den quadratischen Ausschnitt aus den neuen
+   Originalen; kein spezielles object-fit mehr nötig.) */
 
 /* Per-person modal head position via transform (match grid) */
 

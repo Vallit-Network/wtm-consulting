@@ -12,60 +12,25 @@ const fs = require("fs");
 
 const ROOT = path.resolve(__dirname, "..");
 const TEAM_DIR = path.join(ROOT, "assets", "team");
-const ORIGINAL_DIR = path.join(TEAM_DIR, "Original");
 const SIZES = [320, 640, 1280];
 
 /**
- * Für einige Original-Fotos nutzen wir bewusst die hochauflösenden Dateien
- * aus `assets/team/Original`, damit das Ergebnis nicht verpixelt ist und
- * die Köpfe etwas weiter unten im Ausschnitt liegen.
- *
- * verticalBiasPercent:
- *   - Negative Werte verschieben den quadratischen Ausschnitt im Quellbild
- *     nach oben (damit im Quadrat mehr Raum über dem Kopf entsteht und der
- *     Kopf optisch weiter unten sitzt).
+ * Map outputs, für die es explizit neue, hochauflösende Originale
+ * im Unterordner assets/team/Original gibt.
+ * Diese Dateien sollen als Quelle dienen, damit die Köpfe nicht
+ * abgeschnitten und die Bilder nicht verpixelt wirken.
  */
-const ORIGINAL_OVERRIDES = {
-  "till-reichert.jpg": {
-    src: path.join(ORIGINAL_DIR, "Till Reichert.jpg"),
-    verticalBiasPercent: -0.08,
-  },
-  "olaf_werner-square.jpg": {
-    src: path.join(ORIGINAL_DIR, "Olaf Werner.jpg"),
-    verticalBiasPercent: -0.08,
-  },
-  "Carmen-Werner-Team_500x500.jpg": {
-    src: path.join(ORIGINAL_DIR, "Carmen Werner.jpg"),
-    verticalBiasPercent: -0.08,
-  },
-  "Team-Dr.-Bettina-Hailer-500x500-1.jpg": {
-    src: path.join(ORIGINAL_DIR, "Bettina Hailer.jpg"),
-    verticalBiasPercent: -0.08,
-  },
-  "Gerold-Pohl-Team-500-x-500.jpg": {
-    src: path.join(ORIGINAL_DIR, "Gerold Pohl.jpg"),
-    verticalBiasPercent: -0.08,
-  },
-  "Profilbild_Heike_Neidhart_Team_500x500.jpg": {
-    src: path.join(ORIGINAL_DIR, "Heike Neidhart.jpg"),
-    verticalBiasPercent: -0.08,
-  },
-  "Kirsten_Schmiegelt_3-1.jpg": {
-    src: path.join(ORIGINAL_DIR, "Kirsten Schmiegelt.jpg"),
-    verticalBiasPercent: -0.08,
-  },
-  "Team-Maik-Riess-500x500-1.jpg": {
-    src: path.join(ORIGINAL_DIR, "Maik RIess.jpg"),
-    verticalBiasPercent: -0.08,
-  },
-  "Team-Marcus-Schmidt-6-23.jpg": {
-    src: path.join(ORIGINAL_DIR, "Marcus Schmidt.jpg"),
-    verticalBiasPercent: -0.08,
-  },
-  "Cludius-Andreas-Team-500x500-1.jpg": {
-    src: path.join(ORIGINAL_DIR, "Andreas Cludius.jpg"),
-    verticalBiasPercent: -0.08,
-  },
+const ORIGINAL_SRC_MAP = {
+  "till-reichert.jpg": "Original/Till Reichert.jpg",
+  "olaf_werner-square.jpg": "Original/Olaf Werner.jpg",
+  "Carmen-Werner-Team_500x500.jpg": "Original/Carmen Werner.jpg",
+  "Profilbild_Heike_Neidhart_Team_500x500.jpg": "Original/Heike Neidhart.jpg",
+  "Gerold-Pohl-Team-500-x-500.jpg": "Original/Gerold Pohl.jpg",
+  "Kirsten_Schmiegelt_3-1.jpg": "Original/Kirsten Schmiegelt.jpg",
+  "Team-Dr.-Bettina-Hailer-500x500-1.jpg": "Original/Bettina Hailer.jpg",
+  "Team-Maik-Riess-500x500-1.jpg": "Original/Maik RIess.jpg",
+  "Team-Marcus-Schmidt-6-23.jpg": "Original/Marcus Schmidt.jpg",
+  "Cludius-Andreas-Team-500x500-1.jpg": "Original/Andreas Cludius.jpg",
 };
 
 const USED_IMAGES = [
@@ -101,8 +66,10 @@ async function main() {
   }
 
   for (const { src, out } of USED_IMAGES) {
-    const override = ORIGINAL_OVERRIDES[out];
-    const srcPath = override?.src || path.join(TEAM_DIR, src);
+    // Falls es für dieses Zielbild eine explizite Originaldatei im Ordner
+    // assets/team/Original gibt, diese bevorzugt als Quelle verwenden.
+    const mappedSrc = ORIGINAL_SRC_MAP[out] || src;
+    const srcPath = path.join(TEAM_DIR, mappedSrc);
     if (!fs.existsSync(srcPath)) {
       console.log("Skip (not found):", src);
       continue;
@@ -118,12 +85,12 @@ async function main() {
         const left = Math.floor((width - cropSize) / 2);
         let top = Math.floor((height - cropSize) / 2);
 
-        // Vertikalen Ausschnitt für bestimmte Originale leicht nach oben verschieben,
-        // damit der Kopf im Quadrat etwas weiter unten sitzt.
-        if (override && override.verticalBiasPercent) {
-          const biasPx = Math.round(override.verticalBiasPercent * cropSize);
-          const maxTop = height - cropSize;
-          top = Math.max(0, Math.min(maxTop, top + biasPx));
+        // Für die neuen Originale: das Quadrat leicht nach oben verschieben,
+        // damit der Kopf im späteren Ausschnitt etwas weiter nach unten rückt
+        // und oben nicht abgeschnitten wirkt.
+        if (ORIGINAL_SRC_MAP[out] && height > width) {
+          const bias = Math.round(cropSize * 0.06); // ca. 6 % nach oben schieben
+          top = Math.max(0, top - bias);
         }
         let pipeline = sharp(srcPath)
           .extract({ left, top, width: cropSize, height: cropSize })
