@@ -12,7 +12,61 @@ const fs = require("fs");
 
 const ROOT = path.resolve(__dirname, "..");
 const TEAM_DIR = path.join(ROOT, "assets", "team");
+const ORIGINAL_DIR = path.join(TEAM_DIR, "Original");
 const SIZES = [320, 640, 1280];
+
+/**
+ * Für einige Original-Fotos nutzen wir bewusst die hochauflösenden Dateien
+ * aus `assets/team/Original`, damit das Ergebnis nicht verpixelt ist und
+ * die Köpfe etwas weiter unten im Ausschnitt liegen.
+ *
+ * verticalBiasPercent:
+ *   - Negative Werte verschieben den quadratischen Ausschnitt im Quellbild
+ *     nach oben (damit im Quadrat mehr Raum über dem Kopf entsteht und der
+ *     Kopf optisch weiter unten sitzt).
+ */
+const ORIGINAL_OVERRIDES = {
+  "till-reichert.jpg": {
+    src: path.join(ORIGINAL_DIR, "Till Reichert.jpg"),
+    verticalBiasPercent: -0.08,
+  },
+  "olaf_werner-square.jpg": {
+    src: path.join(ORIGINAL_DIR, "Olaf Werner.jpg"),
+    verticalBiasPercent: -0.08,
+  },
+  "Carmen-Werner-Team_500x500.jpg": {
+    src: path.join(ORIGINAL_DIR, "Carmen Werner.jpg"),
+    verticalBiasPercent: -0.08,
+  },
+  "Team-Dr.-Bettina-Hailer-500x500-1.jpg": {
+    src: path.join(ORIGINAL_DIR, "Bettina Hailer.jpg"),
+    verticalBiasPercent: -0.08,
+  },
+  "Gerold-Pohl-Team-500-x-500.jpg": {
+    src: path.join(ORIGINAL_DIR, "Gerold Pohl.jpg"),
+    verticalBiasPercent: -0.08,
+  },
+  "Profilbild_Heike_Neidhart_Team_500x500.jpg": {
+    src: path.join(ORIGINAL_DIR, "Heike Neidhart.jpg"),
+    verticalBiasPercent: -0.08,
+  },
+  "Kirsten_Schmiegelt_3-1.jpg": {
+    src: path.join(ORIGINAL_DIR, "Kirsten Schmiegelt.jpg"),
+    verticalBiasPercent: -0.08,
+  },
+  "Team-Maik-Riess-500x500-1.jpg": {
+    src: path.join(ORIGINAL_DIR, "Maik RIess.jpg"),
+    verticalBiasPercent: -0.08,
+  },
+  "Team-Marcus-Schmidt-6-23.jpg": {
+    src: path.join(ORIGINAL_DIR, "Marcus Schmidt.jpg"),
+    verticalBiasPercent: -0.08,
+  },
+  "Cludius-Andreas-Team-500x500-1.jpg": {
+    src: path.join(ORIGINAL_DIR, "Andreas Cludius.jpg"),
+    verticalBiasPercent: -0.08,
+  },
+};
 
 const USED_IMAGES = [
   { src: "till-reichert.jpg", out: "till-reichert.jpg" },
@@ -47,7 +101,8 @@ async function main() {
   }
 
   for (const { src, out } of USED_IMAGES) {
-    const srcPath = path.join(TEAM_DIR, src);
+    const override = ORIGINAL_OVERRIDES[out];
+    const srcPath = override?.src || path.join(TEAM_DIR, src);
     if (!fs.existsSync(srcPath)) {
       console.log("Skip (not found):", src);
       continue;
@@ -61,7 +116,15 @@ async function main() {
         if (!width || !height) continue;
         const cropSize = Math.min(width, height);
         const left = Math.floor((width - cropSize) / 2);
-        const top = Math.floor((height - cropSize) / 2);
+        let top = Math.floor((height - cropSize) / 2);
+
+        // Vertikalen Ausschnitt für bestimmte Originale leicht nach oben verschieben,
+        // damit der Kopf im Quadrat etwas weiter unten sitzt.
+        if (override && override.verticalBiasPercent) {
+          const biasPx = Math.round(override.verticalBiasPercent * cropSize);
+          const maxTop = height - cropSize;
+          top = Math.max(0, Math.min(maxTop, top + biasPx));
+        }
         let pipeline = sharp(srcPath)
           .extract({ left, top, width: cropSize, height: cropSize })
           .resize(size, size, { fit: "fill" });
