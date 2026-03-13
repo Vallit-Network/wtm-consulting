@@ -1,21 +1,2 @@
-                            <img alt="Dr. Till Reichert" loading="lazy" src="assets/team/till-reichert-square.jpg" />
-                            <img alt="Malte Werner" loading="lazy" src="assets/team/malte-werner-square.jpg" />
-                            <img alt="Dr. Olaf Werner" loading="lazy" src="assets/team/olaf_werner-square.jpg" />
-                            <img alt="Carmen Werner" loading="lazy" src="assets/team/Carmen-Werner-Team_500x500.jpg" />
-                                src="assets/team/Team-Phillip_Besch-500x500-1-AI.jpg" />
-                                src="assets/team/Team-Dr.-Bettina-Brendel-500x500-1.jpg" />
-                                src="assets/team/Cludius-Andreas-Team-500x500-1.jpg" />
-                                src="assets/team/Team-Dr.-Bettina-Hailer-500x500-1.jpg" />
-                                src="assets/team/Team-Foto-Wolfgang-Hoffmann-AI.jpg" />
-                                src="assets/team/Team-Melanie-Kubala-500x500-1-AI.jpg" />
-                                src="assets/team/Harry_Leiders_team_500x500-AI.jpg" />
-                                src="assets/team/Profilbild_Heike_Neidhart_Team_500x500.jpg" />
-                            <img alt="Gerold Pohl" loading="lazy" src="assets/team/Gerold-Pohl-Team-500-x-500.jpg" />
-                            <img alt="Maik Rieß" loading="lazy" src="assets/team/Team-Maik-Riess-500x500-1.jpg" />
-                                src="assets/team/Sarolf_Sauer_Team_500x500-AI.jpg" />
-                            <img alt="Marcus Schmidt" loading="lazy" src="assets/team/Team-Marcus-Schmidt-6-23.jpg" />
-                            <img alt="Kirsten Schmiegelt" loading="lazy" src="assets/team/Kirsten_Schmiegelt_3-1.jpg" />
-                                src="assets/team/Markus-Schramm-Portrait-Team-500-x-500-AI.jpg" />
-                                src="assets/team/Stalling-Heike-Team-Portrait-500x500-6-23.jpg" />
-                                src="assets/team/Team-Vogel-Barbara-500x500-1-AI.jpg" />
-                            <img alt="Frank Titzer" loading="lazy" src="assets/team/frank_titzer-AI.jpg" />
+# Referenz: Team-Bilder (alle nutzen assets/team/640/)
+Siehe TEAM_IMAGES_TABLE.md für die vollständige Tabelle mit Einsatzorten.

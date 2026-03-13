@@ -48,6 +48,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // CREATE COACH CARD HTML
     // =========================================
     function getThumbnailUrl(photoPath) {
+        if (photoPath.includes('assets/team/640/')) {
+            return photoPath.replace('assets/team/640/', 'assets/team/thumbnails/');
+        }
         return photoPath.replace('assets/team/', 'assets/team/thumbnails/');
     }
 
@@ -268,9 +271,10 @@ document.addEventListener('DOMContentLoaded', () => {
             ).join('');
         }
 
-        // Populate Photo (Main & Avatar)
+        // Populate Photo (Main & Avatar) – modal uses 1280px for sharp enlarged view
+        const photoModal = coach.photo ? coach.photo.replace('assets/team/640/', 'assets/team/1280/') : '';
         const photoHtml = coach.photo
-            ? `<img src="../${coach.photo}" alt="${coach.name}" class="modal-main-photo" width="500" height="500" decoding="async">`
+            ? `<img src="../${photoModal}" alt="${coach.name}" class="modal-main-photo" width="500" height="500" decoding="async">`
             : `<div class="coach-photo-placeholder large">
                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
                     <circle cx="12" cy="8" r="4" />

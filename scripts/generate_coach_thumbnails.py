@@ -2,6 +2,8 @@
 """
 Generate 128x128 thumbnails for coach photos used on the Online Coaching page.
 Place thumbnails in assets/team/thumbnails/ so the browser loads small images for cards.
+Canonical flow: run `npm run normalize-team-images` then `npm run thumbnails` (Node, reads from assets/team/640/).
+This Python script uses legacy paths; for 640-based workflow use scripts/generate_coach_thumbnails.js.
 Run from project root: python3 scripts/generate_coach_thumbnails.py
 Requires: pip install Pillow
 """

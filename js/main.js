@@ -1185,7 +1185,7 @@ document.addEventListener('DOMContentLoaded', () => {
         1: {
             name: 'Dr. Till Reichert',
             role: 'Geschäftsführer',
-            photo: 'assets/team/till-reichert-square.jpg',
+            photo: 'assets/team/640/till-reichert.jpg',
             categories: ['leadership', 'change', 'health', 'communication', 'management'],
             motto: 'Menschen und Organisationen unterstützen. Mit Haltung auf Augenhöhe – klar, wertschätzend und mit professioneller Gelassenheit.',
             shortDescription: [
@@ -1216,7 +1216,7 @@ document.addEventListener('DOMContentLoaded', () => {
         2: {
             name: 'Malte Werner',
             role: 'Geschäftsführer',
-            photo: 'assets/team/malte-werner-square.jpg',
+            photo: 'assets/team/640/malte-werner-square.jpg',
             categories: ['leadership', 'change', 'communication', 'management'],
             motto: 'Menschen und Unternehmen entwickeln. Mit Verstand und Herz!',
             shortDescription: [
@@ -1243,7 +1243,7 @@ document.addEventListener('DOMContentLoaded', () => {
         3: {
             name: 'Frank Titzer',
             role: 'Gründer',
-            photo: 'assets/team/frank_titzer-AI-v2.jpg',
+            photo: 'assets/team/640/frank_titzer-AI-v2.jpg',
             categories: ['leadership', 'change', 'communication'],
             motto: 'Stimmige Entwicklung und Klärung brauchen Zeit! Diesen Prozess präsent und mit Achtung zu begleiten, ist mein professioneller Anspruch.',
             shortDescription: [
@@ -1268,7 +1268,7 @@ document.addEventListener('DOMContentLoaded', () => {
         4: {
             name: 'Dr. Olaf Werner',
             role: 'Gründer',
-            photo: 'assets/team/olaf_werner-square.jpg',
+            photo: 'assets/team/640/olaf_werner-square.jpg',
             categories: ['leadership', 'health', 'management'],
             motto: 'Das Zusammenspiel von Mensch und Organisation fasziniert mich.',
             shortDescription: [
@@ -1293,7 +1293,7 @@ document.addEventListener('DOMContentLoaded', () => {
         6: {
             name: 'Carmen Werner',
             role: 'Trainerin & Coach',
-            photo: 'assets/team/Carmen-Werner-Team_500x500.jpg',
+            photo: 'assets/team/640/Carmen-Werner-Team_500x500.jpg',
             categories: ['leadership', 'change', 'health'],
             motto: 'Den Menschen im Ganzen sehen, ihn wertschätzen und ihn dabei zu unterstützen, seine innere Vielfalt in Verbindung zu bringen.',
             shortDescription: [
@@ -1319,7 +1319,7 @@ document.addEventListener('DOMContentLoaded', () => {
         7: {
             name: 'Dr. Bettina Brendel',
             role: 'Trainerin & Coach',
-            photo: 'assets/team/Team-Dr.-Bettina-Brendel-500x500-1.jpg',
+            photo: 'assets/team/640/Team-Dr.-Bettina-Brendel-500x500-1.jpg',
             categories: ['leadership', 'change', 'communication'],
             motto: 'Kommunikation bewusst gestalten – Konflikte klären, Kooperation ermöglichen.',
             shortDescription: [
@@ -1343,7 +1343,7 @@ document.addEventListener('DOMContentLoaded', () => {
         8: {
             name: 'Dr. Bettina Hailer',
             role: 'Trainerin & Coach',
-            photo: 'assets/team/Team-Dr.-Bettina-Hailer-500x500-1.jpg',
+            photo: 'assets/team/640/Team-Dr.-Bettina-Hailer-500x500-1.jpg',
             categories: ['leadership', 'change', 'communication'],
             motto: 'Veränderung wirksam gestalten – klar, wertschätzend und praxisnah.',
             shortDescription: [
@@ -1369,7 +1369,7 @@ document.addEventListener('DOMContentLoaded', () => {
         9: {
             name: 'Dr. Sarolf Sauer',
             role: 'Trainer & Coach',
-            photo: 'assets/team/Sarolf_Sauer_Team_500x500-AI-v2.jpg',
+            photo: 'assets/team/640/Sarolf_Sauer_Team_500x500-AI-v2.jpg',
             categories: ['leadership', 'health', 'communication'],
             motto: 'Haltung und Persönlichkeit sind der Schlüssel.',
             shortDescription: [
@@ -1395,7 +1395,7 @@ document.addEventListener('DOMContentLoaded', () => {
         10: {
             name: 'Gerold Pohl',
             role: 'Trainer & Coach',
-            photo: 'assets/team/Gerold-Pohl-Team-500-x-500.jpg',
+            photo: 'assets/team/640/Gerold-Pohl-Team-500-x-500.jpg',
             categories: ['leadership', 'change', 'management'],
             motto: 'Moderne Führung heißt: Vertrauen schaffen und Verantwortung ermöglichen.',
             shortDescription: [
@@ -1423,7 +1423,7 @@ document.addEventListener('DOMContentLoaded', () => {
         11: {
             name: 'Heike Neidhart',
             role: 'Trainerin & Coach',
-            photo: 'assets/team/Profilbild_Heike_Neidhart_Team_500x500.jpg',
+            photo: 'assets/team/640/Profilbild_Heike_Neidhart_Team_500x500.jpg',
             categories: ['health', 'communication'],
             motto: 'Gemeinsam finden wir den Weg zu Ihrem Ziel.',
             shortDescription: [
@@ -1450,7 +1450,7 @@ document.addEventListener('DOMContentLoaded', () => {
         12: {
             name: 'Heike Stalling',
             role: 'Trainerin & Coach',
-            photo: 'assets/team/Stalling-Heike-Team-Portrait-500x500-6-23.jpg',
+            photo: 'assets/team/640/Stalling-Heike-Team-Portrait-500x500-6-23.jpg',
             categories: ['leadership', 'health', 'communication'],
             motto: 'Du kannst einen Menschen nichts lehren, du kannst ihm nur helfen, es in sich selbst zu finden.',
             shortDescription: [
@@ -1477,7 +1477,7 @@ document.addEventListener('DOMContentLoaded', () => {
         13: {
             name: 'Hermann Josef Leiders',
             role: 'Trainer & Coach',
-            photo: 'assets/team/Harry_Leiders_team_500x500-AI-v2.jpg',
+            photo: 'assets/team/640/Harry_Leiders_team_500x500-AI-v2.jpg',
             categories: ['leadership', 'communication', 'management'],
             motto: 'Lern- und Entwicklungsräume schaffen, in denen Menschen wachsen können.',
             shortDescription: [
@@ -1503,7 +1503,7 @@ document.addEventListener('DOMContentLoaded', () => {
         14: {
             name: 'Jürgen Reus',
             role: 'Trainer & Coach',
-            photo: 'assets/team/Juergen_Reus_AI.png',
+            photo: 'assets/team/640/Juergen_Reus_AI.png',
             categories: ['communication', 'management'],
             motto: 'Klar strukturieren. Wirksam umsetzen.',
             shortDescription: [
@@ -1529,7 +1529,7 @@ document.addEventListener('DOMContentLoaded', () => {
         15: {
             name: 'Kirsten Schmiegelt',
             role: 'Trainerin & Coach',
-            photo: 'assets/team/Kirsten_Schmiegelt_3-1.jpg',
+            photo: 'assets/team/640/Kirsten_Schmiegelt_3-1.jpg',
             categories: ['leadership', 'health', 'communication'],
             motto: 'Meine Lieblings-„Technik": Offenheit zur Veränderung auf respektvoller Augenhöhe schaffen und sinnvolle kreative Lösungen entwickeln.',
             shortDescription: [
@@ -1557,7 +1557,7 @@ document.addEventListener('DOMContentLoaded', () => {
         16: {
             name: 'Maik Rieß',
             role: 'Trainer & Coach',
-            photo: 'assets/team/Team-Maik-Riess-500x500-1.jpg',
+            photo: 'assets/team/640/Team-Maik-Riess-500x500-1.jpg',
             categories: ['leadership', 'communication', 'management'],
             motto: 'Leistung und Mensch gehören zusammen – nur so entsteht echter Erfolg.',
             shortDescription: [
@@ -1585,7 +1585,7 @@ document.addEventListener('DOMContentLoaded', () => {
         17: {
             name: 'Marcus Schmidt',
             role: 'Trainer & Coach',
-            photo: 'assets/team/Team-Marcus-Schmidt-6-23.jpg',
+            photo: 'assets/team/640/Team-Marcus-Schmidt-6-23.jpg',
             categories: ['leadership', 'change', 'management'],
             motto: 'Ich bin überzeugt, jeder von uns kann sich weiterentwickeln und meine Leidenschaft ist es, Sie dabei zu unterstützen.',
             shortDescription: [
@@ -1614,7 +1614,7 @@ document.addEventListener('DOMContentLoaded', () => {
         18: {
             name: 'Markus Schramm',
             role: 'Trainer & Coach',
-            photo: 'assets/team/Markus_Schramm_AI.png',
+            photo: 'assets/team/640/Markus_Schramm_AI.png',
             categories: ['leadership', 'change', 'communication'],
             motto: 'Kommunikation aus Leidenschaft lebhaft gestalten.',
             shortDescription: [
@@ -1639,7 +1639,7 @@ document.addEventListener('DOMContentLoaded', () => {
         19: {
             name: 'Melanie Kubala',
             role: 'Trainerin & Coach',
-            photo: 'assets/team/Team-Melanie-Kubala-500x500-1-AI-v2.jpg',
+            photo: 'assets/team/640/Team-Melanie-Kubala-500x500-1-AI-v2.jpg',
             categories: ['leadership', 'change', 'communication'],
             motto: 'Wer alles tut, was er schon kann, bleibt immer das, was er schon ist.',
             shortDescription: [
@@ -1666,7 +1666,7 @@ document.addEventListener('DOMContentLoaded', () => {
         20: {
             name: 'Philipp Besch',
             role: 'Trainer & Coach',
-            photo: 'assets/team/Team-Phillip_Besch-500x500-1-AI-v2.jpg',
+            photo: 'assets/team/640/Team-Phillip_Besch-500x500-1-AI-v2.jpg',
             categories: ['leadership', 'change', 'communication'],
             motto: 'Menschen in ihrer persönlichen Entfaltung zu fördern, zu fordern und im Prozess zu begleiten, ist meine Leidenschaft. Klar, wertschätzend, provokativ und lösungsorientiert.',
             shortDescription: [
@@ -1693,7 +1693,7 @@ document.addEventListener('DOMContentLoaded', () => {
         21: {
             name: 'Uta-Barbara Vogel',
             role: 'Trainerin & Coach',
-            photo: 'assets/team/Barbara_AI.png',
+            photo: 'assets/team/640/Barbara_AI.png',
             categories: ['leadership', 'change', 'communication'],
             motto: 'Lebensfreude, Begeisterungsfähigkeit und Neugier sind Eigenschaften, die mich auszeichnen und die mir im Beruf helfen, gemeinsam mit meinen Kunden tragfähige Lösungen zu entwickeln.',
             shortDescription: [
@@ -1721,7 +1721,7 @@ document.addEventListener('DOMContentLoaded', () => {
         22: {
             name: 'Wolfgang Hoffmann',
             role: 'Trainer & Coach',
-            photo: 'assets/team/Team-Foto-Wolfgang-Hoffmann-AI-v2.jpg',
+            photo: 'assets/team/640/Team-Foto-Wolfgang-Hoffmann-AI-v2.jpg',
             categories: ['change', 'leadership'],
             motto: 'Kompetente Begleitung, klare Worte. Wirksamkeit im Fokus.',
             shortDescription: [
@@ -1821,10 +1821,11 @@ document.addEventListener('DOMContentLoaded', () => {
         if (modalName) modalName.textContent = member.name;
         if (modalRole) modalRole.textContent = member.role;
 
-        // Update photo and avatar
+        // Update photo and avatar (modal uses 1280px for sharp enlarged view)
         if (modalPhotoContainer) {
             if (member.photo) {
-                modalPhotoContainer.innerHTML = `<img src="${member.photo}" alt="${member.name}" loading="lazy">`;
+                const photoModal = member.photo.replace('assets/team/640/', 'assets/team/1280/');
+                modalPhotoContainer.innerHTML = `<img src="${photoModal}" alt="${member.name}" loading="lazy">`;
                 if (modalAvatar) {
                     modalAvatar.innerHTML = `<img src="${member.photo}" alt="${member.name}" loading="lazy">`;
                 }

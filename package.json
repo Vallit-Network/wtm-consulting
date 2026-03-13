@@ -1,1 +1,11 @@
-{}
+{
+  "name": "wtm-consulting",
+  "private": true,
+  "scripts": {
+    "normalize-team-images": "node scripts/normalize_team_images_640.js",
+    "thumbnails": "node scripts/generate_coach_thumbnails.js"
+  },
+  "devDependencies": {
+    "sharp": "^0.33.5"
+  }
+}

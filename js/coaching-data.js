@@ -27,7 +27,7 @@ const coachingData = {
         {
             id: 'frank-titzer',
             name: 'Frank Titzer',
-            photo: 'assets/team/frank_titzer-AI-v2.jpg',
+            photo: 'assets/team/640/frank_titzer-AI-v2.jpg',
             role: 'Coach & Supervisor',
             motto: 'Klärung schafft Klarheit – auch in schwierigen Situationen.',
             description: 'Brückenbauend, bodenständig, zugewandt konfrontierend, klar in Benennung und Hinweisen. Dies geerdet im Respekt für die Einzigartigkeit individuellen Erlebens und individueller Rollenentwürfe. Im Beratungsprozess achtsam für die Balance von Geschwindigkeit und notwendiger Verlangsamung.',
@@ -54,7 +54,7 @@ const coachingData = {
         {
             id: 'heike-stalling',
             name: 'Heike Stalling',
-            photo: 'assets/team/Stalling-Heike-Team-Portrait-500x500-6-23.jpg',
+            photo: 'assets/team/640/Stalling-Heike-Team-Portrait-500x500-6-23.jpg',
             role: 'Trainerin & Coach',
             motto: 'Mit Erfolgserlebnissen und dem "Getting Things Done"-Prinzip im Arbeitsalltag wieder durchatmen.',
             description: 'Ressourcenorientierte Arbeitsweise, auf Augenhöhe, mit Humor, achtsam, klar und zielorientiert.',
@@ -89,7 +89,7 @@ const coachingData = {
         {
             id: 'dr-bettina-hailer',
             name: 'Dr. Bettina Hailer',
-            photo: 'assets/team/Team-Dr.-Bettina-Hailer-500x500-1.jpg',
+            photo: 'assets/team/640/Team-Dr.-Bettina-Hailer-500x500-1.jpg',
             role: 'Trainerin & Coach',
             motto: 'Wertschätzung gegenüber dem Erreichten und den Potentialen sind mir ein besonderes Anliegen.',
             description: 'Lösungen für berufliche Themen sind oft schon unbewusst vorhanden. Ich sehe meine Aufgabe darin, die Tür hierzu zu öffnen. Zudem unterstütze ich meine Coachees darin, das Veränderbare vom Unveränderbaren zu unterscheiden.',
@@ -125,7 +125,7 @@ const coachingData = {
         {
             id: 'hermann-josef-leiders',
             name: 'Hermann Josef Leiders',
-            photo: 'assets/team/Harry_Leiders_team_500x500-AI-v2.jpg',
+            photo: 'assets/team/640/Harry_Leiders_team_500x500-AI-v2.jpg',
             role: 'Trainer & Coach',
             motto: 'Schwerpunkte der heutigen Arbeit sind Führung, Kommunikation und Umgang mit Stress und Belastung.',
             description: 'Coachees sind grundsätzlich ideenreich, kreativ und in der Lage im Gespräch eigene Ideen zum Umgang mit ihren Problemstellungen zu entwickeln.',
@@ -162,7 +162,7 @@ const coachingData = {
         {
             id: 'uta-barbara-vogel',
             name: 'Uta-Barbara Vogel',
-            photo: 'assets/team/Barbara_AI.png',
+            photo: 'assets/team/640/Barbara_AI.png',
             role: 'Trainerin & Coach',
             motto: 'Konsequent und mit dem Blick für Zusammenhänge, verbinde ich Direktheit mit Wertschätzung.',
             description: 'Menschen und Organisationen verfügen über zahlreiche Potenziale. Die Kunst besteht darin, verborgene Ressourcen zugänglich zu machen, Handlungsspielräume zu nutzen und Fähigkeiten zu erweitern.',
@@ -194,7 +194,7 @@ const coachingData = {
         {
             id: 'andreas-cludius',
             name: 'Andreas Cludius',
-            photo: 'assets/team/Cludius-Andreas-Team-500x500-1.jpg',
+            photo: 'assets/team/640/Cludius-Andreas-Team-500x500-1.jpg',
             role: 'Trainer & Berater',
             motto: 'Menschen erkennen oft selbst den Bedarf einer Veränderung. Dabei ist die Umsetzung die eigentliche Herausforderung.',
             description: 'Im Fokus meiner Arbeit stehen Geschäftsführer mittelständischer Unternehmen, die ich z.T. seit über 10 Jahren u.a. in Fragen der Unternehmensführung, der strategischen Ausrichtung, der Zusammenarbeit mit MitarbeiterInnen und Aufsichtsgremien begleite.',
@@ -228,7 +228,7 @@ const coachingData = {
         {
             id: 'carmen-werner',
             name: 'Carmen Werner',
-            photo: 'assets/team/Carmen-Werner-Team_500x500.jpg',
+            photo: 'assets/team/640/Carmen-Werner-Team_500x500.jpg',
             role: 'Trainerin & Coach',
             motto: 'Den Menschen im Ganzen sehen, wertschätzen und ihn in seiner Balance zwischen Menschlichkeit und Professionalität unterstützen.',
             description: 'Mit systemischem und wertschätzenden Blick schaue ich auf schwierige Situationen im Leben und unterstütze bei der Aktivierung der eigenen Ressourcen zur Veränderung.',
@@ -267,7 +267,7 @@ const coachingData = {
         {
             id: 'dr-till-reichert',
             name: 'Dr. Till Reichert',
-            photo: 'assets/team/till-reichert-square.jpg',
+            photo: 'assets/team/640/till-reichert.jpg',
             role: 'Geschäftsführer',
             motto: '20% Theorie und 80% Praxis.',
             description: 'Als erfahrener Executive Coach (Unternehmensberater, Hochschuldozent, Coach-Ausbilder) unterstütze ich (Führungs-) Persönlichkeiten in ihren Wachstumsprozessen.',
@@ -307,7 +307,7 @@ const coachingData = {
         {
             id: 'melanie-kubala',
             name: 'Melanie Kubala',
-            photo: 'assets/team/Team-Melanie-Kubala-500x500-1-AI-v2.jpg',
+            photo: 'assets/team/640/Team-Melanie-Kubala-500x500-1-AI-v2.jpg',
             role: 'Trainerin & Coach',
             motto: 'Leading with Trust*Ship: Entfalte dein Führungspotenzial durch Selbstvertrauen und Kommunikation',
             description: 'Als ehemalige HR-Managerin kenne ich die Herausforderungen der Fach- und Führungskräfte und weiß genau wo der Schuh drückt. Sich selbst zu vertrauen und zu erkennen, was wirklich in mir steckt sind der Schlüssel für eine gute Führungskraft.',
@@ -344,7 +344,7 @@ const coachingData = {
         {
             id: 'maik-riess',
             name: 'Maik Rieß',
-            photo: 'assets/team/Team-Maik-Riess-500x500-1.jpg',
+            photo: 'assets/team/640/Team-Maik-Riess-500x500-1.jpg',
             role: 'Trainer & Coach',
             motto: 'Leistung und Mensch gehören zusammen – nur so entsteht echter Erfolg.',
             description: 'Als Coach bin ich ideal für dich wenn du als Experte in fachlicher Führung oder als Team- / Abteilungsleiter tätig bist, konkrete Handlungsentscheidungen treffen möchtest und Tools suchst.',
@@ -381,7 +381,7 @@ const coachingData = {
         {
             id: 'wolfgang-hoffmann',
             name: 'Wolfgang Hoffmann',
-            photo: 'assets/team/Team-Foto-Wolfgang-Hoffmann-AI-v2.jpg',
+            photo: 'assets/team/640/Team-Foto-Wolfgang-Hoffmann-AI-v2.jpg',
             role: 'Trainer & Coach',
             motto: 'Führung bedeutet nicht nur, Verantwortung zu tragen, sondern auch Vertrauen zu schaffen und zu erhalten.',
             description: 'Mit langjähriger Erfahrung im Management von Logistikunternehmen verstehe ich die Herausforderungen von Organisationen und Führungskräften. Entdecken Sie mit mir IHREN Weg als Führungskraft, Ihre Einzigartigkeit, Ihre Stärken.',
@@ -420,7 +420,7 @@ const coachingData = {
         {
             id: 'heike-neidhart',
             name: 'Heike Neidhart',
-            photo: 'assets/team/Profilbild_Heike_Neidhart_Team_500x500.jpg',
+            photo: 'assets/team/640/Profilbild_Heike_Neidhart_Team_500x500.jpg',
             role: 'Trainerin & Coach',
             motto: 'Gemeinsam finden wir den Weg zu Ihrem Ziel!',
             description: 'Durch empathisches Zuhören, gezielte Fragen und kreative Ansätze ermutige ich, die eigene Persönlichkeit zu erkunden und zu verstehen. Vertrauen Sie ihrem eigenen Potenzial.',
@@ -458,7 +458,7 @@ const coachingData = {
         {
             id: 'gerold-pohl',
             name: 'Gerold Pohl',
-            photo: 'assets/team/Gerold-Pohl-Team-500-x-500.jpg',
+            photo: 'assets/team/640/Gerold-Pohl-Team-500-x-500.jpg',
             role: 'Trainer & Coach',
             motto: 'In mehr als 25 Jahren als Führungskraft hat sich mein Führungsverständnis zum agilen Prinzip der Selbstorganisation und Eigenverantwortung entwickelt.',
             description: 'Gerold ist Experte für Veränderung, Agiles Arbeiten, Visionsarbeit und New Leadership. Mit mehr als 25 Jahren als Führungskraft, zuletzt als Bereichsleiter in der Software-Entwicklung.',
@@ -490,7 +490,7 @@ const coachingData = {
         {
             id: 'malte-werner',
             name: 'Malte Werner',
-            photo: 'assets/team/malte-werner-square.jpg',
+            photo: 'assets/team/640/malte-werner-square.jpg',
             role: 'Geschäftsführer',
             motto: 'Balance zwischen humorvollem Elan und der nötigen Seriosität.',
             description: 'Um die eigene Leistungsfähigkeit zu erhalten, müssen wir klare Prioritäten setzen. Dabei ist der eigene Anspruch oft Fluch und Segen zugleich: eine gute Balance zu finden ist zentral!',
@@ -518,7 +518,7 @@ const coachingData = {
         {
             id: 'kirsten-schmiegelt',
             name: 'Kirsten Schmiegelt',
-            photo: 'assets/team/Kirsten_Schmiegelt_3-1.jpg',
+            photo: 'assets/team/640/Kirsten_Schmiegelt_3-1.jpg',
             role: 'Trainerin & Coach',
             motto: 'Offenheit zur Veränderung auf respektvoller Augenhöhe schaffen',
             description: 'In meiner langjährigen Tätigkeit als Coach, Beraterin und Trainerin verbinde ich meine Fähigkeit des klaren analytischen Denkens mit meiner ausgeprägten Empathie und einer kreativen sinnvollen Lösungsfindung.',
