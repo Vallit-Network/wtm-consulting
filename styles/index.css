@@ -2769,7 +2769,7 @@ footer::before {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center top;
+    object-position: center 30%;
 }
 
 /* Kopfposition: einfache Regeln, ausgerichtet an Malte (2) und Frank (3) */
@@ -2777,7 +2777,7 @@ footer::before {
 /* Frank Titzer (3) – vom Nutzer als perfekt bewertet, daher eigener Wert */
 .team-member-card[data-member="3"] .member-photo img {
     transform-origin: center top;
-    transform: scale(1.35) translateY(-2%);
+    transform: scale(1.35) translateY(2%);
 }
 
 /* KI-Fotos (ohne Frank 3): leichter Zoom, Kopf etwas nach unten */
@@ -2790,7 +2790,7 @@ footer::before {
 .team-member-card[data-member="21"] .member-photo img,
 .team-member-card[data-member="22"] .member-photo img {
     transform-origin: center top;
-    transform: scale(1.20) translateY(3%);
+    transform: scale(1.20) translateY(5%);
 }
 
 /* Reale Fotos: keine transform-Regel → nutzen den Originalausschnitt,
@@ -2802,7 +2802,7 @@ footer::before {
 .team-modal[data-member="3"] .modal-photo img,
 .team-modal[data-member="3"] .modal-avatar img {
     transform-origin: center top;
-    transform: scale(1.12) translateY(-1%);
+    transform: scale(1.12) translateY(1%);
 }
 
 /* KI-Fotos im Modal (ohne Frank 3): leicht hineinzoomen */
@@ -3174,7 +3174,7 @@ div[class*="syntra-widget"].mobile-menu-active {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center top;
+    object-position: center 30%;
     transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -3238,7 +3238,7 @@ div[class*="syntra-widget"].mobile-menu-active {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center top;
+    object-position: center 30%;
 }
 
 /* Avatar appears when photo is minimized */
