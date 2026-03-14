@@ -1,8 +1,9 @@
 /**
- * Generate normalized team images in three sizes for optimal use:
- * - 320x320: Team-Grid (Karten), kleine Darstellung
- * - 640x640: Team-Grid Retina / Standard
- * - 1280x1280: Vergrößertes Modal, Seminare etc.
+ * Generate normalized team images in 4:5 portrait for cards and modal:
+ * - 256x320: Team-Grid (Karten), kleine Darstellung
+ * - 512x640: Team-Grid Retina / Standard
+ * - 1024x1280: Vergrößertes Modal
+ * Resize with cover + position top so head stays in frame. Moderate resolution.
  * Output: assets/team/320/, assets/team/640/, assets/team/1280/
  * Run: node scripts/normalize_team_images_640.js (from project root)
  */
@@ -13,6 +14,7 @@ const fs = require("fs");
 const ROOT = path.resolve(__dirname, "..");
 const TEAM_DIR = path.join(ROOT, "assets", "team");
 const SIZES = [320, 640, 1280];
+const ASPECT_RATIO = 4 / 5; // width : height
 
 /**
  * Map outputs, für die es explizit neue, hochauflösende Originale
@@ -77,28 +79,18 @@ async function main() {
     const ext = path.extname(out).toLowerCase();
     for (const size of SIZES) {
       const outPath = path.join(TEAM_DIR, String(size), out);
+      const outWidth = Math.round(size * ASPECT_RATIO);
+      const outHeight = size;
       try {
-        const meta = await sharp(srcPath).metadata();
-        const { width, height } = meta;
-        if (!width || !height) continue;
-        const cropSize = Math.min(width, height);
-        const left = Math.floor((width - cropSize) / 2);
-        let top = Math.floor((height - cropSize) / 2);
-
-        // Für die neuen Originale: das Quadrat leicht nach oben verschieben,
-        // damit der Kopf im späteren Ausschnitt etwas weiter nach unten rückt
-        // und oben nicht abgeschnitten wirkt.
-        if (ORIGINAL_SRC_MAP[out] && height > width) {
-          const bias = Math.round(cropSize * 0.09); // ca. 9 % nach oben schieben
-          top = Math.max(0, top - bias);
-        }
-        let pipeline = sharp(srcPath)
-          .extract({ left, top, width: cropSize, height: cropSize })
-          .resize(size, size, { fit: "fill" });
+        let pipeline = sharp(srcPath).resize(outWidth, outHeight, {
+          fit: "cover",
+          position: "top",
+        });
         if (ext === ".png") {
           await pipeline.png({ compressionLevel: 9 }).toFile(outPath);
         } else {
-          await pipeline.jpeg({ quality: size >= 1280 ? 92 : 90, mozjpeg: true }).toFile(outPath);
+          const quality = size >= 1280 ? 88 : 85;
+          await pipeline.jpeg({ quality, mozjpeg: true }).toFile(outPath);
         }
       } catch (e) {
         console.error("Error", src, size, e.message);
