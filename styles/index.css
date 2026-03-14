@@ -2770,6 +2770,8 @@ footer::before {
     height: 100%;
     object-fit: cover;
     object-position: center top;
+    transform-origin: center top;
+    transform: scale(1.12);
 }
 
 /* Kopfposition: einfache Regeln, ausgerichtet an Malte (2) und Frank (3) */
@@ -3175,6 +3177,8 @@ div[class*="syntra-widget"].mobile-menu-active {
     height: 100%;
     object-fit: cover;
     object-position: center top;
+    transform-origin: center top;
+    transform: scale(1.05);
     transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
