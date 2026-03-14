@@ -2756,7 +2756,7 @@ footer::before {
 }
 
 .member-photo {
-    aspect-ratio: 1;
+    aspect-ratio: 4/5;
     background: var(--color-team-photo-bg);
     display: flex;
     align-items: center;

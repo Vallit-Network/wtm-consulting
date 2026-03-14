@@ -89,7 +89,7 @@ async function main() {
         // damit der Kopf im späteren Ausschnitt etwas weiter nach unten rückt
         // und oben nicht abgeschnitten wirkt.
         if (ORIGINAL_SRC_MAP[out] && height > width) {
-          const bias = Math.round(cropSize * 0.06); // ca. 6 % nach oben schieben
+          const bias = Math.round(cropSize * 0.09); // ca. 9 % nach oben schieben
           top = Math.max(0, top - bias);
         }
         let pipeline = sharp(srcPath)
